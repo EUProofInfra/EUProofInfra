@@ -1,0 +1,51 @@
+We know how to express in Dedukti the theories implemented in Matita,
+HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle / HOL, HOL 4,
+Atelier B, and Rodin. The systems Matita, HOL Light, FoCaliZe, and
+Coq, already have been instrumented to export proofs that can be
+checked in Dedukti. Our first work package is to do the same thing for
+Coq, Agda, Lean, Minlog, Isabelle / HOL, HOL 4, Atelier B, and
+Rodin. Three methods have to be used here: some of the systems
+(Automath style), such as Coq, Agda, Lean, and Minlog already have
+proof-terms that can be output, thus the main task is to translate
+this proofs into the Dedukti format. Others (LCF style), such as
+Isabelle / HOL and HOL 4, have a small kernel that can be
+instrumented, and often already has, the main task here is to use this
+proof-trace and transform it into a proof-terms. Others, such as
+Atelier B and Rodin are slightly more difficult to address. For those,
+we need to use the water ford method: extract an incomplete trace (a
+sequence of lemmas) and fill the gap using automated theorem proving,
+as experimented with Atelier B and Zenon.
+
+
+\paragraph{Task 1.1: instrument Agda}
+
+\input{agda}
+
+\paragraph{Task 1.2: instrument Lean}
+
+[?]
+
+\paragraph{Task 1.3: instrument Minlog}
+
+\input{minlog}
+
+\paragraph{Task 1.4: instrument Isabelle / HOL}
+
+[München]
+
+\paragraph{Task 1.5: instrument HOL4}
+
+[G\"oteborg]
+
+\paragraph{Task 1.6: instrument Atelier-B}
+
+[Southhampton, Toulouse, Clearsy].
+
+\paragraph{Task 1.7: instrument Rodin}
+
+[Southhampton, Toulouse, Clearsy].
+
+\paragraph{Task 1.8: integrate the translator to Matita in Matita itself and export the full Matita library}
+
+[Bologna]
+

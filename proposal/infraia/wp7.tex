@@ -1,0 +1,42 @@
+[Erlangen, Saclay]
+
+
+1. concrete/surface syntaxes 
+
+1. Central Library Backend Systems 
+
+2. Cross-System Front-Ends/Portals (Logipedia, ...)
+
+3. Semantic Middleware-based System Interoperability 
+
+Erlangen: two postdocs over the course of the project
+
+Since proof-objects for substantial theory developments tend to be
+very large (the representation of current POs for the Isabelle/AFP can
+easily reach several TB although using techniques for compression), A
+technical pre-requisite for interchangeability, connectivity and
+advanced search consists in a structured, typed format for meta-data
+together with a flexible mechanism of their validation. Technically,
+this kind of meta-data has the form of a function annoconst : arg1 ->
+... -> argn -> proof-term -> proof-term where annoconst is a constant
+symbol which represents an identity in the proof-term (so, any import
+function of a specific system can actually ignore it), and where the
+argi represent terms with meta-information such as, eg., “this
+proof-term represents a free data-type construction of the form ...”,
+or “this part of the proof is a derivation of a free data-type of the
+following form ...”, “this lifting over assumptions represents in
+Isabelle/HOL a Locale-instantiation”, “this part of a theory
+development is connected to ... ”, “this theorem belongs to the
+sub-class of XXX ... theorems”, etcpp. For arguments of annotations,
+validation-functions can be defined that may check that the argument
+terms satisfy a certain property wrt. to the proof-term and the
+current logical context. Dedukti will provide a framework that allows
+for each proof-system (Coq, HOL4, Isabelle...) to declare meta-data
+together with validations and thus communicate tool-specific knowledge
+to other systems. This framework can be seen as a particular form of
+an ontology definition language.
+ 
+WP8: Indexing and browsing [?]  Construct tools to index and browse
+this encyclopedia, that is find the theorem one needs, either by
+looking for it with its name, with its statement, or with symbols
+occurring in it.

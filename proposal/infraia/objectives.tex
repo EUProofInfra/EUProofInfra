@@ -1,0 +1,261 @@
+Bugs may kill. Would you fly in an autonomous plane fully driven by a
+piece of software that has not been formally verified?  Or formally
+verified using a technology that Europe does not master? Today, the
+trust in critical systems relies on formal methods, in particular
+formal proofs, that guaranty the safety of the people using
+transportation systems (autonomous car, metros, trains, planes, etc.),
+health systems (robotic surgery, etc.), energy provided by nuclear
+plants, etc. The crucial role of formal proof is highlighted by
+several successes, like the correctness proof of the automatic Paris
+metro line 14 \cite{metro14} or the detect and avoid system for
+unmanned aircraft system developed by Nasa \cite{Munoz16}.
+
+Unfortunately, the development of formal methods is slow down by the
+multiplicity of proof systems and the absence of a common theory used
+by these systems. This restricts interoperability, sustainability,
+certification, etc.  each small community being centered around one
+theory and one system, and often re-doing work done elsewhere.  For
+instance, the metro line 14 has been proved correct in Atelier B,
+while the Nasa detect and avoid system for unmanned aircraft system
+has been proved correct in PVS.
+
+\begin{figure}
+\begin{tabular}{ll}
+{\sc Abella}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&{\sc Acl2}\\
+{\sc Agda}  &  {\sc HOL Light}\\
+{\sc Atelier B}  &  {\sc IMPS}\\
+{\sc Coq}  &  {\sc Lean}\\
+{\sc FoCaliZe}  &  {\sc Nuprl}\\
+{\sc HOL 4}  &  {\sc PVS}\\
+{\sc Isabelle / HOL}  &  {\sc TLA+}\\
+{\sc Matita}\\
+{\sc Minlog}\\
+{\sc Mizar}\\
+{\sc Rodin}\\
+\end{tabular}
+\caption{Some proof systems (European ones are in the first column)}
+\end{figure}
+
+There are around twenty major proof systems in the world and making
+these systems interoperable would avoid work duplication, reduce the
+development time, and allow independent certification.
+
+After three decades dedicated to the developement of these systems,
+allowing cooperation between these systems is the next step in the
+developement of the formal proof industry.
+Such a project can only have a worldwide ambition. However, as around
+ten out of these twenty systems are European, Europe can take the lead
+on this project, so that the economic spinoffs from the project
+benefit the active participants mainly based in Europe.
+That is why the consortium gathers most of the European actors active
+on formal proof systems, and also proposes to develop links with non
+European partners.
+
+\paragraph{State of the art.}
+Formal proofs and systems manipulating such proofs, have become
+central tools both in safety and security and in mathematics, as shown
+by several major successes: the correctness proof of the Paris metro
+line 14, the Nasa detect and avoid system for unmanned aircraft system
+proved correct in PVS, the proved operating system seL4
+\cite{Klein09}, the proved C compiler CompCert \cite{Leroy06}.  In the
+realm of pure mathematics also, formal proofs have permited to convice
+ourselves of the correctness of several complex proofs, such as
+Feit-Thompson theorem \cite{Gonthier13}, Hales' theorem
+\cite{Hales17}, etc.  The development of these formal proofs has led
+to the construction of huge libraries, totalizing millions of hours of
+work, that are a significant part of mankind's mathematical assets.
+
+Software development has always been accompanied with the definition
+of standards, that make systems interoperable and data
+sustainable. For example, web browsers are interoperable and websites
+are sustainable because they all comply with the html standard. The
+area of formal proofs is however an exception. So, while we had in the
+past (informal) proofs of Pythagoras' theorem or Fermat's little
+theorem, we now have (formal) proofs in {\sc Coq}, {\sc Matita}, or
+{\sc HOL Light}, etc. of these theorems. This lack of standards is
+the major weakness of this area, as it jeopardizes the usability and
+the sustainability of these libraries. Indeed, each library is
+specific to a proof system, most of the time even to some version of
+this system. A library developed in one system cannot, in general, be
+used in another and when the system is no more maintained, the library
+may disappear. Being a major weakness, standard design is also a major
+challenge.
+
+\begin{figure}
+{\sc Abella}, 
+{\sc Agda}, 
+{\sc Atelier B}, 
+{\sc Coq}, 
+{\sc FoCaliZe}, 
+{\sc HOL Light}, 
+{\sc HOL 4},
+{\sc Isabelle / HOL},
+{\sc Lean}, 
+{\sc Matita}, 
+{\sc Minlog}, 
+{\sc Mizar}, 
+{\sc PVS}, 
+{\sc Rodin}, 
+{\sc TLA+}.
+\caption{The 15 systems addressed in the project}
+\end{figure}
+
+On more philosophical grounds, this lack of a standard jeopardizes the
+universality of logical truth, just like, in the 19th century,
+non-Euclidean geometries did, as some statements could be true in one
+geometry, but not in others.  This lack of universality severely
+limits the spreading of formal proofs in non-specialist
+communities. For instance, while logic is taught to undergrad
+students, it is difficult to teach them formal proofs, as this
+requires the choice of a specific language, theory and system and to
+orient the course according to this language, this theory, and this
+system. The same could be said for the use of formal proofs in
+industry or by working mathematicians. So another goal of this project
+is to make formal proofs accessible to a much larger community, as
+standards often do.
+
+At the beginning of the 20th century, a remediation has been found to
+the crisis of non-Euclidean geometries: the definition of the various
+geometries in predicate logic \cite{HilbertAckermann} permitted to
+restore the universality of mathematical truth, allowing to determine
+which axiom was used in which proof and which theorem could be used in
+which geometry.
+
+In the same way, we defend the thesis that the interoperability of
+proof systems can only be achieved if we are able to express the theories
+implemented in these proof systems in a common logical framework.
+
+In 1928, predicate logic, the first logical framework in the history
+of logic, was a huge success, since three important theories used ay
+that time: geometry, arithmetic and set theory have been expressed in
+it. But it also has limitations, explaining that another of the major
+theories used at that time: Russell's type theory (The Principia
+Mathematica) has not been expressed in it.  Then, several other
+versions of type theory, Church's type theory \cite{Church40},
+Martin-L\"of's type Theory \cite{Martin-Lof84}, and the Calculus of
+constructions \cite{CoquandHuet88}, that are the theories implemented
+in most of the current proof systems, have also been defined as
+autonomous theories, and not in predicate logic.
+
+This failure has led, in the field of proof systems, to abandon
+predicate logic, and even the concept of logical framework: the
+theories implemented in {\sc Coq}, {\sc Matita}, {\sc HOL Light},
+etc. are often defined as autonomous systems, and not in a logical
+framework.
+
+However, a stream of research has attempted to understand the
+limitations of predicate logic and to propose other logical frameworks
+repairing them. The most prominent limitations of predicate logic are
+the lack of function symbols binding variables, the lack of a syntax
+for proof terms, the lack of a notion of computation, the lack of a
+notion of cut for axiomatic theories, and the impossibility to express
+constructive proofs. These limitations have led to the development of
+other logical frameworks: $\lambda$-Prolog \cite{NadathurMiller88,
+  MillerNadathur12}, Isabelle \cite{Paulson90}, the $\lambda
+\Pi$-calculus \cite{HarperHonsellPlotkin91}, also called the
+"Edinburgh logical framework", Deduction modulo theory
+\cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
+\cite{Berardi88,Terlouw89}, and ecumenical logics
+\cite{Prawitz15,Dowek15,PereiraRodriguez17}. The $\lambda
+\Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
+the system {\sc Dedukti} \cite{Assaf16}, is a synthesis of these
+frameworks. It not only allows the expression of geometry, arithmetic
+and set theory, but also that of Russell's type theory, Church's type
+theory, Martin-L\"of's type theory, and the Calculus of constructions.
+
+In the years 2010-2015, it was shown that theories implemented in {\sc
+HOL Light} \cite{Assaf12}, {\sc Matita} \cite{Assaf15}, and {\sc
+FoCaLiZe} \cite{Cauderlier16} could be expressed in {\sc Dedukti},
+and that the libraries of these systems could be translated to {\sc
+Dedukti}, as well as the proofs produced with the automated theorem
+proving systems {\sc iProver} \cite{Burel10} and {\sc Zenon}
+\cite{CauderlierHalmagrand15}, in particular on the expression in {\sc
+  Dedukti} of {\sc Atelier B} proofs produced by {\sc Zenon} and also
+by the SMT solver {\sc Archsat} \cite{Bury19}.
+
+Just like for the case of non-Euclidean geometries, it is not
+sufficient to express the theories implemented in {\sc Matita}, {\sc
+  Hol Light}, etc.  in a common logical framework and to translate the
+proofs originally defined in these systems to {\sc Dedukti}, we must
+also analyze each proof to understand which feature of which theory it
+uses and in which theory it can be used, a domain traditionally called
+“reverse mathematics” \cite{Friedman76,Simpson09,Dowek17}.
+
+
+In the years 2015-2020, we started to focus on the translation of
+proofs from one library to another \cite{Dowek17,Thire18}. This led us
+to propose an on-line system-independent encyclopedia of formal proofs
+Logipedia (http://logipedia.science) in which each proof is labeled
+with the axioms and computation rules it uses, which helps to
+determine the systems in which it can be used. In particular, we have
+showed that the arithmetic library of {\sc Matita} could be translated
+into five other, significantly different, systems: {\sc HOL Light},
+{\sc Isabelle /HOL}, {\sc PVS}, {\sc Coq}, and {\sc Lean}, preserving
+the readability of the statements of the theorems.
+
+These successes have convinced us that we are now ready to scale up
+and develop this encyclopedia, with the objective to include in twenty
+years all the formal proofs developed at that time, and in four years a
+significant part of it. This leads to to state our main objectives as
+follows.
+
+\paragraph{Main objectives.}
+\begin{enumerate}
+\item 
+  We already know to express most of the features of the theories of 
+  {\sc Agda}, {\sc Atelier B}, {\sc Coq}, {\sc FoCaLiZe}, {\sc HOL Light},
+  {\sc HOL 4}, {\sc Isabelle / HOL}, {\sc Matita}, and {\sc Rodin}
+  in {\sc Dedukti}. We propose to instrument these systems so that
+  they can produce {\sc Dedukti} proofs, that we can include in
+  {\sc Logipedia}. 
+
+\item
+  The theories of {\sc Abella}, {\sc Lean}, {\sc Minlog}, {\sc Mizar},
+  {\sc PVS}, {\sc TLA+}, have not yet been investigated. We propose to
+  understand how they can be expressed in 
+  {\sc Dedukti}. 
+
+\item
+  Besides the standard libraries of these systems, large libraries
+  have been developed: the 
+  Isabelle Archive for formal Proofs, Flyspeck, MathComp, CompCert...
+We want to including several of these libraries in {\sc Logipedia}. 
+  
+\item
+  Besides proof systems, we also want to include proofs coming from
+  automated theorem provers, SAT solvers, SMT solvers, and model checkers. 
+
+\item
+  We want to develop algorithms to analyze which symbol, axiom, rewrite
+  rule is used in each proof, and consequently in which system each proof
+  can be used.
+
+\item
+  Each library imported in {\sc Logipedia} will come with its own
+  definition of natural numbers, real numbers, etc. We want to develop
+  ``concept alignments algorithms'' to transport theorems from one
+  structure to another isomorphic one.
+
+\item 
+  Besides data, we propose to include in {\sc Logipedia}, metadata and
+  an inner structure.
+\end{enumerate}
+
+
+\paragraph{Readiness.}
+This idea of building such a standard for proofs has already been
+investigated in the past, such as in the Qed manifesto \cite{Qed94}, but
+have produced limited results.
+
+Our thesis is that, since the
+Qed project, the situation has radically changed, because after
+thirty years of research, we have an empirical evidence that most of
+the formal proofs developed in one of these systems can also be
+developed in another, we understand the relationship between the
+theories implemented in these systems much better, we have developed
+several logical frameworks, extending predicate logic, in which these
+theories can be expressed, and we have developed reverse mathematics
+algorithms to analyze which axioms and rules are used in each proofs
+and algorithms, such as constructivization algorithms, to translate
+proofs from one theory to another.
+
