@@ -1,14 +1,14 @@
 We know how to express in Dedukti the theories implemented in Matita,
-HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle, HOL 4,
+HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle, HOL4,
 Atelier B, and Rodin. The systems Matita, HOL Light, FoCaliZe, and
 Coq, already have been instrumented to export proofs that can be
 checked in Dedukti. Our first work package is to do the same thing for
-Coq, Agda, Lean, Minlog, Isabelle, HOL 4, Atelier B, and
+Coq, Agda, Lean, Minlog, Isabelle, HOL4, Atelier B, and
 Rodin. Three methods have to be used here: some of the systems
 (Automath style), such as Coq, Agda, Lean, and Minlog already have
 proof-terms that can be output, thus the main task is to translate
 this proofs into the Dedukti format. Others (LCF style), such as
-Isabelle and HOL 4, have an inference kernel that can be
+Isabelle and HOL4, have an inference kernel that can be
 instrumented, and often already has, the main task here is to transform
 the internal proof-object into an external proof-term. Others, such as
 Atelier B and Rodin are slightly more difficult to address. For those,
