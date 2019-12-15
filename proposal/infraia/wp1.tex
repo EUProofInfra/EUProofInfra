@@ -1,14 +1,14 @@
 We know how to express in Dedukti the theories implemented in Matita,
-HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle / HOL, HOL 4,
+HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle, HOL 4,
 Atelier B, and Rodin. The systems Matita, HOL Light, FoCaliZe, and
 Coq, already have been instrumented to export proofs that can be
 checked in Dedukti. Our first work package is to do the same thing for
-Coq, Agda, Lean, Minlog, Isabelle / HOL, HOL 4, Atelier B, and
+Coq, Agda, Lean, Minlog, Isabelle, HOL 4, Atelier B, and
 Rodin. Three methods have to be used here: some of the systems
 (Automath style), such as Coq, Agda, Lean, and Minlog already have
 proof-terms that can be output, thus the main task is to translate
 this proofs into the Dedukti format. Others (LCF style), such as
-Isabelle / HOL and HOL 4, have a small kernel that can be
+Isabelle and HOL 4, have a small kernel that can be
 instrumented, and often already has, the main task here is to use this
 proof-trace and transform it into a proof-terms. Others, such as
 Atelier B and Rodin are slightly more difficult to address. For those,
@@ -29,7 +29,7 @@ as experimented with Atelier B and Zenon.
 
 \input{minlog}
 
-\paragraph{Task 1.4: instrument Isabelle / HOL}
+\paragraph{Task 1.4: instrument Isabelle}
 
 [TU München]
 
