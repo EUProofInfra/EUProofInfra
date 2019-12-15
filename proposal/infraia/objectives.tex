@@ -12,15 +12,6 @@ unmanned aircraft system developed by Nasa \cite{Munoz16}.
 
 \thispagestyle{empty}
 
-Unfortunately, the development of formal methods is slow down by the
-multiplicity of proof systems and the absence of a common theory used
-by these systems. This restricts interoperability, sustainability,
-certification, etc.  each small community being centered around one
-theory and one system, and often re-doing work done elsewhere.  For
-instance, the metro line 14 has been proved correct in Atelier B,
-while the Nasa detect and avoid system for unmanned aircraft system
-has been proved correct in PVS.
-
 \begin{figure}
 \begin{tabular}{ll}
 {\sc Abella}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&{\sc Acl2}\\
@@ -35,21 +26,33 @@ has been proved correct in PVS.
 {\sc Mizar}\\
 {\sc Rodin}\\
 \end{tabular}
-\caption{Some proof systems (European ones are in the first column)}
+\caption{Some major proof systems (European ones are in the first column) \label{systems}}
 \end{figure}
 
-There are around twenty major proof systems in the world and making
+Unfortunately, the development of formal methods is slowed down by the
+multiplicity of proof systems and the lack of a common theory used by
+these systems. This restricts interoperability, sustainability,
+certification, etc.  each small community being centered around one
+theory and one system, and often re-doing work done elsewhere.  For
+instance, the metro line 14 has been proved correct in {\sc Atelier
+B}, while the Nasa detect and avoid system for unmanned aircraft
+system has been proved correct in {\sc PVS}.  There are around twenty
+major proof systems in the world (Figure \ref{systems}) and making
 these systems interoperable would avoid work duplication, reduce the
 development time, and allow independent certification.
 
 After three decades dedicated to the developement of these systems,
-allowing cooperation between these systems is the next step in the
-developement of the formal proof technology.
-Such a project can only have a worldwide ambition. However, as around
-ten out of these twenty systems are European, Europe can take the lead
-on this project, so that the economic spinoffs from the project
-benefit the active participants mainly based in Europe.
-That is why the consortium gathers most of the European actors active
-on formal proof systems, and also proposes to develop links with non
-European partners.
+allowing such a cooperation between these systems is the next step in
+the developement of the formal proof technology.  To reach this goal
+we propose to build an on line encyclopedia of formal proofs called
+{\sc Logipedia}, that indicates which proof can be used in which
+system and, when it is the case, provides a version of the proof in
+this theory.
 
+Such a project can only have a worldwide ambition. However, as more
+than half of these systems are European, Europe can take the lead on
+this project, so that the economic spinoffs from the project benefit
+the active participants mainly based in Europe.  That is why the
+consortium gathers most of the European actors active on formal proof
+systems, and also proposes to develop links with non European
+partners.
