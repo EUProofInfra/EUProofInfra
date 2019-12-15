@@ -8,9 +8,9 @@ Rodin. Three methods have to be used here: some of the systems
 (Automath style), such as Coq, Agda, Lean, and Minlog already have
 proof-terms that can be output, thus the main task is to translate
 this proofs into the Dedukti format. Others (LCF style), such as
-Isabelle and HOL 4, have a small kernel that can be
-instrumented, and often already has, the main task here is to use this
-proof-trace and transform it into a proof-terms. Others, such as
+Isabelle and HOL 4, have an inference kernel that can be
+instrumented, and often already has, the main task here is to transform
+the internal proof-object into an external proof-term. Others, such as
 Atelier B and Rodin are slightly more difficult to address. For those,
 we need to use the water ford method: extract an incomplete trace (a
 sequence of lemmas) and fill the gap using automated theorem proving,
