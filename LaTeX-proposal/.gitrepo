@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:KWARC/LaTeX-proposal.git
+	branch = master
+	commit = 08a86343c361928101d62886d441c0b46926c6b0
+	parent = 0dbbb5383b5c58ff2b083d317df2943c4d9c5568
+	method = merge
+	cmdver = 0.4.0
