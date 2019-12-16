@@ -1,6 +1,4 @@
-The project
-
-The Logipedia kick-off meeting
+{\color{red} Where should this sentence go?: The Logipedia kick-off meeting
 http://deducteam.gforge.inria.fr/seminars/190121.html, in January
 2019, brought together 38 researchers from Austria, Czech Republic,
 France, Italy, the Netherlands, and Poland. Since then, colleagues
@@ -8,77 +6,90 @@ from Belgium, Germany, Serbia, Sweden, and the United Kingdom have
 manifested interest. Some of these researchers are ready to contribute
 to Logipedia, that currently contains a few hundred lemmas, aiming at
 having in twenty years all the formal proofs then developed, in a
-single encyclopedia.
+single encyclopedia.}
 
-Currently, we know how to express the theories of HOL Light, Matita,
-and FoCaliZe in Dedukti and recheck proofs developed in these
-systems. In the next five years, we plan to address the theories of
-Abella, Agda, Atelier B, Coq, HOL4, Isabelle, Lean, Minlog,
-Mizar, PVS, Rodin, and TLA+. Other systems, ACL2, IMPS, and Nuprl are
-kept for later, except if some other groups join the project.
+Currently, we know how to express the theories of {\sc HOL Light},
+{\sc Matita}, and {\sc FoCaliZe} in {\sc Dedukti} and recheck proofs
+developed in these systems. In the next five years, we plan to address
+the theories of {\sc Abella}, {\sc Agda}, {\sc Atelier B}, {\sc Coq},
+{\sc HOL4}, {\sc Isabelle}, {\sc Lean}, {\sc Minlog}, {\sc Mizar},
+{\sc PVS}, {\sc Rodin}, and {\sc TLA+}. Other systems, {\sc ACL2},
+{\sc IMPS}, and {\sc Nuprl} are kept for later, except if some other
+groups join the project.
 
-
-We propose to introduce a metric to measure the progress of the
-integration of a library in Logipedia.
-
-
-- Level 1: the theory implemented in the system X has been defined in
+\begin{figure}
+\begin{itemize}
+\item[Level 1:]
+The theory implemented in the system X has been defined in
 the lambda-Pi-calculus modulo theory and in Dedukti.
 
-- Level 2: the system X has been instrumented to export of proof that
+\item[Level 2:]
+The system X has been instrumented to export of proof that
 can be checked in Dedukti.
 
-- Level 3: a significant part of the library of the system X has been exported and checked in Dedukti.
+\item[Level 3:]
+A significant part of the library of the system X has been exported and checked in Dedukti.
 
-- Level 4: a tool has been defined to analyze the Dedukti X proofs,
+\item[Level 4:]
+A tool has been defined to analyze the Dedukti X proofs,
 detect those that can be expressed in a theory weaker than that of the
 system X and translate those proofs in a weaker logic.
 
-- Level 5: these proofs have been made available in Logipedia.
+\item[Level 5:]
+These proofs have been made available in Logipedia.
 
-- Level 6: all proofs of the system X have been exported, translated
+\item[Level 6:]
+All proofs of the system X have been exported, translated
 and made available in Logipedia.
+\end{itemize}
+\caption{The Logipedia readiness levels \label{lrl}}
+\end{figure}
 
-The Logipedia readiness levels
+We propose to introduce a metric to measure the progress of the
+integration of a library in Logipedia (Figure \ref{lrl})
 
 The various systems addressed in the project are currently at this level 
-Matita: level 5
-FoCaliZe: level 3
-HOL Light: level 3
-Coq: level 3
-Agda: 2
-Atelier B: level 2
-Isabelle: level 2
-HOL4: level 1
-Minlog: level 1
-Rodin: level 1
-Lean: level 0 to 1
-PVS: level 0 to 1
-Abella: level 0
-Mizar: level 0
-TLA+: level 0
 
-The current Logipedia readiness levels of the systems addressed in the project
+\begin{tabular}{ll}
+Matita:& level 5\\
+FoCaliZe:& level 3\\
+HOL Light:& level 3\\
+Coq:& level 3\\
+Agda:& level 2\\
+Atelier B:& level 2\\
+Isabelle:& level 2\\
+HOL4:& level 1\\
+Minlog:& level 1\\
+Rodin:& level 1\\
+Lean:& level 0 to 1\\
+PVS:& level 0 to 1\\
+Abella:& level 0\\
+Mizar:& level 0\\
+TLA+:& level 0
+\end{tabular}
 
 \subsection{Goals}
 
 Specific, Measurable, Achievable, Relevant, Time-Bound
 
-Matita: from level 5 to level 6
-HOL Light: level 3 to level 5
-FoCaliZe: from level 3 to level 5
-Coq: level 3 to level 5
-Agda: from level 2 to level 3
-Atelier B: from level 2 to level 5
-Isabelle: from level 2 to level 5
-HOL4: from level 1 to level 5
-Minlog: from level 1 to level 5
-Rodin: from level 1 to level 5
-Lean: from level 0 to 1 to level 3
-PVS: from level 0 to 1 to level 2
-Abella: from level 0 to level 2
-Mizar: from level 0 to level 5
-TLA+: from level 0 to level 2
+\begin{tabular}{ll}
+Matita:& from level 5 to level 6\\
+HOL Light:& from level 3 to level 5\\
+FoCaliZe:& from level 3 to level 5\\
+Coq:& from level 3 to level 5\\
+Agda:& from level 2 to level 3\\
+Atelier B:& from level 2 to level 5\\
+Isabelle:& from level 2 to level 5\\
+HOL4:& from level 1 to level 5\\
+Minlog:& from level 1 to level 5\\
+Rodin:& from level 1 to level 5\\
+Lean:& from level 0 to 1 to level 3\\
+PVS:& from level 0 to 1 to level 2\\
+Abella:& from level 0 to level 2\\
+Mizar:& from level 0 to level 5\\
+TLA+:& from level 0 to level 2
+\end{tabular}
+
 
 Beyond our main focus on interactive systems, we also plan to
 integrate some proofs coming from automated theorem provers, SMT
