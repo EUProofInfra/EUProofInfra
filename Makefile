@@ -6,11 +6,11 @@
 ###########################################################################
 # possibly customize the following variables to your setting
 PROPOSAL = propB.tex 		# the proposal
-PROP.dir = LaTeX-Proposal#      # The LaTeX-proposal class directory
+PROP.dir = LaTeX-proposal#      # The LaTeX-proposal class directory
 BIB = lib/kbibs/kwarc.bib
 ###########################################################################
 # the following are computed
-TSIMP = 	                  # pdflatex Targets without bibTeX
+TSIMP = propB	                  # pdflatex Targets without bibTeX
 TSIMP.pdf 	= $(TSIMP:%.tex=%.pdf)            # PDFs to be produced
 TBIB = $(PROPOSAL) 		  	  	  # pdflatex Targets with bibTeX
 TARGET = $(TSIMP) $(TBIB)                         # all pdflatex targets
@@ -31,7 +31,7 @@ PROPETC.sty = workaddress.sty metakeys.sty sref.sty
 EUPROPCLS.clssty = euproposal.cls
 PROPCLS = $(PROPCLS.clssty:%=$(PROPCLS.dir)/%) $(EUPROPCLS.clssty:%=$(EUPROPCLS.dir)/%) $(PROPETC.sty:%=$(PROPETC.dir)/%)
 
-all: $(TBIB.pdf)# $(TSIMP.pdf)
+all: $(TBIB.pdf) $(TSIMP.pdf)
 
 submit:
 	$(MAKE) -$(MAKEFLAGS) -w PROPOSAL=submit.tex
