@@ -7,10 +7,57 @@
 
 \begin{document}
 
-
 \chapter{Excellence}
 
 {\Huge \color{red} This document is under construction}
+
+Bugs may kill. Would you fly in an autonomous plane fully driven by a
+piece of software that has not been formally verified?  Or formally
+verified using a technology that Europe does not master? Today, the
+trust in critical systems relies on formal methods, in particular
+formal proofs, that guaranty the safety of the people using
+transportation systems---autonomous car, metros, trains, planes,
+etc.---, health systems---robotic surgery, etc.---, energy provided by
+nuclear plants, etc. The crucial role of formal proof is highlighted
+by several successes, like the correctness proof of the automatic
+Paris metro line 14 \cite{metro14} or the detect and avoid system for
+unmanned aircraft system developed by Nasa \cite{Munoz16}.
+
+\thispagestyle{empty}
+
+\begin{figure}
+\begin{tabular}{ll}
+  {\sc \underline{Abella}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&{\sc Acl2}\\
+{\sc \underline{Agda}} &  {\sc \underline{HOL Light}}\\
+{\sc \underline{Atelier B}} &  {\sc IMPS}\\
+{\sc \underline{Coq}}  &  {\sc \underline{Lean}}\\
+{\sc \underline{FoCaliZe}}  &  {\sc Nuprl}\\
+{\sc \underline{HOL4}}  &  {\sc \underline{PVS}}\\
+{\sc \underline{Isabelle}}  &  {\sc \underline{TLA+}}\\
+{\sc \underline{Matita}}\\
+{\sc \underline{Minlog}}\\
+{\sc \underline{Mizar}}\\
+{\sc \underline{Rodin}}\\
+\end{tabular}
+\caption{Some major proof systems. The European ones are in the first column.
+  Those addressed in the project are underlined\label{systems}}
+\end{figure}
+
+Unfortunately, the development of formal methods is slowed down by the
+multiplicity of proof systems and the lack of a common theory used by
+these systems. This restricts interoperability, sustainability,
+certification, etc.  each small community being centered around one
+theory and one system, and often re-doing work done elsewhere.  For
+instance, the metro line 14 has been proved correct in {\sc Atelier
+B}, while the Nasa detect and avoid system for unmanned aircraft
+system has been proved correct in {\sc PVS}.
+
+There are around twenty major proof systems in the world
+(Figure \ref{systems}) and making these systems interoperable would avoid work
+duplication, reduce the development time, and allow independent
+certification.  After three decades dedicated to the developement of
+these systems, allowing such a cooperation between these systems is
+the next step in the developement of the formal proof technology.
 
 \section{Objectives}
 

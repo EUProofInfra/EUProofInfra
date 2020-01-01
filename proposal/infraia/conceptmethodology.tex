@@ -1,13 +1,3 @@
-{\color{red}
-clearly define what is an
-infrastructure in our context: maybe theorem provers (ATP, ITP),
-repositories of problems, theories and proofs are infrastructures.
-Currently they are small, distributed and disconnected
-infrastructures.  We want to build a large, worldwide infrastructure
-from the small ones by connecting all of them through Dedukti and
-Logipedia.
-}
-
 \paragraph{State of the art.}
 Formal proofs and systems manipulating such proofs, have become
 central tools both in safety and security, as shown by several major
@@ -37,25 +27,6 @@ this system. A library developed in one system cannot, in general, be
 used in another and when the system is no more maintained, the library
 may disappear. Being a major weakness, standard design is also a major
 challenge.
-
-\begin{figure}
-{\sc Abella}, 
-{\sc Agda}, 
-{\sc Atelier B}, 
-{\sc Coq}, 
-{\sc FoCaliZe}, 
-{\sc HOL Light}, 
-{\sc HOL4},
-{\sc Isabelle},
-{\sc Lean}, 
-{\sc Matita}, 
-{\sc Minlog}, 
-{\sc Mizar}, 
-{\sc PVS}, 
-{\sc Rodin}, 
-{\sc TLA+}.
-\caption{The 15 systems addressed in the project}
-\end{figure}
 
 On more philosophical grounds, this lack of a standard jeopardizes the
 universality of logical truth, just like, in the 19th century,
@@ -142,67 +113,110 @@ uses and in which theory it can be used, a domain traditionally called
 In the years 2015-2020, we started to focus on the translation of
 proofs from one library to another \cite{Dowek17,Thire18}. This led us
 to propose an on-line system-independent encyclopedia of formal proofs
-Logipedia (http://logipedia.science) in which each proof is labeled
-with the axioms and computation rules it uses, which helps to
-determine the systems in which it can be used. In particular, we have
-showed that the arithmetic library of {\sc Matita} could be translated
-into five other, significantly different, systems: {\sc HOL Light},
-{\sc Isabelle}, {\sc PVS}, {\sc Coq}, and {\sc Lean}, preserving
-the readability of the statements of the theorems.
+{\sc Logipedia} ({\tt http://logipedia.science}) in which each proof
+is labeled with the axioms and computation rules it uses, which helps
+to determine the systems in which it can be used. In particular, we
+have showed that the arithmetic library of {\sc Matita} could be
+translated into five other, significantly different, systems: {\sc HOL
+Light}, {\sc Isabelle}, {\sc PVS}, {\sc Coq}, and {\sc Lean},
+preserving the readability of the statements of the theorems.
 
 These successes have convinced us that we are now ready to scale up
 and develop this encyclopedia, with the objective to include in twenty
 years all the formal proofs developed at that time, and in four years a
-significant part of it. This leads to to state our main objectives as
-follows.
+significant part of it. 
 
 \paragraph{Concept}
 
+The main concepts articulated in this project are thus those of
+\begin{itemize}
+\item logical framework,
+\item theory,
+\item instrumentation,
+\item reverse mathematics,
+\item concept alignmenent,
+\item and structuration.
+\end{itemize}
+
+Indeed, suppose we start with a proof developed in a system $X$. We
+must first express, in the logical framework {\sc Dedukti}, the theory
+$D[X]$ implemented in the system $X$. Then, we must instrument the
+system $X$ so that the proof can be exported from it, as a piece of
+data, and expressed as a proof in $D[X]$ and included in {\sc
+Logipedia}.  Then, we can analyze this proof in order to understand
+which features of $D[X]$ it is uses and thus in which alternative
+theories it uses theories.  Finally, we must align its concepts with
+the definitions already pressent in {\sc Logipedia} and decide where
+it fits in the general structure of the encyclopedia.
+
+This required to include in the project computer scientists,
+logicians, and mathematicians who have developed knowldge on one
+theory or one system, others who have developed knowldge on logical
+frameworks, other who have developed knowldge on logical frameworks
+and concept alignment.
+
+Such an infrastructure is new in the European Strategy on Research
+Infrastructures. We can even say that the idea to structure a research
+event around an infrastructure, such as {\em Software heritage}, is
+relatively new in computer science and mathematics.
+
+Depending on the system $X$, we consider more of less research needs
+to be done, for instrance to desing the theory $D[X]$. Among the 15
+systems we focus on, we plan to reach, for 10 of them, the level 5 or
+6. For the others, more research needs to be done and we plan to reach
+level 3 only.
+
+\paragraph{Methodology}
+
+The methodology is the same for integrating any library to {\sc Logipedia},
+but due to a difference of readiness of the various systems we focus on,
+our priorities are different.
+
 \begin{enumerate}
-\item 
-  We already know to express most of the features of the theories of 
-  {\sc Agda}, {\sc Atelier B}, {\sc Coq}, {\sc FoCaLiZe}, {\sc HOL Light},
-  {\sc HOL4}, {\sc Isabelle}, {\sc Matita}, and {\sc Rodin}
-  in {\sc Dedukti}. We propose to instrument these systems so that
-  they can produce {\sc
- Dedukti} proofs, that we can include in
-  {\sc Logipedia}. 
+\item We already know to express most of the theories of {\sc Atelier B},
+{\sc Coq}, {\sc FoCaLiZe}, {\sc HOL Light}, {\sc HOL4}, {\sc
+Isabelle}, {\sc Matita}, and {\sc Rodin} in {\sc Dedukti}. We propose
+to instrument these systems so that they can produce {\sc Dedukti}
+proofs, that we can include in {\sc Logipedia}.
 
 \item
-  The theories of {\sc Abella}, {\sc Lean}, {\sc Minlog}, {\sc Mizar},
-  {\sc PVS}, {\sc TLA+}, have not yet been investigated. We propose to
-  understand how they can be expressed in 
-  {\sc Dedukti}. 
+For other theories, such as those of {\sc Abella}, {\sc Agda}, {\sc
+Lean}, {\sc Minlog}, {\sc Mizar}, {\sc PVS}, {\sc TLA+}, the work is
+in progress, or not yet started.  So we must first understand how they
+can be expressed in {\sc Dedukti}.
 
 \item
-  Besides the standard libraries of these systems, large libraries
-  have been developed: the 
-  Isabelle Archive for formal Proofs, Flyspeck, MathComp, CompCert...
-We want to including several of these libraries in {\sc Logipedia}. 
+Besides the standard libraries of these systems, large libraries
+have been developed: the Isabelle Archive for formal Proofs,
+Flyspeck, MathComp, CompCert...  We want to including some of
+these libraries in {\sc Logipedia}.
   
 \item
-  Besides proof systems, we also want to include proofs coming from
-  automated theorem provers, SAT solvers, SMT solvers, and model checkers. 
+Besides proof systems, we also want to include proofs coming from
+automated theorem provers, SAT solvers, SMT solvers, and model
+checkers.  So we must instrument some of these systems so that they
+can produce {\sc Dedukti} proofs, that we can include in {\sc
+Logipedia}.
 
 \item
-  We want to develop algorithms to analyze which symbol, axiom, rewrite
-  rule is used in each proof, and consequently in which system each proof
-  can be used.
+We want to develop algorithms to analyze which symbol, axiom, rewrite
+rule is used in each proof, and consequently in which system each proof
+can be used.
 
 \item
-  Each library imported in {\sc Logipedia} will come with its own
-  definition of natural numbers, real numbers, etc. We want to develop
-  ``concept alignments algorithms'' to transport theorems from one
-  structure to another isomorphic one.
+Each library imported in {\sc Logipedia} will come with its own
+definition of natural numbers, real numbers, etc. We want to develop
+``concept alignments algorithms'' to transport theorems from one
+structure to another isomorphic one.
 
 \item 
-  Besides data, we propose to include in {\sc Logipedia}, metadata and
-  an inner structure.
+Besides data, we propose to include in {\sc Logipedia}, metadata and
+an inner structure.
 \end{enumerate}
 
 
+\paragraph{Readiness of the project}
 
-\paragraph{Readiness.}
 This idea of building such a standard for proofs has already been
 investigated in the past, such as in the Qed manifesto \cite{Qed94}, but
 have produced limited results.
@@ -218,3 +232,5 @@ theories can be expressed, and we have developed reverse mathematics
 algorithms to analyze which axioms and rules are used in each proofs
 and algorithms, such as constructivization algorithms, to translate
 proofs from one theory to another.
+
+
