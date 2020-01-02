@@ -18,14 +18,14 @@ sustainable. For example, web browsers are interoperable and websites
 are sustainable because they all comply with the html standard. The
 area of formal proofs is however an exception. So, while we had in the
 past (informal) proofs of Pythagoras' theorem or Fermat's little
-theorem, we now have (formal) proofs in {\sc Coq}, {\sc Matita}, or
-{\sc HOL Light}, etc. of these theorems. This lack of standards is
-the major weakness of this area, as it jeopardizes the usability and
-the sustainability of these libraries. Indeed, each library is
-specific to a proof system, most of the time even to some version of
-this system. A library developed in one system cannot, in general, be
-used in another and when the system is no more maintained, the library
-may disappear. Being a major weakness, standard design is also a major
+theorem, we now have (formal) proofs of these theorems in {\sc Coq},
+{\sc Matita}, or {\sc HOL Light}, etc. This lack of standards is the
+major weakness of this area, as it jeopardizes the usability and the
+sustainability of these libraries. Indeed, each library is specific to
+a proof system, most of the time even to some version of this
+system. A library developed in one system cannot, in general, be used
+in another and when the system is no more maintained, the library may
+disappear. Being a major weakness, standard design is also a major
 challenge.
 
 On more philosophical grounds, this lack of a standard jeopardizes the
@@ -93,17 +93,17 @@ theory, Martin-L\"of's type theory, and the Calculus of constructions.
 
 In the years 2010-2015, it was shown that theories implemented in {\sc
 HOL Light} \cite{Assaf12}, {\sc Matita} \cite{Assaf15}, and {\sc
-FoCaLiZe} \cite{Cauderlier16} could be expressed in {\sc Dedukti},
-and that the libraries of these systems could be translated to {\sc
+FoCaLiZe} \cite{Cauderlier16} could be expressed in {\sc Dedukti}, and
+that the libraries of these systems could be translated to {\sc
 Dedukti}, as well as the proofs produced with the automated theorem
 proving systems {\sc iProver} \cite{Burel10} and {\sc Zenon}
-\cite{CauderlierHalmagrand15}, in particular on the expression in {\sc
-  Dedukti} of {\sc Atelier B} proofs produced by {\sc Zenon} and also
-by the SMT solver {\sc Archsat} \cite{Bury19}.
+\cite{CauderlierHalmagrand15}, and by the SMT solver {\sc Archsat}
+\cite{Bury19}. This lead, in particular, to express, in {\sc Dedukti}, {\sc
+Atelier B} proofs produced by {\sc Zenon}.
 
 Just like for the case of non-Euclidean geometries, it is not
 sufficient to express the theories implemented in {\sc Matita}, {\sc
-  Hol Light}, etc.  in a common logical framework and to translate the
+Hol Light}, etc.  in a common logical framework and to translate the
 proofs originally defined in these systems to {\sc Dedukti}, we must
 also analyze each proof to understand which feature of which theory it
 uses and in which theory it can be used, a domain traditionally called
@@ -128,7 +128,7 @@ significant part of it.
 
 \paragraph{Concept}
 
-The main concepts articulated in this project are thus those of
+The main notions articulated in this project are thus those of
 \begin{itemize}
 \item logical framework,
 \item theory,
@@ -142,22 +142,22 @@ Indeed, suppose we start with a proof developed in a system $X$. We
 must first express, in the logical framework {\sc Dedukti}, the theory
 $D[X]$ implemented in the system $X$. Then, we must instrument the
 system $X$ so that the proof can be exported from it, as a piece of
-data, and expressed as a proof in $D[X]$ and included in {\sc
+data, expressed as a proof in $D[X]$ and included in {\sc
 Logipedia}.  Then, we can analyze this proof in order to understand
 which features of $D[X]$ it is uses and thus in which alternative
-theories it uses theories.  Finally, we must align its concepts with
+theories it can be expressed.  Finally, we must align its concepts with
 the definitions already pressent in {\sc Logipedia} and decide where
 it fits in the general structure of the encyclopedia.
 
-This required to include in the project computer scientists,
+This required to include in the project computer scientists,gg
 logicians, and mathematicians who have developed knowldge on one
 theory or one system, others who have developed knowldge on logical
-frameworks, other who have developed knowldge on logical frameworks
+frameworks, other who have developed knowldge on reverse mathematics
 and concept alignment.
 
 Such an infrastructure is new in the European Strategy on Research
 Infrastructures. We can even say that the idea to structure a research
-event around an infrastructure, such as {\em Software heritage}, is
+effort around an infrastructure, such as {\em Software heritage}, is
 relatively new in computer science and mathematics.
 
 Depending on the system $X$, we consider more of less research needs
@@ -234,3 +234,8 @@ and algorithms, such as constructivization algorithms, to translate
 proofs from one theory to another.
 
 
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:
