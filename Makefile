@@ -8,9 +8,9 @@
 PROPOSAL = propB.tex 		# the proposal
 PROP.dir = LaTeX-proposal#      # The LaTeX-proposal class directory
 BIB = lib/kbibs/kwarc.bib
+TSIMP = 	                # pdflatex Targets without bibTeX
 ###########################################################################
 # the following are computed
-TSIMP = propB	                  # pdflatex Targets without bibTeX
 TSIMP.pdf 	= $(TSIMP:%.tex=%.pdf)            # PDFs to be produced
 TBIB = $(PROPOSAL) 		  	  	  # pdflatex Targets with bibTeX
 TARGET = $(TSIMP) $(TBIB)                         # all pdflatex targets
