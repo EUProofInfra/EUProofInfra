@@ -1,23 +1,45 @@
 \chapter{Implementation}\label{chap:implementation}
 
-\section{Management Structure and Procedures}\label{chap:management}
+\section{Work plan -- Work packages, deliverables}
+
+\input{workplan}
+
+\subsection{Work Package List}\label{sec:wplist}
+
 \begin{todo}{from the proposal template}
-  Describe the organizational structure and decision-making mechanisms
-  of the project. Show how they are matched to the nature, complexity
-  and scale of the project.  Maximum length of this section: five pages.
+Please indicate one activity per work package:
+RTD = Research and technological development; DEM = Demonstration; MGT = Management of the consortium
 \end{todo}
 
-The Project Management of {\pn} is based on its Consortium Agreement, which will be
-signed before the Contract is signed by the Commission. The Consortium Agreement will
-enter into force as from the date the contract with the European Commission is signed.
-\subsection{Organizational structure}\label{sec:management-structure}
-\subsection{Milestones}\label{sec:milestones}
-\milestonetable
-\subsection{Risk Assessment and Management}
-\subsection{Information Flow and Outreach}\label{sec:spread-excellence}
-\subsection{Quality Procedures}\label{sec:quality-management}
-\subsection{Internal Evaluation Procedures}
-\newpage
+%\makeatletter\wp@total@RM{management}\makeatother
+\wpfigstyle{\footnotesize}
+\wpfig[pages,type,start,end]
+
+\newpage\input{deliverables}
+\newpage\input{milestones}
+
+\subsection{Work Package Descriptions}\label{sec:workpackages}
+\begin{workplan}
+  \input{workpackages/instrumentation}
+  \input{workpackages/theories}
+  \input{workpackages/libraries}
+  \input{workpackages/atpetc}
+  \input{workpackages/reversemath}
+  \input{workpackages/alignment}
+  \input{workpackages/structuring}
+  \input{workpackages/dissemination}
+  \input{workpackages/management}
+\end{workplan}
+\ganttchart[draft,xscale=.45] 
+\newpage\input{risks}\newpage
+
+\section{Management structure, milestones and procedures}
+
+{\color{red} Is it the right place to speak about the assessment /
+  self-evaluation of the project}
+
+\input{management}
+
 
 \section{The {\protect\pn} consortium as a whole}
 \begin{todo}{from the proposal template}
@@ -61,6 +83,7 @@ joint publications (only international, peer reviewed ones).
   the role of the potential participants and their integration into the running project
   should be described
 \end{todo}
+
 \section{Resources to be Committed}\label{sec:resources}
 \begin{todo}{from the proposal template}
 Maximum length: two pages

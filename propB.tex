@@ -15,31 +15,54 @@
 
 \begin{document}
 \begin{proposal}[%
-  site=FAU,FAURM=72,
-  site=UBel,UBelRM=72,
-  site=UBia,UBiaRM=72,
-  site=UBo,UBoRM=72,
-  site=Cle,CleRM=72,
-  site=Del,DelRM=72,
-  site=GU,GURM=72,
-  site=UIn,UInRM=72,
-  site=ULe,ULeRM=72,
-  site=ULi,ULiRM=72,
-  site=TUM,TUMRM=72,
-  site=LMU,LMURM=72,
-  site=INa,INaRM=72,
-  site=IPa,IPaRM=72,
-  site=UPra,UPraRM=72,
-  site=ISa,ISaRM=72,
-  site=ISA,ISARM=72,
-  site=USo,USoRM=72,
-  site=UStr,UStrRM=72,
-  site=NPIT,NPITRM=72,
   coordinator=GiDo,
   coordinatorsite=ISa,
   acronym={EUProofInfra},
   acrolong={\underline{EU}repan \underline{Proof}\underline{Infra}structure},
   title=\pn: \protect\pnlong,
+  site=FAU,
+  site=UBel,
+  site=UBia,
+  site=UBo,
+  site=Cle,
+  site=Del,
+  site=GU,
+  site=UIn,
+  site=ULe,
+  site=ULi,
+  site=TUM,
+  site=LMU,
+  site=INa,
+  site=IPa,
+  site=UPra,
+  site=ISa,
+  site=ISA,
+  site=USo,
+  site=UStr,
+  site=NPIT,
+  botupPM, % we want to work via bottom up PM distribution,
+  % alternative: (can be combined)
+  % topdownPM, % the coordinator distributes PM as follows:
+  % FAURM=72,
+  % UBelRM=72,
+  % UBiaRM=72,
+  % UBoRM=72,
+  % CleRM=72,
+  % DelRM=72,
+  % GURM=72,
+  % UInRM=72,
+  % ULeRM=72,
+  % ULiRM=72,
+  % TUMRM=72,
+  % LMURM=72,
+  % INaRM=72,
+  % IPaRM=72,
+  % UPraRM=72,
+  % ISaRM=72,
+  % ISARM=72,
+  % USoRM=72,
+  % UStrRM=72,
+  % NPITRM=72,
   callname = ICT Call 1,
   callid = FP7-???-200?-?,
   instrument= Small or Medium-Scale Focused Research Project (STREP), 
@@ -49,26 +72,22 @@
   objective =?????,
   months=48,
   compactht]
-\begin{abstract}
-  Writing grant proposals is a collaborative effort that requires the integration of
-  contributions from many individuals. The use of an ASCII-based format like {\LaTeX}
-  allows to coordinate the process via a source code control system like
-  {\textsc{Subversion}}, allowing the proposal writing team to concentrate on the contents
-  rather than the mechanics of wrangling with text fragments and revisions.
+  \begin{abstract}
+    \ednote{MK: write something here}
 \end{abstract}
 
 \tableofcontents
 
-\begin{todo}{from the proposal template}
+\begin{todo}{from the proposal template}\color{red}
   Recommended length for the whole part B: 50--60 pages (including tables, references,
   etc.)
 \end{todo}
-\include{quality}\newpage
-\include{implementation}\newpage
-\include{impact}\newpage
+\input{excellence}\newpage
+\input{impact}\newpage
+\input{implementation}\newpage 
 \end{proposal}
-\include{members}
-\include{issues}
+\input{members}
+\input{issues}
 \end{document}
 
 %%% Local Variables: 
