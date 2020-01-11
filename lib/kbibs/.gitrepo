@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:KWARC/bibs.git
 	branch = master
-	commit = 426f0076d35920b1b24660aeb38d449b5b884568
-	parent = 8b1d2144e2c82f80905edfe111b19ea2736400ea
+	commit = f570482e47557ba5e76e863e84f0bcdc2580c592
+	parent = d260f7a96f6fb79c2d5309be8fa9cdd1a0ada280
 	method = merge
 	cmdver = 0.4.0
