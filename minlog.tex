@@ -1,0 +1,74 @@
+[LMU München]
+
+The Minlog system <http://minlog-system.de> implements a theory of
+computable functionals (TCF, cf. [SchwichtenbergWainer12], Ch.7).).
+It is a form of higher order arithmetic where partial functionals are
+first-class citizens.
+
+The intended model of TCF is the Scott-Ershov model $C$ of partial
+continuous functionals [Ershov77].  Computable functionals are defined
+by so-called computation rules, a form of (possibly non-terminating)
+defining equations understood as left-to-right conversion rules.  An
+important example is the corecursion operator, which is needed to
+define functions operating for instance on streams of signed digits (a
+convenient format to represent real numbers).  The logical framework
+allows to declare a proven equality as a rewrite rule.  Now it is
+tempting to identify two terms or formulas when they have the same
+normal form w.r.t. rewriting (including of course beta-conversion);
+this is often called deduction modulo rewriting.  However, in a setup
+like TCF where non-termination is allowed we cannot use normal forms,
+but we can consider two terms or formulas as identical when they have
+a common reduct.  This drastically simplifies proofs involving real
+number arithmetic.
+
+Another central feature of TCF (and hence the Minlog system) is that
+it internalizes a proof-theoretic realizability interpretation (in the
+form of Kreisel's so-called modified realizability, with realizers of
+higher type).  More precisely, for every (co)inductive predicate we
+have another one with one argument more, denoting a realizer.  It is
+important that this realizers is expressed in the term language of TCF
+(an extension of G\"odel's system $T$).  Since a realizer can be seen as
+a program representing the computational content of a constructive
+existence proof (expressing that a certain specification has a
+solution), we now can reason about such programs in a formal way,
+inside TCF.  In fact, given a proof M in TCF of a specification all x
+ex y A(x,y) we can extract a term (program) t$_M$ and automatically
+generate a new proof of all x A(t$_M$(x)).  In other words, for
+programs generated in this way from existence proofs, formal
+verification is automatic.  Note that for a proof involving
+coinduction the extracted term contains the (non terminating)
+corecursion operator.  Of course, for efficient evaluation in a second
+step we want to translate our extracted term into an efficient
+(functional) programming language like Haskell.
+
+Other aspects of Minlog are more common.  It is a proof system in
+Gentzen-style natural deduction and therefore based on proof terms
+(the so-called Curry-Howard correspondence).  We distinguish between
+(co)inductive predicates with and without computational content; in
+fact, computational content only arises from (co)inductive predicates
+marked as computationally relevant (c.r.).  In particular, both
+universal und existential quantifiers do not influence computational
+content: one needs to relativize them to c.r. predicates (like
+totality) to make them computationally relevant.
+
+A central application area of Minlog is to formalize Bishop-style
+[Bishop67] constructive analysis and extract interesting algorithms
+from proofs. An example is the Intermediate Value Theorem treated in
+[LindstroemPalmgrenSegerbergStoltenberg08].  More recently we have
+extracted algorithms operating on (both signed digit and Gray-coded)
+stream-represented real numbers from proofs which never mention
+streams.  They come in by relativizing real number quantifiers to
+appropriate coinductive predicates [Berger09].
+
+The work planned to be done by the Minlog group is to extend this kind
+of work further into constructive analysis, e.g. Euler's existence
+proof of solutions of ODEs.  We would like to learn from the
+experience of other proof assistant developers working on related
+matters, both conceptually and by sharing libraries.  It would be very
+helpful if this can be done in a unified setting where different
+approaches can be compared.
+
+Here we need to go a little futher and propose to express Minlog
+proofs in Dedukti.
+
+One Postdoc and one Phd position
