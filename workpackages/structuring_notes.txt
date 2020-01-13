@@ -1,0 +1,20 @@
+Just like software, proofs usually exist at two levels: user-written source code at the high-level and a machine-compiled prover-specific low-level representation.
+This yields two fundamentally different ways to integrate provers, both offering different advantages.
+
+Firstly, WP 1 pursues inegration through standardization on a universal *low-level* language.
+This is similar to the use of the x86 as the standard architecture for software and has similar advantages: in particular, a single architecture such as Dedukti can be used to run (i.e., check) proofs from any number of proof assistants.
+
+Secondly, WP 7 extends the above by additionally developing a universal *high-level* language.
+It offers complementary advantages: proofs represented in this language are not necessarily checkable efficiently by Dedukti; but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
+This is critical for provers: because logics are much harder to interpret than programming languages, each source language can be interpreted only by the associated prover.
+Therefore, provers must export also standardized high-level representations in order to exploit the integration potential they offer.
+
+Concretely, we extend the Dedukti language with appropriate high-level features.
+This will include
+- theories: a general term we use to unify a variety of module system constructs such as type classes or locales,
+- derived declarations: high-level declarations such as inductive type definitions, whose semantics is given by elaboration into more primitive constructs,
+- metadata and document structure annotations.
+The low- and high-level languages will be tightly integrated: any declaration or object may be given alternatively through its high or low-level representation.
+The prover exports from WP 3 will be such that they produce both representations whenever possible.
+
+Then we leverage this design in several applications including a Logipedia-wide search service.
