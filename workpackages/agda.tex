@@ -19,7 +19,8 @@ be checked in Dedukti. This exploratory work uncovered several
 challenges and opportunities for further work, which are outlined
 below.
 
-(1) To support the construction of proof terms, Agda provides powerful
+\begin{enumerate}
+\item To support the construction of proof terms, Agda provides powerful
 features such as dependent pattern and copattern matching, eta
 equality for functions and record types, and definitional proof
 irrelevance. The first one – dependent pattern matching – can be
@@ -42,20 +43,20 @@ size of the type annotation, or alternatively we can extend the
 Dedukti language with type-directed conversion rules to render the
 type annotations unneccessary.
 
-(2) Another unique feature of Agda is the support for first-class
+\item Another unique feature of Agda is the support for first-class
 universe level polymorphism. In particular, Agda has a built-in type
 of levels that has complex structure of (in)equality between
 levels. Compared to universe polymorphism in Coq, an additional
 challenge is that levels in Agda can contain arbitrary terms as
 subexpressions. Our plan is to define a sound and complete embedding
-of Agda’s level type in Dedukti, based on the existing 1work on
+of Agda’s level type in Dedukti, based on the existing work on
 encoding AC (associative-commutative) theories. This would both serve
 as a stress test of how well Dedukti can handle complex equational
 theories, and improve our understanding of type theories with
 first-class universe level polymorphism, which would be useful for the
 implementation of Agda.
 
-(3) In contrast to Coq and Lean, Agda does not have a well-defined
+\item In contrast to Coq and Lean, Agda does not have a well-defined
 core language to which proofs are elaborated. Instead, definitions are
 translated to an internal representation that is relatively close to
 the user input. This provides a challenge when translating Agda proofs
@@ -68,7 +69,7 @@ trustworthiness of Agda proofs, and it would make it much easier to
 export Agda terms to other languages (such as Dedukti in the context
 of this project).
 
-(4) Agda provides an experimental option for extending the language
+\item Agda provides an experimental option for extending the language
 with user-defined rewrite rules, which are very similar to the rewrite
 rules provided by Dedukti. Because of this similarity, we expect it to
 be straightforward to translate rewrite rules from Agda to
@@ -81,7 +82,7 @@ universe. Hence we plan to collaborate with the teams working on those
 languages to improve the support for these features where there is
 overlap.
 
-One research engineer at Chalmers, and one PhD student or postdoc at TU Delft.
+\textbf{Budget requirements:} One research engineer at Chalmers, and one PhD student or postdoc at TU Delft.
 
 Question: does this task belong to WP1 or WP2?
 
