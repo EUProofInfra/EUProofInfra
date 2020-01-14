@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:KWARC/LaTeX-proposal.git
 	branch = master
-	commit = 9517a7f7fbe3dae59a0cb787dc00be348a52571e
-	parent = 0dbbb5383b5c58ff2b083d317df2943c4d9c5568
+	commit = 6f7c8c0b2ce56b80b9f7336e66950a0669ec942c
+	parent = cc2588ff1f6557f7441dbced69d299cb204808e5
 	method = merge
 	cmdver = 0.4.1
