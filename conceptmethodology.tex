@@ -7,32 +7,32 @@ PVS, the proved operating system seL4 \cite{Klein09}, and the proved C
 compiler CompCert \cite{Leroy06}.  Also in the realm of pure mathematics,
 formal proofs have convinced us of the
 correctness of several complex proofs, such as those of the Feit-Thompson
-theorem \cite{Gonthier13}, Hales' theorem
+theorem \cite{Gonthier13}, Hales' theorem (Kepler's conjecture)
 \cite{Hales17}, etc.  The development of these formal proofs has led
 to the construction of huge libraries, totalling millions of hours of
 work, that cover a significant part of mankind's mathematical knowledge.
 
 Software development has always been accompanied with the definition
-of standards, that make systems interoperable and data
-sustainable. For example, web browsers are interoperable and websites
-are sustainable because they all comply with web standards such as HTML
-and JavaScript. The
-area of formal proofs is however an exception. So, while we had in the
-past an (informal) proof of Pythagoras' theorem or Fermat's little
-theorem, the same proof now has different formalizations in {\sc Coq},
-{\sc Matita}, {\sc HOL Light}, etc. This lack of standards is the
-major weakness of this area, as it jeopardizes the usability and the
-sustainability of these libraries. Indeed, each library is specific to
-a proof system, or often even to a specific version of this
-system. In general, a library developed in one system cannot be used
-in another, and when the system is no longer maintained, the library may
+of standards that make systems interoperable and data sustainable. For
+example, web browsers are interoperable and websites are sustainable
+because they all comply with web standards such as HTML and
+JavaScript. The area of formal proofs is however an exception. So,
+while we had in the past an (informal) proof of Pythagoras' theorem or
+Fermat's little theorem, the same proof now has different
+formalizations in {\sc Coq}, {\sc Matita}, {\sc HOL Light}, etc. This
+lack of standards is the major weakness of this area, as it
+jeopardizes the usability and the sustainability of these
+libraries. Indeed, each library is specific to a proof
+system, or often even to a specific version of this system. In
+general, a library developed in one system cannot be used in another,
+and when the system is no longer maintained, the library may
 disappear. Being a major weakness, designing a standard for formal
 proofs is also a major challenge.
 
 On more philosophical grounds, this lack of a standard jeopardizes the
 universality of logical truth, just like non-Euclidean geometries
 did in the 19th century, as some statements could be true in one
-geometry, but false in others.  This lack of universality severely
+ageometry, but false in others.  This lack of universality severely
 limits the spreading of formal proofs in non-specialist
 communities. For instance, teaching formal proving to undergraduate
 students in a logic course is difficult, as it
@@ -114,13 +114,13 @@ it relies and in which other theories it can be used, a domain traditionally cal
 
 In the years 2015--2020, we started to focus on the translation of
 proofs from one library to another \cite{Dowek17,Thire18}. This led us
-to propose an on-line system-independent encyclopedia of formal proofs
-{\sc Logipedia} ({\tt http://logipedia.science}) in which each proof
-is labeled with the axioms and computation rules it uses, indicating
-the systems in which it can be used. In particular, we
-have showed that the arithmetic library of {\sc Matita} can be
+to propose an on-line system-independent encyclopedia of formal
+proofs, called {\sc Logipedia} ({\tt http://logipedia.science}), in
+which each proof is labeled with the axioms and computation rules it
+uses, indicating the systems in which it can be used. In particular,
+we have showed that the arithmetic library of {\sc Matita} can be
 translated into five other, significantly different, systems: {\sc HOL
-Light}, {\sc Isabelle}, {\sc PVS}, {\sc Coq}, and {\sc Lean},
+  Light}, {\sc Isabelle}, {\sc PVS}, {\sc Coq}, and {\sc Lean},
 preserving the readability of the statements of the theorems.
 
 These successes have convinced us that we are now ready to scale up
@@ -178,7 +178,7 @@ our priorities are different.
 {\sc Coq}, {\sc FoCaLiZe}, {\sc HOL Light}, {\sc HOL4}, {\sc
 Isabelle}, {\sc Matita}, and {\sc Rodin} in {\sc Dedukti}. We propose
 to instrument these systems so that they can produce {\sc Dedukti}
-proofs, that we can include in {\sc Logipedia}.
+proofs that we can include in {\sc Logipedia}.
 
 \item
 For other theories, such as those of {\sc Abella}, {\sc Agda}, {\sc
@@ -186,23 +186,25 @@ Lean}, {\sc Minlog}, {\sc Mizar}, {\sc PVS}, {\sc TLA+}, the work is
 in progress, or not yet started.  So we must first understand how they
 can be expressed in {\sc Dedukti}.
 
-\item
-Besides the standard libraries of these systems, large libraries
-have been developed: the Isabelle Archive of formal Proofs,
-Flyspeck, MathComp, CompCert...  We aim to include some of
-these libraries in {\sc Logipedia}.
+\item Besides the standard libraries of these systems, large libraries
+  have been developed: the {\ec Isabelle Archive of formal Proofs},
+  {\sc Flyspeck}, {\sc MathComp}, {\sc CompCert}...  We aim to include
+  some of these libraries in {\sc Logipedia}.
   
 \item
 Besides proof systems, we also want to include proofs coming from
 automated theorem provers, SAT solvers, SMT solvers, and model
 checkers.  So we must instrument some of these systems so that they
-can produce {\sc Dedukti} proofs, that we can include in {\sc
+can produce {\sc Dedukti} proofs that we can include in {\sc
 Logipedia}.
 
 \item
 We want to develop algorithms to analyze which symbol, axiom, rewrite
 rule is used in each proof, and consequently in which system each proof
-can be used.
+can be used. We also want to develop algorithms to eliminate some of the 
+symbols, axioms, and rewrite rules used in a proof in order to be able to 
+use it in more systems.
+
 
 \item
 Each library imported in {\sc Logipedia} will come with its own
@@ -220,16 +222,16 @@ an inner structure.
 
 This idea of building such a standard for proofs has already been
 investigated in the past, such as in the Qed manifesto \cite{Qed94}, but
-have produced limited results.
+has produced limited results.
 
 Our thesis is that, since the
-Qed project, the situation has radically changed, because after
+Qed project, the situation has radically changed. After
 thirty years of research, we have an empirical evidence that most of
 the formal proofs developed in one of these systems can also be
-developed in another, we understand the relationship between the
-theories implemented in these systems much better, we have developed
+developed in another. We understand the relationship between the
+theories implemented in these systems much better. We have developed
 several logical frameworks, extending predicate logic, in which these
-theories can be expressed, and we have developed reverse mathematics
+theories can be expressed. And we have developed reverse mathematics
 algorithms to analyze which axioms and rules are used in each proofs
 and algorithms, such as constructivization algorithms, to translate
 proofs from one theory to another.
