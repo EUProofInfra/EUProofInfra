@@ -31,7 +31,7 @@ PROPCLS.clssty = proposal.cls pdata.sty
 PROPETC.sty = workaddress.sty metakeys.sty sref.sty
 EUPROPCLS.clssty = euproposal.cls
 PROPCLS = $(PROPCLS.clssty:%=$(PROPCLS.dir)/%) $(EUPROPCLS.clssty:%=$(EUPROPCLS.dir)/%) $(PROPETC.sty:%=$(PROPETC.dir)/%)
-
+#ORRM = || $(RM) $@
 all: $(TBIB.pdf) $(TSIMP.pdf)
 
 submit:
@@ -59,27 +59,27 @@ install: submit
 	git push
 
 $(TSIMP.pdf): %.pdf: %.tex $(PROPCLS) $(PDATA)
-	$(PDFLATEX) $< || $(RM) $@
+	$(PDFLATEX) $< $(ORRM)
 
 $(PDATA): %.pdata: %.tex
-	$(PDFLATEX) $<
+	$(PDFLATEX) $< $(ORRM)
 
 $(TBIB.aux): %.aux: %.tex
-	$(PDFLATEX) $<
+	$(PDFLATEX) $< $(ORRM)
 
 $(TBIB.pdf): %.pdf: %.tex $(SRC) $(BIB) $(PROPCLS) 
-	$(PDFLATEX) $<  || $(RM) $@
+	$(PDFLATEX) $<  $(ORRM)
 	sort $(PROPOSAL:%.tex=%.delivs) > $(PROPOSAL:%.tex=%.deliverables)
 	@if (test -e $(patsubst %.tex, %.idx,  $<));\
 	    then makeindex $(patsubst %.tex, %.idx,  $<); fi
 	biber $(basename $<)
 	@if (grep "(re)run" $(patsubst %.tex, %.log,  $<)> /dev/null);\
 	    then biber $(basename $<); fi
-	$(PDFLATEX)  $< || $(RM) $@
+	$(PDFLATEX)  $< $(ORRM)
 	@if (grep Rerun $(patsubst %.tex, %.log,  $<) > /dev/null);\
-	   then $(PDFLATEX)  $<  || $(RM) $@; fi
+	   then $(PDFLATEX)  $<  $(ORRM); fi
 	@if (grep Rerun $(patsubst %.tex, %.log,  $<) > /dev/null);\
-	    then $(PDFLATEX)  $<  || $(RM) $@; fi
+	    then $(PDFLATEX)  $<  $(ORRM); fi
 
 clean: 
 	rm -f *~ *.log *.ilg *.out *.glo *.idx *.ilg *.blg *.run.xml *.synctex.gz *.cut *.toc
