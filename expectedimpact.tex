@@ -3,69 +3,29 @@ Integrating activities for starting communities (listed on page 56 of
 the part 4 of Horizon 2020 Work Programme 2018-2020). It also clearly
 refers to one of the mentioned cross-cutting activities: open science.
 
-\paragraph{Wider and more efficient access --- New research infrastructure}
-In a shared public encyclopedia providing virtual access, each user,
-in research, industry, and eucation, can find the formal proofs she
-needs in the logic she wants, regardless the logic and system this
-proof has been developed in.
+\subsection{Wider, simplified, and more efficient access}
 
-\paragraph{Synergy --- Open research data.}
-Instead of having a scattered community, each group developing a
-library for its own logic and its own system, researchers and
-engineers will be able to work together on common developments,
-reusing proofs developed in other systems and in other communities.
+The shift from informal, pencil and paper, proofs to formal
+computerized proof has been a major improvement on the never ending
+quest for logical rigor, with a strong impact both on mathematics,
+where much more complex proofs can be built, and computer science,
+where safety and security can be dramatically improved with the use of
+formal methods.
 
-%In terms of networking, we have already organized one logipedia
-%meeting and the funding will insure we can continue to organize
-%large-scale international meetings on a regular basis. The first
-%logipedia event has proven to be very valuable in terms of exchange of
-%best practices.
+But this major step forward also has a negative side effect: we have
+moved from a time where we had (informal) proofs of Pythagoras'
+theorem or Fermat's little theorem, to a time where we have (formal)
+proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL Light}, in {\sc
+PVS}, etc.  of these theorems, jeopardizing the universality of
+mathematical truth.
 
-\paragraph{Partnership with industry}
-
-Several European and non European companies are member of the project,
-as contributors or as members of the future {\sc Logipedia} user's group.
-
-\paragraph{Education --- Closer interaction between a larger number of
-researchers.}
-Education to formal methods in computer science and to formal proofs
-in mathematics always hits the same obstacle: the need to choose a
-specific theory or system, in contradiction with the claimed
-universality of logical truth. Education to formal methods and formal
-proofs will gain in universality once it will be demonstrated that
-this choice amounts to include, or not, a few axioms and reduction
-rules. We also defend that this renewal of logic education at
-university level and before is of prime importance in our ``post-truth
-era''.
-
-\paragraph{Better management of the continuous flow of data.}
-A shared encyclopedia allows a better sustainability of the formal
-proofs developed over time. Too many formal proofs developed in the
-past are not available any more.
-
-
-
--------------------------
-
-As discussed above, the shift from informal, pencil and paper, proofs
-to formal computerized proof is a major improvement on the never
-ending quest for logical rigor, with a strong impact both on
-mathematics, where much more complex proofs can be built, and computer
-science, where safety and security can be dramatically improved with
-the use of formal methods. But this major step forward also has a
-negative side effect: we have moved from a time where we had
-(informal) proofs of Pythagoras' theorem or Fermat's little theorem,
-to a time where we have (formal) proofs in Coq, in Matita, in HOL
-Light, in PVS, etc. of these theorems, jeopardizing the universality
-of mathematical truth.
-
-We see this loss of universality of mathematical truth as the main
-obstacle to the diffusion of the notion of formal proof, in the
-communities of mathematicians and computer scientists, but also
-engineers and students. Our long-term goal is to resurrect the
-universality of mathematical truth in order to build a strong formal
-proof community including specialists and non-specialists such as
-working mathematicians, engineers and students.
+This loss of universality of mathematical truth as the main obstacle
+to the diffusion of the notion of formal proof, in the communities of
+mathematicians and computer scientists, but also engineers and
+students. Our long-term goal is to resurrect the universality of
+mathematical truth in order to build a strong formal proof community
+including specialists and non-specialists such as working
+mathematicians, engineers and students.
 
 This requires to express the theories implemented in these systems in
 a common logical framework, each with a finite number of axioms and
@@ -74,15 +34,41 @@ expressed in one system or in another, but to say which axioms and
 reduction rules it uses, as we have been used to since the development
 of non-Euclidean geometries.
 
+In a shared public encyclopedia providing virtual access, each user,
+in research, industry, and education, can find the formal proofs she
+needs in the logic she wants, regardless the logic and system this
+proof has been developed in.
+
+\subsection{New or more advanced research infrastructure}
+
+
+\subsection{Operators develop synergies}
+
 Having a standard for expressing theories and proofs and resurrecting
 this way the universality of mathematical truth will also make proof
 systems interoperable and will allow the construction of an on-line
-system-independent encyclopedia. More importantly, this will suppress
-one of the main obstacles to the diffusion of formal proofs in
-mathematics, computer science, industry, and education, just like the
-development of the html standard induced a renewal of document sharing
-in general and the definition of predicate logic induced a renewal of
-logic in the 1930's.
+system-independent encyclopedia.
+
+Instead of having a scattered community, each group developing a
+library for its own logic and its own system, researchers and
+engineers will be able to work together on common developments,
+reusing proofs developed in other systems and in other communities.
+
+More importantly, this will suppress one of the main obstacles to the
+diffusion of formal proofs in mathematics, computer science, industry,
+and education, just like the development of the html standard induced
+a renewal of document sharing in general and the definition of
+predicate logic induced a renewal of logic in the 1930's.
+
+
+%In terms of networking, we have already organized one logipedia
+%meeting and the funding will insure we can continue to organize
+%large-scale international meetings on a regular basis. The first
+%logipedia event has proven to be very valuable in terms of exchange of
+%best practices.
+
+\subsection{Innovation is fostered through a reinforced partnership of research
+infrastructures with industry}
 
 Innovation Formal methods are now an important part of some advanced
 industrial projects. For instance, mastering formal methods is key to
@@ -95,8 +81,95 @@ proofs more accessible to industry by avoiding each project to
 redevelop elementary proofs, but instead benefit of the formalization
 work shared with other communities.
 
+Several European and non European companies are member of the project,
+as contributors or as members of the future {\sc Logipedia} user's group.
 
-\paragraph{Key exploitable results.}
+From the industy point of view the key exploitable results are threefold
+
+\begin{enumerate}
+\item Crossverification.
+
+In the current state of affairs, when a compagny proves a piece of
+software correct using a system $X$, its client, or the certification
+authorities can check the proof developed by this compagny, but then
+need to use the same system $X$ to check this proof, so they need to
+trust the system $X$, which is a limitation. Several actors want to be
+able to check the proofs using a indepedent proof system, and even one
+they have developed themselves.
+
+A side effect of the construction of the {\sc Logipedia} platform is
+to incent all the proof systems to be able to produce proofs in a
+common language. Such proofs can then be all be checked by {\sc
+Dedukti}, and several other systems.
+
+Moreover, the certification authorities can develop their own
+proof-checker (the development of such a proof-checker takes from two
+to four weeks) so that they do not need to trust anyone else.
+
+\item Sustainability.
+
+When an industrial project is over, it is sometimes difficult,
+specially for small compagnies, to keep an archive of their work over
+a long period of time. In formal methods, most of the projects are a
+two-stage rocket. The first stage of the rocket contains basic
+developements that can be shared between the compagny and its
+competitors. The second contains developments that are specific to the
+project and that often contain industrial secrets.
+
+Sharing the first stage on a public encyclopedia (while keeping the
+second secret) contributes to the sustainability of the
+developements. They can, for instance, be reused decades later, and
+cannot be lost by the compagny.
+
+\item Interoperability.
+
+Several compagnies use several proof systems. First because some proof
+systems are better for some application domains and other are better
+for others, and also because these compagnies hire researchers and
+engineers that have different cultures and are more efficient using the
+tools they know.
+
+A side effect of the construction of the {\sc Logipedia} platform is
+that such developement are made interoperable. First because a proof
+developed in one system can be translated into another. Second because
+proofs developed in different systems can be combined in {\sc
+Logipedia} itself.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\subsection{Education}
+
+
+Education to formal methods in computer science and to formal proofs
+in mathematics always hits the same obstacle: the need to choose a
+specific theory or system, in contradiction with the claimed
+universality of logical truth. Education to formal methods and formal
+proofs will gain in universality once it will be demonstrated that
+this choice amounts to include, or not, a few axioms and reduction
+rules. We also defend that this renewal of logic education at
+university level and before is of prime importance in our ``post-truth
+era''.
+
+\subsection{Closer interaction between a larger number of
+researchers}
+
+
+\subsection{Better management of the continuous flow of data.}
+
+A shared encyclopedia allows a better sustainability of the formal
+proofs developed over time. Too many formal proofs developed in the
+past are not available any more.
+
+\section{Key exploitable results.}
 
 - Logipedia in itself from TRL 3 to TLR 4
 
@@ -105,7 +178,7 @@ work shared with other communities.
 - Rechecking formal proofs for higher Evaluation Assurance Level
 
 
-\subsection{Medium Term Expected Outcome}
+\section{Medium Term Expected Outcome}
 
-\subsection{Long Term Expected Outcomes}
-\subsection{Use Cases}
+\section{Long Term Expected Outcomes}
+\section{Use Cases}
