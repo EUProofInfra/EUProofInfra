@@ -1,5 +1,5 @@
-Bugs kill and, if testing may reveal some bugs, only
-formal verification can guarantee their absence.  Thus, we should
+Bugs kill and, if testing may reveal some bugs, only formal modeling
+and formal verification can guarantee their absence.  Thus, we should
 never fly in an autonomous plane fully driven by a piece of software,
 that has not been formally verified.
 
@@ -42,9 +42,17 @@ another.  Unfortunately, the development of formal methods is slowed
 down by the large number of proof systems and the lack of a common
 theory used by these systems.  Because each small community is
 centered around one theory and one system, and each system has its own
-library of proofs, interoperability, sustainability, and
-crossverification are restricted, and often same work has to be done
-again elsewhere.  For instance, the Paris metro line 14 has been proved
+library of proofs, interoperability---that is the possibility for one
+user to use a proof developed in another system---,
+sustainability---that is the possibility to use a proof decades after
+it has been developed---, and crossverification---that is the
+possibility to have a higher assurance in the correctness of some
+statement by verifying its proof in a system different from that in
+which it has been defined---are restricted, even if some provers
+sometimes call external tools to help building some proofs, and often
+same work---for instance, developing a calculus library with theorems
+about derivatives, sinus, cosinus, etc.---has to be done again
+elsewhere.  For instance, the Paris metro line 14 has been proved
 correct in {\sc Atelier B}, while the Nasa detect-and-avoid system for
 unmanned aircraft system has been proved correct in {\sc PVS}. Some
 projects, such as the Flyspeck project, have been started in different
@@ -52,18 +60,20 @@ systems and required some effort to be completed in just one system.
 
 There are around twenty major proof systems in the world (Figure
 \ref{systems}) and making these systems interoperable would avoid work
-duplication, reduce the development time, and allow independent
-verification.  After three decades dedicated to the development of
+duplication, reduce the development time, and allow 
+crossverification.  After three decades dedicated to the development of
 these systems, allowing such a cooperation between these systems is
-the next step in the development of the formal proof technology.  A
-cloud of formal proofs could bring to the applications of formal proof
-technology the same boost that the cloud has brought to computing.
+the next step in the development of the formal proof technology.  
 
 In January 2019, we put online a first prototype of {\sc Logipedia},
 an encyclopedia of formal proofs, expressed in the language of five
 different systems. At that time, this encyclopedia contained only a
-few hundreds proofs. We organized a meeting to discuss the future
-of this project {\tt
+few hundreds proofs.  Convinced that such a cloud of formal proofs
+could bring to the applications of formal proof technology the same
+boost that the cloud has brought to computing, and also that managing
+such a large encyclopedia---for instance being able to query a proof
+with a search engine---required some a interdisciplinary effort, we
+organized a meeting to discuss the future of this project {\tt
   http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
 meeting brought together 38 researchers from Austria, Czech Republic,
 France, Italy, the Netherlands, and Poland. Since then, colleagues
