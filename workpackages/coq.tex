@@ -1,0 +1,34 @@
+%[Bologna,Dowek]
+
+%\textbf{Budget requirements:} One one PhD student or postdoc at UBo.
+
+Coq is \ldots\ednote{Insert fancy description of Coq}.
+
+CoqInE is a plugin for Coq to extract Coq proofs to Dedukti. The code of CoqInE has to solve three distinct problems:
+\begin{enumerate}
+ \item interact with the always evolving internal data structures of Coq, recovering from the optimized representations the logic information of the proof terms
+ \item translate the proof terms to the encoding of the logic of Coq in Dedukti
+ \item output actual Dedukti code
+\end{enumerate}
+
+Point 1 is absolutely system-dependent and a similar effort is performed by the multiple plug-ins that try to extract proof terms from Coq for several purposes (e.g. to apply AI methods to automatic proof search). It is incredibly hard to implement because of the complexity of the code base of Coq that is optimized for performance.
+
+Point 2 is also problematic for two reasons. The first one is that the encoding in Dedukti requires some information, typically types of sub-expressions, that are not stored in Coq. Therefore the code of Coqine must call specific Coq code to make the implicit information explicit, thus tieing point 2 too to the specific implementaiton of Coq. The second reason, which is more critical, is that the type theory of Coq is extremely large and constantly evolving, with features like an ML-style module system or like ad-hoc constructs for optimizations (e.g. primitive record projections). All these features have no corresponding representation in Dedukti. Therefore, to map Coq proofs to Dedukti, the type theory of Coq needs to be translated to a core one representable in Dedukti, for example by flattening out in details all modules, comprising the ones obtained by applying functors ---- i.e. higher order modules --- to inputs.
+
+This translation to a core calculus is not implemented in Coq and the amount and complexity of code necessary for it is very significant. Therefore, for the time being, CoqInE only covers a small subset of Coq and it is only able to export the few libraries that do not dependend at all on the module system and other advanced features. Even the standard library is currently not exported in its entirety.
+
+In 2019 Sacerdoti Coen (UBo) has implemented a fork of Coq that basically performs both point 1 above and the part of point 2 consisting in flattening out the module systems, among other things. The fork outputs for each library a huge tree of XML files that describe the proof terms of Coq in such a way that no tool should need to interact any more with Coq internals. The XML was later translated by Kohlhase et alt. (UBo + U\ednote{???}) to the MMT system, another logical framework to encode different logics and their libraries.
+
+In this task we plan to:
+\begin{enumerate}
+ \item re-factor the code of CoqInE removing all dependencies from Coq code. The new implementation will be a stand-alone executable that takes the XML files in input.
+ \item augment the XML exportation tool to make explicit some additional typing information that is required by CoqInE to obtain a Dedukti encoding, but that was not necessary for the MMT encoding and thus not exported.
+ \item optimize the XML exportation tool that currently exhaust memory on a few libraries that contain extremely large proof terms; this is likely to require a re-ingeenerization of some parts of the tool that currently takes more than one week to export the maintained, most interesting Coq libraries.
+ \item merge upstream the fork for the XML exportation tool by negotiating with the Coq developers.
+ \item integrate the XML exportation tool and CoqInE in the continuous building system of Coq in order to feed Logipedia every time a new release of a Coq library is committed.
+\end{enumerate}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../propB"
+%%% End:
