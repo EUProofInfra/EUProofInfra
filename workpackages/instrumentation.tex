@@ -29,13 +29,13 @@ HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle, HOL4,
 Atelier B, and Rodin. The systems Matita, HOL Light, FoCaliZe, and
 Coq, already have been instrumented to export proofs that can be
 checked in Dedukti. Our first work package is to do the same thing for
-Coq, Agda, Lean, Minlog, Isabelle, HOL4, Atelier B, and
-Rodin. Three methods have to be used here: some of the systems
+Agda, Minlog, Isabelle, HOL4, and Atelier B.
+Three methods have to be used here: some of the systems
 (Automath style), such as Coq, Agda, Lean, and Minlog already have
 proof-terms that can be output, thus the main task is to translate
 these proofs into the Dedukti format. Others (LCF style), such as
 Isabelle and HOL4, have an inference kernel that can be
-instrumented, and often already has, the main task here is to transform
+instrumented, the main task here is to transform
 the internal proof-object into an external proof-term. Others, such as
 Atelier B and Rodin are slightly more difficult to address. For those,
 we need to use the water ford method: extract an incomplete trace (a
@@ -46,10 +46,6 @@ as experimented with Atelier B and Zenon.
 \begin{tasklist}
 \begin{task}[id=agda,title=instrument Agda]
 \input{workpackages/agda}
-\end{task}
-
-\begin{task}[id=lean,title=Instrument Lean]
-[?]
 \end{task}
 
 \begin{task}[id=minlog,title=Instrument Minlog]
@@ -67,10 +63,8 @@ as experimented with Atelier B and Zenon.
 \begin{task}[id=atelier-b,title=Instrument Atelier-B]
 \ednote{Southhampton, Toulouse, Clearsy writes this}
 \end{task}
-\begin{task}[id=rodin,title=Instrument Rodin]
-\ednote{Southhampton, Toulouse, Clearsy}
-\end{task}
-\begin{task}[id=matita,title=integrate the translator to Matita in Matita itself and export the full Matita library]
+
+\begin{task}[id=matita,title=Integrate the Matita translator in Matita itself]
 \ednote{Bologna}
 \end{task}
 \end{tasklist}
