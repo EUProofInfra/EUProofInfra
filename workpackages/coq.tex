@@ -17,7 +17,7 @@ Point 2 is also problematic for two reasons. The first one is that the encoding 
 
 This translation to a core calculus is not implemented in Coq and the amount and complexity of code necessary for it is very significant. Therefore, for the time being, CoqInE only covers a small subset of Coq and it is only able to export the few libraries that do not dependend at all on the module system and other advanced features. Even the standard library is currently not exported in its entirety.
 
-In 2019 Sacerdoti Coen (UBo) has implemented a fork of Coq that basically performs both point 1 above and the part of point 2 consisting in flattening out the module systems, among other things. The fork outputs for each library a huge tree of XML files that describe the proof terms of Coq in such a way that no tool should need to interact any more with Coq internals. The XML was later translated by Kohlhase et alt. (UBo + U\ednote{???}) to the MMT system, another logical framework to encode different logics and their libraries.
+In 2019 Sacerdoti Coen (UBo) has implemented a fork of Coq that basically performs both point 1 above and the part of point 2 consisting in flattening out the module systems, among other things. The fork outputs for each library a huge tree of XML files that describe the proof terms of Coq in such a way that no tool should need to interact any more with Coq internals. The XML was later translated by Kohlhase et alt. (UBo + FAU) to the MMT system, another logical framework to encode different logics and their libraries.
 
 In this task we plan to:
 \begin{enumerate}
