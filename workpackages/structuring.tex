@@ -1,75 +1,94 @@
 \begin{workpackage}[id=structuring,wphases=0-48,type=RTD,
-  short=Structured theories,% for Figure 5.
-  title=Structured theories,
+  short=Structured Theories and Metadata,% for Figure 5.
+  title=Structured Theories and Metadata,
   lead=FAU,
-  FAURM=36,USaRM=36]
+  FAURM=48,
+  USaRM=48]
   
-\ednote{MK: We need one coordinating site. original coordinators: Florian Rabe and Burkhart Wolff}
-\ednote{MK: interested parties (add their sites and RM here): David Deharbe, Nicola Gambino, Florian Rabe, Michael Rathjen,
+\ednote{Which sites are interested (add their sites and RM here)? David Deharbe, Nicola Gambino, Florian Rabe, Michael Rathjen,
 Dale Miller}
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
+Just like software, proofs usually exist at two levels: user-written source code at the high-level and a machine-compiled prover-specific low-level representation.
+This yields two fundamentally different ways to integrate provers, both offering different advantages.
 
-This includes notably:
-  \begin{compactitem}
-  \item \ldots
-  \end{compactitem}
-  A key aspect will be to foster \ldots
+Firstly, \wpref{theories} pursues inegration through standardization on universal *low-level* representations.
+This is similar to the use of the x86 as the standard architecture for software and has similar advantages: in particular, a single architecture such as Dedukti can be used to run (i.e., check) proofs from any number of proof assistants.
+
+Secondly, this work package extends the above by additionally developing universal standards for *high-level* representations.
+It offers complementary advantages: proofs represented in this language are not necessarily checkable efficiently by Dedukti; but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
+This is critical for provers: because logics are much harder to interpret than programming languages, each source language can be interpreted only by the associated prover.
+Therefore, provers must export also standardized high-level representations in order to exploit the integration potential they offer.
+
+This work package will be jointly coordinated by Florian Rabe at \site{FAU} and Burkhart Wolff at \site{USa}.
 \end{wpobjectives}
 
 
 \begin{wpdescription}
-\ednote{Erlangen, Saclay}
+We extend the Dedukti language with features for high-level representations.
+This will include
+\begin{compactitem}
+\item theories: a general term we use to unify a variety of module system constructs such as type classes or locales,
+\item derived declarations: high-level declarations such as inductive type definitions, whose semantics is given by elaboration into more primitive constructs,
+\item metadata annotations: a general framework for attaching information about semantics, document structure, and tool interaction.
+\end{compactitem}
 
-\begin{enumerate}
-\item concrete/surface syntaxes 
-\item Central Library Backend Systems 
-\item Cross-System Front-Ends/Portals (Logipedia, ...)
-\item Semantic Middleware-based System Interoperability
-\end{enumerate} 
+The low- and high-level representations will be tightly integrated: any declaration or object may be given alternatively through either or both of these.
+The prover exports from \wpref{instrumentation} will be such that they produce both representations whenever possible.
 
-Since proof-objects for substantial theory developments tend to be
-very large (the representation of current POs for the Isabelle/AFP can
-easily reach several TB although using techniques for compression), A
-technical pre-requisite for interchangeability, connectivity and
-advanced search consists in a structured, typed format for meta-data
-together with a flexible mechanism of their validation. Technically,
-this kind of meta-data has the form of a function annoconst : arg1 ->
-... -> argn -> proof-term -> proof-term where annoconst is a constant
-symbol which represents an identity in the proof-term (so, any import
-function of a specific system can actually ignore it), and where the
-argi represent terms with meta-information such as, eg., “this
-proof-term represents a free data-type construction of the form ...”,
-or “this part of the proof is a derivation of a free data-type of the
-following form ...”, “this lifting over assumptions represents in
-Isabelle a Locale-instantiation”, “this part of a theory
-development is connected to ... ”, “this theorem belongs to the
-sub-class of XXX ... theorems”, etcpp. For arguments of annotations,
-validation-functions can be defined that may check that the argument
-terms satisfy a certain property wrt. to the proof-term and the
-current logical context. Dedukti will provide a framework that allows
-for each proof-system (Coq, HOL4, Isabelle...) to declare meta-data
-together with validations and thus communicate tool-specific knowledge
-to other systems. This framework can be seen as a particular form of
-an ontology definition language.
- 
-WP8: Indexing and browsing [?]  Construct tools to index and browse
-this encyclopedia, that is find the theorem one needs, either by
-looking for it with its name, with its statement, or with symbols
-occurring in it.
+Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=modules,title=Module Systems]
+\begin{task}[id=tbd,title=TBD]
 \end{task}
 \end{tasklist}
 
 \begin{wpdelivs}
   \begin{wpdeliv}[due=3,miles=startup,id=requirements,dissem=PU,nature=DEM,lead=Inr]
-      {Requirements Analysis and Synchronization}
+      {TBD}
 \end{wpdeliv}
 \end{wpdelivs}
+
+
+%\begin{enumerate}
+%\item concrete/surface syntaxes 
+%\item Central Library Backend Systems 
+%\item Cross-System Front-Ends/Portals (Logipedia, ...)
+%\item Semantic Middleware-based System Interoperability
+%\end{enumerate} 
+%
+%Since proof-objects for substantial theory developments tend to be
+%very large (the representation of current POs for the Isabelle/AFP can
+%easily reach several TB although using techniques for compression), A
+%technical pre-requisite for interchangeability, connectivity and
+%advanced search consists in a structured, typed format for meta-data
+%together with a flexible mechanism of their validation. Technically,
+%this kind of meta-data has the form of a function annoconst : arg1 ->
+%... -> argn -> proof-term -> proof-term where annoconst is a constant
+%symbol which represents an identity in the proof-term (so, any import
+%function of a specific system can actually ignore it), and where the
+%argi represent terms with meta-information such as, eg., “this
+%proof-term represents a free data-type construction of the form ...”,
+%or “this part of the proof is a derivation of a free data-type of the
+%following form ...”, “this lifting over assumptions represents in
+%Isabelle a Locale-instantiation”, “this part of a theory
+%development is connected to ... ”, “this theorem belongs to the
+%sub-class of XXX ... theorems”, etcpp. For arguments of annotations,
+%validation-functions can be defined that may check that the argument
+%terms satisfy a certain property wrt. to the proof-term and the
+%current logical context. Dedukti will provide a framework that allows
+%for each proof-system (Coq, HOL4, Isabelle...) to declare meta-data
+%together with validations and thus communicate tool-specific knowledge
+%to other systems. This framework can be seen as a particular form of
+%an ontology definition language.
+% 
+%WP8: Indexing and browsing [?]  Construct tools to index and browse
+%this encyclopedia, that is find the theorem one needs, either by
+%looking for it with its name, with its statement, or with symbols
+%occurring in it.
+
+
 \end{workpackage}
 
 %%% Local Variables:
