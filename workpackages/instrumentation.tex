@@ -6,7 +6,7 @@
   InrRM=10,
   DelRM=48,
   GURM=48]
-  
+
 \ednote{MK: We need one coordinating site. original coordinators: Frédéric Blanqui and
   Jesper Cockx}
 \ednote{MK: interested parties (add their sites and RM here): David Deharbe,
@@ -14,7 +14,11 @@ Tobias Nipkow, Guillaume Genestier, Jesper Cockx, Guillaume Burel, Filip Marić,
 Wenzel, Helmut Schwichtenberg, Nicolas Magaud, Gaspard Férey, Ulf Norell, Claudio Sacerdoti Coen}
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
+  The objective of this work package is to bring systems already at
+  LRL level 2 to higher LRL levels, that is, to instrument the systems
+  for which we already know how to encode the proofs into Dedukti, and
+  make available the proofs of these systems into Logipedia so that
+  they can be exported into other systems.
 
 This includes notably:
   \begin{compactitem}
@@ -26,19 +30,19 @@ This includes notably:
 
 \begin{wpdescription}
 We know how to express in Dedukti the theories implemented in Matita,
-HOL Light, FoCaliZe, Coq, Agda, Lean, Minlog, Isabelle, HOL4,
-Atelier B, and Rodin. The systems Matita, HOL Light, FoCaliZe, and
-Coq, already have been instrumented to export proofs that can be
-checked in Dedukti. Our first work package is to do the same thing for
-Agda, Minlog, Isabelle, HOL4, and Atelier B.
+HOL4, Coq, Agda, Isabelle and Atelier B, and some of these systems
+have been partially instrumented to export proofs that can be checked
+in Dedukti. Our first work package is to complete this instrumentation
+to be able to export most of the proofs of these systems.
+
 Three methods have to be used here: some of the systems
-(Automath style), such as Coq, Agda, Lean, and Minlog already have
+(Automath style), such as Coq and Agda already have
 proof-terms that can be output, thus the main task is to translate
 these proofs into the Dedukti format. Others (LCF style), such as
 Isabelle and HOL4, have an inference kernel that can be
 instrumented, the main task here is to transform
 the internal proof-object into an external proof-term. Others, such as
-Atelier B and Rodin are slightly more difficult to address. For those,
+Atelier B are slightly more difficult to address. For those,
 we need to use the water ford method: extract an incomplete trace (a
 sequence of lemmas) and fill the gap using automated theorem proving,
 as experimented with Atelier B and Zenon.
@@ -68,7 +72,6 @@ as experimented with Atelier B and Zenon.
 \begin{task}[id=matita,title=Integrate the Matita translator in Matita itself]
 \input{workpackages/matita}
 \end{task}
-\end{tasklist}
 
 \begin{task}[id=coq,title=Instrument Coq]
 \input{workpackages/coq}
