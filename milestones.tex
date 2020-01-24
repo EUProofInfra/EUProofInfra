@@ -13,23 +13,37 @@
   survey complete and data quality validated.
 \end{todo}
 
-
-The work in the {\pn} project is structured by seven milestones, which coincide with the
-project meetings in summer and fall.  Since the meetings are the main face-to-face
-interaction points in the project, it is suitable to schedule the milestones for these
-events, where they can be discussed in detail. We envision that this setup will give the
-project the vital coherence in spite of the broad mix of disciplinary backgrounds of the
-participants.\ednote{maybe automate the milestones}
+\ednote{maybe automate the milestones}
 
 \begin{milestones}
   \milestone[id=kickoff,verif=Inspection,month=1]
-    {Initial Infrastructure}
-    {Set up the organizational infrastructure, in particular: Web Presence, project TRAC,\ldots}
-  \milestone[id=consensus,verif=Inspection,month=24]{Consensus} {Reach Consensus on the
-    way the project goes}
-  \milestone[id=exploitation,verif=Inspection,month=36]{Exploitation}{The exploitation
-    plan should be clear so that we can start on this in the last year.}
-  \milestone[id=final,verif=Inspection,month=48]{Final Results}{all is done}
+    {Organization setup}
+    {Set up the organizational infrastructure of the project: mailing lists, web site, consortium agreement, activity tracking, \ldots}
+
+  \milestone[id=logipedia-v1,verif=Inspection,month=12]
+     {Logipedia v1}
+     {Release of a first version of Logipedia with HOL Light standard library and parts of Matita standard library in 5 different systems: Coq, Matita, Lean, HOL and PVS}
+
+  \milestone[id=coq-stdlib,verif=Inspection,month=24]
+     {Coq in Logipedia}
+     {Integration of most of Coq standard library in Logipedia}
+
+  \milestone[id=isabelle-stdlib,verif=Inspection,month=24]
+     {Isabelle/HOL in Logipedia}
+     {Integration of most of Isabelle/HOL standard library in Logipedia}
+
+  \milestone[id=compcert,verif=Inspection,month=36]
+     {CompCert in Logipedia}
+     {Integration of most of the CompCert library in Logipedia}
+
+  \milestone[id=logipedia-v2,verif=Inspection,month=36]
+     {Logipedia v2}
+     {Release of a second version of Logipedia integrating important parts of the libraries of Isabelle, Coq, Matita and HOL4, and their translations in other systems}
+
+  \milestone[id=atelierb,verif=Inspection,month=48]
+     {Atelier B in Logipedia}
+     {Release of a tool able to translate a complete development in Atelier B into a complete Dedukti proof}
+
 \end{milestones}
 
 %%% Local Variables: 
