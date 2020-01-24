@@ -1,0 +1,224 @@
+========
+WP6: Concept alignment
+Coordinators: Filip Maric and Dale Miller
+
+Sites involve:
+  Paris, Saclay, Innsbruck, Prague, Strasbourg, Belgrade
+
+People stating an interest in WP6:
+  Florian Rabe, Cezary Kaliszyk, Dale Miller, Josef Urban, 
+  Filip Marić, Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali, 
+  Chantal Keller, Julien Narboux, Nicola Magaud, Arthur Charguéraud, 
+  François Thiré
+
+
+Motivations:
+
+The various proof assistants have different treatments of fundamental
+concepts used in logic and arithmetic.  This WP will develop tools and
+techniques that will allow these concepts to be aligned so that proofs
+in one proof assistant can be meaningfully used in other systems.
+
+Outline:
+
+The following seem to be the three main points on which to focus:
+
+- alignments at the levels of logic.  The major difficulty here is
+       possible alignments between classical and intuitionistic
+       logics.   There are different kinds of embeddings possible
+       (shallow vs deep).  Should we attempt to "make classical logic
+       proofs constructive" when possible?
+
+- alignments of theorem proving objects: constants, theorems, types
+       1) find objects in different theories that refers to
+          the same informal concepts. Library-level declarations of
+          similarly?  Can some kind of statistical methods be used to
+          identify/suggest similar concepts?
+       2) approximate matching constant, where some properties that
+          holds for c1 also holds for c2.
+
+- alignments of proofs
+       1) Is it enough that we simply trust a proof to have been
+          check?  Do we need to import/align an external proof with an
+          internal proof?
+       2) Identify tactics that have the same effect on a proof state.
+       2) Recognizing proofs that have the same structure. (proof porting)
+
+
+Specific contributations:
+
+Innsbruck plans to applying neural methods to align both formal and
+informal libraries.
+
+
+		    Concept alignment in geometry
+	    from Julien Narboux, University of Strasbourg
+
+The formalization of geometric notions can often be done in different
+ways. In order to connect different formalizations, a concept
+alignment must be performed that includes proving equivalences between
+different formalizations of same geometric notions. Concept alignment
+could be both large and small scale.
+
+Big scale concept alignment is the alignment of different theories,
+usually expressed using different axiom systems (eg., Tarski, Hilbert,
+Euclid). It also includes alignment of different kind of analytic
+definitions of geometry i.e., between different analytic models (e.g.,
+real closed fields, reals, complex numbers), different definitions of
+projective geometry. Porting GeoCoq to other proof assistant will
+bring these big scale concept alignments.
+
+This is an interesting test case, because we have an example of
+alignment which does not consists only of equivalences. We need to
+formalize a concept of synonymity between theories which are not
+expressed in the same language. For example, Tarski uses only point,
+Hilbert points and lines, and analytic geometry has a completely
+different language. Some work has been done to define different
+notions of equivalence between theories [9], this could be revisited
+in the framework of the project, a system of translation between
+theories, generating proof obligations as proposed in [2] will be
+implemented.
+
+Small scale concept alignment requires proof of equivalence between
+different definitions of the same concept in the same or different
+language.  To some extent this task could be automated. The difficulty
+is that some equivalences are valid only in some geometries: for
+example the fact that:
+
+Par A B C D ∧ Cong A B C D ∧ TS B C A D ⇔ Par A B C D ∧ Par B C D A 
+
+(two sides are parallel and congruent and the diagonals intersect iff
+the opposite sides are parallel).
+
+is valid in Euclidean geometry but not in neutral geometry. Sometimes
+there are definitions valid in any dimension and some that are valid
+only in some dimension (e.g., definition of parallelism using absence
+of intersection of lines works only in 2D). Sometimes definitions
+differ only in the treatment of some corner cases (e.g., Hilbert's
+axioms use strict betweenness relation BetS A B C ⇔ Bet A B C ∧ A≠B ∧
+B≠C, but Tarski's axioms use 	non-strict betweenness relation Bet A
+B C ⇔ BetS A B C ∨ A=B ∨ B=C). Missing link: how to detect when two
+notions are similar? An automatic prover would fail because the two
+concepts are not equivalent, but they are related in the sense that
+equivalent up to some special cases. Some equivalences are highly
+non-trivial but for some others we can expect to prove them
+automatically. 
+
+			  From Florian Rabe
+
+Michael Kohlhase and Florian Rabe could help with the following ideas:
+
+We've written a few papers on alignments in the past:
+
+- conceptualizing kinds of alignments
+  "Classification of Alignments between Concepts of Formal
+  Mathematical Systems" by Dennis Muller, Thibault Gauthier, Cezary
+  Kaliszyk, Michael Kohlhase, Florian Rabe
+  https://kwarc.info/people/frabe/Research/GKKMR_alignments_17.pdf
+
+- using alignments for translations between
+
+   * proof assistants
+     "Alignment-based Translations Across Formal Systems Using
+     Interface Theories" by Dennis Muller, Colin Rothgang, Yufei Liu,
+     and Florian Rabe 
+     https://kwarc.info/people/frabe/Research/MRLR_alignments_17.pdf
+     https://gl.mathhub.info/alignments/Public
+
+   * math computation systems
+     "Interoperability in the OpenDreamKit Project: The
+     Math-in-the-Middle Approach" by Paul-Olivier Dehaye, Mihnea
+     Iancu, Michael Kohlhase, Alexander Konovalov, Samuel Lelievre,
+     Dennis Muller, Markus Pfeiffer, Florian Rabe, Nicolas M. Thiery,
+     and Tom Wiesing
+     https://kwarc.info/people/frabe/Research/ODK_mitm_16.pdf
+
+The way we see it now is that an alignment consists of
+- a pair (c,d) of identifiers (typically from different libraries)
+- a rule for translating expressions with head c to expressions with
+  head d, usually to 
+   * reorder, drop, infer arguments
+   * perform simple computations to reshape arguments
+
+Our ideas for the project are
+
+a) further formalizing the notion of what an alignment is
+
+b) build a central non-logic-specific library of math (e.g., Peano
+   axioms for natural numbers) 
+
+c) connect that central library to the various prover libraries via
+   large collections of alignments 
+
+d) build an infrastructure for alignment-based translations between
+   libraries, using the central library as an intermediate 
+
+We could primarily do (a) and (d) and be heavily involved in a group
+effort to build (b) and (c). 
+
+			 From Chantal Keller
+
+I am willing to participate in all the three main aspects but I have
+currently more expertise in point 2 [alignments of tp objects], and a
+bit in point 1 [alignment between C and I logic].  Regarding point 2,
+my experience is that objects should be aligned with respect to some
+axiomatization rather than their actual definition, at a high
+level. This alignment is useful not only for Logipedia, but also
+inside a single system where the same object can have very different
+representations.
+
+Some aspect related to WP4: ATPs can be used to automatically
+discharge proofs of concept alignment (once the concepts have been
+tentatively matched). I think it is more relevant to talk about it in
+WP6 rather than WP4, but its correctness relies on T1 of WP4 (ATPs
+outputting Dedukti proofs).
+
+Also: Sylvie Boldo is working on Coq formalizations for real analysis
+at Inria Saclay.  She is interested in contributing to Logipedia in
+the user club.  She is in particular interested in having libraries
+for real analysis developed in Coq and in HOL systems being reusable
+in other systems.
+
+
+			   From Filip Maric
+
+We are mainly interested in alignments of theorem proving objects
+(constants, types, theorems). We have been working on formalization of
+geometry, together with Pierre Boutry and Julien Narboux from
+Strasbourg. We have been using Isabelle/HOL and they have been using
+Coq, so we were discussing that a starting step towards our tighter
+collaboration would be to align definitions of basic geometric
+concepts in our various formalizations (we noticed that our
+definitions are not exactly the same but are similar, and that
+something what we used as a definition they proved as a lemma, and
+vice versa). This is briefly described in a document that I sent to
+Gilles and that Julien sent you. 
+
+In several formalizations that we developed it happened that we
+redefined some concepts from scratch and then the reviewers pointed
+that that same concepts were already available in Isabelle/HOL library
+or in some other AFP entries (it is a large database so it is very
+hard to keep track of what is already available). In some cases names
+of constants, types, theorems and accompanying text could suggest that
+there is some overlap, so it seems to me that some sort of text
+analysis could indicate matching informal concepts in different
+theories in the large databases that we have (e.g., we re-developed
+some properties of quadratic equations and the words like quadratic,
+root, vieta could point us to the development of that concept in the
+Isabelle/HOL library). We might try to make some tools and define some
+simple similarity metrics between theories (within the same and within
+different theorem provers) that would give us a starting point for the
+constant alignment problem. It is rather straight-forward approach,
+but I suppose that it could yield some clusters of the same informal
+concepts formalized in different theories, and this could be a
+starting point for finding objects in different theories that refers
+tthe same informal concepts. We have a colleague doing automated
+clustering using machine learning, so I could ask for his assistance.
+
+T. Gauthier and C. Kaliszyk. Matching concepts across HOL
+libraries. In S. Watt, J. Davenport, A. Sexton, P. Sojka, and
+J. Urban, editors, CICM, volume 8543 of LNCS, pages 267–281. Springer
+Verlag, 2014. 
+
+D. Ginev and J. Corneli. Nnexus reloaded. In Watt et al. [WDS+14],
+pages 423–426. https://arxiv.org/pdf/1404.6548.pdf
