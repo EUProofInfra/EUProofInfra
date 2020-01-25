@@ -3,36 +3,38 @@ Currently, we know how to express the theories of {\sc HOL Light},
 developed in these systems. In the next five years, we plan to address
 the theories of {\sc Abella}, {\sc Agda}, {\sc Atelier B},
 {\sc HOL4}, {\sc Isabelle}, {\sc Minlog}, {\sc Mizar},
-{\sc PVS}, and {\sc TLA+}. Other systems, {\sc Lean}, {\sc Rodin}, {\sc ACL2},
+{\sc PVS}, and \tlaplus. Other systems, such as {\sc Lean}, {\sc Rodin}, {\sc ACL2},
 {\sc IMPS}, and {\sc Nuprl} are kept for later, except if some other
 groups join the project.
 
 We introduce a metric to measure the progress of the
-integration of a library in Logipedia: the Logipedia Readiness Level (LRL) (Figure \ref{lrl}).
+integration of a mechanized proof system and its corresponding proof library in
+Logipedia: the Logipedia Readiness Level (LRL), cf.\ Figure \ref{lrl}.
 
 \begin{figure}[ht]
 \begin{itemize}
 \item[LRL level 1:]
-The theory implemented in the system X has been defined in
+The theory implemented in the system has been defined in
 the lambda-Pi-calculus modulo theory and in Dedukti.
 
 \item[LRL level 2:]
-The system X has been instrumented to export proofs that
+The system has been instrumented to export proofs that
 can be checked in Dedukti.
 
 \item[LRL level 3:]
-A significant part of the library of the system X has been exported and checked in Dedukti.
+A significant part of the library of the system has been exported and checked in
+Dedukti.
 
 \item[LRL level 4:]
-A tool has been defined to analyze the Dedukti X proofs,
+A tool has been defined to analyze the Dedukti proofs for the system,
 detect those that can be expressed in a theory weaker than that of the
-system X and translate those proofs in a weaker logic.
+system, and translate those proofs into a weaker logic.
 
 \item[LRL level 5:]
-These proofs have been made available in Logipedia.
+Certain proofs of the system have been made available in Logipedia.
 
 \item[LRL level 6:]
-All proofs of the system X have been exported, translated
+All proofs of the system have been exported, translated,
 and made available in Logipedia.
 \end{itemize}
 \caption{The Logipedia readiness levels (LRL)\label{lrl}}
@@ -83,17 +85,17 @@ TLA+:& from level 0 to level 2
 
 Beyond our main focus on interactive systems, we also plan to
 integrate some proofs coming from automated theorem provers, SMT
-solvers, and model checkers, when these proofs have a reasonable
+solvers, and model checkers, when these proofs have a manageable
 size. We already have experience with Zenon, iProver, and Archsat, but
-we also plan to go in this direction, in cooperation with our
+we plan to go further in this direction, in cooperation with our
 colleagues working on LFSC \cite{Stump09}.
 
 Finally, we must also structure this encyclopedia: some of the
 libraries we start with already have a structure (modules, qualified
 names, etc.) that it is important to preserve.
 
-But, in addition, each library contains a definition of natural
-numbers, real numbers, etc. and, most importantly, logical connectors,
+But, in addition, each library contains definitions of natural
+numbers, real numbers, etc.\ and, most importantly, logical connectors,
 that must be aligned.  All these objectives contribute to building a
 new formal proof community, focused on the values of knowledge
 exchange and sustainability.

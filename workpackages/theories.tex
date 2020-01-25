@@ -6,40 +6,60 @@
 
 \ednote{MK: We need one coordinating site. original coordinators: Cezary Kaliszyk and Stephan Merz}
 
-\ednote{MK: interested parties (add their sites and RM here): David Deharbe, Stephan Merz, Guillaume Genestier, Guillaume
-Burel, Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali, Arthur
-Chargueraud, Gaspard Férey
+\ednote{MK: interested parties (add their sites and RM here): David Deharbe,
+  Stephan Merz, Helmut Schwichtenberg, Guillaume Genestier, Guillaume Burel,
+  Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali, Arthur Chargueraud,
+  Gaspard Férey
 }
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
+  The objective of this work package is to lay the groundwork for making
+  available in \textsc{Logipedia} proofs carried out in systems that are
+  currently at LRL $0$, i.e.\ for which we do not know today how to express
+  their logic and theories in \textsc{Dedukti}. We intend to bring these systems
+  to LRL $2$ over the span of the project.
 
 This includes notably:
   \begin{compactitem}
-  \item \ldots
+  \item expressing the logics and foundational theories that underlie these
+    systems in the lambda-Pi-calculus modulo theory and in \textsc{Dedukti};
+  \item instrumenting these systems so that they can export proofs that can be
+    checked in \textsc{Dedukti}.
   \end{compactitem}
-  A key aspect will be to foster \ldots
+  A key aspect will be to foster cooperation between the participating project
+  sites by focusing on similar foundational aspects such as set theory vs.\ type
+  theories, predicate subtyping, dependent types, proofs by induction and
+  coinduction and so on.
 \end{wpobjectives}
 
 \begin{wpdescription}
-  For other theories, such as Abella, PVS, Mizar and TLA+, we have not yet investigated
-  the possibility to express them in Dedukti.
+  For other theories, such as Abella, PVS, Mizar and \tlaplus, we have not yet
+  investigated the possibility to express them in Dedukti.
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti and instrument the system]
+\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti and instrument
+  the system]
 \ednote{Saclay}
 \end{task}
 
-\begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti and instrument the system]
+\begin{task}[id=minlog,title=Express the theory of Minlog in Dedukti and
+  instrument the system]
+\input{workpackages/minlog}
+\end{task}
+
+\begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti and
+  instrument the system]
 \ednote{IInnsbruck, Bialystok}
 \end{task}
 
-\begin{task}[id=tla,title=Express the theory of TLA+ in Dedukti and instrument the system]
+\begin{task}[id=tla,title=Express the theory of \tlaplus in Dedukti and
+  instrument the system]
 \ednote{Nancy, Liège}
 \end{task}
 
-\begin{task}[id=abella,title=Express the theory of Abella in Dedukti and instrument the system]
+\begin{task}[id=abella,title=Express the theory of Abella in Dedukti and
+  instrument the system]
 \ednote{Saclay}
 
 The usual approach to capturing either Peano and Heyting arithmetics
