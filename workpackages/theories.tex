@@ -33,147 +33,58 @@ This includes notably:
 \end{wpobjectives}
 
 \begin{wpdescription}
-  For other theories, such as Abella, PVS, Mizar and \tlaplus, we have not yet
-  investigated the possibility to express them in Dedukti.
+  For the logical theories of the systems considered in this work package,
+  namely Abella, HoTT, Minlog, Mizar, PVS, and \tlaplus, we have not yet
+  investigated the possibility to express them in Dedukti and to instrument the
+  systems so that they can export proofs that Dedukti can check. The individual
+  tasks listed below address the challenges related to each system.
+
+  It is interesting to note that similar problems occur in different systems,
+  which are related to concepts such as set-theoretic or type-theoretic
+  foundations of the system. Different type theories exhibit common traits such
+  as the presence of predicate subtyping or dependent types. Similarly,
+  inductive and coinductive definitions, and correspondingly proofs by induction
+  or coinduction, are ubiquitous. Taking advantage of the network established
+  within this project, we will avoid ``reinventing the wheel'' by designing
+  generic mechanisms that can be instantiated for the different systems, also
+  taking advantage of the lessons learnt for the systems with higher LRL
+  considered in WP1. These challenges represent fundamental research problems:
+  for example, Dedukti does not yet support coinductive proofs.
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti and instrument
-  the system]
-\ednote{Saclay}
+\begin{task}[id=abella,title=Express the theory of Abella in Dedukti and
+  instrument the system]
+  \ednote{Saclay}
+  \input{workpackages/abella}
+
+\end{task}
+
+\begin{task}[title=id=hott,title=expressing HoTT]
+  \ednote{Saclay, Leeds}
 \end{task}
 
 \begin{task}[id=minlog,title=Express the theory of Minlog in Dedukti and
   instrument the system]
-\input{workpackages/minlog}
+  \input{workpackages/minlog}
 \end{task}
 
 \begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti and
   instrument the system]
-\ednote{IInnsbruck, Bialystok}
+  \ednote{Innsbruck, Bialystok}
+\end{task}
+
+\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti and instrument
+  the system]
+  \ednote{Saclay}
 \end{task}
 
 \begin{task}[id=tla,title=Express the theory of \tlaplus in Dedukti and
   instrument the system]
-\ednote{Nancy, Liège}
+  \ednote{Nancy, Liège}
+  \input{workpackages/tlaplus}
 \end{task}
 
-\begin{task}[id=abella,title=Express the theory of Abella in Dedukti and
-  instrument the system]
-\ednote{Saclay}
-
-The usual approach to capturing either Peano and Heyting arithmetics
-is to use various axioms (and an axiom scheme for induction) on top of
-classical and intuitionistic first-order logic.  Indeed, this is the
-approach used in the Dedukti proof checker.
-
-
-A different approach to encoding arithmetic has been developed over
-the past 20-30 years, starting with papers by Schroeder-Heister and
-Girard in the early 1990s and extended in a series of papers by
-Baelde, Gacek, McDowell, M, Momigliano, Nadathur, and Tiu.  In this
-new setting, first-order logic is extended by considering both
-equality and the least fixed point operator as \emph{logical
-  connectives}: these logical connectives are not available directly
-in Dedukti.
-
-This new foundations for arithmetic has been implemented in two
-systems: the automated Bedwyr prover and the interactive Abella
-prover.  While neither Bedwyr nor Abella are as popular as many of the
-theorem provers that are covered by this proposal, there are two
-important reasons to consider incorporating them into the Logipedia
-effort.
-
-First, the Bedwyr prover is capable of constructing proofs for the
-kind of queries that are part of emph{model checkers}.  This class of
-provers has not yet been incorporated into Dedukti.  The
-proof-theoretic work behind model checking in Bedwyr should provide
-some of the insights needed for allowing Dedukti to proof check the
-results of model checkers.
-
-Second, Bedwyr and Abella provide for direct and elegant support of
-meta-level reasoning.  Given that the foundations for Bedwyr and
-Abella have been given using Gentzen's sequent calculus, it was
-possible to enrich their foundations to allow for the treatment of
-binding structures within terms.  As a result, it is possible to
-reason directly on terms representing $\lambda$-terms and
-$\pi$-calculus expressions.  In particular, the Abella prover has
-probably the most natural and compact formal treatment of the
-$\pi$-calculus and its meta-theory when compared to all other attempts
-in any other theorem provers.  More generally, the Abella prover
-should be able to treat the meta-theory of programming and
-specification languages as well as various logics and their
-proofs. While these tasks are not the typical tasks considered by the
-majority of theorem provers within the scope of this proposal,
-meta-theory results do play an important role at times: in fact, the
-ultimate questions as to whether or not a proof checkers (such as that
-used by Dedukti) is correct or not will involve meta-theoretic
-questions.
-
-We propose to work on the general problem of exporting proofs from
-Abella to Dedukti.  (Since all proofs that are constructed
-automatically via Bedwyr can also be constructed manually within
-Abella, we shall limit our discussion below to Abella only.)  The
-proposed work will serve not only to answer the question of how to
-relate these two different foundations for arithmetic but also to
-allow Abella's particular style of proofs to find applications in the
-wider world of formalized proofs.
-
-The general problem described above has the following constituent parts.
-
-(1) Proofs involving searching finite structures. Proofs built for
-model checking problems over finite structures have two different
-kinds of phases.  To illustrate, consider trying to find a specific
-node within a binary tree.  If such a node exists, then the proof
-essentially encodes the path to the node in the tree.  If, however, no
-such node exists, then the proof of that negative fact is essentially
-a computation that exhaustively explores the tree.  Using the Dedukti
-terminology: in the first case, the proof involves several deduction
-steps, while in the second case, the proof involves a pure
-computation. When dealing with model checking problems such as
-simulation (in concurrency theory) and winning strategies (in game
-theory), proofs will involve alternating phases involving either
-deduction or computation.  Since the notion of computation in
-Abella-style proofs involves backtracking search, that style
-computation will be quite different from Dedukti's notion of
-computation as confluent rewriting.
-
-(2) Extending model checking problems to the general case of infinite
-structures and the associated inductive reasoning methods. Although
-the formal basis of Abella uses least and greatest fixed-point
-combinators and explicit (co-)invariants, the Abella implementation of
-(co-)induction is based on cyclic reasoning using size-annotated
-relations. It is known, in principle, how to convert cyclic proofs
-using annotations to proofs with explicit invariants, but an invariant
-extraction procedure that works in all cases is still missing. Once
-such invariants are available, incorporating them into Dedukti should
-be straightforward in association with part (1).
-
-(3) Binding structures. Abella, as well as several other computational
-logic systems ($\lambda$Prolog, Isabelle/Pure, Twelf, Beluga, etc)
-make use of the so-called \emph{$\lambda$-tree syntax} (a form of
-\emph{higher-order abstract syntax}, HOAS) approach to represent
-bindings. This approach is further enriched in Abella with the
-$\nabla$-quantifier that allows inductive and co-inductive properties
-to be defined based on the \emph{structure} of $\lambda$-terms. We
-propose to examine encodings of $lambda$-tree syntax in Dedukti. The
-best approach probably involves extending the underlying theory of
-Dedukti with a quantifier similar to Abella's $\nabla$-quantifier.
-
-(4) Reflective treatment of unification. One of the features of
-Abella's style of proofs is the use of left-introduction rules for
-equality that exhaustively examine complete sets of unifiers for
-$\lambda$-terms. This is implemented in terms of a unification engine
-that is currently a trusted black box, which complicates any proposal
-for exporting proofs to different implementations of unification or
-equality. In Dedukti the unification procedure can be recast as a
-rewrite system, but it is unclear how to derive reflective properties
-based on the unifiability of terms.
-\end{task}
-
-\begin{task}[title=id=hott,title=expressing HoTT]
-\ednote{Saclay, Leeds}
-\end{task}
 \end{tasklist}
 
 \begin{wpdelivs}
