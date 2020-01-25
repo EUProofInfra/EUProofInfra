@@ -1,0 +1,23 @@
+%[Bologna]
+
+%\textbf{Budget requirements:} One one PhD student or postdoc at UBo.
+
+Matita is an interactive theorem prover developed at the University of Bologna and used for teaching logic courses and to verify software and mathematical proofs, with special attention to predicative foundations. The first generation of the system (up to version 0.5.9) was born as a by-product of the MoWGLI FET-Open Project, it was compatible with the logic of Coq and it could re-use its libraries. It was an important test-bench for the integration of Mathematical Knowledge Management techniques with Interactive Theorem Proving, featuring for example a library of theorems distributed over multiple servers, innovative indexing and search techniques and automatic translation of proofs between declarative and procedural styles. The second generation of the system (up to the current version 0.99.3) was a re-implementation from scratch that departed from the logic of Coq and that experimented with the most concise ways to implement an efficient theorem prover. Several ideas later migrated into Coq. The currently available largest library is the formal certification of a complexity-preserving and cost-model-inducing compiler from C to MCS-51 machine code, developed in the FET project CerCo (Certified Complexity).
+
+The standard and arithmetic libraries of Matita has been the first libraries to be exported to Logipedia using Krajono, a fork of Matita. The forked system is also actually the only one able to import Logipedia proofs. The choice of Matita as a test-bench for Logipedia is easily understood considering that the implementation of the 0.99.x series was aimed at obtaining a well-documented, minimal but fast implementation of a theorem prover, two order of magnitudes smaller than Coq.
+
+The task will achieve the following results
+\begin{enumerate}
+\item Merge Krajono and Matita, update the code to the latest version and transfer the maintenance effort to the Matita team.
+\item Export all the remaining Matita libraries. In particular:
+\begin{itemize}
+ \item The libraries developed in CerCo contain several gigantic proof terms (nested proofs by cases on the 256 opcodes of the MCS-51 processor) that will stress the encoding and the tools developed around the Logipedia library.
+ \item The proofs in the arithmetic libraries of Matita, now converted to HOL proofs inside Logipedia, do not exploit dependent types. Other libraries rely heavily on dependent types, triggering more interesting translations between theories encoded in Logipedia.
+\end{itemize}
+\item The logics of Matita and Coq remain quite similar, sharing a common core. However no complete automatic translation from Coq to Matita or vice versa is possible any more and only partial translations with high coverage are known, but not implemented, due to the intricacies of having to make the two code bases interact. We will study how to implement the partial translations directly in Logipedia, without knowledge of the internals of the two systems, and we will rely on automatically generated alignments to augment coverage of the translation.\ednote{CSC: this point probably does not belong to this WP}
+\end{enumerate}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../propB"
+%%% End:

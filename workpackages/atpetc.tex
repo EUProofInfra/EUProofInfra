@@ -1,11 +1,10 @@
 \begin{workpackage}[id=atpetc,wphases=0-48,type=RTD,
   short=ATPs etc.,% for Figure 5.
   title={ATP, SAT, SMT, Model checkers},
-  lead=ULi,
-  ULiRM=10]
-  
-\ednote{MK: We need one coordinating site. original coordinators: Pascal Fontaine and Chantal Keller}
-\ednote{MK: interested parties (add their sites and RM here): Guillaume Burel, David Deharbe, Pascal Fontaine, Emilio J. Gallego Arias, Thibault Gauthier, Olivier Hermant, Cezary Kaliszyk, Chantal Keller, Filip Marić, Stephan Merz, Dale Miller, Julien Narboux, Martin Suda, Josef Urban}
+  lead=Lie,
+  LieRM=10]
+
+\ednote{MK: interested parties (add their sites and RM here): Guillaume Burel, Raphaël Cauderlier, David Deharbe, Pascal Fontaine, Emilio J. Gallego Arias, Thibault Gauthier, Olivier Hermant, Cezary Kaliszyk, Chantal Keller, Filip Marić, Stephan Merz, Dale Miller, Julien Narboux, Martin Suda, Josef Urban}
 
 \begin{wpobjectives}
   The objective of this work package is to \ldots
@@ -20,11 +19,13 @@ This includes notably:
 
 \begin{wpdescription}
 
+% https://annuel2.framapad.org/p/9ef1-logipedia?lang=fr
+
 The importance of proofs in automated theorem provers, satisfiability
 modulo theories solvers, propositional satisfiability solvers and
 model checkers is increasingly recognized.  While for the
 propositional case, the community agrees on a well defined proof
-format, the situation is not clear for the other kind of automated
+format, the situation is not clear for the other kinds of automated
 reasoners.  There is no clear format for SMT, and the TSTP format for
 automated theorem provers fixes a syntactic template for proofs rather
 than providing an unambiguous framework to express proofs
@@ -60,13 +61,64 @@ obligation.
 
 \begin{tasklist}
   \begin{task}[id=tools,title=Automatic Tools Exporting Proofs]
+    %% Guillaume Burel: expertise
+    %% Raphael Cauderlier: SAT/FOL proof checking in Dedukti
+    %% David Deharbe: pr in Atelier B
+    %% Pascal Fontaine: SMT
+    %% Emilio J. Gallego Arias
+    %% Thibault Gauthier
+    %% Olivier Hermant
+    %% Cezary Kaliszyk
+    %% Chantal Keller: expertise in translating proofs from SAT/SMT into other formalisms
+    %% Filip Marić
+    %% Stephan Merz
+    %% Dale Miller
+    %% Julien Narboux
+    %% Martin Suda: FOL ATP
+    %% Josef Urban: FOL ATP
   \end{task}
 
   \begin{task}[id=challenges,title=Logipedia as a Source of Challenges for Automatic Reasoners]
-    --> Translation to TPTP, SMT-LIB, DIMACS
+    %% --> Translation to TPTP, SMT-LIB, DIMACS
+    %% Guillaume Burel: expertise / SAT
+    %% Pascal Fontaine: SMT-LIB
+    %% Cezary Kaliszyk: TPTP
+    %% Julien Narboux: Geometric benchs
+    %% Josef Urban: TPTP
   \end{task}
-  \begin{task}[id=commang,title=A language for Communication between Automatic Reasoners]
+  \begin{task}[id=commang,title=Cooperation of Reasoners via Dedukti/Logipedia]
+
+    %% Once ITP understand Dedukti and ATP output Dedukti, then the first step of this is trivial
+    %% But many other things can be done within this task: choosing which solver to use, cutting proof obligations into pieces, etc...
+    
+    %% Guillaume Burel: expertise
+    %% David Deharbe: Atelier B
+    %% Pascal Fontaine: SMT ++ ???
+    %% Chantal Keller: Knowledge in combining various ATPs
+    %% Martin Suda: cooperation between FOL ?
+    %% Josef Urban: cooperation between FOL ?
   \end{task}
+  \begin{task}[id=database,title=A Database of Theorems for Automatic Solvers]
+
+    %% Depends on Task 2.  Then selecting Theorems a la Urban.
+
+    %% Guillaume Burel
+    %% David Deharbe
+    %% Pascal Fontaine
+    %% Emilio J. Gallego Arias
+    %% Thibault Gauthier
+    %% Olivier Hermant
+    %% Cezary Kaliszyk
+    %% Chantal Keller
+    %% Filip Marić
+    %% Stephan Merz
+    %% Dale Miller
+    %% Julien Narboux
+    %% Martin Suda
+    %% Josef Urban
+  \end{task}
+
+
 \end{tasklist}
 
 \begin{wpdelivs}

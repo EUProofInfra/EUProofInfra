@@ -3,8 +3,9 @@
 % - submit.tex (no draft stuff, no ednotes, no revision information)
 % - public.tex (like submit.tex, but no financials either) 
 \providecommand{\classoptions}{,keys} % to be overwritten in variants
-\documentclass[11pt,noworkareas,deliverables,report,propB\classoptions]{euproposal}
+\documentclass[12pt,noworkareas,deliverables,report,propB\classoptions]{euproposal}
 \usepackage{nimbusserif}
+\usepackage{logipedia}
 \addbibresource{lib/kbibs/kwarcpubs.bib}
 \addbibresource{lib/kbibs/extpubs.bib}
 \addbibresource{lib/kbibs/kwarccrossrefs.bib}
@@ -15,30 +16,33 @@
 \begin{document}
 \begin{proposal}[%
   coordinator=GiDo,
-  coordinatorsite=ISa,
-  acronym={EUProofInfra},
-  acrolong={\underline{EU}ropean \underline{Proof}\underline{Infra}structure},
-  title=\pn: \protect\pnlong,
-  site=UBo, 
-  site=UPra, 
-  site=Cle, 
-  site=FAU,
-  site=GU,
-  site=UIpp, 
-  site=Inr, 
-  site=LMU, 
-  site=UMin, 
-  site=NPIT, 
+  coordinatorsite=Inr,
+  acronym={Logipedia},
+  acrolong={Logipedia},
+  title=\pn: \protect\pnlong, % sites in the order of the submission site
+  site=Inr,
+  site=Str,
+  site=Tou, 
+  site=Inn, 
+  site=Lie,
+  site=Bol,
+  site=Pra,
+  site=Bel,
+  site=Tum,
   site=Del, 
-  site=TUM,
-  site=UBel,
-  site=UBia,
-  site=UIn,
-  site=ULe,
-  site=ULi,
-  site=USa,
-  site=USo,
-  site=UStr,
+  site=Sac, 
+  site=Fau,
+  site=Lee,
+  site=Sou, 
+  site=Got,
+  site=Cha,
+  site=Lmu,
+  site=Ipp,
+  site=Imt,
+  site=Bia,
+  site=Dus,
+  site=Oca,
+  site=Cle,  
   botupPM, % we want to work via bottom up PM distribution,
   % alternative: (can be combined)
   % topdownPM, % the coordinator distributes PM as follows:
@@ -64,11 +68,11 @@
   % NPITRM=72,
   callname = Integrating and opening research infrastructures of European interest,
   callid = H2020-INFRAIA-2018-2020,
-  instrument= instrument,
-  challengeid = challengeid,
-  challenge = challenge,
-  objectiveid= objectiveid, 
-  objective = objective,
+  instrument=instrument,
+  challengeid=challengeid,
+  challenge=challenge,
+  objectiveid=objectiveid,
+  objective=objective,
   months=48,
   compactht]
   \begin{abstract}
@@ -78,7 +82,7 @@
 \tableofcontents
 
 \begin{todo}{from the proposal template}\color{red}
-  Recommended length for the whole part B: 50--60 pages (including tables, references,
+  Recommended length for the whole part B: 100 pages (including tables, references,
   etc.)
 \end{todo}
 \input{excellence}\newpage

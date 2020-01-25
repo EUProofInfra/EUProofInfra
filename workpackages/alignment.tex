@@ -1,40 +1,98 @@
 \begin{workpackage}[id=alignment,wphases=0-48,type=RTD,
   short=Concept Alignment,% for Figure 5.
   title=Concept Alignment,
-  lead=UPra,
-  UPraRM=10]
+  lead=Pra,
+  PraRM=10]
   
-\ednote{MK: We need one coordinating site. original coordinators: Thibault Gauthier and Dale Miller}
-\ednote{MK: interested parties (add their sites and RM here): 
-Florian Rabe, Cezary Kaliszyk, Dale Miller, Josef Urban,
-Filip Marić, Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali,
-Chanta Keller, Julien Narboux, Nicola Magaud, Arthur Charguéraud,
-François Thiré}
+\ednote{We need one coordinating site. original coordinators: Filip Marić and Dale Miller}
+
+\ednote{Parties initially expressing interest (add their sites and RM
+  here): Florian Rabe, Cezary Kaliszyk, Dale Miller, Josef Urban,
+  Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali, Chantal Keller,
+  Julien Narboux, Nicola Magaud, Arthur Charguéraud, François Thiré}
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
+The various proof assistants have different treatments of fundamental
+concepts used in logic and arithmetic.  This WP will develop
+standards, tools, and techniques that will allow these concepts to be
+aligned so that proofs in one proof assistant can be meaningfully used
+in other systems.
 
-This includes notably:
+The following are the three main points on which this workpackage will
+focus. 
+\begin{compactitem}
+\item Alignments at the levels of logic.  The alignments between
+  classical and intuitionistic proofs is the main challenge here.
+  There are different kinds of embeddings of classical proofs into
+  intuitionistic logic.  A secondary challenge is to align the various
+  treatments of induction and co-induction in proof assistants: these
+  treatments include explicit presentations of invariants,
+  applications of invertible inference rules, and cyclic proof
+  structures.
+
+\item Alignments of theorem proving objects such as constants,
+  theorems, and types.
   \begin{compactitem}
-  \item \ldots
-  \end{compactitem}
-  A key aspect will be to foster \ldots
-\end{wpobjectives}
+     \item Similar concepts in different libraries can have many
+       significant differences once one examines the concepts in detail.
 
+     \item approximate matching constant, where some properties that
+          holds for c1 also holds for c2.
+  \end{compactitem}
+
+\item Alignments of proofs
+  \begin{compactitem}
+     \item Often it is not enough that we simply trust a proof to have been
+          checked.  We occasionally need to work with proofs in order
+          to extract an explanation or its constructive content.  
+     \item Identify tactics and inference rules that have the same
+       effect on proof state. 
+     \item Recognizing proofs that have the same structure. (proof porting)
+  \end{compactitem}
+\end{compactitem}
+\end{wpobjectives}
 
 \begin{wpdescription}
 Construct tools and proofs to analyze these proofs and align concepts, that is unify
 concepts such as connectives and quantifiers, the concept of natural number, etc. and
-theorems that occur in several libraries.  \ednote{Paris, Saclay, Innsbruck, Prague,
-Strasbourg, Belgrade}
+theorems that occur in several libraries.  [Paris, Saclay, Innsbruck, Prague,
+Strasbourg, Belgrade]
+
+Discovery/finding objects in different theories that refers to the
+same informal concepts.
+There are logic inspired techniques (check that one interface formally
+entails another interface): ATPs might be able to automatically handle
+such checks. (Some articulation needed with WP4.)
+There can be other, statistical or linguistic clues that might help
+narrow down on discovering possibly useful related concepts.
 
 \end{wpdescription}
 
+Task: Should we attempt to ``make classical logic proofs constructive'' when possible?
+
 \begin{tasklist}
+\begin{task}[id=aligndef,title=Tracking classical and intuitionistic proof steps in logic and arithmetic] 
+\end{task}
+
+\begin{task}[id=aligndef,title=Alignment in particular domains]
+  Arithmetic (FAU Erlangen-Nürnberg), Geometry (University of
+  Strasbourg), and real analysis (Inria Saclay).
+\end{task}
+
 \begin{task}[id=aligndef,title=Definition of an Alignment Language]
+(FAU Erlangen-Nürnberg)
 \end{task}
 
 \begin{task}[id=translate,title=Alignment-Based Translation]
+(FAU Erlangen-Nürnberg)
+\end{task}
+
+\begin{task}[id=translate,title=Libraries as intermediates for translations]
+(FAU Erlangen-Nürnberg)
+\end{task}
+
+\begin{task}[id=translate,title=Alignment of proof structures]
+Inria Saclay
 \end{task}
 \end{tasklist}
 
