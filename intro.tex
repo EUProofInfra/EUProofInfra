@@ -1,40 +1,45 @@
-Bugs kill and, if testing may reveal some bugs, only
-formal verification can guarantee their absence.  Thus, we should
-never fly in an autonomous plane fully driven by a piece of software,
+Bugs kill, and although testing may reveal some bugs, only formal modeling
+and formal verification can guarantee their absence.  Thus, we should
+never fly in an autonomous plane fully driven by a piece of software
 that has not been formally verified.
 
 Today, the trust in critical systems relies on formal verification, in
-particular formal proofs, that guaranty the safety of the people using
-transportation systems---autonomous car, subways, trains, planes,
+particular formal proofs, that guarantee the safety of the people using
+transportation systems---autonomous cars, subways, trains, planes,
 etc.---, health systems---robotic surgery, etc.---, energy provided by
 nuclear plants, financial applications, e-governance, etc. The crucial
 role of formal proof is highlighted by several successes, like the
-correctness proof of the automatic Paris metro line 14 \cite{metro14},
+correctness proofs of the automatic Paris metro line 14 \cite{metro14},
 the detect-and-avoid system for unmanned aircraft system developed
-by NASA \cite{Munoz16}, the proved operating system seL4 \cite{Klein09},
-or the proved C compiler CompCert \cite{Leroy06}. Because formal methods are crucial in the
+by NASA \cite{Munoz16}, the operating system seL4 \cite{Klein09},
+or the C compiler CompCert \cite{Leroy06}. Because formal methods are crucial in the
 development of the information society, because people can die and
-companies bankrupt because of a bug, it is crucial for Europe to
+companies go bankrupt because of a bug, it is crucial for Europe to
 master this technology and its evolution.
 
 \thispagestyle{empty}
 
 \begin{figure}
-\begin{tabular}{ll}
-  {\sc \underline{Abella}}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&{\sc Acl2}\\
-{\sc \underline{Agda}} &  {\sc \underline{HOL Light}}\\
-{\sc \underline{Atelier B}} &  {\sc IMPS}\\
-{\sc \underline{Coq}}  &  {\sc \underline{Lean}}\\
-{\sc \underline{FoCaliZe}}  &  {\sc Nuprl}\\
-{\sc \underline{HOL4}}  &  {\sc \underline{PVS}}\\
-{\sc \underline{Isabelle}}  &  {\sc \underline{TLA+}}\\
-{\sc \underline{Matita}}\\
+\begin{center}
+\begin{tabular}{l@{\hspace{3cm}}l}
+{\sc \underline{Abella}}    & {\sc Acl2}\\
+{\sc \underline{Agda}}      & {\sc HOL Light}\\
+{\sc \underline{Atelier B}} & {\sc IMPS}\\
+{\sc \underline{Coq}}       & {\sc Lean}\\
+{\sc FoCaliZe}              & {\sc Nuprl}\\
+{\sc \underline{HOL4}}      & {\sc \underline{PVS}}\\
+{\sc \underline{Isabelle}}  & {\sc \underline{TSTP}}\\
+{\sc \underline{Matita}}    & {\sc \underline{LFSC}}\\
 {\sc \underline{Minlog}}\\
 {\sc \underline{Mizar}}\\
-{\sc \underline{Rodin}}\\
+{\sc Rodin}\\
+{\sc \underline{TLAPS}}\\
+{\sc \underline{Why3}}\\
+{\sc \underline{SMT-Lib}}\\
 \end{tabular}
-\caption{Some major proof systems. The European ones are in the first column.
+\caption{Some major proof systems or formats. The European ones are in the first column.
   Those addressed in the project are underlined\label{systems}}
+\end{center}
 \end{figure}
 
 A lot of formal proofs developed for one application could be used in
@@ -42,34 +47,47 @@ another.  Unfortunately, the development of formal methods is slowed
 down by the large number of proof systems and the lack of a common
 theory used by these systems.  Because each small community is
 centered around one theory and one system, and each system has its own
-library of proofs, interoperability, sustainability, and
-crossverification are restricted, and often same work has to be done
-again elsewhere.  For instance, the Paris metro line 14 has been proved
+library of proofs, interoperability---that is the possibility for one
+user to use a proof developed in another system---,
+sustainability---that is the possibility to use a proof decades after
+it has been developed---, and cross-verification---that is the
+possibility to have a higher assurance in the correctness of some
+statement by verifying its proof in a system different from that in
+which it has been defined---are restricted, even if some provers
+sometimes call external tools to help building some proofs. The fragmentation of
+systems of formal proof also hinders productivity because foundational
+work---for instance, developing a calculus library with theorems
+about derivatives, sinus, cosinus, etc.---has to be repeated instead of
+being reused.  For instance, the Paris metro line 14 has been proved
 correct in {\sc Atelier B}, while the Nasa detect-and-avoid system for
 unmanned aircraft system has been proved correct in {\sc PVS}. Some
 projects, such as the Flyspeck project, have been started in different
-systems and required some effort to be completed in just one system.
+systems and required significant integration effort for obtaining the overall
+result.
 
-There are around twenty major proof systems in the world (Figure
-\ref{systems}) and making these systems interoperable would avoid work
-duplication, reduce the development time, and allow independent
-verification.  After three decades dedicated to the development of
+Some twenty major proof assistants exist in the world (Figure
+\ref{systems}), and making these systems interoperable would avoid
+duplication of work, reduce development time, and enable
+cross-verification.  After three decades dedicated to the development of
 these systems, allowing such a cooperation between these systems is
-the next step in the development of the formal proof technology.  A
-cloud of formal proofs could bring to the applications of formal proof
-technology the same boost that the cloud has brought to computing.
+the next step in the development of the formal proof technology.  
 
 In January 2019, we put online a first prototype of {\sc Logipedia},
-an encyclopedia of formal proofs, expressed in the language of five
+an encyclopedia of formal proofs, expressed in the languages of five
 different systems. At that time, this encyclopedia contained only a
-few hundreds proofs. We organized a meeting to discuss the future
-of this project {\tt
-  http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
-meeting brought together 38 researchers from Austria, Czech Republic,
+few hundred proofs.  Convinced that such a cloud of formal proofs
+could bring to the applications of formal proof technology the same
+boost that the cloud has brought to computing, and also that managing
+such a large encyclopedia---for instance being able to query a proof
+with a search engine---required some interdisciplinary effort, we
+organized a meeting to discuss the future of this project
+\url{http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
+meeting brought together 38 researchers from Austria, the Czech Republic,
 France, Italy, the Netherlands, and Poland. Since then, colleagues
 from Belgium, Germany, Serbia, Sweden, and the United Kingdom have
-manifested interest. These researchers are ready to contribute to
-develop this encyclopedia aiming at having in twenty years all the
+manifested interest in participating in this effort.
+These researchers are ready to contribute to
+develop this encyclopedia, aiming at having in twenty years all the
 formal proofs then developed, in a single encyclopedia.
 
 %%% Local Variables:
