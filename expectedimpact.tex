@@ -7,24 +7,23 @@ refers to one of the mentioned cross-cutting activities: open science.
 
 The shift from informal, pencil and paper, proofs to formal
 computerized proof has been a major improvement on the never ending
-quest for logical rigour, with a strong impact both on mathematics,
+quest for logical rigor, with a strong impact both on mathematics,
 where much more complex proofs can be built, and computer science,
 where safety and security can be dramatically improved with the use of
-formal methods.  But this major step forward has also had a negative side
+formal methods.  But this major step forward also has a negative side
 effect: we have moved from a time where we had (informal) proofs of
 Pythagoras' theorem or Fermat's little theorem, to a time where we
 have (formal) proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL
-  Light}, in {\sc PVS}, etc.\ of these theorems and it is not obvious
-that the formal statements correspond to each other, jeopardizing the
+  Light}, in {\sc PVS}, etc.  of these theorems, jeopardizing the
 universality of mathematical truth.
 
-This loss of universality of mathematical truth is an important obstacle
-to the dissemination of the notion of formal proof in the communities of
+This loss of universality of mathematical truth as the main obstacle
+to the diffusion of the notion of formal proof in the communities of
 mathematicians and computer scientists, but also engineers and
 students. Our long-term goal is to resurrect the universality of
 mathematical truth in order to build a strong formal proof community
 including specialists and non-specialists such as working
-mathematicians, engineers and students.  This requires expressing the
+mathematicians, engineers and students.  This requires to express the
 theories implemented in these systems in a common logical framework,
 with axioms and reduction rules, in order to be able to say, not that
 a proof is expressed in one system or in another, but which axioms and
@@ -33,7 +32,7 @@ the development of non-Euclidean geometries.
 
 In a shared public encyclopedia providing virtual access, each user,
 in research, industry, and education, can find the formal proofs she
-needs in the logic she wants, regardless of the logic and system this
+needs in the logic she wants, regardless the logic and system this
 proof has been developed in.
 
 {\color{red} Talk about licences here. Is cc-by ok for everyone?}
@@ -50,8 +49,8 @@ Logipedia in itself from TRL 3 to TRL 4
 \subsection{Operators develop synergies}
 
 Having a standard for expressing theories and proofs and resurrecting
-in this way the universality of mathematical truth will also make proof
-systems interoperable and will enable the construction of an on-line
+this way the universality of mathematical truth will also make proof
+systems interoperable and will allow the construction of an on-line
 system-independent encyclopedia.
 
 Instead of having a scattered community, each group developing a
@@ -59,10 +58,10 @@ library for its own logic and its own system, researchers and
 engineers will be able to work together on common developments,
 reusing proofs developed in other systems and in other communities.
 
-Most importantly, this will suppress one of the main obstacles to the
-dissemination of formal proofs in mathematics, computer science, industry,
+More importantly, this will suppress one of the main obstacles to the
+diffusion of formal proofs in mathematics, computer science, industry,
 and education, just like the development of the html standard induced
-a renewal of document sharing in general or the definition of
+a renewal of document sharing in general and the definition of
 predicate logic induced a renewal of logic in the 1930's.
 
 
@@ -77,88 +76,86 @@ predicate logic induced a renewal of logic in the 1930's.
 \subsection{Innovation is fostered through a reinforced partnership of research
 infrastructures with industry}
 
-Formal methods are now an important part of advanced
+Innovation Formal methods are now an important part of some advanced
 industrial projects. For instance, mastering formal methods is key to
-giving Europe a competitive advantage in conquering the market of
+give Europe a competitive advantage in conquering the market of
 autonomous cars, trains, planes, and drones. But this penetration of
 formal methods in industry hits the same obstacle that researchers
 often promote one method, theory or system, while their industrial
 partners are in search of universality. We expect to make formal
-proofs more accessible to industry by avoiding that each project
-redevelops elementary proofs, but instead benefits of the formalization
+proofs more accessible to industry by avoiding each project to
+redevelop elementary proofs, but instead benefit of the formalization
 work shared with other communities.
 
-Several European and non-European companies are member of the project,
+Several European and non European companies are member of the project,
 as contributors or as members of the future {\sc Logipedia} user's group.
 
-From the industry point of view the key exploitable results are threefold:
+From the industy point of view the key exploitable results are threefold
 
 \begin{enumerate}
-\item Cross-verification.
+\item Crossverification.
 
-In the current state of affairs, when a company proves a piece of
+In the current state of affairs, when a compagny proves a piece of
 software correct using a system $X$, its client, or the certification
-authorities, can check the proof developed by this company, but they
+authorities can check the proof developed by this compagny, but then
 need to use the same system $X$ to check this proof, so they need to
 trust the system $X$, which is a limitation. Several actors want to be
-able to check the proofs using an independent proof system, and even one
+able to check the proofs using a indepedent proof system, and even one
 they have developed themselves.
 
 A side effect of the construction of the {\sc Logipedia} platform is
-to incentivize all the proof systems to be able to produce proofs in a
-common language. Such proofs can all be checked by {\sc
-Dedukti}, as well as several other systems.
+to incent all the proof systems to be able to produce proofs in a
+common language. Such proofs can then be all be checked by {\sc
+Dedukti}, and several other systems.
 
 Moreover, the certification authorities can develop their own
-proof checker (the development of a proof checker requires much less effort than
-that of a proof assistant)
-% takes from two to four weeks)
-so that they do not need to trust anyone else.
+proof-checker (the development of such a proof-checker takes from two
+to four weeks) so that they do not need to trust anyone else.
 
 \item Sustainability.
 
-When an industrial project has ended, it is sometimes difficult,
-especially for small companies, to maintain an archive of their work over
-a long period of time. In formal methods, most projects are a
+When an industrial project is over, it is sometimes difficult,
+specially for small compagnies, to keep an archive of their work over
+a long period of time. In formal methods, most of the projects are a
 two-stage rocket. The first stage of the rocket contains basic
-developments that can be shared between the company and its
-competitors. The second one contains developments that are specific to the
+developements that can be shared between the compagny and its
+competitors. The second contains developments that are specific to the
 project and that often contain industrial secrets.
 
 Sharing the first stage on a public encyclopedia (while keeping the
-second one secret) contributes to the sustainability of the
+second secret) contributes to the sustainability of the
 developements. They can, for instance, be reused decades later, and
-cannot be lost by the company.
+cannot be lost by the compagny.
 
 \item Interoperability.
 
-Different companies use different proof systems. First because some proof
-systems may be specifically suited to certain application domains,
-but also because these companies hire developers
-that have different cultures and are more efficient using the
+Several compagnies use several proof systems. First because some proof
+systems are better for some application domains and other are better
+for others, and also because these compagnies hire researchers and
+engineers that have different cultures and are more efficient using the
 tools they know.
 
 A side effect of the construction of the {\sc Logipedia} platform is
-that such developments are made interoperable: a proof
-developed in one system can be translated into another one, and moreover
-because proofs developed in different systems can be combined in {\sc
+that such developement are made interoperable. First because a proof
+developed in one system can be translated into another. Second because
+proofs developed in different systems can be combined in {\sc
 Logipedia} itself.
 \end{enumerate}
 
 The participation of industry to the project is twofold. First,
 the project includes a {\em club of industrial users} that will
-organize a couple of meetings every year. To
+organize a couple of meeting every year. To
 \begin{itemize}
 \item propose new objectives for the projet,
-\item define use cases,
+\item propose use cases,
 \item participate to the project self assessment.
 \end{itemize}
 
 From the industrial point of view the participation to this club
-is a way to monitor new technological developments.
+is a way to do some technology watch. 
 
-Second, some companies, including some related to the {\sc B} community
-and the railway industry, are full partners of the project and
+Then, some compagnies, specially some related to the {\sc B} community
+and the railway industry, are part full partners of the project and
 will contribute to the production of {\sc Logipedia} proofs from
 {\sc B} provers. 
 
@@ -172,41 +169,43 @@ you explain the impact here?)}
 
 \subsection{Education}
 
-{\color{red} JN: I wonder if we should not extend the club of teachers to the club of teachers/researchers.}
+{color{red} JN: I wonder if we should not extend the club of teachers to the club or teachers/researchers.}
 
-Scientific research and education at all levels are based on the discovery,
-verification, communication, archival and use of mathematical results.
+Scientific research and education at all levels are concerned with the discovery, verification, communication, archival and usage of mathematical results.
 These tasks have been supported by physical books, conferences and other means.
 
-The avaibility of a formal online encyclopedia that supports in a single place
-the communication, archival and verification of mathematical  knowledge will be
-of prime importance for researchers and teachers.
+The avaibility of a formal online encyclopedia which propose in a single place the communication, archival and verification of mathematical  knowledge will be of prime importance for researchers and teachers.
 
 Education to formal methods in computer science and to formal proofs
 in mathematics always hits the same obstacle: the need to choose a
-specific theory or system, the need to focus on foundational issues in
-contradiction with the claimed universality of logical truth.
+specific theory or system, the need to focus on foundational issues in contradiction with the claimed universality of logical truth. 
 
-Education to formal methods and formal proofs will gain in universality once it
-will be demonstrated that this choice amounts to include, or not, a few axioms
-and reduction rules. 
-The use of formal proofs in the classroom is also slowed down by the lack of a
-large and well-organized library of results.
-We argue that this renewal of logic education at university level and before is
-of prime importance in our ``post-truth era''.
+Education to formal methods and formal proofs will gain in universality once it will be demonstrated that this choice amounts to include, or not, a few axioms and reduction
+rules. 
+The usage of formal proofs in the class room is also slown down by the lack of a large and well organized library of results.
+We defend that this renewal of logic education at university level and before is of prime importance in our ``post-truth era''.
 
-The project can lead to a societal breakthrough, leading to the adoption of
-formal proofs by a larger group of users, be they expert users comming from the
-formal proof community or non-expert users (mathematicians, educators and
-researchers in other sciences using mathematical statements).
+The project can lead to a societal breakthrough opening the use of formal proofs by a larger group of users, from experts users comming from the formal proof community  to a group of non expert users (mathematicians, education and researchers in other science using mathematical statements). 
 
-The club of teachers gathers researchers and teachers who are already actively
-using formal proof for teaching in computer science, mathematics and logic.
+The club of teachers gathers researcher and teachers who are already actively using formal proof for teaching in computer science, mathematics and logic but are not necessarily members of the cummunity of researchers in formal theorem proving. These early adopters, will provide continuous feedback to the project members on the usuability and accessibility of the system from a user point of view.
 
 
 {\color{red} Club of teachers (Julien, can you explain the impact here?)}
 
 {\color{red} Key exploitable results?}
+
+{color{red} JN:  some potential ideas:}
+\begin{enumerate}
+\item Summer schools for introducing mathematical researchers to ITP
+\item For highschool teachers: seminars/lectures about  the role of logic in maths teaching and the use of proof assistants in class.
+\item For university teachers: creation and dissemination of teaching material for introduction to the concept of proof to fresh maths students.   
+\item Development of an Edukera like, open source, point and click user interface for interactive formal theorem proving in the classroom : the "scratch" of maths  (a Isar like language for the proof structure but with a point and click user interface)
+\item formalization of  highschool curriculums for different european countries
+\item link between the project and the ThEdu community
+\end{enumerate}
+
+
+
 
 \subsection{Closer interaction between a larger number of researchers}
 
