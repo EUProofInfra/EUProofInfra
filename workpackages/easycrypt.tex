@@ -1,0 +1,36 @@
+\paragraph{EasyCrypt}
+
+WP as a bullet list:
+
+\begin{itemize}
+\item EasyCrypt is a proof assistant for reasoning about relational
+  properties of probabilistic computations with adversarial code.
+\item it mains application is he construction and verification of
+  game-based cryptographic proofs.
+\item it now has a large corpus of proofs for state-of-the art
+  primitives.
+\item linked with the Jasmin compiler (written in Coq), it provides a
+  way to produce proof of security \& functional correctness of
+  high-assurance \& high-speed (world-wide) cryptographic primitives
+  implementations.
+\item EasyCrypt comes with a standard library that has to be
+  reimplemented from scratch. This library includes math theorems
+  (e.g. finite algebra, elliptic-curves, general algebra, a bit of
+  real analysis) and standard data structures. These results could be
+  imported from external libraries already developed in other proof
+  assistants.
+\item The Jasmin-EasyCrypt link is informal and creates a gap in the
+  formal proofs of primitives implementation. Having a Dedukti backend
+  for EasyCrypt (along with a Dedukti to Coq translator) would allow
+  to formalize that link.
+\item EasyCrypt has the ability to use ATP for solving logical
+  goals. This translation is informal. Here again, the Dedukti
+  platform would provide a way to formalize these translations and to
+  reduce the TCB of EasyCrypt.
+\end{itemize}
+\end{itemize}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../propB"
+%%% End:
