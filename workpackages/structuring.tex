@@ -6,17 +6,20 @@
   FauRM=48,
   SacRM=48]
   
-\ednote{Which sites are interested (add their sites and RM here)? David Deharbe, Nicola Gambino, Florian Rabe, Michael Rathjen, Claudio Sacerdoti Coen,
-Dale Miller}
+\ednote{Which sites are interested?
+David Deharbe and Etienne Prun (Clearsy); Nicola Gambino, Michael Rathjen, Claudio Sacerdoti Coen, Dale Miller, Emilio J. Gallego Arias, Michael Butler, Pierre Senellart (search)}
+
+% David Deharbe and Etienne Prun (Clearsy): use B Method, would like to doublecheck B proofs, integrate B with other proof assistant at high-level
+
 
 \begin{wpobjectives}
 Just like software, proofs usually exist at two levels: user-written source code at the high-level and a machine-compiled prover-specific low-level representation.
 This yields two fundamentally different ways to integrate provers, both offering different advantages.
 
-Firstly, theories pursues integration through standardization on universal *low-level* representations.
+Firstly, theories pursues integration through standardization on universal \emph{low-level} representations.
 This is similar to the use of the x86 as the standard architecture for software and has similar advantages: in particular, a single architecture such as Dedukti can be used to run (i.e., check) proofs from any number of proof assistants.
 
-Secondly, this work package extends the above by additionally developing universal standards for *high-level* representations.
+Secondly, this work package extends the above by additionally developing universal standards for \emph{high-level} representations.
 It offers complementary advantages: proofs represented in this language are not necessarily checkable efficiently by Dedukti; but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
 This is critical for provers: because logics are much harder to interpret than programming languages, each source language can be interpreted only by the associated prover.
 Therefore, provers must export also standardized high-level representations in order to exploit the integration potential they offer.
