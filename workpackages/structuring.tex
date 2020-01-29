@@ -2,14 +2,14 @@
   short=Structured Theories and Metadata,% for Figure 5.
   title=Structured Theories and Metadata,
   lead=Fau,
-  BolRM=18,
+  BolRM=6,
+  TumRM=6,
   FauRM=48,
   SacRM=48]
   
 \ednote{Which sites are interested?
 David Deharbe and Etienne Prun (Clearsy); Nicola Gambino, Michael Rathjen, Claudio Sacerdoti Coen, Dale Miller, Emilio J. Gallego Arias, Michael Butler, Pierre Senellart}
 
-% Pierre Senellart (Inria): interested in and working on the automatic extraction and annotation of (natural-language, not formal) theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs and search and querying capabilities
 % David Deharbe and Etienne Prun (Clearsy): use B Method, would like to doublecheck B proofs, integrate B with other proof assistant at high-level
 
 
@@ -45,41 +45,53 @@ Then we leverage this design in several applications including automated prover 
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=18]
+add library, document, theory structure to Dedukti; includes unique identifiers and informal text
 \end{task} 
 
-\begin{task}[id=strofimpl,title=Library Structure,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=18]
+metadata annotations in Dedukti at all levels
 \end{task} 
 
-\begin{task}[id=strlibstructure,title=Ontological Framework for Meta-Data,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strrefonto,title=Reference Ontology,lead=Fau,FauRM=6,SacRM=6]
+This tasks compiles, integrates, and curates the various ontologies used for describing libraries in the project.
+These come from several sources:
+\begin{compactitem}
+ \item The ontology induced by the structuring features built in task \localtaskref{strlibstructure}.
+ \item The ontologies built by users using the ontology framework built in task \localtaskref{strrefonto}.
+ \item Manually written ontologies or imports of existing ontologies for specific domains whose knowledge is formalized in prover libraries, such as software engineering or mathematics.
+\end{compactitem}
 \end{task} 
 
-\begin{task}[id=strrefonto,title=Reference Ontologies,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strontorepml,title=Ontolgocial Representation for Major Libraries,lead=Fau,FauRM=6,BolRM=6,TumRM=6,SacRM=6]
+export ontological data from Isabelle and Coq as prototyped in \cite{ulo}
+
+This will be closely tied to the work by M. Wenzel at \site{Tum} for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq in \wpref{libraries}.
 \end{task} 
 
-\begin{task}[id=strontorepml,title=Meta-data Support for Major Libraries,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
+Search based on ontological data (RDF triples) using systems like SPARQL
+\ednote{possible participation of S. Dumbrava; is there a site for this?}
 \end{task} 
 
-\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,FauRM=18]
+Search based on formula structure using systems like MathWebSearch
 \end{task} 
 
-\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,FauRM=5,SacRM=5]
+\begin{task}[id=strtextsearch,title=Text-based Search,lead=Inr,FauRM=6,InrRM=6]
+P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automatic extraction and annotation of natural-language theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs and search and querying capabilities
 \end{task} 
-
-\begin{task}[id=strformsearch,title=Text-based Search,lead=Fau,FauRM=3,InrRM=6]
-\end{task} 
-
 
 \begin{task}[id=strpresentation,title=Custumizable Presentation]
-\ednote{This task is for the british sites if Exeter (AD Brucker) if it is added. Otherwise cancelled.}
+\ednote{This task is for the British site Exeter (AD Brucker) if it is added. Otherwise cancelled.}
 \end{task} 
 
 \begin{task}[id=strsafeonto,title=Safety Ontologies]
-\ednote{This task is for the british sites if York (S Foster)  it is added. Otherwise cancelled.}
+\ednote{This task is for the British site York (S Foster) it is added. Otherwise cancelled.}
 \end{task} 
 
-\begin{task}[id=str,title=Ontologies for Certification]
-\ednote{This task is for Toulinse ENSEIT (yamine.aitameur@toulouse-inp.fr) if added. Otherwise cancelled.}
+\begin{task}[id=str,title=Ontologies for Certification,lead=Tou,TouRM=12]
+Y. Aitameur at \site{Tou}
 \end{task} 
 
 \end{tasklist}
