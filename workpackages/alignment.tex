@@ -83,10 +83,6 @@ Task: Should we attempt to ``make classical logic proofs constructive'' when pos
 (FAU Erlangen-Nürnberg)
 \end{task}
 
-\begin{task}[id=translate,title=Alignment-Based Translation]
-(FAU Erlangen-Nürnberg)
-\end{task}
-
 \begin{task}[id=translate,title=Libraries as intermediates for translations]
 (FAU Erlangen-Nürnberg)
 \end{task}
@@ -94,6 +90,23 @@ Task: Should we attempt to ``make classical logic proofs constructive'' when pos
 \begin{task}[id=translate,title=Alignment of proof structures]
 Inria Saclay
 \end{task}
+
+\begin{task}[id=aligntranslate,title=FAIR Services: Reuse across Libraries,lead=FauRM,FauRM=12]
+\ednote{Florian Rabe: At the workshop I was asked to lead this task, but the text in this file looks outdated.
+So I'm putting some text here to store my notes. The coordinators should get back to me to discuss details.}
+This task leverages the large library of alignments built in the previous tasks by building a major FAIR service focusing on \textbf{reuse}.
+It uses alignment to translate formulas and theorems from one library to another.
+\end{task}
+
+\begin{task}[id=alignsearch,title=FAIR Services: Search across Libraries,lead=FauRM,FauRM=12]
+\ednote{Florian Rabe: At the workshop I was asked to add this task, but the text in this file looks outdated.
+So I'm putting some text here to store my notes. The coordinators should get back to me to discuss details.}
+This task leverages the large library of alignments built in the previous tasks by building a major FAIR service focusing on \textbf{search}.
+Here users enter a search query relative to the central library built above and chooses which libraries to search in.
+Using the functionality developed in \localtaskref{aligntranslate}, the query is then translated into the requested libraries and searched in each one.
+Results from all libraries are aggregated and returned.
+\end{task}
+
 \end{tasklist}
 
 \begin{wpdelivs}
