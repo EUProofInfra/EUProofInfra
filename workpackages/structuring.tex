@@ -16,18 +16,7 @@ David Deharbe and Etienne Prun (Clearsy); Nicola Gambino, Michael Rathjen, Claud
 \begin{wpobjectives}
 FAIR library management, specifically Access, Search
 
-Just like software, proofs usually exist at two levels: user-written source code at the high-level and a machine-compiled prover-specific low-level representation.
-This yields two fundamentally different ways to integrate provers, both offering different advantages.
 
-Firstly, theories pursues integration through standardization on universal \emph{low-level} representations.
-This is similar to the use of the x86 as the standard architecture for software and has similar advantages: in particular, a single architecture such as Dedukti can be used to run (i.e., check) proofs from any number of proof assistants.
-
-Secondly, this work package extends the above by additionally developing universal standards for \emph{high-level} representations.
-It offers complementary advantages: proofs represented in this language are not necessarily checkable efficiently by Dedukti; but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
-This is critical for provers: because logics are much harder to interpret than programming languages, each source language can be interpreted only by the associated prover.
-Therefore, provers must export also standardized high-level representations in order to exploit the integration potential they offer.
-
-This work package will be jointly coordinated by Florian Rabe at \site{Fau} and Burkhart Wolff at \site{Sac}.
 \end{wpobjectives}
 
 
@@ -39,6 +28,11 @@ the Dedukti libraries.
 Secondly, Tasks~\localtaskref{strrefonto}, \localtaskref{strontorepml}, and~\localtaskref{strsafeonto}\ednote{remove if canceled} built ontologies serving as technical exchange format as well as domain-specific descriptions of libraries.
 Thirdly, Tasks~\localtaskref{strontosearch}, \localtaskref{strformsearch}, and \localtaskref{strtextsearch} leverage 
 technical and domain-specific \emph{access} the entire Logipedia knowledge base based on ontologies by scalable search services.
+
+This work package will be jointly coordinated by Florian Rabe at \site{Fau} and Burkhart Wolff at \site{Sac}.
+Burkhart Wolff immplemented a document ontology framework in Isabelle and developed several applications
+in the field of formal software engineering.
+\cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019} 
 \end{wpdescription}
 
 \begin{tasklist}
