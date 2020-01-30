@@ -7,25 +7,28 @@ refers to one of the mentioned cross-cutting activities: open science.
 
 The shift from informal, pencil and paper, proofs to formal
 computerized proof has been a major improvement on the never ending
-quest for logical rigor, with a strong impact both on mathematics,
-where much more complex proofs can be built, and computer science,
-where safety and security can be dramatically improved with the use of
-formal methods.  But this major step forward also has a negative side
-effect: we have moved from a time where we had (informal) proofs of
-Pythagoras' theorem or Fermat's little theorem, to a time where we
-have (formal) proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL
-  Light}, in {\sc PVS}, etc.  of these theorems, jeopardizing the
-universality of mathematical truth.
+quest for logical rigor, with a strong impact both on computer
+science, where safety and security can be dramatically improved with
+the use of formal methods and on mathematics, where much more complex
+proofs can be built.
 
-This loss of universality of mathematical truth is the main obstacle
-to the access to formal proofs in the communities of mathematicians
-and computer scientists, but also researchers of other disciplines,
-engineers and students.  Our long-term goal is to resurrect the
-universality of mathematical truth in order to build a strong formal
-proof community including specialists and non-specialists.  This
-requires to express the theories implemented in these systems in a
-common logical framework, with axioms and reduction rules, in order to
-be able to say, not that a proof is expressed in one system or in
+But this major step forward also has a negative side effect: we have
+evolved from a time where we had (informal) proofs of Pythagoras'
+theorem or Fermat's little theorem, to a time where we have (formal)
+proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL Light}, in {\sc
+  PVS}, etc.  of these theorems, jeopardizing the universality of
+logical truth.
+
+This loss of universality of logical truth is the main obstacle to the
+access to formal proofs in the communities of computer scientists and
+mathematicians, but also researchers of other disciplines, engineers
+and students.  Our long-term goal is to resurrect the universality of
+mathematical truth in order to build a strong formal proof community
+including specialists and non-specialists.
+
+This requires to express the theories implemented in these systems in
+a common logical framework, with axioms and reduction rules, in order
+to be able to say, not that a proof is expressed in one system or in
 another, but which axioms and reduction rules are used in this proof,
 as we have been used to since the development of non-Euclidean
 geometries. In such a shared public encyclopedia providing virtual
@@ -35,22 +38,28 @@ and system this proof has been developed in.  Alignment of isomorphic
 strucutes, both accross libraries, and inside the same library,
 provides a wider and simplied access.
 
-Beacause it constitutes a central place, such a encyclopedia can foster
+Because it constitutes a central place, such a encyclopedia can foster
 projects that would make less sense for a specific library. For instance,
 
 \begin{itemize}
-  \item developing indexing mechanisms and engines that are
-    specialized to query to mathematical formulas, or giving domain
-    specific access, 
+\item indexing mechanisms for mathematical formulas, and search engines
+  that are specialized to query such formulas,
 
-  \item A structuration of mathematical knowledge in theories,
-    books, chapters, levels (from high school students to research),
+  \item a structure of mathematical knowledge in theories, books,
+    chapters, levels (from high school students to research), that can
+    be inherited from the libraries imported in {\sc Logipedia}, from
+    concept alignment, and from clustering algorithms in the dependence
+    graph of the encyclopedia, 
 
-  \item Ergonomic user interfaces
+  \item ergonomic user interfaces, that allows a navigation in the
+    structure of the encyclopedia, and that can be specialized from
+    some domains (safety, geometry...) or some category of users
+    (high school students, researchers...)
 
-  \item Programmatic access through an API and a package distribution
-    system, so that the mathematical knowledge can be used not only by
-    humans but also by software. 
+  \item programmatic access through an Application Programming
+    Interface, and a package distribution system, so that the
+    mathematical knowledge can be used not only by humans, but also by
+    software.
 \end{itemize}
 
 Because of its size, such an enclyclopedia, provides a better dataset
@@ -76,14 +85,14 @@ course, impact research in many ways.
   of the system they use.
 
 \item When building new proof systems, computer scientists will not
-  need to start from scracth but will be able to start with an already
+  need to start from scracth, but will be able to start with an already
   existing data base of proofs.
 
-\item In automated theorem proving, computer scientisits will be able
-  to use already proved theorems as axioms, to enhence the power of
+\item In Automated Theorem Proving, computer scientisits will be able
+  to use already proved theorems as axioms, to enhance the power of
   their tools.
 
-\item In their publications computer scientists often provide access
+\item In their publications, computer scientists often provide access
   to formal proofs of the results they present (as required or
   suggested by several conferences and journals). They will be able to
   use Logipedia as a universal repository for such proofs, some of
@@ -106,75 +115,63 @@ proofs, some of which would be available accross systems.
 an easier way, the axioms used in each proof, when they have access to
 this proof formalized.
 
-\item These results are archived for a long time increasing the
-  reproducibility of results.
+\item The results will archived for a long time increasing the
+  reproducibility of results, both in mathematics and computer science.
 
 \item As mathematics and software are in any part of modern science,
   {\sc Logipedia} will also have an impact on other sciences. In
   particular because proving properties of a piece of software driving
   a car or piloting an aircraft require to formalize part of the
-  physical world in which this piece of software evolves. 
-
+  physical world in which this piece of software evolves.
 \end{itemize}
-
   
 \subsection{Operators develop synergies}
 
-Having a standard for expressing theories and proofs and resurrecting
-this way the universality of mathematical truth will also make proof
-systems interoperable and will allow the construction of an on-line
-system-independent encyclopedia.
+The formal proof community is currently a scattered community, each
+sub-community being centered around its own system, its own theory,
+and its own library.
 
-Instead of having a scattered community, each group developing a
-library for its own logic and its own system, researchers and
-engineers will be able to work together on common developments,
-reusing proofs developed in other systems and in other communities.
+To build a stronger community, where the researchers develop strategies,
+it is not sufficient to talk to each other, or to organize conferences,
+but these sub-communities must exchange data and work together on project to
+exchange those data.
 
-More importantly, this will suppress one of the main obstacles to the
-diffusion of formal proofs in mathematics, computer science, industry,
-and education, just like the development of the html standard induced
-a renewal of document sharing in general and the definition of
-predicate logic induced a renewal of logic in the 1930's.
+For instance, expressing these data in a common encyclopedia will
+lead the developers of various systems to express the theories they
+implement in a common logical framework, yielding a better understanding
+to the similarities and differences between these theories.
 
-Operators can compare the teories implementes (benefit LF)
+Developing synergies will induce less work duplication and will increase
+the efficiency of the community as a whole.
 
-- We use to talk to each others but rarelt exchange our data
+Working on common projects will not only increase the communication
+between relatively close communities, such as the {\sc Coq} and {\sc
+  Agda} communities that meet every year at the Types conference, but
+also to more distant communities, such as the Types community, the HOL
+community (that already meet around the OpenThery standard), the B and
+TLA+ communities, and the Mizar community.
 
-- Good communication within the TYPES community,, the HOL community,
-the B + TLA+ communities, but these subcomminities do not talk to each
-other much
+More importantly, this data exchange between researchers and
+engineers, and this evolution towards a standard, will allow a better
+cooperation between research and industry and suppress one of the main
+obstacles to the diffusion of formal proofs in industry.
 
-- One to many communication instread of one to one
+This evolution towards a standard and this resurrection of the
+universality of logical truth will also suppress one of the main
+obstacles to the diffusion of formal proofs in the community of
+working mathematicians and in and education, just like the development
+of the html standard induced a renewal of document sharing in general
+and the definition of predicate logic induced a renewal of logic in
+the 1930's.
 
-- *** Better communication between ITP and ATP *** TPTP
+Sharing a logical framework will also allow new synergies between 
+the formal proof community and the Automated Theorem Proving community.
 
-- Better communication with machin leraning
+It will also allow a better communication with machine learning community.
 
-
-
-
-
-- 
-
-- HARMONIZE
-
-- LESS DUPLICATION
-
-- INTEGRATE OPEN-THEORY and sclaing up
-
-- Harmony with OpenDreamKint and Software heritage
-
-- Logipedia should provide support for Deepspec
-
-- Alexandria
-
-{\color{red} Key exploitable results?}
-
-%In terms of networking, we have already organized one logipedia
-%meeting and the funding will insure we can continue to organize
-%large-scale international meetings on a regular basis. The first
-%logipedia event has proven to be very valuable in terms of exchange of
-%best practices.
+We have already organized two {\sc Logipedia} meetings that have
+proven to be very valuable to develop joint project and synergies.
+The project will permit to develop wider international events.
 
 \subsection{Innovation is fostered through a reinforced partnership of research
 infrastructures with industry}
@@ -285,10 +282,6 @@ you explain the impact here?)}
   (Yamine?)}
 
 {\color{red} Key exploitable results?}
-
-- (introperability) Import feature is a KER
-
-- (introperability) Export feature is a KER
 
 - Recall the importance of safety and security
 
@@ -411,11 +404,12 @@ Logipedia as a repository for proofs referenced in publications,
 in mathematics, in computer science and in other sciences is a
 Key Exploitable Result.
 
+- Each import feature to {\sc Logipedia} and each export
+feature from {\sc Logipedia} is a 
+Key Exploitable Result.
 
-
-
-
-
-
-
-
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:
