@@ -54,23 +54,23 @@ it has been developed---, and cross-verification---that is the
 possibility to have a higher assurance in the correctness of some
 statement by verifying its proof in a system different from that in
 which it has been defined---are restricted, even if some provers
-sometimes call external tools to help building some proofs. The fragmentation of
-systems of formal proof also hinders productivity because foundational
-work---for instance, developing a calculus library with theorems
-about derivatives, sinus, cosinus, etc.---has to be repeated instead of
-being reused.  For instance, the Paris metro line 14 has been proved
-correct in {\sc Atelier B}, while the Nasa detect-and-avoid system for
-unmanned aircraft system has been proved correct in {\sc PVS}. Some
-projects, such as the Flyspeck project, have been started in different
-systems and required significant integration effort for obtaining the overall
-result.
+sometimes call external tools to help building some proofs. The
+fragmentation of systems of formal proof also hinders productivity
+because foundational work---for instance, developing a calculus
+library with theorems about derivatives, sinus, cosinus, etc.---has to
+be repeated instead of being reused.  For instance, the Paris metro
+line 14 has been proved correct in {\sc Atelier B}, while the Nasa
+detect-and-avoid system for unmanned aircraft system has been proved
+correct in {\sc PVS}. Some projects, such as the Flyspeck project,
+have been started in different systems and required significant
+integration effort for obtaining the overall result.
 
 Some twenty major proof assistants exist in the world (Figure
 \ref{systems}), and making these systems interoperable would avoid
 duplication of work, reduce development time, and enable
-cross-verification.  After three decades dedicated to the development of
-these systems, allowing such a cooperation between these systems is
-the next step in the development of the formal proof technology.  
+cross-verification.  After three decades dedicated to the development
+of these systems, allowing such a cooperation between these systems is
+the next step in the development of the formal proof technology.
 
 In January 2019, we put online a first prototype of {\sc Logipedia},
 an encyclopedia of formal proofs, expressed in the languages of five
@@ -90,19 +90,108 @@ These researchers are ready to contribute to
 develop this encyclopedia, aiming at having in twenty years all the
 formal proofs then developed, in a single encyclopedia.
 
+{\bf How do proofs contribute to safety and security of software?}  To
+explain how proofs contribute to the safety and security of software,
+imagine the following imaginary casino game. At the beginning, a
+player is given eleven tokens. At each round, the player tosses a
+coin. If the results is heads she is given twice the amount of tokens
+she already has. If the result is tails she is taken two tokens, if
+she has at least two.  If after ten rounds the player has no token
+left, she looses 1000 euros, otherwise she wins 1000 euros.
 
-{\color{red} How safety and security require formal proofs?
-  Julien and Bu
+This game can be modeled by program $p$
+\begin{verbatim}
+n = 11
+for i in range(1,10):
+   print(n,end="")
+   print(" ",end="")
+   if (random() < 0.5):
+      n = n + 2 *  n
+   else:
+      if (n >= 2):
+         n = n - 2
+print()
+\end{verbatim}
+and here are a few runs
+\begin{verbatim}
+11 9 7 21 19 17 15 13 11
+11 9 27 81 79 77 75 225 223 
+\end{verbatim}
+A safety property of this program is that the payers always wins.
+Indeed, in all runs, the content of the variable {\tt n} is always a
+odd number, hence it can never be $0$. This property is a consequence
+of three (trivial) theorems of arithmetic
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
+Hence, verifying the safety of this program, that is that the
+proposition 
+${\mbox{\it safe}}(p)$ holds, 
+amounts to prove these three theorems of arithmetic.
 
-  Many bugs in compilers but a proved compiler does not have bugs
+Note that a slight mistake in the program, for instance replacing the line
+{\tt n = n + 2 * n} with the line {\tt n = n + 3 * n} makes the program unsafe.
+Yet testing this program will, most likely, not reveal the bug, as the bug
+manifests very rarely (for instance with the sequence
+{\tt 11 9 7 5 3 1 4 2 0 0}).
+But attempting to prove the property will reveal the bug as it is impossible
+to prove the proposition
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
+Empirically, compilers and operating systems are known to have bugs
+and proved ones, such as seL4 or CompCert have none of much fewer.
+This is why certification processes require proofs, and not only test,
+at the highest Evaluation Assurance Levels.
 
-Many bugs in operation but a proved os does not have bugs
+{\bf What is a formal proof?}
+Since Antiquity, we know that proofs, both purely mathematical proofs
+as in Euclid's elements or the recent proof of the Kepler conjecture
+by Thomas Hales, and proofs used to establish the safety and security
+of software, can be built with a limited number of rules, for example
+\begin{itemize}
+\item From $A \Rightarrow B$ and $A$, conclude $B$.
+\item From $A$, deduce $A~\mbox{\it or}~B$.
+\item ...
+\end{itemize}
+Yet, though history most mathematical proofs have been written in
+pidgin of natural language and mathematical formulas. When proofs are
+very long (as it is often of the proofs used in safety and security, but
+also of some proofs in pure mathematics), mistakes in proofs are very
+difficult to detect. For instance dozen of wrong proofs of parallel postulate
+have been given through history, sometimes by the best mathematicians.
 
- Informal proofs are not always correct
+In the 1960s Robin Milner and Nicolaas De Bruijn noticed that the
+correctness of a mathematical proof could be checked by a
+computer. This eventually lead to the development of new languages to
+write proofs such as Milner's language {\sc LCF} or De Bruijn's
+language {\sc Automath}.
+For instance from the axioms
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
+$$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
+we can deduce
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
+In some proof languages used today this proof is written
+$$\lambda x \lambda h~(g~x~(f~x~h))$$
+so that its correctness can be checked by a computer.
 
-    What is a formal proof
+{\bf What is a theory?} Deduction rules such as ``From $A \Rightarrow
+B$ and $A$, conclude $B$'' are universal, but some building proof
+require more rules, that are often specific to a domain of knowledge
+and that are called ``axiom''. Examples are the axioms of geometry,
+the axioms or arithmetic. These axioms constitute a theory.
 
-    Certfification processes requiire formal proofs level EAL 6 ad 7}
+At the beginning of the 20th century an axiomatic theory, {\em Set
+  theory}, has been proposed to express all mathematical proofs. In
+the first half of the 20th century a few variants of set theory, and a
+few alternatives have been proposed (such as Simple type theory).  But
+the rise of computer checked formal proofs has led to a multiplication
+of such theories. Each proof-checking system, such as {\sc Coq}, {\sc
+  Isabelle/HOL}, {\sc Mizar}, {\sc Atelier B}... implements its own
+theory.
+
+This is the main scientific problem making these systems not
+interoperable.
+
+
 
 
 
