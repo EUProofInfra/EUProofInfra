@@ -17,80 +17,107 @@ have (formal) proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL
   Light}, in {\sc PVS}, etc.  of these theorems, jeopardizing the
 universality of mathematical truth.
 
-This loss of universality of mathematical truth as the main obstacle
-to the diffusion of the notion of formal proof in the communities of
-mathematicians and computer scientists, but also engineers and
-students. Our long-term goal is to resurrect the universality of
-mathematical truth in order to build a strong formal proof community
-including specialists and non-specialists such as working
-mathematicians, engineers and students.  This requires to express the
-theories implemented in these systems in a common logical framework,
-with axioms and reduction rules, in order to be able to say, not that
-a proof is expressed in one system or in another, but which axioms and
-reduction rules are used in this proof, as we have been used to since
-the development of non-Euclidean geometries.
+This loss of universality of mathematical truth is the main obstacle
+to the access to formal proofs in the communities of mathematicians
+and computer scientists, but also researchers of other disciplines,
+engineers and students.  Our long-term goal is to resurrect the
+universality of mathematical truth in order to build a strong formal
+proof community including specialists and non-specialists.  This
+requires to express the theories implemented in these systems in a
+common logical framework, with axioms and reduction rules, in order to
+be able to say, not that a proof is expressed in one system or in
+another, but which axioms and reduction rules are used in this proof,
+as we have been used to since the development of non-Euclidean
+geometries. In such a shared public encyclopedia providing virtual
+access, each user, in research, industry, and education, can find the
+formal proofs she needs in the logic she wants, regardless the logic
+and system this proof has been developed in.  Alignment of isomorphic
+strucutes, both accross libraries, and inside the same library,
+provides a wider and simplied access.
 
-In a shared public encyclopedia providing virtual access, each user,
-in research, industry, and education, can find the formal proofs she
-needs in the logic she wants, regardless the logic and system this
-proof has been developed in.
+Beacause it constitutes a central place, such a encyclopedia can foster
+projects that would make less sense for a specific library. For instance,
 
+\begin{itemize}
+  \item developing indexing mechanisms and engines that are
+    specialized to query to mathematical formulas, or giving domain
+    specific access, 
 
+  \item A structuration of mathematical knowledge in theories,
+    books, chapters, levels (from high school students to research),
 
+  \item Ergonomic user interfaces
 
-{\color{red} Search engine} giving domain specific access
+  \item Programmatic access through an API and a package distribution
+    system, so that the mathematical knowledge can be used not only by
+    humans but also by software. 
+\end{itemize}
 
-
-Central place
-
-Alignment of siomorphic strucutes provides wider and simplied access
-
-Large libraries allow big data, machine learning... to work better
-
-Beautiful Presentation to the user
-
-Programmatic access (api, opam, etc.)
+Because of its size, such an enclyclopedia, provides a better dataset
+for machine learning algorithms, and more generaly statistical
+analysis of the properties of mathematical developements.
 
 {\color{red} Talk about licences here. Is cc-by ok for everyone?}
-
-{\color{red} Key exploitable results?}
-
-The enclyclopedai itself is a KER
-
-The frontends are a KER
-
-Each domain scpeific library univwrally accessible (e.g. real analysis, probability theory) is a KER
 
 
 \subsection{New or more advanced research infrastructure}
 
-{\color{red} Key exploitable results?}
+Proof systems are research infrastructure. {\sc Logipedia} is not yet
+another infrastructure of this kind, but it is a research
+infrastructure of a completely new kind that integrates proof systems
+through data sharing.  Such as new research infrastructure will, of
+course, impact research in many ways.
 
-Logipedia in itself from TRL 3 to TRL 4
+\begin{itemize}
 
-Various clients :
+\item Computer scientists will be able to prove safety and security
+  properties of the software they develop faster and at a lower cost
+  because they can access to already developed proofs, independently
+  of the system they use.
 
-- mathematicians can build formal proofs of results they are not sure about
-(cite Vladimir)
+\item When building new proof systems, computer scientists will not
+  need to start from scracth but will be able to start with an already
+  existing data base of proofs.
 
-- Conferences in CS where you have to poide a formal proof
+\item In automated theorem proving, computer scientisits will be able
+  to use already proved theorems as axioms, to enhence the power of
+  their tools.
 
-- use the proofs to prove correc a piece of software
+\item In their publications computer scientists often provide access
+  to formal proofs of the results they present (as required or
+  suggested by several conferences and journals). They will be able to
+  use Logipedia as a universal repository for such proofs, some of
+  which would be available accross systems, and these proofs being
+  available for a long time.
 
-- rsearchers who want to build newe proofs to improve the datatbase (synergy)
+\item Computer scientists conducting research on machine learning using
+mathematical dataset have access to a wider database.
 
-- ressoutce for ATP
+\item When they are unsure of the corrrectness of a proof, mathematicians
+will be able to formalize it faster and at a lower cost because they
+can access to already developed proofs, independently of the system
+they use (cite Vladimir).
 
-- Mathematicians interesed in revere maths can formaly analyze the axiomes used
+\item Mathematicians who refer to a formal proof in one or their publication
+will be able to use Logipedia as a universal repository for such
+proofs, some of which would be available accross systems.
 
-- When building a new ATP or ITP, already a data base to satrt with
-instead of starting from scratch
+\item Mathematicians interesed in revere maths will be able to analyze, in
+an easier way, the axioms used in each proof, when they have access to
+this proof formalized.
 
-- Research on machine learning has a wider database
+\item These results are archived for a long time increasing the
+  reproducibility of results.
 
-- Long term archiving
+\item As mathematics and software are in any part of modern science,
+  {\sc Logipedia} will also have an impact on other sciences. In
+  particular because proving properties of a piece of software driving
+  a car or piloting an aircraft require to formalize part of the
+  physical world in which this piece of software evolves. 
 
+\end{itemize}
 
+  
 \subsection{Operators develop synergies}
 
 Having a standard for expressing theories and proofs and resurrecting
@@ -142,9 +169,6 @@ other much
 - Alexandria
 
 {\color{red} Key exploitable results?}
-
-
-
 
 %In terms of networking, we have already organized one logipedia
 %meeting and the funding will insure we can continue to organize
@@ -366,3 +390,32 @@ EU Spent money on TYPES, Nicolas Tabareau's ERC. Formath, Circo...
 Now we integrate the results of all this research
 
 {\color{red} Key exploitable results?}
+
+
+\section{Key Exploitable results}
+
+Logipedia is a Key Exploitable Results, each domain specific library
+(on real analysis, probability...) is also a Key Exploitable Result,
+each specific development made available to all provers (CompCert?,
+CakeML?...) is a Key Exploitable Result, as well as each proof in
+Logipedia. Formalized datastructures and algorithms shared accros
+provers are a Key Exploitable Result.
+
+Indexing algorithms and seach engines are Key Exploitable Results.
+
+User interfaces are Key Exploitable results.
+
+API and package distribution systems are Key Exploitable Results.
+
+Logipedia as a repository for proofs referenced in publications, 
+in mathematics, in computer science and in other sciences is a
+Key Exploitable Result.
+
+
+
+
+
+
+
+
+
