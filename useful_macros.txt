@@ -1,0 +1,21 @@
+For references to a
+- WP:
+      \WPref{WPID}
+   or \WPtref{WPID} to include the title
+- task in another WP:
+      \taskref{WPID}{TASKID}
+   or \tasktref{WPID}{TASKID} to include the title
+- task in the same WP:
+      \localtaskref{TASKID} 
+
+To make notes for each other that appear in margin and footnote:
+- \ednote{NOTE}
+- To make it easy for everybody to find all relevant notes, use the format
+  NOTE ::= FROM(@TO)*:TEXT
+  FROM ::= last name of author of the note
+  TO   ::= "all" | last name of a person, which should act on the note
+  TEXT ::= the body of the note
+ 
+  For example,
+   \ednote{Rabe@Dowek@Blanqui: check if you like this}
+   \ednote{Dowek@all: improve this text}
