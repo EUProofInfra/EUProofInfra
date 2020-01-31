@@ -1,3 +1,5 @@
+In general, see the documentation of the proposal package in Latex-Proposal/base and Latex-Proposal/eu.
+
 For references to a
 - WP:
       \WPref{WPID}
