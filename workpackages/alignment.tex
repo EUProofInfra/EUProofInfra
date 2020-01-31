@@ -4,7 +4,8 @@
   lead=Pra,
   PraRM=10]
   
-\ednote{We need one coordinating site. original coordinators: Filip Marić and Dale Miller}
+  \ednote{We need one coordinating site. original coordinators: Filip
+    Marić and Dale Miller}
 
 \ednote{Parties initially expressing interest (add their sites and RM
   here): Florian Rabe, Cezary Kaliszyk, Dale Miller, Josef Urban,
@@ -12,16 +13,16 @@
   Julien Narboux, Nicola Magaud, Arthur Charguéraud, François Thiré}
 
 \begin{wpobjectives}
-The various proof assistants have different treatments of fundamental
-concepts used in logic and arithmetic.  This WP will develop
-standards, tools, and techniques that will allow these concepts to be
-aligned so that proofs in one proof assistant can be meaningfully used
-in other systems.
+  The various proof assistants have different treatments of
+  fundamental concepts used in logic and arithmetic. This WP will
+  develop standards, tools, and techniques that will allow these
+  concepts to be aligned so that proofs in one proof assistant can be
+  meaningfully used in other systems.
 
 The following are the three main points on which this workpackage will
 focus. 
 \begin{compactitem}
-\item Alignments at the levels of logic.  The alignments between
+\item Alignments at the levels of logic. The alignments between
   classical and intuitionistic proofs is the main challenge here.
   There are different kinds of embeddings of classical proofs into
   intuitionistic logic.  A secondary challenge is to align the various
@@ -42,69 +43,91 @@ focus.
 
 \item Alignments of proofs
   \begin{compactitem}
-     \item Often it is not enough that we simply trust a proof to have been
-          checked.  We occasionally need to work with proofs in order
-          to extract an explanation or its constructive content.  
-     \item Identify tactics and inference rules that have the same
-       effect on proof state. 
-     \item Recognizing proofs that have the same structure. (proof porting)
+  \item Often it is not enough that we simply trust a proof to have
+    been checked.  We occasionally need to work with proofs in order
+    to extract an explanation or its constructive content.
+  \item Identify tactics and inference rules that have the same effect
+    on proof state.
+  \item Recognizing proofs that have the same structure. (proof
+    porting)
   \end{compactitem}
 \end{compactitem}
 \end{wpobjectives}
 
 \begin{wpdescription}
-Construct tools and proofs to analyze these proofs and align concepts, that is unify
-concepts such as connectives and quantifiers, the concept of natural number, etc. and
-theorems that occur in several libraries.  [Paris, Saclay, Innsbruck, Prague,
-Strasbourg, Belgrade]
+  Construct tools and proofs to analyze these proofs and align
+  concepts, that is unify concepts such as connectives and
+  quantifiers, the concept of natural number, etc. and theorems that
+  occur in several libraries.  [Paris, Saclay, Innsbruck, Prague,
+  Strasbourg, Belgrade]
 
-Discovery/finding objects in different theories that refers to the
-same informal concepts.
-There are logic inspired techniques (check that one interface formally
-entails another interface): ATPs might be able to automatically handle
-such checks. (Some articulation needed with WP4.)
-There can be other, statistical or linguistic clues that might help
-narrow down on discovering possibly useful related concepts.
+  Discovery/finding objects in different theories that refers to the
+  same informal concepts.  There are logic inspired techniques (check
+  that one interface formally entails another interface): ATPs might
+  be able to automatically handle such checks. (Some articulation
+  needed with WP4.)  There can be other, statistical or linguistic
+  clues that might help narrow down on discovering possibly useful
+  related concepts.
 
 \end{wpdescription}
 
-Task: Should we attempt to ``make classical logic proofs constructive'' when possible?
+Task: Should we attempt to ``make classical logic proofs
+constructive'' when possible?
 
 \begin{tasklist}
-\begin{task}[id=aligndef,title=Tracking classical and intuitionistic proof steps in logic and arithmetic] 
-\end{task}
+  \begin{task}[id=alignlogic,title=Alignment of logical foundations,lead=Lee]
+    \begin{itemize}
+    \item Aligning logical connectives
+    \item Classical and intuitionistic logic
+    \item Eliminating second-order proof
+    \item Predicative vs impredicative theories
+    \item Coherent logic
+    \item Identification of abstraction layers (proof mining)
+    \end{itemize}
+  \end{task}
 
-\begin{task}[id=aligndef,title=Alignment in particular domains]
-  Arithmetic (FAU Erlangen-Nürnberg), Geometry (University of
-  Strasbourg), and real analysis (Inria Saclay).
-\end{task}
 
-\begin{task}[id=aligndef,title=Definition of an Alignment Language]
-(FAU Erlangen-Nürnberg)
-\end{task}
+  \begin{task}[id=aligntheories,title=Automated theory alignment,lead=Inr]
+    \begin{itemize}
+    \item Automated discovery of alignments
+    \item Aligning theories using database and semantic web technology
+    \end{itemize}
+  \end{task}
 
-\begin{task}[id=translate,title=Libraries as intermediates for translations]
-(FAU Erlangen-Nürnberg)
-\end{task}
+  \begin{task}[id=aligncasestudies,title=Case studies,lead=Str]
+    \begin{itemize}
+    \item Aligning sets, relations, functions
+    \item Aligning numbers ($\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$,
+      $\mathbb{R}$, $\mathbb{C}$)
+    \item Aligning theories for geometry
+    \end{itemize}
+  \end{task}
 
-\begin{task}[id=translate,title=Alignment of proof structures]
-Inria Saclay
-\end{task}
+  \begin{task}[id=alignproofrewrite,title=Alignment based proof rewriting]
+    \begin{itemize}
+    \item Develop tools that rewrite proofs based on known alignments
+    \end{itemize}
+  \end{task}
 
-\begin{task}[id=aligntranslate,title=FAIR Services: Reuse across Libraries,lead=Fau,FauRM=12]
-\ednote{Florian Rabe: At the workshop I was asked to lead this task, but the text in this file looks outdated.
-So I'm putting some text here to store my notes. The coordinators should get back to me to discuss details.}
-This task leverages the large library of alignments built in the previous tasks by building a major FAIR service focusing on \textbf{reuse}.
-It uses alignment to translate formulas and theorems from one library to another.
-\end{task}
+  \begin{task}[id=aligntranslate,title=FAIR Services: Reuse across
+    Libraries,lead=Fau,FauRM=12]
+    This task leverages the large library of alignments built in the
+    previous tasks by building a major FAIR (findable, accessible,
+    interoperable, reusable) service focusing on \textbf{reuse}. It
+    uses alignment to translate formulas and theorems from one library
+    to another.
+  \end{task}
 
-\begin{task}[id=alignsearch,title=FAIR Services: Search across Libraries,lead=Fau,FauRM=12]
-\ednote{Florian Rabe: At the workshop I was asked to add this task, but the text in this file looks outdated.
-So I'm putting some text here to store my notes. The coordinators should get back to me to discuss details.}
-This task leverages the large library of alignments built in the previous tasks by building a major FAIR service focusing on \textbf{search}.
-Here users enter a search query relative to the central library built above and chooses which libraries to search in.
-Using the functionality developed in \localtaskref{aligntranslate}, the query is then translated into the requested libraries and searched in each one.
-Results from all libraries are aggregated and returned.
+  \begin{task}[id=alignsearch,title=FAIR Services: Search across
+    Libraries,lead=Fau,FauRM=12]
+    This task leverages the large library of alignments built in the
+    previous tasks by building a major FAIR service focusing on
+    \textbf{search}.  Here users enter a search query relative to the
+    central library built above and chooses which libraries to search
+    in.  Using the functionality developed in
+    \localtaskref{aligntranslate}, the query is then translated into
+    the requested libraries and searched in each one.  Results from
+    all libraries are aggregated and returned.
 \end{task}
 
 \end{tasklist}
