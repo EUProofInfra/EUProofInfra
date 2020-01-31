@@ -72,8 +72,6 @@ Considered provers:
 \item coherent logic theorem prover (Predrag Janicic)
 \item SMT (Pascal Fontaine)
 \item FOL ATPs (Pascal Fontaine and Stephan Schulz)
-\item External preprocessing, add traces to the rewrite engine of
-  Frama-C-WP used before sending goals to solvers
 \item \dots
 \end{itemize}
 
@@ -140,12 +138,18 @@ Task leader: ? (Contact: Chantal Keller)
 
 
 \begin{task}[id=cooperation, title=Make ATPs cooperate]
-Task leader: François Bobot?
+Task leader: François Bobot
 
 \begin{itemize}
-\item Ekstrato (using proofs): using ATP to provide detailed ATP proofs
 \item Why3: gather the proof from the called provers, add traces for the
-  transformations send all to ekstrato
+  Why3 transformations and send all this information to Ekstrakto
+\item External preprocessing, add traces to the rewrite engine of
+  Frama-C-WP, which is used before sending goals to solvers, and give
+  them to Ekstrakto
+\item Add in ACSL (C specification language) an "import from Logipedia,
+  ..." which allows a user to get the ressources to model the behavior
+  of its code. The modelisation is at the end used by ATP through
+  Frama-C-WP. (Move to T4?)
 \end{itemize}
 
 \end{task}
