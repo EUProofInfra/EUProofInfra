@@ -28,35 +28,36 @@ and its evolution.
 \begin{figure}
 \begin{framed}
 Imagine the following casino game. At the beginning, a player is given
-eleven tokens. At each round, the player tosses a coin. If the results
-is heads she is given twice the amount of tokens she already has. If
-the result is tails she is taken two tokens, if she has at least two.
-If after ten rounds the player has no token left, she looses 1000
-euros, otherwise she wins 1000 euros.
+eleven euros. At each round, she throws a dice. If the results is a
+six, then game is over.  If it is a five, she is given twice the
+amount of money she already has. Otherwise she is taken two euros, if
+she has at least two.  When the game is over, the player wins the
+money she got. Except if she has zero, in which case she looses one
+million.
 
 This game can be modeled by program $p$
-%from random import *
+%import random 
 \begin{verbatim}
 n = 11
-for i in range(1,10):
-   print(n,end="")
-   print(" ",end="")
-   if (random() < 0.5):
-      n = n + 2 *  n
-   else:
-      if (n >= 2):
-         n = n - 2
-print()
+stay = True;
+while stay: 
+    roll = random.randint(1,6)
+    if roll == 6:
+        stay = False
+    else:
+        if roll == 5:
+            n = n + 2 * n
+        else:
+            if (n >= 2):
+                n = n - 2
+print(n)
 \end{verbatim}
-and here are a few runs
-\begin{verbatim}
-11 9 7 21 19 17 15 13 11
-11 9 27 81 79 77 75 225 223 
-\end{verbatim}
-A safety property of this program is that the payers always wins.
-Indeed, in all runs, the content of the variable {\tt n} is always a
-odd number, hence it can never be $0$. This property is a consequence
-of three (trivial) theorems of arithmetic
+
+To be on the safe side, the player wants to be sure, before starting
+playing, that she never finishes with zero.  And indeed, in all runs,
+the content of the variable {\tt n} is always an odd number, hence it
+can never be $0$. This property is a consequence of three (trivial)
+theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
@@ -66,11 +67,11 @@ ${\mbox{\it safe}}(p)$ holds,
 amounts to prove these three theorems of arithmetic.
 
 A tiny bug in the program, for instance replacing the line {\tt n = n
-+ 2 * n} with the line {\tt n = n + 3 * n} makes the program unsafe
-as the sequence {\tt 11 9 7 5 3 1 4 2 0 0} leads to player to
-lose. Yet, testing this program will, most likely, not reveal the bug,
-that manifests rarely.  But attempting to prove the property will
-reveal it as it is impossible to prove the proposition
+  + 2 * n} with the line {\tt n = n + 3 * n} makes the program unsafe
+as shown by the sequence {\tt 11 9 7 5 3 1 4 2 0}. Yet, testing this
+program will, most likely, not reveal this bug, that manifests very
+rarely.  In contrast, attempting to prove the property will reveal the bug 
+as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \caption{How do proofs contribute to safety and security of software?\label{safety}}
 \end{framed}
