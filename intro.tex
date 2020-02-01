@@ -18,7 +18,7 @@ seL4 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It
 has been empirically observed that compilers and operating systems
 often have bugs, but proved ones, such as seL4 or CompCert have none
 or much fewer.  This is why certification processes require proofs,
-and not only test, at the highest Evaluation Assurance Levels.
+and not only testing, at the highest Evaluation Assurance Levels.
 
 Because formal methods are crucial in the development of the
 information society, because people can die and companies go bankrupt
@@ -111,19 +111,6 @@ $$\lambda x \lambda h~(g~x~(f~x~h))$$
 \end{framed}
 \end{figure}
 
-A lot of formal proofs developed for one application could be used in
-another.  Unfortunately, the development of formal methods is slowed
-down by the large number of proof systems and the lack of a common
-theory (Figure \ref{theory}) used by these systems.
-For instance, the Paris metro line 14 has been proved correct in {\sc
-  Atelier B}, while the Nasa detect-and-avoid system for unmanned
-aircraft system has been proved correct in {\sc PVS}, the seL4
-operating system has been proved correct in {\sc Isabelle/HOL}, and
-the compiler CompCert has been proved correct in {\sc Coq}.  Some
-projects, such as the Flyspeck project, have been started in different
-systems and required significant integration effort for obtaining the
-overall result.
-
 \begin{figure}
 \begin{framed}
 Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
@@ -147,48 +134,98 @@ This is the major obstacle to interoperability.
 \end{framed}
 \end{figure}
 
-These proof checking systems are infrastuctures and these infrastuctures
-have not been integrated yet.
-Because of this lack of infrastucture integration, each small
-community is centered around one theory and one system, and each
-system has its own library of proofs, interoperability (that is the
-possibility for one user to use a proof developed in another system),
-sustainability (that is the possibility to use a proof decades after
-it has been developed), and cross-verification (that is the
-possibility to have a higher assurance in the correctness of some
-statement by verifying its proof in a system different from that in
-which it has been defined) are restricted, even if some provers
-sometimes call external tools to help building some proofs. The
-fragmentation of systems of formal proof also hinders productivity
-because foundational work (for instance, developing a calculus library
-with theorems about the sinus and cosinus functions, derivatives,
-etc.) has to be repeated instead of being reused.
+A lot of formal proofs developed for one application could be used in
+another.  Unfortunately, the development of formal methods is slowed
+down by the large number of proof systems (and sometimes the large
+number of versions, over time, of one single system) and the lack of a
+common theory (Figure \ref{theory}) used by these systems.  For
+instance, the Paris metro line 14 has been proved correct in {\sc
+  Atelier B}, while the Nasa detect-and-avoid system for unmanned
+aircraft system has been proved correct in the {\sc PVS} proof system,
+the seL4 operating system has been proved correct in {\sc
+  Isabelle/HOL}, and the compiler CompCert has been proved correct in
+{\sc Coq}.  Some projects, such as the Flyspeck project, have been
+started in different systems and required significant integration
+effort for obtaining the overall result.
+
+These proof checking systems are infrastuctures and these
+infrastuctures have not been integrated yet.  Because of this lack of
+integration, each small community is centered around one theory and
+one system. Each library is specific to a proof system, or often even
+to a specific version of this system. In general, a library developed
+in one system cannot be used in another, and when the system is no
+longer maintained, the library may disappear.  Thus, interoperability
+(the possibility for one user to use a proof developed in another
+system), sustainability (the possibility to use a proof decades after
+it has been developed), and cross-verification (the possibility to
+have a higher assurance in the correctness of some statement by
+verifying its proof in a system different from that in which it has
+been defined) are restricted, even if some provers sometimes call
+external tools to help building some proofs. The fragmentation of
+systems of formal proof also hinders productivity because foundational
+work (for instance, developing a calculus library with theorems about
+the sinus and cosinus functions, derivatives, etc.) has to be repeated
+instead of being reused.
+
+This
+lack standards limits the spreading of formal proofs in
+non-specialist communities. For instance, teaching formal proving to
+undergraduate students in a logic course is difficult, as it requires
+the choice of a specific language, a specific theory and a specific
+system that orients the course towards this language, theory, and
+system. The same is true for the use of formal proofs in industry or
+by working mathematicians. So another goal of this project is to make
+formal proofs accessible to a much larger community, as standards
+often do.
+
+On more philosophical grounds,
+while we had in the past an (informal) proof of Pythagoras' theorem or
+Fermat's little theorem, the same proof now has different
+formalizations in {\sc PVS}, {\sc Isabelle/HOL}, {\sc Coq}, etc.
+Thus, the universality of logical truth itself is jeopardized, just
+like it has been jeopardized in the 19th century
+by non-Euclidean geometries, as some
+statements could be true in one geometry, but false in others.
+
+Such an infrastructure is, in many ways, new in the European Strategy
+on Research Infrastructures. We can even say that the idea to
+structure a research effort around an the construction and the use of
+an infrastructure is relatively new in computer science and
+mathematics, even if other projects, such as {\em OpenDreamKit} and
+{\em Software Heritage} do exist. Our goal is therefore also to
+trigger a little, but significative, evolution on the organization of
+research in computer science and mathematics in Europe.
 
 Some twenty major proof assistants exist in the world (Figure
-\ref{systems}), and making these systems interoperable would avoid
+\ref{systems}), that are used both for proving properties of software
+and results in pure mathematics, such as the Feit-Thompson theorem
+\cite{Gonthier13} or Hales' theorem (Kepler's conjecture)
+\cite{Hales17}.  Making these systems interoperable would avoid
 duplication of work, reduce development time, and enable
 cross-verification.  After three decades dedicated to the development
-of these systems, allowing such a cooperation between these systems is
-the next step in the development of the formal proof technology.
+of these systems, allowing such a cooperation between these systems,
+going in the direction of designing a standard for proofs, is the next
+step in the development of the formal proof technology.
 
 \begin{figure}
 \begin{framed}
 \begin{center}
 \begin{tabular}{l@{\hspace{3cm}}l}
 {\sc \underline{Abella}}    & {\sc Acl2}\\
-{\sc \underline{Agda}}      & {\sc HOL Light}\\
+{\sc \underline{Agda}}      & {\sc \underline{HOL Light}}\\
 {\sc \underline{Atelier B}} & {\sc IMPS}\\
 {\sc \underline{Coq}}       & {\sc Lean}\\
-{\sc FoCaliZe}              & {\sc Nuprl}\\
-{\sc \underline{HOL4}}      & {\sc \underline{PVS}}\\
-{\sc \underline{Isabelle}}  & {\sc \underline{TSTP}}\\
-{\sc \underline{Matita}}    & {\sc \underline{LFSC}}\\
-{\sc \underline{Minlog}}\\
+{\sc \underline{FoCaliZe}}  & {\sc \underline{LFSC}}\\
+{\sc \underline{HOL4}}      & {\sc Nuprl}\\
+{\sc \underline{Isabelle}}  & {\sc \underline{PVS}}\\
+{\sc \underline{Matita}}    & {\sc \underline{TSTP}}\\
+{\sc \underline{Minlog}}\\  
 {\sc \underline{Mizar}}\\
 {\sc Rodin}\\
+{\sc \underline{SMT-Lib}}\\
 {\sc \underline{TLAPS}}\\
 {\sc \underline{Why3}}\\
-{\sc \underline{SMT-Lib}}\\
+
 \end{tabular}
 \end{center}
 \caption{Some major proof systems or formats. The European ones are in the first column.
@@ -197,15 +234,76 @@ the next step in the development of the formal proof technology.
 \item
 \end{figure}
 
+At the beginning of the 20th century, a solution was found to the
+crisis of non-Euclidean geometries: the definition of the various
+geometries in predicate logic \cite{HilbertAckermann} restored the
+universality of mathematical truth, allowing to determine which axiom
+was used in which proof and which theorem held in which geometry.
+In the same way, we defend that the interoperability of
+proof systems can only be achieved if we are able to express the
+theories implemented in these proof systems in a common logical
+framework.
+
+In 1928, predicate logic, the first logical framework in the history,
+was a huge success, since three important theories used at that time
+(geometry, arithmetic and set theory) could be expressed in it. But it
+also has limitations, which explains that another of the major
+theories used at that time (Russell's type theory, from The Principia
+Mathematica) cannot be expressed in it. Since then, several other
+versions of type theory, such as Church's type theory \cite{Church40},
+Martin-L\"of's type Theory \cite{Martin-Lof84}, and the Calculus of
+constructions \cite{CoquandHuet88}, have also been defined as
+autonomous theories. These theories are those implemented in most
+of the current proof systems, yet they cannot be expressed in
+predicate logic.
+
+This failure has led, in the field of proof systems, to the
+abandonment predicate logic, and even the concept of logical
+framework: the theories implemented in {\sc Coq}, {\sc Matita}, {\sc
+  HOL Light}, etc. are often defined as autonomous systems, and not in
+a logical framework.
+
+However, a different line of research has attempted to understand the
+limitations of predicate logic and to propose other logical frameworks
+repairing them. The most prominent limitations of predicate logic are
+the lack of function symbols binding variables, the lack of a syntax
+for proof terms, the lack of a notion of computation, the lack of a
+notion of cut for axiomatic theories, and the impossibility to express
+constructive proofs. These limitations have led to the development of
+logical frameworks such as $\lambda$-Prolog \cite{NadathurMiller88,
+  MillerNadathur12}, Isabelle \cite{Paulson90}, the $\lambda
+\Pi$-calculus \cite{HarperHonsellPlotkin91} (also called the
+``Edinburgh logical framework''), Deduction modulo theory
+\cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
+\cite{Berardi88,Terlouw89}, and ecumenical logics
+\cite{Prawitz15,Dowek15,PereiraRodriguez17}.
+
+All these logical frameworks have been unified in the $\lambda
+\Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
+the system {\sc Dedukti} \cite{Assaf16}.  Geometry, arithmetic and set
+theory, but also that of Russell's type theory, Church's type theory,
+Martin-L\"of's type theory, and the Calculus of constructions can be
+expressed in this framework. This is why {\sc Logipedia} is based on
+{\sc Logipedia} is based on {\sc Deduki}. The theories implemented in
+the various systems will first be expressed in {\sc Deduki}, then the
+proofs developed in these systems will be translated to {\sc Deduki}
+and the analysis of the axioms used in each proof will indicate in
+which systems this proof can be made available \cite{Dowek17,Thire18}
+(a domain traditionally called ``reverse mathematics''
+\cite{Friedman76,Simpson09}).
+
 In January 2019, we put online a first prototype of {\sc Logipedia},
 an encyclopedia of formal proofs, expressed in the languages of five
-different systems. At that time, this encyclopedia contained only a
-few hundred proofs.  Convinced that such a cloud of formal proofs
-could bring to the applications of formal proof technology the same
-boost that the cloud has brought to computing, and also that managing
-such a large encyclopedia (for instance being able to query a proof
-with a search engine) required some interdisciplinary effort, we
-organized a meeting to discuss the future of this project
+different systems ({\sc Matita}, {\sc Coq}, {\sc Lean}, {\sc HOL
+  Light}, {\sc Isabelle/HOL}, and {\sc PVS}).  At that time, this
+encyclopedia contained only a few hundred proofs.
+
+Convinced that such a cloud of formal proofs could bring to the
+applications of formal proof technology the same boost that the cloud
+has brought to computing, and also that managing such a large
+encyclopedia (for instance being able to query a proof with a search
+engine) required some interdisciplinary effort, we organized a meeting
+to discuss the future of this project
 \url{http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
 meeting brought together 38 researchers from Austria, the Czech
 Republic, France, Italy, the Netherlands, and Poland.
