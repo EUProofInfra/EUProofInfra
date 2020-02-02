@@ -54,9 +54,9 @@ print(n)
 \end{verbatim}
 
 To be on the safe side, the player wants to be sure, before starting
-playing, that she never finishes with zero.  And indeed, in all runs,
+playing, that she will never finish with zero.  And indeed, in all runs,
 the content of the variable {\tt n} is always an odd number, hence it
-can never be $0$. This property is a consequence of three (trivial)
+cannot be $0$. This property is a consequence of three (trivial)
 theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
@@ -66,12 +66,13 @@ proposition
 ${\mbox{\it safe}}(p)$ holds, 
 amounts to prove these three theorems of arithmetic.
 
-A tiny bug in the program, for instance replacing the line {\tt n = n
-  + 2 * n} with the line {\tt n = n + 3 * n} makes the program unsafe
-as shown by the sequence {\tt 11 9 7 5 3 1 4 2 0}. Yet, testing this
-program will, most likely, not reveal this bug, that manifests very
-rarely.  In contrast, attempting to prove the property will reveal the bug 
-as it is impossible to prove the proposition
+A tiny bug in the program, for instance replacing the {\tt 2} by a
+{\tt 3} in the the line {\tt n = n + 2 * n} makes the program unsafe
+as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
+this program will, most likely, not reveal this bug, that manifests
+very rarely.  In contrast, attempting to prove the correctness of this
+program will
+reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \caption{How do proofs contribute to safety and security of software?\label{safety}}
 \end{framed}
@@ -89,18 +90,19 @@ limited number of rules, for example
 \item From $A$, deduce $A~\mbox{\it or}~B$.
 \item ...
 \end{itemize}
-Yet, though history most mathematical proofs have been written in
+Yet, through history, most mathematical proofs have been written in
 pidgin of natural language and mathematical formulas. When proofs are
-very long (as it is often of the proofs used in safety and security, but
-also of some proofs in pure mathematics), mistakes in proofs are very
-difficult to detect. For instance dozen of wrong proofs of parallel postulate
-have been given through history, sometimes by the best mathematicians.
+very long (as it is often of the proofs used in safety and security,
+but also of some proofs in pure mathematics), mistakes in proofs are
+very difficult to detect. For instance dozen of wrong proofs of
+parallel postulate have been given through history, sometimes by the
+best mathematicians.
 
-In the 1960s Robin Milner and Nicolaas De Bruijn noticed that the
+In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
 correctness of a mathematical proof could be checked by a
-computer. This lead to the development of the two first
-proof systems in history: Milner's {\sc LCF} or De Bruijn's {\sc Automath}.
-From the axioms
+computer. This led to the development of the two first proof systems
+in history: Milner's {\sc LCF} or De Bruijn's {\sc Automath}.  From
+the axioms
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
 $$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
 we can deduce
@@ -115,8 +117,8 @@ $$\lambda x \lambda h~(g~x~(f~x~h))$$
 \begin{figure}
 \begin{framed}
 Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
-$B$'' are universal, but building proof require more rules,
-that are often specific to a domain of knowledge and that are called
+$B$'' are universal, but building proofs require more rules, that are
+often specific to a domain of knowledge and are called
 ``axiom''. Examples are the axioms of geometry, the axioms or
 arithmetic. These axioms constitute a theory.
 
@@ -126,9 +128,9 @@ the first half of the 20th century a few variants of set theory, and a
 few alternatives have been proposed (such as Simple type theory).
 But, because these theories had not been designed for being
 implemented on a computer, the rise of computer checked formal proofs
-has led to a multiplication of such theories. Each proof-checking
-system, such as {\sc Coq}, {\sc Isabelle/HOL}, {\sc Mizar}, {\sc
-  Atelier B}, etc. implements its own theory.
+has led to a multiplication of such theories. Each proof system,
+such as {\sc Coq}, {\sc Isabelle/HOL}, {\sc Mizar}, {\sc Atelier B},
+etc. implements its own theory.
 
 This is the major obstacle to interoperability.
 \caption{What is a theory?\label{theory}}
@@ -168,16 +170,16 @@ work (for instance, developing a calculus library with theorems about
 the sinus and cosinus functions, derivatives, etc.) has to be repeated
 instead of being reused.
 
-This
-lack standards limits the spreading of formal proofs in
+This lack standards limits the spreading of formal proofs in
 non-specialist communities. For instance, teaching formal proving to
 undergraduate students in a logic course is difficult, as it requires
 the choice of a specific language, a specific theory and a specific
 system that orients the course towards this language, theory, and
-system. The same is true for the use of formal proofs in industry or
-by working mathematicians. So another goal of this project is to make
-formal proofs accessible to a much larger community, as standards
-often do.
+system, instead of orienting it to fundamental principles that can be
+used everywhere. The same is true for the use of formal proofs in
+industry or by working mathematicians. So another goal of this project
+is to make formal proofs accessible to a much larger community, as
+standards often do.
 
 On more philosophical grounds,
 while we had in the past an (informal) proof of Pythagoras' theorem or
@@ -187,15 +189,6 @@ Thus, the universality of logical truth itself is jeopardized, just
 like it has been jeopardized in the 19th century
 by non-Euclidean geometries, as some
 statements could be true in one geometry, but false in others.
-
-Such an infrastructure is, in many ways, new in the European Strategy
-on Research Infrastructures. We can even say that the idea to
-structure a research effort around an the construction and the use of
-an infrastructure is relatively new in computer science and
-mathematics, even if other projects, such as {\em OpenDreamKit} and
-{\em Software Heritage} do exist. Our goal is therefore also to
-trigger a little, but significative, evolution on the organization of
-research in computer science and mathematics in Europe.
 
 Some twenty major proof assistants exist in the world (Figure
 \ref{systems}), that are used both for proving properties of software
@@ -273,8 +266,8 @@ notion of cut for axiomatic theories, and the impossibility to express
 constructive proofs. These limitations have led to the development of
 logical frameworks such as $\lambda$-Prolog \cite{NadathurMiller88,
   MillerNadathur12}, Isabelle \cite{Paulson90}, the $\lambda
-\Pi$-calculus \cite{HarperHonsellPlotkin91} (also called the
-``Edinburgh logical framework''), Deduction modulo theory
+\Pi$-calculus (also called the ``Edinburgh logical framework'')
+\cite{HarperHonsellPlotkin91}, Deduction modulo theory
 \cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
 \cite{Berardi88,Terlouw89}, and ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
@@ -284,17 +277,25 @@ All these logical frameworks have been unified in the $\lambda
 the system {\sc Dedukti} \cite{Assaf16}.  Geometry, arithmetic and set
 theory, but also that of Russell's type theory, Church's type theory,
 Martin-L\"of's type theory, and the Calculus of constructions can be
-expressed in this framework. This is why {\sc Logipedia} is based on
-{\sc Logipedia} is based on {\sc Deduki}. The theories implemented in
-the various systems will first be expressed in {\sc Deduki}, then the
-proofs developed in these systems will be translated to {\sc Deduki}
-and the analysis of the axioms used in each proof will indicate in
-which systems this proof can be made available \cite{Dowek17,Thire18}
-(a domain traditionally called ``reverse mathematics''
-\cite{Friedman76,Simpson09}).
+expressed in this framework.
+
+So the theories implemented in various systems can all be expressed in
+{\sc Dedukti} and the proofs developed in these systems can be
+translated to {\sc Deduki}.  The analysis of the axioms used in each
+proof then indicates in which systems this proof can be made available
+\cite{Thire18,Dowek17} (a domain traditionally called ``reverse
+mathematics'' \cite{Friedman76,Simpson09}).
+
+This allows to collect the proofs developed in various systems into a
+single on-line encyclopedia, called {\sc Logipedia}. The possibility
+to use a {\sc Logipedia} proof in a system depends only on the axioms
+used in this particular proof and not on the axioms used in the system
+in which it has been developed. {\sc Logipedia} is thus a research
+infrastructure that permits interoperability between proof systems, by
+allowing the sharing of the data used in these systems.
 
 In January 2019, we put online a first prototype of {\sc Logipedia},
-an encyclopedia of formal proofs, expressed in the languages of five
+an encyclopedia of formal proofs expressed in the languages of five
 different systems ({\sc Matita}, {\sc Coq}, {\sc Lean}, {\sc HOL
   Light}, {\sc Isabelle/HOL}, and {\sc PVS}).  At that time, this
 encyclopedia contained only a few hundred proofs.
@@ -316,6 +317,15 @@ ready to contribute to develop this encyclopedia, aiming at having in
 twenty years all the formal proofs then developed, in a single
 encyclopedia, making these data, distributed under a creative common
 licence, findable, accessible, interoperable, and reusable.
+
+Such an infrastructure is, in many ways, new in the European Strategy
+on Research Infrastructures. We can even say that the idea to
+structure a research effort around an the construction and the use of
+an infrastructure is relatively new in computer science and
+mathematics, even if other projects, such as {\em OpenDreamKit} and
+{\em Software Heritage} do exist. Our goal is therefore also trigger a
+little, but significative, evolution on the organization of research
+in computer science and mathematics in Europe.
 
 %%% Local Variables:
 %%%   mode: latex
