@@ -29,11 +29,11 @@ and its evolution.
 \begin{framed}
 Imagine the following casino game. At the beginning, a player is given
 eleven euros. At each round, she throws a dice. If the results is a
-six, then game is over.  If it is a five, she is given twice the
-amount of money she already has. Otherwise she is taken two euros, if
-she has at least two.  When the game is over, the player wins the
-money she got. Except if she has zero, in which case she looses one
-million.
+six, then game is over.  If it is a five, a four, a three, or a two,
+she is given twice the amount of money she already has. If it is a one
+she is taken two euros, if she has at least two.  When the game is
+over, the player wins the money she got. Except if she has zero, in
+which case she looses one million.
 
 This game can be modeled by program $p$
 %import random 
@@ -45,11 +45,11 @@ while stay:
     if roll == 6:
         stay = False
     else:
-        if roll == 5:
-            n = n + 2 * n
-        else:
+        if roll == 1:
             if (n >= 2):
                 n = n - 2
+        else:
+            n = n + 2 * n
 print(n)
 \end{verbatim}
 
