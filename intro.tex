@@ -45,11 +45,11 @@ while stay:
     if roll == 6:
         stay = False
     else:
-        if roll == 1:
+        if roll >= 2:
+            n = n + 2 * n
+        else:
             if (n >= 2):
                 n = n - 2
-        else:
-            n = n + 2 * n
 print(n)
 \end{verbatim}
 
