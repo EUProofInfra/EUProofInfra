@@ -32,7 +32,7 @@ eleven euros. At each round, she throws a dice. If the results is a
 six, then game is over.  If it is a five, a four, a three, or a two,
 she is given twice the amount of money she already has. If it is a one
 she is taken two euros, if she has at least two.  When the game is
-over, the player wins the money she got. Except if she has zero, in
+over, the player wins the money she got, except if she has zero, in
 which case she looses one million.
 
 This game can be modeled by program $p$
@@ -55,8 +55,8 @@ print(n)
 
 To be on the safe side, the player wants to be sure, before starting
 playing, that she will never finish with zero.  And indeed, in all runs,
-the content of the variable {\tt n} is always an odd number, hence it
-cannot be $0$. This property is a consequence of two simple
+the content of the variable {\tt n} is always an odd number, thus it
+cannot be zero. This property is a consequence of two simple
 theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
@@ -81,7 +81,7 @@ $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \begin{figure}
 \begin{framed}
 Since Antiquity, we have known that
-proofs, both purely mathematical ones as in Euclid's elements or the
+proofs, both purely mathematical ones, as in Euclid's elements or the
 recent proof of the Kepler conjecture by Thomas Hales, and proofs used
 to establish the safety and security of software, can be built with a
 limited number of rules, for example
@@ -175,8 +175,8 @@ non-specialist communities. For instance, teaching formal proving to
 undergraduate students in a logic course is difficult, as it requires
 the choice of a specific language, a specific theory and a specific
 system that orients the course towards this language, theory, and
-system, instead of orienting it to fundamental principles that can be
-used everywhere. The same is true for the use of formal proofs in
+system, instead of orienting it to fundamental principles that are
+useful everywhere. The same is true for the use of formal proofs in
 industry or by working mathematicians. So another goal of this project
 is to make formal proofs accessible to a much larger community, as
 standards often do.
@@ -285,41 +285,47 @@ proof then indicates in which systems this proof can be made available
 mathematics'' \cite{Friedman76,Simpson09}).
 
 This allows to collect the proofs developed in various systems into a
-single on-line encyclopedia, called {\sc Logipedia}. The possibility
-to use a {\sc Logipedia} proof in a system depends only on the axioms
-used in this particular proof and not on the axioms used in the system
-in which it has been developed. {\sc Logipedia} is thus a research
-infrastructure that permits interoperability between proof systems, by
-allowing the sharing of the data used in these systems.
+single on-line encyclopedia.  This encyclopedia is called {\sc
+  Logipedia}. A first prototype, put on-line in January 2019, contains
+a few hundred lemmas and developing this encyclopedia so that it
+contains in twenty years all the formal proofs then developed to allow
+interoperability of proof systems, and sustainability and
+cross-verification of formal proofs is the main goal of this project.
 
-In January 2019, we put online a first prototype of {\sc Logipedia},
-an encyclopedia of formal proofs expressed in the languages of five
-different systems ({\sc Matita}, {\sc Coq}, {\sc Lean}, {\sc HOL
-  Light}, {\sc Isabelle/HOL}, and {\sc PVS}).  At that time, this
-encyclopedia contained only a few hundred proofs.
+The possibility to use a {\sc Logipedia} proof in a system depends
+only on the axioms used in this particular proof and not on the axioms
+used in the system in which it has been developed. This analysis is
+the basis of the interoperability between proof systems.  The proofs
+that are currently in {\sc Logipedia}, are expressed in six different
+systems: {\sc Matita}, {\sc Coq}, {\sc Lean}, {\sc HOL Light}, {\sc
+  Isabelle/HOL}, and {\sc PVS}.
 
-Convinced that such a cloud of formal proofs could bring to the
-applications of formal proof technology the same boost that the cloud
-has brought to computing, and also that managing such a large
-encyclopedia (for instance being able to query a proof with a search
-engine) required some interdisciplinary effort, we organized a meeting
-to discuss the future of this project
+{\sc Logipedia} is thus a research infrastructure that permits
+comminication between proof systems, by allowing the sharing of the
+data used in these systems.
+
+
+This encyclopedia contains only a few hundred proofs, but convinced
+that such a cloud of formal proofs could bring to the applications of
+formal proof technology the same boost that the cloud has brought to
+computing, and also that managing such a large encyclopedia (for
+instance being able to query a proof with a search engine) required
+some interdisciplinary effort, we organized, in January 2019, a
+meeting to discuss the future of this project
 \url{http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
 meeting brought together 38 researchers from Austria, the Czech
-Republic, France, Italy, the Netherlands, and Poland.
-
-Since then, colleagues from Belgium, Germany, Serbia, Sweden, and the
-United Kingdom, from academia and industry, have manifested interest
-in participating in this effort.  These researchers and engineers are
-ready to contribute to develop this encyclopedia, aiming at having in
-twenty years all the formal proofs then developed, in a single
-encyclopedia, making these data, distributed under a creative common
-licence, findable, accessible, interoperable, and reusable.
+Republic, France, Italy, the Netherlands, and Poland.  Since then,
+colleagues from Belgium, Germany, Serbia, Sweden, and the United
+Kingdom, from academia and industry, have manifested interest in
+participating in this effort.  These researchers and engineers are
+ready to contribute to develop this encyclopedia, aiming at sharing
+proofs, under a creative common licence, findable, accessible,
+interoperable, and reusable.
 
 Such an infrastructure is, in many ways, new in the European Strategy
 on Research Infrastructures. We can even say that the idea to
-structure a research effort around an the construction and the use of
-an infrastructure is relatively new in computer science and
+structure a networking activity around the construction and the use
+of an infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist. Our goal is therefore also trigger a
 little, but significative, evolution on the organization of research
