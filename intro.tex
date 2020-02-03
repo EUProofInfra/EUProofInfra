@@ -56,11 +56,11 @@ print(n)
 To be on the safe side, the player wants to be sure, before starting
 playing, that she will never finish with zero.  And indeed, in all runs,
 the content of the variable {\tt n} is always an odd number, hence it
-cannot be $0$. This property is a consequence of three (trivial)
+cannot be $0$. This property is a consequence of two simple
 theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
-$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
+%$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
 Hence, verifying the safety of this program, that is that the
 proposition 
 ${\mbox{\it safe}}(p)$ holds, 
