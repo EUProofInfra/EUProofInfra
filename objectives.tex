@@ -94,6 +94,7 @@ Agda:& level 2\\
 Atelier B:& level 2\\
 Isabelle:& level 2\\
 HOL4:& level 1\\
+TSTP:& level 1\\
 Minlog:& level 0\\
 PVS:& level 0\\
 Abella:& level 0\\
@@ -102,7 +103,7 @@ TLA+:& level 0\\
 SMT-Lib:& level 0\\
 Why3:& level 0\\
 LFSC:& level 0\\
-TSTP:& level 0\\
+
 \end{tabular}
 
 and we plan to increase these levels to 
@@ -116,6 +117,7 @@ Agda:& from level 2 to level 3\\
 Atelier B:& from level 2 to level 5\\
 Isabelle:& from level 2 to level 5\\
 HOL4:& from level 1 to level 5\\
+TSTP:& from level 1 to level ???\\
 Minlog:& from level 0 to level 3\\
 PVS:& from level 0 to level 2\\
 Abella:& from level 0 to level 2\\
@@ -124,7 +126,7 @@ TLA+:& from level 0 to level 2\\
 SMT-Lib:& from level 0 to level ???\\
 Why3:& from level 0 to level ???\\
 LFSC:& from level 0 to level ???\\
-TSTP:& from level 0 to level ???\\
+
 \end{tabular}
 
 This encyclopedia will be freely accessible through a web browser,
@@ -139,18 +141,24 @@ We shall also develop ergonomic interfaces, search engines, etc.
 
 
 Finally, this project will trigger joint research activities between
-its users and between its developers.
-First, for all the systems for which we have not yet
+its users and between its developers.  First, there are several
+theories for which we do not have yet reached level 1, and for which
+we need to understand how to express then in {\sc Dedukti}. Which is
+an obvious joint research activity. Then, we need to define algorithms
+to eliminate some axioms from proofs. Many such algorithms already
+exist to eliminate the excluded middle, the axiom of choice, or the universes
+from a given proof. We need to develop new ones, more specific to the theories
+we address in this project.
 
+In addition, each library contains definitions of natural numbers,
+real numbers, etc. and, most importantly, logical connectors, that
+must be aligned, that is structural results proved for one definition
+of real numbers must be transported to any definition of an isomorphic
+structure.
 
-
-
-
-In addition, each library contains definitions of natural
-numbers, real numbers, etc.\ and, most importantly, logical connectors,
-that must be aligned.  All these objectives contribute to building a
-new formal proof community, focused on the values of knowledge
-exchange and sustainability.
+All these objectives contribute to building a new formal proof
+community, focused on the values of knowledge exchange and
+sustainability.
 
 %%% Local Variables:
 %%%   mode: latex
