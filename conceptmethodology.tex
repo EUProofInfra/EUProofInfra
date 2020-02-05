@@ -2,14 +2,14 @@
 
 To make a formal proof, developed in some system $X$, accessible to
 the users of other systems, the first step is to express the theory
-$D[X]$, implemented in the system $X$, in the logical framework {\sc
+$D[X]$, implemented in the system $X$, in the logical framework {\textsf
   Dedukti}.  Then, we must instrument the system $X$ so that the proof
 can be exported from it, as a piece of data, expressed as a proof in
-$D[X]$ and included in {\sc Logipedia}. Next, we need to analyze this
+$D[X]$ and included in {\textsf Logipedia}. Next, we need to analyze this
 proof in order to determine which symbols, axioms and rewrite rules of
 $D[X]$ it actually uses and, thus, in which alternative theories it
 can be expressed.  Finally, we must align its concepts with the
-definitions already present in {\sc Logipedia} and decide where it
+definitions already present in {\textsf Logipedia} and decide where it
 fits in the general structure of the encyclopedia.
 
 Depending on the system $X$ we consider, more or less research needs
@@ -37,34 +37,34 @@ alignment.
 
 \subsection{Methodology}
 
-The methodology is the same for integrating any library to {\sc Logipedia},
+The methodology is the same for integrating any library to {\textsf Logipedia},
 but due to a difference of readiness of the various systems we focus on,
 our priorities are different.
 
 \begin{enumerate}
-\item We already know how to express most of the theories of {\sc Atelier B},
-{\sc Coq}, {\sc FoCaLiZe}, {\sc HOL Light}, {\sc HOL4}, {\sc
-Isabelle}, {\sc Matita}, and {\sc Rodin} in {\sc Dedukti}. We propose
-to instrument these systems so that they can produce {\sc Dedukti}
-proofs that we can include in {\sc Logipedia}.
+\item We already know how to express most of the theories of {\textsf Atelier B},
+{\textsf Coq}, {\textsf FoCaLiZe}, {\textsf HOL Light}, {\textsf HOL4}, {\textsf
+Isabelle}, {\textsf Matita}, and {\textsf Rodin} in {\textsf Dedukti}. We propose
+to instrument these systems so that they can produce {\textsf Dedukti}
+proofs that we can include in {\textsf Logipedia}.
 
 \item
-For other theories, such as those of {\sc Abella}, {\sc Agda}, {\sc
-Lean}, {\sc Minlog}, {\sc Mizar}, {\sc PVS}, {\sc TLA+}, the work is
+For other theories, such as those of {\textsf Abella}, {\textsf Agda}, {\textsf
+Lean}, {\textsf Minlog}, {\textsf Mizar}, {\textsf PVS}, {\textsf TLA+}, the work is
 in progress, or not yet started.  So we must first understand how they
-can be expressed in {\sc Dedukti}.
+can be expressed in {\textsf Dedukti}.
 
 \item Besides the standard libraries of these systems, large libraries
-  have been developed: the {\sc Isabelle Archive of formal Proofs} \cite{AFP},
-  {\sc Flyspeck}\cite{Flyspeck}, {\sc MathComp}\cite{Mathcomp}, 
-  {\sc CompCert} \cite{Compcert}, {\sc CakeML} \cite{CakeML}, ...  We aim to include
-  some of these libraries in {\sc Logipedia}.
+  have been developed: the {\textsf Isabelle Archive of formal Proofs} \cite{AFP},
+  {\textsf Flyspeck}\cite{Flyspeck}, {\textsf MathComp}\cite{Mathcomp}, 
+  {\textsf CompCert} \cite{Compcert}, {\textsf CakeML} \cite{CakeML}, ...  We aim to include
+  some of these libraries in {\textsf Logipedia}.
   
 \item
 Besides proof systems, we also want to include proofs coming from
 automated theorem provers, SAT solvers, SMT solvers, and model
 checkers.  So we must instrument some of these systems so that they
-can produce {\sc Dedukti} proofs that we can include in {\sc
+can produce {\textsf Dedukti} proofs that we can include in {\textsf
 Logipedia}.
 
 \item
@@ -76,13 +76,13 @@ use it in more systems.
 
 
 \item
-Each library imported in {\sc Logipedia} will come with its own
+Each library imported in {\textsf Logipedia} will come with its own
 definition of natural numbers, real numbers, etc. We want to develop
 ``concept alignments algorithms'' to transport theorems from one
 structure to another isomorphic one.
 
 \item 
-Besides data, we propose to include in {\sc Logipedia}, metadata and
+Besides data, we propose to include in {\textsf Logipedia}, metadata and
 an inner structure.
 \end{enumerate}
 
