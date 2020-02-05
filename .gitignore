@@ -2,6 +2,7 @@ ChangeLog
 _region_.tex
 .DS_Store
 paper.pdf
+propB.pdf
 *.delivs 
 *.deliverables 
 *-blx.bib
@@ -21,7 +22,6 @@ paper.pdf
 *.ind
 *.thm
 *.fol
-*.pdf
 *.vrb
 *.swp
 Proposal/final.pdf

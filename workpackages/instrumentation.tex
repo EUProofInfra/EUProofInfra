@@ -1,11 +1,11 @@
 \begin{workpackage}[id=instrumentation,wphases=0-48,type=RTD,
   short=Instrument Provers,% for Figure 5.
   title=Instrument proof systems to produce Dedukti proof,
-  lead=Inr,
+  lead=Del,
   BolRM=14,
   InrRM=10,
-  DelRM=48,
-  GotRM=48]
+  DelRM=24,
+  GotRM=18]
 
 \ednote{MK: We need one coordinating site. original coordinators: Frédéric Blanqui and
   Jesper Cockx}
@@ -15,7 +15,7 @@ Wenzel, Nicolas Magaud, Gaspard Férey, Ulf Norell, Claudio Sacerdoti Coen}
 
 \begin{wpobjectives}
   The objective of this work package is to bring systems already at
-  LRL level 2 to higher LRL levels, that is, to instrument the systems
+  LIL level 2 to higher LIL levels, that is, to instrument the systems
   for which we already know how to encode the proofs in Dedukti, and
   make available these proofs in Logipedia so that
   they can be exported to other systems.
@@ -59,10 +59,10 @@ as experimented with Atelier B and Zenon.
 
 \begin{task}[id=HOL4,title=Instrument HOL4]
 \input{workpackages/hol4}
- \end{task}
+\end{task}
 
-\begin{task}[id=atelier-b,title=Instrument Atelier-B]
-\ednote{Southhampton, Toulouse, Clearsy writes this}
+\begin{task}[id=atelier-b,title=Instrument Atelier-B/Rodin]
+\input{workpackages/b_method}
 \end{task}
 
 \begin{task}[id=matita,title=Integrate the Matita translator in Matita itself]
@@ -83,6 +83,9 @@ as experimented with Atelier B and Zenon.
   \end{wpdeliv}
   \begin{wpdeliv}[due=12,miles=logipedia-v1,id=isabelle1,dissem=PU,nature=DEM,lead=Tum]
       {More scalable memory management for Poly/ML}
+  \end{wpdeliv}
+  \begin{wpdeliv}[due=18,miles=agda-stdlib,id=agda,dissem=PU,nature=DEM,lead=Del]
+      {Export Agda's standard library to Dedukti}
   \end{wpdeliv}
   \begin{wpdeliv}[due=24,miles=isabelle-stdlib,id=requirements,dissem=PU,nature=DEM,lead=Tum]
       {More scalable export of proof terms for Isabelle}

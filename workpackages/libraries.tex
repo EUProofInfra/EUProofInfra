@@ -3,7 +3,7 @@
   title=Libraries,
   lead=Inr,
   InrRM=10]
-  
+
 \ednote{MK: We need one coordinating site. original coordinators: Georges Gonthier and
 Tobias Nipkow} \ednote{MK: interested parties (add their sites and RM here): David
 Deharbe, Nicola Gambino, Tobias Nipkow, Makarius Wenzel, Julien Narboux, Gaspard Férey,
@@ -14,43 +14,147 @@ François Thiré}
 
 This includes notably:
   \begin{compactitem}
-  \item \ldots
+  \item Access
+  \item Scalability
   \end{compactitem}
   A key aspect will be to foster \ldots
+
+For the future: Mizar, PVS, seL4, CompCert
 \end{wpobjectives}
 
 
 \begin{wpdescription}
-Translating the standard libraries of the systems is part of the WP1. 
+Translating the standard libraries of the systems is part of the WP1.
 \end{wpdescription}
+
+Two aspects: scalability and accessibility
+
+{\bf Trusted chain}
+
+A grant challenge in program verification is that of running trusworthy
+software on trustworthy hardware. This challenge can be decomposed in
+four steps: (1) formally verify the source code of the program,
+(2) compile this code using a formally-verified compiler,
+(3) launch the program on a formally-verified operating system,
+(4) running the whole thing on hardware with formally-verified circuits.
+
+Developing a program verification framework, a verified compiler, a
+verified operating system, and a verified hardware, corresponds to 4
+daunting tasks. Just setting up a reasonable proof-of-concept takes of
+the order of 10 man-year of work. Raising the bar to a production-ready
+tool takes at least Can additional order of magnitude in terms of efforts.
+
+Considerable progress has been made on these three aspects
+over the past decade, and every year the technology becomes more mature.
+Yet, there is a pitfall. The tools are not all developed using the same
+theorem prover, not just for historical reasons but also because different
+proof assistants have appeared better-suited at different tasks.
+
+In that setting, how one could possibly complete a trustworthy chain if
+the four main pieces of the chain are not properly hooked to one another?
+As a concrete example, CFML is a program verification for verifying ML code,
+developed in Coq; and CakeML is a verified compiler for ML code,
+developed in HOL. How can we combine the two tools to produce verified
+machine code from verified ML code?
+
+There are two main ways to address the issue. One way is to port the
+proofs of all the formalized tools into a same proof assistant.
+Doing so might be possible in a far future, however given the scale and
+the complexity of the tools, this approach does not provide a short-term
+solution. Another, more accessible approach consists of translating
+between proof assistants only the formal statements associated with the
+interfaces between the 4 pieces of the verified chain.
+
+Concretely, the interfaces involve: (1-to-2) a formal semantics for
+a programming language, (2-to-3) a formal semantics for a set of
+system calls (the OS API and isolation model), (2-and-3-to-4) a formal
+semantics for machine code (instruction set and memory model).
+Translating such formal interfaces, which consists solely of statements,
+is considerably easier than translating all the verification proofs
+associated with the tools.
+
+A proposal for translating such interfaces should satisfy the following
+requirements. First, the translations must to be trusworthy. In particular,
+translation by hand is not an option, and developing translation tools
+between every pair of provers might make the trusted code base prohibitively
+large. Second, the translations should be maintainable. Indeed,
+formal specifications of the aforementioned interfaces do evolve, slowly but
+surely, through time, in particular for incorporating new features.
+Third, the translations should produce formal definitions that are written
+in a style sufficiently idiomatic with respect to the target proof assistant.
+Indeed, carrying out proofs with respect to definitions in non-idiomatic
+style induce prohibitive overheads.
+
+We propose to tackle the problem by leveraging the unifying language
+Dedukti in the following way. Assume that we have, for formal statements,
+a bi-directional translations between each prover and Deduki. Then,
+we could translate a formal interface from one system to another.
+The user may then provide alternative, more idiomatic statements for
+specific definitions, and prove (by hand) that the alternative definitions
+are equivalent to the automatically-generated ones. If the original
+interface is modified, then the automatic translations can be updated,
+and the proof system would notify the user of which alternative definitions
+need to be updated accordingly.
+
+For example, we could take CakeML's semantics of its input ML language,
+translate it automatically into Dedukti, then translate Dedukti's
+definition into Coq, refine by hand a few definitions to make them more
+idiomatic, and obtain a usable Coq semantics, with respect to which
+the correctness of the CFML verification tool can be established in Coq.
+Completing this case study is motivating not only because it delivers
+an immediate result of relating two existing tools, but also because it
+would validate the general approach of translating semantics via Dedukti
+in a realistic manner.
+
+Beyond this one example, other motivating case studies will be considered,
+such as translating the formal semantics of ComCert-C into other proof
+assistants, or translating the formal semantics of ARM instruction set.
+
 
 \begin{tasklist}
 \begin{task}[id=mathcomp,title=MathComp]
-\ednote{Sophia, Saclay, Paris}
+\ednote{Sophia, Saclay (Gonthier), Paris}
 \end{task}
 
-\begin{task}[id=mizar,title=The Mizar library]
-\ednote{Innsbruck, Bialystok}
+\begin{task}[id=milc,title=Revised Coq Analysis Library]
+\ednote{Saclay (Boldo), Paris, Sophia}
 \end{task}
+
+%\begin{task}[id=mizar,title=The Mizar library]
+%\ednote{Innsbruck, Bialystok}
+%\end{task}
 
 \begin{task}[id=afp,title=The Isabelle Archive of Formal Proofs]
-\ednote{TU München, Saclay}
+\ednote{TU München (Wenzel), Saclay}
+\end{task}
+
+\begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \& Probability library]
+\ednote{TU München (Nipkow)}
 \end{task}
 
 \begin{task}[id=geocoq,title=The GeoCoq library]
-\ednote{Sophia, Strasbourg, Belgrade}
+\ednote{Sophia (Boutry), Strasbourg, Belgrade}
 \end{task}
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
+\ednote{Saclay (Grienenberger)}
 \end{task}
 
-\begin{task}[id=pvs,title=The NASA PVS library]
-\end{task}
-\begin{task}[id=sel4,title=The seL4 library]
+\begin{task}[id=cakeml,title=The CakeML programming language library]
+\ednote{Gothenburg (Myreen), Strasbourg, TU München}
 \end{task}
 
-\begin{task}[id=compcert,title=The CompCert library]
+\begin{task}[id=unimath,title=The UniMath library]
+\ednote{Birmingham (Ahrens)}
 \end{task}
+
+%\begin{task}[id=pvs,title=The NASA PVS library]
+%\end{task}
+%\begin{task}[id=sel4,title=The seL4 library]
+%\end{task}
+
+%\begin{task}[id=compcert,title=The CompCert library]
+%\end{task}
 \end{tasklist}
 
 \begin{wpdelivs}

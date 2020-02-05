@@ -2,47 +2,111 @@
   short=Structured Theories and Metadata,% for Figure 5.
   title=Structured Theories and Metadata,
   lead=Fau,
-  BolRM=18,
+  BolRM=6,
+  TumRM=6,
   FauRM=48,
   SacRM=48]
   
-\ednote{Which sites are interested (add their sites and RM here)? David Deharbe, Nicola Gambino, Florian Rabe, Michael Rathjen, Claudio Sacerdoti Coen,
-Dale Miller}
+\ednote{Which sites are interested?
+David Deharbe and Etienne Prun (Clearsy); Nicola Gambino, Michael Rathjen, Claudio Sacerdoti Coen, Dale Miller, Emilio J. Gallego Arias, Michael Butler, Pierre Senellart}
+
+% David Deharbe and Etienne Prun (Clearsy): use B Method, would like to doublecheck B proofs, integrate B with other proof assistant at high-level
+
 
 \begin{wpobjectives}
-Just like software, proofs usually exist at two levels: user-written source code at the high-level and a machine-compiled prover-specific low-level representation.
-This yields two fundamentally different ways to integrate provers, both offering different advantages.
+FAIR library management, specifically Access, Search
 
-Firstly, theories pursues integration through standardization on universal *low-level* representations.
-This is similar to the use of the x86 as the standard architecture for software and has similar advantages: in particular, a single architecture such as Dedukti can be used to run (i.e., check) proofs from any number of proof assistants.
-
-Secondly, this work package extends the above by additionally developing universal standards for *high-level* representations.
-It offers complementary advantages: proofs represented in this language are not necessarily checkable efficiently by Dedukti; but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
-This is critical for provers: because logics are much harder to interpret than programming languages, each source language can be interpreted only by the associated prover.
-Therefore, provers must export also standardized high-level representations in order to exploit the integration potential they offer.
-
-This work package will be jointly coordinated by Florian Rabe at \site{Fau} and Burkhart Wolff at \site{Sac}.
+In this work-package, we provide infra-structure for the exchange of the information between prover systems as
+well for technical and domain-specific search functionality providing advanced access to the 
+Logipedia knowledge base.
 \end{wpobjectives}
 
 
 \begin{wpdescription}
-We extend the Dedukti language with features for high-level representations.
-This will include
-\begin{compactitem}
-\item theories: a general term we use to unify a variety of module system constructs such as type classes or locales,
-\item derived declarations: high-level declarations such as inductive type definitions, whose semantics is given by elaboration into more primitive constructs,
-\item metadata annotations: a general framework for attaching information about semantics, document structure, and tool interaction.
-\end{compactitem}
+We proceed in three steps.
+Firstly, Tasks~\localtaskref{strlibstructure} and~\localtaskref{strdofimpl} extend the Dedukti language with features for high-level representations that are critical for accessing parts of and searching libraries.
+This includes a framework to \emph{define} typed meta-data in form of ontologies, and to \emph{enforce} them in 
+the Dedukti libraries.
+Secondly, Tasks~\localtaskref{strrefonto}, \localtaskref{strontorepml}, and~\localtaskref{strsafeonto}\ednote{remove if canceled} built ontologies serving as technical exchange format as well as domain-specific descriptions of libraries.
+Thirdly, Tasks~\localtaskref{strontosearch}, \localtaskref{strformsearch}, and \localtaskref{strtextsearch} leverage 
+technical and domain-specific \emph{access} the entire Logipedia knowledge base based on ontologies by scalable search services.
 
-The low- and high-level representations will be tightly integrated: any declaration or object may be given alternatively through either or both of these.
-The prover exports from instrumentation will be such that they produce both representations whenever possible.
-
-Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
+This work package will be jointly coordinated by Florian Rabe at \site{Fau} and Burkhart Wolff at \site{Sac}.
+Burkhart Wolff immplemented a document ontology framework in Isabelle and developed several applications
+in the field of formal software engineering.
+\cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019} 
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=tbd,title=TBD]
-\end{task}
+\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=12]
+add library, document, theory structure to Dedukti; includes unique identifiers and informal text
+
+%We extend the Dedukti language with features for high-level representations.
+%This will include
+%\begin{compactitem}
+%\item theories: a general term we use to unify a variety of module system constructs such as type classes or locales,
+%\item derived declarations: high-level declarations such as inductive type definitions, whose semantics is given by elaboration into more primitive constructs,
+%\item metadata annotations: a general framework for attaching information about semantics, document structure, and tool interaction.
+%\end{compactitem}
+%
+%The low- and high-level representations will be tightly integrated: any declaration or object may be given alternatively through either or both of these.
+%The prover exports from instrumentation will be such that they produce both representations whenever possible.
+%
+%Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
+\end{task} 
+
+\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=18]
+metadata annotations in Dedukti at all levels
+\end{task} 
+
+\begin{task}[id=strrefonto,title=Reference Ontology,lead=Fau,FauRM=6,SacRM=6]
+This tasks compiles, integrates, and curates the various ontologies used for describing libraries in the project.
+These come from several sources:
+\begin{compactitem}
+ \item The ontology induced by the structuring features built in task \localtaskref{strlibstructure}.
+ \item The ontologies built by users using the ontology framework built in task \localtaskref{strrefonto}.
+ \item Manually written ontologies or imports of existing ontologies for specific domains whose knowledge is formalized in prover libraries, such as software engineering or mathematics.
+\end{compactitem}
+\end{task} 
+
+\begin{task}[id=strdomonto,title= Domain Ontologies Ontologies for Formal Methods in SE,lead=Tou,TouRM=12, SacRM=6]
+Y. Aitameur at \site{Tou}
+\begin{compactitem}
+\item domain ontologies as descriptive models for engineering domains 
+\item links/imports with/from standards and certification
+\item engineering models annotations
+\item strengthening engineering models by references to domain ontologies
+\item Case studies could be certification, safety, security.
+\end{compactitem}
+\end{task} 
+
+\begin{task}[id=strontorepml,title=Ontological Representation for Major Libraries,lead=Fau,FauRM=6,BolRM=6,TumRM=6,SacRM=6]
+export ontological data from Isabelle and Coq as prototyped in \cite{ulo}
+
+This will be closely tied to the work by M. Wenzel at \site{Tum} for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq in \WPref{libraries}.
+\end{task} 
+
+\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
+Search based on ontological data (RDF triples) using systems like SPARQL
+\ednote{possible participation of S. Dumbrava; is there a site for this?}
+\end{task} 
+
+\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,FauRM=12]
+Search based on formula structure using systems like MathWebSearch
+\end{task} 
+
+\begin{task}[id=strtextsearch,title=Text-based Search,lead=Inr,FauRM=6,InrRM=6]
+P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automatic extraction and annotation of natural-language theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs and search and querying capabilities
+\end{task} 
+
+\begin{task}[id=strpresentation,title=Customizable Presentation]
+\ednote{This task is for the British site Exeter (AD Brucker) if it is added. Otherwise cancelled.}
+\end{task} 
+
+\begin{task}[id=strsafeonto,title=Safety Ontologies]
+\ednote{This task is for the British site York (S Foster) it is added. Otherwise cancelled.}
+\end{task} 
+
 \end{tasklist}
 
 \begin{wpdelivs}
