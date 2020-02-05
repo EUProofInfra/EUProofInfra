@@ -130,6 +130,56 @@ assistants, or translating the formal semantics of ARM instruction set.
 
 \begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \& Probability library]
 \ednote{TU München (Nipkow)}
+
+The Isabelle Analysis and Probability Theory library consists of more than
+200.000 lines of definitions and proofs, correspondig to almost 4000 printed
+pages. It covers topology, homology, multivariate, functional and complex
+analysis, measure and probability theory, and a dedicated library for
+ordinary differential equations. It is fair to say that it is the most
+advanced machine-checked library in the area of analysis and probability
+theory.\footnote{The Isabelle analysis and probability theory library is
+in part based on the extensive library of the HOL Light system but has
+generalized it from real numbers to appropriate algebraic structures and
+includes areas absent from the HOL Light library (in particular measure
+theory and ordinary differential equations).} It is currently used by 60 out
+of 500 articles in the Archive of Formal Proofs, a user-contributed library
+of Isabelle/HOL proofs from all areas of computer science and
+mathematics. Moreover, it is the only exising library in this area where
+proofs are structured and readable. Due to its size and generality and
+because analysis and probability theory are pervasive in any application in
+the engineering and natural sciences and economics, this library will be a
+KER of the project: it is a fundamental enabling resource for almost any
+formal verification activity in these areas, for example autonomous driving
+and mathematical finance. The purpose of this task is to struture, document
+and develop this library for optimal accessibility, ease of use and
+comprehensiveness. The aim is a curated library for applications.
+
+Any library is only as useful as its structure and documentation, no matter
+how sophisticated the search facilities are. Therefore the primary aim of
+this task is to make this library easily accessible. At the same time the
+library needs to be developed further: some material needs revising for ease
+of use and some essential material needs to be added.
+
+\textbf{Accessibilty}\quad
+The library is a large collection of theories with a hierarchical dependency
+relation. However, this structure has grown over time and does not always
+reflect the abstract mathematical dependencies. In short, the structure needs
+to be modularized. This requires a significant refactoring effort.
+%
+At the same time we need to add metadata to the source material to turn this
+structured collection of theorems and proofs into a curated library at the
+Dedukti level.  This is where we need to interface with \WPref{theories}. We
+will be test drivers of the metadata infrastructure provided by that WP, in
+particular the ability to describe ontologies for structuring in the large.
+This will also entail annotating those statements in the library that
+correspond to proper methemtical theorems as opposed to auxiliary lemmas
+required only for the benefit of the theorem prover.
+To increase accessibility we will also include links from the library into
+Wikipedia and in particular in the other direction to raise the awareness
+of Dedukti.
+
+\textbf{Development}\quad
+Integrals, ODEs, Types-To-Sets, Probablity
 \end{task}
 
 \begin{task}[id=geocoq,title=The GeoCoq library]
