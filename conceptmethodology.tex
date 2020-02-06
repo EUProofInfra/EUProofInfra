@@ -29,6 +29,44 @@ alignment.
 
 \subsubsection{Description of the work package 4}
 
+Automatic Theorem Proving (ATP) has a key role in this project.
+
+{\em Per se}, many formal proofs nowadays rely on the use of automatic
+provers. They cover various domains and various kinds of application,
+{\em e.g.} combinatorial
+mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
+where they are expected to solve one large propositional problem, or
+proof of
+programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
+where they are given thousands of small problems in a combination of
+quantified theories.
+
+In a complementary way, ATPs will be used to automatically make a
+coherent whole out of {\sf Logipedia}. A fruitful interaction between
+formal proofs requires low-level glue which falls in the scope of ATPs.
+For instance, they will be employed to fill the holes that appear when
+considering provers with various granularity, to reduce the gaps between
+proof systems, and to discharge proofs of concept alignment (in close
+interaction with the work package 6).
+
+Finally, ATPs will also benefit from {\sf Logipedia}. Obviously, {\sf
+  Logipedia} will be an extensive library of formal statements that can
+be used and combined by ATPs in their proof search. This is not trivial
+though: lemma selection is crucial to avoid an overhead. It can also be
+a source of benchmarks to evaluate their expressivity and automation.
+Lastly, {\sf Logipedia} and {\sf Dedukti} will form a framework to make
+ATPs cooperate with each other and with other tools, in a safe way.
+
+
+\paragraph{From ATPs to {\sf Dedukti}}
+
+As for Interactive Theorem Provers, the consistency of this work
+strongly relies on the ability for ATPs to export statements and proofs
+in some theory in {\sf Dedukti}. We divide this aspect in two tasks.
+
+\dots UNDER PROGRESS
+
+
 \subsubsection{Description of the work package 7}
 
 \subsubsection{Description of the work package 2}
