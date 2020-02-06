@@ -2,7 +2,8 @@
   short=Libraries,% for Figure 5.
   title=Libraries,
   lead=Inr,
-  InrRM=10]
+  InrRM=10,
+  TumRM=24]
 
 \ednote{MK: We need one coordinating site. original coordinators: Georges Gonthier and
 Tobias Nipkow} \ednote{MK: interested parties (add their sites and RM here): David
@@ -179,7 +180,18 @@ Wikipedia and in particular in the other direction to raise the awareness
 of Dedukti.
 
 \textbf{Development}\quad
-Integrals, ODEs, Types-To-Sets, Probablity
+Although the library support for integrals is extensive, it suffers
+from the (necessary) coexistence of different kinds of
+integrals. This complicates proofs about integrals in applications and needs
+to be unified, which entails further refactoring. The rest of the
+development adds further essential material:
+1. Fourier analysis because of its extreme important both for pure mathematics and for
+engineering and physics (especially the Fourier
+transform). 2. Stability theory for differential equations and
+dynamical systems, in particular Lyapunov functions, because of their
+relevance for the verification of cyber-physical systems.
+3. Stochastic differential equations to model a large range of
+stochastic processes from physics to financial mathematics.
 \end{task}
 
 \begin{task}[id=geocoq,title=The GeoCoq library]
