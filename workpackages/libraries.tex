@@ -204,6 +204,23 @@ stochastic processes from physics to financial mathematics.
 
 \begin{task}[id=cakeml,title=The CakeML programming language library]
 \ednote{Gothenburg (Myreen), Strasbourg, TU München}
+The task is to export the CakeML programming language definition and
+its verified compiler to Dedukti. This is a cutting edge library and
+one of only two verifed compilers for real languages, the other being
+CompCert. Its export to Dedukti is one of the KERs of this
+project. Because of the size and importance of this library we will approach the
+export from two angles.
+
+First approach: OpenTheory
+
+The second approach establishes a connection from HOL4 via Isabelle to
+Dedukti. The basis is a promising new approach of virtualizing HOL4
+inside Isabelle \cite{ImmlerRaedleWenzel}. That is, the inference
+kernel of HOL4 is replaced by that of Isabelle and the resulting
+system produces Isabelle theorems instead of HOL4 theorems. This has
+the invaluable additional benefit that tools, not just theorems, can
+be shared. As a benchmark of the viability of this approach we plan to
+export CakeML via Isabelle to Dedukti.
 \end{task}
 
 \begin{task}[id=unimath,title=The UniMath library]
