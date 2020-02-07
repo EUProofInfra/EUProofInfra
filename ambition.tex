@@ -75,18 +75,66 @@ project.
 
 \subsection{Innovation potential}
 
+% Maybe too long
+
 Formal methods are at a turning point. Several academic and
-industrial successes have proved the readiness of the technology, but
-this technology takes too much time to be adopted.
+industrial successes have proved the readiness of the technology,
+in particular in critical systems where it has helped in
+dramatically improving the quality of the systems. But this
+technology takes too much time to be adopted in a broader context.
 
 Analyzing this phenomenon, it is clear that the redundancy of the
 efforts to develop proof systems and the lack of common theories,
 benchmarks, and standards for these systems is a limiting factor.
+For industry, at least three key aspects slow down the adoption of
+formal methods.
+
+First, reusing a proof produced with a particular tool in another
+can only be done at a high cost, when it is even possible.
+{\sf Logipedia} will help reducing this cost by unifying tools
+around a common format, enabling the possibility to share proofs
+between tools. In the uncommon case where a proof relies on a theory
+which is not compatible with the target tool, it will be easier to
+understand why and determine whether adapting it is managable.
+Furthermore, as an infrastucture, {\sf Logipedia} will help users
+in finding existing proofs of properties, making their verification
+process faster.
+
+Second, checking a proof must remain possible over time. Today, it
+requires either to maintain proofs along new versions of the tools,
+which can represents a significant maintenance cost, or to archive
+them together with a version of the tool used to produce it. In this
+situation, {\sf Logipedia} will help on two aspects. First, the
+common format will guarantee that proofs can be checked by any tool
+implementing it, thus reducing proof maintenance cost. Second, by
+providing a common proof database, general interest proofs can be
+stored and maintained in the infrastructure, allowing industrial users
+to focus their resources for their specific needs only.
+
+Finally, a proof or verification tool can be mistrusted. For example,
+in a certification context, the use of a particular tool for the
+verification of the candidate system must be approved. If the
+certification body is not familiar with the tool, producing a
+justification for it can represent a significant amount of time. For
+a new tool, adoption is even slower, as not only certification
+bodies but also potential users could question its soundness despite
+the potential advantages it could provide. The common format offered
+by {\sf Logipedia} will answer to this lack of trust. It will help
+the certification bodies, as they will not have to learn about a new
+tool for each new certification process, as any tool implementing
+the format will be suitable for them to check the proof. Thus they
+only have to trust one. Consequently, it will also help industrial
+users, as justifying the use of a particular tool will be easier as
+long as they can provide a proof in the right format. And finally, it
+will encourage the development of new tools, as potential users will
+not have to trust these tools directly, but only the proofs that they
+provide, which can be checked easily.
 
 This project to integrate the scientific and technological effort
-around formal proofs in Europe is also a way to foster the
+around formal proofs in Europe is thus a way to foster the
 development of formal methods in industry, as the economic spinoffs
-from the project will benefit the European industry.
+from the project will benefit the European industry, mainly reducing
+the cost of this technology.
 
 {\color{red}
 François B.}
