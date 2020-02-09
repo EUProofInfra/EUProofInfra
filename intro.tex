@@ -101,13 +101,13 @@ best mathematicians.
 In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
 correctness of a mathematical proof could be checked by a
 computer. This led to the development of the two first proof systems
-in history: Milner's {\textsf LCF} or De Bruijn's {\textsf Automath}.  From
+in history: Milner's {\sf LCF} or De Bruijn's {\sf Automath}.  From
 the axioms
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
 $$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
 we can deduce
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
-In the language implemented in {\textsf Automath}, this proof is written
+In the language implemented in {\sf Automath}, this proof is written
 $$\lambda x \lambda h~(g~x~(f~x~h))$$
 
 \caption{What is a formal proof? What is a proof system?\label{formal}}
@@ -129,7 +129,7 @@ few alternatives have been proposed (such as Simple type theory).
 But, because these theories had not been designed for being
 implemented on a computer, the rise of computer checked formal proofs
 has led to a multiplication of such theories. Each proof system,
-such as {\textsf Coq}, {\textsf Isabelle/HOL}, {\textsf Mizar}, {\textsf Atelier B},
+such as {\sf Coq}, {\sf Isabelle/HOL}, {\sf Mizar}, {\sf Atelier B},
 etc. implements its own theory.
 
 This is the major obstacle to interoperability.
@@ -142,12 +142,12 @@ another.  Unfortunately, the development of formal methods is slowed
 down by the large number of proof systems (and sometimes the large
 number of versions, over time, of one single system) and the lack of a
 common theory (Figure \ref{theory}) used by these systems.  For
-instance, the Paris metro line 14 has been proved correct in {\textsf
+instance, the Paris metro line 14 has been proved correct in {\sf
   Atelier B}, while the Nasa detect-and-avoid system for unmanned
-aircraft system has been proved correct in the {\textsf PVS} proof system,
-the seL4 operating system has been proved correct in {\textsf
+aircraft system has been proved correct in the {\sf PVS} proof system,
+the seL4 operating system has been proved correct in {\sf
   Isabelle/HOL}, and the compiler CompCert has been proved correct in
-{\textsf Coq}.  Some projects, such as the Flyspeck project, have been
+{\sf Coq}.  Some projects, such as the Flyspeck project, have been
 started in different systems and required significant integration
 effort for obtaining the overall result.
 
@@ -170,7 +170,7 @@ work (for instance, developing a calculus library with theorems about
 the sinus and cosinus functions, derivatives, etc.) has to be repeated
 instead of being reused.
 
-This lack standards limits the spreading of formal proofs in
+This lack of standards limits the spreading of formal proofs in
 non-specialist communities. For instance, teaching formal proving to
 undergraduate students in a logic course is difficult, as it requires
 the choice of a specific language, a specific theory and a specific
@@ -184,7 +184,7 @@ standards often do.
 On more philosophical grounds,
 while we had in the past an (informal) proof of Pythagoras' theorem or
 Fermat's little theorem, the same proof now has different
-formalizations in {\textsf PVS}, {\textsf Isabelle/HOL}, {\textsf Coq}, etc.
+formalizations in {\sf PVS}, {\sf Isabelle/HOL}, {\sf Coq}, etc.
 Thus, the universality of logical truth itself is jeopardized, just
 like it has been jeopardized in the 19th century
 by non-Euclidean geometries, as some
@@ -205,20 +205,20 @@ step in the development of the formal proof technology.
 \begin{framed}
 \begin{center}
 \begin{tabular}{l@{\hspace{3cm}}l}
-{\textsf \underline{Abella}}    & {\textsf Acl2}\\
-{\textsf \underline{Agda}}      & {\textsf \underline{HOL Light}}\\
-{\textsf \underline{Atelier B}} & {\textsf IMPS}\\
-{\textsf \underline{Coq}}       & {\textsf Lean}\\
-{\textsf \underline{FoCaliZe}}  & {\textsf \underline{LFSC}}\\
-{\textsf \underline{HOL4}}      & {\textsf Nuprl}\\
-{\textsf \underline{Isabelle}}  & {\textsf \underline{PVS}}\\
-{\textsf \underline{Matita}}    & {\textsf \underline{TSTP}}\\
-{\textsf \underline{Minlog}}\\  
-{\textsf \underline{Mizar}}\\
-{\textsf Rodin}\\
-{\textsf \underline{SMT-Lib}}\\
-{\textsf \underline{TLAPS}}\\
-{\textsf \underline{Why3}}\\
+{\sf \underline{Abella}}    & {\sf Acl2}\\
+{\sf \underline{Agda}}      & {\sf \underline{HOL Light}}\\
+{\sf \underline{Atelier B}} & {\sf IMPS}\\
+{\sf \underline{Coq}}       & {\sf Lean}\\
+{\sf \underline{FoCaliZe}}  & {\sf \underline{LFSC}}\\
+{\sf \underline{HOL4}}      & {\sf Nuprl}\\
+{\sf \underline{Isabelle}}  & {\sf \underline{PVS}}\\
+{\sf \underline{Matita}}    & {\sf \underline{TSTP}}\\
+{\sf \underline{Minlog}}\\  
+{\sf \underline{Mizar}}\\
+{\sf Rodin}\\
+{\sf \underline{SMT-Lib}}\\
+{\sf \underline{TLAPS}}\\
+{\sf \underline{Why3}}\\
 \end{tabular}
 \end{center}
 \caption{Some major proof systems or formats. The European ones are in the first column.
@@ -251,7 +251,7 @@ predicate logic.
 
 This failure has led, in the field of proof systems, to the
 abandonment predicate logic, and even the concept of logical
-framework: the theories implemented in {\textsf Coq}, {\textsf Matita}, {\textsf
+framework: the theories implemented in {\sf Coq}, {\sf Matita}, {\sf
   HOL Light}, etc. are often defined as autonomous systems, and not in
 a logical framework.
 
@@ -272,35 +272,35 @@ logical frameworks such as $\lambda$-Prolog \cite{NadathurMiller88,
 
 All these logical frameworks have been unified in the $\lambda
 \Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
-the system {\textsf Dedukti} \cite{Assaf16}.  Geometry, arithmetic and set
+the system {\sf Dedukti} \cite{Assaf16}.  Geometry, arithmetic and set
 theory, but also that of Russell's type theory, Church's type theory,
 Martin-L\"of's type theory, and the Calculus of constructions can be
 expressed in this framework.
 
 So the theories implemented in various systems can all be expressed in
-{\textsf Dedukti} and the proofs developed in these systems can be
-translated to {\textsf Deduki}.  The analysis of the axioms used in each
+{\sf Dedukti} and the proofs developed in these systems can be
+translated to {\sf Deduki}.  The analysis of the axioms used in each
 proof then indicates in which systems this proof can be made available
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
 mathematics'' \cite{Friedman76,Simpson09}).
 
 This allows to collect the proofs developed in various systems into a
-single on-line encyclopedia.  This encyclopedia is called {\textsf
+single on-line encyclopedia.  This encyclopedia is called {\sf
   Logipedia}. A first prototype, put on-line in January 2019, contains
 a few hundred lemmas and developing this encyclopedia so that it
 contains in twenty years all the formal proofs then developed to allow
 interoperability of proof systems, and sustainability and
 cross-verification of formal proofs is the main goal of this project.
 
-The possibility to use a {\textsf Logipedia} proof in a system depends
+The possibility to use a {\sf Logipedia} proof in a system depends
 only on the axioms used in this particular proof and not on the axioms
 used in the system in which it has been developed. This analysis is
 the basis of the interoperability between proof systems.  The proofs
-that are currently in {\textsf Logipedia}, are expressed in six different
-systems: {\textsf Matita}, {\textsf Coq}, {\textsf Lean}, {\textsf HOL Light}, {\textsf
-  Isabelle/HOL}, and {\textsf PVS}.
+that are currently in {\sf Logipedia}, are expressed in six different
+systems: {\sf Matita}, {\sf Coq}, {\sf Lean}, {\sf HOL Light}, {\sf
+  Isabelle/HOL}, and {\sf PVS}.
 
-{\textsf Logipedia} is thus a research infrastructure that permits
+{\sf Logipedia} is thus a research infrastructure that permits
 comminication between proof systems, by allowing the sharing of the
 data used in these systems.
 

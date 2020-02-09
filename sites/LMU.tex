@@ -1,30 +1,153 @@
 \begin{sitedescription}{Lmu}
 
+\newcommand{\inquotes}[1]{``#1''}
 \paragraph{Organization:}
-\ednote{Give a one-paragraph run-down of the site and the team there. }
+
+Ludwig-Maximilians-Universit\"at (LMU) is a public research university
+located in Munich, Germany.  LMU consists of 18 faculties which
+accommodate various departments and institutes including the
+Mathematisches Institut, where the research group of mathematical
+logic is headed by Prof.\ Dr.\ Helmut Schwichtenberg.  The research
+areas of the group are such as proof theory, realizability
+interpretation, program extraction, constructive analysis,
+constructive algebra, and proof assistant.  In particular in the
+research area of proof assistant, the logic group has been actively
+developing the Minlog system since early 1990's.
 
 \paragraph{Main tasks:}
 
 \begin{compactitem}
-\item\ednote{specify the main tasks and reference the respective work packages} 
+%\item\ednote{specify the main tasks and reference the respective work packages} 
+  \item Encoding the underlying theory of Minlog in Dedukti. \WPtref{theories} \taskref{theories}{minlog}
+  \item Implementing the encoder, so that Minlog's libraries and formal proofs of constructive analysis is available in Dedukti with proof checking.
+The Logipedia integration level of Minlog is increased to 3 from 0. \WPtref{theories} \taskref{theories}{minlog}
+  \item Contributing to \WPtref{alignment}.  The main targets are concepts in constructive analysis and (co)induction/(co)recursion.
+
+%% how to use \taskref{2}{3} ?
 \end{compactitem}
 
-
-\paragraph{Relevant previous experience:}
+\paragraph{Relevant previous projects:}
 
 \ednote{give an overview over previous work and projects that add to the \pn project}
+\begin{itemize}
+  \item 1997-2006, Speaker of the DFG-Graduiertenkolleg 301
+    \inquotes{Logik in der Informatik}
 
+\item 2004-2008, LMU Coordinator of the  EST (Early Stage Traning) Programme
+  \inquotes{MathLogAps} (MEST-CT-2004-504029) of the EU, together with the
+universities of Leeds, Manchester, Lyon and ENS Lyon
+
+\item 2009-2013, LMU Coordinator of the ITN (Network for Initial
+    Training) Programme PITN-GA-2009-238381 \inquotes{MALOA} of the
+    EU, together with the universities of Leeds, Manchester, Oxford,
+    CNRS, Paris 7, M\"unster, Prague
+
+\item 2017-2021, LMU Coordinator of the 731143-CID project of LMU
+
+\item 05/2018-08/2018, Co-organizer (with D.~Bridges, M.~Rathjen and
+  P.~Schuster) of a Trimester on \inquotes{Types, Sets, Constructions}
+  at the Hausdorff Institute for Mathematics, Bonn
+\end{itemize}
 \paragraph{Specific expertise:}
-
 \begin{compactitem}
-\item \ednote{give three to five specific areas of expertise that pertain to the \pn project}
+\item Implementation of the proof assistant Minlog.
+\item Foundation for constructive mathematics accommodating partial functionals and realizability.
+\item Constructive mathematics and program extraction.
+%% \item \ednote{give three to five specific areas of expertise that pertain to the \pn project}
 \end{compactitem}
 
 \paragraph{Staff members undertaking the work:}
 
-\textbf{Dr.\ Great Leader}\ednote{describe the site leader and his expertise}
-\textbf{Joe Implementor}\ednote{and more of them. }
+\begin{itemize}
+
+\item \textbf{Josef Berger} (male)\\
+Doctoral degree 2002 from LMU, in Nonstandard
+stochastics, supervised by Horst Osswald.  Habilitation 2014 at LMU
+with a thesis on "Perspectives in Constructive Reverse Mathematics".
+Currently he is Privatdozent at LMU.
+
+\item \textbf{Nils K\"opp} (male)\\
+Master thesis 2017 on "Automatically verified program
+extraction from proofs with applications to constructive analysis".
+Presently teaching assistant and PhD student.
+
+\item \textbf{Franz Merkl} (male)\\
+Chair of stochastics at LMU.  Has supervised some
+Diploma theses on subjects in probability theory, which were
+formalized in Mizar.  He himself has also worked with Mizar and
+published in the "Journal of Automated Reasoning", where only papers
+checked by Mizar are accepted.
+
+\item \textbf{Kenji Miyamoto} (male)\\
+Doctorate 2013 at LMU with a thesis "Program
+extraction from coinductive proofs and its application to exact real
+arithmetic".  Worked as Postdoc and teaching assistant at LMU and in
+Innsbruck (with Georg Moser).  Presently teaching assistant at LMU.
+
+\item \textbf{Iosif Petrakis} (male)\\
+Doctorate 2015 at LMU with a thesis  "Constructive
+Topology of Bishop Spaces".  Presently lecturer at LMU and preparing
+his Habilitation in Mathematics.  
+
+\item \textbf{Helmut Schwichtenberg} (male)\\
+Professor (emeritus) of Mathematics at LMU.
+Book (with Stanley Wainer) on Proofs and Computations, Cambridge
+University Press, 2012.  Book (with Anne Troelstra) "Basic Proof
+Theory", Cambridge University Press, 2nd ed. 2000.  Coorganizer (with
+Douglas Bridges, Michael Rathjen and Peter Schuster) of the Hausdorff
+Trimester on Sets, Types and Constructions at the Hausdorff
+Institute, Universit\"at Bonn, May-August 2018.  Coorganizer (with
+Klaus Mainzer and Peter Schuster) of the annual Autumn School on
+Proofs and Computations.
+
+\item \textbf{Franziskus Wiesnet} (male)\\
+Master thesis "Konstruktive Analysis mit exakten
+reellen Zahlen" 2017 at LMU.  Currently PhD student co-supervised by
+Peter Schuster (Verona) and Helmut Schwichtenberg (LMU).  He is
+supported by a Marie Sk{\l}odowska-Curie fellowship of the Istituto
+Nazionale di Alta Matematica
+
+\item \textbf{Chuangjie Xu} (male)\\
+PhD 2015 in Birmingham under the supervision of Martin
+Escardo.  Half of the theses consisted of an Agda implementation of
+the theoretical results achieved.  Presently he holds a Humboldt grant
+to do research at LMU.
+
+\end{itemize}
+%% \textbf{Dr.\ Great Leader}\ednote{describe the site leader and his expertise}
+%% \textbf{Joe Implementor}\ednote{and more of them. }
+
 \ednote{provide the key publications below}
+
+\paragraph{Key publications:}
+
+\begin{itemize}
+\item U.~Berger, W.~Buchholz, and H.~Schwichtenberg.
+\newblock Refined program extraction from classical proofs.
+\newblock {\em Annals of Pure and Applied Logic}, 114:3--25, 2002.
+
+\item H.~Schwichtenberg.
+\newblock Dialectica interpretation of well-founded induction.
+\newblock {\em Math. Logic. Quarterly}, 54(3):229--239, 2008.
+
+\item H.~Schwichtenberg.
+\newblock Realizability interpretation of proofs in constructive analysis.
+\newblock {\em Theory of Computing Systems}, 43(3):583--602, 2008.
+
+\item A.~S. Troelstra and H.~Schwichtenberg.
+\newblock {\em Basic Proof Theory}.
+\newblock Cambridge University Press, second edition, 2000.
+
+\item H.~Schwichtenberg and S.~S. Wainer.
+\newblock {\em Proofs and Computations}.
+\newblock Perspectives in Logic. Association for Symbolic Logic and Cambridge
+  University Press, 2012.
+\end{itemize}
+
+\paragraph{Infrastructure}
+
+Rechenzentrum des Mathematischen Instituts der LMU 
+
 \keypubs{providemore}
 
 Helmut Schwichtenberg, Kenji Miyamoto

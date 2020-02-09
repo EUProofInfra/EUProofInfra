@@ -2,14 +2,14 @@
 
 To make a formal proof, developed in some system $X$, accessible to
 the users of other systems, the first step is to express the theory
-$D[X]$, implemented in the system $X$, in the logical framework {\textsf
+$D[X]$, implemented in the system $X$, in the logical framework {\sf
   Dedukti}.  Then, we must instrument the system $X$ so that the proof
 can be exported from it, as a piece of data, expressed as a proof in
-$D[X]$ and included in {\textsf Logipedia}. Next, we need to analyze this
+$D[X]$ and included in {\sf Logipedia}. Next, we need to analyze this
 proof in order to determine which symbols, axioms and rewrite rules of
 $D[X]$ it actually uses and, thus, in which alternative theories it
 can be expressed.  Finally, we must align its concepts with the
-definitions already present in {\textsf Logipedia} and decide where it
+definitions already present in {\sf Logipedia} and decide where it
 fits in the general structure of the encyclopedia.
 
 Depending on the system $X$ we consider, more or less research needs
@@ -29,6 +29,44 @@ alignment.
 
 \subsubsection{Description of the work package 4}
 
+Automatic Theorem Proving (ATP) has a key role in this project.
+
+{\em Per se}, many formal proofs nowadays rely on the use of automatic
+provers. They cover various domains and various kinds of application,
+{\em e.g.} combinatorial
+mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
+where they are expected to solve one large propositional problem, or
+proof of
+programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
+where they are given thousands of small problems in a combination of
+quantified theories.
+
+In a complementary way, ATPs will be used to automatically make a
+coherent whole out of {\sf Logipedia}. A fruitful interaction between
+formal proofs requires low-level glue which falls in the scope of ATPs.
+For instance, they will be employed to fill the holes that appear when
+considering provers with various granularity, to reduce the gaps between
+proof systems, and to discharge proofs of concept alignment (in close
+interaction with the work package 6).
+
+Finally, ATPs will also benefit from {\sf Logipedia}. Obviously, {\sf
+  Logipedia} will be an extensive library of formal statements that can
+be used and combined by ATPs in their proof search. This is not trivial
+though: lemma selection is crucial to avoid an overhead. It can also be
+a source of benchmarks to evaluate their expressivity and automation.
+Lastly, {\sf Logipedia} and {\sf Dedukti} will form a framework to make
+ATPs cooperate with each other and with other tools, in a safe way.
+
+
+\paragraph{From ATPs to {\sf Dedukti}}
+
+As for Interactive Theorem Provers, the consistency of this work
+strongly relies on the ability for ATPs to export statements and proofs
+in some theory in {\sf Dedukti}. We divide this aspect in two tasks.
+
+\dots UNDER PROGRESS
+
+
 \subsubsection{Description of the work package 7}
 
 \subsubsection{Description of the work package 2}
@@ -37,34 +75,34 @@ alignment.
 
 \subsection{Methodology}
 
-The methodology is the same for integrating any library to {\textsf Logipedia},
+The methodology is the same for integrating any library to {\sf Logipedia},
 but due to a difference of readiness of the various systems we focus on,
 our priorities are different.
 
 \begin{enumerate}
-\item We already know how to express most of the theories of {\textsf Atelier B},
-{\textsf Coq}, {\textsf FoCaLiZe}, {\textsf HOL Light}, {\textsf HOL4}, {\textsf
-Isabelle}, {\textsf Matita}, and {\textsf Rodin} in {\textsf Dedukti}. We propose
-to instrument these systems so that they can produce {\textsf Dedukti}
-proofs that we can include in {\textsf Logipedia}.
+\item We already know how to express most of the theories of {\sf Atelier B},
+{\sf Coq}, {\sf FoCaLiZe}, {\sf HOL Light}, {\sf HOL4}, {\sf
+Isabelle}, {\sf Matita}, and {\sf Rodin} in {\sf Dedukti}. We propose
+to instrument these systems so that they can produce {\sf Dedukti}
+proofs that we can include in {\sf Logipedia}.
 
 \item
-For other theories, such as those of {\textsf Abella}, {\textsf Agda}, {\textsf
-Lean}, {\textsf Minlog}, {\textsf Mizar}, {\textsf PVS}, {\textsf TLA+}, the work is
+For other theories, such as those of {\sf Abella}, {\sf Agda}, {\sf
+Lean}, {\sf Minlog}, {\sf Mizar}, {\sf PVS}, {\sf TLA+}, the work is
 in progress, or not yet started.  So we must first understand how they
-can be expressed in {\textsf Dedukti}.
+can be expressed in {\sf Dedukti}.
 
 \item Besides the standard libraries of these systems, large libraries
-  have been developed: the {\textsf Isabelle Archive of formal Proofs} \cite{AFP},
-  {\textsf Flyspeck}\cite{Flyspeck}, {\textsf MathComp}\cite{Mathcomp}, 
-  {\textsf CompCert} \cite{Compcert}, {\textsf CakeML} \cite{CakeML}, ...  We aim to include
-  some of these libraries in {\textsf Logipedia}.
+  have been developed: the {\sf Isabelle Archive of formal Proofs} \cite{AFP},
+  {\sf Flyspeck}\cite{Flyspeck}, {\sf MathComp}\cite{Mathcomp}, 
+  {\sf CompCert} \cite{Compcert}, {\sf CakeML} \cite{CakeML}, ...  We aim to include
+  some of these libraries in {\sf Logipedia}.
   
 \item
 Besides proof systems, we also want to include proofs coming from
 automated theorem provers, SAT solvers, SMT solvers, and model
 checkers.  So we must instrument some of these systems so that they
-can produce {\textsf Dedukti} proofs that we can include in {\textsf
+can produce {\sf Dedukti} proofs that we can include in {\sf
 Logipedia}.
 
 \item
@@ -76,13 +114,13 @@ use it in more systems.
 
 
 \item
-Each library imported in {\textsf Logipedia} will come with its own
+Each library imported in {\sf Logipedia} will come with its own
 definition of natural numbers, real numbers, etc. We want to develop
 ``concept alignments algorithms'' to transport theorems from one
 structure to another isomorphic one.
 
 \item 
-Besides data, we propose to include in {\textsf Logipedia}, metadata and
+Besides data, we propose to include in {\sf Logipedia}, metadata and
 an inner structure.
 \end{enumerate}
 
