@@ -1,7 +1,7 @@
 \thispagestyle{empty}
 
 Bugs kill, and although testing may reveal some bugs, only formal
-modeling and formal verification can guarantee their absence (Figure
+modeling and verification can guarantee their absence (Figure
 \ref{safety}).  Thus, we should never fly in an autonomous plane driven by a
 piece of software that has not been formally verified.
 
@@ -19,6 +19,7 @@ has been empirically observed that compilers and operating systems
 often have bugs, but proved ones, such as seL4 or CompCert have none
 or much fewer.  This is why certification processes require proofs,
 and not only testing, at the highest Evaluation Assurance Levels.
+{\color{red} Ref?}
 
 Because formal methods are crucial in the development of the
 information society, because people can die and companies go bankrupt
@@ -96,7 +97,7 @@ very long (as it is often of the proofs used in safety and security,
 but also of some proofs in pure mathematics), mistakes in proofs are
 very difficult to detect. For instance dozen of wrong proofs of
 parallel postulate have been given through history, sometimes by the
-best mathematicians.
+best mathematicians. {\color{red} Julien: develop here}
 
 In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
 correctness of a mathematical proof could be checked by a
@@ -128,7 +129,7 @@ the first half of the 20th century a few variants of set theory, and a
 few alternatives have been proposed (such as Simple type theory).
 But, because these theories had not been designed for being
 implemented on a computer, the rise of computer checked formal proofs
-has led to a multiplication of such theories. Each proof system,
+has led to a multiplication of such alternative theories. Each proof system,
 such as {\sf Coq}, {\sf Isabelle/HOL}, {\sf Mizar}, {\sf Atelier B},
 etc. implements its own theory.
 
@@ -144,12 +145,13 @@ number of versions, over time, of one single system) and the lack of a
 common theory (Figure \ref{theory}) used by these systems.  For
 instance, the Paris metro line 14 has been proved correct in {\sf
   Atelier B}, while the Nasa detect-and-avoid system for unmanned
-aircraft system has been proved correct in the {\sf PVS} proof system,
-the seL4 operating system has been proved correct in {\sf
-  Isabelle/HOL}, and the compiler CompCert has been proved correct in
-{\sf Coq}.  Some projects, such as the Flyspeck project, have been
-started in different systems and required significant integration
-effort for obtaining the overall result.
+aircraft system has been proved correct in {\sf PVS}, the {\sf seL4}
+operating system has been proved correct in {\sf Isabelle/HOL}, and
+the compiler {\sf CompCert} has been proved correct in {\sf Coq}.
+Some projects, such as the proof of Hales' theorem (Kepler's
+conjecture) \cite{Hales17}, have been started in different systems and
+required significant integration effort for obtaining the overall
+result.
 
 These proof checking systems are infrastuctures and these
 infrastuctures have not been integrated yet.  Because of this lack of
@@ -163,7 +165,7 @@ system), sustainability (the possibility to use a proof decades after
 it has been developed), and cross-verification (the possibility to
 have a higher assurance in the correctness of some statement by
 verifying its proof in a system different from that in which it has
-been defined) are restricted, even if some provers sometimes call
+been constructed) are restricted, even if some provers sometimes call
 external tools to help building some proofs. The fragmentation of
 systems of formal proof also hinders productivity because foundational
 work (for instance, developing a calculus library with theorems about
@@ -229,7 +231,7 @@ step in the development of the formal proof technology.
 At the beginning of the 20th century, a solution was found to the
 crisis of non-Euclidean geometries: the definition of the various
 geometries in predicate logic \cite{HilbertAckermann} restored the
-universality of mathematical truth, allowing to determine which axiom
+universality of logical truth, allowing to determine which axiom
 was used in which proof and which theorem held in which geometry.
 In the same way, we defend that the interoperability of
 proof systems can only be achieved if we are able to express the
@@ -241,7 +243,7 @@ was a huge success, since three important theories used at that time
 (geometry, arithmetic and set theory) could be expressed in it. But it
 also has limitations, which explains that another of the major
 theories used at that time (Russell's type theory, from The Principia
-Mathematica) cannot be expressed in it. Since then, several other
+Mathematica) has not been expressed in it. Since then, several other
 versions of type theory, such as Church's type theory \cite{Church40},
 Martin-L\"of's type Theory \cite{Martin-Lof84}, and the Calculus of
 constructions \cite{CoquandHuet88}, have also been defined as
@@ -250,7 +252,7 @@ of the current proof systems, yet they cannot be expressed in
 predicate logic.
 
 This failure has led, in the field of proof systems, to the
-abandonment predicate logic, and even the concept of logical
+abandonment of predicate logic, and even of the concept of logical
 framework: the theories implemented in {\sf Coq}, {\sf Matita}, {\sf
   HOL Light}, etc. are often defined as autonomous systems, and not in
 a logical framework.
@@ -273,7 +275,7 @@ logical frameworks such as $\lambda$-Prolog \cite{NadathurMiller88,
 All these logical frameworks have been unified in the $\lambda
 \Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
 the system {\sf Dedukti} \cite{Assaf16}.  Geometry, arithmetic and set
-theory, but also that of Russell's type theory, Church's type theory,
+theory, but also Russell's type theory, Church's type theory,
 Martin-L\"of's type theory, and the Calculus of constructions can be
 expressed in this framework.
 
@@ -282,11 +284,14 @@ So the theories implemented in various systems can all be expressed in
 translated to {\sf Deduki}.  The analysis of the axioms used in each
 proof then indicates in which systems this proof can be made available
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
-mathematics'' \cite{Friedman76,Simpson09}).
+mathematics'' \cite{Friedman76,Simpson09}).  This allows to collect
+the proofs developed in various systems into a single on-line
+encyclopedia.
 
-This allows to collect the proofs developed in various systems into a
-single on-line encyclopedia.  This encyclopedia is called {\sf
-  Logipedia}. A first prototype, put on-line in January 2019, contains
+
+This encyclopedia is called {\sf Logipedia}. 
+
+A first prototype, put on-line in January 2019, contains
 a few hundred lemmas and developing this encyclopedia so that it
 contains in twenty years all the formal proofs then developed to allow
 interoperability of proof systems, and sustainability and
@@ -300,9 +305,10 @@ that are currently in {\sf Logipedia}, are expressed in six different
 systems: {\sf Matita}, {\sf Coq}, {\sf Lean}, {\sf HOL Light}, {\sf
   Isabelle/HOL}, and {\sf PVS}.
 
-{\sf Logipedia} is thus a research infrastructure that permits
-comminication between proof systems, by allowing the sharing of the
-data used in these systems.
+All there proof systems are research infrastructures and {\sf
+  Logipedia} is thus a research infrastructure that permits
+comminication between these infrastructures, by allowing to share 
+the data processed by these infrastructures.
 
 
 This encyclopedia contains only a few hundred proofs, but convinced
@@ -319,13 +325,13 @@ colleagues from Belgium, Germany, Serbia, Sweden, and the United
 Kingdom, from academia and industry, have manifested interest in
 participating in this effort.  These researchers and engineers are
 ready to contribute to develop this encyclopedia, aiming at sharing
-proofs, under a creative common licence, findable, accessible,
-interoperable, and reusable.
+proofs, under a creative common licence making them findable,
+accessible, interoperable, and reusable.
 
 Such an infrastructure is, in many ways, new in the European Strategy
 on Research Infrastructures. We can even say that the idea to
 structure a networking activity around the construction and the use
-of an infrastructure is relatively new in computer science and
+of a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist. Our goal is therefore also trigger a
 little, but significative, evolution on the organization of research
