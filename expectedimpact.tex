@@ -7,158 +7,176 @@ refers to one of the mentioned cross-cutting activities: open science.
 
 The shift from informal, pencil and paper, proofs to formal
 computerized proof has been a major improvement on the never ending
-quest for logical rigor, with a strong impact both on mathematics,
-where much more complex proofs can be built, and computer science,
-where safety and security can be dramatically improved with the use of
-formal methods.  But this major step forward also has a negative side
-effect: we have moved from a time where we had (informal) proofs of
-Pythagoras' theorem or Fermat's little theorem, to a time where we
-have (formal) proofs in {\sc Coq}, in {\sc Matita}, in {\sc HOL
-  Light}, in {\sc PVS}, etc.  of these theorems, jeopardizing the
-universality of mathematical truth.
+quest for logical rigor, with a strong impact both on computer
+science, where safety and security can be dramatically improved with
+the use of formal methods and on mathematics, where much more complex
+proofs can be built.
 
-This loss of universality of mathematical truth as the main obstacle
-to the diffusion of the notion of formal proof in the communities of
-mathematicians and computer scientists, but also engineers and
-students. Our long-term goal is to resurrect the universality of
+But this major step forward also has a negative side effect: we have
+evolved from a time where we had (informal) proofs of Pythagoras'
+theorem or Fermat's little theorem, to a time where we have (formal)
+proofs in {\sf Coq}, in {\sf Matita}, in {\sf HOL Light}, in {\sf
+  PVS}, etc.  of these theorems, jeopardizing the universality of
+logical truth.
+
+This loss of universality of logical truth is the main obstacle to the
+access to formal proofs in the communities of computer scientists and
+mathematicians, but also researchers of other disciplines, engineers
+and students.  Our long-term goal is to resurrect the universality of
 mathematical truth in order to build a strong formal proof community
-including specialists and non-specialists such as working
-mathematicians, engineers and students.  This requires to express the
-theories implemented in these systems in a common logical framework,
-with axioms and reduction rules, in order to be able to say, not that
-a proof is expressed in one system or in another, but which axioms and
-reduction rules are used in this proof, as we have been used to since
-the development of non-Euclidean geometries.
+including specialists and non-specialists.
 
-In a shared public encyclopedia providing virtual access, each user,
-in research, industry, and education, can find the formal proofs she
-needs in the logic she wants, regardless the logic and system this
-proof has been developed in.
+This requires to express the theories implemented in these systems in
+a common logical framework, with axioms and reduction rules, in order
+to be able to say, not that a proof is expressed in one system or in
+another, but which axioms and reduction rules are used in this proof,
+as we have been used to since the development of non-Euclidean
+geometries. In such a shared public encyclopedia providing virtual
+access, each user, in research, industry, and education, can find the
+formal proofs she needs in the logic she wants, regardless the logic
+and system this proof has been developed in.  Alignment of isomorphic
+strucutes, both accross libraries, and inside the same library,
+provides a wider and simplied access.
 
+Because it constitutes a central place, such a encyclopedia can foster
+projects that would make less sense for a specific library. For instance,
 
+\begin{itemize}
+\item indexing mechanisms for mathematical formulas, and search engines
+  that are specialized to query such formulas,
 
+  \item a structure of mathematical knowledge in theories, books,
+    chapters, levels (from high school students to research), that can
+    be inherited from the libraries imported in {\sf Logipedia}, from
+    concept alignment, and from clustering algorithms in the dependence
+    graph of the encyclopedia, 
 
-{\color{red} Search engine} giving domain specific access
+  \item ergonomic user interfaces, that allows a navigation in the
+    structure of the encyclopedia, and that can be specialized from
+    some domains (safety, geometry...) or some category of users
+    (high school students, researchers...)
 
+  \item programmatic access through an Application Programming
+    Interface, and a package distribution system, so that the
+    mathematical knowledge can be used not only by humans, but also by
+    software.
+\end{itemize}
 
-Central place
-
-Alignment of siomorphic strucutes provides wider and simplied access
-
-Large libraries allow big data, machine learning... to work better
-
-Beautiful Presentation to the user
-
-Programmatic access (api, opam, etc.)
-
-{\color{red} Talk about licences here. Is cc-by ok for everyone?}
-
-{\color{red} Key exploitable results?}
-
-The enclyclopedai itself is a KER
-
-The frontends are a KER
-
-Each domain scpeific library univwrally accessible (e.g. real analysis, probability theory) is a KER
-
+Because of its size, such an enclyclopedia, provides a better dataset
+for machine learning algorithms, and more generaly statistical
+analysis of the properties of mathematical developements.
 
 \subsection{New or more advanced research infrastructure}
 
-{\color{red} Key exploitable results?}
+Proof systems are research infrastructure. {\sf Logipedia} is not yet
+another infrastructure of this kind, but it is a research
+infrastructure of a completely new kind that integrates proof systems
+through data sharing.  Such as new research infrastructure will, of
+course, impact research in many ways.
 
-Logipedia in itself from TRL 3 to TRL 4
+\begin{itemize}
 
-Various clients :
+\item Computer scientists will be able to prove safety and security
+  properties of the software they develop faster and at a lower cost
+  because they can access to already developed proofs, independently
+  of the system they use.
 
-- mathematicians can build formal proofs of results they are not sure about
-(cite Vladimir)
+\item When building new proof systems, computer scientists will not
+  need to start from scracth, but will be able to start with an already
+  existing data base of proofs.
 
-- Conferences in CS where you have to poide a formal proof
+\item In Automated Theorem Proving, computer scientisits will be able
+  to use already proved theorems as axioms, to enhance the power of
+  their tools.
 
-- use the proofs to prove correc a piece of software
+\item In their publications, computer scientists often provide access
+  to formal proofs of the results they present (as required or
+  suggested by several conferences and journals). They will be able to
+  use Logipedia as a universal repository for such proofs, some of
+  which would be available accross systems, and these proofs being
+  available for a long time.
 
-- rsearchers who want to build newe proofs to improve the datatbase (synergy)
+\item Computer scientists conducting research on machine learning using
+mathematical dataset have access to a wider database.
 
-- ressoutce for ATP
+\item When they are unsure of the corrrectness of a proof, mathematicians
+will be able to formalize it faster and at a lower cost because they
+can access to already developed proofs, independently of the system
+they use (cite Vladimir).
 
-- Mathematicians interesed in revere maths can formaly analyze the axiomes used
+\item Mathematicians who refer to a formal proof in one or their publication
+will be able to use Logipedia as a universal repository for such
+proofs, some of which would be available accross systems.
 
-- When building a new ATP or ITP, already a data base to satrt with
-instead of starting from scratch
+\item Mathematicians interesed in revere maths will be able to analyze, in
+an easier way, the axioms used in each proof, when they have access to
+this proof formalized.
 
-- Research on machine learning has a wider database
+\item The results will archived for a long time increasing the
+  reproducibility of results, both in mathematics and computer science.
 
-- Long term archiving
-
-
+\item As mathematics and software are in any part of modern science,
+  {\sf Logipedia} will also have an impact on other sciences. In
+  particular because proving properties of a piece of software driving
+  a car or piloting an aircraft require to formalize part of the
+  physical world in which this piece of software evolves.
+\end{itemize}
+  
 \subsection{Operators develop synergies}
 
-Having a standard for expressing theories and proofs and resurrecting
-this way the universality of mathematical truth will also make proof
-systems interoperable and will allow the construction of an on-line
-system-independent encyclopedia.
+The formal proof community is currently a scattered community, each
+sub-community being centered around its own system, its own theory,
+and its own library.
 
-Instead of having a scattered community, each group developing a
-library for its own logic and its own system, researchers and
-engineers will be able to work together on common developments,
-reusing proofs developed in other systems and in other communities.
+To build a stronger community, where the researchers develop strategies,
+it is not sufficient to talk to each other, or to organize conferences,
+but these sub-communities must exchange data and work together on project to
+exchange those data.
 
-More importantly, this will suppress one of the main obstacles to the
-diffusion of formal proofs in mathematics, computer science, industry,
-and education, just like the development of the html standard induced
-a renewal of document sharing in general and the definition of
-predicate logic induced a renewal of logic in the 1930's.
+For instance, expressing these data in a common encyclopedia will
+lead the developers of various systems to express the theories they
+implement in a common logical framework, yielding a better understanding
+to the similarities and differences between these theories.
 
-Operators can compare the teories implementes (benefit LF)
+Developing synergies will induce less work duplication and will increase
+the efficiency of the community as a whole.
 
-- We use to talk to each others but rarelt exchange our data
+Working on common projects will not only increase the communication
+between relatively close communities, such as the {\sf Coq} and {\sf
+  Agda} communities that meet every year at the Types conference, but
+also to more distant communities, such as the Types community, the HOL
+community (that already meet around the OpenThery standard), the B and
+TLA+ communities, and the Mizar community.
 
-- Good communication within the TYPES community,, the HOL community,
-the B + TLA+ communities, but these subcomminities do not talk to each
-other much
+More importantly, this data exchange between researchers and
+engineers, and this evolution towards a standard, will allow a better
+cooperation between research and industry and suppress one of the main
+obstacles to the diffusion of formal proofs in industry.
 
-- One to many communication instread of one to one
+This evolution towards a standard and this resurrection of the
+universality of logical truth will also suppress one of the main
+obstacles to the diffusion of formal proofs in the community of
+working mathematicians and in and education, just like the development
+of the html standard induced a renewal of document sharing in general
+and the definition of predicate logic induced a renewal of logic in
+the 1930's.
 
-- *** Better communication between ITP and ATP *** TPTP
+Sharing a logical framework will also allow new synergies between 
+the formal proof community and the Automated Theorem Proving community.
 
-- Better communication with machin leraning
+It will also allow a better communication with machine learning community.
 
-
-
-
-
-- 
-
-- HARMONIZE
-
-- LESS DUPLICATION
-
-- INTEGRATE OPEN-THEORY and sclaing up
-
-- Harmony with OpenDreamKint and Software heritage
-
-- Logipedia should provide support for Deepspec
-
-- Alexandria
-
-{\color{red} Key exploitable results?}
-
-
-
-
-%In terms of networking, we have already organized one logipedia
-%meeting and the funding will insure we can continue to organize
-%large-scale international meetings on a regular basis. The first
-%logipedia event has proven to be very valuable in terms of exchange of
-%best practices.
+We have already organized two {\sf Logipedia} meetings that have
+proven to be very valuable to develop joint project and synergies.
+The project will permit to develop wider international events.
 
 \subsection{Innovation is fostered through a reinforced partnership of research
 infrastructures with industry}
 
-Innovation Formal methods are now an important part of some advanced
-industrial projects. For instance, mastering formal methods is key to
+Formal methods are now an important part of some advanced
+industrial projects. Mastering formal methods is key to
 give Europe a competitive advantage in conquering the market of
-autonomous cars, trains, planes, and drones. But this penetration of
+autonomous cars, trains, planes or drones, or the block-chains and crypto-currencies. But this penetration of
 formal methods in industry hits the same obstacle that researchers
 often promote one method, theory or system, while their industrial
 partners are in search of universality. We expect to make formal
@@ -166,43 +184,51 @@ proofs more accessible to industry by avoiding each project to
 redevelop elementary proofs, but instead benefit of the formalization
 work shared with other communities.
 
-Several European and non European companies are member of the project,
-as contributors or as members of the future {\sc Logipedia} user's group.
+Several European companies are member of the project,
+as contributors or as members of the future {\sf Logipedia}
+club of industrial users.
 
-From the industy point of view the key exploitable results are threefold
+From the industy point of view the key exploitable results are threefold:
 
 \begin{enumerate}
-\item Crossverification.
+\item Cross-verification.
 
 In the current state of affairs, when a compagny proves a piece of
 software correct using a system $X$, its client, or the certification
 authorities can check the proof developed by this compagny, but then
 need to use the same system $X$ to check this proof, so they need to
 trust the system $X$, which is a limitation. Several actors want to be
-able to check the proofs using a indepedent proof system, and even one
+able to check the proofs using an indepedent proof system, and even one
 they have developed themselves.
 
-A side effect of the construction of the {\sc Logipedia} platform is
+A side effect of the construction of the {\sf Logipedia} platform is
 to incent all the proof systems to be able to produce proofs in a
-common language. Such proofs can then be all be checked by {\sc
+common language. Such proofs can then be all be checked by {\sf
 Dedukti}, and several other systems.
 
 Moreover, the certification authorities can develop their own
-proof-checker (the development of such a proof-checker takes from two
-to four weeks) so that they do not need to trust anyone else.
+proof-checker (the development of such a proof-checker takes a few weeks) so that they do not need to trust anyone else.
+
+\item Towards standardization.
+
+The lack of standards is currently a major obstacle to the development
+of formal methods in industry. Althoug we consider that starting a
+standardization process is still premature, this project will allow us
+to experiment with a common language that we shall improve until we
+reach the point where it can be proposed as a standard.
 
 \item Sustainability.
 
 When an industrial project is over, it is sometimes difficult,
 specially for small compagnies, to keep an archive of their work over
 a long period of time. In formal methods, most of the projects are a
-two-stage rocket. The first stage of the rocket contains basic
+two-stages rocket. The first stage of the rocket contains basic
 developements that can be shared between the compagny and its
 competitors. The second contains developments that are specific to the
 project and that often contain industrial secrets.
 
-Sharing the first stage on a public encyclopedia (while keeping the
-second secret) contributes to the sustainability of the
+Sharing the first stage on a public encyclopedia, while keeping the
+second secret, contributes to the sustainability of the
 developements. They can, for instance, be reused decades later, and
 cannot be lost by the compagny.
 
@@ -214,41 +240,50 @@ for others, and also because these compagnies hire researchers and
 engineers that have different cultures and are more efficient using the
 tools they know.
 
-A side effect of the construction of the {\sc Logipedia} platform is
+A side effect of the construction of the {\sf Logipedia} platform is
 that such developement are made interoperable. First because a proof
 developed in one system can be translated into another. Second because
-proofs developed in different systems can be combined in {\sc
+proofs developed in different systems can be combined in {\sf
 Logipedia} itself.
 \end{enumerate}
 
-The participation of industry to the project is twofold. First,
-the project includes a {\em club of industrial users} that will
-organize a couple of meeting every year. To
+The participation of industry to the project is twofold. First, the
+project will develop a {\em club of industrial users of Logipedia} and
+organize a couple of meetings every year where the industrial members
+will:
 \begin{itemize}
-\item propose new objectives for the projet,
-\item propose use cases,
+\item learn about the advancement and new features of the infrastructure,
+\item give feedback on the use of the infrastructure,
+\item provide tests sets and proofs to include into Logipedia,
+\item propose new features, services or research directions for the projet,
 \item participate to the project self assessment.
 \end{itemize}
+
+A number of companies already agreed to join our
+club of industrial users
+Alstom,
+Facebook France,
+RATP, Mitsubishi Electric R\&D Centre Europe, ClearSy,
+Systerel, Nomadic Labs, OCamlPro, Origin Labs, TrustInSoft.
+Some are
+working on railways, others on software verification, and others on
+block-chain applications.
 
 From the industrial point of view the participation to this club
 is a way to do some technology watch. 
 
-Then, some compagnies, specially some related to the {\sc B} community
+Then, some compagnies, specially some related to the {\sf B} community
 and the railway industry, are part full partners of the project and
-will contribute to the production of {\sc Logipedia} proofs from
-{\sc B} provers. 
+will contribute to the production of {\sf Logipedia} proofs from
+{\sf B} provers. 
 
-{\color{red} Club of industrials (Frédéric, can 
+{\color{red} Club of industrial users (Frédéric, can 
 you explain the impact here?)}
 
-{\color{red} Impact for the {\sc B} community and the railway industry
+{\color{red} Impact for the {\sf B} community and the railway industry
   (Yamine?)}
 
 {\color{red} Key exploitable results?}
-
-- (introperability) Import feature is a KER
-
-- (introperability) Export feature is a KER
 
 - Recall the importance of safety and security
 
@@ -277,8 +312,15 @@ field)
 
 - Atttracting working mathematicians
 
-- {\color{red} Benjamin M.}: lower the cost, using an accessible
-database, hence new cooperation
+- {\color{red} Benjamin M.}:
+
+Industrial program verification tools usually rely only on one single
+proof system and any missing feature of its library forces the
+end-user to prove complicated theorems that probably exist in other
+proof systems. Thanks to Logipedia it becomes possible to access all
+standard libraries and proofs of all systems. It makes the overall
+cost of the proof of programs much less costly.
+
 
 {\color{red} Key exploitable results?}
 
@@ -286,6 +328,30 @@ database, hence new cooperation
 
 - Some specific developements will be kept secret by the industrial parners
 but sharing the basics  (90\%) is win-win
+
+{\color{red} Speak here about the club of Academic users
+
+  
+Karl Palmskog <palmskog@gmail.com> 
+
+Jacques Fleuriot (not yet contacted)
+
+Paul Jackson (not yet contacted)
+
+Simon Foster <simon.foster@york.ac.uk> (Burkhart)
+
+Achim D. Brucker <A.Brucker@exeter.ac.uk> (Burkhart)
+
+Angeliki Koutsoukou-Argyraki 
+
+Kevin Buzzard (not yet contacted)
+
+Sébastien Gouëzel (not yet contacted)
+
+}
+
+
+
 
 
 \subsubsection{Education}
@@ -350,3 +416,33 @@ EU Spent money on TYPES, Nicolas Tabareau's ERC. Formath, Circo...
 Now we integrate the results of all this research
 
 {\color{red} Key exploitable results?}
+
+
+\section{Key Exploitable results}
+
+Logipedia is a Key Exploitable Results, each domain specific library
+(on real analysis, probability...) is also a Key Exploitable Result,
+each specific development made available to all provers (CompCert?,
+CakeML?...) is a Key Exploitable Result, as well as each proof in
+Logipedia. Formalized datastructures and algorithms shared accros
+provers are a Key Exploitable Result.
+
+Indexing algorithms and seach engines are Key Exploitable Results.
+
+User interfaces are Key Exploitable results.
+
+API and package distribution systems are Key Exploitable Results.
+
+Logipedia as a repository for proofs referenced in publications, 
+in mathematics, in computer science and in other sciences is a
+Key Exploitable Result.
+
+- Each import feature to {\sf Logipedia} and each export
+feature from {\sf Logipedia} is a 
+Key Exploitable Result.
+
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:

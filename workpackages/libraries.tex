@@ -2,12 +2,16 @@
   short=Libraries,% for Figure 5.
   title=Libraries,
   lead=Inr,
-  InrRM=10]
-  
+  InrRM=10,
+  TumRM=36]
+%TUM: 24 for Analysis library, 12 for CakeML
+%resources for Makarius (25k EUR) should not go here because they do not generate overheads
+
+
 \ednote{MK: We need one coordinating site. original coordinators: Georges Gonthier and
 Tobias Nipkow} \ednote{MK: interested parties (add their sites and RM here): David
 Deharbe, Nicola Gambino, Tobias Nipkow, Makarius Wenzel, Julien Narboux, Gaspard Férey,
-François Thiré}
+François Thiré, Magnus Myreen}
 
 \begin{wpobjectives}
   The objective of this work package is to \ldots
@@ -24,10 +28,92 @@ For the future: Mizar, PVS, seL4, CompCert
 
 
 \begin{wpdescription}
-Translating the standard libraries of the systems is part of the WP1. 
+Translating the standard libraries of the systems is part of the WP1.
 \end{wpdescription}
 
 Two aspects: scalability and accessibility
+
+{\bf Trusted chain}
+
+A grant challenge in program verification is that of running trusworthy
+software on trustworthy hardware. This challenge can be decomposed in
+four steps: (1) formally verify the source code of the program,
+(2) compile this code using a formally-verified compiler,
+(3) launch the program on a formally-verified operating system,
+(4) running the whole thing on hardware with formally-verified circuits.
+
+Developing a program verification framework, a verified compiler, a
+verified operating system, and a verified hardware, corresponds to 4
+daunting tasks. Just setting up a reasonable proof-of-concept takes of
+the order of 10 man-year of work. Raising the bar to a production-ready
+tool takes at least Can additional order of magnitude in terms of efforts.
+
+Considerable progress has been made on these three aspects
+over the past decade, and every year the technology becomes more mature.
+Yet, there is a pitfall. The tools are not all developed using the same
+theorem prover, not just for historical reasons but also because different
+proof assistants have appeared better-suited at different tasks.
+
+In that setting, how one could possibly complete a trustworthy chain if
+the four main pieces of the chain are not properly hooked to one another?
+As a concrete example, CFML is a program verification for verifying ML code,
+developed in Coq; and CakeML is a verified compiler for ML code,
+developed in HOL4. How can we combine the two tools to produce verified
+machine code from verified ML code?
+
+There are two main ways to address the issue. One way is to port the
+proofs of all the formalized tools into a same proof assistant.
+Doing so might be possible in a far future, however given the scale and
+the complexity of the tools, this approach does not provide a short-term
+solution. Another, more accessible approach consists of translating
+between proof assistants only the formal statements associated with the
+interfaces between the 4 pieces of the verified chain.
+
+Concretely, the interfaces involve: (1-to-2) a formal semantics for
+a programming language, (2-to-3) a formal semantics for a set of
+system calls (the OS API and isolation model), (2-and-3-to-4) a formal
+semantics for machine code (instruction set and memory model).
+Translating such formal interfaces, which consists solely of statements,
+is considerably easier than translating all the verification proofs
+associated with the tools.
+
+A proposal for translating such interfaces should satisfy the following
+requirements. First, the translations must to be trusworthy. In particular,
+translation by hand is not an option, and developing translation tools
+between every pair of provers might make the trusted code base prohibitively
+large. Second, the translations should be maintainable. Indeed,
+formal specifications of the aforementioned interfaces do evolve, slowly but
+surely, through time, in particular for incorporating new features.
+Third, the translations should produce formal definitions that are written
+in a style sufficiently idiomatic with respect to the target proof assistant.
+Indeed, carrying out proofs with respect to definitions in non-idiomatic
+style induce prohibitive overheads.
+
+We propose to tackle the problem by leveraging the unifying language
+Dedukti in the following way. Assume that we have, for formal statements,
+a bi-directional translations between each prover and Deduki. Then,
+we could translate a formal interface from one system to another.
+The user may then provide alternative, more idiomatic statements for
+specific definitions, and prove (by hand) that the alternative definitions
+are equivalent to the automatically-generated ones. If the original
+interface is modified, then the automatic translations can be updated,
+and the proof system would notify the user of which alternative definitions
+need to be updated accordingly.
+
+For example, we could take CakeML's semantics of its input ML language,
+translate it automatically into Dedukti, then translate Dedukti's
+definition into Coq, refine by hand a few definitions to make them more
+idiomatic, and obtain a usable Coq semantics, with respect to which
+the correctness of the CFML verification tool can be established in Coq.
+Completing this case study is motivating not only because it delivers
+an immediate result of relating two existing tools, but also because it
+would validate the general approach of translating semantics via Dedukti
+in a realistic manner.
+
+Beyond this one example, other motivating case studies will be considered,
+such as translating the formal semantics of ComCert-C into other proof
+assistants, or translating the formal semantics of ARM instruction set.
+
 
 \begin{tasklist}
 \begin{task}[id=mathcomp,title=MathComp]
@@ -42,24 +128,127 @@ Two aspects: scalability and accessibility
 %\ednote{Innsbruck, Bialystok}
 %\end{task}
 
-\begin{task}[id=afp,title=The Isabelle Archive of Formal Proofs]
-\ednote{TU München, Saclay}
+\begin{task}[id=afp,title=Isabelle/AFP: The Archive of Formal Proofs]
+\ednote{TU München (Wenzel)}
+
+In Feb-2020, the Archive of Formal Proofs \cite{isabelle-afp}
+consisted of more than 500 entries (articles of formalized
+mathematics) by 340 authors, and required approx.\ 60h CPU time for
+checking (using many gigabytes of memory).
+
+The purpose of this task is to scale up the Isabelle instrumentation
+for Dedukti further, to cover major parts of this library.  This might
+require a few pathological proofs to be reworked. The ultimate aim is
+to export the main substance of Isabelle/AFP, without promising full
+coverage: some entries with prohibitive resource requirements will be
+omitted. Also note that Isabelle/AFP is continuously growing at a high
+rate and thus a moving target.
+
 \end{task}
 
 \begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \& Probability library]
-\ednote{TU München}
+\ednote{TU München (Nipkow)}
+
+The Isabelle Analysis and Probability Theory library consists of more than
+200.000 lines of definitions and proofs, corresponding to almost 4000 printed
+pages. It covers topology, homology, multivariate, functional and complex
+analysis, measure and probability theory, and a dedicated library for
+ordinary differential equations. It is fair to say that it is the most
+advanced machine-checked library in the area of analysis and probability
+theory.\footnote{The Isabelle analysis and probability theory library is
+in part based on the extensive library of the HOL Light system but has
+generalized it from real numbers to appropriate algebraic structures and
+includes areas absent from the HOL Light library (in particular measure
+theory and ordinary differential equations).} It is currently used by 60 out
+of 500 articles in the Archive of Formal Proofs, a user-contributed library
+of Isabelle/HOL proofs from all areas of computer science and
+mathematics. Moreover, it is the only existing library in this area where
+proofs are structured and readable. Due to its size and generality and
+because analysis and probability theory are pervasive in any application in
+the engineering and natural sciences and economics, this library will be a
+KER of the project: it is a fundamental enabling resource for almost any
+formal verification activity in these areas, for example autonomous driving
+and mathematical finance. The purpose of this task is to structure, document
+and develop this library for optimal accessibility, ease of use and
+comprehensiveness. The aim is a curated library for applications.
+
+Any library is only as useful as its structure and documentation, no matter
+how sophisticated the search facilities are. Therefore the primary aim of
+this task is to make this library easily accessible. At the same time the
+library needs to be developed further: some material needs revising for ease
+of use and some essential material needs to be added.
+
+\textbf{Accessibility}\quad
+The library is a large collection of theories with a hierarchical dependency
+relation. However, this structure has grown over time and does not always
+reflect the abstract mathematical dependencies. In short, the structure needs
+to be modularized. This requires a significant refactoring effort.
+%
+At the same time we need to add metadata to the source material to turn this
+structured collection of theorems and proofs into a curated library at the
+Dedukti level.  This is where we need to interface with \WPref{structuring}. We
+will be test drivers of the metadata infrastructure provided by that WP, in
+particular the ability to describe ontologies for structuring in the large.
+This will also entail annotating those statements in the library that
+correspond to proper mathematical theorems as opposed to auxiliary lemmas
+required only for the benefit of the theorem prover.
+To increase accessibility we will also include links from the library into
+Wikipedia and in particular in the other direction to raise the awareness
+of Dedukti.
+
+\textbf{Development}\quad
+Although the library support for integrals is extensive, it suffers
+from the (necessary) coexistence of different kinds of
+integrals. This complicates proofs about integrals in applications and needs
+to be unified, which entails further refactoring. The rest of the
+development adds further essential material:
+1. Fourier analysis because of its extreme important both for pure mathematics and for
+engineering and physics (especially the Fourier
+transform). A formalization of basic properties of the Laplace transform is already available in the AFP. 2. Stability theory for differential equations and
+dynamical systems, in particular Lyapunov functions, because of their
+relevance for the verification of cyber-physical systems.
+3. Stochastic differential equations to model a large range of
+dynamical systems with stochastic components, from physics to financial markets.
 \end{task}
 
 \begin{task}[id=geocoq,title=The GeoCoq library]
-\ednote{Sophia, Strasbourg, Belgrade}
+\ednote{Sophia (Boutry), Strasbourg, Belgrade}
 \end{task}
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
 \ednote{Saclay (Grienenberger)}
 \end{task}
 
-\begin{task}[id=cakeml,title=The CakeML programming language library]
-\ednote{Gothenburg (Myreen), Strasbourg, TU München}
+\begin{task}[id=cakeml,title=The CakeML compiler library]
+\ednote{Chalmers (Myreen), Strasbourg, TU München}
+The task is to export the CakeML compiler library to Dedukti.  The
+CakeML compiler library consists of the CakeML programming language
+definition, its compiler and the correctness proofs about the
+compiler. This is a cutting edge compiler library and one of only two
+verified compilers for real languages, the other being CompCert. Its
+export to Dedukti is one of the KERs of this project. Because of the
+size and importance of this library, we will approach the export from
+two angles.
+
+The first approach utilizes OpenTheory-based technology. The CakeML
+compiler development lives within the HOL4 prover. HOL4 can export
+definitions and proofs in the OpenTheory format, which can in turn be
+translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
+exists but, in its current state, fails to scale to the task of
+transporting something as sizeable as the CakeML compiler
+development. This part of this task will rework the route via
+OpenTheory to scale better, possibly taking inspiration from an
+OpenTheory-like approach that scaled well for the HOL light
+prover~\cite{KaliszyKrauss}.
+
+The second approach establishes a connection from HOL4 via Isabelle to
+Dedukti. The basis is a promising new approach of virtualizing HOL4
+inside Isabelle \cite{ImmlerRaedleWenzel}. That is, the inference
+kernel of HOL4 is replaced by that of Isabelle and the resulting
+system produces Isabelle theorems instead of HOL4 theorems. This has
+the invaluable additional benefit that tools, not just theorems, can
+be shared. As a benchmark of the viability of this approach we plan to
+export CakeML via Isabelle to Dedukti.
 \end{task}
 
 \begin{task}[id=unimath,title=The UniMath library]
@@ -73,12 +262,15 @@ Two aspects: scalability and accessibility
 
 %\begin{task}[id=compcert,title=The CompCert library]
 %\end{task}
-%\end{tasklist}
+\end{tasklist}
 
 \begin{wpdelivs}
   \begin{wpdeliv}[due=3,miles=startup,id=requirements,dissem=PU,nature=DEM,lead=Inr]
       {Requirements Analysis and Synchronization}
 \end{wpdeliv}
+  \begin{wpdeliv}[due=36,miles=isabelle-stdlib,id=requirements,dissem=PU,nature=DEM,lead=Tum]
+      {Scalable export of proof terms for major parts of Isabelle/AFP}
+  \end{wpdeliv}
 \end{wpdelivs}
 \end{workpackage}
 
