@@ -17,7 +17,7 @@ TARGET = $(TSIMP) $(TBIB)                         # all pdflatex targets
 TBIB.pdf 	= $(TBIB:%.tex=%.pdf)         	  # PDFs to be produced
 TBIB.aux 	= $(TBIB:%.tex=%.aux)             # their aux files.
 PDATA 		= $(PROPOSAL:%.tex=%.pdata)       # the proposal project data
-SRC = $(filter-out $(TARGET),$(shell ls *.tex))   # included files
+SRC = $(filter-out $(TARGET),$(shell ls *.tex lib/WApersons.tex sites/*.tex workpackages/*.tex))   # included files
 MODE = -interaction scrollmode
 PDFLATEX = pdflatex $(MODE) -file-line-error
 PROPCLS.dir = $(PROP.dir)/base
