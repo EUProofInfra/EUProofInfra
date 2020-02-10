@@ -31,8 +31,8 @@ PROPCLS.clssty = proposal.cls pdata.sty
 PROPETC.sty = workaddress.sty metakeys.sty sref.sty
 EUPROPCLS.clssty = euproposal.cls
 PROPCLS = $(PROPCLS.clssty:%=$(PROPCLS.dir)/%) $(EUPROPCLS.clssty:%=$(EUPROPCLS.dir)/%) $(PROPETC.sty:%=$(PROPETC.dir)/%)
-#ORRM = || $(RM) $@
-all: $(TBIB.pdf) $(TSIMP.pdf)
+#Orrm = || $(RM) $@
+All: $(TBIB.pdf) $(TSIMP.pdf)
 
 submit:
 	$(MAKE) -$(MAKEFLAGS) -w PROPOSAL=submit.tex

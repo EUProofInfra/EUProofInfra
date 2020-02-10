@@ -2,6 +2,7 @@
   short=Concept Alignment,% for Figure 5.
   title=Concept Alignment,
   lead=Pra,
+  BolRM=14, % 2 on Dedukti, 13 on proof alignment
   PraRM=10]
   
   \ednote{We need one coordinating site. original coordinators: Filip
@@ -85,15 +86,7 @@ constructive'' when possible?
     \item Identification of abstraction layers (proof mining)
     \end{itemize}
   \end{task}
-
-
-  \begin{task}[id=aligntheories,title=Automated theory alignment,lead=Inr]
-    \begin{itemize}
-    \item Automated discovery of alignments
-    \item Aligning theories using database and semantic web technology
-    \end{itemize}
-  \end{task}
-
+  
   \begin{task}[id=aligncasestudies,title=Case studies,lead=Str]
     \begin{itemize}
     \item Aligning sets, relations, functions
@@ -103,33 +96,31 @@ constructive'' when possible?
     \end{itemize}
   \end{task}
 
-  \begin{task}[id=alignproofrewrite,title=Alignment based proof rewriting]
+  \begin{task}[id=aligntheories,title=Automated theory alignment,lead=Inr]
     \begin{itemize}
-    \item Develop tools that rewrite proofs based on known alignments
+    \item Automated discovery of alignments
+    \item Aligning theories using database and semantic web technology
     \end{itemize}
   \end{task}
 
-  \begin{task}[id=aligntranslate,title=FAIR Services: Reuse across
-    Libraries,lead=Fau,FauRM=12]
+  \begin{task}[id=alignservices,title=Alignment based services,lead=Fau]
+    \begin{itemize}
+    \item Alignment based search
+    \item Alignment based browsing
+    \item Alignment based proof rewriting
+    \end{itemize}
     This task leverages the large library of alignments built in the
-    previous tasks by building a major FAIR (findable, accessible,
-    interoperable, reusable) service focusing on \textbf{reuse}. It
-    uses alignment to translate formulas and theorems from one library
-    to another.
-  \end{task}
-
-  \begin{task}[id=alignsearch,title=FAIR Services: Search across
-    Libraries,lead=Fau,FauRM=12]
-    This task leverages the large library of alignments built in the
-    previous tasks by building a major FAIR service focusing on
-    \textbf{search}.  Here users enter a search query relative to the
+    previous tasks by building a set of FAIR (findable, accessible,
+    interoperable, reusable) services. The service focused on
+    \textbf{reuse} uses alignments to translate formulas and theorems
+    from one library to another. The service focused on
+    \textbf{search} enables users enter a search query relative to the
     central library built above and chooses which libraries to search
-    in.  Using the functionality developed in
+    in. Using the functionality developed in
     \localtaskref{aligntranslate}, the query is then translated into
     the requested libraries and searched in each one.  Results from
     all libraries are aggregated and returned.
-\end{task}
-
+  \end{task}
 \end{tasklist}
 
 \begin{wpdelivs}
