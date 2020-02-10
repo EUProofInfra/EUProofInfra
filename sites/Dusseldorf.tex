@@ -36,12 +36,17 @@ The STUPS group has hosted the iFM'09 conference as well as the AVoCS'10 worksho
 
 The STUPS team and its members have been involved in several EU projects
  (Advance, Deploy, ASAP, PyPy, RODIN, POST) and the Eureka Eurostars project PyJIT.
+Of particular interest here is the development of the Rodin platform in the EU projects RODIN, Deploy and Advance.
 The STUPS team is maintaining the ProB validation tool, and has a broad experience
  in linking up various formal languages and technologies.
-The constraint-solving capabilities of ProB can also be used for 
-  disproving, proving or for data validation.
+For example, the ProB tool, initially developed for the B and Event-B method using constraint logic programming,
+ is now capable to read in TLA+, Alloy and Z models and
+ can translate constraints also to SAT and SMT representations.
+%The constraint-solving capabilities of ProB can also be used for various applications such as
+%  disproving, proving or for data validation.
 ProB is available as a prover within the Atelier-B and Rodin platforms.
-The first uses of data validation started in the EU project Deploy, and led to
+The most prominent industrial application of ProB is
+ data validation which started in the EU project Deploy, and led to
  ProB's use to validate the configuration of many railway systems worldwide
  (e.g.,
  Paris Line 1,  S\~{a}o Paulo line 4, Barcelona line 9 for Siemens
@@ -52,13 +57,14 @@ The first uses of data validation started in the EU project Deploy, and led to
 \paragraph{Specific expertise:}
 
 \begin{compactitem}
-\item \ednote{give three to five specific areas of expertise that pertain to the \pn project}
+\item %\ednote{give three to five specific areas of expertise that pertain to the \pn project}
       developing and maintaining the ProB validation tool, along with
       its disprover based on constraint-logic programming
- \item experience with translating formal methods (B,Z, TLA+, ...)
-       to SAT and SMT
- \item experience in building and certifying tools for industrial usage
- \item experience in the practical applications of formal models and tools
+ \item experience with translating formal methods (B,Z,TLA+, ...)
+       to SAT and SMT representations,
+ \item experience in building and certifying tools for industrial usage (ProB has been certified T2
+  for several applications according to the industrial norm EN50128)
+ \item experience in the practical applications of formal methods and tools.
 \end{compactitem}
 
 \paragraph{Staff members undertaking the work:}
@@ -67,21 +73,36 @@ The first uses of data validation started in the EU project Deploy, and led to
 Michael Leuschel is head of the STUPS group and was co-founder of the spin-off
 company Formal Mind.
 He has developed the ProB tool-set for the validation of formal specifications.
-ProB is currently in use by many companies, such as Thales, Alstom, ClearSy, Systerel 
-and many more.
+%ProB is currently in use by many companies, such as Thales, Alstom, ClearSy, Systerel and many more.
 Outside of formal methods, his main research areas are automatic program analysis and optimization (notably partial evaluation and abstract interpretation).
 He was the chair of many formal methods conferences.
 He was a member of the PEPM and LOPSTR steering committees and
  the editorial board of the Journal of Theory and Practice of Logic Programming.
 He has over 5300 citations, published over 170 papers, 
 and developed several tools such as the ECCE and LOGEN partial evaluation systems.
-He has been involved in several EU projects (Advance, Deploy, ASAP, PyPy, RODIN, POST) and the Eureka Eurostars project PyJIT.
+%He has been involved in several EU projects (Advance, Deploy, ASAP, PyPy, RODIN, POST) and the Eureka Eurostars project PyJIT.
 
 \textbf{Dr.\ Jens Bendisposto}
 Has developed the Java-API for ProB and has experience in distributed validation technologies.
+He has many years experience in developing in general and formal methods tools in particular.
+
 
 \ednote{provide the key publications below}
 \keypubs{providemore}
+
+Publications:
+\begin{itemize}
+\item Michael Leuschel, Michael J. Butler: ProB: an automated analysis toolset for the B method. STTT 10(2): 185-203 (2008).
+ (journal version of the FM'2003 conference paper, together over 1000 citations).
+\item Michael Leuschel, J{\'e}r{\^o}me Falampin, Fabian Fritz, Daniel Plagge.
+Automated property verification for large scale {B} models with {ProB},
+Formal Asp. Comput. 23 (6): 83--709, 2011.
+\item Dominik Hansen, Michael Leuschel: Translating B to TLA+ for validation with TLC. Sci. Comput. Program. 131: 109-125 (2016).
+\item Sebastian Krings, Michael Leuschel:
+Proof assisted bounded and unbounded symbolic model checking of software and system models. Sci. Comput. Program. 158: 41-63 (2018).
+\item Fabrice Kordon, Michael Leuschel, Jaco van de Pol, Yann Thierry-Mieg:
+Software Architecture of Modern Model Checkers. Computing and Software Science 2019: 393-419.
+\end{itemize}
 
 
 \end{sitedescription}
