@@ -3,3 +3,56 @@
 % other participants: 
 
 \ednote{Southhampton, Toulouse, Clearsy writes this}
+
+Atelier B, Rodin and ProB are platforms or tools to develop models
+written in B method, Event-B or B system. The development process is
+based on formal proof: proof obligations are automatically  generated
+and must be proven by automatic or interactive provers. ProB is an
+animator and model checker, it helps users to gain confidence in their
+specifications. It is also a disprover aiming at  discovering
+counter-examples for proof obligations. Atelier B and Rodin use native
+B proof tool, they also enable the use of external provers such as SMT
+solvers. ProB calls SMT and SAT solvers, it also uses contraints
+solvers such as Sicstus Prolog. All of them relies on the B logics,
+mainly a first order language with set theory. Regarding B/Event-B/B
+system, there are some variants, mainly regarding the refinement
+process they all implement. Refinement means that models are developed
+by successive steps, from an abstract model to a more  concrete
+model. Refinement in B method mainly means deriving a program while
+EventB and B System refinement aim at defining a model of a system by
+introducing details.
+
+
+In the context of the BWare project, an encoding of the set theory of
+the B method has been provided as a theory modulo, i.e. a rewrite
+system rather than a set of axioms. This encoding is used by the
+automatic prover Zenon modulo which features a backend to
+Dedukti. Thus, as a first step through instrumentation of Atelier B
+and Rodin, proof obligations coming from Atelier B can be proved by
+Zenon modulo producing Dedukti proofs, hence providing a better
+confidence in the proofs produced by the native proof tools of Atelier
+B \cite{Bware}.
+
+
+This work package has different objectives:
+\begin{itemize}
+\item continue the encoding
+of the B set theory in Dedukti to be able to handle all kind of proof
+obligations,
+\item instrument the native provers to produce proofs (see
+WP4) and
+\item export B models.
+\end{itemize}
+
+The last objective, the exportation of  B models,
+is a major task, involving research activities. A model in B method,
+EventB or B System encodes a state machine constrained by
+invariant properties. Verification of the model correctness implies to
+verify some proof obligations produced by a weakest precondition
+calculus. For example, spanning trees algorithms, distributed
+algorithms, access control policies have been formalized
+respectivement in EventB and B method. Besides its proof obligations,
+the entire model  is worth
+being exported, reused or translated 
+
+
