@@ -308,16 +308,112 @@ ATPs cooperate with each other and with other tools, in a safe way.
 
 As for Interactive Theorem Provers, the consistency of this work
 strongly relies on the ability for ATPs to export statements and proofs
-in some theory in {\sf Dedukti}. We divide this aspect in two tasks.
+in some theory in {\sf Dedukti}.
 
-\dots Pascal: T1 and T2
+\begin{description}
+\item[T1] Pascal
+
+\item[T2] Pascal
+\end{description}
 
 
 \paragraph{From {\sf Dedukti} to ATPs}
+\label{concept:wp4:deduktitoatp}
 
-In the other direction, ATPs will benefit from {\sf Logipedia}.
+In the other direction, {\sf Logipedia} will constitute a source of
+knowledge for ATPs. For this to be affordable, this workpackage will
+study the following challenges.
 
-\dots Chantal and Pascal: T3, T4 and T7
+\begin{description}
+\item[Translate {\sf Dedukti} statements into ATPs inputs] Automatic
+  theorem provers are mostly based on (parts of) first-order logic. {\sf
+    Logipedia} theorems, which mostly come from interactive provers,
+  will be expressed in the {\sf Dedukti} encodings of much more
+  expressive logics, such as dependent type theory or higher order
+  logic. Theorem statements thus need to be encoded again to be
+  manipulable by ATPs.
+
+  Encodings from expressive logics to first order logic already exist,
+  and are used for instance in {\em hammers} for using ATPs into
+  interactive theorem
+  provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.
+  In these works, the encodings are specific to one system to be
+  affordable. In {\sf Logipedia}, we have to combine and take benefit
+  from statements coming from the encodings of different systems based
+  on different logics. The key challenge here are thus:
+  \begin{itemize}
+  \item to avoid the loss of meaning coming from a succession of
+    encodings; and
+  \item to encompass statements coming from different systems.
+  \end{itemize}
+  We plan to investigate a new approach where, instead of hammers, the
+  encoding is a succession of fine-grained encodings dedicated to one
+  aspect. These ``small'' encodings will offer the possibility to be
+  activated independently depending on the origin of the statement. They
+  give the other advantages of being modular, easily extensible, and
+  more reliable: each encoding is simple, and may output proofs, {\em
+    e.g.} using Ekstrakto. It will also crucially rely on the concept
+  alignment provided by the workpackage 6.
+
+  It is common in the ATP community to evaluate the performance on
+  sets of benchmarks. As a side effect of this task, a new set of
+  benchmarks will be extracted from {\sf Logipedia} to measure the
+  performance of ATPs on problems coming from different logic, and from
+  a combination of these logics. In our case, it will not only allow to
+  compare ATPs but also to measure the success of this task by evaluated
+  the quality of encodings, and comparing our ``small'' encodings by
+  activating them or not.
+
+\item[{\sf Logipedia} as a source of knowledge for ATPs] Pascal
+\end{description}
+
+
+\paragraph{Large scale application: formal verification of C code}
+
+The use of formal methods in the industry requires to have approaches
+that apply to a wide variety of cases. For the verification of C code,
+the Frama-C platform features numerous techniques. One of them relies on
+automatic solvers: Frama-C-WP. Since ATPs are built by making many
+choices such as which heuristics or which algorithms to use, they
+display blind spots where they are less efficient to solve some cases.
+In order to overcome that, it is necessary to use the wide variety of
+solvers which exist in a portfolio manner. The Why3 tool features the
+ability to send problems to lots of provers in a uniform way. However
+with so many tools written by different teams involved, the meaning of
+the same concept in the different tools could be different. It would
+lead to errors in the overall verification results. Moreover in order to
+be applied more widely, formal methods must handle more concepts such as
+floating points where their exact meaning is less clear that
+mathematical integers. That leads to more opportunities for two tools to
+interpret differently the same concept. Finally, an industrial user
+sometimes needs to add some reasoning or simplifications for their
+particular concept so that it is better handled by automatic solvers. It
+is very easy to make an error in those simplifications.
+
+In order to overcome these problems, we propose to gain insurances in
+the interaction of these different tools and to speed the addition of
+new features to handle new cases by using proof objects:
+\begin{itemize}
+\item Where the industrial user needs to define the concepts he wants to
+  verify in its C code, we will add the possibility to import concepts
+  from Logipedia. The user gain time by not having to define them
+  himself and it ensures that we have proofs for the accompanying
+  lemmas.
+\item Where the simplification rules written for the industrial case are
+  executed in Frama-C-WP, we will instrument it to generate Ekstrakto
+  input in order to produce a proof of the correction of these
+  simplifications.
+\item Where the problems are transformed to fit the different provers in
+  Why3, we will inspire from the fine-grained encodings
+  (Sec.~\ref{concept:wp4:deduktitoatp}) to also generate Ekstrakto
+  proof.
+\item In the end, we will gather the Dedukti or Ekstrakto proof of the
+  provers, the encodings, and the simplification rules, in order to
+  assemble them in a coherent whole.
+\end{itemize}
+This part thus combines and validates most of the previous aspects of
+this workpackage, but also constitutes the challenge to instrument a
+large-scale formal tool.
 
 
 \paragraph{ATPs to increase {\sf Logipedia} readiness}
