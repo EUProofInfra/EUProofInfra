@@ -85,7 +85,101 @@ Considered provers:
 \begin{task}[id=tracetodedukti, title=Translate ATP traces into Dedukti]
   Task leader: Guillaume Burel
   %Pascal
-  
+
+As pointed out in Task~\localtaskref{instrumenting}, it is easier to
+instrument provers to make them output traces instead of directly
+provide Dedukti proofs. The goal of this task is to reconstruct the
+proof traces in order to build Dedukti proofs from them. The proposed
+process is the following: each step of the trace is transformed into
+an independent subproblem; each of these subproblems is given to a
+prover that can output Dedukti proofs; proofs of the subproblems are
+then combined to produce a global proof of the original problem. Since
+subproblems correspond to atomic steps of the proof trace, they are
+relatively simple, so that we can hope that the prover producing
+Dedukti proofs will not struggle to find a proof. This process is
+quite similar to what is done by the hammer tools of interactive
+theorem provers (Sledgehammer in Isabelle/HOL, HOLyHammer for HOL4, etc.)
+which reconstruct proofs from traces produced by automated theorem
+provers.
+
+This scheme has already been implemented in a tool called
+\href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto
+takes a TSTP file, as can be produced by e.g.\ the provers E and
+Zipperposition, and it uses Zenon Modulo and ArchSAT to prove the
+subproblems. Ekstrakto was designed to be agnostic w.r.t.\ what
+prover produced the trace; in particular it does not depend on the
+specific set of inference rules of the prover. It was also designed to
+be agnostic w.r.t.\ the prover used to prove the subproblems; all what
+is needed is that the prover can output a Dedukti proof in the correct
+encoding of first-order logic.
+
+Although Ekstrakto has already shown that it is a
+valuable approach, it is work in progress. In particular, the
+following issues still need to be addressed:
+
+\begin{compactenum}
+  % extension to other proof trace formats
+\item  Up to now, Ekstrakto can only take traces in TSTP format as input. We
+  plan to make it understand traces in other formats, notably SMT-LIB,
+  as well as all formats developed in Task~\localtaskref{instrumenting}.
+
+  Deliverables :
+  \begin{itemize}
+  \item T+6 a version of Ekstrakto that input SMT-LIB traces
+  \end{itemize}
+
+
+  % unprovable steps
+
+\item  Some steps in the proof traces are not provable: their conclusion is
+  not a logical consequence of their premises. However, they preserve
+  provability: the original problem has a proof if and only if the
+  problem with the conclusion of the step also has a proof. This is the
+  case for instance of the Skolemization step in first-order automated
+  theorem provers, of the introduction of new definitions, as well as
+  the RAT property in traces produced by SAT solvers. The approach of
+  Ekstrakto cannot be used here, because the subproblem corresponding to
+  the step cannot be proved. However, since provability is preserved, it
+  should be possible to transform a
+  proof using the conclusion of the step into a proof using its
+  premises. Such a transformation depends on the nature of the step that
+  has been used. We plan to include in Ekstrakto a way to handle
+  Skolemization and definition introduction, which are the two step
+  families that are missing to be able to treat all traces from the
+  major first-order theorem provers.
+
+  Deliverables :
+  \begin{itemize}
+  \item T+12 a version of Ekstrakto that handles definition-introduction steps
+  \item T+24 a version of Ekstrakto that handles Skolemization steps
+  \end{itemize}
+
+
+  % specialization for theories
+
+\item  Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo and
+  ArchSAT, are meant for pure first-order logic. However, we would like
+  to treat proof traces that use some specialized theory,
+  e.g.\ arithmetic or bit-vectors, as could be output by SMT
+  solvers. Although such theories could be presented as a set of axioms
+  in first-order logic, it is almost certain that neither Zenon Modulo
+  nor ArchSAT could be able to find non-trivial proofs using these
+  axioms. Here, the idea would be to develop small provers dedicated to
+  a particular theory, and outputting Dedukti proofs. Such provers would
+  be called when a step in the trace relies on said theory. These
+  provers need not be very optimized, since trace steps are relatively
+  small; this should help producing Dedukti traces. A way to achieve
+  this could be to extend Zenon Modulo: indeed, Zenon modulo can find
+  proofs modulo arithmetic, but it is not able to produce a Dedukti
+  proof yet.
+
+  Deliverables :
+  \begin{itemize}
+  \item T+36 a prover modulo arithmetic outputting Dedukti proofs
+  \item T+48 a prover modulo another theory outputting Dedukti proofs
+  \end{itemize}
+
+\end{compactenum}
   Depends on T1.
 
   One PhD student
