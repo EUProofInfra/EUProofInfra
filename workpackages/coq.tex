@@ -4,11 +4,12 @@
 
 \ednote{Bol: 12 MM = 44,630 euros (39,372 euros salary + travels etc.); Inr: 12 MM}
 
-Coq is an interactive theorem prover developed at Inria since the 1984.
-It is based on Type Theory and was used to formally verify the correctness
-of both industrially relevant software such as the CompCert C compiler and
-complex mathematical proofs such as the one of the Four Color theorem and the
-one of the Odd Order theorem. In 2013 Coq received the ACM system award.
+% Moved to concept & methodology
+% Coq is an interactive theorem prover developed at Inria since the 1984.
+% It is based on Type Theory and was used to formally verify the correctness
+% of both industrially relevant software such as the CompCert C compiler and
+% complex mathematical proofs such as the one of the Four Color theorem and the
+% one of the Odd Order theorem. In 2013 Coq received the ACM system award.
 
 This task about instrumenting Coq includes the following steps:
 \begin{enumerate}
@@ -26,34 +27,40 @@ cast from one algebraic structure to another (for tasks in WP3)
   extensible format (for tasks in WP5)
 \end{enumerate}
 
-A technological hurdle steps (a) and (c) have to overcome is that Coq is an actively
-developed system that is constantly evolving. Previous attempts at extracting
-data from Coq without a direct interaction with the developers of Coq resulted
-in prototypes like CoqinE that quickly became outdated. We plan to overcome
-this hurdle by having the required instrumentation merged in Coq proper and
-reuse it for other projects that could benefit from it so to amortize its
-development cost. More precisely E. Tassi
-is a core Coq developer acquainted with its development process and he will take
-care of the integration of the infrastructure in Coq and foster its reuse in
-third party projects with similar needs such as SerAPI, CoqHammer and Coq-Elpi.
+% Moved to concept & methodology
+%A technological hurdle steps (a) and (c) have to overcome is that Coq is an actively
+%developed system that is constantly evolving. Previous attempts at extracting
+%data from Coq without a direct interaction with the developers of Coq resulted
+%in prototypes like CoqinE that quickly became outdated.
+To overcome the problems associated with external tools such as
+CoqInE, we plan to have the required instrumentation merged in Coq
+proper and reuse it for other projects that could benefit from it so
+to amortize its development cost. More precisely E. Tassi is a core
+Coq developer acquainted with its development process and he will take
+care of the integration of the infrastructure in Coq and foster its
+reuse in third party projects with similar needs such as SerAPI,
+CoqHammer and Coq-Elpi.
 
-Step (b) is also problematic for two reasons. The first one is that the encoding
-in Dedukti requires some information, typically types of sub-expressions, that
-are not stored in Coq, it is transient. So the instrumentation for steps (a) and
-(c) needs to be complemented by providing not only access to existing data but
-also to log transient data or re-synthesize it on demand. Both approaches may
-be used, depending on the the tradeoff between computation time and space for
-storage. The second reason, which is more critical, is
-that the type theory of Coq is extremely large, with
-features  that have no corresponding representation in Dedukti. Therefore,
-to map Coq proofs to Dedukti, the type theory of Coq needs to be translated
-to a core one representable in Dedukti.
-This translation to a core calculus is not implemented in Coq and the amount and
-complexity of code necessary for it is very significant and indeed the CoqinE
-prototype only covers a small subset of Coq. Feedback from WP2 will be of
-guidance\ednote{Tassi: there is no task in WP2 about Coq's TT, maybe it is included in
-HoTT?} to extend the translation currently available CoqinE to cover a larger
-subset of Coq.
+% Moved to concept & methodology
+% Step (b) is also problematic for two reasons. The first one is that the encoding
+% in Dedukti requires some information, typically types of sub-expressions, that
+% are not stored in Coq, it is transient. So the instrumentation for steps (a) and
+% (c) needs to be complemented by providing not only access to existing data but
+% also to log transient data or re-synthesize it on demand. Both approaches may
+% be used, depending on the the tradeoff between computation time and space for
+% storage. The second reason, which is more critical, is ...
+
+\ednote{Should this part also be moved to the methodology section?}
+Since the type theory of Coq is extremely large, with features that
+have no corresponding representation in Dedukti, the type theory of
+Coq needs to be translated to a core one representable in Dedukti.
+This translation to a core calculus is not implemented in Coq and the
+amount and complexity of code necessary for it is very significant and
+indeed the CoqinE prototype only covers a small subset of
+Coq. Feedback from WP2 will be of guidance\ednote{Tassi: there is no
+task in WP2 about Coq's TT, maybe it is included in HoTT?} to extend
+the translation currently available CoqinE to cover a larger subset of
+Coq.
 
 In step (d) we plan to take advantage of the work done by Sacerdoti Coen (UBo)
 in 2019 in exporting non trivial logical and extra-logical data from Coq to
