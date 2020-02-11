@@ -88,22 +88,39 @@ classes:
   \item[Systems based on higher-order logic.] (HOL4, Isabelle) We
   still need some text to go here!
 
+  The HOL4 proof assistant is home to a few medium to large scale
+  specifications and associated proof developments that have value
+  outside of HOL4. These specifications include the formal semantics
+  of the CakeML language (and its verified compiler) and an extensive
+  specification of the ARM instruction set architecture (ISA) as
+  formalised by Anthony Fox at the University of Cambridge.
+
+  Isabelle as a logical framework \cite{paulson700} is an intermediate
+  between Type-Theory provers (like Coq or Agda) and classic LCF-style
+  systems (like HOL Light or HOL4).
 
   \item[Systems based on set theory and first-order logic.] Atelier B,
   Rodin and ProB are platforms or tools to develop models written
-  using the B method, a first-order language based on set theory. The
-  development process is based on formal proof: proof obligations are
-  automatically generated and must be proven by automatic or
-  interactive provers. This can include external solvers such as SMT
-  solvers, and (in the case of ProB) constraint solvers such as
-  Sicstus Prolog. The difference between Atelier B and Rodin lies
-  mainly in the refinement process they implement: in the B method
-  used by Atelier B refinement is done by deriving a program, while in
-  Event-B used by Rodin refinement is done by defining a model of the
-  system and iteratively introducing details. Finally, ProB is an
-  animator and model checker: it helps users to gain confidence in
-  their specifications, and it can be used as a disprover to discover
-  counter-examples to proof obligations.
+  using the B method, a first-order language based on set theory. A
+  model in these systems encodes a state machine constrained by
+  invariant properties. Verification of the model correctness implies
+  to verify some proof obligations produced by a weakest precondition
+  calculus. For example, spanning trees algorithms, distributed
+  algorithms, access control policies have been formalized
+  respectivement in EventB and B method.
+
+  The development process for the B method is based on formal proof:
+  proof obligations are automatically generated and must be proven by
+  automatic or interactive provers. This can include external solvers
+  such as SMT solvers, and (in the case of ProB) constraint solvers
+  such as Sicstus Prolog. The difference between Atelier B and Rodin
+  lies mainly in the refinement process they implement: in the B
+  method used by Atelier B refinement is done by deriving a program,
+  while in Event-B used by Rodin refinement is done by defining a
+  model of the system and iteratively introducing details. Finally,
+  ProB is an animator and model checker: it helps users to gain
+  confidence in their specifications, and it can be used as a
+  disprover to discover counter-examples to proof obligations.
 
 \end{description}
 Despite the large differences between these three classes of provers,
@@ -223,11 +240,14 @@ the following tools:
   Coq. However, since Coq is an actively developed system that is
   constantly evolving, CoqInE is now quite outdated and no longer
   works with the latest version of Coq.
-  \item Agda2Dedukti is an incomplete prototype of a translation from
-  Agda to Dedukti, which can currently translate about 25\% of Agda's
-  standard library. However, it suffers from performance issues
-  because of the requirement to store typing information in each
-  subterm (see research challenges above).
+  \item In the summer of 2019, Guillaume Genestier worked together
+  with Jesper Cockx on the implementation of an experimental
+  translator from Agda to Dedukti during a research visit at Chalmers
+  University in Sweden. This translator is still work in progress, but
+  it is already able to translate 142 modules of the Agda standard
+  library (about 25\%) to a form that can be checked in Dedukti. This
+  exploratory work uncovered several challenges and opportunities for
+  further work (see research challenges above).
   \item The inference kernel of Isabelle has already been instrumented
   to output proofs as $\lambda$-terms that can be understood by
   Dedukti. However, this has so far been only used for small examples
@@ -363,7 +383,29 @@ Besides data, we propose to include in {\sf Logipedia}, metadata and
 an inner structure.
 \end{enumerate}
 
-\subsubsection{Methodology of the work package 1} 
+\subsubsection{Methodology of work package 1: instrumentation}
+
+We know how to express in Dedukti the theories implemented in Matita,
+HOL4, Coq, Agda, Isabelle and Atelier B, and some of these systems
+have been partially instrumented to export proofs that can be checked
+in Dedukti. Our first work package is to complete this instrumentation
+to be able to export most of the proofs of these systems. As a
+consequence, the work includes a strong practical component.
+
+Three methods have to be used here: some of the systems (Automath
+style), such as Coq and Agda already have proof-terms that can be
+output, thus the main task is to translate these proofs into the
+Dedukti format. Others (LCF style), such as Isabelle and HOL4, have an
+inference kernel that can be instrumented, the main task here is to
+transform the internal proof-object into an external
+proof-term. Others, such as Atelier B are slightly more difficult to
+address. For those, we need to use the water ford method: extract an
+incomplete trace (a sequence of lemmas) and fill the gap using
+automated theorem proving, as experimented with Atelier B and Zenon.
+
+% A technological hurdle in the instrumentation of the systems under
+% consideration is that all of them are actively developed systems
+% that are constantly evolving.
 
 \subsubsection{Methodology of the work package 3} 
 
