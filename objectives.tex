@@ -1,9 +1,9 @@
 To foster the interoperability of proof systems and the sustainability
 and the cross-verification of formal proofs, we propose to collect
-them in an online encyclopedia, called {\sf Logipedia}.  For each
-proof, {\sf Logipedia} will indicate in which systems it can be used
-and, when this is the case, it will provide a version of this proof in
-the theory of these systems.
+them in an online encyclopedia, called Logipedia.  For each proof,
+Logipedia will indicate in which systems it can be used and, when this
+is the case, it will provide a version of this proof in the theory of
+these systems.
 
 Such a project will not only foster the use of formal proofs in
 research in mathematics and computer science, but also in industry, by
@@ -19,155 +19,63 @@ European industry. That is why the consortium gathers most of the
 European actors active on formal proof systems, while also developing
 links with non-European partners.
 
+The ultimate goal of Logipedia is to have all the formal proofs
+available to mankind in a single encyclopedia.  A first proof of
+concept contains a few hundred lemmas, from the Matita library,
+expressed in the logic of six different systems: Matita, Coq, Lean,
+HOL Light, Isabelle/HOL, and PVS.  In the next four years, we plan to
+address, with different ambitions, the libraries Abella, Agda, Atelier
+B, Coq, FoCaLiZe, HOL Light, HOL4, Isabelle, Matita, Minlog, Mizar,
+ProB, PVS, 
+TLA+, and Why3.  Beyond our main focus on interactive systems, we
+also plan to integrate some proofs coming from automated theorem
+provers, SMT solvers, and model checkers, when these proofs have a
+manageable size.
+
+%Convinced that such a cloud of formal proofs could bring to the
+%applications of formal proof technology the same boost that the cloud
+%has brought to computing, and also that managing such a large
+%encyclopedia (for instance being able to query a proof with a search
+%engine) required some interdisciplinary effort, we organized, in
+%January 2019, a meeting to discuss the future of this project
+%\url{http://deducteam.gforge.inria.fr/seminars/190121.html}.  This
+%meeting brought together 38 researchers from Austria, the Czech
+%Republic, France, Italy, the Netherlands, and Poland.  Since then,
+%colleagues from Belgium, Germany, Serbia, Sweden, and the United
+%Kingdom, from academia and industry, have manifested interest in
+%participating in this effort.  These researchers and engineers are
+%ready to contribute to develop this encyclopedia, aiming at sharing
+%proofs, under a creative common licence making them findable,
+%accessible, interoperable, and reusable.
+
 Building this encyclopedia is {\em per se} a networking activity
 between the partners, from academia and industry, involved in the
-project.  Currently, we know how to express the theories of {\sf HOL
-  Light} \cite{Assaf12}, {\sf Matita} \cite{Assaf15}, {\sf Coq} and
-{\sf FoCaLiZe} \cite{Cauderlier16} in {\sf Dedukti} and recheck proofs
-developed in these systems.  We aim at including, in twenty years, all
-formal proofs developed at that time.
-In the next four years, we plan to address the theories of {\sf
-  Abella}, {\sf Agda}, {\sf Atelier B}, {\sf HOL4}, {\sf Isabelle},
-{\sf Minlog}, {\sf Mizar}, {\sf TLA+}, {\sf Why3}, {\sf
-  LFSC}, {\sf PVS}, and {\sf TSTP}.  Other systems, such as {\sf
-  ACL2}, {\sf IMPS}, {\sf Lean}, {\sf Nuprl}, and {\sf Rodin}, are
-kept for later, except if some other partners join the project (Figure
-\ref{systems}). This effort will require, and contribute, to build a
-network of research teams, much stronger than what we currently have.
-
-Beyond our main focus on interactive systems, we also plan to
-integrate some proofs coming from automated theorem provers, SMT
-solvers, and model checkers, when these proofs have a manageable
-size. We already have experience with Archsat \cite{Bury19}, iProver
-\cite{Burel10}, and Zenon \cite{CauderlierHalmagrand15}. We plan to go
-further in this direction, in cooperation with our colleagues working
-on LFSC \cite{Stump09}. Thus beyond the teams focused on formal proofs, we
-will extend this network to teams of neighbour communities, such as
-the automated theorem proving community and the SAT/SMT community.
-
-\begin{figure}[t]
-\begin{framed}
-\begin{itemize}
-\item[LIL 1:]
-The theory implemented in the system has been defined in
-the $\lambda\Pi$-calculus modulo theory and in {\sf Dedukti}.
-
-\item[LIL 2:]
-The system has been instrumented so some of its proofs can be exported
-and checked in {\sf Dedukti}.
-
-\item[LIL 3:] A significant part of the library of the system has been
-  exported and checked in {\sf Dedukti}.
-
-\item[LIL 4:] A significant part of the library of the system have
-  been made available in {\sf Logipedia}.
-
-\item[LIL 5:]
-A tool has been defined to analyze the {\sf Dedukti} proofs for the system,
-detect those that can be expressed in a theory weaker than that of the
-system, and translate those proofs into a weaker logic.
-
-\item[LIL 6:]
-All proofs of the system have been exported, translated,
-and made available in {\sf Logipedia}.
-\end{itemize}
-\caption{The {\sf Logipedia} integration levels (LIL)\label{lil}}
-\end{framed}
-\end{figure}
-
-To measure the level of integration of an existing proof system and
-associated proof library in {\sf Logipedia}, we introduce a metric:
-{\em the {\sf Logipedia} integration levels} (Figure \ref{lil}) that
-counts six levels.  
-
-
-Figure \ref{objectives} presents the various systems addressed in the
-project, their current {\sc Logipedia} integration level and the
-targeted integration level in four years.
-
-\begin{figure}[t]
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-System & current level & targeted level\\
-\hline
-{\sf Matita} & 5 & 6\\
-\hline
-{\sf HOL Light} & 3 & 5\\
-\hline
-{\sf FoCaLiZe} & 3 & 5\\
-\hline
-{\sf Coq} & 3 & 5\\
-\hline
-{\sf Agda} & 2 & 4\\
-\hline
-{\sf Atelier B} & 1 & 5\\
-\hline
-{\sf Isabelle} & 2 & 5\\
-\hline
-{\sf HOL4} & 1 & 5\\
-\hline
-{\sf TSTP} & 1 & {\color{red} ???}\\
-\hline
-{\sf Minlog} & 0 & 4\\
-\hline
-{\sf PVS} & 0 & 2\\
-\hline
-{\sf Abella} & 0 & 2\\
-\hline
-{\sf Mizar} & 0 & 4\\
-\hline
-{\sf TLA+} & 0 & 2\\
-\hline
-{\sf Why3} & 0 & {\color{red} ???}\\
-\hline
-{\sf LFSC} & 0 & {\color{red} ???}\\
-\hline
-\end{tabular}
-\end{center}
-\caption{The objectives system by system \label{objectives}}
-\end{figure}
-
-These systems can be roughly divided into two groups. Those in the
-first half of the array ({\sf Matita}, {\sf HOL Light}, {\sf
-  FoCaLize}, {\sf Coq}, {\sf Agda}, {\sf Atelier B}, {\sf Isabelle},
-{\sf HOL4}, and {\sf TSTP}) with which we already have some experience
-and that we plan to bring to a very high level of integration. Those
-in the second half ({\sf Minlog}, {\sf PVS}, {\sf Abella}, {\sf
-  Mizar}, {\sf TLA+}, {\sf SMT-Lib}, {\sf Why3}, and {\sf LFSC}) with
-which we are starting to experiment and for which our goal are less
-ambitious.  These two groups of systems will be addressed in different
-work packages, but both are key to the project. The first ones will
-constitute {\sf Logipedia} in 2024 and the second ones will be
-included between 2024 and 2028, on a potential second phase of the
 project.
 
-{\sf Logipedia} will be freely accessible through a web browser, from
-any country in Europe and beyond. So the access will be trans-national
-and virtual. But beyond these two objectives of a trans-national and
-virtual access, an important effort will be made to make this
-encyclopedia accessible to a large community of specialists and
-non-specialists. This requires to structure its content into
+Logipedia will be freely accessible through a web browser, from any
+country in Europe and beyond. So, by construction, the access will be
+trans-national and virtual. But beyond these two objectives of a
+trans-national and virtual access, an important effort will be made to
+make this encyclopedia accessible to a large community of specialists
+and non-specialists. This requires to structure its content into
 libraries, books, chapters, etc. Some of the libraries we start with
-already have a structure (modules, qualified names, etc.) that it is
-important to preserve. We also need to develop ergonomic interfaces,
-search engines, etc.
+already have a structure (modules, qualified names, etc.) that we will
+preserve. We will also develop ergonomic interfaces, search engines,
+etc.
 
 Finally, this project will trigger joint research activities between
-its users and between its developers.  First, on the theories in the
-second half of the array (Figure \ref{objectives}), that have yet
-reached level 1, and that we still need to express in {\sf
-  Dedukti}. Then, to bring the other theories to level 5, we need to
-define algorithms to eliminate some axioms from proofs. Many such
-algorithms already exist to eliminate the excluded middle, the axiom
-of choice, or the universes from a given proof. We need to develop new
-ones, more specific to the theories we address in this project.
+its users and between its developers.  First, the theories implemented
+in some systems have already been understood, so that the integration
+of the proofs expressed in these systems and their translation to
+other theories, can be made smoothly. For others, more research work
+is needed. A research effort will also be needed to analyze the proofs and
+translate them to other theories. 
 
 In addition, each library contains definitions of natural numbers,
 real numbers, etc. and, most importantly, logical connectors, that
-must be aligned: structural results proved for one definition of real
-numbers, for instance, must be transported to any isomorphic structure, 
-regardless the way it is defined.
+we will align: structural results proved for one definition of real
+numbers, for instance, will be transported to any isomorphic structure, 
+regardless the way it has been defined.
 
 All these objectives contribute to building a new formal proof
 community, focused on the values of knowledge exchange and
