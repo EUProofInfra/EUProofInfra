@@ -19,6 +19,9 @@ This includes notably:
 
 \begin{wpdescription}
 
+  The aim of this work package is to connect automated tools to the Logipedia
+  infrastructure.
+
 % https://annuel2.framapad.org/p/9ef1-logipedia?lang=fr
 
 The importance of proofs in automated theorem provers, satisfiability
@@ -64,20 +67,38 @@ obligation.
 \begin{task}[id=instrumenting, title=Instrumenting ATPs to produce
   traces]
   Task leader: Pascal Fontaine
-  %Pascal
-  % Stephan Schulz, Martin Suda
-
-  One PhD student shared bw Schulz and Fontaine
+  % WP Leader supervision: Pascal
+  % Participants
+  % Stephan Schulz
+  % Martin Suda
+  % Guillaume Bury (OCamlPro)
+  % Guillaume Burel
+  % Julien Narboux
+  % Pedro Quaresma
+  % Predrag Janicic
+  % Resources: One PhD student shared bw Schulz and Fontaine
+  % Albin Coquereau (OCamlPro)
+  % Sylvain Conchon (OCamlPro)
   
 Considered provers:
 \begin{itemize}
-\item Cubicle (OcamlPro)
+\item Cubicle (OcamlPro, Guillaume Bury, Sylvain Conchon)
 \item provers for geometry (Julien Narboux and Pedro Quaresma)
 \item coherent logic theorem prover (Predrag Janicic)
-\item SMT (Pascal Fontaine)
-\item FOL ATPs (Pascal Fontaine and Stephan Schulz)
+\item SMT (alt-ergo, veriT: Pascal Fontaine)
+\item FOL ATPs (Pascal Fontaine, Stephan Schulz)
 \item \dots
 \end{itemize}
+
+traces from SAT: understood
+
+traces from SMT: still some gaps, about arithmetic, preprocessing.  Engineering issue too because of the amount of code that is involved
+
+traces from geometry solvers: seems to be a good candidate, because the proof process is suitable to produce traces
+
+traces from FOL: there is a format, and mainstream solvers do follow the standard format, but proofs are coarse grained
+
+traces from HOL provers: strongly relates to FOL
 
 \end{task}
 
@@ -102,16 +123,15 @@ theorem provers (Sledgehammer in Isabelle/HOL, HOLyHammer for HOL4, etc.)
 which reconstruct proofs from traces produced by automated theorem
 provers.
 
-This scheme has already been implemented in a tool called
-\href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto
-takes a TSTP file, as can be produced by e.g.\ the provers E and
-Zipperposition, and it uses Zenon Modulo and ArchSAT to prove the
-subproblems. Ekstrakto was designed to be agnostic w.r.t.\ what
-prover produced the trace; in particular it does not depend on the
-specific set of inference rules of the prover. It was also designed to
-be agnostic w.r.t.\ the prover used to prove the subproblems; all what
-is needed is that the prover can output a Dedukti proof in the correct
-encoding of first-order logic.
+This scheme has already been prototyped in a tool called
+\href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto takes a TSTP
+file, as can be produced by e.g.\ the provers E and Zipperposition, and it uses
+Zenon Modulo and ArchSAT to prove the subproblems. Ekstrakto was designed to be
+agnostic w.r.t.\ the prover producing the trace; in particular it does not
+depend on the specific set of inference rules of the prover. It was also
+designed to be agnostic w.r.t.\ the prover used to prove the subproblems; it is
+only required that the prover can output a Dedukti proof in the correct encoding
+of first-order logic.
 
 Although Ekstrakto has already shown that it is a
 valuable approach, it is work in progress. In particular, the
@@ -119,13 +139,14 @@ following issues still need to be addressed:
 
 \begin{compactenum}
   % extension to other proof trace formats
-\item  Up to now, Ekstrakto can only take traces in TSTP format as input. We
-  plan to make it understand traces in other formats, notably SMT-LIB,
-  as well as all formats developed in Task~\localtaskref{instrumenting}.
+\item Up to now, Ekstrakto can only take traces in TSTP format as input. We plan
+  to make it understand traces in other formats, notably traces from SMT
+  solvers, as well as all formats developed in
+  Task~\localtaskref{instrumenting}.
 
   Deliverables :
   \begin{itemize}
-  \item T+6 a version of Ekstrakto that input SMT-LIB traces
+  \item T+6 a version of Ekstrakto that input traces from SMT solvers
   \end{itemize}
 
 
@@ -145,7 +166,7 @@ following issues still need to be addressed:
   premises. Such a transformation depends on the nature of the step that
   has been used. We plan to include in Ekstrakto a way to handle
   Skolemization and definition introduction, which are the two step
-  families that are missing to be able to treat all traces from the
+  families that are missing to be able to manage all traces from the
   major first-order theorem provers.
 
   Deliverables :
@@ -159,7 +180,7 @@ following issues still need to be addressed:
 
 \item  Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo and
   ArchSAT, are meant for pure first-order logic. However, we would like
-  to treat proof traces that use some specialized theory,
+  to deal with proof traces that use some specialized theory,
   e.g.\ arithmetic or bit-vectors, as could be output by SMT
   solvers. Although such theories could be presented as a set of axioms
   in first-order logic, it is almost certain that neither Zenon Modulo
@@ -200,8 +221,7 @@ Task leader: ? (Contact: Chantal Keller)
 
 
 \begin{task}[id=library, title=Logipedia as a source of knowledge for ATP]
-  Task leader: %Joseph Urban
-  % Pascal
+  Task leader: Martin Suda (Contact: Pascal Fontaine)
 
 Depends on T3.
 
@@ -219,8 +239,7 @@ Frama-C-WP.
 
 
 \begin{task}[id=reconstruction, title=ATPs for Logipedia]
-  Task leader: Cezary Kaliszyk
-  % Chantal
+  Task leader: Cezary Kaliszyk (Contact: Chantal Keller)
 
   Six month PhD student
 
@@ -245,8 +264,7 @@ Frama-C-WP.
 
 
 \begin{task}[id=cooperation, title=Make ATPs cooperate]
-  Task leader: François Bobot
-  % Chantal
+  Task leader: François Bobot (Contact: Chantal Keller)
 
   30 h.m
 
