@@ -621,7 +621,20 @@ infrastructure strongly relies on the ability for ATPs to import statements from
 
   Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo Theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{TODO}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although such traces would be useful for various usages and notably certification.
 
-  Our goals are to improve reasoning tools to demonstrate the feasibility to produce sufficiently detailed proofs for connecting to Logipedia, and to design a set of theoretical methods and practical tools that can be used to further connect Logipedia to the other existing automated reasoners of the same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two first-order provers (the E-prover, Zipperposition), and one model-checker (cubicle).  We will also consider more specific reasoning tools, with the aim to demonstrate that this approach also applies to more specific reasoners.  For this, we will use ***** (Predag's tool).
+  Our goals are to improve reasoning tools to demonstrate the feasibility to
+  produce sufficiently detailed proofs for connecting to Logipedia, and to
+  design a set of theoretical methods and practical tools that can be used to
+  further connect Logipedia to the other existing automated reasoners of the
+  same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two
+  first-order provers (the E-prover, Zipperposition), and one model-checker
+  (cubicle).  We will also consider more specific reasoning tools, with the aim
+  to demonstrate that this approach also applies to more specific reasoners.  We
+  envision to experiment the approach on a Coherent Logic reasoner.  These
+  reasoners are particularly useful for geometry reasoning, and as such, they
+  are quite complementary to the other considered automatic reasoners.  They are
+  also very suitable as as a first experiment, since their proofs are fairly
+  straightforward to interpret.  They thus constitute a very interesting low
+  hanging fruit.
   
   It is not possible, and not even desirable, to require all tools to directly
   talk in the language of Logipedia.  Indeed, proof trace languages that are
@@ -761,6 +774,10 @@ study the following challenges.
   activating them or not.
 
 \item[{\sf Logipedia} as a source of knowledge for ATPs] Pascal
+
+
+
+  
 \end{description}
 
 
