@@ -320,7 +320,7 @@ first half of the array (Matita, HOL Light,
 HOL4, and TSTP) for which we have preliminary results and
 that we plan to bring to a very high level of integration. Those in
 the second half (Minlog, PVS, Abella, Mizar,
-TLA+, SMT-Lib, Why3, and LFSC) with which we
+Smart, TLA+, SMT-Lib, Why3, and LFSC) with which we
 are starting and for which our goal are less ambitious.
 
 These two groups of systems will be addressed in different
@@ -430,6 +430,14 @@ The systems considered in this project fall into three broad classes:
   confidence in their specifications, and it can be used as a
   disprover to discover counter-examples to proof obaligations.
 
+  Smart is based on a classical first-order logic extended with rank-1
+  polymorphism, algebraic datatypes, recursive definitions and
+  inductive predicates. ProvenTools will turn models implemented in
+  Smart to proof obligations which can be proved in the system using a
+  mix of interactive and automated proving. The resulting proofs are
+  reviewable objects, akin to proof traces built of the various atomic
+  proof rules supported by ProvenTools' kernel, such as definition
+  unfolding, case analysis or equality propagation.
 \end{description}
 Despite the large differences between these three classes of provers,
 there are several common points between them where solutions that work
