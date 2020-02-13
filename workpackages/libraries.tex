@@ -158,38 +158,23 @@ dynamical systems with stochastic components, from physics to financial markets.
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
 \ednote{Saclay (Grienenberger)}
-The
-\textsc{HOL Light} library is especially large and varied.
-    
-First, its standard library contains definitions of the logical connectives,
-pairs, natural and real numbers, well-founded relations, lists, sets, and usual
-results concerning these objects. The standard library also contains tools to
-define inductive types, iterate operations, execute calculations over natural
-and real numbers, integers, and rationals. Many more libraries are added to
-this basis, formalizing many mathematical fields, objects, and results, for
-example arithmetics, complex numbers, group and ring theory, orderings, first
-order logic, Hilbert axiomatic geometry, complex function vector spaces,
-geometric algebra, quaternions, IEEE floating-point numbers, Jordan curves.
-
-One of those libraries, particularly large and unique, is the multivariate
-analysis library
+The \textsc{HOL Light} library is large and varied.
+One of its key libraries is the multivariate analysis library
 \footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
-integration. This profusion of multivariate analysis theorems was partly
-motivated by the \textsc{Flyspeck} project.
+integration.
 
 The \textsc{Flyspeck} project gives a formal proof of the \textsc{Kepler}
 conjecture. The statement and proof is based on an original proof of Thomas
 \textsc{Hales} \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15},
-and entirely formalized and proved in \textsc{HOL Light}
-\footnote{\url{https://github.com/flyspeck/flyspeck}}.
-    
-This variety and multitude of formalized mathematical results, sometimes unique
-to this system, motivates the project of importing the \textsc{HOL Light}
+and formalized and proved largely in \textsc{HOL Light}\footnote{\url{https://github.com/flyspeck/flyspeck}}.
+The richness of this library, with some results not formalized in any
+other system, motivates the project of importing the \textsc{HOL Light}
 library and \textsc{Flyspeck} project in the \textsc{Dedukti} system, in view
 of its integration into \textsc{Logipedia}.
- 
+
+\textbf{Challenges:}
 Proofs coming from the HOL systems, including \textsc{HOL Light}, are known to
 be very large, adding to the already existing issue of the scalability of
 exporting software for large libraries
@@ -202,7 +187,7 @@ large as 30M. The multitude of automatic tactics and their increasing
 complexity and number of dependencies suggests that the generation time, size,
 and rechecking time of exported proofs will not increase linearly. Scalable
 export techniques \textsc{HOL Light} proofs have been investigated
-\cite{DBLP:conf/itp/KaliszykK13} and can provide a solid base to
+\cite{KaliszykK13} and can provide a solid base to
 this project; for want of significantly reducing the size of generated
 \textsc{Dedukti} files, the time of export could at least be reduced.
 
