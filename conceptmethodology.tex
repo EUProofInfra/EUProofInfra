@@ -1,8 +1,8 @@
-{\bf (a) Concept}
+{\bf \Large (a) Concept}
 
 \begin{framed}
 \begin{center}
-{\bf How do proofs contribute to safety and security of software?}
+{\bf \Large How do proofs contribute to safety and security of software?}
 \end{center}
   
 Imagine the following casino game. At the beginning, a player is given
@@ -56,7 +56,7 @@ $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \pagebreak
 \begin{framed}
   \begin{center}
-    {\bf What is a formal proof? What is a proof system?}
+    {\bf \Large What is a formal proof? What is a proof system?}
     \end{center}
         
 Since Antiquity, we have known that
@@ -93,7 +93,7 @@ $$\lambda x \lambda h~(g~x~(f~x~h))$$
 
 \begin{framed}
 \begin{center}
-{\bf What is a theory?}
+{\bf \Large What is a theory?}
 \end{center}
 
 Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
@@ -118,7 +118,7 @@ This is the major obstacle to interoperability.
 \bigskip
 
 \noindent
-{\bf Logical Frameworks}
+{\bf \large Logical Frameworks}
 
 We had, in the past, an (informal) proof of Pythagoras’ theorem
 or Fermat’s little theorem. The same proof now has different
@@ -215,7 +215,7 @@ interoperability between proof systems.
 \bigskip
 
 \noindent
-{\bf The Logipedia integration levels}
+{\bf \Large The Logipedia integration levels}
 
 Thus, to make a formal proof, developed in some system $X$, accessible to
 the users of other systems, the first step is to express the theory
@@ -329,7 +329,7 @@ long term future of the infrastructure.
 \bigskip
 
 \noindent
-{\bf Instrumentation}
+{\bf \Large Instrumentation}
 
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has
 already been expressed in Dedukti. The next step is to implement a
@@ -403,14 +403,14 @@ The systems considered in this project fall into three broad classes:
   between Type-Theory provers (like Coq or Agda) and classic LCF-style
   systems (like HOL Light or HOL4).
 
-  \item[Systems based on set theory and first-order logic.] Atelier B,
+\item[Systems based on set theory and first-order logic.] Atelier B,
   Rodin and ProB are platforms or tools to develop models written
-  using the B method, a first-order language based on set theory. A
-  model in these systems encodes a state machine constrained by
-  invariant properties. Verification of the model correctness implies
-  to verify some proof obligations produced by a weakest precondition
-  calculus. For example, spanning trees algorithms, distributed
-  algorithms, access control policies have been formalized
+  using the B method, a version of set theory expressed in predicate
+  logic.  A model in these systems encodes a state machine constrained
+  by invariant properties. Verification of the model correctness
+  implies to verify some proof obligations produced by a weakest
+  precondition calculus. For example, spanning trees algorithms,
+  distributed algorithms, access control policies have been formalized
   respectivement in EventB and B method.
 
   The development process for the B method is based on formal proof:
@@ -424,25 +424,24 @@ The systems considered in this project fall into three broad classes:
   model of the system and iteratively introducing details. Finally,
   ProB is an animator and model checker: it helps users to gain
   confidence in their specifications, and it can be used as a
-  disprover to discover counter-examples to proof obligations.
+  disprover to discover counter-examples to proof obaligations.
 
 \end{description}
 Despite the large differences between these three classes of provers,
 there are several common points between them where solutions that work
 for one system can also be applied to other systems.
 %
-Concretely, in this work package we plan to tackle the following
+Concretely, we plan to tackle the following
 research challenges:
 \begin{description}
 
-  \item[Improving encodings] Since Dedukti is designed to be a small
+\item[Improving encodings.] Since Dedukti is designed to be a small
   logical framework with a minimal number of features, there are many
   features in the systems we consider that are not supported in
   Dedukti. Instead, such features need to be encoded in some way. In
   this work package, we consider systems for which it is known how to
-  encode all features \emph{in theory} (see WP2 where we also consider
-  systems for which this is not yet the case). However, depending on
-  the choice of encoding, the instrumentation may be very hard or even
+  encode all features \emph{in theory}. However, depending on the
+  choice of encoding, the instrumentation may be very hard or even
   unfeasible in practice. For example:
   \begin{itemize}
 
@@ -478,7 +477,7 @@ research challenges:
   we will investigate what minimal changes need to be made to Dedukti
   itself in order to overcome these limitations.
 
-  \item[Reconstructing transient proof components] In all theorem
+  \item[Reconstructing transient proof components.] In all theorem
   provers, there is some information that is created during the
   process of checking a proof that is not stored in the final proof
   term. In systems such as Coq, Agda, and Matita, this concerns for
@@ -499,10 +498,9 @@ research challenges:
   However, this approach is insufficent for systems that rely on
   external provers such as Isabelle or Event B. In order to handle
   these cases, we will instrument these external provers so they can
-  produce the missing parts of the proof terms (possible interaction
-  with WP4).
+  produce the missing parts of the proof terms. 
 
-  \item[Producing more compact proofs] When translating a proof from
+  \item[Producing more compact proofs.] When translating a proof from
   some system $X$ to Dedukti, we want to produce proof terms that are
   as small as possible, so it is easy to store them, recheck them, or
   export them to a different system. However, there are at least two
@@ -531,19 +529,22 @@ have not been updated to work with the latest version of the
 system. Concretely, we plan to build upon the previous work done on
 the following tools:
 \begin{itemize}
-  \item The standard and arithmetic libraries of Matita has been the
+\item The standard and arithmetic libraries of Matita has been the
   first libraries to be exported to Logipedia using Krajono, a fork of
   Matita. The forked system is also actually the only one able to
   import Logipedia proofs. The choice of Matita as a test-bench for
   Logipedia is easily understood considering that the implementation
   of the 0.99.x series was aimed at obtaining a well-documented,
   minimal but fast implementation of a theorem prover, two order of
-  magnitudes smaller than Coq.
-  \item CoqInE is a prototype tool that can translate Coq proofs to
-  Dedukti, which currently covers a small subset of the type theory of
-  Coq. However, since Coq is an actively developed system that is
-  constantly evolving, CoqInE is now quite outdated and no longer
-  works with the latest version of Coq.
+  magnitudes smaller than Coq.  We plan to make this translation a
+  part of the code of Matita itself so that it is maintained with the
+  rest of the system.
+\item CoqInE is a prototype tool that can translate Coq proofs to
+  Dedukti. Recent work to include advanced features of Coq, such as
+  universe polymorphism, has dramaticaly increased the coverage of
+  this translation. We plan to make this translation a part of the
+  code of Coq itself so that it is maintained with the rest of the
+  system.
   \item In the summer of 2019, Guillaume Genestier worked together
   with Jesper Cockx on the implementation of an experimental
   translator from Agda to Dedukti during a research visit at Chalmers
@@ -574,8 +575,9 @@ the following tools:
   Atelier B \cite{Bware}.
 \end{itemize}
 
-
-\subsubsection{Description of the work package 4}
+\bigskip
+\noindent
+{\bf \Large Automated theorem provers, SAT and SMT solvers, etc.}
 
 Automatic Theorem Proving (ATP) is a key component for the Logipedia
 infrastructure.
@@ -615,7 +617,7 @@ infrastructure strongly relies on the ability for ATPs to import statements from
 {\sf Dedukti} and export proofs in some theory in {\sf Dedukti}.
 
 \begin{description}
-\item[Instrumenting ATPs to produce proof traces] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof without strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs.
+\item[Instrumenting ATPs to produce proof traces.] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof without strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs.
 
   Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although they would be useful for various usages and notably certification.
 
