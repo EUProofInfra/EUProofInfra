@@ -29,8 +29,8 @@ libraries for better access.
 
 \item The libraries are curated for end-user application. That is, they
 are structured according to application specific ontologies that
-support brwosing and search. The structuring leverages the
-infrastructures of \WPref{structuring}.  As a result it will be a
+support browsing and search. The structuring leverages the
+infrastructures of \WPref{structuring} and will be a
 stress test for the results of \WPref{structuring}: is the metadata
 infrastructure capable of representing the structure of large
 libraries?
@@ -39,11 +39,211 @@ libraries?
 
 
 \begin{wpdescription}
-Translating the standard libraries of the systems is part of the WP1.
-
-For the future: Mizar, PVS, seL4, CompCert 
+Translating the standard libraries of the systems is part of the \WPref{instrumentation}.
+This WP focusses on advanced libraries selected according to the following criteria:
+\begin{compactitem}
+\item Relevance: the libraries should support core areas of matematics and computer science.
+\item Coverage: the libraries should have a wide coverage of an application area.
+\item Maturity: the libraries should have been used in a significant application already.
+\end{compactitem}
+As a result we selected the following libraries: MathComp, Coq's revised
+Analysis library, the Archive of Formal Proofs, Isabelle's revised Analysis and Probability library,
+GeoCoq, Flyspeck and CakeML. In the future we plan to incorporate
+CompCert, seL4, and selected Mizar and PVS libraries (once Mizar and
+PVS have reached LIL 2).
 \end{wpdescription}
 
+
+\begin{tasklist}
+\begin{task}[id=mathcomp,title=MathComp]
+\ednote{Sophia, Saclay (Gonthier), Paris}
+\end{task}
+
+\begin{task}[id=milc,title=Revised Coq Analysis Library]
+\ednote{Saclay (Boldo), Paris, Sophia}
+\end{task}
+
+%\begin{task}[id=mizar,title=The Mizar library]
+%\ednote{Innsbruck, Bialystok}
+%\end{task}
+
+\begin{task}[id=afp,title=Isabelle's Archive of Formal Proofs]
+\ednote{TU München (Wenzel)}
+
+Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
+growing user-contributed online library for Isabelle. In Feb-2020, the
+AFP consisted of more than 500 entries (articles of formalized
+mathematics) by 340 authors, and required approx. 60h CPU time for
+checking (using many gigabytes of memory).  The purpose of this task
+is to scale up the Isabelle instrumentation for Dedukti further, to
+cover major parts of this library. We do not intend to restructure or
+document the library further beyond what is provided by the authors of
+each article and by the hierarchical dependencies among the articles.
+
+The key challenge is scaling. The ultimate aim is to export the main
+substance of the AFP without promising full coverage: some entries
+with prohibitive resource requirements will be omitted. Also note that
+the AFP is continuously growing at a high rate and thus a moving
+target.
+\end{task}
+
+\begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \& Probability library]
+\ednote{TU München (Nipkow)}
+
+The Isabelle Analysis and Probability Theory library consists of more than
+200.000 lines of definitions and proofs, corresponding to almost 4000 printed
+pages. It covers topology, homology, multivariate, functional and complex
+analysis, measure and probability theory, and a dedicated library for
+ordinary differential equations. It is fair to say that it is the most
+advanced machine-checked library in the area of analysis and probability
+theory.\footnote{The Isabelle analysis and probability theory library is
+in part based on the extensive library of the HOL Light system but has
+generalized it from real numbers to appropriate algebraic structures and
+includes areas absent from the HOL Light library (in particular measure
+theory and ordinary differential equations).} It is currently used by 60 out
+of 500 articles in the Archive of Formal Proofs, a user-contributed library
+of Isabelle/HOL proofs from all areas of computer science and
+mathematics. Moreover, it is the only existing library in this area where
+proofs are structured and readable. Due to its size and generality and
+because analysis and probability theory are pervasive in any application in
+the engineering and natural sciences and economics, this library will be a
+KER of the project: it is a fundamental enabling resource for almost any
+formal verification activity in these areas, for example autonomous driving
+and mathematical finance. The purpose of this task is to structure, document
+and develop this library for optimal accessibility, ease of use and
+comprehensiveness. The aim is a curated library for applications.
+
+Any library is only as useful as its structure and documentation, no matter
+how sophisticated the search facilities are. Therefore the primary aim of
+this task is to make this library easily accessible. At the same time the
+library needs to be developed further: some material needs revising for ease
+of use and some essential material needs to be added.
+
+\textbf{Accessibility}\quad
+The library is a large collection of theories with a hierarchical dependency
+relation. However, this structure has grown over time and does not always
+reflect the abstract mathematical dependencies. In short, the structure needs
+to be modularized. This requires a significant refactoring effort.
+%
+At the same time we need to add metadata to the source material to turn this
+structured collection of theorems and proofs into a curated library at the
+Dedukti level.  This is where we need to interface with \WPref{structuring}. We
+will be test drivers of the metadata infrastructure provided by that WP, in
+particular the ability to describe ontologies for structuring in the large.
+This will also entail annotating those statements in the library that
+correspond to proper mathematical theorems as opposed to auxiliary lemmas
+required only for the benefit of the theorem prover.
+To increase accessibility we will also include links from the library into
+Wikipedia and in particular in the other direction to raise the awareness
+of Dedukti.
+
+\textbf{Development}\quad
+Although the library support for integrals is extensive, it suffers
+from the (necessary) coexistence of different kinds of
+integrals. This complicates proofs about integrals in applications and needs
+to be unified, which entails further refactoring. The rest of the
+development adds further essential material:
+1. Fourier analysis because of its extreme important both for pure mathematics and for
+engineering and physics (especially the Fourier
+transform). A formalization of basic properties of the Laplace transform is already available in the AFP. 2. Stability theory for differential equations and
+dynamical systems, in particular Lyapunov functions, because of their
+relevance for the verification of cyber-physical systems.
+3. Stochastic differential equations to model a large range of
+dynamical systems with stochastic components, from physics to financial markets.
+\end{task}
+
+\begin{task}[id=geocoq,title=The GeoCoq library]
+\ednote{Sophia (Boutry), Strasbourg, Belgrade}
+\end{task}
+
+\begin{task}[id=flyspeck,title=The Flyspeck library]
+\ednote{Saclay (Grienenberger)}
+The
+\textsc{HOL Light} library is especially large and varied.
+    
+First, its standard library contains definitions of the logical connectives,
+pairs, natural and real numbers, well-founded relations, lists, sets, and usual
+results concerning these objects. The standard library also contains tools to
+define inductive types, iterate operations, execute calculations over natural
+and real numbers, integers, and rationals. Many more libraries are added to
+this basis, formalizing many mathematical fields, objects, and results, for
+example arithmetics, complex numbers, group and ring theory, orderings, first
+order logic, Hilbert axiomatic geometry, complex function vector spaces,
+geometric algebra, quaternions, IEEE floating-point numbers, Jordan curves.
+
+One of those libraries, particularly large and unique, is the multivariate
+analysis library
+\footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
+which spans the fields of metric spaces, topology, homology, linear algebra,
+convexity, real and complex analysis and transcendentals, derivatives, and
+integration. This profusion of multivariate analysis theorems was partly
+motivated by the \textsc{Flyspeck} project.
+
+The \textsc{Flyspeck} project gives a formal proof of the \textsc{Kepler}
+conjecture. The statement and proof is based on an original proof of Thomas
+\textsc{Hales} \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15},
+and entirely formalized and proved in \textsc{HOL Light}
+\footnote{\url{https://github.com/flyspeck/flyspeck}}.
+    
+This variety and multitude of formalized mathematical results, sometimes unique
+to this system, motivates the project of importing the \textsc{HOL Light}
+library and \textsc{Flyspeck} project in the \textsc{Dedukti} system, in view
+of its integration into \textsc{Logipedia}.
+ 
+Proofs coming from the HOL systems, including \textsc{HOL Light}, are known to
+be very large, adding to the already existing issue of the scalability of
+exporting software for large libraries
+\cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,DBLP:conf/itp/KellerW10,
+DBLP:conf/cade/Kumar13}. As an example, the size of the standard library is
+1.5M in \textsc{HOL Light} files (i.e. .ml files), while the same files once
+exported as \textsc{Dedukti} files scale to 2G, and the whole
+\textsc{HOL Light} library and the \textsc{Flyspeck} project are each as
+large as 30M. The multitude of automatic tactics and their increasing
+complexity and number of dependencies suggests that the generation time, size,
+and rechecking time of exported proofs will not increase linearly. Scalable
+export techniques \textsc{HOL Light} proofs have been investigated
+\cite{DBLP:conf/itp/KaliszykK13} and can provide a solid base to
+this project; for want of significantly reducing the size of generated
+\textsc{Dedukti} files, the time of export could at least be reduced.
+
+The main milestones of this task are the further automation of the translation
+from \textsc{HOL Light} to \textsc{Dedukti}, the import of the multivariate
+analysis library, the import of the whole \textsc{HOL Light} library, and the
+import of the \textsc{Flyspeck} in \textsc{Dedukti}.
+\end{task}
+
+\begin{task}[id=cakeml,title=The CakeML compiler library]
+\ednote{Chalmers (Myreen), Strasbourg, TU München}
+The CakeML compiler library consists of the CakeML programming language
+definition, its compiler and the correctness proofs about the
+compiler. This is a cutting edge compiler library and one of only two
+verified compilers for real languages, the other being CompCert. Its
+export to Dedukti is one of the KERs of this project. Because of the
+size and importance of this library, we will approach the export from
+two angles.
+
+The first approach utilizes OpenTheory-based technology. The CakeML
+compiler development lives within the HOL4 prover. HOL4 can export
+definitions and proofs in the OpenTheory format, which can in turn be
+translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
+exists but, in its current state, fails to scale to the task of
+transporting something as sizeable as the CakeML compiler
+development. This part of this task will rework the route via
+OpenTheory to scale better, possibly taking inspiration from an
+OpenTheory-like approach that scaled well for the HOL light
+prover~\cite{KaliszykK13}.
+
+The second approach establishes a connection from HOL4 via Isabelle to
+Dedukti. The basis is a promising new approach of virtualizing HOL4
+inside Isabelle \cite{ImmlerRW19}. That is, the inference
+kernel of HOL4 is replaced by that of Isabelle and the resulting
+system produces Isabelle theorems instead of HOL4 theorems. This has
+the invaluable additional benefit that tools, not just theorems, can
+be shared. As a benchmark of the viability of this approach we plan to
+export CakeML via Isabelle to Dedukti.
+\end{task}
+
+By Arthur Chargueraud
 {\bf Trusted chain}
 
 A grant challenge in program verification is that of running trusworthy
@@ -125,146 +325,9 @@ Beyond this one example, other motivating case studies will be considered,
 such as translating the formal semantics of ComCert-C into other proof
 assistants, or translating the formal semantics of ARM instruction set.
 
-
-\begin{tasklist}
-\begin{task}[id=mathcomp,title=MathComp]
-\ednote{Sophia, Saclay (Gonthier), Paris}
-\end{task}
-
-\begin{task}[id=milc,title=Revised Coq Analysis Library]
-\ednote{Saclay (Boldo), Paris, Sophia}
-\end{task}
-
-%\begin{task}[id=mizar,title=The Mizar library]
-%\ednote{Innsbruck, Bialystok}
+%\begin{task}[id=unimath,title=The UniMath library]
+%\ednote{Birmingham (Ahrens)}
 %\end{task}
-
-\begin{task}[id=afp,title=Isabelle/AFP: The Archive of Formal Proofs]
-\ednote{TU München (Wenzel)}
-
-In Feb-2020, the Archive of Formal Proofs \cite{isabelle-afp}
-consisted of more than 500 entries (articles of formalized
-mathematics) by 340 authors, and required approx.\ 60h CPU time for
-checking (using many gigabytes of memory).
-
-The purpose of this task is to scale up the Isabelle instrumentation
-for Dedukti further, to cover major parts of this library.  This might
-require a few pathological proofs to be reworked. The ultimate aim is
-to export the main substance of Isabelle/AFP, without promising full
-coverage: some entries with prohibitive resource requirements will be
-omitted. Also note that Isabelle/AFP is continuously growing at a high
-rate and thus a moving target.
-
-\end{task}
-
-\begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \& Probability library]
-\ednote{TU München (Nipkow)}
-
-The Isabelle Analysis and Probability Theory library consists of more than
-200.000 lines of definitions and proofs, corresponding to almost 4000 printed
-pages. It covers topology, homology, multivariate, functional and complex
-analysis, measure and probability theory, and a dedicated library for
-ordinary differential equations. It is fair to say that it is the most
-advanced machine-checked library in the area of analysis and probability
-theory.\footnote{The Isabelle analysis and probability theory library is
-in part based on the extensive library of the HOL Light system but has
-generalized it from real numbers to appropriate algebraic structures and
-includes areas absent from the HOL Light library (in particular measure
-theory and ordinary differential equations).} It is currently used by 60 out
-of 500 articles in the Archive of Formal Proofs, a user-contributed library
-of Isabelle/HOL proofs from all areas of computer science and
-mathematics. Moreover, it is the only existing library in this area where
-proofs are structured and readable. Due to its size and generality and
-because analysis and probability theory are pervasive in any application in
-the engineering and natural sciences and economics, this library will be a
-KER of the project: it is a fundamental enabling resource for almost any
-formal verification activity in these areas, for example autonomous driving
-and mathematical finance. The purpose of this task is to structure, document
-and develop this library for optimal accessibility, ease of use and
-comprehensiveness. The aim is a curated library for applications.
-
-Any library is only as useful as its structure and documentation, no matter
-how sophisticated the search facilities are. Therefore the primary aim of
-this task is to make this library easily accessible. At the same time the
-library needs to be developed further: some material needs revising for ease
-of use and some essential material needs to be added.
-
-\textbf{Accessibility}\quad
-The library is a large collection of theories with a hierarchical dependency
-relation. However, this structure has grown over time and does not always
-reflect the abstract mathematical dependencies. In short, the structure needs
-to be modularized. This requires a significant refactoring effort.
-%
-At the same time we need to add metadata to the source material to turn this
-structured collection of theorems and proofs into a curated library at the
-Dedukti level.  This is where we need to interface with \WPref{structuring}. We
-will be test drivers of the metadata infrastructure provided by that WP, in
-particular the ability to describe ontologies for structuring in the large.
-This will also entail annotating those statements in the library that
-correspond to proper mathematical theorems as opposed to auxiliary lemmas
-required only for the benefit of the theorem prover.
-To increase accessibility we will also include links from the library into
-Wikipedia and in particular in the other direction to raise the awareness
-of Dedukti.
-
-\textbf{Development}\quad
-Although the library support for integrals is extensive, it suffers
-from the (necessary) coexistence of different kinds of
-integrals. This complicates proofs about integrals in applications and needs
-to be unified, which entails further refactoring. The rest of the
-development adds further essential material:
-1. Fourier analysis because of its extreme important both for pure mathematics and for
-engineering and physics (especially the Fourier
-transform). A formalization of basic properties of the Laplace transform is already available in the AFP. 2. Stability theory for differential equations and
-dynamical systems, in particular Lyapunov functions, because of their
-relevance for the verification of cyber-physical systems.
-3. Stochastic differential equations to model a large range of
-dynamical systems with stochastic components, from physics to financial markets.
-\end{task}
-
-\begin{task}[id=geocoq,title=The GeoCoq library]
-\ednote{Sophia (Boutry), Strasbourg, Belgrade}
-\end{task}
-
-\begin{task}[id=flyspeck,title=The Flyspeck library]
-\ednote{Saclay (Grienenberger)}
-\end{task}
-
-\begin{task}[id=cakeml,title=The CakeML compiler library]
-\ednote{Chalmers (Myreen), Strasbourg, TU München}
-The task is to export the CakeML compiler library to Dedukti.  The
-CakeML compiler library consists of the CakeML programming language
-definition, its compiler and the correctness proofs about the
-compiler. This is a cutting edge compiler library and one of only two
-verified compilers for real languages, the other being CompCert. Its
-export to Dedukti is one of the KERs of this project. Because of the
-size and importance of this library, we will approach the export from
-two angles.
-
-The first approach utilizes OpenTheory-based technology. The CakeML
-compiler development lives within the HOL4 prover. HOL4 can export
-definitions and proofs in the OpenTheory format, which can in turn be
-translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
-exists but, in its current state, fails to scale to the task of
-transporting something as sizeable as the CakeML compiler
-development. This part of this task will rework the route via
-OpenTheory to scale better, possibly taking inspiration from an
-OpenTheory-like approach that scaled well for the HOL light
-prover~\cite{KaliszykK13}.
-
-The second approach establishes a connection from HOL4 via Isabelle to
-Dedukti. The basis is a promising new approach of virtualizing HOL4
-inside Isabelle \cite{ImmlerRW19}. That is, the inference
-kernel of HOL4 is replaced by that of Isabelle and the resulting
-system produces Isabelle theorems instead of HOL4 theorems. This has
-the invaluable additional benefit that tools, not just theorems, can
-be shared. As a benchmark of the viability of this approach we plan to
-export CakeML via Isabelle to Dedukti.
-\end{task}
-
-\begin{task}[id=unimath,title=The UniMath library]
-\ednote{Birmingham (Ahrens)}
-\end{task}
 
 %\begin{task}[id=pvs,title=The NASA PVS library]
 %\end{task}
