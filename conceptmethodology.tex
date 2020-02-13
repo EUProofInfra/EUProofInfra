@@ -1,6 +1,223 @@
-\subsection{Concept}
+{\bf (a) Concept}
 
-To make a formal proof, developed in some system $X$, accessible to
+\begin{framed}
+\begin{center}
+{\bf How do proofs contribute to safety and security of software?}
+\end{center}
+  
+Imagine the following casino game. At the beginning, a player is given
+eleven euros. At each round, she throws a dice. If the results is a
+six, then game is over.  If it is a five, a four, a three, or a two,
+she is given twice the amount of money she already has. If it is a one
+she is taken two euros, if she has at least two.  When the game is
+over, the player wins the money she got, except if she has zero, in
+which case she looses one million.
+
+This game can be modeled by program $p$
+%import random 
+\begin{verbatim}
+n = 11
+stay = True;
+while stay: 
+    roll = random.randint(1,6)
+    if roll == 6:
+        stay = False
+    else:
+        if roll >= 2:
+            n = n + 2 * n
+        else:
+            if (n >= 2):
+                n = n - 2
+print(n)
+\end{verbatim}
+
+To be on the safe side, the player wants to be sure, before starting
+playing, that she will never finish with zero.  And indeed, in all runs,
+the content of the variable {\tt n} is always an odd number, thus it
+cannot be zero. This property is a consequence of two simple
+theorems of arithmetic
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
+%$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
+Hence, verifying the safety of this program, that is that the
+proposition 
+${\mbox{\it safe}}(p)$ holds, 
+amounts to prove these three theorems of arithmetic.
+
+A tiny bug in the program, for instance replacing the {\tt 2} by a
+{\tt 3} in the the line {\tt n = n + 2 * n} makes the program unsafe
+as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
+this program will, most likely, not reveal this bug, that manifests
+very rarely.  In contrast, attempting to prove the correctness of this
+program will
+reveal the bug as it is impossible to prove the proposition
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
+\end{framed}
+\pagebreak
+\begin{framed}
+  \begin{center}
+    {\bf What is a formal proof? What is a proof system?}
+    \end{center}
+        
+Since Antiquity, we have known that
+proofs, both purely mathematical ones, as in Euclid's elements or the
+recent proof of the Kepler conjecture by Thomas Hales, and proofs used
+to establish the safety and security of software, can be built with a
+limited number of rules, for example
+\begin{itemize}
+\item From $A \Rightarrow B$ and $A$, deduce $B$.
+\item From $A$, deduce $A~\mbox{\it or}~B$.
+\item ...
+\end{itemize}
+Yet, through history, most mathematical proofs have been written in
+pidgin of natural language and mathematical formulas. When proofs are
+very long (as it is often of the proofs used in safety and security,
+but also of some proofs in pure mathematics), mistakes in proofs are
+very difficult to detect. For instance dozen of wrong proofs of
+parallel postulate have been given through history, sometimes by the
+best mathematicians such as Ptolémée, Proclus, al-Haytam, Tacket,
+Clairaut, Legendre...
+
+In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
+correctness of a mathematical proof could be checked by a
+computer. This led to the development of the two first proof systems
+in history: Milner's LCF or De Bruijn's Automath.  From
+the axioms
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
+$$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
+we can deduce
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
+In the language implemented in Automath, this proof is written
+$$\lambda x \lambda h~(g~x~(f~x~h))$$
+\end{framed}
+
+\begin{framed}
+\begin{center}
+{\bf What is a theory?}
+\end{center}
+
+Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
+$B$'' are universal, but building proofs require more rules, that are
+often specific to a domain of knowledge and are called
+``axiom''. Examples are the axioms of geometry, the axioms or
+arithmetic. These axioms constitute a theory.
+
+At the beginning of the 20th century an axiomatic theory, {\em set
+  theory}, has been proposed to express all mathematical proofs. In
+the first half of the 20th century a few variants of set theory, and a
+few alternatives have been proposed (such as Simple type theory).
+But, because these theories had not been designed for being
+implemented on a computer, the rise of computer checked formal proofs
+has led to a multiplication of such alternative theories. Each proof system,
+such as Coq, Isabelle/HOL, Mizar, Atelier B,
+etc. implements its own theory.
+
+This is the major obstacle to interoperability.
+\end{framed}
+
+\bigskip
+
+\noindent
+{\bf Logical Frameworks}
+
+We had, in the past, an (informal) proof of Pythagoras’ theorem
+or Fermat’s little theorem. The same proof now has different
+formalizations in PVS, Isabelle/HOL, Coq, etc., jeoprardizing the
+universality of logical truth.
+
+In the 19th century, the universality of logical truth has been
+jeopardized in a similar way, by non-Euclidean geometries, as some
+statements could be true in one geometry, but false in others.  But,
+at the beginning of the 20th century, a solution was found.  The
+definition of the various geometries in predicate logic
+\cite{HilbertAckermann} restored the universality of logical truth,
+allowing to determine which axiom was used in which proof and which
+theorem held in which geometry.
+
+Predicate logic is not a theory in itself, but it is a framework in
+which one can express theories, as sets of axioms: {\em a logical
+  framework}.  Expressing the various geometries in predicate logic
+allowed to analyze which proof contained which axiom, and hence which
+proof could be expressed in which theory.
+
+In 1928, predicate logic was a huge success, since three important
+theories used at that time (geometry, arithmetic and set theory) could
+be expressed in it. But it also has limitations, which explains that
+another of the major theories used at that time (Russell's type
+theory, from The Principia Mathematica) has not been expressed in
+it. Since then, several other theories, such as Church's type theory
+\cite{Church40}, Martin-L\"of's type Theory \cite{Martin-Lof84}, and
+the Calculus of constructions \cite{CoquandHuet88}, have also been
+defined as autonomous theories. These theories are those implemented
+in most of the current proof systems, yet they cannot be expressed in
+predicate logic.
+
+This failure has led, in the field of proof systems, to the
+abandonment of predicate logic, and even of the concept of logical
+framework: the theories implemented in Coq, Matita, HOL Light,
+etc. are often defined as autonomous systems, and not in a logical
+framework.
+
+However, a different line of research has attempted to understand the
+limitations of predicate logic and to propose other logical frameworks
+repairing them. The most prominent limitations of predicate logic are
+the lack of function symbols binding variables, the lack of a syntax
+for proof terms, the lack of a notion of computation, the lack of a
+notion of cut for axiomatic theories, and the impossibility to express
+constructive proofs. These limitations have led to the development of
+logical frameworks such as $\lambda$-Prolog \cite{NadathurMiller88,
+  MillerNadathur12}, Isabelle \cite{Paulson90}, the $\lambda
+\Pi$-calculus (also called the ``Edinburgh logical framework'')
+\cite{HarperHonsellPlotkin91}, Deduction modulo theory
+\cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
+\cite{Berardi88,Terlouw89}, and ecumenical logics
+\cite{Prawitz15,Dowek15,PereiraRodriguez17}.
+
+All these logical frameworks have been unified in the $\lambda
+\Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
+the system Dedukti \cite{Assaf16}
+on which Logipedia is based. Geometry, arithmetic and set
+theory, but also Russell's type theory, Church's type theory,
+Martin-L\"of's type theory, and the Calculus of constructions can be
+expressed in this framework.
+
+For instance, although the details are not important, Church's type
+theory can be expressed in Dedukti , with 8 déclarations and 3
+rewrite rules.
+\begin{framed}
+$\begin{array}{rcl}
+type&:&Type\\
+\eta&:&type \rightarrow Type\\
+o&:&type\\
+\mbox{\it nat}&:&type\\
+\mbox{\it arrow}&:&type \rightarrow type \rightarrow type\\
+\varepsilon&:&(\eta~o) \rightarrow Type\\
+\Rightarrow&:&(\eta~o) \rightarrow (\eta~o) \rightarrow (\eta~o)\\
+\forall&:&\Pi a:type~(((\eta~a) \rightarrow (\eta~o)) \rightarrow (\eta~o))\\
+\\
+(\eta~(\mbox{\it arrow}~x~y)) &\longrightarrow& (\eta~x) \rightarrow (\eta~y)\\
+(\varepsilon~(\Rightarrow~x~y)) &\longrightarrow& (\varepsilon~x) \rightarrow (\
+\varepsilon~y)\\
+(\varepsilon~(\forall~x~y)) &\longrightarrow& \Pi z:(\eta~x)~(\varepsilon~(y~z))
+\end{array}$
+\end{framed}
+
+So the theories implemented in various systems can all be expressed in
+Dedukti and the proofs developed in these systems can be translated to
+Dedukti. Just like in the case of non Euclidean geometry, this allows
+to analyse the symbols and rewrite rules used in each proof
+\cite{Thire18,Dowek17} (a domain traditionally called ``reverse
+mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
+systems each proof can be used.  This analysis is the basis of the
+interoperability between proof systems.
+
+
+\bigskip
+
+\noindent
+{\bf The Logipedia integration levels}
+
+Thus, to make a formal proof, developed in some system $X$, accessible to
 the users of other systems, the first step is to express the theory
 $D[X]$, implemented in the system $X$, in the logical framework {\sf
   Dedukti}.  Then, we must instrument the system $X$ so that the proof
@@ -12,29 +229,116 @@ can be expressed.  Finally, we must align its concepts with the
 definitions already present in {\sf Logipedia} and decide where it
 fits in the general structure of the encyclopedia.
 
-Depending on the system $X$ we consider, more or less research needs
-to be done, for instance to design the theory $D[X]$. Among the 15
-systems we focus on, we plan to reach level 5 or 6 for 10 of them.
-For the others, more research needs to be done and we plan to reach
-level 3 only.
+To measure the level of integration of an existing proof system and
+associated proof library in Logipedia, we introduce a metric:
+{\em the Logipedia integration levels} (Figure \ref{lil}) that
+counts six levels.  
 
-These goals require the expertise of computer scientists, logicians,
-mathematicians who are experts on one theory or one system, and
-specialists on logical frameworks, reverse mathematics, and concept
-alignment.
+\begin{framed}
+\begin{center}
+{\bf The {\sf Logipedia} integration levels (LIL)\label{lil}}
+\end{center}
 
-\subsubsection{Description of work package 1: Instrumentation}
+\begin{itemize}
+\item[LIL 1:]
+The theory implemented in the system has been defined in
+the $\lambda\Pi$-calculus modulo theory and in {\sf Dedukti}.
 
-Consider a system $X$ at LIL level 2, so the basic theory $D[X]$ has
-already been encoded in Dedukti. The next step is to implement a
+\item[LIL 2:]
+The system has been instrumented so some of its proofs can be exported
+and checked in {\sf Dedukti}.
+
+\item[LIL 3:] A significant part of the library of the system has been
+  exported and checked in {\sf Dedukti}.
+
+\item[LIL 4:] A significant part of the library of the system have
+  been made available in {\sf Logipedia}.
+
+\item[LIL 5:]
+A tool has been defined to analyze the {\sf Dedukti} proofs for the system,
+detect those that can be expressed in a theory weaker than that of the
+system, and translate those proofs into a weaker logic.
+
+\item[LIL 6:]
+All proofs of the system have been exported, translated,
+and made available in {\sf Logipedia}.
+\end{itemize}
+\end{framed}
+
+The sixteen systems addressed in this project currently have different
+integration levels, and we have different targeted levels for them.. 
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+System & current level & targeted level\\
+\hline
+{\sf Matita} & 5 & 6\\
+\hline
+{\sf HOL Light} & 3 & 5\\
+\hline
+{\sf FoCaLiZe} & 3 & 5\\
+\hline
+{\sf Coq} & 3 & 5\\
+\hline
+{\sf Agda} & 2 & 4\\
+\hline
+{\sf Atelier B} & 1 & 5\\
+\hline
+{\sf ProB} & 1 & 5\\
+\hline
+{\sf Isabelle} & 2 & 5\\
+\hline
+{\sf HOL4} & 1 & 5\\
+\hline
+{\sf TSTP} & 1 & {\color{red} ???}\\
+\hline
+{\sf Minlog} & 0 & 4\\
+\hline
+{\sf PVS} & 0 & 2\\
+\hline
+{\sf Abella} & 0 & 2\\
+\hline
+{\sf Mizar} & 0 & 4\\
+\hline
+{\sf Smart} & 0 & 3\\
+\hline
+{\sf TLA+} & 0 & 2\\
+\hline
+{\sf Why3} & 0 & {\color{red} ???}\\
+\hline
+{\sf LFSC} & 0 & {\color{red} ???}\\
+\hline
+\end{tabular}
+\end{center}
+
+These systems can be roughly divided into two groups. Those in the
+first half of the array ({\sf Matita}, {\sf HOL Light}, {\sf
+  FoCaLize}, {\sf Coq}, {\sf Agda}, {\sf Atelier B}, ProB, {\sf Isabelle},
+{\sf HOL4}, and {\sf TSTP}) for which we have preliminary results and
+that we plan to bring to a very high level of integration. Those in
+the second half ({\sf Minlog}, {\sf PVS}, {\sf Abella}, {\sf Mizar},
+{\sf TLA+}, {\sf SMT-Lib}, {\sf Why3}, and {\sf LFSC}) with which we
+are starting and for which our goal are less ambitious.
+
+These two groups of systems will be addressed in different
+work packages, but both are key to the project. The first ones will
+constitute {\sf Logipedia} in 2024 and the second ones prepare the
+long term future of the infrastructure.
+
+\bigskip
+
+\noindent
+{\bf Instrumentation}
+
+Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has
+already been expressed in Dedukti. The next step is to implement a
 method to automatically translate proofs from system $X$ to its
-encoding in Dedukti, and make these proofs available in Logipedia so
+expression in Dedukti, and make these proofs available in Logipedia so
 they can be exported to other systems. This step is called the
-\emph{instrumentation} of system $X$ and is the main goal of this work
-package.
+\emph{instrumentation} of system $X$.
 
-The systems considered in this work package fall into three broad
-classes:
+The systems considered in this project fall into three broad classes:
 \begin{description}
 
   \item[Systems based on dependent type theory.] Agda, Coq, and Matita
@@ -275,7 +579,8 @@ the following tools:
 
 \subsubsection{Description of the work package 4}
 
-Automatic Theorem Proving (ATP) has a key role in this project.
+Automatic Theorem Proving (ATP) is a key component for the Logipedia
+infrastructure.
 
 {\em Per se}, many formal proofs nowadays rely on the use of automatic
 provers. They cover various domains and various kinds of application,
@@ -303,19 +608,31 @@ a source of benchmarks to evaluate their expressivity and automation.
 Lastly, {\sf Logipedia} and {\sf Dedukti} will form a framework to make
 ATPs cooperate with each other and with other tools, in a safe way.
 
+PF: TODO: Talk somewhere above about the various ATP tools, their specificity and why they are each of them useful or would benefit from Logipedia
 
 \paragraph{From ATPs to {\sf Dedukti}}
 
-As for Interactive Theorem Provers, the consistency of this work
-strongly relies on the ability for ATPs to export statements and proofs
-in some theory in {\sf Dedukti}.
+Similarly to Interactive Theorem Provers, connecting ATPs to the Logipedia
+infrastructure strongly relies on the ability for ATPs to import statements from
+{\sf Dedukti} and export proofs in some theory in {\sf Dedukti}.
 
 \begin{description}
-\item[T1] Pascal
+\item[Instrumenting ATPs to produce proof traces] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof without strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs.
 
-\item[T2] Pascal
+  Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although they would be useful for various usages and notably certification.
+
+  Our goals will be to improve reasoning tools to demonstrate the feasibility to produce sufficiently detailed proofs for connecting to Logipedia, and to design a set of theoretical and practical tools that can be used to further connect Logipedia to the other existing automated reasoners of the same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two first-order provers (the E-prover, Zipperposition), and one model-checker (cubicle).  We will also consider more specific reasoning tools, with the aim to demonstrate that this approach also applies to more specific reasoners.  For this, we will use ***** (Predag's tool).
+
+\item[Translate ATP traces into Dedukti] The second step for a successful
+  connection of ATP tools to the Logipedia infrastructure is to convert the
+  detailed proof steps into Dedukti.  It is not possible, and not even
+  desirable, to require all tools to directly talk the language of Logipedia.
+  Indeed, some other language are more appropriate for quick output, and
+  post-processing, that Dedukti.  Furthermore, it will be possible to share the
+  machinery to convert the detailed proof traces into Dedukti proofs.
+
+  PF:TODO: see Guillaume Burel text and import some of it here
 \end{description}
-
 
 \paragraph{From {\sf Dedukti} to ATPs}
 \label{concept:wp4:deduktitoatp}
@@ -429,7 +746,7 @@ large-scale formal tool.
 
 \subsubsection{Description of the work package 5 and 6}
 
-\subsection{Methodology}
+{\bf (b) Methodology}
 
 The methodology is the same for integrating any library to {\sf Logipedia},
 but due to a difference of readiness of the various systems we focus on,
