@@ -118,7 +118,7 @@ This is the major obstacle to interoperability.
 \bigskip
 
 \noindent
-{\bf \large Logical Frameworks}
+{\bf \Large Logical Frameworks}
 
 We had, in the past, an (informal) proof of Pythagoras’ theorem
 or Fermat’s little theorem. The same proof now has different
@@ -217,16 +217,18 @@ interoperability between proof systems.
 \noindent
 {\bf \Large The Logipedia integration levels}
 
+\medskip
+
 Thus, to make a formal proof, developed in some system $X$, accessible to
 the users of other systems, the first step is to express the theory
-$D[X]$, implemented in the system $X$, in the logical framework {\sf
-  Dedukti}.  Then, we must instrument the system $X$ so that the proof
+$D[X]$, implemented in the system $X$, in the logical framework
+  Dedukti.  Then, we must instrument the system $X$ so that the proof
 can be exported from it, as a piece of data, expressed as a proof in
-$D[X]$ and included in {\sf Logipedia}. Next, we need to analyze this
+$D[X]$ and included in Logipedia. Next, we need to analyze this
 proof in order to determine which symbols, axioms and rewrite rules of
 $D[X]$ it actually uses and, thus, in which alternative theories it
 can be expressed.  Finally, we must align its concepts with the
-definitions already present in {\sf Logipedia} and decide where it
+definitions already present in Logipedia and decide where it
 fits in the general structure of the encyclopedia.
 
 To measure the level of integration of an existing proof system and
@@ -236,32 +238,32 @@ counts six levels.
 
 \begin{framed}
 \begin{center}
-{\bf The {\sf Logipedia} integration levels (LIL)\label{lil}}
+{\bf The Logipedia integration levels (LIL)\label{lil}}
 \end{center}
 
 \begin{itemize}
 \item[LIL 1:]
 The theory implemented in the system has been defined in
-the $\lambda\Pi$-calculus modulo theory and in {\sf Dedukti}.
+the $\lambda\Pi$-calculus modulo theory and in Dedukti.
 
 \item[LIL 2:]
 The system has been instrumented so some of its proofs can be exported
-and checked in {\sf Dedukti}.
+and checked in Dedukti.
 
 \item[LIL 3:] A significant part of the library of the system has been
-  exported and checked in {\sf Dedukti}.
+  exported and checked in Dedukti.
 
 \item[LIL 4:] A significant part of the library of the system have
-  been made available in {\sf Logipedia}.
+  been made available in Logipedia.
 
 \item[LIL 5:]
-A tool has been defined to analyze the {\sf Dedukti} proofs for the system,
+A tool has been defined to analyze the Dedukti proofs for the system,
 detect those that can be expressed in a theory weaker than that of the
 system, and translate those proofs into a weaker logic.
 
 \item[LIL 6:]
 All proofs of the system have been exported, translated,
-and made available in {\sf Logipedia}.
+and made available in Logipedia.
 \end{itemize}
 \end{framed}
 
@@ -273,63 +275,65 @@ integration levels, and we have different targeted levels for them..
 \hline
 System & current level & targeted level\\
 \hline
-{\sf Matita} & 5 & 6\\
+Matita & 5 & 6\\
 \hline
-{\sf HOL Light} & 3 & 5\\
+HOL Light & 3 & 5\\
 \hline
-{\sf FoCaLiZe} & 3 & 5\\
+FoCaLiZe & 3 & 5\\
 \hline
-{\sf Coq} & 3 & 5\\
+Coq & 3 & 5\\
 \hline
-{\sf Agda} & 2 & 4\\
+Agda & 2 & 4\\
 \hline
-{\sf Atelier B} & 1 & 5\\
+Atelier B & 1 & 5\\
 \hline
-{\sf ProB} & 1 & 5\\
+ProB & 1 & 5\\
 \hline
-{\sf Isabelle} & 2 & 5\\
+Isabelle & 2 & 5\\
 \hline
-{\sf HOL4} & 1 & 5\\
+HOL4 & 1 & 5\\
 \hline
-{\sf TSTP} & 1 & {\color{red} ???}\\
+TSTP & 1 & {\color{red} ???}\\
 \hline
-{\sf Minlog} & 0 & 4\\
+Minlog & 0 & 4\\
 \hline
-{\sf PVS} & 0 & 2\\
+PVS & 0 & 2\\
 \hline
-{\sf Abella} & 0 & 2\\
+Abella & 0 & 2\\
 \hline
-{\sf Mizar} & 0 & 4\\
+Mizar & 0 & 4\\
 \hline
-{\sf Smart} & 0 & 3\\
+Smart & 0 & 3\\
 \hline
-{\sf TLA+} & 0 & 2\\
+TLA+ & 0 & 2\\
 \hline
-{\sf Why3} & 0 & {\color{red} ???}\\
+ Why3 & 0 & {\color{red} ???}\\
 \hline
-{\sf LFSC} & 0 & {\color{red} ???}\\
+LFSC & 0 & {\color{red} ???}\\
 \hline
 \end{tabular}
 \end{center}
 
 These systems can be roughly divided into two groups. Those in the
-first half of the array ({\sf Matita}, {\sf HOL Light}, {\sf
-  FoCaLize}, {\sf Coq}, {\sf Agda}, {\sf Atelier B}, ProB, {\sf Isabelle},
-{\sf HOL4}, and {\sf TSTP}) for which we have preliminary results and
+first half of the array (Matita, HOL Light, 
+  FoCaLize, Coq, Agda, Atelier B, ProB, Isabelle,
+HOL4, and TSTP) for which we have preliminary results and
 that we plan to bring to a very high level of integration. Those in
-the second half ({\sf Minlog}, {\sf PVS}, {\sf Abella}, {\sf Mizar},
-{\sf TLA+}, {\sf SMT-Lib}, {\sf Why3}, and {\sf LFSC}) with which we
+the second half (Minlog, PVS, Abella, Mizar,
+TLA+, SMT-Lib, Why3, and LFSC) with which we
 are starting and for which our goal are less ambitious.
 
 These two groups of systems will be addressed in different
 work packages, but both are key to the project. The first ones will
-constitute {\sf Logipedia} in 2024 and the second ones prepare the
+constitute Logipedia in 2024 and the second ones prepare the
 long term future of the infrastructure.
 
 \bigskip
 
 \noindent
 {\bf \Large Instrumentation}
+
+\medskip
 
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has
 already been expressed in Dedukti. The next step is to implement a
@@ -389,7 +393,7 @@ The systems considered in this project fall into three broad classes:
     provided by Dedukti.
   \end{itemize}
 
-  \item[Systems based on higher-order logic.] (HOL4, Isabelle)
+  \item[Systems based on simple type theory.] (HOL4, Isabelle)
   \ednote{We still need some text to go here!}
 
   The HOL4 proof assistant is home to a few medium to large scale
@@ -577,11 +581,21 @@ the following tools:
 
 \bigskip
 \noindent
-{\bf \Large Automated theorem provers, SAT and SMT solvers, etc.}
+{\bf \Large Automatic theorem provers, SAT solvers, SMT solvers, etc.}
 
-Automatic Theorem Proving (ATP) is a key component for the Logipedia
-infrastructure.
+\medskip
 
+We have discussed, in the last section, the instrumentation of proof
+systems, that is interactive systems, where the users build formal
+proofs with the help of the machine. Automatic Theorem Proving are
+another type of systems, where the machine build proofs without any
+human intervention. The proofs built by these systems are often
+expressed in simpler theories than those developed using proof
+systems, but they are not of a different nature. We will also include
+in Logipedia proofs built by such automatic systems, whether they are
+called automatic theorem provers, SAT solvers, SMT solvers, etc.
+
+Several reasons explain the importance of these proofs for Logipedia.
 {\em Per se}, many formal proofs nowadays rely on the use of automatic
 provers. They cover various domains and various kinds of application,
 {\em e.g.} combinatorial
@@ -592,70 +606,106 @@ programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD1
 where they are given thousands of small problems in a combination of
 quantified theories.
 
-In a complementary way, ATPs will be used to automatically make a
-coherent whole out of {\sf Logipedia}. A fruitful interaction between
-formal proofs requires low-level glue which falls in the scope of ATPs.
+In a complementary way, automatic theorem provers will be used to automatically make a
+coherent whole out of Logipedia. A fruitful interaction between
+formal proofs requires low-level glue which falls in the scope of automatic theorem provers.
 For instance, they will be employed to fill the holes that appear when
 considering provers with various granularity, to reduce the gaps between
 proof systems, and to discharge proofs of concept alignment (in close
 interaction with the work package 6).
 
-Finally, ATPs will also benefit from {\sf Logipedia}. Obviously, {\sf
-  Logipedia} will be an extensive library of formal statements that can
-be used and combined by ATPs in their proof search. This is not trivial
-though: lemma selection is crucial to avoid an overhead. It can also be
-a source of benchmarks to evaluate their expressivity and automation.
-Lastly, {\sf Logipedia} and {\sf Dedukti} will form a framework to make
-ATPs cooperate with each other and with other tools, in a safe way.
+Finally, automatic theorem provers will also benefit from
+Logipedia. Obviously, Logipedia will be an extensive library of formal
+statements that can be used and combined by automatic theorem provers
+in their proof search. This is not trivial though: lemma selection is
+crucial to avoid an overhead. It can also be a source of benchmarks to
+evaluate their expressivity and automation.  Lastly, Logipedia and
+Dedukti will form a framework to make automatic theorem provers
+cooperate with each other and with other tools, in a safe way.
 
-PF: TODO: Talk somewhere above about the various ATP tools, their specificity and why they are each of them useful or would benefit from Logipedia
+PF: TODO: Talk somewhere above about the various automatic theorem
+proving tools, their specificity and why they are each of them useful
+or would benefit from Logipedia
 
-\paragraph{From ATPs to {\sf Dedukti}}
+\medskip 
 
-Similarly to Interactive Theorem Provers, connecting ATPs to the Logipedia
-infrastructure strongly relies on the ability for ATPs to import statements from
-{\sf Dedukti} and export proofs in some theory in {\sf Dedukti}.
+\noindent
+{\bf \large From automatic theorem provers to Dedukti}
+
+Similarly to Interactive Theorem Provers, connecting automatic theorem provers to the Logipedia
+infrastructure strongly relies on the ability for automatic theorem provers to import statements from
+Dedukti and export proofs in some theory in Dedukti.
 
 \begin{description}
-\item[Instrumenting ATPs to produce proof traces.] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof without strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs.
+\item[Instrumenting automatic theorem provers to produce proof
+  traces.] The first step for connecting automatic theorem provers to
+  the Logipedia infrastructure, and the library of proofs, is that
+  automatic theorem provers should actually output some kind of proof
+  without strong requirement on the format or even the level of
+  granularity of those proofs.  SAT (Satisfiability) solvers for
+  propositional logic do have a perfectly well specified format for
+  proof traces~\cite{TODO} and most SAT solvers are actually able to
+  produce proof traces in that format.  So, considering SAT solvers,
+  the current status is actually meeting the Logipedia needs.
 
-  Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although they would be useful for various usages and notably certification.
+  Considering other automated reasoners however, it is mandatory to
+  significantly improve the picture.  Some SMT (Satisifiability Modulo
+  theories) solvers do produce some kind of proof trace, but the
+  format is specific to the solver, and the proofs are sometimes
+  difficult to replay due to their granularity.  Most mainstream
+  first-order theorem provers output proofs in a standardized
+  language~\cite{}, but this language does not clearly specify the
+  semantics of the proof steps.  Model-checkers do not provide proof
+  traces per se, although they would be useful for various usages and
+  notably certification.
 
-  Our goals will be to improve reasoning tools to demonstrate the feasibility to produce sufficiently detailed proofs for connecting to Logipedia, and to design a set of theoretical and practical tools that can be used to further connect Logipedia to the other existing automated reasoners of the same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two first-order provers (the E-prover, Zipperposition), and one model-checker (cubicle).  We will also consider more specific reasoning tools, with the aim to demonstrate that this approach also applies to more specific reasoners.  For this, we will use ***** (Predag's tool).
+  Our goals will be to improve reasoning tools to demonstrate the
+  feasibility to produce sufficiently detailed proofs for connecting
+  to Logipedia, and to design a set of theoretical and practical tools
+  that can be used to further connect Logipedia to the other existing
+  automated reasoners of the same kind.  We will work on three SMT
+  solvers (alt-ergo, CVC4, veriT), two first-order provers (the
+  E-prover, Zipperposition), and one model-checker (cubicle).  We will
+  also consider more specific reasoning tools, with the aim to
+  demonstrate that this approach also applies to more specific
+  reasoners.  For this, we will use ***** (Predag's tool).
 
-\item[Translate ATP traces into Dedukti] The second step for a successful
-  connection of ATP tools to the Logipedia infrastructure is to convert the
-  detailed proof steps into Dedukti.  It is not possible, and not even
-  desirable, to require all tools to directly talk the language of Logipedia.
-  Indeed, some other language are more appropriate for quick output, and
-  post-processing, that Dedukti.  Furthermore, it will be possible to share the
-  machinery to convert the detailed proof traces into Dedukti proofs.
+\item[Translate automatic theorem proving traces into Dedukti] The
+  second step for a successful connection of automatic theorem proving
+  tools to the Logipedia infrastructure is to convert the detailed
+  proof steps into Dedukti.  It is not possible, and not even
+  desirable, to require all tools to directly talk the language of
+  Logipedia.  Indeed, some other language are more appropriate for
+  quick output, and post-processing, that Dedukti.  Furthermore, it
+  will be possible to share the machinery to convert the detailed
+  proof traces into Dedukti proofs.
 
   PF:TODO: see Guillaume Burel text and import some of it here
 \end{description}
 
-\paragraph{From {\sf Dedukti} to ATPs}
-\label{concept:wp4:deduktitoatp}
+\noindent
+{\bf \large From Dedukti to automatic theorem provers}
+%\label{concept:wp4:deduktitoatp}
 
-In the other direction, {\sf Logipedia} will constitute a source of
-knowledge for ATPs. For this to be affordable, this workpackage will
+In the other direction, Logipedia will constitute a source of
+knowledge for automatic theorem provers. For this to be affordable, this workpackage will
 study the following challenges.
 
 \begin{description}
-\item[Translate {\sf Dedukti} statements into ATPs inputs] Automatic
-  theorem provers are mostly based on (parts of) first-order logic. {\sf
-    Logipedia} theorems, which mostly come from interactive provers,
-  will be expressed in the {\sf Dedukti} encodings of much more
-  expressive logics, such as dependent type theory or higher order
-  logic. Theorem statements thus need to be encoded again to be
-  manipulable by ATPs.
+\item[Translate Dedukti statements into automatic theorem provers
+  inputs] Automatic theorem provers are mostly based on (parts of)
+  first-order logic.  Logipedia theorems, which mostly come from
+  interactive provers, will be expressed in the Dedukti encodings of
+  much more expressive logics, such as dependent type theory or simple
+  type theory.  Theorem statements thus need to be encoded again to be
+  manipulable by automatic theorem provers.
 
   Encodings from expressive logics to first order logic already exist,
-  and are used for instance in {\em hammers} for using ATPs into
+  and are used for instance in {\em hammers} for using automatic theorem provers into
   interactive theorem
   provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.
   In these works, the encodings are specific to one system to be
-  affordable. In {\sf Logipedia}, we have to combine and take benefit
+  affordable. In Logipedia, we have to combine and take benefit
   from statements coming from the encodings of different systems based
   on different logics. The key challenge here are thus:
   \begin{itemize}
@@ -672,25 +722,26 @@ study the following challenges.
     e.g.} using Ekstrakto. It will also crucially rely on the concept
   alignment provided by the workpackage 6.
 
-  It is common in the ATP community to evaluate the performance on
+  It is common in the automatic theorem proving community to evaluate the performance on
   sets of benchmarks. As a side effect of this task, a new set of
-  benchmarks will be extracted from {\sf Logipedia} to measure the
-  performance of ATPs on problems coming from different logic, and from
+  benchmarks will be extracted from Logipedia to measure the
+  performance of automatic theorem provers on problems coming from different logic, and from
   a combination of these logics. In our case, it will not only allow to
-  compare ATPs but also to measure the success of this task by evaluated
+  compare automatic theorem provers but also to measure the success of this task by evaluated
   the quality of encodings, and comparing our ``small'' encodings by
   activating them or not.
 
-\item[{\sf Logipedia} as a source of knowledge for ATPs] Pascal
+\item[Logipedia as a source of knowledge for automatic theorem provers] Pascal
 \end{description}
 
 
-\paragraph{Large scale application: formal verification of C code}
+\noindent
+{\bf \large Large scale application: formal verification of C code}
 
 The use of formal methods in the industry requires to have approaches
 that apply to a wide variety of cases. For the verification of C code,
 the Frama-C platform features numerous techniques. One of them relies on
-automatic solvers: Frama-C-WP. Since ATPs are built by making many
+automatic solvers: Frama-C-WP. Since automatic theorem provers are built by making many
 choices such as which heuristics or which algorithms to use, they
 display blind spots where they are less efficient to solve some cases.
 In order to overcome that, it is necessary to use the wide variety of
@@ -732,8 +783,10 @@ This part thus combines and validates most of the previous aspects of
 this workpackage, but also constitutes the challenge to instrument a
 large-scale formal tool.
 
+\medskip
 
-\paragraph{ATPs to increase {\sf Logipedia} readiness}
+\noindent
+{\bf \large Automatic theorem provers to increase Logipedia readiness}
 
 \dots Chantal: T5 and T6
 
@@ -749,35 +802,32 @@ large-scale formal tool.
 
 {\bf (b) Methodology}
 
-The methodology is the same for integrating any library to {\sf Logipedia},
+The methodology is the same for integrating any library to Logipedia,
 but due to a difference of readiness of the various systems we focus on,
 our priorities are different.
 
 \begin{enumerate}
-\item We already know how to express most of the theories of {\sf Atelier B},
-{\sf Coq}, {\sf FoCaLiZe}, {\sf HOL Light}, {\sf HOL4}, {\sf
-Isabelle}, {\sf Matita}, and {\sf Rodin} in {\sf Dedukti}. We propose
-to instrument these systems so that they can produce {\sf Dedukti}
-proofs that we can include in {\sf Logipedia}.
+\item We already know how to express most of the theories of Atelier B,
+Coq, FoCaLiZe, HOL Light, HOL4, 
+Isabelle, Matita, and Rodin in  Dedukti. We propose
+to instrument these systems so that they can produce Dedukti
+proofs that we can include in Logipedia.
 
-\item
-For other theories, such as those of {\sf Abella}, {\sf Agda}, {\sf
-Lean}, {\sf Minlog}, {\sf Mizar}, {\sf PVS}, {\sf TLA+}, the work is
-in progress, or not yet started.  So we must first understand how they
-can be expressed in {\sf Dedukti}.
+\item For other theories, such as those of Abella, Agda, Lean, Minlog,
+  Mizar, PVS, TLA+, the work is in progress, or not yet started.  So
+  we must first understand how they can be expressed in Dedukti.
 
 \item Besides the standard libraries of these systems, large libraries
-  have been developed: the {\sf Isabelle Archive of formal Proofs} \cite{AFP},
-  {\sf Flyspeck}\cite{Flyspeck}, {\sf MathComp}\cite{Mathcomp}, 
-  {\sf CompCert} \cite{Compcert}, {\sf CakeML} \cite{CakeML}, ...  We aim to include
-  some of these libraries in {\sf Logipedia}.
+  have been developed: the Isabelle Archive of formal Proofs \cite{AFP},
+   Flyspeck \cite{Flyspeck}, MathComp\cite{Mathcomp}, 
+  CompCert \cite{Compcert},  CakeML \cite{CakeML}, ...  We aim to include
+  some of these libraries in Logipedia.
   
 \item
 Besides proof systems, we also want to include proofs coming from
 automated theorem provers, SAT solvers, SMT solvers, and model
 checkers.  So we must instrument some of these systems so that they
-can produce {\sf Dedukti} proofs that we can include in {\sf
-Logipedia}.
+can produce Dedukti proofs that we can include in Logipedia.
 
 \item
 We want to develop algorithms to analyze which symbol, axiom, rewrite
@@ -788,13 +838,13 @@ use it in more systems.
 
 
 \item
-Each library imported in {\sf Logipedia} will come with its own
+Each library imported in Logipedia will come with its own
 definition of natural numbers, real numbers, etc. We want to develop
 ``concept alignments algorithms'' to transport theorems from one
 structure to another isomorphic one.
 
 \item 
-Besides data, we propose to include in {\sf Logipedia}, metadata and
+Besides data, we propose to include in Logipedia, metadata and
 an inner structure.
 \end{enumerate}
 
