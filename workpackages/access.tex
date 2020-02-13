@@ -2,7 +2,7 @@
   short=Access,% for Figure 5.
   title={Access to the infrastructure},
   lead=Inr,
-  InrRM=10]
+  InrRM=28]
   
 \begin{wpobjectives}
   The objective of this work package is to \ldots
@@ -41,13 +41,28 @@ This includes notably:
     depends on too.
   \end{task}
 
-  \begin{task}[id=search,title=Providing search tools]
-    We will provide users with search tools enabling them to make
-    request on Logipedia in order to find a specific theorem that
-    could be useful in their current development, or in order to
-    analyze the proofs available in Logipedia itself (e.g. all the
-    proofs using some given set of axioms, etc.). In the first case,
-    requests could use regular expressions on names or formulas.
+  % Search task, importing some content that was previously in WP7
+  \begin{task}[id=search,title=Providing search
+    tools,lead=Inr,InrRM=27,FauRM=24,SacRM=6,BolRM=4]
+    We will provide users with search tools enabling them to perform
+    queries on Logipedia in order to find specific theorems or proofs.
+    First, users will be able to search libraries theorems by their
+    names and other metadata (see task~\taskref{structuring}{strdofimpl}), including complex semantic
+    queries expressed in the SPARQL language for semantic annotations
+    produced in task~\taskref{structuring}{strrefonto}. Second, it will be possible to
+    search theorems and proofs based on their structure and mathematical
+    content (types, operators, used axioms and rules, etc.), using exact
+    matching, regular expressions over fomulas, and deeper content
+    matching, such as the one done in the
+    \hyperlink{https://kwarc.info/systems/mws/}{MathWebSearch} system. Users can
+    use this both to find a specific theorem that
+    could be useful in their current development and to analyze the
+    proofs themselves, e.g., to find all proofs using a given set of
+    axioms.    
+    Finally, users will be able to
+    search in the full text of theorems and proofs that have been
+    extracted from natural-language research articles in
+    task~\taskref{structuring}{strtext}.
   \end{task}
 
 \end{tasklist}
