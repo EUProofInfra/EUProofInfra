@@ -14,24 +14,35 @@ Deharbe, Nicola Gambino, Tobias Nipkow, Makarius Wenzel, Julien Narboux, Gaspard
 François Thiré, Magnus Myreen}
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
+The objective of this WP is to export large dedicated libraries in curated form to Dedukti
+for access to end-users. The focus is \emph{Access} and \emph{Scalability}.
+\begin{compactitem}
+\item This WP is responsible for supplying the lion's share of proofs for
+the Dedukti data base.  As a result it will be a stress test for the
+results of \WPref{instrumentation}: is the proof infrastructure
+capable of processing truly large amounts of material/proofs?
 
-This includes notably:
-  \begin{compactitem}
-  \item Access
-  \item Scalability
-  \end{compactitem}
-  A key aspect will be to foster \ldots
+\item The target libraries are dedicated to particular application
+areas. They provide a substantial coverage of that application area
+and do so in a structured manner. This may require reworking the
+libraries for better access.
 
-For the future: Mizar, PVS, seL4, CompCert
+\item The libraries are curated for end-user application. That is, they
+are structured according to application specific ontologies that
+support brwosing and search. The structuring leverages the
+infrastructures of \WPref{structuring}.  As a result it will be a
+stress test for the results of \WPref{structuring}: is the metadata
+infrastructure capable of representing the structure of large
+libraries?
+\end{compactitem}
 \end{wpobjectives}
 
 
 \begin{wpdescription}
 Translating the standard libraries of the systems is part of the WP1.
-\end{wpdescription}
 
-Two aspects: scalability and accessibility
+For the future: Mizar, PVS, seL4, CompCert 
+\end{wpdescription}
 
 {\bf Trusted chain}
 
