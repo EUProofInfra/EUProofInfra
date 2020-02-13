@@ -617,21 +617,100 @@ infrastructure strongly relies on the ability for ATPs to import statements from
 {\sf Dedukti} and export proofs in some theory in {\sf Dedukti}.
 
 \begin{description}
-\item[Instrumenting ATPs to produce proof traces.] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof without strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs.
+\item[Instrumenting ATPs to produce proof traces.] The first step for connecting ATPs to the Logipedia infrastructure, and the library of proofs, is that ATPs should actually output some kind of proof, without enforcing strong requirement on the format or even the level of granularity of those proofs.  SAT (Satisfiability) solvers for propositional logic do have a perfectly well specified format for proof traces~\cite{TODO} and most SAT solvers are actually able to produce proof traces in that format.  So, considering SAT solvers, the current status is actually meeting the Logipedia needs on this aspect.
 
-  Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although they would be useful for various usages and notably certification.
+  Considering other automated reasoners however, it is mandatory to significantly improve the picture.  Some SMT (Satisifiability Modulo Theories) solvers do produce some kind of proof trace, but the format is specific to the solver, and the proofs are sometimes difficult to replay due to their granularity.  Most mainstream first-order theorem provers output proofs in a standardized language~\cite{TODO}, but this language does not clearly specify the semantics of the proof steps.  Model-checkers do not provide proof traces per se, although such traces would be useful for various usages and notably certification.
 
-  Our goals will be to improve reasoning tools to demonstrate the feasibility to produce sufficiently detailed proofs for connecting to Logipedia, and to design a set of theoretical and practical tools that can be used to further connect Logipedia to the other existing automated reasoners of the same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two first-order provers (the E-prover, Zipperposition), and one model-checker (cubicle).  We will also consider more specific reasoning tools, with the aim to demonstrate that this approach also applies to more specific reasoners.  For this, we will use ***** (Predag's tool).
+  Our goals are to improve reasoning tools to demonstrate the feasibility to produce sufficiently detailed proofs for connecting to Logipedia, and to design a set of theoretical methods and practical tools that can be used to further connect Logipedia to the other existing automated reasoners of the same kind.  We will work on three SMT solvers (alt-ergo, CVC4, veriT), two first-order provers (the E-prover, Zipperposition), and one model-checker (cubicle).  We will also consider more specific reasoning tools, with the aim to demonstrate that this approach also applies to more specific reasoners.  For this, we will use ***** (Predag's tool).
+  
+  It is not possible, and not even desirable, to require all tools to directly
+  talk in the language of Logipedia.  Indeed, proof trace languages that are
+  specific to one kind of reasoning tool are more appropriate than Dedukti for
+  instrumenting already large pieces of software, enabling quick output, and
+  allowing proof post-processing at the right level of abstraction on the
+  produced proof traces.  Furthermore, provided that those proofs are detailed
+  enough, translation of traces to Dedukti will not be a difficult task, and a
+  the work necessary to translate proof traces for a myriad of very different
+  reasoners will be implemented in a unique tool (Ekstrakto, see below) to take
+  advantage of the fact that reasoning techniques, and thus proof methods, are
+  themselves pretty shared among the solvers.
 
-\item[Translate ATP traces into Dedukti] The second step for a successful
-  connection of ATP tools to the Logipedia infrastructure is to convert the
-  detailed proof steps into Dedukti.  It is not possible, and not even
-  desirable, to require all tools to directly talk the language of Logipedia.
-  Indeed, some other language are more appropriate for quick output, and
-  post-processing, that Dedukti.  Furthermore, it will be possible to share the
-  machinery to convert the detailed proof traces into Dedukti proofs.
+\item[Translate ATP traces into Dedukti] As pointed out above, it is easier to
+  instrument provers to make them output traces instead of directly provide
+  Dedukti proofs. The second step to connect ATPs to the Logipedia
+  infrastructure is to reconstruct the proof traces in order to build Dedukti
+  proofs from them. The proposed process is the following: each step of the
+  trace is transformed into an independent subproblem; each of these subproblems
+  is given to a prover that can output Dedukti proofs; proofs of the subproblems
+  are then combined to produce a global proof of the original problem.  Since
+  subproblems correspond to atomic steps of the proof trace, they are relatively
+  simple, so that we are confident that the prover producing Dedukti proofs will
+  not struggle to find a proof. This process is quite similar to what is done by
+  the hammer tools of interactive theorem provers (Sledgehammer in Isabelle/HOL,
+  HOLyHammer for HOL4, etc.) which reconstruct proofs from traces produced by
+  automated theorem provers.
 
-  PF:TODO: see Guillaume Burel text and import some of it here
+  This scheme has already been prototyped in a tool called
+  \href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto takes a
+  TSTP file, as can be produced by e.g.\ the provers E and Zipperposition, and
+  it uses Zenon Modulo and ArchSAT to prove the subproblems. Ekstrakto was
+  designed to be agnostic w.r.t.\ the prover producing the trace; in particular
+  it does not depend on the specific set of inference rules of the prover. It
+  was also designed to be agnostic w.r.t.\ the prover used to prove the
+  subproblems; it is only required that the prover can output a Dedukti proof in
+  the correct encoding of first-order logic.
+
+  Although Ekstrakto has already shown that it is a valuable approach, it is a
+  work in progress. In particular, the following issues will be addressed in the
+  project:
+
+\begin{compactenum}
+  % extension to other proof trace formats
+\item Up to now, Ekstrakto can only understand traces in TSTP format as
+  input. We plan to make it accept traces in other formats, notably traces
+  from SMT solvers, as well as all formats that will appear when instrumenting
+  other ATPs.
+
+  % unprovable steps
+
+\item  Some steps in the proof traces are not provable: their conclusion is
+  not a logical consequence of their premises. However, they preserve
+  provability: the original problem has a proof if and only if the
+  problem with the conclusion of the step also has a proof. This is the
+  case for instance of the Skolemization step in first-order automated
+  theorem provers, of the introduction of new definitions, as well as
+  the RAT property in traces produced by SAT solvers. The approach of
+  Ekstrakto cannot be used here, because the subproblem corresponding to
+  the step cannot be proved. However, since provability is preserved, it
+  should be possible to transform a
+  proof using the conclusion of the step into a proof using its
+  premises. Such a transformation depends on the nature of the step that
+  has been used. We plan to include in Ekstrakto a way to handle
+  Skolemization and definition introduction, which are the two step
+  families that are missing to be able to manage all traces from the
+  major first-order theorem provers.
+
+  % specialization for theories
+
+\item  Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo and
+  ArchSAT, are meant for pure first-order logic. However, we would like
+  to deal with proof traces that use some specialized theory,
+  e.g.\ arithmetic or bit-vectors, as could be output by SMT
+  solvers. Although such theories could be presented as a set of axioms
+  in first-order logic, it is almost certain that neither Zenon Modulo
+  nor ArchSAT could be able to find non-trivial proofs using these
+  axioms. Here, the idea would be to develop small provers dedicated to
+  a particular theory, and outputting Dedukti proofs. Such provers would
+  be called when a step in the trace relies on said theory. These
+  provers need not be very optimized, since trace steps are relatively
+  small; this should help producing Dedukti traces. A way to achieve
+  this could be to extend Zenon Modulo: indeed, Zenon modulo can find
+  proofs modulo arithmetic, but it is not able to produce a Dedukti
+  proof yet.
+
+\end{compactenum}
+
+  
 \end{description}
 
 \paragraph{From {\sf Dedukti} to ATPs}
