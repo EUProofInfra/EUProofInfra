@@ -635,6 +635,8 @@ PF: TODO: Talk somewhere above about the various automatic theorem
 proving tools, their specificity and why they are each of them useful
 or would benefit from Logipedia
 
+TODO: This workpackage is approximately 70\% networking, 30\% research
+
 \medskip
 
 \noindent
@@ -789,13 +791,13 @@ study the following challenges.
   activated independently depending on the origin of the statement. They
   give the other advantages of being modular, easily extensible, and
   more reliable: each encoding is simple, and may output proofs, {\em
-    e.g.} using Ekstrakto. It will also crucially rely on the concept
+    e.g.} using Ekstrakto. They will be performed modulo the concept
   alignment provided by the workpackage 6.
 
   It is common in the automatic theorem proving community to evaluate the performance on
   sets of benchmarks. As a side effect of this task, a new set of
   benchmarks will be extracted from Logipedia to measure the
-  performance of automatic theorem provers on problems coming from different logic, and from
+  performance of automatic theorem provers on problems coming from different logics, and from
   a combination of these logics. In our case, it will not only allow to
   compare automatic theorem provers but also to measure the success of this task by evaluated
   the quality of encodings, and comparing our ``small'' encodings by
@@ -1376,6 +1378,101 @@ automated theorem proving, as experimented with Atelier B and Zenon.
 % that are constantly evolving.
 
 \subsubsection{Methodology of the work package 4}
+
+{\bf \large From automatic theorem provers to Dedukti}
+
+We target to be able to obtain Dedukti proofs from as many established
+automatic theorem provers as possible.
+
+Some of them already output proof traces, meaning that we can see them
+as black-boxes and concentrate on the translation from their proof format
+to Dedukti. To this end, we plan to extend the prototype tool Ekstrakto
+to handle more proof formats and increase its expressivity.
+
+TODO: move here some parts from ``concept''
+
+For those which do not output traces, or which output partial traces, a
+preliminary task is to instrument them. We target in particular the
+three SMT solvers Alt-Ergo, CVC4 and veriT, the two first-order provers
+E-prover and Zipperposition, and the model-checker Cubicle. The
+following table summarizes their degree of proof production, on a scale
+from 0 (no proof production) to 5 (complete proof production, for all
+features supported by the solver, and that can be independently checked
+without proof reconstruction):
+%
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|c|}
+\hline
+ & Alt-Ergo & CVC4 & veriT & E-prover & Zipperposition & Cubicle\\
+\hline
+Level of proof production & 0 & 2 & 3 & 4 & 4 & 0\\
+\hline
+Proof format & - & LFSC & veriT & TSPT & TSTP & -\\
+\hline
+\end{tabular}
+\end{center}
+%
+For solvers which are currently not proof producing, we target proof
+formats that will be already integrated into Dedukti, in particular TSTP
+and LSFC.
+
+TODO: explain the methodology to instrument a prover
+
+
+{\bf \large From Dedukti to automatic theorem provers}
+
+The first step is to encode theorem statements expressed in Dedukti,
+into the logic understood by automatic provers. We will target a pivot
+language for which translations to major existing automatic provers
+already exist, such as TIP~\cite{DBLP:conf/mkm/ClaessenJRS15} or the
+input of Why3~\cite{DBLP:conf/esop/FilliatreP13}. A research challenge
+is to make this encoding preserve the logical meaning and deal with
+statement coming from multiple tools. Our approach will be to build the
+encoding out of independent ``small'' encodings that can be activated or
+not, making use of the concept alignment provided with the workpackage
+6.
+
+To handle the large amount of theorems stored in Logipedia, we need
+tools to select the knowledge relevant for particular goals. We will
+look at machine learning methods to select relevant knowledge in the
+Logipedia corpus as well as to select potential proof term components.
+
+We shall produce sets of benchmarks out of Logipedia, some of them
+requiring to combine statements coming from different systems. These
+benchmarks will be used to evaluate the tools developed here, and will
+also make publicly available for automatic prover designers.
+
+{\bf \large Large scale application: formal verification of C code}
+
+The aforementioned methodology will be put at scale in the formal
+verification of C code, through the instrumentation of the Frama-C and
+Why3 platforms. To obtain end-to-end guaranties, we will output proofs
+for all the steps used to validate C code with respect to specifications
+(weakest precondition computation, logical transformations, user-defined
+simplification rules, calls to automatic solvers) and combine them in
+Dedukti. We will also supply the users and the solvers with the
+Logipedia libraries.
+
+
+{\bf \large Automatic theorem provers to increase Logipedia readiness}
+
+We will develop internal automation for Dedukti, use it for proof
+reconstruction, and look at machine learning methods to guide the
+internal proof. In particular, we will experiment with direct search for
+type inhabitants applied to the $\lambda\Pi$-calculus combined with
+heuristic rewriting. We will also develop computational proof
+reconstruction based on direct inspection of ATP proofs and translation
+back to Dedukti terms.
+
+This internal automation will be used to increase Logipedia readiness by
+filling the remaining missing parts inside proofs and between proofs,
+and discharging proofs of concept alignments discovered by the
+workpackage 6. For this application, we need to qualify the class of
+problems coming from making theorems coming from various sources, and
+use or develop the more appropriate automation. Internal automation
+combined with premise selection will also offer Dedukti users, inside
+and outside the project, to more efficiently write proofs.
+
 
 \subsubsection{Methodology of the work package 3}
 
