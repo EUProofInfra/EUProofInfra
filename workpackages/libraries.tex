@@ -61,7 +61,7 @@ PVS have reached LIL 2).
 %\end{task}
 
 \begin{task}[id=afp,title=Isabelle's Archive of Formal Proofs]
-\ednote{TU München (Wenzel)}
+%\ednote{TU München (Wenzel)}
 Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
 growing user-contributed online library for Isabelle. In Feb-2020, the
 AFP consisted of more than 500 entries (articles of formalized
@@ -75,7 +75,7 @@ with prohibitive resource requirements will be omitted.
 
 \begin{task}[id=isaAnalysisProb,title=The Isabelle Analysis \&
   Probability Theory library]
-\ednote{TU München (Nipkow)}
+%\ednote{TU München (Nipkow)}
 This library consists of more than
 200.000 lines of definitions and proofs, corresponding to almost 4000 printed
 pages. It covers topology, homology, multivariate, functional and complex
@@ -133,68 +133,69 @@ The pragmatic approach that has been adopted so far has motivated a few choices 
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
 \ednote{Saclay (Grienenberger)}
-The \textsc{HOL Light} library is large and varied.
+The {HOL Light} library is large and varied.
 One of its key libraries is the multivariate analysis library
 \footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
 integration.
 
-The \textsc{Flyspeck} project gives a formal proof of the \textsc{Kepler}
+The {Flyspeck} project gives a formal proof of the {Kepler}
 conjecture. The statement and proof is based on an original proof of Thomas
-\textsc{Hales} \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15},
-and formalized and proved largely in \textsc{HOL Light}\footnote{\url{https://github.com/flyspeck/flyspeck}}.
+{Hales} \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15},
+and formalized and proved largely in {HOL Light}\footnote{\url{https://github.com/flyspeck/flyspeck}}.
 The richness of this library, with some results not formalized in any
-other system, motivates the project of importing the \textsc{HOL Light}
-library and \textsc{Flyspeck} project in the \textsc{Dedukti} system, in view
-of its integration into \textsc{Logipedia}.
+other system, motivates the project of importing the {HOL Light}
+library and {Flyspeck} project in the {Dedukti} system, in view
+of its integration into {Logipedia}.
 
 \textbf{Challenges:}
-Proofs coming from the HOL systems, including \textsc{HOL Light}, are known to
+Proofs coming from the HOL systems, including {HOL Light}, are known to
 be very large, adding to the already existing issue of the scalability of
 exporting software for large libraries
 \cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,DBLP:conf/itp/KellerW10,
 DBLP:conf/cade/Kumar13}. As an example, the size of the standard library is
-1.5M in \textsc{HOL Light} files (i.e. .ml files), while the same files once
-exported as \textsc{Dedukti} files scale to 2G, and the whole
-\textsc{HOL Light} library and the \textsc{Flyspeck} project are each as
+1.5M in {HOL Light} files, while the same files once
+exported as {Dedukti} files scale to 2G, and the whole
+{HOL Light} library and the {Flyspeck} project are each as
 large as 30M. The multitude of automatic tactics and their increasing
 complexity and number of dependencies suggests that the generation time, size,
 and rechecking time of exported proofs will not increase linearly. Scalable
-export techniques \textsc{HOL Light} proofs have been investigated
+export techniques {HOL Light} proofs have been investigated
 \cite{KaliszykK13} and can provide a solid base to
 this project; for want of significantly reducing the size of generated
-\textsc{Dedukti} files, the time of export could at least be reduced.
+{Dedukti} files, the time of export could at least be reduced.
 
 The main milestones of this task are the further automation of the translation
-from \textsc{HOL Light} to \textsc{Dedukti}, the import of the multivariate
-analysis library, the import of the whole \textsc{HOL Light} library, and the
-import of the \textsc{Flyspeck} in \textsc{Dedukti}.
+from {HOL Light} to {Dedukti}, the import of the multivariate
+analysis library, the import of the whole {HOL Light} library, and the
+import of the {Flyspeck} in {Dedukti}.
 \end{task}
 
 \begin{task}[id=cakeml,title=The CakeML compiler library]
- \ednote{Chalmers (Myreen), Strasbourg, TU München} The CakeML
- compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
- languages, the other being CompCert. Its export to Dedukti is one of
- the KERs of this project. Because of the size and importance of this
- library, we will approach the export from two angles.
+% \ednote{Chalmers (Myreen), Strasbourg, TU München}
+The CakeML
+compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
+languages, the other being CompCert. Its export to Dedukti is one of
+the KERs of this project. Because of the size and importance of this
+library, we will approach the export from two angles.
 
- The first approach utilizes OpenTheory-based technology. HOL4 can
- export proofs in the OpenTheory format, which can in turn be
- translated into Dedukti. Currently this link from HOL4 via OpenTheory
- to Dedukti does not scale to something as sizeable as the CakeML
- compiler proof. This part of this task will rework the route via
- OpenTheory to scale better, possibly taking inspiration from an
- OpenTheory-like approach that scaled well for the HOL light
- prover~\cite{KaliszykK13}.
+The first approach utilizes OpenTheory-based technology. HOL4 can
+export proofs in the OpenTheory format, which can in turn be
+translated into Dedukti. Currently this link from HOL4 via OpenTheory
+to Dedukti does not scale to something as sizeable as the CakeML
+compiler proof. This part of this task will rework the route via
+OpenTheory to scale better, possibly taking inspiration from an
+OpenTheory-like approach that scaled well for the HOL light
+prover~\cite{KaliszykK13}.
 
- The second approach establishes a connection from HOL4 via Isabelle
- to Dedukti. The basis is a promising new approach of virtualizing
- HOL4 inside Isabelle \cite{ImmlerRW19}. That is, the inference kernel
- of HOL4 is replaced by that of Isabelle and the resulting system
- produces Isabelle theorems instead of HOL4 theorems. As a benchmark
- of the viability of this approach we plan to export CakeML via
- Isabelle to Dedukti.
+The second approach establishes a connection from HOL4 via Isabelle to
+Dedukti. The basis is a promising new approach of virtualizing HOL4
+inside Isabelle \cite{ImmlerRW19}. That is, the inference kernel of
+HOL4 is replaced by that of Isabelle and the resulting system produces
+Isabelle theorems instead of HOL4 theorems. As a benchmark of the
+viability of this approach we plan to export CakeML via Isabelle to
+Dedukti.
 \end{task}
 
 %\begin{task}[id=unimath,title=The UniMath library]
