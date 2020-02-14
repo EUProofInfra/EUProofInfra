@@ -953,39 +953,252 @@ practicable in Logipedia raises the question of scalability.
 
 \subsubsection{Description of the work package 3}
 
-\subsection*{Objectives}
+\subsubsection*{Objectives}
 
-See libraries.tex: wpobjectives and wpdescription
+The objective of this WP is to export large dedicated libraries in
+curated form to Dedukti and thus to Logipedia for end-user applications.
+The focus is \emph{Access} and \emph{Scalability}.
+\begin{compactitem}
+\item This WP is responsible for supplying the lion's share of proofs in
+Logipedia.  As a result it will be a stress test for the
+results of \WPref{instrumentation}: is the proof infrastructure
+capable of processing truly large amounts of material/proofs?
 
-\subsection*{Libraries}
+\item The target libraries are dedicated to particular application
+areas. They provide a substantial coverage of that application area
+and do so in a structured manner. This may require reworking the
+libraries for better access. Any library is only as useful as its structure and documentation.
 
-The different tasks of this WP are identical with the above libraries
+\item The libraries are curated for end-user application. That is, they
+are structured according to application specific ontologies that
+support browsing and search. The structuring leverages the
+infrastructures of \WPref{structuring} and will be a
+stress test for the results of \WPref{structuring}: is the metadata
+infrastructure capable of representing the structure of large
+libraries?
+\end{compactitem}
+Translating the standard libraries of the systems is part of the \WPref{instrumentation}.
+This WP focusses on advanced libraries selected according to the following criteria:
+\begin{compactitem}
+\item Relevance: the libraries should support core areas of matematics and computer science.
+\item Coverage: the libraries should have a wide coverage of an application area.
+\item Maturity: the libraries should have been used in a significant application already.
+\end{compactitem}
+As a result we selected the following libraries: MathComp, Coq's revised
+Analysis library, the Archive of Formal Proofs, Isabelle's revised Analysis and Probability library,
+GeoCoq, Flyspeck and CakeML. In the future we plan to incorporate
+CompCert, seL4, and selected Mizar and PVS libraries (once Mizar and
+PVS have reached LIL 2).
 
-\subsubsection*{T1: MathComp}
+\subsubsection*{Tasks}
 
-GT
+\paragraph*{Isabelle's Archive of Formal Proofs} (AFP) \cite{isabelle-afp} is a
+growing user-contributed online library for Isabelle. In Feb-2020, the
+AFP consisted of more than 500 entries (articles of formalized
+mathematics) by 340 authors, and required approx. 60h CPU time for
+checking (using many gigabytes of memory).  The purpose of this task
+is to scale up the Isabelle instrumentation for Dedukti further, to
+cover major parts of this library. We do not intend to restructure or
+document the library further beyond what is provided by the authors of
+each article and by the hierarchical dependencies among the articles.
 
-\subsubsection*{T2: Revised Coq Analysis library}
+The key challenge is scaling. The ultimate aim is to export the main
+substance of the AFP without promising full coverage: some entries
+with prohibitive resource requirements will be omitted. Also note that
+the AFP is continuously growing at a high rate and thus a moving
+target.
 
-GT? SB?
+\paragraph*{The Isabelle Analysis \& Probability Theory Library} consists of more than
+200.000 lines of definitions and proofs, corresponding to almost 4000 printed
+pages. It covers topology, homology, multivariate, functional and complex
+analysis, measure and probability theory, and a dedicated library for
+ordinary differential equations. It is fair to say that it is the most
+advanced machine-checked library in the area of analysis and probability
+theory.\footnote{The Isabelle analysis and probability theory library is
+in part based on the extensive library of the HOL Light system but has
+generalized it from real numbers to appropriate algebraic structures and
+includes areas absent from the HOL Light library (in particular measure
+theory and ordinary differential equations).} It is currently used by 60 out
+of 500 articles in the Archive of Formal Proofs, a user-contributed library
+of Isabelle/HOL proofs from all areas of computer science and
+mathematics. Moreover, it is the only existing library in this area where
+proofs are structured and readable. Due to its size and generality and
+because analysis and probability theory are pervasive in any application in
+the engineering and natural sciences and economics, this library will be a
+KER of the project: it is a fundamental enabling resource for almost any
+formal verification activity in these areas, for example autonomous driving
+and mathematical finance. The purpose of this task is to structure, document
+and develop this library for optimal accessibility, ease of use and
+comprehensiveness. The aim is a curated library for applications.
+Therefore some material will need revising for ease
+of use and some essential material will need to be added.
 
-\subsubsection*{T3: Isabelle's Archive of Formal Proofs}
+\emph{Accessibility:}
+The library is a large collection of theories with a hierarchical dependency
+relation. However, this structure has grown over time and does not always
+reflect the abstract mathematical dependencies. In short, the structure needs
+to be modularized. This requires a significant refactoring effort.
+%
+At the same time we need to add metadata to the source material to turn this
+structured collection of theorems and proofs into a curated library at the
+Dedukti level.  This is where we need to interface with \WPref{structuring}. We
+will be test drivers of the metadata infrastructure provided by that WP, in
+particular the ability to describe ontologies for structuring in the large.
+This will also entail annotating those statements in the library that
+correspond to proper mathematical theorems as opposed to auxiliary lemmas
+required only for the benefit of the theorem prover.
+To increase accessibility we will also include links from the library into
+Wikipedia and in particular in the other direction to raise the awareness
+of Logipedia.
 
-See libraries.tex
+\emph{Development:}
+Although the library support for integrals is extensive, it suffers
+from the (necessary) coexistence of different kinds of
+integrals. This complicates proofs about integrals in applications and needs
+to be unified, which entails further refactoring. The rest of the
+development adds further essential material:
+1. Fourier analysis because of its extreme important both for pure mathematics and for
+engineering and physics (especially the Fourier
+transform). A formalization of basic properties of the Laplace transform is already available in the AFP. 2. Stability theory for differential equations and
+dynamical systems, in particular Lyapunov functions, because of their
+relevance for the verification of cyber-physical systems.
+3. Stochastic differential equations to model a large range of
+dynamical systems with stochastic components, from physics to financial markets.
 
-\subsubsection*{T4: The Isabelle Analysis & Probability library}
+\paragraph*{The GeoCoq library}
+consists of more than 100.000 lines of definitions and proofs. It is
+mostly based on synthetic approaches, where the axiom system is based
+on some geometric objects and axioms about them, but, following
+Descartes and Tarski, we prove that the analytic approach can be
+derived , where a field F is assumed (usually R) and the space is
+defined as $F^n$. Moreover, it contains a model, based on the analytic
+approach, of one of the synthetic approaches present in the library,
+namely Tarski's system of geometry, thus establishing the connection
+between these two approaches in the opposite direction.
 
-See libraries.tex
+The fact that the analytic approach can be derived from the synthetic
+one is called the arithmetization and coordinatization of geometry and
+it represents the culminating result of both Hilbert's "Grundlagen der
+Geometrie" and Tarski's "Metamathematische Methoden in der
+Geometrie". As of now, there is no other formalization of this result
+inside a proof assistant, making the GeoCoq library the most advanced
+machine-checked library in the area of synthetic geometry. This
+formalization enables to obtain automatic proofs based on geometric
+axioms using algebraic automated deduction methods, some of which will
+be covered within WP4.
 
-\subsubsection*{T5: The GeoCoq library}
+The main axiom system in this library is the one of Tarski, but
+Hilbert's axiom system and a version of Euclid's axioms sufficient to
+prove the propositions in Book 1 of Euclid's Elements are also
+defined. Thanks to the proof that Tarski's axioms (except continuity)
+are equivalent to Hilbert's axioms (except continuity), the
+arithmetization and coordinatization of geometry are available for
+both systems. In the library, the focus in not only on axiom systems
+but also on axioms themselves. Eleven continuity axioms are available
+and are hierarchically organised. Finally, it contains a new
+refinement of Pejas' classification of parallel postulates together
+with proofs of the classification of 34 versions of the parallel
+postulate.
 
-See libraries.tex
+Due to the dependency of the case studies for geometry, WP 5-6 T4, on
+the completion of this task, work is currently being done to complete
+it as soon as possible. One of the remaining obstacles is the use of
+computational steps in Coq proofs. The issue is that proofs containing
+"proof by reflection" reach a level of complexity that makes
+verification by Dedukti impractical, but these proofs are very
+frequent in the Coq world.
 
-\subsection*{Challenges}
+\emph{Challenges:}
+An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. The coherent logic theorem prover, which will be covered by WP4 T1, should handle part of these proofs. The other ones should be handled by specific provers for geometry, as they correspond to proofs obtained by the Gr\"obner basis method in GeoCoq.
+Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions into the lambda Pi-calculus Modulo on which Dedukti is based. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
+The last challenge is that part of GeoCoq relies on the mathcomp library. This makes WP3 T1 crucial to fully export the GeoCoq library.
 
-Are documented in each task. The key challenges are scalability and accessibility.
+\emph{Refinements:}
+The pragmatic approach that has been adopted so far has motivated a
+few choices that should be reconsidered once the obstacles,
+encountered throughout this process, which triggered the need for
+these choices will have been solved within WP1 T6. The solution that
+has been preferred in most cases was to modify the Coq script so that
+it does not rely of features, such as universe polymorphism, that were
+not handled by CoqInE when the obstacles were encountered. For
+example, the use of module functors was removed from GeoCoq, some
+proofs produced by tactics, such as intuition, relied indirectly on
+parts of the standard library of Coq that were not available with
+CoqInE were reworked by hand to avoid such dependencies, or direct
+dependencies were avoided. Another choice that could be reconsidered
+is to use provers from WP4 T1 to replace the proofs by reflection.
 
-\subsection*{Contributions}
+\paragraph*{The Flyspeck library} is the result of the Flyspeck
+project, a formal proof of the Kepler conjecture. The statement and
+proof is based on an original proof of Thomas Hales
+\cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15}, and is
+formalized and proved largely in HOL
+Light\footnote{\url{https://github.com/flyspeck/flyspeck}}. HOL Light
+has a large and rich analysis and geometry library, with some results
+not formalized in any other system. This motivates the project of
+importing the HOL Light library and the Flyspeck project into
+Dedukti and thus into Logipedia.
+
+\emph{Challenges:}
+Proofs coming from the HOL systems, including {HOL Light}, are known to
+be very large, adding to the already existing issue of the scalability of
+exporting software for large libraries
+\cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,DBLP:conf/itp/KellerW10,
+DBLP:conf/cade/Kumar13}. As an example, the size of the standard library is
+1.5M in {HOL Light} files, while the same files once
+exported as {Dedukti} files scale to 2G, and the whole
+{HOL Light} library and the {Flyspeck} project are each as
+large as 30M. The multitude of automatic tactics and their increasing
+complexity and number of dependencies suggests that the generation time, size,
+and rechecking time of exported proofs will not increase linearly. Scalable
+export techniques {HOL Light} proofs have been investigated
+\cite{KaliszykK13} and can provide a solid base to
+this project; for want of significantly reducing the size of generated
+{Dedukti} files, the time of export could at least be reduced.
+
+The main milestones of this task are the further automation of the translation
+from {HOL Light} to {Dedukti}, the import of the multivariate
+analysis library, the import of the whole {HOL Light} library, and the
+import of the {Flyspeck} in {Dedukti}.
+
+\paragraph*{The CakeML compiler library}
+The CakeML compiler library consists of the CakeML programming language
+definition, its compiler and the correctness proofs about the
+compiler. This is a cutting edge compiler library and one of only two
+verified compilers for real languages, the other being CompCert. Its
+export to Dedukti is one of the KERs of this project. Because of the
+size and importance of this library, we will approach the export from
+two angles.
+
+The first approach utilizes OpenTheory-based technology. The CakeML
+compiler development lives within the HOL4 prover. HOL4 can export
+definitions and proofs in the OpenTheory format, which can in turn be
+translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
+exists but, in its current state, fails to scale to the task of
+transporting something as sizeable as the CakeML compiler
+development. This part of this task will rework the route via
+OpenTheory to scale better, possibly taking inspiration from an
+OpenTheory-like approach that scaled well for the HOL light
+prover~\cite{KaliszykK13}.
+
+The second approach establishes a connection from HOL4 via Isabelle to
+Dedukti. The basis is a promising new approach of virtualizing HOL4
+inside Isabelle \cite{ImmlerRW19}. That is, the inference
+kernel of HOL4 is replaced by that of Isabelle and the resulting
+system produces Isabelle theorems instead of HOL4 theorems. This has
+the invaluable additional benefit that tools, not just theorems, can
+be shared. As a benchmark of the viability of this approach we plan to
+export CakeML via Isabelle to Dedukti.
+
+\subsubsection*{Challenges}
+
+The two key challenges are scalability (pushing the technology to cope
+with the size of proofs) and accessibility (presenting the library in
+an accessible manner to end-users). This will be a stress test for the
+infrastructure provided by other WPs.
+
+
+\subsubsection*{Contributions}
 
 This WP is dedicated to populating Logipedia with mature,
 application-level mathematical theories. That is, proofs about
@@ -994,7 +1207,8 @@ computer science (e.g. compilers) that support applications in
 engineering as well as security and in particular in interdisciplinary
 areas such as cyber-physical systems and autonomous vehicles.
 
-\subsection*{Relation to other WPs}
+\subsubsection*{Relation to other WPs}
+
 
 \WPref{libraries} builds on the foundations in \WPref{instrumentation}
 that provides the scalable infrastructure for exporting libraries to
@@ -1009,17 +1223,16 @@ source-level structuring of mathematical theories to Logipedia.
 \WPref{libraries} will also provide challenging input for
 \WPref{alignment}. The challenge is to improve interoperabiity of the
 libraries exported from \WPref{libraries} by alignment.
+The GeoCoq library will benefit from automatic provers made
+available in \WPref{atpetc}.
 
-\subsection*{Success}
+\subsubsection*{Success}
 
 As one of the challenges is scalability, one measure of success is how
 much of the libraries we will be able to import into Logipedia. A
 scond measure of success is how well we are able to restructure the
 libraries for end-user access and how well this structure can be
 transferred to Logipedia and thus to end-users.
-
-
-
 
 
 \subsubsection{Description of the work package 7}
