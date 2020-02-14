@@ -441,10 +441,12 @@ The systems considered in this project fall into three broad classes:
 \end{description}
 Despite the large differences between these three classes of provers,
 there are several common points between them where solutions that work
-for one system can also be applied to other systems.
-%
-Concretely, we plan to tackle the following
-research challenges:
+for one system can also be applied to other systems. Working together
+on implementing these tools will allow the researchers from these
+different communities to come together and learn more about the
+similarities and differences between these systems.
+
+Concretely, we plan to tackle the following research challenges:
 \begin{description}
 
 \item[Improving encodings.] Since Dedukti is designed to be a small
@@ -585,6 +587,26 @@ the following tools:
   Zenon modulo producing Dedukti proofs, hence providing a better
   confidence in the proofs produced by the native proof tools of
   Atelier B \cite{Bware}.
+\end{itemize}
+
+The work on instrumentation is a central part of this project and thus
+interacts with several of the other work packages. Specifically:
+\begin{itemize}
+
+  \item WP2: In order to implement the translation from a system $X$ to
+  Dedukti or to make the translation more efficient in terms of proof
+  size, we may need to modify or improve the encoding of system $X$ in
+  Dedukti.
+
+  \item WP3: The instrumentation of a system $X$ is necessary before
+  it can be attempted to export libraries of system $X$ to
+  Dedukti. Testing the translation on large libraries might also point
+  us towards possible ways to improve the translator.
+
+  \item To instrument systems that do not store complete proof terms,
+  it will be necessary to use automated theorem provers to fill in the
+  missing details
+
 \end{itemize}
 
 \bigskip
