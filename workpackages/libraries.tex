@@ -14,18 +14,19 @@ Deharbe, Nicola Gambino, Tobias Nipkow, Makarius Wenzel, Julien Narboux, Gaspard
 François Thiré, Magnus Myreen}
 
 \begin{wpobjectives}
-The objective of this WP is to export large dedicated libraries in curated form to Dedukti
-for access to end-users. The focus is \emph{Access} and \emph{Scalability}.
+The objective of this WP is to export large dedicated libraries in
+curated form to Dedukti and thus to Logipedia for end-user applications.
+The focus is \emph{Access} and \emph{Scalability}.
 \begin{compactitem}
-\item This WP is responsible for supplying the lion's share of proofs for
-the Dedukti data base.  As a result it will be a stress test for the
+\item This WP is responsible for supplying the lion's share of proofs in
+Logipedia.  As a result it will be a stress test for the
 results of \WPref{instrumentation}: is the proof infrastructure
 capable of processing truly large amounts of material/proofs?
 
 \item The target libraries are dedicated to particular application
 areas. They provide a substantial coverage of that application area
 and do so in a structured manner. This may require reworking the
-libraries for better access.
+libraries for better access. Any library is only as useful as its structure and documentation.
 
 \item The libraries are curated for end-user application. That is, they
 are structured according to application specific ontologies that
@@ -112,12 +113,8 @@ formal verification activity in these areas, for example autonomous driving
 and mathematical finance. The purpose of this task is to structure, document
 and develop this library for optimal accessibility, ease of use and
 comprehensiveness. The aim is a curated library for applications.
-
-Any library is only as useful as its structure and documentation, no matter
-how sophisticated the search facilities are. Therefore the primary aim of
-this task is to make this library easily accessible. At the same time the
-library needs to be developed further: some material needs revising for ease
-of use and some essential material needs to be added.
+Therefore some material will need revising for ease
+of use and some essential material will need to be added.
 
 \textbf{Accessibility}\quad
 The library is a large collection of theories with a hierarchical dependency
@@ -135,7 +132,7 @@ correspond to proper mathematical theorems as opposed to auxiliary lemmas
 required only for the benefit of the theorem prover.
 To increase accessibility we will also include links from the library into
 Wikipedia and in particular in the other direction to raise the awareness
-of Dedukti.
+of Logipedia.
 
 \textbf{Development}\quad
 Although the library support for integrals is extensive, it suffers
@@ -154,6 +151,23 @@ dynamical systems with stochastic components, from physics to financial markets.
 
 \begin{task}[id=geocoq,title=The GeoCoq library]
 \ednote{Sophia (Boutry), Strasbourg, Belgrade}
+
+The GeoCoq library consists of more than 100 000 lines of definitions and proofs. It is mostly based on synthetic approaches, where the axiom system is based on some geometric objects and axioms about them, but, following Descartes and Tarski, we prove that the analytic approach can be derived , where a field F is assumed (usually R) and the space is defined as $F^n$. Moreover, it contains a model, based on the analytic approach, of one of the synthetic approaches present in the library, namely Tarski's system of geometry, thus establishing the connection between these two approaches in the opposite direction.
+
+The fact that the analytic approach can be derived from the synthetic one is called the arithmetization and coordinatization of geometry and it represents the culminating result of both Hilbert's "Grundlagen der Geometrie" and Tarski's "Metamathematische Methoden in der Geometrie". As of now, there is no other formalization of this result inside a proof assistant, making the GeoCoq library the most advanced machine-checked library in the area of synthetic geometry. This formalization enables to obtain automatic proofs based on geometric axioms using algebraic automated deduction methods, some of which will be covered within WP4.
+
+The main axiom system in this library is the one of Tarski, but Hilbert's axiom system and a version of Euclid's axioms sufficient to prove the propositions in Book 1 of Euclid's Elements are also defined. Thanks to the proof that Tarski's axioms (except continuity) are equivalent to Hilbert's axioms (except continuity), the arithmetization and coordinatization of geometry are available for both systems. In the library, the focus in not only on axiom systems but also on axioms themselves. Eleven continuity axioms are available and are hierarchically organised. Finally, it contains a new refinement of Pejas' classification of parallel postulates together with proofs of the classification of 34 versions of the parallel postulate.
+State of the translation
+
+Due to the dependency of the case studies for geometry, WP 5-6 T4, on the completion of this task, work is currently being done to complete it as soon as possible. One of the remaining obstacles is the use of computational steps in Coq proofs. The issue is that proofs containing "proof by reflection" reach a level of complexity that makes verification by Dedukti impractical, but these proofs are very frequent in the Coq world.
+
+\textbf{Challenges:}
+An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. The coherent logic theorem prover, which will be covered by WP4 T1, should handle part of these proofs. The other ones should be handled by specific provers for geometry, as they correspond to proofs obtained by the Gr\"obner basis method in GeoCoq.
+Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions into the lambda Pi-calculus Modulo on which Dedukti is based. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
+The last challenge is that part of GeoCoq relies on the mathcomp library. This makes WP3 T1 crucial to fully export the GeoCoq library.
+
+\textbf{Refinements:}
+The pragmatic approach that has been adopted so far has motivated a few choices that should be reconsidered once the obstacles, encountered throughout this process, which triggered the need for these choices will have been solved within WP1 T6. The solution that has been preferred in most cases was to modify the Coq script so that it does not rely of features, such as universe polymorphism, that were not handled by CoqInE when the obstacles were encountered. For example, the use of module functors was removed from GeoCoq, some proofs produced by tactics, such as intuition, relied indirectly on parts of the standard library of Coq that were not available with CoqInE were reworked by hand to avoid such dependencies, or direct dependencies were avoided. Another choice that could be reconsidered is to use provers from WP4 T1 to replace the proofs by reflection.
 \end{task}
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
@@ -226,6 +240,8 @@ system produces Isabelle theorems instead of HOL4 theorems. This has
 the invaluable additional benefit that tools, not just theorems, can
 be shared. As a benchmark of the viability of this approach we plan to
 export CakeML via Isabelle to Dedukti.
+
+The challenge in both approaches will be scalability.
 \end{task}
 
 By Arthur Chargueraud
