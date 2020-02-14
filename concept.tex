@@ -1294,7 +1294,7 @@ following the work of \site{Fau} and \site{Inn}
 by \site{Fau} in the OpenDreamKit project \cite{ODK:mitm:18}, we
 consider an alignment to be a pair of
 \begin{compactitem}
-  \item $2$ identifiers $c,c’$ (usually from two different libraries
+  \item two identifiers $c,c’$ (usually from two different libraries
     $L,L’$), which are considered to represent the same mathematical
     concept
   \item additional data that governs how $L$-expressions using $c$ and
@@ -1478,29 +1478,29 @@ that use alignments to port proofs across libraries. This translation
 will allow porting the proof of $t’$ in $L’$ to a (potential) proof of
 $t$ in $L$.
 
-% DM continue here
 
 {\color{red} PROBLEMS}
 
-Often there are many notions that are tightly connected, but not
+Often there are many notions that are tightly connected but not
 equivalent. For example, some definitions are only special cases of
 the others, sometimes there are definitions valid in any dimension and
-some that are valid only in some dimension, sometimes definitions
+some that are valid only in some dimension, and sometimes definitions
 differ only in the treatment of some corner cases (e.g., Hilbert's
-axioms of geometry use strict betweenness, but Tarski's axioms use
-non-strict betweenness relation). Although such alignments are also
-needed, they are very hard to detect and use. An automatic prover
-would fail because the two concepts are not equivalent, but they are
-related in the sense that equivalent up to some special cases. Some
-equivalences are highly non-trivial but for some others we can expect
-to prove them automatically.
+axioms of geometry use the strict betweenness while Tarski's axioms
+use the non-strict betweenness relation).  Although alignments of such
+definitions are also needed, they are very hard to detect and use. An
+automatic prover would fail to formally relate such a pair of concepts
+since they are not equivalent: all the same, such a pair can usually
+be related by an ``equivalent-up-to'' some special cases.  While some
+equivalences are trivial, others equivalences can be expected to be
+proved automatically.
 
 {\color{red} CONTRIBUTION TO NETWORKING, ACCESS AND RESEARCH}
 
-Concept alignment between such a large body of formal libraries and
-tools has never been attempted before, so it requires a joint research
-activity of a large number of researchers all around Europe. Alignment
-based services developed within this work package will significantly
+The alignment on concepts between large libraries of formal proofs has
+never been attempted before.  Doing so requires a joint research
+activity of a large number of European researchers.  Alignment based
+services developed within this work package will significantly
 facilitate access to the available body of formalized mathematical and
 computer science knowledge.
 
@@ -1517,10 +1517,10 @@ automatic theorem provers benefit from Logipedia as a library.
 
 {\color{red} THE WAY TO KNOW YOU HAVE SUCCEEDED }
 
-The final product of this workpackage are alignment aware services
-that enable searching and browsing modulo alignment, and also enable
-automated translation of theorem proving objects and proofs. However,
-before such an ambitious goal could be achieved, many lessons must be
+One of the final products of this workpackage is alignment aware services
+that enable both searching and browsing modulo alignment as well as
+automated translation of theorem proving objects and proofs.  However,
+before such an ambitious goal can be achieved, many lessons must be
 learned and several milestones must be achieved.
 \begin{itemize}
 \item A very precise definition of alignments should be given and a
