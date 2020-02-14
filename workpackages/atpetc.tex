@@ -100,26 +100,33 @@ validate this infrastructure.
   % Albin Coquereau (OCamlPro)
   % Sylvain Conchon (OCamlPro)
   % François Bobot (Why3)
+
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Lie+Stu) + 3 p.m
+  permanent (Bel)
+\end{compactitem}
   
-Considered provers:
-\begin{itemize}
-\item Cubicle (OcamlPro, Guillaume Bury, Sylvain Conchon)
-\item provers for geometry (Julien Narboux and Pedro Quaresma)
-\item coherent logic theorem prover (Predrag Janicic)
-\item SMT (alt-ergo, veriT: Pascal Fontaine)
-\item FOL ATPs (Pascal Fontaine, Stephan Schulz)
-\item \dots
-\end{itemize}
+% Considered provers:
+% \begin{itemize}
+% \item Cubicle (OcamlPro, Guillaume Bury, Sylvain Conchon)
+% \item provers for geometry (Julien Narboux and Pedro Quaresma)
+% \item coherent logic theorem prover (Predrag Janicic)
+% \item SMT (alt-ergo, veriT: Pascal Fontaine)
+% \item FOL ATPs (Pascal Fontaine, Stephan Schulz)
+% \item \dots
+% \end{itemize}
 
-traces from SAT: understood
+% traces from SAT: understood
 
-traces from SMT: still some gaps, about arithmetic, preprocessing.  Engineering issue too because of the amount of code that is involved
+% traces from SMT: still some gaps, about arithmetic, preprocessing.  Engineering issue too because of the amount of code that is involved
 
-traces from geometry solvers: seems to be a good candidate, because the proof process is suitable to produce traces
+% traces from geometry solvers: seems to be a good candidate, because the proof process is suitable to produce traces
 
-traces from FOL: there is a format, and mainstream solvers do follow the standard format, but proofs are coarse grained
+% traces from FOL: there is a format, and mainstream solvers do follow the standard format, but proofs are coarse grained
 
-traces from HOL provers: strongly relates to FOL
+% traces from HOL provers: strongly relates to FOL
 
 \end{task}
 
@@ -139,102 +146,110 @@ traces from HOL provers: strongly relates to FOL
   % Sylvain Conchon (OCamlPro)
   % François Bobot (Why3)
 
-As pointed out in Task~\localtaskref{instrumenting}, it is easier to
-instrument provers to make them output traces instead of directly
-provide Dedukti proofs. The goal of this task is to reconstruct the
-proof traces in order to build Dedukti proofs from them. The proposed
-process is the following: each step of the trace is transformed into
-an independent subproblem; each of these subproblems is given to a
-prover that can output Dedukti proofs; proofs of the subproblems are
-then combined to produce a global proof of the original problem. Since
-subproblems correspond to atomic steps of the proof trace, they are
-relatively simple, so that we can hope that the prover producing
-Dedukti proofs will not struggle to find a proof. This process is
-quite similar to what is done by the hammer tools of interactive
-theorem provers (Sledgehammer in Isabelle/HOL, HOLyHammer for HOL4, etc.)
-which reconstruct proofs from traces produced by automated theorem
-provers.
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Depends on T1 for some provers
+\item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Imt) + 2 p.m
+  permanent (Sac)
+\end{compactitem}
 
-This scheme has already been prototyped in a tool called
-\href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto takes a TSTP
-file, as can be produced by e.g.\ the provers E and Zipperposition, and it uses
-Zenon Modulo and ArchSAT to prove the subproblems. Ekstrakto was designed to be
-agnostic w.r.t.\ the prover producing the trace; in particular it does not
-depend on the specific set of inference rules of the prover. It was also
-designed to be agnostic w.r.t.\ the prover used to prove the subproblems; it is
-only required that the prover can output a Dedukti proof in the correct encoding
-of first-order logic.
+% As pointed out in Task~\localtaskref{instrumenting}, it is easier to
+% instrument provers to make them output traces instead of directly
+% provide Dedukti proofs. The goal of this task is to reconstruct the
+% proof traces in order to build Dedukti proofs from them. The proposed
+% process is the following: each step of the trace is transformed into
+% an independent subproblem; each of these subproblems is given to a
+% prover that can output Dedukti proofs; proofs of the subproblems are
+% then combined to produce a global proof of the original problem. Since
+% subproblems correspond to atomic steps of the proof trace, they are
+% relatively simple, so that we can hope that the prover producing
+% Dedukti proofs will not struggle to find a proof. This process is
+% quite similar to what is done by the hammer tools of interactive
+% theorem provers (Sledgehammer in Isabelle/HOL, HOLyHammer for HOL4, etc.)
+% which reconstruct proofs from traces produced by automated theorem
+% provers.
 
-Although Ekstrakto has already shown that it is a
-valuable approach, it is work in progress. In particular, the
-following issues still need to be addressed:
+% This scheme has already been prototyped in a tool called
+% \href{https://github.com/Deducteam/ekstrakto}{Ekstrakto}. Ekstrakto takes a TSTP
+% file, as can be produced by e.g.\ the provers E and Zipperposition, and it uses
+% Zenon Modulo and ArchSAT to prove the subproblems. Ekstrakto was designed to be
+% agnostic w.r.t.\ the prover producing the trace; in particular it does not
+% depend on the specific set of inference rules of the prover. It was also
+% designed to be agnostic w.r.t.\ the prover used to prove the subproblems; it is
+% only required that the prover can output a Dedukti proof in the correct encoding
+% of first-order logic.
 
-\begin{compactenum}
-  % extension to other proof trace formats
-\item Up to now, Ekstrakto can only take traces in TSTP format as input. We plan
-  to make it understand traces in other formats, notably traces from SMT
-  solvers, as well as all formats developed in
-  Task~\localtaskref{instrumenting}.
+% Although Ekstrakto has already shown that it is a
+% valuable approach, it is work in progress. In particular, the
+% following issues still need to be addressed:
 
-  Deliverables :
-  \begin{itemize}
-  \item T+6 a version of Ekstrakto that input traces from SMT solvers
-  \end{itemize}
+% \begin{compactenum}
+%   % extension to other proof trace formats
+% \item Up to now, Ekstrakto can only take traces in TSTP format as input. We plan
+%   to make it understand traces in other formats, notably traces from SMT
+%   solvers, as well as all formats developed in
+%   Task~\localtaskref{instrumenting}.
 
-  % unprovable steps
+%   Deliverables :
+%   \begin{itemize}
+%   \item T+6 a version of Ekstrakto that input traces from SMT solvers
+%   \end{itemize}
 
-\item  Some steps in the proof traces are not provable: their conclusion is
-  not a logical consequence of their premises. However, they preserve
-  provability: the original problem has a proof if and only if the
-  problem with the conclusion of the step also has a proof. This is the
-  case for instance of the Skolemization step in first-order automated
-  theorem provers, of the introduction of new definitions, as well as
-  the RAT property in traces produced by SAT solvers. The approach of
-  Ekstrakto cannot be used here, because the subproblem corresponding to
-  the step cannot be proved. However, since provability is preserved, it
-  should be possible to transform a
-  proof using the conclusion of the step into a proof using its
-  premises. Such a transformation depends on the nature of the step that
-  has been used. We plan to include in Ekstrakto a way to handle
-  Skolemization and definition introduction, which are the two step
-  families that are missing to be able to manage all traces from the
-  major first-order theorem provers.
+%   % unprovable steps
 
-  Deliverables :
-  \begin{itemize}
-  \item T+12 a version of Ekstrakto that handles definition-introduction steps
-  \item T+24 a version of Ekstrakto that handles Skolemization steps
-  \end{itemize}
+% \item  Some steps in the proof traces are not provable: their conclusion is
+%   not a logical consequence of their premises. However, they preserve
+%   provability: the original problem has a proof if and only if the
+%   problem with the conclusion of the step also has a proof. This is the
+%   case for instance of the Skolemization step in first-order automated
+%   theorem provers, of the introduction of new definitions, as well as
+%   the RAT property in traces produced by SAT solvers. The approach of
+%   Ekstrakto cannot be used here, because the subproblem corresponding to
+%   the step cannot be proved. However, since provability is preserved, it
+%   should be possible to transform a
+%   proof using the conclusion of the step into a proof using its
+%   premises. Such a transformation depends on the nature of the step that
+%   has been used. We plan to include in Ekstrakto a way to handle
+%   Skolemization and definition introduction, which are the two step
+%   families that are missing to be able to manage all traces from the
+%   major first-order theorem provers.
+
+%   Deliverables :
+%   \begin{itemize}
+%   \item T+12 a version of Ekstrakto that handles definition-introduction steps
+%   \item T+24 a version of Ekstrakto that handles Skolemization steps
+%   \end{itemize}
 
 
-  % specialization for theories
+%   % specialization for theories
 
-\item  Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo and
-  ArchSAT, are meant for pure first-order logic. However, we would like
-  to deal with proof traces that use some specialized theory,
-  e.g.\ arithmetic or bit-vectors, as could be output by SMT
-  solvers. Although such theories could be presented as a set of axioms
-  in first-order logic, it is almost certain that neither Zenon Modulo
-  nor ArchSAT could be able to find non-trivial proofs using these
-  axioms. Here, the idea would be to develop small provers dedicated to
-  a particular theory, and outputting Dedukti proofs. Such provers would
-  be called when a step in the trace relies on said theory. These
-  provers need not be very optimized, since trace steps are relatively
-  small; this should help producing Dedukti traces. A way to achieve
-  this could be to extend Zenon Modulo: indeed, Zenon modulo can find
-  proofs modulo arithmetic, but it is not able to produce a Dedukti
-  proof yet.
+% \item  Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo and
+%   ArchSAT, are meant for pure first-order logic. However, we would like
+%   to deal with proof traces that use some specialized theory,
+%   e.g.\ arithmetic or bit-vectors, as could be output by SMT
+%   solvers. Although such theories could be presented as a set of axioms
+%   in first-order logic, it is almost certain that neither Zenon Modulo
+%   nor ArchSAT could be able to find non-trivial proofs using these
+%   axioms. Here, the idea would be to develop small provers dedicated to
+%   a particular theory, and outputting Dedukti proofs. Such provers would
+%   be called when a step in the trace relies on said theory. These
+%   provers need not be very optimized, since trace steps are relatively
+%   small; this should help producing Dedukti traces. A way to achieve
+%   this could be to extend Zenon Modulo: indeed, Zenon modulo can find
+%   proofs modulo arithmetic, but it is not able to produce a Dedukti
+%   proof yet.
 
-  Deliverables :
-  \begin{itemize}
-  \item T+36 a prover modulo arithmetic outputting Dedukti proofs
-  \item T+48 a prover modulo another theory outputting Dedukti proofs
-  \end{itemize}
+%   Deliverables :
+%   \begin{itemize}
+%   \item T+36 a prover modulo arithmetic outputting Dedukti proofs
+%   \item T+48 a prover modulo another theory outputting Dedukti proofs
+%   \end{itemize}
 
-\end{compactenum}
-  Depends on T1.
+% \end{compactenum}
+%   Depends on T1.
 
-  One PhD student
+%   One PhD student
   
 \end{task}
 
@@ -246,12 +261,18 @@ following issues still need to be addressed:
   % Pascal Fontaine (SMT-LIB)
   % Josef Urban + Martin Suda (TPTP)
   % François Bobot (Why3)
+
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Resources: 3 p.m permanent (Bel) + 3 p.m permanent (Sac)
+\end{compactitem}
   
-\begin{itemize}
-\item encodings into FOL
-\item links to WP6: reverse mathematics
-\item benchmarks
-\end{itemize}
+% \begin{itemize}
+% \item encodings into FOL
+% \item links to WP6: reverse mathematics
+% \item benchmarks
+% \end{itemize}
 
 \end{task}
 
@@ -262,18 +283,25 @@ following issues still need to be addressed:
   % Josef Urban
   % Pascal Fontaine
   % Stephan Schulz
+
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Depends on T3
+\item Resources: 15 p.m post-doc (Pra) + 3 p.m permanent (Bel)
+\end{compactitem}
   
-Depends on T3.
+% Depends on T3.
 
-\begin{itemize}
-\item A library of known facts for ATPs
-\item Lemma selection is crucial
-\end{itemize}
+% \begin{itemize}
+% \item A library of known facts for ATPs
+% \item Lemma selection is crucial
+% \end{itemize}
 
-Proposition: Add in ACSL (C specification language) an "import from
-Logipedia, ..." which allows a user to get the ressources to model the
-behavior of its code. The modelisation is at the end used by ATP through
-Frama-C-WP.
+% Proposition: Add in ACSL (C specification language) an "import from
+% Logipedia, ..." which allows a user to get the ressources to model the
+% behavior of its code. The modelisation is at the end used by ATP through
+% Frama-C-WP.
 
 \end{task}
 
@@ -285,12 +313,19 @@ Frama-C-WP.
   % Josef Urban
   % Martin Suda
 
-  Six month PhD student
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Depends on T3
+\item Resources: 6 p.m post-doc (Inn) + 1 p.m permanent (Sac)
+\end{compactitem}
 
-\begin{itemize}
-\item native provers for Logipedia
-\item proof reconstruction
-\end{itemize}
+%   Six month PhD student
+
+% \begin{itemize}
+% \item native provers for Logipedia
+% \item proof reconstruction
+% \end{itemize}
 
 \end{task}
 
@@ -301,10 +336,16 @@ Frama-C-WP.
   % Guillaume Burel
   % People from other packages?  
 
-\begin{itemize}
-\item ATPs can be used to fill the holes in proofs (e.g. PVS)
-\item ATPs can be used to fill the gaps between systems and alignments
-\end{itemize}
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Resources: 3 p.m permanent (Bel) + 3 p.m permanent (Sac)
+\end{compactitem}
+
+% \begin{itemize}
+% \item ATPs can be used to fill the holes in proofs (e.g. PVS)
+% \item ATPs can be used to fill the gaps between systems and alignments
+% \end{itemize}
 
 \end{task}
 
@@ -312,22 +353,27 @@ Frama-C-WP.
 \begin{task}[id=cooperation, title=Make ATPs cooperate]
   Task leader: François Bobot (Contact: Chantal Keller)
 
-  30 h.m
-
   % François Bobot (Why3)
   % Chantal Keller
 
-\begin{itemize}
-\item Why3: gather the proof from the called provers, add traces for the
-  Why3 transformations and send all this information to Ekstrakto
-\item External preprocessing, add traces to the rewrite engine of
-  Frama-C-WP, which is used before sending goals to solvers, and give
-  them to Ekstrakto
-\item Add in ACSL (C specification language) an "import from Logipedia,
-  ..." which allows a user to get the ressources to model the behavior
-  of its code. The modelisation is at the end used by ATP through
-  Frama-C-WP. (Move to T4?)
-\end{itemize}
+\begin{compactitem}
+\item Goal: TODO
+\item Milestones: TODO
+\item Depends on T1,2,3,4
+\item Resources: 30 p.m permanent (Cea)
+\end{compactitem}
+
+% \begin{itemize}
+% \item Why3: gather the proof from the called provers, add traces for the
+%   Why3 transformations and send all this information to Ekstrakto
+% \item External preprocessing, add traces to the rewrite engine of
+%   Frama-C-WP, which is used before sending goals to solvers, and give
+%   them to Ekstrakto
+% \item Add in ACSL (C specification language) an "import from Logipedia,
+%   ..." which allows a user to get the ressources to model the behavior
+%   of its code. The modelisation is at the end used by ATP through
+%   Frama-C-WP. (Move to T4?)
+% \end{itemize}
 
 \end{task}
 \end{tasklist}
