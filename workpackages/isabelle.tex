@@ -1,34 +1,32 @@
 % task leader: Tobias
 
-% participants: Makarius, David Matthews
+% participants: Makarius (Isabelle), David Matthews (Poly/ML)
 
-Isabelle as a logical framework \cite{paulson700} is an intermediate
-between Type-Theory provers (like Coq or Agda) and classic LCF-style
-systems (like HOL Light or HOL4). The inference kernel can already
-output proofs as $\lambda$-terms on request, but this has so far been
-only used for small examples \cite{Berghofer-Nipkow:2000:TPHOL}. The
-challenge is to make Isabelle proof terms work routinely for
-reasonably big entries from The Archive of Formal Proofs
-\cite{isabelle-afp}. Preliminary work by Wenzel (2019) has
-demonstrated the feasibility for relatively small parts of
-Isabelle/HOL: some orders of magnitude in scalability are still
-missing.
+% Moved to concept & methodology
+% Isabelle as a logical framework \cite{paulson700} is an intermediate
+% between Type-Theory provers (like Coq or Agda) and classic LCF-style
+% systems (like HOL Light or HOL4). The inference kernel can already
+% output proofs as $\lambda$-terms on request, but this has so far been
+% only used for small examples \cite{Berghofer-Nipkow:2000:TPHOL}. The
+% challenge is to make Isabelle proof terms work robustly for the basic
+% libraries and reasonably big applications.  Preliminary work by Wenzel
+% (2019) has demonstrated the feasibility for relatively small parts of
+% Isabelle/HOL, but this requires scaling up.
 
-This work package will revisit important aspects of the Isabelle/HOL
-logic implementation on top of the Isabelle/Pure framework, such as
-normalization of proofs, efficient type-class reasoning, special
-representation of derived rules and definition principles (datatypes,
-recursion, induction). The volume of proof term output may be reduced
-further, by taking more structure of the target language (Dedukti)
-into account and omitting certain low-level reasoning of HOL (e.g.\
-for inductive types).
+\begin{enumerate}
 
-%[Subcontracted to Makarius Wenzel, Augsburg, Germany.]
+  \item We will revisit important aspects of the Isabelle/HOL logic
+  implementation on top of the Isabelle/Pure framework, such as
+  normalization of proofs, efficient type-class reasoning, special
+  representation of derived rules and definition principles
+  (datatypes, recursion, induction). The volume of proof term output
+  may be reduced further, by taking more structure of the target
+  language (Dedukti) into account and omitting certain low-level
+  reasoning of HOL (e.g.\ for inductive types).
 
-The underlying Isabelle/ML implementation platform (on top of Poly/ML)
-will be revisited as well, to improve monitoring of memory usage, and
-to double the standard heap size from 16\,GB to 32\,GB (without
-suffering from the full overhead of the 64\,bit
-addressing).
+  \item The underlying Isabelle/ML implementation platform (on top of
+  Poly/ML) will be revisited as well, to improve monitoring of memory
+  usage, and to double the standard heap size from 16\,GB to 32\,GB
+  (without suffering from the full overhead of 64\,bit addressing).
 
-%[Subcontracted to David Matthews, Edinburgh, UK.]
+\end{enumerate}

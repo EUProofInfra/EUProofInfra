@@ -2,9 +2,8 @@
   short=Structured Theories and Metadata,% for Figure 5.
   title=Structured Theories and Metadata,
   lead=Fau,
-  BolRM=6,
-  TumRM=6,
-  FauRM=48,
+  BolRM=10,
+  FauRM=51,   % 3 Makarius (25 TEUR)
   SacRM=48]
   
 \ednote{Which sites are interested?
@@ -28,8 +27,10 @@ Firstly, Tasks~\localtaskref{strlibstructure} and~\localtaskref{strdofimpl} exte
 This includes a framework to \emph{define} typed meta-data in form of ontologies, and to \emph{enforce} them in 
 the Dedukti libraries.
 Secondly, Tasks~\localtaskref{strrefonto}, \localtaskref{strontorepml}, and~\localtaskref{strsafeonto}\ednote{remove if canceled} built ontologies serving as technical exchange format as well as domain-specific descriptions of libraries.
-Thirdly, Tasks~\localtaskref{strontosearch}, \localtaskref{strformsearch}, and \localtaskref{strtextsearch} leverage 
-technical and domain-specific \emph{access} the entire Logipedia knowledge base based on ontologies by scalable search services.
+Thirdly, Task~\localtaskref{strtext} builds the first block towards
+    connecting Logipedia with theorems found in natural-language
+    research articles, by automatically extracting information from these
+    natural-language statements.
 
 This work package will be jointly coordinated by Florian Rabe at \site{Fau} and Burkhart Wolff at \site{Sac}.
 Burkhart Wolff implemented a document ontology framework in Isabelle and developed several applications
@@ -80,23 +81,29 @@ Y. Aitameur at \site{Tou}
 \end{compactitem}
 \end{task} 
 
-\begin{task}[id=strontorepml,title=Ontological Representation for Major Libraries,lead=Fau,FauRM=6,BolRM=6,TumRM=6,SacRM=6]
+\begin{task}[id=strontorepml,title=Ontological Representation for Major Libraries,lead=Fau,FauRM=10,BolRM=6,SacRM=6]
 export ontological data from Isabelle and Coq as prototyped in \cite{ulo}
 
-This will be closely tied to the work by M. Wenzel at \site{Tum} for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq in \WPref{libraries}.
+This will be closely tied to the work by M. Wenzel as sub-contractor of \site{Fau} for Isabelle, and C. Sacerdoti Coen at \site{Bol} for Coq in \WPref{libraries}.
 \end{task} 
 
-\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
-Search based on ontological data (RDF triples) using systems like SPARQL
-\ednote{possible participation of S. Dumbrava; is there a site for this?}
-\end{task} 
+% Moved to WP9
+%\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
+%Search based on ontological data (RDF triples) using systems like SPARQL
+%\ednote{possible participation of S. Dumbrava; is there a site for this?}
+%\end{task} 
 
-\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,FauRM=12]
-Search based on formula structure using systems like MathWebSearch
-\end{task} 
+%\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,BolRM=4,FauRM=12]
+%Search based on formula structure using systems like MathWebSearch
+%\end{task} 
 
-\begin{task}[id=strtextsearch,title=Text-based Search,lead=Inr,FauRM=6,InrRM=6]
-P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automatic extraction and annotation of natural-language theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs and search and querying capabilities
+\begin{task}[id=strtext,title=Extraction from Natural Language
+  Statements,lead=Inr,FauRM=6,InrRM=15]
+    % task leader: Pierre Senellart, Inria
+P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automatic extraction and annotation of natural-language theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs
+  
+  % Search capabilities have been moved to WP9
+  %and search and querying capabilities
 \end{task} 
 
 \begin{task}[id=strpresentation,title=Customizable Presentation]

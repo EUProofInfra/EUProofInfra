@@ -1,17 +1,29 @@
 \begin{sitedescription}{Sac}
 
-\paragraph{Organization:}
+Université Paris-Saclay is a newly created university since the 1st of
+January 2020. Created from the merger of Université Paris-Sud and the
+community of universities and institutions "Université Paris-Saclay", it
+is recognized for its top level in fundamental science.  Since 2006,
+scientists from the University were awarded two Fields medals, one Nobel
+Prize and a number of other international and national prizes.
+University Paris Saclay has a complete array of competences, ranging
+from the purest of exact sciences to clinical practices in medicine,
+covering life and health sciences, legal sciences and economics.
+Research at the University of Paris-Saclay, an essential part of
+academic understanding, is completed by research activities with a high
+valorization potential. Located on the Paris-Saclay site, at the heart
+of the most influential private financial and research areas in Europe,
+Université Paris-Saclay is a significant driving force in the
+development of industries, particularly in high-tech and technology
+fields. 300 laboratories constitute the research potential of the
+Université Paris-Saclay. They cover all scientific disciplines that
+mobilize over 15,000 researchers, and PhD students.
 
-Université Paris-Saclay is a public research university located south of
-Paris. With 275 laboratories shared with the mainstream French research
-institutes, Université Paris-Saclay represents 13\% of the French
-research potential.
-
-The Laboratory for Computer Science (LRI) covers a wide spectrum of
-computer science. Its VALS team works in the Area of Verification and
-Validation of Algorithms, Languages and Systems, right in the heart of
-the scientific field of Formal Methods. Its group working on \pn will
-include Chantal Keller and Burkhart Wolff.
+Inside Université Paris-Saclay, the Laboratory for Computer Science
+(LRI) covers a wide spectrum of computer science. Its VALS team works in
+the Area of Verification and Validation of Algorithms, Languages and
+Systems, right in the heart of the scientific field of Formal Methods.
+Its group working on \pn will include Chantal Keller and Burkhart Wolff.
 
 \paragraph{Main tasks:}
 
@@ -25,8 +37,46 @@ include Chantal Keller and Burkhart Wolff.
 \item\ednote{specify the main tasks and reference the respective work packages} 
 \end{compactitem}
 
+\paragraph{Publications, products or services:}
 
-\paragraph{Relevant previous experience:}
+\ednote{a list of up to 5 relevant publications, and/or products,
+  services (including widely-used datasets or software), or other
+  achievements relevant to the call content}
+
+\begin{itemize}
+\item An automatic tool to import proofs between the two interactive
+  theorem provers HOL Light and Coq, companion
+  paper:~\cite{DBLP:conf/itp/KellerW10}
+\item The SMTCoq project: \url{https://smtcoq.github.io} (companion
+  papers:~\cite{DBLP:conf/cpp/ArmandFGKTW11,DBLP:conf/cav/EkiciMTKKRB17})
+\item Isabelle/DOF : Design and Implementations.
+ Sources/Papers: \cite{brucker_achim_d_2019_3370483,brucker.ea:isabelle-ontologies:2018}
+\item Applications of Ontologies in the Context of Formal Software Engineering.
+ \cite{brucker.ea:ontologies-certification:2019}
+\end{itemize}
+
+\paragraph{Previous projects or activities:}
+
+\ednote{a list of up to 5 relevant previous projects or activities,
+  connected to the subject of this proposal}
+
+\begin{itemize}
+\item The ANR-project Paral-ITP (\url{www.lri.fr/~wolff/projects/ANR-Paral-ITP/}) with the  
+      partners INRIA Roquencourt, INRIA Saclay (Bruno Barras) 
+      and U-PSud/LRI (B.Wolff, Project Leader) was targeting 
+      of advanced parallelisation techniques for Coq and Isabelle.
+\item The EU-Project EUROMILS (Oct. 2012 - Sept. 2015 ) and 
+      ANR Project PST (\url{http://www.irt-systemx.fr/en/project/pst/})
+      were both targeting at applying Formal Methods in an industrial
+      effort aiming at a high-level certification (Common Criteria EAL6, 
+      CENELEC SIL4). The latter project incited the development of 
+      Isabelle/DOF\cite{brucker_achim_d_2019_3370483}.
+\end{itemize} 
+
+\paragraph{Infrastructures or technical equipments:}
+
+\ednote{a description of any significant infrastructure and/or any major
+  items of technical equipment, relevant to the proposed work}
 
 The group has a mainstream experience in interoperability between proof
 systems. It is in particular the leader of the SMTCoq project, a tool to
@@ -43,34 +93,46 @@ the group, in a project to import proofs between the two interactive
 theorem provers HOL Light and Coq.
 
 The group also has experience in the representation of proofs as
-high-level documents. \dots
+high-level documents and tool integration at the implementation level
+of Coq and Isabelle. 
 
-\ednote{give an overview over previous work and projects that add to the \pn project}
+\paragraph{Persons primarily responsible for carrying out the proposed
+  activities:}
 
+\begin{itemize} % in alphabetical order
 
-\paragraph{Specific expertise:}
+\item {\bf Dr.\ Chantal Keller} is Associate Professor at Université
+  Paris-Saclay since 2015. She obtained her PhD (2013) at École
+  polytechnique. She is a pioneer of interoperability between proof
+  systems as the developer of one of the first tools to import proofs
+  between two interactive theorem provers with very different underlying
+  logics: HOL Light and Coq. In this work, the alignment of mathematical
+  concepts was the key to re-usability of proofs. She is the leader of
+  the SMTCoq project that links the Coq proof assistant with external
+  automatic theorem provers. She has strong expertise in interactive
+  (conception and use) and automatic (mainly use) theorem provers, and
+  interoperability between them. She is one of the two coordinators of
+  WP4.
 
-\begin{itemize}
-\item Interoperability between proof systems with different underlying
-  logics
-\item \dots
+\item {\bf Pr.\ Dr.\ Burkhart Wolff} is full professor at Université
+  Paris-Saclay since 2008. He has a strong background in interactive
+  theorem proving for the modeling of languages semantics as well as
+  applications to model-based testing. He pioneered an Ontological
+  Framework, which is currently mostly used for document ontologies and
+  ontologies imposing a particular theory structure and typed meta-data.
+  He implemented this framework in Isabelle/HOL, together with Prof.
+  A.D. Brucker. In this EU project, his role is to supervise the
+  conception and implementation of an Dedukti-oriented ontological
+  framework. He will contribute to the conception of ontologies used for
+  prover interoperability as well as domain-specific ontologies
+  supporting advanced search and access mechanisms. As such, he has the
+  role of a mediator between the technical needs for (efficient)
+  alignments on the one hand and end-users of the Logipedia libraries
+  needing advanced search mechanisms in order to access its mathematical
+  knowledge. He is one of the two coordinators of WP7.
+
 \end{itemize}
 
-\paragraph{Staff members undertaking the work:}
-
-\textbf{Dr.\ Chantal Keller} is Associate Professor at Université
-Paris-Saclay. She is a pioneer of interoperability between proof systems
-as the developer of one of the first tools to import proofs between two
-interactive theorem provers with very different underlying logics: HOL
-Light and Coq. In this work, the alignment of mathematical concepts was
-the key to re-usability of proofs. She is the leader of the SMTCoq
-project that links the Coq proof assistant with external automatic
-theorem provers. She is one of the two coordinators of WP4.
-
-\textbf{Pr.\ Burkhart Wolff} \dots He is one of the two coordinators of WP7.
-
-\ednote{provide the key publications below}
-\keypubs{DBLP:conf/itp/KellerW10,DBLP:conf/cpp/ArmandFGKTW11,DBLP:conf/cav/EkiciMTKKRB17}
 \end{sitedescription}
 
 

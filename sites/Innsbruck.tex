@@ -1,33 +1,78 @@
 \begin{sitedescription}{Inn}
 
 \paragraph{Organization:}
-\ednote{Give a one-paragraph run-down of the site and the team there. }
+The University of Innsbruck is a global Top-200 university and the second
+largest university in Austria. UIBK has been involved in a number of FWF
+projects related to formal proof, and a large number of national and
+international projects including dozens of projects as part of FP5,
+FP6, FP7, and H2020.
+%
+The research of the Computational Logic group is concerned with the logical
+foundations of computer science and their application to the analysis and
+verification of complex systems. The group has developed the IsaFoR library,
+the largest formalisation of rewriting with more than 5000 theorems. Various
+hammer systems developed in the group are today strongest automation techniques
+for various formalizations including the Flyspeck project.
 
 \paragraph{Main tasks:}
 
 \begin{compactitem}
-\item\ednote{specify the main tasks and reference the respective work packages} 
+\item Specification of the Mizar logical foundations and type system, \WPtref{theories} \taskref{theories}{mizar}.
+\item Internal proof automation using direct proof term construction, % with heuristic rewriting
+  \WPtref{atpetc} \taskref{atpetc}{reconstruction}.
+\item Contributions to automatic search for alignments using neural methods, \WPtref{alignment} \taskref{alignment}{aligntheories}.
 \end{compactitem}
-
 
 \paragraph{Relevant previous experience:}
 
-\ednote{give an overview over previous work and projects that add to the \pn project}
+\begin{compactitem}
+\item 2017--2022, ERC starting grant, ``Strong Modular proof Assistance: Reasoning across Theories''.
+\item 2013--2017, FWF grant, ``Interactive Proof: Proof Translation, Premise Selection, Rewriting''
+\end{compactitem}
+
+%\ednote{give an overview over previous work and projects that add to the \pn project}
 
 \paragraph{Specific expertise:}
 
 \begin{compactitem}
-\item \ednote{give three to five specific areas of expertise that pertain to the \pn project}
+\item Development of proof automation for several proof assistants.
+\item Automatic search for alignments using statistical methods.
+\item Specification of the Mizar object logic in the Isabelle logical framework.
 \end{compactitem}
 
 \paragraph{Staff members undertaking the work:}
 
-\textbf{Dr.\ Great Leader}\ednote{describe the site leader and his expertise}
-\textbf{Joe Implementor}\ednote{and more of them. }
-\ednote{provide the key publications below}
-\keypubs{providemore}
+\textbf{Assoc. Prof. Dr.\ Cezary Kaliszyk} has been working on making proof assistants
+more accessible by developing proof automation, proof advice, and other packages for formal
+proofs. He has worked on the Isabelle/Mizar object logic, where features of Mizar were
+expressed in a logical framework. Kaliszyk has also worked on machine learning for interactive
+proofs and has co-organized the AITP conference on the topic in the last few years (AITP). He
+has developed multiple hammer systems for higher-order logic and intuitionistic type theory.
+Kaliszyk has also worked on alignments between formal systems and between informal and formal
+mathematics.
 
-Joshua Chen, Cezary Kaliszyk, Miroslav Olšák, Stanisław Purgał
+%Postdoc and PhD students that unfortunately will end likely in 2021: Joshua Chen, Miroslav Olšák, Stanisław Purgał
+
+\paragraph{Key publications:}
+\begin{itemize}
+\item
+C.~Kaliszyk and Karol Pąk.
+\newblock Semantics of Mizar as an Isabelle Object Logic.
+\textbf{J.~Automated Reasoning}, 63(3): 557--595, 2019.
+%\newblock \doi{10.1007/s10817-018-9479-z}.
+
+\item
+T.~Gauthier and C.~Kaliszyk.
+\newblock Aligning Concepts across Proof Assistant Libraries.
+\textbf{J. Symbolic Computation}, 90:89--123, 2019.
+%\newblock \doi{10.1016/j.jsc.2018.04.005}.
+
+\item
+Ł.~Czajka and C.~Kaliszyk.
+\newblock Hammer for Coq: Automation for Dependent Type Theory.
+\textbf{J.~Automated Reasoning}, 2018.
+%\newblock \doi{10.1007/s10817-018-9458-4}.
+\end{itemize}
 
 \end{sitedescription}
 %%% Local Variables: 
