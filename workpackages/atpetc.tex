@@ -1,19 +1,33 @@
 \begin{workpackage}[id=atpetc,wphases=0-48,type=RTD,
-  short=ATPs etc.,% for Figure 5.
-  title={ATP, SAT, SMT, Model checkers},
+  short=ATPs,% for Figure 5.
+  title={Automatic theorem provers},
   lead=Lie,
-  LieRM=10]
+  LieRM=18,
+  InnRM=6,
+  PraRM=15,
+  BelRM=12,
+  SacRM=9,
+  ImtRM=36,
+  OcaRM=30,
+  CeaRM=30,
+  StuRM=18]
 
-\ednote{MK: interested parties (add their sites and RM here): Guillaume Burel, Raphaël Cauderlier, David Deharbe, Pascal Fontaine, Emilio J. Gallego Arias, Olivier Hermant, Cezary Kaliszyk, Chantal Keller, Filip Marić, Stephan Merz, Dale Miller, Julien Narboux, Martin Suda, Josef Urban}
+% \ednote{MK: interested parties (add their sites and RM here): Guillaume Burel, Raphaël Cauderlier, David Deharbe, Pascal Fontaine, Emilio J. Gallego Arias, Olivier Hermant, Cezary Kaliszyk, Chantal Keller, Filip Marić, Stephan Merz, Dale Miller, Julien Narboux, Martin Suda, Josef Urban}
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
-
-This includes notably:
+  The objective of this work package is to use and develop automatic
+  theorem provers to populate, help, and benefit from Logipedia. The
+  focus is networking and research.
   \begin{compactitem}
-  \item \ldots
+  \item Automatic theorem provers will be instrumented in a two-step
+    process to produce Dedukti statements.
+  \item Dedukti statements will be made understandable and usable by
+    automatic theorem provers.
+  \item Automatic theorem provers will increase Logipedia readiness by
+    automatically putting all the pieces together.
   \end{compactitem}
-  A key aspect will be to foster \ldots
+  The long term goal is to develop an infrastructure where automation
+  can be safely used all along the way.
 \end{wpobjectives}
 
 
@@ -41,8 +55,8 @@ automated theorem provers, and SMT.  In this work package, we will
 build on those preliminary work and provide a set of conduits from the
 established formats used in automated tools. For the tools that do not
 have yet an established format, we will make a selection of tools
-(Zipperposition and E for automated theorem provers, CVC4 and veriT
-for SMT, ??? for model checking) and provide a conduits for those
+(Zipperposition and E for automated theorem provers, CVC4, veriT and Alt-Ergo
+for SMT, Cubicle for model checking) and provide a conduits for those
 tools.  These conduits and the techniques used in the embedded
 translation will be properly documented, to ease integration of
 further tools of the kind.  If a standardized proof format appears for
@@ -55,12 +69,17 @@ will have to be representative of typical applications of the tools,
 and be of reasonable size.  They will serve as examples to the
 community, to illustrate the potentials of Dedukti and Logipedia.
 
+Import from Dedukti to automatic provers will also be developed, as well
+as internal automation. Thus automation techniques can also be put in
+practice to produce new results for Logipedia and out of Logipedia.
 
-Create the infrastructure to enable the long term goal: be able to split a large proof
-obligation into smaller parts and distribute to the appropriate automatic engines, that
-would all produce proofs, glued together in a single large proof for the original proof
-obligation.
-\ednote{Nancy, Liège}
+This workpackage has the end-to-end objective to build a powerful
+automated infrastructure: one will be able to split a large proof
+obligation into smaller parts and distribute to the appropriate
+automatic engines, that would all produce proofs, glued together in a
+single large proof for the original proof obligation. A large-scale
+application about the semi-automatic verification of C code will
+validate this infrastructure.
 \end{wpdescription}
 
 
