@@ -858,7 +858,64 @@ large-scale formal tool.
 \noindent
 {\bf \large Automatic theorem provers to increase Logipedia readiness}
 
-\dots Chantal: T5 and T6
+Automation is a very important feature of proof assistants, since it
+allows much more efficient formalization~\cite{Hales-Developments}. Many
+different techniques to provide proof assistant automation have been
+developed over the years: techniques based on rewriting,
+tableaux~\cite{Paulson-blast}, or even the integration of efficient
+superposition-based first-order~\cite{hurd-metis} and higher-order
+provers~\cite{asperti-matita-paramodulation}. Most recently, various
+machine learning techniques have been developed for proof assistants
+allowing for more precise selection of relevant
+knowledge~\cite{blanchette-h4qed-jfr} or even the prediction of useful
+proof techniques~\cite{gauthier-tactictoe}.
+
+The automation techniques offered by different proof assistants differ
+significantly. For systems mostly based on classical first-order logic
+it is often possible to provide sound and complete translations to the
+most efficient first-order ATPs by only expressing the intricacies of
+their type systems~\cite{kaliszyk-miz40}. This allows for
+straightforward native proof reconstruction. On the other end of the
+spectrum, providing efficient automation for systems based on involved
+foundations, such as the intuitionistic type theory behind Coq and its
+variants, providing even a slightly useful automation is a significant
+challenge. Most efficient automation still relies on translations to
+external tools, however the useful translations from such logics to the
+logic of SMT solvers~\cite{DBLP:conf/cpp/ArmandFGKTW11} or first-order
+logic~\cite{DBLP:journals/jar/CzajkaK18} are incomplete and often
+(partially) unsound. This means that to reconstruct such proofs in the
+logic of the proof assistant separate intricate components need to be
+developed.
+
+There are many reasons why providing automation on the level of an
+encyclopedia of formal proofs is both interesting and challenging.
+First, a number of proof exports defined in Workpackages 1 and 2 are not
+complete, that is the actual systems do not provide all the proof step
+details and internal Logipedia automation would be necessary to enable
+full proof verification. Second, the amount of knowledge available in
+the whole of Logipedia is significantly larger than in any of the
+individual proof assistant libraries, and as such selecting the
+knowledge relevant for a particular goal might require more complex
+techniques than before~\cite{Irving-deepmath}. Finally, being able to
+more efficiently write proofs directly in Dedukti would be of interest
+to the community in itself.
+
+\begin{description}
+\item[Automatic theorem provers for Logipedia] As part of the project we
+  will experiment with various kinds of proof automation on the level of
+  Dedukti and verify their applicability to the different libraries
+  imported as part of the Logipedia project. Furthermore, we will
+  experiment with machine learning techniques for formal proofs. This
+  includes both techniques for selection of relevant knowledge for a
+  goal and for the selection of most promising constructors in the
+  direct proof term construction~\cite{ZielenkiewiczSchubert2016}.
+  Finally we plan to look at computational proof reconstruction, to
+  complement the link to automated theorem provers developed in the
+  other parts of the workpackage.
+
+\item[Automation for full proof verification] Under progress
+\end{description}
+
 
 \subsubsection{Description of the work package 3}
 
