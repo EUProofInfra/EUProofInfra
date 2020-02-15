@@ -1,37 +1,46 @@
 %[Nancy]
 
-% ?? positions
+\begin{enumerate}
+\item Express \tlaplus set theory in Dedukti: \tlaplus is based on untyped
+  Zermelo-Fraenkel set theory with choice. In this task, we will express these
+  foundations in $\lambda\Pi$-calculus modulo theory in order to represent
+  \tlaplus expressions, theorems, and proof rules in Dedukti.
+\item Instrument TLAPS to export proofs: the \tlaplus proof system is not based
+  on proof objects. We will therefore instrument some of the proof backends so
+  that they can produce traces that can be checked by Dedukti, taking advantage
+  of its rewriting capabilities in order to compress the size of proof terms.
+\end{enumerate}
 
-\tlaplus~\cite{lamport:specifying} is a specification language based on
-Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a dialect of
-linear-time temporal logic. It is intended for the precise description of
-discrete systems and in particular of distributed algorithms and systems.
-\tlaplus has seen substantial adoption by companies working on distributed and
-cloud systems, spurred by an influential article published by developers at
-Amazon Web Services~\cite{newcombe:amazon-cacm}. The two main software tools for
-analyzing and verifying \tlaplus specifications are the model checker
-TLC~\cite{yu:model-checking} and TLAPS, the \tlaplus Proof
-System~\cite{cousineau:tla-proofs}, which is of interest in the context of
-\textsc{Logipedia}.
+% \tlaplus~\cite{lamport:specifying} is a specification language based on
+% Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a dialect of
+% linear-time temporal logic. It is intended for the precise description of
+% discrete systems and in particular of distributed algorithms and systems.
+% \tlaplus has seen substantial adoption by companies working on distributed and
+% cloud systems, spurred by an influential article published by developers at
+% Amazon Web Services~\cite{newcombe:amazon-cacm}. The two main software tools for
+% analyzing and verifying \tlaplus specifications are the model checker
+% TLC~\cite{yu:model-checking} and TLAPS, the \tlaplus Proof
+% System~\cite{cousineau:tla-proofs}, which is of interest in the context of
+% \textsc{Logipedia}.
 
-\tlaplus proofs are written in a declarative, hierarchical style that allows the
-user to break down the proof of high-level theorems into lower-level steps. The
-proof obligations corresponding to the leaves of this proof tree are discharged
-by automated prover back-ends, including SMT solvers, the Zenon tableau prover,
-an encoding of \tlaplus set theory as an object logic Isabelle/\tlaplus in the
-logical framework Isabelle (different from the object logic Isabelle/HOL
-considered in WP1), and a decision procedure for linear-time temporal logic.
+% \tlaplus proofs are written in a declarative, hierarchical style that allows the
+% user to break down the proof of high-level theorems into lower-level steps. The
+% proof obligations corresponding to the leaves of this proof tree are discharged
+% by automated prover back-ends, including SMT solvers, the Zenon tableau prover,
+% an encoding of \tlaplus set theory as an object logic Isabelle/\tlaplus in the
+% logical framework Isabelle (different from the object logic Isabelle/HOL
+% considered in WP1), and a decision procedure for linear-time temporal logic.
 
-Making TLAPS interoperable with the other proof systems addressed in this
-project will provide users of \tlaplus with access to the rich libraries of
-mathematical theories that exist in more mature systems. As a first step, we
-will express the untyped set theory that underlies \tlaplus in the
-lambda-Pi-calculus and in Dedukti. The second step will be to instrument TLAPS
-in order to export proofs that can be checked in Dedukti. TLAPS already provides
-a mechanism for backends to produce Isabelle/\tlaplus proofs, which is currently
-implemented for Zenon. In preparation for checking \tlaplus proofs in Dedukti,
-we will therefore instrument the SMT backend of TLAPS, taking advantage of the
-work carried out in WP4. In turn, exporting Isabelle/\tlaplus proofs to Dedukti
-will benefit from work carried out in WP1 on the logical framework
-Isabelle/Pure.
+% Making TLAPS interoperable with the other proof systems addressed in this
+% project will provide users of \tlaplus with access to the rich libraries of
+% mathematical theories that exist in more mature systems. As a first step, we
+% will express the untyped set theory that underlies \tlaplus in the
+% lambda-Pi-calculus and in Dedukti. The second step will be to instrument TLAPS
+% in order to export proofs that can be checked in Dedukti. TLAPS already provides
+% a mechanism for backends to produce Isabelle/\tlaplus proofs, which is currently
+% implemented for Zenon. In preparation for checking \tlaplus proofs in Dedukti,
+% we will therefore instrument the SMT backend of TLAPS, taking advantage of the
+% work carried out in WP4. In turn, exporting Isabelle/\tlaplus proofs to Dedukti
+% will benefit from work carried out in WP1 on the logical framework
+% Isabelle/Pure.
 
