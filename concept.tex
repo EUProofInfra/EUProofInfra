@@ -1280,6 +1280,31 @@ for representing binding constructs of encoded formalisms, such as name
 restriction in process calculi.
 
 
+\paragraph*{Homotopy type theory (HoTT).}
+
+Introduced by Vladimir Voevodsky, Michael Warren and others, HoTT aims at
+connecting type theory and homotopy theory, the study of abstract shapes. It is
+considered as an alternative to set theory for providing foundations for all
+areas of mathematics. In particular, paths and homotopies are primitive objects
+rather than mere sets of points, and isomorphic mathematical structures cannot
+be discriminated---unlike set theory where accidental identifications can arise
+depending on how structures are represented.
+
+In its simplest form, HoTT is an extension of Martin-L\"of type theory by the
+univalence axiom. More modern forms include Cubical type theory (CTT,
+\cite{cohen:cubical}) that is both constructive (i.e., proving the existence of
+an object provides an algorithm for effectively computing the object) and where
+univalence is a theorem. All type-theoretic proof systems have very small steps
+that are omitted in proofs (e.g., trivial equalities such as $1+1=2$). In the
+context of HoTT, these are called coherence conditions. Two-level type theory
+(2LTT~\cite{annenkov:two-level}) was introduced as a stepping stone where the
+small proof steps are made explicit, and we will start by expressing 2LTT in
+Dedukti and then move to CTT. This will allow us to gain experience with
+the extent to which coherence conditions can be supported as rewriting steps in
+$\lambda\Pi$-calculus modulo theories, and which conditions require proof
+elaboration.
+
+
 \subsubsection*{Challenges}
 
 Each of the systems considered in this work package poses some specific
