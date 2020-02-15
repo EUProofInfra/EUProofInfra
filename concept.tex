@@ -36,7 +36,6 @@ cannot be zero. This property is a consequence of two simple
 theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
-%$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x))$$
 Hence, verifying the safety of this program, that is that the
 proposition 
 ${\mbox{\it safe}}(p)$ holds, 
@@ -341,6 +340,8 @@ they can be exported to other systems. This step is called the
 \emph{instrumentation} of system $X$.
 
 The systems considered in this project fall into three broad classes:
+the systsems based on dependent type theory, the systems based on
+simple type theory, and those based on set theory and predicate logic. 
 \begin{description}
 
   \item[Systems based on dependent type theory.] Agda, Coq, and Matita
@@ -405,30 +406,27 @@ The systems considered in this project fall into three broad classes:
   between Type-Theory provers (like Coq or Agda) and classic LCF-style
   systems (like HOL Light or HOL4).
 
-\item[Systems based on set theory and first-order logic.] Atelier B,
-  Rodin and ProB are platforms or tools to develop models written
-  using the B method, a version of set theory expressed in predicate
-  logic.  A model in these systems encodes a state machine constrained
-  by invariant properties. Verification of the model correctness
-  implies to verify some proof obligations produced by a weakest
-  precondition calculus. For example, spanning trees algorithms,
-  distributed algorithms, access control policies have been formalized
+\item[Systems based on set theory and predicate logic.] Atelier B and
+  ProB are platforms or tools to develop models written using the B
+  method, a version of set theory expressed in predicate logic.  A
+  model in these systems expresses a state machine constrained by
+  invariant properties. Verification of the model correctness implies
+  to verify some proof obligations produced by a weakest precondition
+  calculus. For example, spanning trees algorithms, distributed
+  algorithms, access control policies have been formalized
   respectivement in EventB and B method.
 
   The development process for the B method is based on formal proof:
   proof obligations are automatically generated and must be proven by
   automatic or interactive provers. This can include external solvers
   such as SMT solvers, and (in the case of ProB) constraint solvers
-  such as Sicstus Prolog. The difference between Atelier B and Rodin
-  lies mainly in the refinement process they implement: in the B
-  method used by Atelier B refinement is done by deriving a program,
-  while in Event-B used by Rodin refinement is done by defining a
-  model of the system and iteratively introducing details. Finally,
-  ProB is an animator and model checker: it helps users to gain
-  confidence in their specifications, and it can be used as a
-  disprover to discover counter-examples to proof obaligations.
+  such as Sicstus Prolog. Finally, ProB is an animator and model
+  checker: it helps users to gain confidence in their specifications,
+  and it can be used as a disprover to discover counter-examples to
+  proof obaligations.
 
-  Smart is based on a classical first-order logic extended with rank-1
+  Smart is a proof language developed by the company ProveNRun. It is
+  based on a classical predicate logic, extended with rank-1
   polymorphism, algebraic datatypes, recursive definitions and
   inductive predicates. ProvenTools will turn models implemented in
   Smart to proof obligations which can be proved in the system using a
@@ -437,50 +435,51 @@ The systems considered in this project fall into three broad classes:
   proof rules supported by ProvenTools' kernel, such as definition
   unfolding, case analysis or equality propagation.
 \end{description}
-Despite the large differences between these three classes of provers,
+
+Despite the differences between these three classes of proof systems,
 there are several common points between them where solutions that work
 for one system can also be applied to other systems. Working together
 on implementing these tools will allow the researchers from these
 different communities to come together and learn more about the
 similarities and differences between these systems.
 
-Concretely, we plan to tackle the following research challenges:
+Instrumenting some of these systems is staightforward, but this also
+raises new research challenges:
 \begin{description}
 
-\item[Improving encodings.] Since Dedukti is designed to be a small
-  logical framework with a minimal number of features, there are many
-  features in the systems we consider that are not supported in
-  Dedukti. Instead, such features need to be encoded in some way. In
-  this work package, we consider systems for which it is known how to
-  encode all features \emph{in theory}. However, depending on the
-  choice of encoding, the instrumentation may be very hard or even
-  unfeasible in practice. For example:
+\item[Improving encodings.] Even when we have understood how to express
+  the basic theory of these systems, implementation often reveals some
+  advanced features of these systems that require further work.
+  Moreover even when we know how to express all features of some
+  system \emph{in theory}, depending on the choice of expressin, the
+  instrumentation may be very hard or even unfeasible in practice. For
+  example:
   \begin{itemize}
 
     \item Many Agda libraries (as well as some Coq libraries) rely
     heavily on type-directed conversion rules such as eta-equality for
     functions and record types, or definitional proof
-    irrelevance. Dedukti does not provide type-directed conversion
-    directly, so instead these rules have to be encoded by adding
+    irrelevance. These rules have to be expressed by adding
     additional type information to the proof terms. This can hence
     lead to a large blow-up in the size of those proof terms, and thus
-    greatly increase the cost of typechecking.
+    greatly increase the cost of typechecking, thus this blow-up has to
+    be tamed by the choice of a clever expression of the theory.
 
     \item Coq, Agda, and Matita all provide support for coinductive
-    (infinite) structures, which are not supported natively in
-    Dedukti. These structures can be encoded by rewrite rules in
-    Dedukti, but this may cause the typechecker to go into an infinite
-    loop.
+      (infinite) structures, which can be expressed by rewrite rules
+      in Dedukti, but this expression must be carefully chosen so that
+      the proofchecker does not go into an infinite loop.
 
     \item A few of the systems rely on AC rewriting (i.e.~rewriting
     modulo associativity and commutativity of certain operations), for
-    example to encode universe polymorphism in dependent type
+    example to express universe polymorphism in dependent type
     theories. While Dedukti has support for AC rewriting, the current
     implementation is very slow, which makes typechecking the proofs
-    in Dedukti unfeasible.
+    in Dedukti unfeasible. Thus, expressing these theories requires
+    to improve Dedukti itself.
 
   \end{itemize}
-  Finding better ways to encode such features could have a great
+  Finding better ways to express such features could have a great
   impact on the quality and speed of the translation process.  We plan
   to investigate two possible approaches to improve the encodings of
   common features of proof assistants in Dedukti. First, we will
@@ -494,12 +493,11 @@ Concretely, we plan to tackle the following research challenges:
   process of checking a proof that is not stored in the final proof
   term. In systems such as Coq, Agda, and Matita, this concerns for
   example the types of each subexpression. In other systems such as
-  HOL4, Isabelle, Atelier B, and Rodin, even more information about
+  HOL4, Isabelle, and Atelier B, even more information about
   the proof is discarded and only the high-level proof steps remain.
   However, the translation from the system to Dedukti might rely on
   this transient information. Developing a method to reconstruct this
-  transient information is thus crucial to the goals of this work
-  package.
+  transient information is thus crucial.
 
   In order to instrument systems with transient proof information, the
   proof terms need to be complemented with this transient information
@@ -513,18 +511,19 @@ Concretely, we plan to tackle the following research challenges:
   produce the missing parts of the proof terms. 
 
   \item[Producing more compact proofs.] When translating a proof from
-  some system $X$ to Dedukti, we want to produce proof terms that are
-  as small as possible, so it is easy to store them, recheck them, or
-  export them to a different system. However, there are at least two
-  reasons why proof terms might become large. First, a typical proof
-  in system $X$ might be very large (because big parts of it are
-  constructed automatically). Second, translating a proof from $X$ to
-  its encoding in Dedukti might greatly increase the size of the
-  proof, for example by normalizing it or by adding type annotations.
-  This means translating the proofs can take a very long time, and
-  doing anything with the translated proof will be difficult. This
-  also has an obvious impact on the exporting of complete libraries to
-  Dedukti, which is the goal of WP3.
+    some external system to Dedukti, we want to produce proof terms
+    that are as small as possible, so it is easy to store them,
+    recheck them, or export them to a different system. However, there
+    are at least two reasons why proof terms might become
+    large. First, a typical proof in external system might be very
+    large (because big parts of it are constructed
+    automatically). Second, translating a proof to Dedukti might
+    greatly increase the size of the proof, for example by normalizing
+    it or by adding type annotations.  This means translating the
+    proofs can take a very long time, and doing anything with the
+    translated proof will be difficult. This also has an obvious
+    impact on the exporting of large libraries to Dedukti, discussed
+    below.
 
   To reduce the size of proof terms produced by the translation to
   Dedukti, we plan to investigate how to avoid unneccessary
@@ -533,24 +532,16 @@ Concretely, we plan to tackle the following research challenges:
   they can be inferred from the rest of the proof.
 \end{description}
 
-For each of the systems considered in this work package, we can
-identify some preliminary work on translating proofs to Dedukti. Some
-of these tools are in a preliminary stage and can only handle toy
-examples, while others have been used to export whole libraries but
-have not been updated to work with the latest version of the
-system. Concretely, we plan to build upon the previous work done on
+For each of the systems considered in this project, we can
+identify some preliminary work, of various maturities,
+on translating proofs to Dedukti.
+We plan to build upon the previous work done on
 the following tools:
 \begin{itemize}
 \item The standard and arithmetic libraries of Matita has been the
   first libraries to be exported to Logipedia using Krajono, a fork of
-  Matita. The forked system is also actually the only one able to
-  import Logipedia proofs. The choice of Matita as a test-bench for
-  Logipedia is easily understood considering that the implementation
-  of the 0.99.x series was aimed at obtaining a well-documented,
-  minimal but fast implementation of a theorem prover, two order of
-  magnitudes smaller than Coq.  We plan to make this translation a
-  part of the code of Matita itself so that it is maintained with the
-  rest of the system.
+  Matita. We plan to make this translation a part of the code of
+  Matita itself so that it is maintained with the rest of the system.
 \item CoqInE is a prototype tool that can translate Coq proofs to
   Dedukti. Recent work to include advanced features of Coq, such as
   universe polymorphism, has dramaticaly increased the coverage of
@@ -581,30 +572,10 @@ the following tools:
   rewrite system rather than a set of axioms. This encoding is used by
   the automatic prover Zenon modulo which features a backend to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
-  and Rodin, proof obligations coming from Atelier B can be proved by
+  proof obligations coming from Atelier B can be proved by
   Zenon modulo producing Dedukti proofs, hence providing a better
   confidence in the proofs produced by the native proof tools of
   Atelier B \cite{Bware}.
-\end{itemize}
-
-The work on instrumentation is a central part of this project and thus
-interacts with several of the other work packages. Specifically:
-\begin{itemize}
-
-  \item WP2: In order to implement the translation from a system $X$ to
-  Dedukti or to make the translation more efficient in terms of proof
-  size, we may need to modify or improve the encoding of system $X$ in
-  Dedukti.
-
-  \item WP3: The instrumentation of a system $X$ is necessary before
-  it can be attempted to export libraries of system $X$ to
-  Dedukti. Testing the translation on large libraries might also point
-  us towards possible ways to improve the translator.
-
-  \item To instrument systems that do not store complete proof terms,
-  it will be necessary to use automated theorem provers to fill in the
-  missing details
-
 \end{itemize}
 
 \bigskip
@@ -789,7 +760,7 @@ study the following challenges.
   first-order logic.  Logipedia theorems, which mostly come from
   interactive provers, will be expressed in the Dedukti encodings of
   much more expressive logics, such as dependent type theory or simple
-  type theory.  Theorem statements thus need to be encoded again to be
+  type theory.  Theorem statements thus need to be expressed again to be
   manipulable by automatic theorem provers.
 
   Encodings from expressive logics to first order logic already exist,
@@ -1385,7 +1356,7 @@ provide, with a sequence of extensions, a new setting for the
 development of reverse mathematics in a type-theoretic setting. This
 setting is in contrast to the standard reverse mathematics developed
 in the context of second-order arithmetic. Again, the presence of
-proof terms (encoded using Dedukti) adds a new dimension to a
+proof terms (expressed using Dedukti) adds a new dimension to a
 well-established topic.
 
 One consequence of this work is that it can make features of one
