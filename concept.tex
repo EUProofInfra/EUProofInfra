@@ -1213,13 +1213,91 @@ transferred to Logipedia and thus to end-users.
 
 \subsubsection*{Objectives}
 
+The systems considered in this work package range from specialized systems such
+as Abella or Minlog used in academia to mainstream systems such as Mizar or PVS
+that have been used in major scientific or industrial projects. They provide
+specific features that are relevant to their target domains and are therefore
+preferred by users for developing theories and proofs in these areas. All of
+these systems are currently at Logipedia integration level (LIL) $0$, meaning
+that their underlying logics have not yet been encoded in Dedukti. The objective
+is to bring them (at least) to LIL $2$ in order to prepare the grounds for a
+longer-term integration into Logipedia.
+
+The motivations for doing so are twofold. Firstly, being able to export theories
+and proofs developed in these systems makes them available to those systems with
+more advanced Logipedia integration levels. For example, accessing Mizar's rich
+library of formalized mathematics would be beneficial to developers of
+machine-checked mathematical results. Second, the smaller systems have been used
+for specific tasks such as reasoning about the meta-theory of program calculi,
+but they do not provide rich general-purpose standard libraries, say, about
+integer or real arithmetic as the more mature systems. Neither goal will be
+fully achieved at the end of the project since higher Logipedia integration
+levels are necessary for exporting or importing full libraries. Nevertheless,
+the work carried out within this work package is a necessary stepping stone and
+enabler for making Logipedia a universally accepted encyclopedia of formal
+proofs.
+
+\subsubsection*{Target systems}
+
+\paragraph*{Abella.}
+
+Abella~\cite{baelde:abella} is an interactive theorem prover that is
+particularly well suited to formalizing the meta-theory of formalisms that can
+be specified by a system of inference rules, including type systems, proof
+systems or process calculi. Formalizations that have been carried out in Abella
+include representations of different variants of the $\pi$-calculus with
+the theory of bisimulation (including open bisimulation and bisimulation up to
+equivalence relations), the meta-theory of the $\lambda$-calculus with proofs of
+(weak and strong) normalization and standardization, an encoding of PCF with a
+formalization of Howe's techniques of establishing applicative bisimilarity and
+a verified compiler to a first-order intermediate representation using
+step-indexed logical relations, as well as one of the first proposed solutions
+to the POPLMark challenge.
+
+At its core, Abella is based on first-order intuitionistic logic specified using
+Church's simple theory of types, with a fixed collection of inference rules
+expressed in sequence calculus. The logic also allows users to define
+non-logical constants using (least or greatest) fixed-point definitions. For
+this purpose, first-order logic is extended by considering both equality and the
+least fixed point operator as logical connectives. These are not available
+directly in Dedukti where induction is supported by an axiom schema. Currently,
+there are two implementations of this logic: Abella and Bedwyr (providing
+automatic proof search). The latter is being incorporated into the Abella
+system.
+
+The fixed point connectives allow users to define inductive and co-inductive
+logical relations, without the restriction to Horn clauses (as in Prolog). For
+example, intuitionistic logic itself, including higher-order versions, can be
+defined inductively as an object logic, and it forms the core of higher-order
+logic programming languages such as $\lambda$Prolog. In this way, one can reason
+about the relational specification of an object logic.
+
+Abella makes use of terms of the $\lambda$-calculus, together with their
+equational theory, to represent the syntactic constructs of the encoded systems.
+This representation is known as $\lambda$-tree syntax, a form of higher-order
+abstract syntax, and it yields a declarative, high-level, and versatile approach
+for representing binding constructs of encoded formalisms, such as name
+restriction in process calculi.
+
+
 \subsubsection*{Challenges}
 
+Each of the systems considered in this work package poses some specific
+challenge that will be addressed in the tasks corresponding to the individual
+systems. We list some cross-cutting research challenges that this project will
+allow us to address synergistically.
 
-\subsubsection*{Contributions}
+\paragraph*{Rich syntax and logical predicates.}
 
 
-\subsubsection*{Relation to other WPs}
+
+\paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
+
+
+\paragraph*{Automatic proof tools.}
+
+
+\subsubsection*{Relation to other work packages}
 
 The work to be carried out in this work package will benefit from the existing
 encodings of the more mature systems considered in \WPref{instrumentation}:
