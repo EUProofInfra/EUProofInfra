@@ -1421,8 +1421,8 @@ assistant can be meaningfully used in other systems.
 Concept alignment can happen at different levels:
 \begin{itemize}
 \item alignments of logical foundations,
-\item alignments of theorem proving objects deals with aligning types,
-  constants and theorems,
+\item alignments of theorem proving objects deals with aligning named concepts such as types,
+  constants, and theorems,
 \item alignment of proofs deals with aligning tactics and
   inference rules that have similar effects on the state of proof
   development.
@@ -1533,7 +1533,7 @@ algorithms \cite{???} to directly find correspondences between
 statements and their constituent constants and types in proof
 assistant libraries imported in Logipedia.
 
-\parag{Alignment based services}
+\parag{Alignment-based services}
 This task is concerned with the implementation of useful services
 enabled by the discovered alignments. Each service implemented on top
 of Dedukti---such as accessing a library via browsing or searching
@@ -1660,7 +1660,7 @@ Because, in its simplest form, alignment is just a binary relation between ident
 It then enables queries that span multiple libraries, e.g., to find all theorem about a certain concept that have been in some provers but not others. 
 
 The data structures developed in this work package will be used critically in Task~\tasktref{access}{search}.
-This includes (i) the use of source level syntax in queries that is matched against corresponding source syntax in the libraries as well as (ii) semantic web-style queries in languages llike SPARQL.
+This includes (i) the use of source level syntax in queries that is matched against corresponding source syntax in the libraries as well as (ii) semantic web-style queries in languages like SPARQL.
 
 %%%%% end description of the work package 7 
 

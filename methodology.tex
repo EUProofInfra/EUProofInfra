@@ -226,11 +226,29 @@ In the second line of research, we will employ machine learning
 techniques, based on neural networks, to design heuristics for finding
 new alignments.
 
-\paragraph{Alignment based services}
+\paragraph{Alignment-based services}
+
+This task will be split into two lines of work corresponding to findability and reuse across prover libraries.
+Firstly, an alignment-based search service will accept queries in any language $L$ encoded into Dedukti but will find results in any library imported into Dedukti, not just the one underlying $L$.
+Secondly, a proof rewriting service will use alignments between two libraries to migrate proofs from one to the other.
+Both applications depend alignment-induced expression translation.
+All three components are described below.
 
 \textbf{Expression Translation.}
+We refine the existing definitions of alignments in a way that allows alignments creators to specify translation rules for expressions formed from the aligned operators.
+Conceptually, we will provide a declarative user-friendly syntax for these.
+But structurally, they will correspond to rules in the logic programming systems ELPI.
+Thus ELPI can directly execute the translation function induced by a set of alignments.
 
-\textbf{Search Service.}
+\textbf{Search.}
+We use the MathWebSearch system to perform unification queries in formal libraries.
+It would be straightforward to index and search all libraries available in Dedukti in MathWebSearch.
+However, then if concepts $a$ and $b$ from libraries $K$ and $L$ are aligned, every query about $a$ in the language of $K$ would only find results in $K$ but never from $L$.
+By using the alignment-based expression translation, we can translate the user's query into other the language of $L$ (thus replacing in particular $a$ with $b$) and then run the translated query as well.
+Thus, we can find results in all libraries.
+
+Concretely, in the implementation, the UI will ask for a query written in Dedukti syntax together and provide a set of checkboxes indicating which libraries should be searched.
+The system then translates the query into the selected libraries and displays all results.
 
 \textbf{Proof Rewriting.} In the recent literature there are two main
 approaches to alignment based proof rewriting. The first one, based on
