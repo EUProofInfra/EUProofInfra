@@ -937,39 +937,38 @@ practicable in Logipedia raises the question of scalability.
   align distant concepts, which will be affordable with automation.
 \end{description}
 
-\bigskip
 
-\noindent
-{\bf \Large Large libraries}
+\subsubsection{Large libraries}
 
-\medskip
 
-Previously we have seen how to instrument proof systems and automated
-theorem provers to produce proofs in Dedukti, and how to share these
-proofs in Logipedia.
 
-Very large proofs, requiring large librairies, have been developed in
-some proof systems and these large proofs and libraries are
-interesting for our project in two respects. First they constitute an
-excellent benchmark for the methods developed above. Then they will
-constitute one of the lion's share of proofs in Logipedia for end-user
-applications.
 
-The target libraries are dedicated to particular application
+\subsubsection*{Objectives}
+
+The objective of this WP is to export large dedicated libraries in
+curated form to Dedukti and thus to Logipedia for end-user applications.
+The focus is \emph{Access} and \emph{Scalability}.
+\begin{compactitem}
+\item This WP is responsible for supplying the lion's share of proofs in
+Logipedia.  As a result it will be a stress test for the
+results of \WPref{instrumentation}: is the proof infrastructure
+capable of processing truly large amounts of material/proofs?
+
+\item The target libraries are dedicated to particular application
 areas. They provide a substantial coverage of that application area
 and do so in a structured manner. This may require reworking the
 libraries for better access. Any library is only as useful as its structure and documentation.
 
-The libraries are curated for end-user application. That is, they
+\item The libraries are curated for end-user application. That is, they
 are structured according to application specific ontologies that
 support browsing and search. The structuring leverages the
-infrastructures of and will be a
-stress test for the results of structuring discussed below: is the metadata
+infrastructures of \WPref{structuring} and will be a
+stress test for the results of \WPref{structuring}: is the metadata
 infrastructure capable of representing the structure of large
 libraries?
-
-The libraries we focus on have been selected according to the
-following criteria:
+\end{compactitem}
+Translating the standard libraries of the systems is part of the \WPref{instrumentation}.
+This WP focusses on advanced libraries selected according to the following criteria:
 \begin{compactitem}
 \item Relevance: the libraries should support core areas of matematics and computer science.
 \item Coverage: the libraries should have a wide coverage of an application area.
@@ -980,6 +979,8 @@ Analysis library, the Archive of Formal Proofs, Isabelle's revised Analysis and 
 GeoCoq, Flyspeck and CakeML. In the future we plan to incorporate
 CompCert, seL4, and selected Mizar and PVS libraries (once Mizar and
 PVS have reached LIL 2).
+
+\subsubsection*{Tasks}
 
 \paragraph*{Isabelle's Archive of Formal Proofs} (AFP) \cite{isabelle-afp} is a
 growing user-contributed online library for Isabelle. In Feb-2020, the
@@ -1074,7 +1075,7 @@ inside a proof assistant, making the GeoCoq library the most advanced
 machine-checked library in the area of synthetic geometry. This
 formalization enables to obtain automatic proofs based on geometric
 axioms using algebraic automated deduction methods, some of which will
-be covered by automated thorem proving.
+be covered within WP4.
 
 The main axiom system in this library is the one of Tarski, but
 Hilbert's axiom system and a version of Euclid's axioms sufficient to
@@ -1106,7 +1107,7 @@ The last challenge is that part of GeoCoq relies on the mathcomp library. This m
 The pragmatic approach that has been adopted so far has motivated a
 few choices that should be reconsidered once the obstacles,
 encountered throughout this process, which triggered the need for
-these choices will have been solved when instrumenting Coq. The solution that
+these choices will have been solved within WP1 T6. The solution that
 has been preferred in most cases was to modify the Coq script so that
 it does not rely of features, such as universe polymorphism, that were
 not handled by CoqInE when the obstacles were encountered. For
@@ -1115,7 +1116,7 @@ proofs produced by tactics, such as intuition, relied indirectly on
 parts of the standard library of Coq that were not available with
 CoqInE were reworked by hand to avoid such dependencies, or direct
 dependencies were avoided. Another choice that could be reconsidered
-is to use of automated theorem provers to replace the proofs by reflection.
+is to use provers from WP4 T1 to replace the proofs by reflection.
 
 \paragraph*{The Flyspeck library} is the result of the Flyspeck
 project, a formal proof of the Kepler conjecture. The statement and
@@ -1184,17 +1185,36 @@ export CakeML via Isabelle to Dedukti.
 The two key challenges are scalability (pushing the technology to cope
 with the size of proofs) and accessibility (presenting the library in
 an accessible manner to end-users). This will be a stress test for the
-infrastructure.
+infrastructure provided by other WPs.
 
 
 \subsubsection*{Contributions}
 
-These libraries will populate Logipedia with mature,
+This WP is dedicated to populating Logipedia with mature,
 application-level mathematical theories. That is, proofs about
 important areas of mathematics (e.g. analysis and algebra) and
 computer science (e.g. compilers) that support applications in
 engineering as well as security and in particular in interdisciplinary
 areas such as cyber-physical systems and autonomous vehicles.
+
+\subsubsection*{Relation to other WPs}
+
+
+\WPref{libraries} builds on the foundations in \WPref{instrumentation}
+that provides the scalable infrastructure for exporting libraries to
+Logipedia. But the libraries in \WPref{libraries} pose new chalanges
+in scalability and provide more substantial and deeper mathematical
+theories. For example, whereas the standard libraries targeted in
+\WPref{instrumentation} may provide the beginnings of Analysis, the
+libraries in \WPref{libraries} will support differential equations. On
+the export side, \WPref{libraries} builds on the metadata
+infrastructure provided by \WPref{structuring} to transmit the
+source-level structuring of mathematical theories to Logipedia.
+\WPref{libraries} will also provide challenging input for
+\WPref{alignment}. The challenge is to improve interoperabiity of the
+libraries exported from \WPref{libraries} by alignment.
+The GeoCoq library will benefit from automatic provers made
+available in \WPref{atpetc}.
 
 \subsubsection*{Success}
 
@@ -1209,38 +1229,7 @@ transferred to Logipedia and thus to end-users.
 
 \subsubsection{Description of the work package 9}
 
-\subsubsection{Description of the work package \WPref{theories}}
-
-\subsubsection*{Objectives}
-
-\subsubsection*{Challenges}
-
-
-\subsubsection*{Contributions}
-
-
-\subsubsection*{Relation to other WPs}
-
-The work to be carried out in this work package will benefit from the existing
-encodings of the more mature systems considered in \WPref{instrumentation}:
-although every system has its idiosyncrasies that require special techniques,
-there are also many common aspects. In particular, the systems considered here
-are based on similar foundations (more or less elaborate type theories, set
-theory, first-order or second-order predicate logic) as those considered in
-\WPref{instrumentation}, and ideas that have proved successful there can be
-transferred immediately. Also, improvements made to Dedukti in
-\WPref{instrumentation} will benefit encodings of and proof checking for the
-systems considered here, and conversely, foundational issues discovered in
-encoding these systems can feed back into \WPref{instrumentation}.
-
-There is also a strong relationship with \WPref{atpetc} because several of the
-systems considered in \WPref{theories} (Mizar, PVS, and TLAPS) call on automatic
-back-end provers and require instrumentation similar to the proof engines
-considered in \WPref{atpetc} so that proofs can be exported to Dedukti.
-
-\subsubsection*{Success}
-
-
+\subsubsection{Description of the work package 2}
 
 \subsubsection{Description of the work package 5 and 6}
 
