@@ -119,7 +119,7 @@ This is the major obstacle to interoperability.
 
 We had, in the past, an (informal) proof of Pythagoras’ theorem
 or Fermat’s little theorem. The same proof now has different
-formalizations in PVS, Isabelle/HOL, Coq, etc., jeoprardizing the
+formalizations in PVS, Isabelle/HOL, Coq, etc., jeopardizing the
 universality of logical truth.
 
 In the 19th century, the universality of logical truth has been
@@ -179,7 +179,7 @@ Martin-L\"of's type theory, and the Calculus of constructions can be
 expressed in this framework.
 
 For instance, although the details are not important, Church's type
-theory can be expressed in Dedukti , with 8 déclarations and 3
+theory can be expressed in Dedukti , with 8 declarations and 3
 rewrite rules.
 \begin{framed}
 $\begin{array}{rcl}
@@ -1205,8 +1205,6 @@ libraries for end-user access and how well this structure can be
 transferred to Logipedia and thus to end-users.
 
 
-\subsubsection{Description of the work package 7}
-
 \subsubsection{Description of the work package 9}
 
 \subsubsection{Description of the work package \WPref{theories}}
@@ -1623,6 +1621,45 @@ learned and several milestones must be achieved.
 \end{itemize}
 
 
+%%%%% description of work package 7 
+\subsubsection{Source Level Structure and Metadata}
+
+Just like software, the objects in formal libraries proofs usually exist at two levels: the user-written source code and the kernel representation.
+The encodings presented above have focused on standardized a low level representation obtained by instrumenting the kernels, which is the only way how current technologies are able to represent the libraries and their semantics entirely.
+Thus, a single architecture such as Dedukti can cross-verify proofs from any number of proof assistants.
+
+But this approach also eliminates a lot of salient information that is present in the original sources, including
+\begin{compactitem}
+ \item library structure in the form of documents, sections, or theories,
+ \item high-level statements and operators (which proof assistants typically elaborate when compiling the sources into  \item extra-logical statements such as comments, metadata annotations, or processing instructions,
+the kernel representation).
+\end{compactitem}
+
+Interoperability at the source level would be most valuable for users:
+Source and kernel representation are often so far from each other that even the kernel representation of a user's own sources is often unrecognizable to her.
+For content obtained by translating from other provers, the situations is even worse.
+But this kind of interoperability is currently out of reach.
+
+Therefore, we pursue a pragmatic approach that allows the flexible integration of source level representations within Dedukti to the extent that they are available.
+We survey the most commonly used and most interoperability-relevant language features and add those to Dedukti.
+These will complement the existing language features in such a way that encodings in Dedukti can choose flexibly when and how source level features are preserved.
+Source level representations can either be annotated to the kernel level representations or replace them altogether.
+The latter is a particularly interesting option for very large proofs (such as the ones considered in \WPref{atpetc}), where complete encodings of kernel objects may easily run out of memory.
+Proofs represented in this are not necessarily checkable by Dedukti anymore, but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
+For example, just knowing that a proof was done automatically by a certain prover from a certain subset of the visible theorems can be sufficient to recreate it in a different system.
+
+However, these source representations will be much harder to generate in practical encodings.
+Therefore, we develop a second interoperability based on semantic web--style ontological representations of the libraries.
+Because these encodings heavily abstract from the content of the libraries and are unable to capture either its syntax or its semantics, they have only limited value for deep interoperability.
+But they are tremendously useful for shallow interoperability such as dependency management, navigation, and search and querying.
+For example, searching for a particular theorem based on some information where it might be used can be enough to find it.
+We will develop a reference ontology for formal libraries and extend our encodings to make use of it.
+
+This method works particularly well in connection with the alignments developed in \WPref{alignment}:
+Because, in its simplest form, alignment is just a binary relation between identifier in different libraries that mean the same thing, it can be integrated with this ontology directly.
+It then enables queries that span multiple libraries, e.g., to find all theorem about a certain concept that have been in some provers but not others. 
+
+%%%%% end description of the work package 7 
 
 %%% Local Variables:
 %%%   mode: latex
