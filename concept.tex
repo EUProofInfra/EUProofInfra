@@ -1435,7 +1435,8 @@ Dedukti, starting with the Zenon and Isabelle back-ends.
 As explained above, each of the systems considered in this work package poses
 some specific challenges that will be addressed in the tasks corresponding to
 the individual systems. We list some cross-cutting research challenges that this
-project will allow us to address synergistically.
+project will allow us to address synergistically. Some of them are related to
+work carried out in other work packages, as discussed below.
 
 70\% foundational research, 30\% networking ...
 
@@ -1454,8 +1455,24 @@ also used in the SMT encoding used in TLAPS.
 
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
 
+Abella, HoTT, and Minlog are based on type theories with explicit proof objects
+and are in this respect close to Dedukti, although the details differ. PVS has a
+type system reminiscent of simply typed higher-order logic but adds predicate
+subtyping, whereas Mizar and TLAPS are based on classical set theories. The
+three latter systems do not provide proof objects and require instrumentation
+for providing traces that can then be interpreted by Dedukti. In all cases, a
+crucial point to consider for defining an encoding into $\lambda\Pi$-calculus
+modulo theory is that of exploiting Dedukti's rewrite capabilities for
+controlling the size of proof objects.
 
 \paragraph*{Automatic proof tools.}
+
+Many of the systems considered in this work package call upon automatic
+back-ends for proof search and in many cases, these do not natively produce
+traces. Even when they do, they are not in a form that is suited for replay in
+Dedukti. These proof tools must be instrumented in order to record and export
+proof traces, and there are clear opportunities for sharing notions of proof
+traces and concrete proof formats in order to avoid duplicate effort.
 
 
 \subsubsection*{Relation to other work packages}
@@ -1465,7 +1482,7 @@ encodings of the more mature systems considered in \WPref{instrumentation}:
 although every system has its idiosyncrasies that require special techniques,
 there are also many common aspects. In particular, the systems considered here
 are based on similar foundations (more or less elaborate type theories, set
-theory, first-order or second-order predicate logic) as those considered in
+theories, first-order or second-order predicate logic) as those considered in
 \WPref{instrumentation}, and ideas that have proved successful there can be
 transferred immediately. Also, improvements made to Dedukti in
 \WPref{instrumentation} will benefit encodings of and proof checking for the
@@ -1475,13 +1492,21 @@ support for corecursion and coinduction, preferably based on a realizability
 interpretation, are important for Coq, Agda, and Matita (in
 \WPref{instrumentation}) as well as for Abella and Minlog.
 
-There is also a strong relationship with \WPref{atpetc} because several of the
-systems considered in \WPref{theories} (Mizar, PVS, and TLAPS) call on automatic
-back-end provers and require instrumentation similar to the proof engines
-considered in \WPref{atpetc} so that proofs can be exported to Dedukti.
+There is also a strong relationship with \WPref{atpetc} because many of the
+systems considered in this work package call on automatic back-end provers and
+require instrumentation similar to the proof engines considered in
+\WPref{atpetc} so that proofs can be exported to Dedukti. Even in a
+type-theoretic system such as Abella, the Bedwyr and unification engines do not
+produce proof objects in a form that is readily interpretable by Dedukti.
 
 \subsubsection*{Success}
 
+The main measure of success for this work package is provided by the Logipedia
+integration levels of the considered systems, and the fragments for which
+theories and proofs can be exported. A secondary measure is the overhead
+incurred by the encodings and instrumentations and thus the complexity of proof
+checking by Dedukti, although this work package puts stronger emphasis on the
+foundational issues than \WPref{instrumentation} or \WPref{libraries}.
 
 
 \subsubsection{Description of the work package 5 and 6}
