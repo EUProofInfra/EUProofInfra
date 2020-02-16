@@ -1369,11 +1369,67 @@ Dedukti will be to represent the different forms of Mizar definitions in a
 uniform way and to instrument the system to make this implicit knowledge
 explicit and allow Mizar proofs to be checked by Dedukti.
 
+\paragraph*{PVS.}
+
+PVS\footnote{\url{https://pvs.csl.sri.com}}~\cite{owre:pvs} is a specification
+system and proof assistant that is based on higher-order logic with a rich type
+system including predicate sub-typing. This feature is used extensively in PVS,
+for example for defining a hierarchy of numerical types. Predicate sub-typing
+makes type checking in PVS undecidable, and PVS emits corresponding proof
+obligations in the form of type checking constraints (TCC) that require
+interactive proof by the user. For proof checking, PVS provides a rich set of
+automated tactics and back-end provers but does not generate explicit proof
+objects.
+
+PVS has been used in numerous academic and industrial projects for verifying
+hardware systems, fault-tolerant algorithms or dynamically linked Java programs,
+among others. It is particularly known for its applications to avionics systems
+and airborne conflict detection and avoidance systems, e.g.\
+\cite{munoz:unmanned}, by Rockwell Collins, NASA, and the National Institute of
+Aerospace.
+
+Our objective in this project is the translation of a substantial part of the
+PVS Prelude (the standard library) into Logipedia. A core of the PVS logic,
+restricted to a fragment with decidable type checking, has been defined in
+$\lambda\Pi$-calculus modulo theory~\cite{gilbert:extending}. The main
+challenges for achieving our objective are to effectively extend this fragment
+to full PVS, in a way that identifies superficially different proofs of the
+inhabitedness of subtypes, and to instrument PVS in order to generate proof
+traces that can be checked by Dedukti.
+
+\paragraph*{TLAPS.}
+
+\tlaplus~\cite{lamport:specifying} is a specification language based on
+Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a dialect of
+linear-time temporal logic. It is intended for the precise description of
+discrete systems and in particular of distributed algorithms and systems.
+\tlaplus has seen substantial adoption by companies working on distributed and
+cloud systems, e.g.~\cite{newcombe:amazon-cacm}. The two main software tools for
+analyzing and verifying \tlaplus specifications are the model checker
+TLC~\cite{yu:model-checking} and
+TLAPS\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
+the \tlaplus Proof System~\cite{cousineau:tla-proofs}.
+
+\tlaplus proofs are written in a declarative, hierarchical style based on
+natural deduction that allows the user to break down the proof of high-level
+theorems into lower-level steps. The proof obligations corresponding to the
+leaves of this proof tree are discharged by automated prover back-ends,
+including SMT solvers, the Zenon tableau prover, an encoding of \tlaplus set
+theory as an object logic Isabelle/\tlaplus in the logical framework Isabelle,
+and a decision procedure for linear-time temporal logic.
+
+Our objective in this project is to lift the non-temporal fragment of TLAPS
+(which covers the overwhelming majority of proof obligations arising in system
+verification) from LIL $0$ to LIL $2$. The main challenges are encoding the
+untyped set theory underlying \tlaplus in $\lambda\Pi$-calculus modulo theory
+and to instrument TLAPS in order to export proof traces that can be checked in
+Dedukti, starting with the Zenon and Isabelle back-ends.
+
 
 \subsubsection*{Challenges}
 
 Each of the systems considered in this work package poses some specific
-challenge that will be addressed in the tasks corresponding to the individual
+challenges that will be addressed in the tasks corresponding to the individual
 systems. We list some cross-cutting research challenges that this project will
 allow us to address synergistically.
 
