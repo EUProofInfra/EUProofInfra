@@ -1257,25 +1257,29 @@ Church's simple theory of types, with a fixed collection of inference rules
 expressed in sequence calculus. The logic also allows users to define
 non-logical constants using (least or greatest) fixed-point definitions. For
 this purpose, first-order logic is extended by considering both equality and the
-least fixed point operator as logical connectives. These are not available
-directly in Dedukti where induction is supported by an axiom schema. Currently,
-there are two implementations of this logic: Abella and Bedwyr (providing
-automatic proof search). The latter is being incorporated into the Abella
-system.
+least fixed point operator as logical connectives. Currently, there are two
+implementations of this logic: Abella and Bedwyr (providing automatic proof
+search). The latter is being incorporated into the Abella system.
 
 The fixed point connectives allow users to define inductive and co-inductive
 logical relations, without the restriction to Horn clauses (as in Prolog). For
 example, intuitionistic logic itself, including higher-order versions, can be
-defined inductively as an object logic, and it forms the core of higher-order
-logic programming languages such as $\lambda$Prolog. In this way, one can reason
-about the relational specification of an object logic.
+defined inductively as an object logic. In this way, one can reason about the
+relational specification of an object logic. Abella makes use of terms of the
+$\lambda$-calculus, together with their equational theory, to represent the
+syntactic constructs of the encoded systems. This representation is known as
+$\lambda$-tree syntax, a form of higher-order abstract syntax where
+$\lambda$-terms are considered modulo $\alpha\beta\eta$-equivalence, and it
+yields a declarative, high-level, and versatile approach for representing
+binding constructs of encoded formalisms, such as name restriction in process
+calculi.
 
-Abella makes use of terms of the $\lambda$-calculus, together with their
-equational theory, to represent the syntactic constructs of the encoded systems.
-This representation is known as $\lambda$-tree syntax, a form of higher-order
-abstract syntax, and it yields a declarative, high-level, and versatile approach
-for representing binding constructs of encoded formalisms, such as name
-restriction in process calculi.
+Our goal in this project is to lift Abella from LIL $0$ to LIL $2$. The main
+challenges are support for coinduction and corecursion, which are not available
+directly in Dedukti where induction is supported by an axiom schema, support for
+$\lambda$-tree syntax, instrumenting Abella for extracting explicit invariants
+from cyclic proofs with size annotations, and recasting Abella's trusted
+unification engine in the Dedukti framework.
 
 
 \paragraph*{Homotopy type theory (HoTT).}
@@ -1428,14 +1432,25 @@ Dedukti, starting with the Zenon and Isabelle back-ends.
 
 \subsubsection*{Challenges}
 
-Each of the systems considered in this work package poses some specific
-challenges that will be addressed in the tasks corresponding to the individual
-systems. We list some cross-cutting research challenges that this project will
-allow us to address synergistically.
+As explained above, each of the systems considered in this work package poses
+some specific challenges that will be addressed in the tasks corresponding to
+the individual systems. We list some cross-cutting research challenges that this
+project will allow us to address synergistically.
 
-\paragraph*{Rich syntax and logical predicates.}
+70\% foundational research, 30\% networking ...
 
 
+\paragraph*{Rich syntactic and semantic features.}
+
+Several systems provide support for representing and reasoning about binders,
+definitional constructions, or have rich type systems that are not easily
+encoded in the $\lambda\Pi$-calculus modulo theory that underlies Dedukti.
+Although the details vary between the systems, there are commonalities that
+should be addressed jointly. For example, Abella and Minlog have strong support
+for coinduction and corecursion for which foundational support should be
+provided in Dedukti. Mizar and (to a lesser degree) TLAPS make use of soft types
+for assisting proof search, and PVS emphasizes predicate subtyping, which is
+also used in the SMT encoding used in TLAPS.
 
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
 
