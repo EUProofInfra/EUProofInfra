@@ -1241,18 +1241,18 @@ proofs.
 
 \paragraph*{Abella.}
 
-Abella~\cite{baelde:abella} is an interactive theorem prover that is
-particularly well suited to formalizing the meta-theory of formalisms that can
-be specified by a system of inference rules, including type systems, proof
-systems or process calculi. Formalizations that have been carried out in Abella
-include representations of different variants of the $\pi$-calculus with
-the theory of bisimulation (including open bisimulation and bisimulation up to
-equivalence relations), the meta-theory of the $\lambda$-calculus with proofs of
-(weak and strong) normalization and standardization, an encoding of PCF with a
-formalization of Howe's techniques of establishing applicative bisimilarity and
-a verified compiler to a first-order intermediate representation using
-step-indexed logical relations, as well as one of the first proposed solutions
-to the POPLMark challenge.
+Abella\footnote{\url{http://abella-prover.org}}~\cite{baelde:abella} is an
+interactive theorem prover that is particularly well suited to formalizing the
+meta-theory of formalisms that can be specified by a system of inference rules,
+including type systems, proof systems or process calculi. Formalizations that
+have been carried out in Abella include representations of different variants of
+the $\pi$-calculus with the theory of bisimulation (including open bisimulation
+and bisimulation up to equivalence relations), the meta-theory of the
+$\lambda$-calculus with proofs of (weak and strong) normalization and
+standardization, an encoding of PCF with a formalization of Howe's techniques of
+establishing applicative bisimilarity and a verified compiler to a first-order
+intermediate representation using step-indexed logical relations, as well as one
+of the first proposed solutions to the POPLMark challenge.
 
 At its core, Abella is based on first-order intuitionistic logic specified using
 Church's simple theory of types, with a fixed collection of inference rules
@@ -1304,6 +1304,73 @@ the extent to which coherence conditions can be supported as rewriting steps in
 $\lambda\Pi$-calculus modulo theories, and which conditions require proof
 elaboration.
 
+\paragraph*{Minlog.}
+
+The
+Minlog\footnote{\url{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}}
+system is based on the Curry-Howard correspondence between constructive proofs
+in natural deduction and terms in typed $\lambda$-calculus and supports
+extracting programs from proofs. It has also been extended for extracting
+programs from proofs in classical logic. Minlog supports function definitions by
+computation and rewrite rules and identifies terms with a common reduct. Its
+main applications are in constructive analysis~\cite{miyamoto:real}: we extract
+computational content from a proof of a mathematical statement in an extension
+of Gödel's system $T$ and generate a formal proof that the extracted term
+realizes the statement, viewed as a specification.
+
+Real numbers are best represented as streams of (signed) digits, and handling
+such infinite objects requires coinduction, which gives rise to corecursion in
+the extracted terms. Minlog accommodates corecursion via partial functionals in
+the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
+objects of type level at most $1$, where extensionality and totality coincide.
+
+Besides extracting programs from proofs in constructive analysis, other notable
+applications of Minlog include the unification of $\lambda$-calculus and
+combinatory logic, embedding classical logic in minimal implicational logic, and
+the extraction of the DPLL algorithm underlying propositional satisfiability
+solving from a proof.
+
+In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
+This is facilitated by the fact that the foundations of Minlog and Dedukti are
+rather close (both have proof terms and deduction modulo), the main challenges
+are support for coinduction and corecursion. We plan to export program
+extraction to Dedukti through realizability and also aim for being able to
+import a subset of Dedukti proofs into Minlog in order to benefit from the
+libraries available in Logipedia.
+
+\paragraph*{Mizar.}
+
+Mizar\footnote{\url{http://mizar.org}}~\cite{banczerek:mizar} is one of the
+earliest proof assistants. It was initially created as a typesetting system for
+mathematics with proof checking functionality added later. The language is
+designed to be as close as possible to the traditional language of mathematics
+where basic elements are represented as nouns, whereas their properties and
+operations can be represented using adjectives, predicates, and functors, as
+well as a hierarchy of soft types. Proofs are expressed in a declarative way
+based on natural deduction.
+
+The Mizar community maintains a centralized data base, the Mizar Mathematical
+Library. Based on the axioms of Tarski-Grothendieck set theory, it provides a
+framework on top of which new theories can be built in the form of ``articles''.
+The library constitutes one of the largest libraries of formal mathematics with
+a number of results that are not present in other systems. Apart from purely
+mathematical formalizations, the system has been used for developing formal
+descriptions of theoretical models of computation, cryptography, digital circuit
+design, and software verification. The Mizar library provides a data base for
+training automated theorem provers and other projects based on machine learning
+techniques.
+
+The Mizar proof checker differs from other proof assistants because the
+semantics of a proof step corresponds to the notion of ``obviousness'' to a
+human mathematician. Mizar contains modules that check different aspects of the
+correctness of Mizar articles in a compiler-like manner, from purely syntactic
+concerns all the way to logical completeness and consistency. Mizar has not been
+designed to produce proof objects, and much background knowledge (e.g., stemming
+from soft types) is used implicitly. The main challenges of encoding Mizar in
+Dedukti will be to represent the different forms of Mizar definitions in a
+uniform way and to instrument the system to make this implicit knowledge
+explicit and allow Mizar proofs to be checked by Dedukti.
+
 
 \subsubsection*{Challenges}
 
@@ -1334,7 +1401,10 @@ theory, first-order or second-order predicate logic) as those considered in
 transferred immediately. Also, improvements made to Dedukti in
 \WPref{instrumentation} will benefit encodings of and proof checking for the
 systems considered here, and conversely, foundational issues discovered in
-encoding these systems can feed back into \WPref{instrumentation}.
+encoding these systems can feed back into \WPref{instrumentation}. For example,
+support for corecursion and coinduction, preferably based on a realizability
+interpretation, are important for Coq, Agda, and Matita (in
+\WPref{instrumentation}) as well as for Abella and Minlog.
 
 There is also a strong relationship with \WPref{atpetc} because several of the
 systems considered in \WPref{theories} (Mizar, PVS, and TLAPS) call on automatic
