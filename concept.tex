@@ -1212,7 +1212,7 @@ transferred to Logipedia and thus to end-users.
 \subsubsection*{Objectives}
 
 The systems considered in this work package range from specialized systems such
-as Abella or Minlog used in academia to mainstream systems such as Mizar or PVS
+as Abella or Minlog used in academia to mainstream systems such as PVS or TLA$^+$
 that have been used in major scientific or industrial projects. They provide
 specific features that are relevant to their target domains and are therefore
 preferred by users for developing theories and proofs in these areas. All of
@@ -1221,14 +1221,18 @@ that their underlying logics have not yet been encoded in Dedukti. The objective
 is to bring them (at least) to LIL $2$ in order to prepare the grounds for a
 longer-term integration into Logipedia.
 
-The motivations for doing so are twofold. Firstly, being able to export theories
+There are various motivations for including these systems in Logipedia. First,
+being able to export theories
 and proofs developed in these systems makes them available to those systems with
 more advanced Logipedia integration levels. For example, accessing Mizar's rich
 library of formalized mathematics would be beneficial to developers of
 machine-checked mathematical results. Second, the smaller systems have been used
 for specific tasks such as reasoning about the meta-theory of program calculi,
 but they do not provide rich general-purpose standard libraries, say, about
-integer or real arithmetic as the more mature systems. Neither goal will be
+integer or real arithmetic as the more mature systems. Finally, for some of the
+systems only one implementation able to check the proofs exists. As such, in the
+long run we can cross verify the proofs stemming from the target systems.
+Neither goal will be
 fully achieved at the end of the project since higher Logipedia integration
 levels are necessary for exporting or importing full libraries. Nevertheless,
 the work carried out within this work package is a necessary stepping stone and
@@ -1470,9 +1474,11 @@ controlling the size of proof objects.
 Many of the systems considered in this work package call upon automatic
 back-ends for proof search and in many cases, these do not natively produce
 traces. Even when they do, they are not in a form that is suited for replay in
-Dedukti. These proof tools must be instrumented in order to record and export
+Dedukti. There are two ways how we will try to tackle the problem if missing
+proofs. First, we will attempt to instrument these tools in order to record and export
 proof traces, and there are clear opportunities for sharing notions of proof
-traces and concrete proof formats in order to avoid duplicate effort.
+traces and concrete proof formats in order to avoid duplicate effort. Second,
+we will use native Dedukti automation to re-create the missing proof parts.
 
 
 \subsubsection*{Relation to other work packages}
@@ -1498,6 +1504,8 @@ require instrumentation similar to the proof engines considered in
 \WPref{atpetc} so that proofs can be exported to Dedukti. Even in a
 type-theoretic system such as Abella, the Bedwyr and unification engines do not
 produce proof objects in a form that is readily interpretable by Dedukti.
+Additionally, some of the systems developed here may also make use of the native
+Dedukti provers developed in \WPref{atpetc}.
 
 \subsubsection*{Success}
 
