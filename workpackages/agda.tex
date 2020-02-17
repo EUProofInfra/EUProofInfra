@@ -2,7 +2,15 @@
 
 % other participants:
 
-%\textbf{Budget requirements:} One research engineer at Chalmers, and one PhD student or postdoc at TU Delft.
+% \textbf{Budget requirements:} One research engineer at Chalmers, and one PhD student or postdoc at TU Delft.
+
+\begin{enumerate}
+  \item Implement a basic version of Agda2Dedukti that can handle core
+  features of Agda such as inductive datatypes and dependent pattern
+  matching.
+  \item Extend Agda2Dedukti with $\eta$-equality for record types.
+  \item Extend Agda2Dedukti with first-class universe level polymorphism.
+\end{enumerate}
 
 % Moved to concept & methodology
 % Agda is a popular dependently typed programming language / proof
@@ -23,45 +31,46 @@
 % challenges and opportunities for further work, which are outlined
 % below.
 
-\begin{enumerate}
-  \item Agda proofs often rely on type-directed conversion rules such
-  as eta-equality and definitional irrelevance, which can lead to a
-  blow-up in the size of proof terms. We plan to investigate possible
-  approaches to avoid this blow-up, either by finding a better
-  encoding which reduces the size of the type annotation, or by
-  extending the Dedukti language with type-directed conversion rules
-  to render the type annotations unneccessary.
+% Moved to methodology
+% \begin{enumerate}
+%   \item Agda proofs often rely on type-directed conversion rules such
+%   as eta-equality and definitional irrelevance, which can lead to a
+%   blow-up in the size of proof terms. We plan to investigate possible
+%   approaches to avoid this blow-up, either by finding a better
+%   encoding which reduces the size of the type annotation, or by
+%   extending the Dedukti language with type-directed conversion rules
+%   to render the type annotations unneccessary.
 
-  \item Universe polymorphism in Agda relies on a built-in type of
-  levels that has complex structure of (in)equalities. We plan to
-  define a sound and complete embedding of Agda’s level type in
-  Dedukti, based on the existing work on encoding AC
-  (associative-commutative) theories. This would both serve as a
-  stress test of how well Dedukti can handle complex equational
-  theories, and improve our understanding of type theories with
-  first-class universe level polymorphism, which would be useful for
-  the implementation of Agda.
+%   \item Universe polymorphism in Agda relies on a built-in type of
+%   levels that has complex structure of (in)equalities. We plan to
+%   define a sound and complete embedding of Agda’s level type in
+%   Dedukti, based on the existing work on encoding AC
+%   (associative-commutative) theories. This would both serve as a
+%   stress test of how well Dedukti can handle complex equational
+%   theories, and improve our understanding of type theories with
+%   first-class universe level polymorphism, which would be useful for
+%   the implementation of Agda.
 
-  % Removed from this proposal for now
-  % \item In contrast to Coq and Lean, Agda does not have a well-defined
-  % core language to which proofs are elaborated. Instead, definitions
-  % are translated to an internal representation that is relatively
-  % close to the user input. This provides a challenge when translating
-  % Agda proofs to Dedukti: each feature in Agda’s internal syntax needs
-  % to have its own translation. As part of this project, we will hence
-  % investigate possible designs for a core language for Agda. Having
-  % such a core language would have several benefits: it would deepen
-  % our understanding of the Agda language, it would increase the
-  % trustworthiness of Agda proofs, and it would make it much easier to
-  % export Agda terms to other languages (such as Dedukti in the context
-  % of this project).
+%   % Removed from this proposal for now
+%   % \item In contrast to Coq and Lean, Agda does not have a well-defined
+%   % core language to which proofs are elaborated. Instead, definitions
+%   % are translated to an internal representation that is relatively
+%   % close to the user input. This provides a challenge when translating
+%   % Agda proofs to Dedukti: each feature in Agda’s internal syntax needs
+%   % to have its own translation. As part of this project, we will hence
+%   % investigate possible designs for a core language for Agda. Having
+%   % such a core language would have several benefits: it would deepen
+%   % our understanding of the Agda language, it would increase the
+%   % trustworthiness of Agda proofs, and it would make it much easier to
+%   % export Agda terms to other languages (such as Dedukti in the context
+%   % of this project).
 
-  % \item Agda provides an experimental option for extending the
-  % language with user-defined rewrite rules, which are very similar to
-  % the rewrite rules provided by Dedukti. By comparing the two
-  % implementations we hope to gain new insights and find opportunities
-  % for improvement on both sides.
-\end{enumerate}
+%   % \item Agda provides an experimental option for extending the
+%   % language with user-defined rewrite rules, which are very similar to
+%   % the rewrite rules provided by Dedukti. By comparing the two
+%   % implementations we hope to gain new insights and find opportunities
+%   % for improvement on both sides.
+% \end{enumerate}
 
 %%% Local Variables:
 %%% mode: latex

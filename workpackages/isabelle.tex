@@ -14,19 +14,11 @@
 % Isabelle/HOL, but this requires scaling up.
 
 \begin{enumerate}
-
-  \item We will revisit important aspects of the Isabelle/HOL logic
-  implementation on top of the Isabelle/Pure framework, such as
-  normalization of proofs, efficient type-class reasoning, special
-  representation of derived rules and definition principles
-  (datatypes, recursion, induction). The volume of proof term output
-  may be reduced further, by taking more structure of the target
-  language (Dedukti) into account and omitting certain low-level
-  reasoning of HOL (e.g.\ for inductive types).
-
-  \item The underlying Isabelle/ML implementation platform (on top of
-  Poly/ML) will be revisited as well, to improve monitoring of memory
-  usage, and to double the standard heap size from 16\,GB to 32\,GB
-  (without suffering from the full overhead of 64\,bit addressing).
-
+  \item Improve the efficiency of important aspects of the
+  Isabelle/HOL logic implementation, such as normalization of proofs,
+  type-class reasoning, and special representation of derived rules
+  and definition principles.
+  \item Reduce the volume of proof terms in the Dedukti encoding.
+  \item Improve memory usage of the Isabelle/ML implementation
+  platform.
 \end{enumerate}
