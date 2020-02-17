@@ -133,43 +133,31 @@ The pragmatic approach that has been adopted so far has motivated a few choices 
 
 \begin{task}[id=flyspeck,title=The Flyspeck library]
 \ednote{Saclay (Grienenberger)}
-The {HOL Light} library is large and varied.
-One of its key libraries is the multivariate analysis library
+The {HOL Light} library is large and varied. One of its key libraries is the 
+multivariate analysis 
+library
 \footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
-integration.
-
-The {Flyspeck} project gives a formal proof of the {Kepler}
-conjecture. The statement and proof is based on an original proof of Thomas
-{Hales} \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15},
-and formalized and proved largely in {HOL Light}\footnote{\url{https://github.com/flyspeck/flyspeck}}.
-The richness of this library, with some results not formalized in any
-other system, motivates the project of importing the {HOL Light}
-library and {Flyspeck} project in the {Dedukti} system, in view
-of its integration into {Logipedia}.
+integration. The {Flyspeck} project gives a formal proof of the {Kepler}
+conjecture, based on an original proof of Thomas {Hales} 
+\cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15}, and formalized
+largely in {HOL Light}\footnote{\url{https://github.com/flyspeck/flyspeck}}.
+Some of these results are not formalized in any other system, motivating the 
+project of importing the {HOL Light} library and {Flyspeck} project in the 
+{Dedukti} system, in view of its integration into {Logipedia}.
 
 \textbf{Challenges:}
-Proofs coming from the HOL systems, including {HOL Light}, are known to
-be very large, adding to the already existing issue of the scalability of
-exporting software for large libraries
-\cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,DBLP:conf/itp/KellerW10,
-DBLP:conf/cade/Kumar13}. As an example, the size of the standard library is
-1.5M in {HOL Light} files, while the same files once
-exported as {Dedukti} files scale to 2G, and the whole
-{HOL Light} library and the {Flyspeck} project are each as
-large as 30M. The multitude of automatic tactics and their increasing
-complexity and number of dependencies suggests that the generation time, size,
-and rechecking time of exported proofs will not increase linearly. Scalable
-export techniques {HOL Light} proofs have been investigated
-\cite{KaliszykK13} and can provide a solid base to
-this project; for want of significantly reducing the size of generated
-{Dedukti} files, the time of export could at least be reduced.
+Proofs coming from the HOL systems, including {HOL Light}, are known to be very 
+large, adding to the issue of the scalability of exporting software for large 
+libraries \cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,
+DBLP:conf/itp/KellerW10,DBLP:conf/cade/Kumar13}. Scalable export techniques 
+{HOL Light} proofs have been investigated \cite{KaliszykK13} and can provide a 
+solid base to this project.
 
-The main milestones of this task are the further automation of the translation
-from {HOL Light} to {Dedukti}, the import of the multivariate
-analysis library, the import of the whole {HOL Light} library, and the
-import of the {Flyspeck} in {Dedukti}.
+The main milestones of this task are the further automation of the export from 
+{HOL Light} to {Dedukti}, the import of the multivariate analysis library, of 
+the whole {HOL Light} library, and of the {Flyspeck} in {Dedukti}.
 \end{task}
 
 \begin{task}[id=cakeml,title=The CakeML compiler library]
