@@ -1,0 +1,16 @@
+\begin{enumerate}
+\item Express 2-Level Type Theory (2LTT) as an object theory in Dedukti: 2LTT is
+  a stepping stone towards encoding more expressive variants of homotopy type
+  theory, and it makes explicit proof steps that are omitted in standard type
+  theories. Our main challenge will be to design a translation in which as many
+  small proof steps of 2LTT as possible can be checked automatically via rewrite
+  rules in Dedukti. For steps that cannot be automated in this way, the
+  translation needs to elaborate proofs that are equivalent (in an appropriate
+  sense) to the original proof steps.
+\item Express a core Cubical Type Theory in 2LTT: here, the main challenge is
+  that equality in cubical type theory is very expressive. The associated
+  coherence condition are unlikely to translate to rewrite rules of Dedukti, and
+  we will have to come up with appropriate proof elaborations.
+\item Define structures such as cartesian cubical type theory on top of the
+  core, and compare these structures.
+\end{enumerate}

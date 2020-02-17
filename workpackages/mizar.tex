@@ -1,38 +1,55 @@
 %[Białystok,Innsbruck]
 
-Mizar~\cite{bancerek:mizar2015} is one of the earliest proof assistants. 
-It was initially created as a typesetting system for mathematics with proof
-checking functionality added later. Mizar relies on a soft type system which
-is used to specify set theoretic foundations. The library developed together
-with the system--the Mizar Mathematical Library (MML)~\cite{bancerek:mml2017}--is
-until today one of the largest libraries of formal mathematics with a number
-of results not present in other systems.
-
-There are multiple reasons why checking Mizar proofs in Dedukti will be one of
-the very challenging tasks in this proposal. First, the Mizar language is close
-to the standard mathematical language and as such its syntax is very far from
-the languages of most other proof assistants. Second, the semantics of a Mizar
-proof step correspond to the research on the notion of ``obviousness'' of a single
-proof step to a human mathematician. This means that Mizar proofs do not
-reference proof procedures or tactics and a lot of background knowledge is used
-implicitly. Finally, the Mizar proof system has not been originally designed to save
-any proof objects.
-
 \begin{enumerate}
-\item Instrument the Mizar proof checker to export more detailed proof objects \ednote{Białystok, major effort}
-
-\item We will express the Mizar foundations in Dedukti. This means expressing the
-  Mizar soft type system, the initial set theory, as well as Mizar structures and
-  comprehensions. Recently, we have expressed major parts of Mizar in the logical
-  framework Isabelle~\cite{ckkp:isabellemizar2019}, focusing on preserving as much
-  of the syntax as possible. Here the work will focus on being able to check all
-  the proofs instead. 
-
-\item We will develop a soft type checking system in the style of Mizar on the level
-  of Dedukti. We expect that the whole algorithm can be expressed as a rewrite system.
-  However, as the algorithm has been so far expressed as an imperative program this will
-  require significant work.
-
-\item Develop Dedukti techniques corresponding to Mizar proof checking \ednote{Białystok, major effort}.
+\item Express the foundations of Mizar in Dedukti: Mizar is based on
+  Tarski-Grothendieck set theory. The first challenge is to represent it in
+  $\lambda\Pi$-calculus modulo theory in a way that takes advantage of Dedukti's
+  rewriting capabilities to automate small steps.
+\item Instrument Mizar to export type disambiguation data: Mizar offers a soft
+  type system, and benefitting from it will enable us to optimize the
+  representation of Mizar statements in Dedukti.
+\item Express the Mizar checker for equality checking and unification: the
+  algorithms underlying the Mizar checker must be expressed as a mix of small
+  proof steps and rewrite rules so that Dedukti's proof kernel can verify them.
+  This requires exporting semantic information for proof obligations that is not
+  currently available outside of the Mizar checker and will enable us to check
+  the basis of the Mizar library and make it available in Logipedia.
 \end{enumerate}
+
+%%%%%%% OLD TEXT %%%%
+% Mizar~\cite{bancerek:mizar2015} is one of the earliest proof assistants. 
+% It was initially created as a typesetting system for mathematics with proof
+% checking functionality added later. Mizar relies on a soft type system which
+% is used to specify set theoretic foundations. The library developed together
+% with the system--the Mizar Mathematical Library (MML)~\cite{bancerek:mml2017}--is
+% until today one of the largest libraries of formal mathematics with a number
+% of results not present in other systems.
+
+% There are multiple reasons why checking Mizar proofs in Dedukti will be one of
+% the very challenging tasks in this proposal. First, the Mizar language is close
+% to the standard mathematical language and as such its syntax is very far from
+% the languages of most other proof assistants. Second, the semantics of a Mizar
+% proof step correspond to the research on the notion of ``obviousness'' of a single
+% proof step to a human mathematician. This means that Mizar proofs do not
+% reference proof procedures or tactics and a lot of background knowledge is used
+% implicitly. Finally, the Mizar proof system has not been originally designed to save
+% any proof objects.
+
+% \begin{enumerate}
+% \item Instrument the Mizar proof checker to export more detailed proof objects \ednote{Białystok, major effort}
+
+% \item We will express the Mizar foundations in Dedukti. This means expressing the
+%   Mizar soft type system, the initial set theory, as well as Mizar structures and
+%   comprehensions. Recently, we have expressed major parts of Mizar in the logical
+%   framework Isabelle~\cite{ckkp:isabellemizar2019}, focusing on preserving as much
+%   of the syntax as possible. Here the work will focus on being able to check all
+%   the proofs instead. 
+
+% \item We will develop a soft type checking system in the style of Mizar on the level
+%   of Dedukti. We expect that the whole algorithm can be expressed as a rewrite system.
+%   However, as the algorithm has been so far expressed as an imperative program this will
+%   require significant work.
+
+% \item Develop Dedukti techniques corresponding to Mizar proof checking \ednote{Białystok, major effort}.
+% \end{enumerate}
 

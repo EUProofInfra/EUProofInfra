@@ -13,75 +13,57 @@
 }
 
 \begin{wpobjectives}
-  The objective of this work package is to lay the groundwork for making
-  available in \textsc{Logipedia} proofs carried out in systems that are
-  currently at LIL $0$, i.e.\ for which we do not know today how to express
-  their logic and theories in \textsc{Dedukti}. We intend to bring these systems
-  to LIL $2$ over the span of the project.
-
-This includes notably:
-  \begin{compactitem}
-  \item expressing the logics and foundational theories that underlie these
-    systems in the lambda-Pi-calculus modulo theory and in \textsc{Dedukti};
-  \item instrumenting these systems so that they can export proofs that can be
-    checked in \textsc{Dedukti}.
-  \end{compactitem}
-  A key aspect will be to foster cooperation between the participating project
-  sites by focusing on similar foundational aspects such as set theory vs.\ type
-  theories, predicate subtyping, dependent types, proofs by induction and
-  coinduction and so on.
 \end{wpobjectives}
-
 \begin{wpdescription}
-  For the logical theories of the systems considered in this work package,
-  namely Abella, HoTT, Minlog, Mizar, PVS, and \tlaplus, we have not yet
-  investigated the possibility to express them in Dedukti and to instrument the
-  systems so that they can export proofs that Dedukti can check. The individual
-  tasks listed below address the challenges related to each system.
+  This work package addresses proof systems that are currently at LIL $0$, i.e.\
+  whose logic and theories have not yet been expressed in \textsc{Dedukti}. Our
+  objective is to bring them to LIL $2$ over the duration of the project so that
+  at least elementary proofs can be exported and checked in \textsc{Dedukti}.
+  For some of the systems, it may be possible to achieve LIL $3$.
 
-  It is interesting to note that similar problems occur in different systems,
-  which are related to concepts such as set-theoretic or type-theoretic
-  foundations of the system. Different type theories exhibit common traits such
-  as the presence of predicate subtyping or dependent types. Similarly,
-  inductive and coinductive definitions, and correspondingly proofs by induction
-  or coinduction, are ubiquitous. Taking advantage of the network established
-  within this project, we will avoid ``reinventing the wheel'' by designing
-  generic mechanisms that can be instantiated for the different systems, also
-  taking advantage of the lessons learnt for the systems with higher LIL
-  considered in WP1. These challenges represent fundamental research problems:
-  for example, Dedukti does not yet support coinductive proofs.
+  Achieving these goals requires (i) expressing the logics and proof systems
+  that underlie these systems in the $\lambda\Pi$-calculus modulo theory and
+  (ii) instrumenting the original proof systems so that they can export proofs
+  that can be checked in Dedukti. Much of the work required in this work package
+  is of foundational nature.
+
+  The tasks are presented according to the individual systems. Nevertheless,
+  the project will focus on cross-cutting concerns and foundational aspects such
+  as set-theoretic vs.\ type-theoretic foundations, predicate and dependent
+  types, (co-)recursive definitions and (co-)inductive proofs and so on. The
+  network established in this project will avoid ``reinventing the wheel'', also
+  taking advantage of the experiences of the systems considered in
+  \WPref{instrumentation} and of the work carried out in \WPref{atpetc}.
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=abella,title=Express the theory of Abella in Dedukti and
-  instrument the system]
+\begin{task}[id=abella,title=Express the theory of Abella in Dedukti]
+  \ednote{K. Chaudhuri, Saclay}
   \input{workpackages/abella}
-
 \end{task}
 
-\begin{task}[title=id=hott,title=expressing HoTT]
-  \ednote{Saclay, Leeds}
+\begin{task}[id=hott,title=Express Homotopy Type Theory in Dedukti]
+  \ednote{B. Barras, Saclay}
+  \input{workpackages/hott}
 \end{task}
 
-\begin{task}[id=minlog,title=Express the theory of Minlog in Dedukti and
-  instrument the system]
+\begin{task}[id=minlog,title=Express the theory of Minlog in Dedukti]
+  \ednote{H. Schwichtenberg, LMU}
   \input{workpackages/minlog}
 \end{task}
 
-\begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti and
-  instrument the system]
-  \ednote{Innsbruck, Bialystok, task leader: Artur Kornilowicz}
+\begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti]
+  \ednote{Artur Korni{\l}owicz, UwB}
   \input{workpackages/mizar}
 \end{task}
 
-\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti and instrument
-  the system]
-  \ednote{Saclay}
+\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti]
+  \ednote{Gabriel Hondet, Saclay}
+  \input{workpackages/pvs}
 \end{task}
 
-\begin{task}[id=tla,title=Express the theory of \tlaplus in Dedukti and
-  instrument the system]
-  \ednote{Nancy, Liège}
+\begin{task}[id=tla,title=Express the theory of \tlaplus in Dedukti]
+  \ednote{Stephan Merz, Nancy}
   \input{workpackages/tlaplus}
 \end{task}
 

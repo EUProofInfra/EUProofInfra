@@ -1,0 +1,15 @@
+\begin{enumerate}
+\item Extend PVS-cert for checking predicate subtypes: the existing encoding
+  PVS-cert in $\lambda\Pi$-calculs modulo theory represents a fragment of PVS
+  for which type checking is decidable. In this task, we will extend the logical
+  system so that proofs corresponding to type checking conditions for predicate
+  subtypes in PVS can be represented. A particular challenge is to consider two
+  different proofs of the subtype being inhabited to be convertible.
+\item Instrument PVS to export proofs from PVS to Dedukti: PVS proofs are
+  expressed in terms of tactics that do not produce proof terms. In order to
+  check PVS proofs in Dedukti, the tactics must be instrumented to produce
+  explicit traces.
+\item Design a PVS proof checker in Dedukti: based on the preceding tasks,
+  realize the reconstruction of proofs of theorems exported from PVS from the
+  accompanying proof traces.
+\end{enumerate}

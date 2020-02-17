@@ -1,67 +1,83 @@
 %[LMU München]
 
-%One Postdoc and one Phd position
+\begin{enumerate}
+\item Further develop and implement extensional realizability in Minlog: this is
+  a necessary first step for bridging Minlog and Dedukti.
+\item Express the core Minlog logic and proofs in Dedukti: this task is
+  facilitated by the fact that both systems share proof terms and deduction
+  modulo. The preliminary work on realizability is required for exporting
+  program extraction to Dedukti.
+\item Properly encode coinduction and corecursion in Dedukti: these concepts are
+  fundamental to Minlog, for example for representing real numbers as streams of
+  digits, but they are not native to Dedukti.
+\item Import a subset of Dedukti into Minlog, apply program development by proof
+  transformation, and export back. This will make Dedukti a usable tool for the
+  development of proofs and programs in constructive analysis and allow Minlog
+  users to benefit from theories formalized using different proof assistants.
+\end{enumerate}
 
-The \href{http://minlog-system.de}{Minlog system} implements a theory of
-computable functionals (TCF) \cite{SchwichtenbergWainer12}.
-It is a form of higher order arithmetic where partial functionals are
-first-class citizens.
 
-The intended model of TCF is the Scott-Ershov model of partial
-continuous functionals \cite{Ershov77}. Computable functionals are defined
-by so-called computation rules, a form of (possibly non-terminating)
-defining equations understood as left-to-right conversion rules.  An
-important example is the corecursion operator, which is needed to
-define functions operating for instance on streams of signed digits (a
-convenient format to represent real numbers).  The logical framework
-allows to declare a proven equality as a rewrite rule.  Now it is
-tempting to identify two terms or formulas when they have the same
-normal form w.r.t. rewriting (including of course beta-conversion);
-this is often called deduction modulo rewriting.  However, in a setup
-like TCF where non-termination is allowed we cannot use normal forms,
-but we can consider two terms or formulas as identical when they have
-a common reduct.  This drastically simplifies proofs involving real
-number arithmetic.
+%%%%%%%%% OLD TEXT %%%%
+% The \href{http://minlog-system.de}{Minlog system} implements a theory of
+% computable functionals (TCF) \cite{SchwichtenbergWainer12}.
+% It is a form of higher order arithmetic where partial functionals are
+% first-class citizens.
 
-Another central feature of TCF (and hence the Minlog system) is that
-it internalizes a proof-theoretic realizability interpretation (in the
-form of Kreisel's so-called modified realizability, with realizers of
-higher type).  More precisely, for every (co)inductive predicate we
-have another one with one argument more, denoting a realizer.  It is
-important that this realizers is expressed in the term language of TCF
-(an extension of G\"odel's system $T$).  Since a realizer can be seen as
-a program representing the computational content of a constructive
-existence proof (expressing that a certain specification has a
-solution), we now can reason about such programs in a formal way,
-inside TCF.  In fact, given a proof M in TCF of a specification
-$\forall x\exists y A(x,y)$ we can extract a term (program) $p_M$ and automatically
-generate a new proof of $\forall x A(p_M(x))$.  In other words, for
-programs generated in this way from existence proofs, formal
-verification is automatic.  Note that for a proof involving
-coinduction the extracted term contains the (non terminating)
-corecursion operator.  Of course, for efficient evaluation in a second
-step we want to translate our extracted term into an efficient
-(functional) programming language like Haskell.
+% The intended model of TCF is the Scott-Ershov model of partial
+% continuous functionals \cite{Ershov77}. Computable functionals are defined
+% by so-called computation rules, a form of (possibly non-terminating)
+% defining equations understood as left-to-right conversion rules.  An
+% important example is the corecursion operator, which is needed to
+% define functions operating for instance on streams of signed digits (a
+% convenient format to represent real numbers).  The logical framework
+% allows to declare a proven equality as a rewrite rule.  Now it is
+% tempting to identify two terms or formulas when they have the same
+% normal form w.r.t. rewriting (including of course beta-conversion);
+% this is often called deduction modulo rewriting.  However, in a setup
+% like TCF where non-termination is allowed we cannot use normal forms,
+% but we can consider two terms or formulas as identical when they have
+% a common reduct.  This drastically simplifies proofs involving real
+% number arithmetic.
 
-Other aspects of Minlog are more common.  It is a proof system in
-Gentzen-style natural deduction based on proof terms
-(the so-called Curry-Howard correspondence).  We distinguish between
-(co)inductive predicates with and without computational content; in
-fact, computational content only arises from (co)inductive predicates
-marked as computationally relevant (c.r.).  In particular, both
-universal und existential quantifiers do not influence computational
-content: one needs to relativize them to c.r. predicates (like
-totality) to make them computationally relevant.
+% Another central feature of TCF (and hence the Minlog system) is that
+% it internalizes a proof-theoretic realizability interpretation (in the
+% form of Kreisel's so-called modified realizability, with realizers of
+% higher type).  More precisely, for every (co)inductive predicate we
+% have another one with one argument more, denoting a realizer.  It is
+% important that this realizers is expressed in the term language of TCF
+% (an extension of G\"odel's system $T$).  Since a realizer can be seen as
+% a program representing the computational content of a constructive
+% existence proof (expressing that a certain specification has a
+% solution), we now can reason about such programs in a formal way,
+% inside TCF.  In fact, given a proof M in TCF of a specification
+% $\forall x\exists y A(x,y)$ we can extract a term (program) $p_M$ and automatically
+% generate a new proof of $\forall x A(p_M(x))$.  In other words, for
+% programs generated in this way from existence proofs, formal
+% verification is automatic.  Note that for a proof involving
+% coinduction the extracted term contains the (non terminating)
+% corecursion operator.  Of course, for efficient evaluation in a second
+% step we want to translate our extracted term into an efficient
+% (functional) programming language like Haskell.
 
-A central application area of Minlog is to formalize Bishop-style
-\cite{Bishop67} constructive analysis and extract interesting algorithms
-from proofs. An example is the Intermediate Value Theorem treated in
-\cite{LindstroemPalmgrenSegerbergStoltenberg08}.  More recently we have
-extracted algorithms operating on (both signed digit and Gray-coded)
-stream-represented real numbers from proofs which never mention
-streams.  They come in by relativizing real number quantifiers to
-appropriate coinductive predicates \cite{Berger09}.
-We will extend this
-work further into constructive analysis, e.g. Euler's existence
-proof of solutions of ordinary differential equations (ODE).
+% Other aspects of Minlog are more common.  It is a proof system in
+% Gentzen-style natural deduction based on proof terms
+% (the so-called Curry-Howard correspondence).  We distinguish between
+% (co)inductive predicates with and without computational content; in
+% fact, computational content only arises from (co)inductive predicates
+% marked as computationally relevant (c.r.).  In particular, both
+% universal und existential quantifiers do not influence computational
+% content: one needs to relativize them to c.r. predicates (like
+% totality) to make them computationally relevant.
+
+% A central application area of Minlog is to formalize Bishop-style
+% \cite{Bishop67} constructive analysis and extract interesting algorithms
+% from proofs. An example is the Intermediate Value Theorem treated in
+% \cite{LindstroemPalmgrenSegerbergStoltenberg08}.  More recently we have
+% extracted algorithms operating on (both signed digit and Gray-coded)
+% stream-represented real numbers from proofs which never mention
+% streams.  They come in by relativizing real number quantifiers to
+% appropriate coinductive predicates \cite{Berger09}.
+% We will extend this
+% work further into constructive analysis, e.g. Euler's existence
+% proof of solutions of ordinary differential equations (ODE).
 
