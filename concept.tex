@@ -1,119 +1,3 @@
-\begin{framed}
-\begin{center}
-{\bf \Large How do proofs contribute to safety and security of software?}
-\end{center}
-  
-Imagine the following casino game. At the beginning, a player is given
-eleven euros. At each round, she throws a dice. If the results is a
-six, then game is over.  If it is a five, a four, a three, or a two,
-she is given twice the amount of money she already has. If it is a one
-she is taken two euros, if she has at least two.  When the game is
-over, the player wins the money she got, except if she has zero, in
-which case she looses one million.
-
-This game can be modeled by program $p$
-%import random 
-\begin{verbatim}
-n = 11
-stay = True;
-while stay: 
-    roll = random.randint(1,6)
-    if roll == 6:
-        stay = False
-    else:
-        if roll >= 2:
-            n = n + 2 * n
-        else:
-            if (n >= 2):
-                n = n - 2
-print(n)
-\end{verbatim}
-
-To be on the safe side, the player wants to be sure, before starting
-playing, that she will never finish with zero.  And indeed, in all runs,
-the content of the variable {\tt n} is always an odd number, thus it
-cannot be zero. This property is a consequence of two simple
-theorems of arithmetic
-$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
-$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
-Hence, verifying the safety of this program, that is that the
-proposition 
-${\mbox{\it safe}}(p)$ holds, 
-amounts to prove these three theorems of arithmetic.
-
-A tiny bug in the program, for instance replacing the {\tt 2} by a
-{\tt 3} in the the line {\tt n = n + 2 * n} makes the program unsafe
-as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
-this program will, most likely, not reveal this bug, that manifests
-very rarely.  In contrast, attempting to prove the correctness of this
-program will
-reveal the bug as it is impossible to prove the proposition
-$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
-\end{framed}
-\pagebreak
-\begin{framed}
-  \begin{center}
-    {\bf \Large What is a formal proof? What is a proof system?}
-    \end{center}
-        
-Since Antiquity, we have known that
-proofs, both purely mathematical ones, as in Euclid's elements or the
-recent proof of the Kepler conjecture by Thomas Hales, and proofs used
-to establish the safety and security of software, can be built with a
-limited number of rules, for example
-\begin{itemize}
-\item From $A \Rightarrow B$ and $A$, deduce $B$.
-\item From $A$, deduce $A~\mbox{\it or}~B$.
-\item ...
-\end{itemize}
-Yet, through history, most mathematical proofs have been written in
-pidgin of natural language and mathematical formulas. When proofs are
-very long (as it is often of the proofs used in safety and security,
-but also of some proofs in pure mathematics), mistakes in proofs are
-very difficult to detect. For instance dozen of wrong proofs of
-parallel postulate have been given through history, sometimes by the
-best mathematicians such as Ptolémée, Proclus, al-Haytam, Tacket,
-Clairaut, Legendre...
-
-In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
-correctness of a mathematical proof could be checked by a
-computer. This led to the development of the two first proof systems
-in history: Milner's LCF or De Bruijn's Automath.  From
-the axioms
-$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
-$$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
-we can deduce
-$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
-In the language implemented in Automath, this proof is written
-$$\lambda x \lambda h~(g~x~(f~x~h))$$
-\end{framed}
-
-\begin{framed}
-\begin{center}
-{\bf \Large What is a theory?}
-\end{center}
-
-Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
-$B$'' are universal, but building proofs require more rules, that are
-often specific to a domain of knowledge and are called
-``axiom''. Examples are the axioms of geometry, the axioms or
-arithmetic. These axioms constitute a theory.
-
-At the beginning of the 20th century an axiomatic theory, {\em set
-  theory}, has been proposed to express all mathematical proofs. In
-the first half of the 20th century a few variants of set theory, and a
-few alternatives have been proposed (such as Simple type theory).
-But, because these theories had not been designed for being
-implemented on a computer, the rise of computer checked formal proofs
-has led to a multiplication of such alternative theories. Each proof system,
-such as Coq, Isabelle/HOL, Mizar, Atelier B,
-etc. implements its own theory.
-
-This is the major obstacle to interoperability.
-\end{framed}
-
-\bigskip
-
 \noindent
 {\bf \Large Logical Frameworks}
 
@@ -328,7 +212,7 @@ long term future of the infrastructure.
 \bigskip
 
 \noindent
-{\bf \Large Instrumentation}
+{\bf \Large Integration}
 
 \medskip
 
@@ -481,9 +365,9 @@ raises new research challenges:
   \end{itemize}
   Finding better ways to express such features could have a great
   impact on the quality and speed of the translation process.  We plan
-  to investigate two possible approaches to improve the encodings of
+  to investigate two possible approaches to improve the expression of
   common features of proof assistants in Dedukti. First, we will
-  investigate whether some information in the current encodings is
+  investigate whether some information in the current expressions is
   redundant and can thus be omitted. Second, if this is not possible
   we will investigate what minimal changes need to be made to Dedukti
   itself in order to overcome these limitations.
@@ -567,9 +451,9 @@ the following tools:
   \item HOL4 has support for exporting proofs to the OpenTheory proof
   exchange format, and there has been some work on importing
   OpenTheory proofs into Dedukti.
-  \item In the context of the BWare project, an encoding of the set
+  \item In the context of the BWare project, an expression of the set
   theory of the B method has been provided as a theory modulo, i.e. a
-  rewrite system rather than a set of axioms. This encoding is used by
+  rewrite system rather than a set of axioms. This expression is used by
   the automatic prover Zenon modulo which features a backend to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
   proof obligations coming from Atelier B can be proved by
@@ -695,7 +579,7 @@ Dedukti and export proofs in some theory in Dedukti.
   does not depend on the specific set of inference rules of the
   prover. It was also designed to be agnostic w.r.t.\ the prover used
   to prove the subproblems; it is only required that the prover can
-  output a Dedukti proof in the correct encoding of predicate logic.
+  output a Dedukti proof in the correct expression of predicate logic.
 
   Although Ekstrakto has already shown that it is a valuable approach, it is a
   work in progress. In particular, the following issues will be addressed in the
@@ -767,13 +651,13 @@ this project will study the following challenges.
   manipulable by automatic theorem provers.
 
   Encodings from expressive logics to first order logic already exist,
-  and are used for instance in {\em hammers} for using automatic theorem provers into
-  interactive theorem
+  and are used for instance in {\em hammers} for using automatic
+  theorem provers into interactive theorem
   provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.
   In these works, the encodings are specific to one system to be
-  affordable. In Logipedia, we have to combine and take benefit
-  from statements coming from the encodings of different systems based
-  on different logics. The key challenge here are thus:
+  affordable. In Logipedia, we have to combine and take benefit from
+  statements coming from the encodings of different systems based on
+  different logics. The key challenge here are thus:
   \begin{itemize}
   \item to avoid the loss of meaning coming from a succession of
     encodings; and
@@ -1097,10 +981,22 @@ computational steps in Coq proofs. The issue is that proofs containing
 verification by Dedukti impractical, but these proofs are very
 frequent in the Coq world.
 
-\emph{Challenges:}
-An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. The coherent logic theorem prover, which will be covered by WP4 T1, should handle part of these proofs. The other ones should be handled by specific provers for geometry, as they correspond to proofs obtained by the Gr\"obner basis method in GeoCoq.
-Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions into the lambda Pi-calculus Modulo on which Dedukti is based. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
-The last challenge is that part of GeoCoq relies on the mathcomp library. This makes WP3 T1 crucial to fully export the GeoCoq library.
+\emph{Challenges:} An approach is to isolate these proofs by
+reflection so that they are not perceived as simple conversion steps
+in the type theory proofs, but marked as proofs to be treated by an
+automatic tool. The coherent logic theorem prover, which will be
+covered by WP4 T1, should handle part of these proofs. The other ones
+should be handled by specific provers for geometry, as they correspond
+to proofs obtained by the Gr\"obner basis method in GeoCoq.  Another
+challenge is that CoqInE, a tool developed to translate Coq proofs
+into Dedukti type-checkable terms, produces terms in a expressing of
+the Calculus of Inductive Constructions into the lambda Pi-calculus
+Modulo on which Dedukti is based. Currently, it is not possible to
+export these Dedukti terms to other proof assistant. However, another
+tool, Universo, has been developed and paves the way for the export of
+these terms.  The last challenge is that part of GeoCoq relies on the
+mathcomp library. This makes WP3 T1 crucial to fully export the GeoCoq
+library.
 
 \emph{Refinements:}
 The pragmatic approach that has been adopted so far has motivated a
@@ -1145,10 +1041,10 @@ export techniques {HOL Light} proofs have been investigated
 this project; for want of significantly reducing the size of generated
 {Dedukti} files, the time of export could at least be reduced.
 
-The main milestones of this task are the further automation of the translation
-from {HOL Light} to {Dedukti}, the import of the multivariate
-analysis library, the import of the whole {HOL Light} library, and the
-import of the {Flyspeck} in {Dedukti}.
+The main milestones of this task are the further automation of the
+translation from {HOL Light} to {Dedukti}, the import of the
+multivariate analysis library, the import of the whole {HOL Light}
+library, and the import of the {Flyspeck} in {Dedukti}.
 
 \paragraph*{The CakeML compiler library}
 The CakeML compiler library consists of the CakeML programming language
@@ -1186,7 +1082,6 @@ with the size of proofs) and accessibility (presenting the library in
 an accessible manner to end-users). This will be a stress test for the
 infrastructure.
 
-
 \subsubsection*{Contributions}
 
 These libraries will populate Logipedia with mature,
@@ -1204,10 +1099,104 @@ scond measure of success is how well we are able to restructure the
 libraries for end-user access and how well this structure can be
 transferred to Logipedia and thus to end-users.
 
+\bigskip
 
-\subsubsection{Description of the work package 9}
+\noindent
+{\bf \Large Infrastructure of the encyclopedia}
 
-\subsubsection{Description of the work package 2}
+\medskip
+
+In the three last sections dedicated to integration, automated theorem
+proving and large libraries, we have described the concepts that are
+at the center of the networking activities that will populate
+Logipedia with formal proofs coming from the libraries of various
+systems.
+
+Let us now trun to the development of the infrastructure itself, with
+a focus on accessibility. It is not sufficient to provide a
+trans-national and virtual access to make such an infrastructure
+usable. We must also provide an ergonomic web interface, a package
+distribution system, a search engine, a structure of encyclopedia
+that rests upon an enrichement of the data with metadata.
+
+{\color{red} To do}
+
+Web site
+
+Packages
+
+Web site for students
+
+\bigskip
+
+\noindent
+{\bf \Large Source Level Structure and Metadata}
+
+\medskip
+
+Just like software, the objects in formal libraries proofs usually
+exist at two levels: the user-written source code and the kernel
+representation.  The expression of theories in Dedukti focus on
+standardizing a low level representation obtained by instrumenting the
+kernels, which is the only way how current technologies are able to
+represent the libraries and their semantics entirely.  Thus, a single
+architecture such as Dedukti can cross-verify proofs from any number
+of proof assistants.
+
+But this approach eliminates a lot of salient information that is
+present in the original sources, including
+\begin{compactitem}
+ \item library structure in the form of documents, sections, or theories,
+ \item high-level statements and operators (which proof assistants
+   typically elaborate when compiling the sources into \item
+   extra-logical statements such as comments, metadata annotations, or
+   processing instructions, the kernel representation).
+\end{compactitem}
+
+So, we need to complement the current expression of proofs in Dedukti
+and Logipedia with integration of source level representations within
+Dedukti, to the extent that they are available.
+
+We survey the most commonly used and most interoperability-relevant
+language features and add those to Dedukti.  These will complement the
+existing language features in such a way that encodings in Dedukti can
+choose flexibly when and how source level features are preserved.
+Source level representations will be annotated to the kernel level
+representations. We develop a semantic web-style ontological
+representations of the libraries.  Because these encodings heavily
+abstract from the content of the libraries and are unable to capture
+either its syntax or its semantics, they have only limited value for
+deep interoperability.  But they are tremendously useful for shallow
+interoperability such as dependency management, navigation, and search
+and querying.  For example, searching for a particular theorem based
+on some information where it might be used can be enough to find it.
+We will develop a reference ontology for formal libraries and extend
+our encodings to make use of it.
+
+This method works particularly well in connection with the alignments
+developed below. Because, in its simplest form, alignment is just a
+binary relation between identifier in different libraries that mean
+the same thing, it can be integrated with this ontology directly.  It
+then enables queries that span multiple libraries, e.g., to find all
+theorem about a certain concept that have been in some provers but not
+others.
+
+The data structures developed in this work package will be used
+critically in development of search engines for Logipedia.  This
+includes (i) the use of source level syntax in queries that is matched
+against corresponding source syntax in the libraries as well as (ii)
+semantic web-style queries in languages like SPARQL.
+
+
+\bigskip
+
+\noindent
+{\bf \Large New theories, new systems}
+
+\medskip
+
+Finaly, let us turn to to concepts that will lead to more advanced
+joint research projects. 
 
 \subsubsection*{Objectives}
 
@@ -1517,7 +1506,12 @@ checking by Dedukti, although this work package puts stronger emphasis on the
 foundational issues than \WPref{instrumentation} or \WPref{libraries}.
 
 
-\subsubsection{Description of the work package 5 and 6}
+\bigskip
+
+\noindent
+{\bf \Large Proof engineering}
+
+\medskip
 
 {\color{red} Goals}
 
@@ -1795,48 +1789,6 @@ learned and several milestones must be achieved.
 \end{itemize}
 
 
-%%%%% description of work package 7 
-\subsubsection{Source Level Structure and Metadata}
-
-Just like software, the objects in formal libraries proofs usually exist at two levels: the user-written source code and the kernel representation.
-The encodings presented above have focused on standardized a low level representation obtained by instrumenting the kernels, which is the only way how current technologies are able to represent the libraries and their semantics entirely.
-Thus, a single architecture such as Dedukti can cross-verify proofs from any number of proof assistants.
-
-But this approach also eliminates a lot of salient information that is present in the original sources, including
-\begin{compactitem}
- \item library structure in the form of documents, sections, or theories,
- \item high-level statements and operators (which proof assistants typically elaborate when compiling the sources into  \item extra-logical statements such as comments, metadata annotations, or processing instructions,
-the kernel representation).
-\end{compactitem}
-
-Interoperability at the source level would be most valuable for users:
-Source and kernel representation are often so far from each other that even the kernel representation of a user's own sources is often unrecognizable to her.
-For content obtained by translating from other provers, the situations is even worse.
-But this kind of interoperability is currently out of reach.
-
-Therefore, we pursue a pragmatic approach that allows the flexible integration of source level representations within Dedukti to the extent that they are available.
-We survey the most commonly used and most interoperability-relevant language features and add those to Dedukti.
-These will complement the existing language features in such a way that encodings in Dedukti can choose flexibly when and how source level features are preserved.
-Source level representations can either be annotated to the kernel level representations or replace them altogether.
-The latter is a particularly interesting option for very large proofs (such as the ones considered in \WPref{atpetc}), where complete encodings of kernel objects may easily run out of memory.
-Proofs represented in this are not necessarily checkable by Dedukti anymore, but they are more easily portable across logics and provers, and they admit more useful knowledge management services such as search and browsing.
-For example, just knowing that a proof was done automatically by a certain prover from a certain subset of the visible theorems can be sufficient to recreate it in a different system.
-
-However, these source representations will be much harder to generate in practical encodings.
-Therefore, we develop a second interoperability based on semantic web--style ontological representations of the libraries.
-Because these encodings heavily abstract from the content of the libraries and are unable to capture either its syntax or its semantics, they have only limited value for deep interoperability.
-But they are tremendously useful for shallow interoperability such as dependency management, navigation, and search and querying.
-For example, searching for a particular theorem based on some information where it might be used can be enough to find it.
-We will develop a reference ontology for formal libraries and extend our encodings to make use of it.
-
-This method works particularly well in connection with the alignments developed in \WPref{alignment}:
-Because, in its simplest form, alignment is just a binary relation between identifier in different libraries that mean the same thing, it can be integrated with this ontology directly.
-It then enables queries that span multiple libraries, e.g., to find all theorem about a certain concept that have been in some provers but not others. 
-
-The data structures developed in this work package will be used critically in Task~\tasktref{access}{search}.
-This includes (i) the use of source level syntax in queries that is matched against corresponding source syntax in the libraries as well as (ii) semantic web-style queries in languages like SPARQL.
-
-%%%%% end description of the work package 7 
 
 %%% Local Variables:
 %%%   mode: latex
