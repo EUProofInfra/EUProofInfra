@@ -20,39 +20,15 @@ Wenzel, Nicolas Magaud, Gaspard Férey, Ulf Norell, Claudio Sacerdoti Coen}
   for which we already know how to encode the proofs in Dedukti, and
   make available these proofs in Logipedia so that
   they can be exported to other systems.
-
-This includes notably:
-  \begin{compactitem}
-  \item \ldots
-  \end{compactitem}
-  A key aspect will be to foster \ldots
 \end{wpobjectives}
 
 
 \begin{wpdescription}
-
-% Moved to methodology
-% We know how to express in Dedukti the theories implemented in Matita,
-% HOL4, Coq, Agda, Isabelle and Atelier B, and some of these systems
-% have been partially instrumented to export proofs that can be checked
-% in Dedukti. Our first work package is to complete this instrumentation
-% to be able to export most of the proofs of these systems.
-
-% Three methods have to be used here: some of the systems
-% (Automath style), such as Coq and Agda already have
-% proof-terms that can be output, thus the main task is to translate
-% these proofs into the Dedukti format. Others (LCF style), such as
-% Isabelle and HOL4, have an inference kernel that can be
-% instrumented, the main task here is to transform
-% the internal proof-object into an external proof-term. Others, such as
-% Atelier B are slightly more difficult to address. For those,
-% we need to use the water ford method: extract an incomplete trace (a
-% sequence of lemmas) and fill the gap using automated theorem proving,
-% as experimented with Atelier B and Zenon.
+  Concretely, this work package includes the following tasks:
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=agda,title=instrument Agda]
+\begin{task}[id=agda,title=Instrument Agda]
 \input{workpackages/agda}
 \end{task}
 
