@@ -1195,7 +1195,7 @@ semantic web-style queries in languages like SPARQL.
 
 \medskip
 
-Finaly, let us turn to to concepts that will lead to more advanced
+Finally, let us turn to concepts that will lead to more advanced
 joint research projects. 
 
 \subsubsection*{Objectives}
@@ -1327,7 +1327,7 @@ solving from a proof.
 
 In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
 This is facilitated by the fact that the foundations of Minlog and Dedukti are
-rather close (both have proof terms and deduction modulo), the main challenges
+rather close (both have proof terms and deduction modulo); the main challenges
 are support for coinduction and corecursion. We plan to export program
 extraction to Dedukti through realizability and also aim for being able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
@@ -1347,7 +1347,7 @@ based on natural deduction.
 The Mizar community maintains a centralized data base, the Mizar Mathematical
 Library. Based on the axioms of Tarski-Grothendieck set theory, it provides a
 framework on top of which new theories can be built in the form of ``articles''.
-The library constitutes one of the largest libraries of formal mathematics with
+The library constitutes one of the largest collections of formal mathematics with
 a number of results that are not present in other systems. Apart from purely
 mathematical formalizations, the system has been used for developing formal
 descriptions of theoretical models of computation, cryptography, digital circuit
@@ -1373,7 +1373,7 @@ system and proof assistant that is based on higher-order logic with a rich type
 system including predicate sub-typing. This feature is used extensively in PVS,
 for example for defining a hierarchy of numerical types. Predicate sub-typing
 makes type checking in PVS undecidable, and PVS emits corresponding proof
-obligations in the form of type checking constraints (TCC) that require
+obligations in the form of type checking constraints that require
 interactive proof by the user. For proof checking, PVS provides a rich set of
 automated tactics and back-end provers but does not generate explicit proof
 objects.
@@ -1463,7 +1463,7 @@ controlling the size of proof objects.
 Many of the systems considered in this work package call upon automatic
 back-ends for proof search and in many cases, these do not natively produce
 traces. Even when they do, they are not in a form that is suited for replay in
-Dedukti. There are two ways how we will try to tackle the problem if missing
+Dedukti. There are two ways how we will try to tackle the problem of missing
 proofs. First, we will attempt to instrument these tools in order to record and export
 proof traces, and there are clear opportunities for sharing notions of proof
 traces and concrete proof formats in order to avoid duplicate effort. Second,
@@ -1473,7 +1473,8 @@ we will use native Dedukti automation to re-create the missing proof parts.
 \subsubsection*{Relation to other work packages}
 
 The work to be carried out in this work package will benefit from the existing
-encodings of the more mature systems considered in \WPref{instrumentation}:
+encodings of the more mature systems considered in
+\WPref{instrumentation}:\ednote{Have the WPs been explicitly introduced at this point?}
 although every system has its idiosyncrasies that require special techniques,
 there are also many common aspects. In particular, the systems considered here
 are based on similar foundations (more or less elaborate type theories, set
