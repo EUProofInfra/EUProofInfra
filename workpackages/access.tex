@@ -2,7 +2,8 @@
   short=Access,% for Figure 5.
   title={Access to the infrastructure},
   lead=Inr,
-  InrRM=10]
+  InrRM=28,
+  OcaRM=6]
   
 \begin{wpobjectives}
   The objective of this work package is to \ldots
@@ -34,20 +35,74 @@ This includes notably:
   \end{task}
 
   \begin{task}[id=opam,title=Giving access to the infrastructure in proof tools]
-    We will develop a tool to allow users to easily download and
-    include in their proof environment proofs available in
-    Logipedia. As a given proof may depend on other proofs, this tools
-    will have to manage those dependencies and download the proofs it
-    depends on too.
+    Users need to have an easy access to the proofs in logipedia, to integrate/use
+    them in their ongoing work; this access should be guaranteed universal, without
+    lock-in, web standards-compliant, through an open source tool. While WP7
+    will give a structure to the proof database, and T2 of this WP will give access
+    to that structured database through web browsing, this task aims at
+    providing a proof manager for users of Logipedia. This proof manager
+    will enable users to automatically download and install proofs as well as their
+    dependencies in order to ease the integration of proofs from logipedia in
+    developments.
+
+    opam \cite{opam} is an open-source source-based package manager, which has
+    been successfully used by the OCaml community since 2012, where it manages
+    2585 versioned packages for a total of 13196 combinations of package and
+    version, guaranteeing its ability to connect people across large communities.
+    Furthermore, opam is meant to provide management capabilities not only to
+    OCaml, but to any language, which is why it is already used as a proof
+    manager by the Coq community where it has been proven to be reliable and
+    suited to managing formal proofs. This makes it a prime candidate to be the
+    proof manager for logipedia.
+
+    This task would thus use the opam management tool to develop a repository
+    containing all the proofs in logipedia, allowing users across Europe to
+    automatically and transparently download and install proofs and their
+    dependencies via opam. This would primarily entail the creation of a new
+    tool able to read the proof database of logipedia and create a corresponding
+    opam repository, as well as the necessary work to automate this work so that
+    it can run automatically on the infrastructure built in T1.
+
+    Deliverables:
+    \begin{itemize}
+      \item D9.3.1 logipedia-repo-tool :
+        Tool to translate the logipedia database format into an opam repository
+      \item D9.3.2 logipedia-repo:
+        opam repository populated with the generated package from the logipedia
+        database
+      \item D9.3.3 logipedia-opam:
+        opam configuration to use it (only or also) for logipedia
+      \item D9.3.4 logipedia-repo-setup :
+        installation of the toolchain developped in D9.3.1 on the infrastructure
+        setup by T1 of this WP, in order to automate the generation of
+        the logipedia opam repository
+    \end{itemize}
+
   \end{task}
 
-  \begin{task}[id=search,title=Providing search tools]
-    We will provide users with search tools enabling them to make
-    request on Logipedia in order to find a specific theorem that
-    could be useful in their current development, or in order to
-    analyze the proofs available in Logipedia itself (e.g. all the
-    proofs using some given set of axioms, etc.). In the first case,
-    requests could use regular expressions on names or formulas.
+  % Search task, importing some content that was previously in WP7
+  \begin{task}[id=search,title=Providing search
+    tools,lead=Inr,InrRM=27,FauRM=24,SacRM=6,BolRM=4]
+    % task leader: Pierre Senellart, Inria
+    We will provide users with search tools enabling them to perform
+    queries on Logipedia in order to find specific theorems or proofs.
+    First, users will be able to search libraries theorems by their
+    names and other metadata (see task~\taskref{structuring}{strdofimpl}), including complex semantic
+    queries expressed in the SPARQL language for semantic annotations
+    produced in task~\taskref{structuring}{strrefonto}. Second, it will be possible to
+    search theorems and proofs based on their structure and mathematical
+    content (types, operators, used axioms and rules, etc.), using exact
+    matching, regular expressions over fomulas, and deeper content
+    matching, such as the one done in the
+    \hyperlink{https://kwarc.info/systems/mws/}{MathWebSearch} system. Users can
+    use this both to find a specific theorem that
+    could be useful in their current development and to analyze the
+    proofs themselves, e.g., to find all proofs using a given set of
+    axioms.    
+    Finally, users will be able to
+    search in the full text of theorems and proofs that have been
+    extracted from natural-language research articles in
+    task~\taskref{structuring}{strtext}.
   \end{task}
 
 \end{tasklist}
