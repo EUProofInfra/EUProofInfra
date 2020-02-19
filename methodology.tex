@@ -265,6 +265,32 @@ and outside the project, to more efficiently write proofs.
 
 \subsubsection{Methodology of the work package 2}
 
+The work to be carried out in this work package will benefit from the existing
+encodings of the more mature systems considered in
+\WPref{instrumentation}:\ednote{Have the WPs been explicitly introduced at this point?}
+although every system has its idiosyncrasies that require special techniques,
+there are also many common aspects. In particular, the systems considered here
+are based on similar foundations (more or less elaborate type theories, set
+theories, first-order or second-order predicate logic) as those considered in
+\WPref{instrumentation}, and ideas that have proved successful there can be
+transferred immediately. Also, improvements made to Dedukti in
+\WPref{instrumentation} will benefit encodings of and proof checking for the
+systems considered here, and conversely, foundational issues discovered in
+encoding these systems can feed back into \WPref{instrumentation}. For example,
+support for corecursion and coinduction, preferably based on a realizability
+interpretation, are important for Coq, Agda, and Matita (in
+\WPref{instrumentation}) as well as for Abella and Minlog.
+
+There is also a strong relationship with \WPref{atpetc} because many of the
+systems considered in this work package call on automatic back-end provers and
+require instrumentation similar to the proof engines considered in
+\WPref{atpetc} so that proofs can be exported to Dedukti. Even in a
+type-theoretic system such as Abella, the Bedwyr and unification engines do not
+produce proof objects in a form that is readily interpretable by Dedukti.
+Additionally, some of the systems developed here may also make use of the native
+Dedukti provers developed in \WPref{atpetc}.
+
+
 \subsubsection{Methodology of the work package 5 + 6}
 
 \paragraph{Aligning logical foundations}
