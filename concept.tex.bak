@@ -9,11 +9,11 @@ The multiplication of systems and theories in which formal proofs are
 developed jeopardizes the universality of logical truth. But it is not
 the first time in history that the universality of logical truth is
 challenged.  In the 19th century, for instance, the universality of
-logical truth had been challenged in a similar way, by the
+logical truth had been challengend in a similar way, by the
 non-Euclidean geometries, as some statements could be true in one
 geometry, but false in others.  At the beginning of the 20th century,
 a solution to this problem was found.  The definition of the various
-geometries in predicate logic \cite{HilbertAckermann} permitted to
+geometries in predicate logic \cite{HilbertAckermann} permited to
 understand which axiom was used in which proof, restoring the
 universality of the truth of judgements of the form ``the proposition
 $B$ is true under the axioms $A_1, ..., A_n$''.
@@ -226,7 +226,7 @@ Dedukti, and make these proofs available in Logipedia so they can be
 exported to other systems. This step is called the
 \emph{instrumentation} of system $X$.
 
-The systems we consider fall into three broad classes: the systems
+The systems we consider fall into three broad classes: the systsems
 based on dependent type theory, the systems based on simple type
 theory, and those based on set theory and predicate logic.
 
@@ -297,14 +297,14 @@ by invariant properties. Verification of the model correctness implies
 to verify some proof obligations produced by a weakest precondition
 calculus. For example, spanning trees algorithms, distributed
 algorithms, access control policies have been formalized
-respectively in EventB and B method.  The development process for
+respectivement in EventB and B method.  The development process for
 the B method is based on formal proof: proof obligations are
 automatically generated and must be proven by automatic or interactive
 provers. This can include external solvers such as SMT solvers, and
 (in the case of ProB) constraint solvers such as Sicstus
 Prolog. Finally, ProB is an animator and model checker: it helps users
 to gain confidence in their specifications, and it can be used as a
-dis-prover to discover counter-examples to proof obligations.
+disprover to discover counter-examples to proof obaligations.
   
 Smart is a proof language developed by the company ProveNRun. It is
 based on a classical predicate logic, extended with rank-1
@@ -325,7 +325,7 @@ on implementing these tools will allow the researchers from these
 different communities to come together and learn more about the
 similarities and differences between these systems.
 
-Instrumenting some of these systems is straightforward, but this also
+Instrumenting some of these systems is staightforward, but this also
 raises new research challenges:
 
 
@@ -384,10 +384,10 @@ information is thus crucial.
 In order to instrument systems with transient proof information, the
 proof terms need to be complemented with this transient information by
 either logging or re-synthesizing it on demand. Both approaches may be
-used, depending on the the trade-off between computation time and space
+used, depending on the the tradeoff between computation time and space
 for storage.
 
-However, this approach is insufficient for systems that rely on
+However, this approach is insufficent for systems that rely on
 external provers such as Isabelle or Event B. In order to handle these
 cases, we will instrument these external provers so they can produce
 the missing parts of the proof terms.
@@ -407,7 +407,7 @@ impact on the exporting of large libraries to Dedukti, discussed
 below.
 
 To reduce the size of proof terms produced by the translation to
-Dedukti, we plan to investigate how to avoid unnecessary
+Dedukti, we plan to investigate how to avoid unneccessary
 normalization or duplication of (parts of) proofs. We will also
 investigate what parts of each proof can be safely omitted because
 they can be inferred from the rest of the proof.
@@ -429,7 +429,7 @@ following tools:
 
 \item CoqInE is a prototype tool that can translate Coq proofs to
   Dedukti. Recent work to include advanced features of Coq, such as
-  universe polymorphism, has dramatically increased the coverage of
+  universe polymorphism, has dramaticaly increased the coverage of
   this translation. We plan to make this translation a part of the
   code of Coq itself so that it is maintained with the rest of the
   system.
@@ -459,7 +459,7 @@ following tools:
 \item In the context of the BWare project, an expression of the set
   theory of the B method has been provided as a theory modulo, i.e. a
   rewrite system rather than a set of axioms. This expression is used
-  by the automatic prover Zenon modulo which features a back-end to
+  by the automatic prover Zenon modulo which features a backend to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
   proof obligations coming from Atelier B can be proved by Zenon
   modulo producing Dedukti proofs, hence providing a better confidence
@@ -582,10 +582,10 @@ output traces instead of directly provide Dedukti proofs. The second
 step to connect automatic theorem provers to the Logipedia
 infrastructure is to reconstruct the proof traces in order to build
 Dedukti proofs from them. The proposed process is the following: each
-step of the trace is transformed into an independent sub-problem; each
-of these sub-problems is given to a prover that can output Dedukti
-proofs; proofs of the sub-problems are then combined to produce a
-global proof of the original problem.  Since sub-problems correspond to
+step of the trace is transformed into an independent subproblem; each
+of these subproblems is given to a prover that can output Dedukti
+proofs; proofs of the subproblems are then combined to produce a
+global proof of the original problem.  Since subproblems correspond to
 atomic steps of the proof trace, they are relatively simple, so that
 we are confident that the prover producing Dedukti proofs will not
 struggle to find a proof. This process is quite similar to what is
@@ -596,11 +596,11 @@ from traces produced by automated theorem provers.
 This scheme has already been prototyped in a tool called
 Ekstrakto. Ekstrakto takes a TSTP file, as can be produced by
 e.g.\ the provers E and Zipperposition, and it uses Zenon Modulo and
-ArchSAT to prove the sub-problems. Ekstrakto was designed to be
+ArchSAT to prove the subproblems. Ekstrakto was designed to be
 agnostic w.r.t.\ the prover producing the trace; in particular it does
 not depend on the specific set of inference rules of the prover. It
 was also designed to be agnostic w.r.t.\ the prover used to prove the
-sub-problems; it is only required that the prover can output a Dedukti
+subproblems; it is only required that the prover can output a Dedukti
 proof in the correct expression of predicate logic.
 
 Although Ekstrakto has already shown that it is a valuable approach,
@@ -623,7 +623,7 @@ addressed in the project:
   automated theorem prover for predicate logic, of the introduction of
   new definitions, as well as the RAT property in traces produced by
   SAT solvers. The approach of Ekstrakto cannot be used here, because
-  the sub-problem corresponding to the step cannot be proved. However,
+  the subproblem corresponding to the step cannot be proved. However,
   since provability is preserved, it should be possible to transform a
   proof using the conclusion of the step into a proof using its
   premises. Such a transformation depends on the nature of the step
@@ -660,7 +660,7 @@ this project will study the following challenges.
 
 \paragraph*{Translate Dedukti statements into automatic theorem provers
   inputs.}
-Automatic theorem provers are mostly based on (parts of) predicate
+Automatic theorem provers are mostly based on (parts of) predciate
 logic.  Logipedia theorems, which mostly come from interactive
 provers, will be expressed in the Dedukti encodings of much more
 expressive logics, such as dependent type theory or simple type
@@ -848,7 +848,7 @@ We have seen how to instrument proof systems and automated theorem
 provers to produce proofs in Dedukti, and how to share these proofs in
 Logipedia.
 
-Very large proofs, requiring large libraries, have been developed in
+Very large proofs, requiring large librairies, have been developed in
 some proof systems and these large proofs and libraries are
 interesting for our project in two respects. First they constitute an
 excellent benchmark for the methods developed above. Then they will
@@ -871,7 +871,7 @@ structure of large libraries?
 The libraries we focus on have been selected according to the
 following criteria:
 \begin{itemize}
-\item Relevance: the libraries should support core areas of mathematics
+\item Relevance: the libraries should support core areas of matematics
   and computer science.
 \item Coverage: the libraries should have a wide coverage of an
   application area.
@@ -986,7 +986,7 @@ inside a proof assistant, making the GeoCoq library the most advanced
 machine-checked library in the area of synthetic geometry. This
 formalization enables to obtain automatic proofs based on geometric
 axioms using algebraic automated deduction methods, some of which will
-be covered by automated theorem proving.
+be covered by automated thorem proving.
 
 The main axiom system in this library is the one of Tarski, but
 Hilbert's axiom system and a version of Euclid's axioms sufficient to
@@ -1123,7 +1123,7 @@ areas such as cyber-physical systems and autonomous vehicles.
 
 As one of the challenges is scalability, one measure of success is how
 much of the libraries we will be able to import into Logipedia. A
-second measure of success is how well we are able to restructure the
+scond measure of success is how well we are able to restructure the
 libraries for end-user access and how well this structure can be
 transferred to Logipedia and thus to end-users.
 
@@ -1140,12 +1140,12 @@ at the center of the networking activities that will populate
 Logipedia with formal proofs coming from the libraries of various
 systems.
 
-Let us now turn to the development of the infrastructure itself, with
+Let us now trun to the development of the infrastructure itself, with
 a focus on accessibility. It is not sufficient to provide a
 trans-national and virtual access to make such an infrastructure
 usable. We must also provide an ergonomic web interface, a package
 distribution system, a search engine, a structure of encyclopedia
-that rests upon an enrichment of the data with metadata.
+that rests upon an enrichement of the data with metadata.
 
 {\color{red} To do}
 
@@ -1229,9 +1229,9 @@ semantic web-style queries in languages like SPARQL.
 
 \medskip
 
-Finally, after discussing the concepts related to the networking activities
-needed to collect the content of Logipedia and the infrastructure development
-needed to make it accessible, let us turn to joint research projects. 
+Finally, after discussing the concetps related to the networking activities
+needed to collect the content of Logipedia and the infrastructure developmnent
+nedded to make it accessible, let us turn to joint research projects. 
 
 We have considered above systems that were already at LIL 1, that is
 systems that implement a theory that we know how to express in Dedukti.
@@ -1279,7 +1279,7 @@ bisimulation up to equivalence relations), the meta-theory of the
 $\lambda$-calculus with proofs of (weak and strong) normalization and
 standardization, an encoding of PCF with a formalization of Howe's
 techniques of establishing applicative bisimilarity and a verified
-compiler to an intermediate representation in predicate logic using
+compiler to an intermediate representation in predciate logic using
 step-indexed logical relations, as well as one of the first proposed
 solutions to the POPLMark challenge.
 
@@ -1295,7 +1295,7 @@ search). The latter is being incorporated into the Abella system.
 The fixed point connectives allow users to define inductive and
 co-inductive logical relations, without the restriction to Horn
 clauses (as in Prolog). For example, constructive logic and
-constructive Simple type theory themselves, can be defined
+constructive Simple type theory thenselves, can be defined
 inductively as an object logic. In this way, one can reason about the
 relational specification of an object logic. Abella makes use of terms
 of the $\lambda$-calculus, together with their equational theory, to
@@ -1307,7 +1307,7 @@ high-level, and versatile approach for representing binding constructs
 of encoded formalisms, such as name restriction in process calculi.
 
 Our goal in this project is to lift Abella from LIL $0$ to LIL $2$. The main
-challenges are support for co-induction and co-recursion, which are not available
+challenges are support for coinduction and corecursion, which are not available
 directly in Dedukti where induction is supported by an axiom schema, support for
 $\lambda$-tree syntax, instrumenting Abella for extracting explicit invariants
 from cyclic proofs with size annotations, and recasting Abella's trusted
@@ -1351,21 +1351,21 @@ of Gödel's system $T$ and generate a formal proof that the extracted term
 realizes the statement, viewed as a specification.
 
 Real numbers are best represented as streams of (signed) digits, and handling
-such infinite objects requires co-induction, which gives rise to co-recursion in
-the extracted terms. Minlog accommodates co-recursion via partial functionals in
+such infinite objects requires coinduction, which gives rise to corecursion in
+the extracted terms. Minlog accommodates corecursion via partial functionals in
 the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
 objects of type level at most $1$, where extensionality and totality coincide.
 
 Besides extracting programs from proofs in constructive analysis, other notable
 applications of Minlog include the unification of $\lambda$-calculus and
 combinatory logic, embedding classical logic in minimal implicational logic, and
-the extraction of the DPLL algorithm underlying propositional Satisfiability
+the extraction of the DPLL algorithm underlying propositional satisfiability
 solving from a proof.
 
 In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
 This is facilitated by the fact that the foundations of Minlog and Dedukti are
 rather close (both have proof terms and deduction modulo); the main challenges
-are support for co-induction and co-recursion. We plan to export program
+are support for coinduction and corecursion. We plan to export program
 extraction to Dedukti through realizability and also aim for being able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
@@ -1426,7 +1426,7 @@ restricted to a fragment with decidable type checking, has been defined in
 $\lambda\Pi$-calculus modulo theory~\cite{gilbert:extending}. The main
 challenges for achieving our objective are to effectively extend this fragment
 to full PVS, in a way that identifies superficially different proofs of the
-inhabitedness of sub-types, and to instrument PVS in order to generate proof
+inhabitedness of subtypes, and to instrument PVS in order to generate proof
 traces that can be checked by Dedukti.
 
 \paragraph*{TLA$^+$.}
@@ -1480,17 +1480,17 @@ binders, definitional constructions, or have rich type systems that
 are not easily encoded in the $\lambda\Pi$-calculus modulo theory that
 underlies Dedukti.  Although the details vary between the systems,
 there are commonalities that should be addressed jointly. For example,
-Abella and Minlog have strong support for co-induction and co-recursion
+Abella and Minlog have strong support for coinduction and corecursion
 for which foundational support should be provided in Dedukti. Mizar
 and (to a lesser degree) TLA$^+$ make use of soft types for assisting
-proof search, and PVS emphasizes predicate sub-typing, which is also
+proof search, and PVS emphasizes predicate subtyping, which is also
 used in the SMT encoding used in TLA$^+$.
 
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
 Abella, HoTT, and Minlog are based on type theories with explicit proof objects
 and are in this respect close to Dedukti, although the details differ. PVS has a
 type system reminiscent of Simple type theory but adds predicate
-sub-typing, whereas Mizar and TLA$^+$ are based on classical set theories. The
+subtyping, whereas Mizar and TLA$^+$ are based on classical set theories. The
 three latter systems do not provide proof objects and require instrumentation
 for providing traces that can then be interpreted by Dedukti. In all cases, a
 crucial point to consider for defining an encoding into $\lambda\Pi$-calculus
@@ -1545,7 +1545,7 @@ In the simplest case, an alignment is a pair of symbol identifiers
 from two different libraries such that both symbols are ``the same
 informal mathematical concept''. For example, although real numbers
 can be defined by Cauchy sequences, Dedekind cuts, and also stream
-representations due to co-recursion, all such different formalizations
+representations due to corecursion, all such different formalizations
 introduce essentially the same mathematical concept. More precisely,
 following the work of \site{Fau} and \site{Inn}
 \cite{GKKMR:alignments:17} and the alignment-based mediator developed
@@ -1673,7 +1673,7 @@ representation is better. For real numbers and functions, their
 definitions often differ even between different libraries of the same
 proof assistant.  Real numbers, for example, can be defined using 
 Bishop style modulated Cauchy sequence, regular Cauchy sequence,
-Dedekind cut, and stream representations using co-recursion.
+Dedekind cut, and stream representations using corecursion.
 Similarly, geometry can be defined synthetically using Hilbert’s,
 Euclid’s or Tarski’s axioms or analytically using coordinate systems and
 algebra.  Therefore, our first step will be to import into Dedukti the
@@ -1737,7 +1737,7 @@ libraries. This translation will allow porting the proof of $t’$ in
 $L’$ to a (potential) proof of $t$ in $L$.
 
 
-\subsubsection*{Challenges}
+\subsubsection*{Chalenges}
 
 Often there are many notions that are tightly connected but not
 equivalent.

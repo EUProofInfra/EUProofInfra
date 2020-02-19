@@ -1,6 +1,6 @@
 Developing a new research infrastructure, by integrating existing
 ones, through data exchange, requires a wide range of activities,
-described in the work-plan. This different activities will require
+described in the workplan. This different activities will require
 to use different methodologies: developing new pieces of software,
 modifying existing ones, experimenting with translations, proving
 theorems, etc.
@@ -72,12 +72,12 @@ must be very efficient to be useful. This yields two new issues.
 
 First, these systems include many optimizations that make their code
 very complex and hence difficult to instrument. Then, instrumentation
-often slows down the instrumented a little bit and if this is acceptable
+offten slows down the instrumented a little bit and if this is acceptable
 for interactive proof systems---the user being anyway slower than the
 software---this is often not acceptable for automated theorem provers.
 
 So, these systems must be instrumented in a minimal way, so that they
-execution is not perturbed by the instrumentation. So in most of the
+execution is not perturbed by the instumentation. So in most of the
 cases, we can just extract a proof trace, as in the third case above,
 and fill the gaps in these proofs by using another, less powerful but better
 instrumented, automated theorem prover, to fill the gaps. 
@@ -93,7 +93,7 @@ proof formats that will be already integrated into Dedukti, in
 particular TSTP, for automated theorem provers, and LSFC, for SMT solvers.
 
 When an automated theorem prover is called from Dedukti to fill the
-gap between two propositions, we need also to translate theorem
+gat bewteen two propositions, we need also to translate theorem
 statements expressed in Dedukti, into the logic understood by
 automatic provers. We will target a pivot language for which
 translations to major existing automatic provers already exist, such
@@ -127,11 +127,11 @@ issues come from.
 \item It may be because Dedukti itself is too slow and we need to modify
   Dedukti itself, as we have done in the past to increase, for instance,
   the efficiency of Dedukti's conversion test.
-\item It may be because the proof term produced by the translation is
+\item It may be because the proof term produced by the translationis
   too big, as has happened in the past with translations that did not
   take sharing into account, letting the size of the proof term explode.
 \item It may be because the expression of the theory itself has to be
-  revised, as has happened in the past with the translation of
+  revised, as has happended in the past with the translation of
   inductive types.
 \end{itemize}
 
@@ -141,40 +141,40 @@ the full library can be handled.
 
 \subsubsection*{Infrastructure}
 
-Developing an infrastructure to make the proofs accessible raises a
+Developping an infrastucture to make the proofs accessible raises a
 different methodology issues. Here the technology of web services,
 distribution package, ergonomic user interfaces, search engines is
 mature and we need to rely on this existing technology.
 
 Yet this raises two methodology issues. The first one is that some of
 these technologies must be adapted for the case of proofs. This is,
-for instance, the case of the search engines technology, as plain text
+for instance, the case of the seach engines technology, as plain text
 search is not adapted to formal proofs. First because logical formulas
 are not made of words, themselves made of letters, but directly of
 symbols. Second because all formulas are, more or less made with the
 same symbols in different orders---for instance the equal sign is in
-every equation, so that it does not mean anything to search a formula
+every equation, so that it does not mean anything to seach a formula
 on the equal sign.
 
 The second aspect which is both methodological and managerial is that
 these technology are mastered by other people than researchers and
 engineers on formal proofs. So we need to develop interdisciplinary
-teams, which we have succeeded, by incorporating several partners
+teams, which we have succeded, by incorporating several partners
 in the consortium who will bring this expertise.
 
 \subsubsection*{Structuring the encyclopedia}
 
 Structuring the encyclopedia raises the same methodological issues
-than developing the infrastucture to make the proofs accessible.
+than developping the infrastucture to make the proofs accessible.
 
 The technology of ontologies, for instance, is mature. But is has been
 developed in different contexts---for instance for medical
-ontologies---and we need to understand how it can be adapted to formal
+ontologies---and we need to undertsand how it can be adapted to formal
 proofs. 
 
 Then, this technology is mastered by other people than researchers and
-engineers on formal proofs. Fortunately we have succeeded to have in
-the consortium researchers who will bring their expertise on this
+engineers on formal proofs. Fortunately we have succeded to have in
+the consortium reseachers who will bring their expertise on this
 topic.
 
 \subsubsection*{New theories, new systems}
@@ -194,7 +194,7 @@ on similar foundations (more or less elaborate type theories, set
 theories, etc.) as those considered above, and ideas that have proved
 successful there can be transferred {\em mutatis mutandis}. For
 instance, issues such as proof-irrelevance, induction, co-induction,
-etc. are similar across theories and systems.
+etc. are similar accross theories and systems.
 
 Yet, an interesting methodological issue, manifests when we attempt to
 express new theories in Dedukti. In some cases, we do not succeed, but
@@ -206,14 +206,16 @@ remain simple enough and neutral with respect the the various theories
 it permits to express, but also flexible enough so that it evolves
 according to the needs of its users.
 
-\subsubsection*{Proof engineering}
+\subsubsection{Proof engineering}
 
+\item
 We want to develop algorithms to analyze which symbol, axiom, rewrite
 rule is used in each proof, and consequently in which system each proof
 can be used. We also want to develop algorithms to eliminate some of the 
 symbols, axioms, and rewrite rules used in a proof in order to be able to 
 use it in more systems.
 
+\item
 Each library imported in Logipedia will come with its own
 definition of natural numbers, real numbers, etc. We want to develop
 ``concept alignments algorithms'' to transport theorems from one
