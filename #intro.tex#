@@ -1,0 +1,268 @@
+\thispagestyle{empty}
+
+Bugs kill, and although testing may reveal some bugs, only formal
+modeling and verification can guarantee their absence.  Thus, we
+should never fly in an autonomous plane driven by a piece of software
+that has not been formally verified.
+
+The trust in critical systems today relies on formal verification, in
+particular formal proofs, that guarantee the safety of the people
+using transportation systems (autonomous cars, subways, trains,
+planes, etc.), health systems (robotic surgery, etc.), energy provided
+by nuclear plants, financial applications, e-governance, etc. Formal
+proofs are developed using research infrastuctures, called proof
+systems.
+
+
+
+
+This crucial role of formal proof is highlighted by
+several successes, like the correctness proofs of the automatic Paris
+metro line 14 \cite{metro14}, the detect-and-avoid system for unmanned
+aircraft system developed by NASA \cite{Munoz16}, the operating system
+seL4 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It
+has been empirically observed that compilers and operating systems
+often have bugs, but proved ones, such as seL4 or CompCert have none
+or much fewer.  This is why certification processes require proofs,
+and not only testing, at the highest Evaluation Assurance Levels of
+the Common Criteria security evaluation international standard, in
+effect since 1999.  Because formal methods are crucial in the
+development of the information society, because people can die and
+companies go bankrupt because of a bug, it is crucial for Europe to
+master this technology and its evolution.
+
+
+
+A lot of formal proofs developed for one critical system could be used
+in another.  Unfortunately, the development of formal methods is
+slowed down by the large number of proof systems (and sometimes the
+large number of versions, over time, of one single system) and the
+lack of a common theory used by these systems.  For instance, the
+Paris metro line 14 has been proved correct in Atelier B, while the
+Nasa detect-and-avoid system for unmanned aircraft system has been
+proved correct in PVS, the seL4 operating system has been proved
+correct in Isabelle/HOL, and the compiler CompCert has been proved
+correct in Coq.  Some projects, such as the proof of Hales' theorem
+(Kepler's conjecture) \cite{Hales17}, have been started in different
+systems and required significant integration effort for obtaining the
+overall result.
+
+Thus, these proof systems are infrastructures and these
+infrastructures have not been integrated yet.  Because of this lack of
+integration, each small community is centered around one theory and
+one system. Each library is specific to one proof system, or often
+even to a specific version of this system. In general, a library
+developed in one system cannot be used in another, and when the system
+is no longer maintained, the library may disappear.  Thus,
+interoperability (the possibility for one user to use a proof
+developed in another system), sustainability (the possibility to use a
+proof decades after it has been developed), and cross-verification
+(the possibility to have a higher assurance in the correctness of some
+statement by verifying its proof in a system different from that in
+which it has been constructed) are restricted.
+
+The fragmentation of proof systems hinders productivity
+because foundational work (for instance, developing a calculus library
+with theorems about the sinus and cosinus functions, derivatives,
+etc.) has to be repeated instead of being reused.
+
+This fragmentation limits the spreading of formal proofs in
+non-specialist communities. For instance, teaching formal proving to
+undergraduate students in a logic course is difficult, as it requires
+the choice of a specific language, a specific theory and a specific
+system that orients the course towards this language, theory, and
+system, instead of orienting it to fundamental principles that are
+useful everywhere. The same is true for the use of formal proofs in
+industry or by working mathematicians.
+
+On more philosophical grounds, while we had in the past an (informal)
+proof of Pythagoras' theorem or Fermat's little theorem, the same
+proof now has different formalizations in PVS, Isabelle/HOL, Coq, etc.
+Thus, the universality of logical truth itself is jeopardized.
+
+\begin{figure}
+\begin{framed}
+\begin{center}
+\begin{tabular}{l@{\hspace{3cm}}l}
+\underline{Abella}    & Acl 2\\
+\underline{Agda}      & \underline{HOL Light}\\
+\underline{Atelier B} & IMPS\\
+\underline{Coq}       & Lean\\
+\underline{FoCaliZe}  & \underline{LFSC}\\
+\underline{HOL4}      & Nuprl\\
+\underline{Isabelle}  & \underline{PVS}\\
+\underline{Matita}    &  \underline{TSTP}\\
+\underline{Minlog}\\  
+\underline{Mizar}\\
+\underline{ProB}\\
+Rodin\\
+\underline{TLA+}\\
+\underline{Smart}\\
+\underline{Why3}\\
+\end{tabular}
+\end{center}
+\caption{Some major proof systems or formats. The European ones are in the first column.
+  Those addressed in the project are underlined\label{systems}}
+\end{framed}
+\end{figure}
+
+Some twenty major proof assistants exist in the world (Figure
+\ref{systems}), that are used both for proving properties of software
+and results in pure mathematics, such as the Feit-Thompson theorem
+\cite{Gonthier13} or Hales' theorem (Kepler's conjecture)
+\cite{Hales17}.  Making these systems interoperable would avoid
+duplication of work, reduce development time, enable
+cross-verification, and make formal proofs accessible to a much larger
+community.  After three decades dedicated to the development of these
+systems, allowing such a cooperation between these systems is the next
+step in the development of the formal proof technology.
+
+These proof systems are research infrastructures, as they allow
+computer scientists, mathematicians, engineers, and logicians to build
+and study formal proofs, just like particle accelerators allow
+physicists to build and study particles. Each proof system comes with
+its own library, and these libraries are also part of research
+infrastructure.  To address this challenge of the cooperation between
+these infrastructure, we will develop an on line encyclopedia of
+formal proofs, where each proof will be expressed in all the theories
+where it can be expressed, so that it can be used in as many systems
+as possible. This will allow interoperability, sustainability, and
+cross-verification of formal proofs.
+
+This encyclopedia will be called Logipedia.
+
+Logipedia is thus a research infrastructure that permits the
+cooperation between these proof systems, by allowing to share the data
+processed by these infrastructures.
+
+Such an infrastructure is, in many ways, new in the European Strategy
+on Research Infrastructures. We can even say that the idea to
+structure a networking activity around the construction and the use
+of a large scale infrastructure is relatively new in computer science and
+mathematics, even if other projects, such as {\em OpenDreamKit} and
+{\em Software Heritage} do exist. Our goal is therefore also trigger a
+little, but significative, evolution on the organization of research
+in computer science and mathematics in Europe.
+
+\begin{framed}
+\begin{center}
+{\bf \Large How do proofs contribute to safety and security of software?}
+\end{center}
+  
+Imagine the following casino game. At the beginning, a player is given
+eleven euros. At each round, she throws a dice. If the results is a
+six, then game is over.  If it is a five, a four, a three, or a two,
+she is given twice the amount of money she already has. If it is a one
+she is taken two euros, if she has at least two.  When the game is
+over, the player wins the money she got, except if she has zero, in
+which case she looses one million.
+
+This game can be modeled by program $p$
+%import random 
+\begin{verbatim}
+n = 11
+stay = True;
+while stay: 
+    roll = random.randint(1,6)
+    if roll == 6:
+        stay = False
+    else:
+        if roll >= 2:
+            n = n + 2 * n
+        else:
+            if (n >= 2):
+                n = n - 2
+print(n)
+\end{verbatim}
+
+To be on the safe side, the player wants to be sure, before starting
+playing, that she will never finish with zero.  And indeed, in all runs,
+the content of the variable {\tt n} is always an odd number, thus it
+cannot be zero. This property is a consequence of two simple
+theorems of arithmetic
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
+Hence, verifying the safety of this program, that is that the
+proposition 
+${\mbox{\it safe}}(p)$ holds, 
+amounts to prove these three theorems of arithmetic.
+
+A tiny bug in the program, for instance replacing the {\tt 2} by a
+{\tt 3} in the the line {\tt n = n + 2 * n} makes the program unsafe
+as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
+this program will, most likely, not reveal this bug, that manifests
+very rarely.  In contrast, attempting to prove the correctness of this
+program will
+reveal the bug as it is impossible to prove the proposition
+$$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
+\end{framed}
+\pagebreak
+\begin{framed}
+  \begin{center}
+    {\bf \Large What is a formal proof? What is a proof system?}
+    \end{center}
+        
+Since Antiquity, we have known that
+proofs, both purely mathematical ones, as in Euclid's elements or the
+recent proof of the Kepler conjecture by Thomas Hales, and proofs used
+to establish the safety and security of software, can be built with a
+limited number of rules, for example
+\begin{itemize}
+\item From $A \Rightarrow B$ and $A$, deduce $B$.
+\item From $A$, deduce $A~\mbox{\it or}~B$.
+\item ...
+\end{itemize}
+Yet, through history, most mathematical proofs have been written in
+pidgin of natural language and mathematical formulas. When proofs are
+very long (as it is often of the proofs used in safety and security,
+but also of some proofs in pure mathematics), mistakes in proofs are
+very difficult to detect. For instance dozen of wrong proofs of
+parallel postulate have been given through history, sometimes by the
+best mathematicians such as Ptolémée, Proclus, al-Haytam, Tacket,
+Clairaut, Legendre...
+
+In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
+correctness of a mathematical proof could be checked by a
+computer. This led to the development of the two first proof systems
+in history: Milner's LCF or De Bruijn's Automath.  From
+the axioms
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
+$$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
+we can deduce
+$$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
+In the language implemented in Automath, this proof is written
+$$\lambda x \lambda h~(g~x~(f~x~h))$$
+\end{framed}
+
+\begin{framed}
+\begin{center}
+{\bf \Large What is a theory?}
+\end{center}
+
+Deduction rules such as ``From $A \Rightarrow B$ and $A$, conclude
+$B$'' are universal, but building proofs require more rules, that are
+often specific to a domain of knowledge and are called
+``axiom''. Examples are the axioms of geometry, the axioms or
+arithmetic. These axioms constitute a theory.
+
+At the beginning of the 20th century an axiomatic theory, {\em set
+  theory}, has been proposed to express all mathematical proofs. In
+the first half of the 20th century a few variants of set theory, and a
+few alternatives have been proposed (such as Simple type theory).
+But, because these theories had not been designed for being
+implemented on a computer, the rise of computer checked formal proofs
+has led to a multiplication of such alternative theories. Each proof system,
+such as Coq, Isabelle/HOL, Mizar, Atelier B,
+etc. implements its own theory.
+
+This is the major obstacle to interoperability.
+\end{framed}
+
+
+
+
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:
