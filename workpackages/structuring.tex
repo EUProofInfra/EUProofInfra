@@ -34,7 +34,7 @@ in the field of formal software engineering.
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=12]
+\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=12, SacRM=6]
 This task extends the Dedukti language with primitives for representing library, document, informal annotations, and theory structure.
 This includes in particular the definition of unique identifiers for all declarations, which is critical for alignments.
 %We extend the Dedukti language with features for high-level representations.
@@ -51,12 +51,14 @@ This includes in particular the definition of unique identifiers for all declara
 %Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
 \end{task} 
 
-\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=18]
-This tasks extends the Dedukti language with a framework for metadata annotations.
-This will cover all levels of the structure introduced in \localtaskref{strlibstructure} as well as the level of subexpressions of Dedukti expressions.
+\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=24]
+This tasks extends the Dedukti language with a framework for meta-data annotations.
+This will cover all levels of the structure introduced in \localtaskref{strlibstructure} as well as the 
+level of subexpressions of Dedukti expressions. It will also provide a mechanism to validate meta-data
+according to assertions.
 \end{task} 
 
-\begin{task}[id=strdomonto,title= Domain Ontologies for Formal Methods in SE,lead=Tou,TouRM=12, SacRM=6]
+\begin{task}[id=strdomonto,title= Domain Ontologies for Formal Methods in SE,lead=Tou,TouRM=12, SacRM=0]
 Y. Aitameur at \site{Tou}
 \begin{compactitem}
 \item domain ontologies as descriptive models for engineering domains 
@@ -83,6 +85,8 @@ It will also build on the ontological export of ULO data developed for Isabelle 
 
 The task leader will collaborate with M. Wenzel as a sub-contractor of \site{Fau} for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq, with whom long-standing collaborations on these library exports exist.
 \end{task} 
+
+% From the 12 Months for Fau, 6 months (?) are actually sub-contracting for Wenzel for extending the export functions with ontological data.
 
 % Moved to WP9
 %\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
@@ -113,8 +117,7 @@ P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automa
 \end{tasklist}
 
 
-{\color{red} There is a LaTeX bug in this list of deliverables, I have not been able to fix
-G.}
+\ednote{@Kohlhase: check use of localtaskref inside deliverables}
 \begin{wpdelivs}
   \begin{wpdeliv}[due=18,miles=???,id=deliv-str-framework,dissem=PU,nature=DEM,lead=Sac]
   	{This deliverable describes the language developed in Tasks localtaskref{strlibstructure} and localtaskref{strdofimpl}.}
