@@ -1195,37 +1195,42 @@ semantic web-style queries in languages like SPARQL.
 
 \medskip
 
-Finally, let us turn to concepts that will lead to more advanced
-joint research projects. 
+Finally, let us turn to concepts that will lead to joint research projects. 
 
 \subsubsection*{Objectives}
 
-The systems considered in this work package range from specialized systems such
-as Abella or Minlog used in academia to mainstream systems such as PVS or TLA$^+$
-that have been used in major scientific or industrial projects. They provide
-specific features that are relevant to their target domains and are therefore
-preferred by users for developing theories and proofs in these areas. All of
-these systems are currently at Logipedia integration level (LIL) $0$, meaning
-that their underlying logics have not yet been encoded in Dedukti. The objective
-is to bring them (at least) to LIL $2$ in order to prepare the grounds for a
-longer-term integration into Logipedia.
+We have considered above systems that were already at LIL 1, that is
+systems that implement a theory that we know how to express in Dedukti.
+There are other systems, that are still at level 0, that is that we
+do not know how to express. Part of our project is to work on such
+systems, to understand how to express their theory in Dedukti.
 
-There are various motivations for including these systems in Logipedia. First,
-being able to export theories
-and proofs developed in these systems makes them available to those systems with
-more advanced Logipedia integration levels. For example, accessing Mizar's rich
-library of formalized mathematics would be beneficial to developers of
-machine-checked mathematical results. Second, the smaller systems have been used
-for specific tasks such as reasoning about the meta-theory of program calculi,
-but they do not provide rich general-purpose standard libraries, say, about
-integer or real arithmetic as the more mature systems. Finally, for some of the
-systems only one implementation able to check the proofs exists. As such, in the
-long run we can cross verify the proofs stemming from the target systems.
-Neither goal will be
-fully achieved at the end of the project since higher Logipedia integration
-levels are necessary for exporting or importing full libraries. Nevertheless,
-the work carried out within this work package is a necessary stepping stone and
-enabler for making Logipedia a universally accepted encyclopedia of formal
+These systems range from specialized systems such as Abella or Minlog
+used in academia to mainstream systems such as PVS or TLA$^+$ that
+have been used in major scientific or industrial projects. They
+provide specific features that are relevant to their target domains
+and are therefore preferred by users for developing theories and
+proofs in these areas.  The objective is to bring them (at least) to
+LIL $2$ in order to prepare the grounds for a longer-term integration
+into Logipedia.
+
+There are various motivations for including these systems in
+Logipedia. First, being able to export theories and proofs developed
+in these systems makes them available to those systems with more
+advanced Logipedia integration levels. For example, accessing Mizar's
+rich library of formalized mathematics would be beneficial to
+developers of machine-checked mathematical results. Second, the
+smaller systems have been used for specific tasks such as reasoning
+about the meta-theory of program calculi, but they do not provide rich
+general-purpose standard libraries, say, about integer or real
+arithmetic as the more mature systems. Finally, for some of the
+systems only one implementation able to check the proofs exists. As
+such, in the long run we can cross verify the proofs stemming from the
+target systems.  Neither goal will be fully achieved at the end of the
+project since higher Logipedia integration levels are necessary for
+exporting or importing full libraries. Nevertheless, the work carried
+out within this work package is a necessary stepping stone and enabler
+for making Logipedia a universally accepted encyclopedia of formal
 proofs.
 
 \subsubsection*{Target systems}
@@ -1378,12 +1383,12 @@ interactive proof by the user. For proof checking, PVS provides a rich set of
 automated tactics and back-end provers but does not generate explicit proof
 objects.
 
-PVS has been used in numerous academic and industrial projects for verifying
-hardware systems, fault-tolerant algorithms or dynamically linked Java programs,
-among others. It is particularly known for its applications to avionics systems
-and airborne conflict detection and avoidance systems, e.g.\
-\cite{munoz:unmanned}, by Rockwell Collins, NASA, and the National Institute of
-Aerospace.
+PVS has been used in numerous academic and industrial projects for
+verifying hardware systems, fault-tolerant algorithms or dynamically
+linked Java programs, among others. It is particularly known for its
+applications to avionics systems and airborne conflict detection and
+avoidance systems, e.g.\ \cite{munoz:unmanned}, by Rockwell Collins,
+NASA, and the National Institute of Aerospace.
 
 Our objective in this project is the translation of a substantial part of the
 PVS Prelude (the standard library) into Logipedia. A core of the PVS logic,
@@ -1422,6 +1427,8 @@ untyped set theory underlying \tlaplus in $\lambda\Pi$-calculus modulo theory
 and to instrument TLAPS in order to export proof traces that can be checked in
 Dedukti, starting with the Zenon and Isabelle back-ends.
 
+<<<<<<< HEAD
+=======
 One of the case studies will be the specification of one of the software
 systems developed within MED-EL, which requires an ad-hoc modification of
 instances of the pre-defined process. Every new change to the process might
@@ -1432,16 +1439,13 @@ verification of this system should guarantee that the process executed by the
 particular MED-ELs user, is never out of sync, meaning, it does not contain
 inconsistencies in data presented and generated by the user.
 
+>>>>>>> refs/remotes/origin/master
 \subsubsection*{Challenges}
 
 As explained above, each of the systems considered in this work package poses
 some specific challenges that will be addressed in the tasks corresponding to
 the individual systems. We list some cross-cutting research challenges that this
-project will allow us to address synergistically. Some of them are related to
-work carried out in other work packages, as discussed below.
-
-70\% foundational research, 30\% networking ...
-
+project will allow us to address synergistically. 
 
 \paragraph*{Rich syntactic and semantic features.}
 
@@ -1469,46 +1473,23 @@ controlling the size of proof objects.
 
 \paragraph*{Automatic proof tools.}
 
-Many of the systems considered in this work package call upon automatic
-back-ends for proof search and in many cases, these do not natively produce
-traces. Even when they do, they are not in a form that is suited for replay in
-Dedukti. There are two ways how we will try to tackle the problem of missing
-proofs. First, we will attempt to instrument these tools in order to record and export
-proof traces, and there are clear opportunities for sharing notions of proof
-traces and concrete proof formats in order to avoid duplicate effort. Second,
-we will use native Dedukti automation to re-create the missing proof parts.
+Many of the systems considered in this work package call upon
+automatic back-ends for proof search and in many cases, these do not
+natively produce traces. Even when they do, they are not in a form
+that is suited for replay in Dedukti. There are two ways how we will
+try to tackle the problem of missing proofs. First, we will attempt to
+instrument these tools in order to record and export proof traces, and
+there are clear opportunities for sharing notions of proof traces and
+concrete proof formats in order to avoid duplicate effort. Second, we
+will use native Dedukti automation to re-create the missing proof
+parts.
 
 
-\subsubsection*{Relation to other work packages}
 
-The work to be carried out in this work package will benefit from the existing
-encodings of the more mature systems considered in
-\WPref{instrumentation}:\ednote{Have the WPs been explicitly introduced at this point?}
-although every system has its idiosyncrasies that require special techniques,
-there are also many common aspects. In particular, the systems considered here
-are based on similar foundations (more or less elaborate type theories, set
-theories, first-order or second-order predicate logic) as those considered in
-\WPref{instrumentation}, and ideas that have proved successful there can be
-transferred immediately. Also, improvements made to Dedukti in
-\WPref{instrumentation} will benefit encodings of and proof checking for the
-systems considered here, and conversely, foundational issues discovered in
-encoding these systems can feed back into \WPref{instrumentation}. For example,
-support for corecursion and coinduction, preferably based on a realizability
-interpretation, are important for Coq, Agda, and Matita (in
-\WPref{instrumentation}) as well as for Abella and Minlog.
-
-There is also a strong relationship with \WPref{atpetc} because many of the
-systems considered in this work package call on automatic back-end provers and
-require instrumentation similar to the proof engines considered in
-\WPref{atpetc} so that proofs can be exported to Dedukti. Even in a
-type-theoretic system such as Abella, the Bedwyr and unification engines do not
-produce proof objects in a form that is readily interpretable by Dedukti.
-Additionally, some of the systems developed here may also make use of the native
-Dedukti provers developed in \WPref{atpetc}.
 
 \subsubsection*{Success}
 
-The main measure of success for this work package is provided by the Logipedia
+The main measure of success for this work is provided by the Logipedia
 integration levels of the considered systems, and the fragments for which
 theories and proofs can be exported. A secondary measure is the overhead
 incurred by the encodings and instrumentations and thus the complexity of proof
