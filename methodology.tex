@@ -208,145 +208,38 @@ according to the needs of its users.
 
 \subsubsection*{Proof engineering}
 
-We want to develop algorithms to analyze which symbol, axiom, rewrite
-rule is used in each proof, and consequently in which system each proof
-can be used. We also want to develop algorithms to eliminate some of the 
-symbols, axioms, and rewrite rules used in a proof in order to be able to 
-use it in more systems.
+Like the previous theme that also belong to joint research activities,
+proof engineering first requires some mathematical developments, for
+instance to establish that proofs in one theories can always, or not,
+be translated to another theory.
 
-Each library imported in Logipedia will come with its own
-definition of natural numbers, real numbers, etc. We want to develop
-``concept alignments algorithms'' to transport theorems from one
-structure to another isomorphic one.
+But there is also a more empirical aspect in this work: for instance,
+although, in principle not all Matita proofs can be translated to
+Isabelle/HOL, we have established that the full arithmetic library of
+Matita could. So it is important to consider specific case studies,
+such as construvtivization, elimination of universes, elimination of
+dependent types, elimination of the axiom of choice, etc.
 
-\paragraph{Aligning logical foundations}
+It is important to notice that Logipedia permits to build Bridges
+between theoretical work and experimental work here. For instance,
+there are many constructivization algorithms or many algorithms to
+eliminate the axiom of choice that have been developed in theoretical
+papers. Logipedia, allowing us to translate proofs from a classical to
+a constructive theory, gives us a unique opportunity to experiment
+with these algorithms on real size proofs that have been developed for
+other purposes.
 
-Our first step will be to divide logical theories in clusters,
-according to the key parameters mentioned above, and then to build a
-web of syntactic translations between systems. We do not expect full
-back-and-forth translations, as some systems are well-known to be
-proof-theoretically stronger than others, but we will seek to
-establish suitable equiprovability results for fragments of the
-relevant languages.
-
-We shall also deal with specific case studies to test our work.  For
-example, to test our methods for translating classical proofs into
-constructive ones, one could verify Michael Beeson's "wholesale
-importation" (he uses the double negation translation to import all
-the negative results from \cite{} to intuitionistic logic) using the
-library of GeoCoq proofs.
-
-\paragraph{Aligning theorem proving objects (case studies)}
-
-We call big scale concept alignment the equivalence between different
-axiom systems, and small scale concept alignment the equivalence (or
-relationship) between different definitions.  Big scale concept
-alignment is the alignment of different theories, usually expressed
-using different axiom systems (eg., Tarski, Hilbert, Euclid) for
-different geometries: euclidean and non euclidean. It also includes
-alignment of different kind of analytic definitions of geometry i.e.,
-between different analytic models (e.g., real closed fields, reals,
-complex numbers), different definitions of projective
-geometry. Porting GeoCoq to other proof assistant will bring some of
-these big scale concept alignments.  Small scale concept alignment
-requires proof of equivalence between different definitions of the
-same concept in the same or different language.  To some extent this
-task could be automated, but the difficulty is that some equivalences
-are valid only in some contexts.
-
-\paragraph{Automated theory alignment}
-
-In one line of research, we set to use logic-deduction approaches that
-have been developed for the automatic alignment of database schemas
-and instances, such as \cite{}.  In order to align theories across
-libraries, we will propagate alignment information, based on a
-certified probabilistic inference engine, which will extend the work
-in \cite{}. We envisage a collaboration with WP7, aimed at reusing the
-ontology framework integrated in the core of Dedukti. Concretely, each
-of the domain-specific meta-data, essentially the theory schemas, will
-be specified in the ontology framework. Their validity with respect to
-the underlying instances will be mechanically checked and the
-alignment of the schemas will inform that of the underlying theories.
-
-In the second line of research, we will employ machine learning
-techniques, based on neural networks, to design heuristics for finding
-new alignments.
-
-\paragraph{Alignment-based services}
-
-This task will be split into two lines of work corresponding to findability and reuse across prover libraries.
-Firstly, an alignment-based search service will accept queries in any language $L$ encoded into Dedukti but will find results in any library imported into Dedukti, not just the one underlying $L$.
-Secondly, a proof rewriting service will use alignments between two libraries to migrate proofs from one to the other.
-Both applications depend alignment-induced expression translation.
-All three components are described below.
-
-\textbf{Expression Translation.}
-We refine the existing definitions of alignments in a way that allows alignments creators to specify translation rules for expressions formed from the aligned operators.
-Conceptually, we will provide a declarative user-friendly syntax for these.
-But structurally, they will correspond to rules in the logic programming systems ELPI.
-Thus ELPI can directly execute the translation function induced by a set of alignments.
-
-\textbf{Search.}
-We use the MathWebSearch system to perform unification queries in formal libraries.
-It would be straightforward to index and search all libraries available in Dedukti in MathWebSearch.
-However, then if concepts $a$ and $b$ from libraries $K$ and $L$ are aligned, every query about $a$ in the language of $K$ would only find results in $K$ but never from $L$.
-By using the alignment-based expression translation, we can translate the user's query into other the language of $L$ (thus replacing in particular $a$ with $b$) and then run the translated query as well.
-Thus, we can find results in all libraries.
-
-Concretely, in the implementation, the UI will ask for a query written in Dedukti syntax together and provide a set of checkboxes indicating which libraries should be searched.
-The system then translates the query into the selected libraries and displays all results.
-
-\textbf{Proof Rewriting.} In the recent literature there are two main
-approaches to alignment based proof rewriting. The first one, based on
-logical relations, has been proposed to translate a proof about $X$
-into a proof about $X'$ remaining in the same logic. A relation is
-established between elements of $X$ and elements of $X'$ where, for
-example, $X$ can be the type of sorted lists of numbers, $X'$ the type
-of balanced search trees and the relation holds between data
-structures that contain the same set of integers. Then,
-oversimplifying, for each pair of corresponding functions acting
-respectively on $X$, $X'$, it is shown that they map related elements
-to related elements. Continuing the example, the function that inserts
-a new integer into the sorted list and the one that does the same into
-the balanced search tree map data structures that contain the same
-elements to data structures with the same property. Such proofs can be
-obtained fully automatically when the functions are obtained
-compositionally, without operating directly on the data structures. In
-the remaining cases a human needs to provide the proof.
-
-The first methodology is very accurate, but it requires human
-intervention and it can be applied only when the alignments can be
-simply expressed as relations between types and when everything is in
-just one logic. The second methodology is less accurate, but somehow
-more practical: it converts a proof into a sequence of intermediate
-statements that need to hold, it translates each statement from one
-system to the other ignoring the justification for the statement and
-it fires an automated prover to fill the gap in the target system. By
-varying the level of granularity the automated provers are allowed to
-find alternative proofs, for example when some low-level properties of
-data structure $X'$ are not available on data structure $X$, but a
-different proof can still establish a statement that does not involve
-them. Even when the provers fail to fill the gap the proof sketch
-obtained can still be useful to the user that can try to manually fill
-the gaps instead of restarting from scratch.
-
-The task requires implementing multiple transformations and
-translations of expressions containing binders (statements, proof
-terms, etc.), which is well known to be a delicate task. ELPI,
-developed by a join Ubo-Inr team, is a very high level programming
-language of the logic programming family that allows to concisely
-manipulate expressions with binders eliminating the most frequent
-sources of mistakes (name capture, for example). ELPI comes with an
-interpreter implemented in Ocaml that has been designed to be easily
-integrated in other Ocaml based tools, like Coq. We plan to first
-integrate ELPI in Dedukti so that Dedukti/Logipedia expressions can be
-directly manipulated into ELPI. We also plan to implement means to
-call external provers from ELPI via Logipedia translations. Then we
-will use a mix of ELPI code and Dedukti rewrite rules to implement
-alignment based proof and statement rewriting. Statement rewriting
-will find direct application to alignment based search and browsing as
-well.
-
+Another methodological innovation is that small scale concept
+alignment, for instance noticing that an algebraic structure called
+$N$ in one theory and another called $nat$ in another theory refer to
+the same object, that is are isomorphic. Before proving this
+isomorphism, either by hand or automatically, we need to discover such
+potential isomorphisms. For this, machine learning, seems to be the
+right method. So this work on Logipedia is also part of a current to
+apply machine learning in automated theorem proving and in formal
+proof technology. In some sense, building a large encyclopedia paves
+the way to consider proofs as big data and apply statistical methods to 
+proofs, including machine learning.
 
 %%% Local Variables:
 %%%   mode: latex
