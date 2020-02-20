@@ -195,6 +195,65 @@ $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{framed}
 \pagebreak
 \begin{framed}
+\begin{center}
+{\bf \Large Non trivial mathematics is sometime needed to verify that a program is correct}
+\end{center}
+
+Prime numbers are used in a very wide variety of fields due
+to the use of random number generators in computer simulations.
+However, their use is not limited to computer simulations, they are
+also at the basis of several cryptographic algorithms or are often
+used for hash tables, one of the most commonly used data structure in
+computer programming.  While primality testing is computationally
+intensive, its correctness is critical due to the prevalent use of
+prime numbers.  Thus, one could wish to prove properties of these
+tests.  To do so, one needs to pose the definition of primality.  It
+could be done in the following way.
+
+\begin{verbatim}
+Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n|p)).
+\end{verbatim}
+
+To try and lower the cost of primality testing, a solution is to use
+most efficient primality tests.  A very simple example of improvement
+when testing the primality of a natural number is to, instead of
+testing its divisibility by each of the smaller natural numbers, only
+do so up to its square root.  Indeed, if a natural number $p$ can be
+factored into the product of two smaller natural numbers $m$ and $n$,
+one of them has to be smaller or equal to the square root of $p$.
+Therefore, one could give the following simpler definition.
+
+\begin{verbatim}
+Definition prime' p :=
+  1 < p /\ (forall n, (1 < n /\ (n * n) <= p) -> ~ (n | p)).
+\end{verbatim}
+
+To ensure that these definitions are equivalent one would then prove
+the following statement.
+
+\begin{verbatim}
+Theorem prime_alt p : prime' p <-> prime p.
+\end{verbatim}
+
+Here, the simpler definition yields an equivalent and more efficient
+test.  Nevertheless, it would have been easy to introduce a small bug
+in the new definition.  For example, one could have written
+\verb!(n * n) < p! instead of \verb!(n * n) <= p!.
+
+\begin{verbatim}
+Definition prime'' p :=
+  1 < p /\ (forall n, (1 < n /\ (n * n) < p) -> ~ (n | p)).
+\end{verbatim}
+
+It would have resulted in accepting squares of primes as primes, hence
+the new definition would not have been equivalent.
+
+\begin{verbatim}
+Theorem prime_alt_wrong : ~ (forall p, prime'' p <-> prime p).
+\end{verbatim}
+\end{framed}
+\pagebreak
+\begin{framed}
   \begin{center}
     {\bf \Large What is a formal proof? What is a proof system?}
     \end{center}
