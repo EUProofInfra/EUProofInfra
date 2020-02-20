@@ -21,24 +21,96 @@ This includes notably:
 
 \begin{tasklist}
 
-  \begin{task}[id=basic,title=Defining the architecture of the infrastructure]
-    We will define the architecture of the infrastructure and install
-    it on some server at Inria. The server will be duplicated in
-    Münich for security. The architecture includes how the proof files
-    for the different proof systems will be organized and stored, how
-    they will be generated, etc.
-  \end{task}
+\begin{task}[id=archi,title=Defining the functional and software architecture,lead=Irt]
+    The logipedia platform will reuse efforts done on an existing application. However,
+    with an ambition to be a reference platform accessible on internet, it is necessary
+    to meet several requirements for such an application, especially scalability, 
+    availability and sustainability.
 
-  \begin{task}[id=web,title=Giving access to the infrastructure on the world-wide web]
-    We will develop a web interface to access the infrastructure,
-    navigate into the available proofs and downaload them.
-  \end{task}
+    To achieve this goal, we will specify the architecture of the system.
+    This will be done by:
+    \begin{itemize}
+        \item Collecting and formalizing users needs
+        \item Defining the proof submission process
+        \item Defining the reuse strategy in term of software components
+        \item Defining the global software architecture
+        \item Defining how proof files for the different proof systems will be organized 
+            and stored in logipedia database, based on structure defined in task~\taskref{structuring}{strlibstructure}.
+    \end{itemize}
+
+    Several features will be specified in this task:
+    \begin{itemize}
+        \item World-wide access through a user-friendly, ergonomic web browsing interface
+        \item Download proof files from the web interface
+        \item Interface with proof tools through the repository developed in task~\taskref{access}{opam}
+        \item Interface with the search tools using inputs from WP7 and task~\taskref{access}{search}.
+        \item Capability to easily integrate with publication systems (e.g. HAL, Arxiv) 
+            through permanent links
+        \item Capability to easily integrate with third-party applications like Wikipedia 
+            or search engines
+    \end{itemize}
+
+    Finally, we will define the tooling architecture necessary for continuous integration and 
+    continuous deployment (CI/CD) of the logipedia application itself and new validated proof files
+    in the logipedia database.
+
+\end{task}
+
+
+\begin{task}[id=infra,title=Defining the hardware architecture for the infrastructure,lead=Irt]
+    Based on the work done in task~\taskref{access}{archi}, we will size the needed hardware architecture to fit the objectives
+    of the project. The goal is to define a scalable infrastructure in order to be able
+    to manage an increasing traffic on the website to several hundreds downloads a day from
+    all over the world.
+
+    Security of the database is also very important. It must be possible to recover the data in a few
+    minutes at any time to ensure every user will be able to continue working. Defining the redundancy of
+    the infrastructure as well as the backup strategy is key to guarantee the security and high availability of
+    the platform.
+
+    Finally, the hosting strategy will be decided taking into account costs, efficiency and sustainability. 
+    The platform can be hosted:
+    \begin{itemize}
+        \item on premise on some server at Inria with redundancy in Münich
+        \item on public cloud services like Amazon Web Services (AWS) or the french european cloud providers OVH.com or Scaleway
+        \item on a private cloud, which is a compromise between both previous options.
+    \end{itemize}
+    SystemX operates its own private cloud based on open-source tools (multiple hardware servers 
+    running OpenStack and Kubernetes) and will bring its expertise, knowledge 
+    and skills to define the best hosting strategy.
+
+\end{task}
+
+\begin{task}[id=web,title=Giving access to the infrastructure on the world-wide web,lead=Irt]
+    In this task, the implementation of the architecture defined in task~\taskref{access}{archi} and task~\taskref{access}{infra}
+    will be done. The development will be done using agile methodology in order
+    to get frequent feedback from end users and adjust the implementation to fit
+    the needs.
+
+    We will setup the hardware infrastructure and develop the web interface to access 
+    the platform, navigate into the available proofs and download them.
+    We will then deploy the software on the hardware infrastructure.
+    
+    All this work will be done using CI/CD tooling. SystemX will bring its
+    expertise on deploying a software factory and using it in internal projects.
+    SystemX's software factory is based on open-source components widely used such as 
+    gitlab or jenkins.
+    The CI/CD will be used in two cases:
+    \begin{itemize}
+        \item Automatic building and deployment of the logipedia application on the hardware infrastructure
+        \item Automatic integration of new validated proof files in the logipedia database
+    \end{itemize}
+
+    Finally, we will perform unitary tests and integration tests, especially with components
+    developed in other tasks: opam repository from task~\taskref{access}{opam} and search tools from task~\taskref{access}{search}.
+      
+\end{task}
 
   \begin{task}[id=opam,title=Giving access to the infrastructure in proof tools]
     Users need to have an easy access to the proofs in logipedia, to integrate/use
     them in their ongoing work; this access should be guaranteed universal, without
     lock-in, web standards-compliant, through an open source tool. While WP7
-    will give a structure to the proof database, and T2 of this WP will give access
+    will give a structure to the proof database, and T3 of this WP will give access
     to that structured database through web browsing, this task aims at
     providing a proof manager for users of Logipedia. This proof manager
     will enable users to automatically download and install proofs as well as their
@@ -61,7 +133,7 @@ This includes notably:
     dependencies via opam. This would primarily entail the creation of a new
     tool able to read the proof database of logipedia and create a corresponding
     opam repository, as well as the necessary work to automate this work so that
-    it can run automatically on the infrastructure built in T1.
+    it can run automatically on the infrastructure built in T3.
 
   \end{task}
 
@@ -89,6 +161,28 @@ This includes notably:
     extracted from natural-language research articles in
     task~\taskref{structuring}{strtext}.
   \end{task}
+
+
+\begin{task}[id=transfer,title=Transfer for the sustainability of the system,lead=Irt]
+    Once the platform will be up and running, and available to all users, it will
+    be necessary to share the ownership with other maintainers. To this purpose, we will
+    produce the documentation necessary to operate the system and organize technical
+    transfer sessions in order to allow administrators to guarantee the sustainability of
+    logipedia.
+
+    It includes:
+    \begin{itemize}
+        \item Administration procedures
+        \item Upgrades procedures
+        \item Backup procedures
+    \end{itemize}
+
+    Although these sessions are necessary for the launch, all the documentation will be
+    accessible publicly on a website in order anyone can become a maintainer.
+
+\end{task}
+
+
 
 \end{tasklist}
 
