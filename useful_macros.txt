@@ -1,5 +1,7 @@
 In general, see the documentation of the proposal package in Latex-Proposal/base and Latex-Proposal/eu.
 
+-------------------------------------------
+
 For references to a
 - WP:
       \WPref{WPID}
@@ -10,6 +12,34 @@ For references to a
 - task in the same WP:
       \localtaskref{TASKID} 
 
+- \derivref, \derivtref, and \localderivref work accordingly for deliverables
+      
+-------------------------------------------
+      
+Declaring a task or WP:
+
+\begin{task}[id=ID, title=TITLE, lead=SITE1, SITE1RM=8, SITE2RM=6]
+
+Here "RM" is fixed and "SITE1" etc. must be replaced with the respective site id.
+The same syntax works on \begin{workpackage}, and we should make sure that for each site the resources per WP are indeed the sum of the resources per task.
+
+-------------------------------------------
+
+Declaring a deliverable:
+
+\begin{wpdeliv}[id=ID,lead=SITE,due=MONTH,miles=MILESTONEID]{TITLE}
+EXPLANATION
+\end{wpdeliv}
+
+where
+- SITE is the leading site
+- MONTH is the number of the month when the deliverable is due
+- MILESTONEID is the id of the milestone to which the deliverable is assigned
+
+Additionally, the keys 'dissem' and 'nature' allow fine-tuning the type of the deliverable. I'm not sure if and how we will need that.
+
+------------------------------------------- 
+      
 To make notes for each other that appear in margin and footnote:
 - \ednote{NOTE}
 - To make it easy for everybody to find all relevant notes, use the format
