@@ -1596,10 +1596,21 @@ assistant can be meaningfully used in other systems.
 
 Concept alignment can happen at different levels:
 \begin{itemize}
-\item alignments of logical foundations,
-\item alignments of theorem proving objects deals with aligning named concepts such as types,
-  constants, and theorems,
-\item alignment of proofs deals with aligning tactics and
+\item Alignments of logical foundations. just like Euclidean and
+  non-Euclidean geometries are not completely independent theories but
+  differ just from a few axioms, the various type theories or set theories 
+implemented in the proof systems have some axioms in common. 
+We want to divide these theories in clusters,
+according to their key parameters, and then to build a
+web of syntactic translations between systems. We do not expect full
+back-and-forth translations, as some systems are well-known to be
+proof-theoretically stronger than others, but we will seek to
+establish suitable equiprovability results for fragments of the
+relevant languages.
+
+\item Alignments of theorem proving objects deals with aligning named concepts such as types,
+  constants, and theorems.
+\item Alignment of proofs deals with aligning tactics and
   inference rules that have similar effects on the state of proof
   development.
 \end{itemize}
