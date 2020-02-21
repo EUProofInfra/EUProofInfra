@@ -17,7 +17,7 @@ like the correctness proofs of the automatic Paris metro line 14
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
 been empirically observed that compilers and operating systems often
-have bugs, but proved ones, such as seL4 or CompCert have none or much
+have bugs, but proved ones, such as seL4 or CompCert have none, or much
 fewer.  This is why certification processes require proofs, and not
 only testing, at the highest Evaluation Assurance Levels of the Common
 Criteria security evaluation international standard, in effect since
@@ -29,13 +29,12 @@ mathematics, and several important advances, such as the proof of the
 Feit-Thompson theorem \cite{Gonthier13} and Hales' theorem (Kepler's
 conjecture) \cite{Hales17}, show the wide range of applications to of
 formal proofs, from safety and security of software to mathematics.
+
 These formal proofs are developed using research infrastrucures called
-``proof systems''.
-These proof systems are research infrastructures, as they allow
-computer scientists, mathematicians, engineers, and logicians to build
-and study formal proofs, just like particle accelerators allow
-physicists to build and study particles.
-Some twenty major proof systems exist in the world
+``proof systems''.  These proof systems allow computer scientists,
+mathematicians, engineers, and logicians to build and study formal
+proofs, just like particle accelerators allow physicists to build and
+study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
 
 A lot of formal proofs developed for one critical system could be used
@@ -89,14 +88,14 @@ Thus, the universality of logical truth itself is jeopardized.
 \begin{framed}
 \begin{center}
 \begin{tabular}{l@{\hspace{3cm}}l}
-\underline{Abella}    & Acl 2\\
+Abella                & Acl 2\\
 \underline{Agda}      & \underline{HOL Light}\\
 \underline{Atelier B} & IMPS\\
 \underline{Coq}       & Lean\\
 \underline{FoCaliZe}  & \underline{LFSC}\\
 \underline{HOL4}      & Nuprl\\
 \underline{Isabelle}  & \underline{PVS}\\
-\underline{Matita}    &  \underline{TSTP}\\
+\underline{Matita}    & \underline{TSTP}\\
 \underline{Minlog}\\  
 \underline{Mizar}\\
 \underline{ProB}\\
@@ -134,12 +133,12 @@ systems, through data sharing.
 
 Such an infrastructure is, in many ways, new in the European Strategy
 on Research Infrastructures. We can even say that the idea to
-structure a networking activity around the construction and the use
-of a large scale infrastructure is relatively new in computer science and
+structure a networking activity around the construction and the use of
+a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist. Our goal is therefore also trigger a
-little, but significative, evolution on the organization of research
-in computer science and mathematics in Europe.
+little, but significant, evolution on the organization of research in
+computer science and mathematics in Europe.
 
 \begin{framed}
 \begin{center}
@@ -195,48 +194,44 @@ $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{framed}
 \pagebreak
 \begin{framed}
-\begin{center}
-{\bf \Large Non trivial mathematics is sometime needed to verify that a program is correct}
+  \begin{center} {\bf \Large Non trivial mathematics are sometime
+      needed to verify that a program is correct}
 \end{center}
 
-Prime numbers are used in a very wide variety of fields due
-to the use of random number generators in computer simulations.
-However, their use is not limited to computer simulations, they are
-also at the basis of several cryptographic algorithms or are often
-used for hash tables, one of the most commonly used data structure in
-computer programming.  While primality testing is computationally
-intensive, its correctness is critical due to the prevalent use of
-prime numbers.  Thus, one could wish to prove properties of these
-tests.  To do so, one needs to pose the definition of primality.  It
-could be done in the following way.
+Prime numbers are used in a very wide variety of applications:
+pseudo-random number generation, cryptographic algorithms, etc.
+The correctness of complex primality testing algorithms is 
+critical due to this prevalent use of prime numbers.  
+
+To do so, one needs first to pose a definition of primality, for instance
 
 \begin{verbatim}
 Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
 \end{verbatim}
 
-To try and lower the cost of primality testing, a solution is to use
-most efficient primality tests.  A very simple example of improvement
-when testing the primality of a natural number is to, instead of
-testing its divisibility by each of the smaller natural numbers, only
-do so up to its square root.  Indeed, if a natural number $p$ can be
+To lower the cost of primality testing, we use more efficient
+primality tests.  For instance, a very simple improvement over the
+naive use of the definition is to test the divisibility of the
+considered number, not by each of the smaller natural numbers, but
+only up to its square root.  Indeed, if a natural number $p$ can be
 factored into the product of two smaller natural numbers $m$ and $n$,
-one of them has to be smaller or equal to the square root of $p$.
-Therefore, one could give the following simpler definition.
+one of them has to be smaller than or equal to the square root of $p$.
+Therefore, one could give the following more complex, but more
+efficient, definition.
 
 \begin{verbatim}
 Definition prime' p :=
   1 < p /\ (forall n, (1 < n /\ (n * n) <= p) -> ~ (n | p)).
 \end{verbatim}
 
-To ensure that these definitions are equivalent one would then prove
+To ensure that these definitions are equivalent one needs to prove
 the following statement.
 
 \begin{verbatim}
 Theorem prime_alt : forall p, prime' p <-> prime p.
 \end{verbatim}
 
-Here, the simpler definition yields an equivalent and more efficient
-test.  Nevertheless, it would have been easy to introduce a small bug
+It would have been easy to introduce a small bug
 in the new definition.  For example, one could have written
 \verb!(n * n) < p! instead of \verb!(n * n) <= p!.
 
@@ -244,13 +239,10 @@ in the new definition.  For example, one could have written
 Definition prime'' p :=
   1 < p /\ (forall n, (1 < n /\ (n * n) < p) -> ~ (n | p)).
 \end{verbatim}
+This would have resulted in accepting squares of primes as primes.
 
-It would have resulted in accepting squares of primes as primes, hence
-the new definition would not have been equivalent.
-
-\begin{verbatim}
-Theorem prime_alt_wrong : ~ (forall p, prime'' p <-> prime p).
-\end{verbatim}
+Yet, attempting to prove the equivalence of these two definitions would have 
+revealed the bug, as they are not provably equivalent.
 \end{framed}
 \pagebreak
 \begin{framed}
