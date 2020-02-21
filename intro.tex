@@ -211,7 +211,7 @@ tests.  To do so, one needs to pose the definition of primality.  It
 could be done in the following way.
 
 \begin{verbatim}
-Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n|p)).
+Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
 \end{verbatim}
 
 To try and lower the cost of primality testing, a solution is to use
@@ -232,7 +232,7 @@ To ensure that these definitions are equivalent one would then prove
 the following statement.
 
 \begin{verbatim}
-Theorem prime_alt p : prime' p <-> prime p.
+Theorem prime_alt : forall p, prime' p <-> prime p.
 \end{verbatim}
 
 Here, the simpler definition yields an equivalent and more efficient
