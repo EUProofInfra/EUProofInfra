@@ -490,7 +490,7 @@ nature.  They cover various domains and various kinds of application,
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
 proof of
-programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
+programmes~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
 where they are given thousands of small problems in a combination of
 quantified theories.
 
@@ -1165,7 +1165,7 @@ Web site for students
 
 \medskip
 
-Like programs, formal proofs exist at two levels: the user-written
+Like programmes, formal proofs exist at two levels: the user-written
 source code and the kernel representation.
 
 The expression of theories in Dedukti focuses on integrating the low
@@ -1256,7 +1256,7 @@ advanced Logipedia integration levels. For example, accessing Mizar's
 rich library of formalized mathematics would be beneficial to
 developers of machine-checked mathematical results. Second, the
 smaller systems have been used for specific tasks such as reasoning
-about the meta-theory of program calculi, but they do not provide rich
+about the meta-theory of programme calculi, but they do not provide rich
 general-purpose standard libraries, say, about integer or real
 arithmetic as the more mature systems. Finally, for some of the
 systems only one implementation able to check the proofs exists. As
@@ -1296,8 +1296,8 @@ The
 Minlog\footnote{\url{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}}
 system is based on the Curry-Howard correspondence between constructive proofs
 in natural deduction and terms in typed $\lambda$-calculus and supports
-extracting programs from proofs. It has also been extended for extracting
-programs from proofs in classical logic. Minlog supports function definitions by
+extracting programmes from proofs. It has also been extended for extracting
+programmes from proofs in classical logic. Minlog supports function definitions by
 computation and rewrite rules and identifies terms with a common reduct. Its
 main applications are in constructive analysis~\cite{miyamoto:real}: we extract
 computational content from a proof of a mathematical statement in an extension
@@ -1310,7 +1310,7 @@ the extracted terms. Minlog accommodates co-recursion via partial functionals in
 the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
 objects of type level at most $1$, where extensionality and totality coincide.
 
-Besides extracting programs from proofs in constructive analysis, other notable
+Besides extracting programmes from proofs in constructive analysis, other notable
 applications of Minlog include the unification of $\lambda$-calculus and
 combinatory logic, embedding classical logic in minimal implicational logic, and
 the extraction of the DPLL algorithm underlying propositional Satisfiability
@@ -1319,7 +1319,7 @@ solving from a proof.
 In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
 This is facilitated by the fact that the foundations of Minlog and Dedukti are
 rather close (both have proof terms and deduction modulo); the main challenges
-are support for co-induction and co-recursion. We plan to export program
+are support for co-induction and co-recursion. We plan to export programme
 extraction to Dedukti through realizability and also aim for being able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
@@ -1369,7 +1369,7 @@ objects.
 
 PVS has been used in numerous academic and industrial projects for
 verifying hardware systems, fault-tolerant algorithms or dynamically
-linked Java programs, among others. It is particularly known for its
+linked Java programmes, among others. It is particularly known for its
 applications to avionics systems and airborne conflict detection and
 avoidance systems, e.g.\ \cite{munoz:unmanned}, by Rockwell Collins,
 NASA, and the National Institute of Aerospace.
@@ -1615,7 +1615,7 @@ well-established topic.
 One consequence of this work is that it can make features of one
 system available in other systems. For example, Minlog implements the
 refined Dragalin-Friedman $A$-translation, so that classical proofs in
-a certain class can be constructivised, which means that programs can
+a certain class can be constructivised, which means that programmes can
 be extracted from such transformed proofs.  We would like to make this
 feature of Minlog available to other proof assistants through Dedukti.
 In order to carry it out, we will study both-directed encodings

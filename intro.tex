@@ -153,7 +153,7 @@ she is taken two euros, if she has at least two.  When the game is
 over, the player wins the money she got, except if she has zero, in
 which case she looses one million.
 
-This game can be modeled by program $p$
+This game can be modeled by programme $p$
 %import random 
 \begin{verbatim}
 n = 11
@@ -172,30 +172,31 @@ print(n)
 \end{verbatim}
 
 To be on the safe side, the player wants to be sure, before starting
-playing, that she will never finish with zero.  And indeed, in all runs,
-the content of the variable {\tt n} is always an odd number, thus it
-cannot be zero. This property is a consequence of two simple
-theorems of arithmetic
+playing, that she will never finish with zero.  And indeed, in all
+runs, the content of the variable {\tt n} is always an odd number,
+thus it cannot be zero. This property ``nothing bad happens'' is
+called the ``safety'' of this programme. This property is a
+consequence of two simple theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
-Hence, verifying the safety of this program, that is that the
+Hence, verifying the safety of this programme, that is that the
 proposition 
 ${\mbox{\it safe}}(p)$ holds, 
 amounts to prove these three theorems of arithmetic.
 
-A tiny bug in the program, for instance replacing the {\tt 2} by a
-{\tt 3} in the instruction {\tt n = n + 2 * n} makes the program unsafe
+A tiny bug in the programme, for instance replacing the {\tt 2} by a
+{\tt 3} in the instruction {\tt n = n + 2 * n} makes the programme unsafe
 as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
-this program will, most likely, not reveal this bug, that manifests
+this programme will, most likely, not reveal this bug, that manifests
 very rarely.  In contrast, attempting to prove the correctness of this
-program will
+programme will
 reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{framed}
 \pagebreak
 \begin{framed}
   \begin{center} {\bf \Large Non trivial mathematics are sometime
-      needed to verify that a program is correct}
+      needed to verify that a programme is correct}
 \end{center}
 
 Prime numbers are used in a very wide variety of applications:
