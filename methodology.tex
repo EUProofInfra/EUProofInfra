@@ -1,9 +1,8 @@
 Developing a new research infrastructure, by integrating existing
 ones, through data exchange, requires a wide range of activities,
-described in the work-plan. This different activities will require
-to use different methodologies: developing new pieces of software,
-modifying existing ones, experimenting with translations, proving
-theorems, etc.
+described in the work-plan. This different activities will require to
+use different methodologies: developing new pieces of software,
+modifying existing ones, experimenting, proving theorems, etc.
 
 \subsubsection*{Integration}
 
@@ -52,7 +51,7 @@ parts of the proofs. In this case the external tool has to be
 instrumented as well, to that it produces a proof that can be used by
 the proof system to produce its own proof.
 
-One methodological issue here is that all proof systems are actively
+A methodological issue is that all proof systems are actively
 developed systems that are constantly evolving, even if the theory
 they implement evolves at a slower pace. In order to avoid having
 translations that always work for an obsolete version, we need to
@@ -67,14 +66,15 @@ relevant maturity.
   etc.}
 
 Instrumenting Automated theorem provers, SAT solvers, SMT solvers and
-model checkers raises different methodology issues, as these systems
+model checkers raises different methodology questions, as these systems
 must be very efficient to be useful. This yields two new issues.
 
 First, these systems include many optimizations that make their code
 very complex and hence difficult to instrument. Then, instrumentation
-often slows down the instrumented a little bit and if this is acceptable
-for interactive proof systems---the user being anyway slower than the
-software---this is often not acceptable for automated theorem provers.
+often slows down the instrumented system a little bit and if this is
+acceptable for interactive proof systems---the user being anyway
+slower than the software---this is often not acceptable for automated
+theorem provers.
 
 So, these systems must be instrumented in a minimal way, so that they
 execution is not perturbed by the instrumentation. So in most of the
@@ -123,13 +123,14 @@ issues come from.
 
 \begin{itemize}
 \item It may be because, we are using a computer that is too slow or
-  has not enough memory.
+  does not have enough memory.
 \item It may be because Dedukti itself is too slow and we need to modify
   Dedukti itself, as we have done in the past to increase, for instance,
   the efficiency of Dedukti's conversion test.
 \item It may be because the proof term produced by the translation is
   too big, as has happened in the past with translations that did not
-  take sharing into account, letting the size of the proof term explode.
+  take sharing into account, letting the size of the proof term 
+  was too big.
 \item It may be because the expression of the theory itself has to be
   revised, as has happened in the past with the translation of
   inductive types.
@@ -142,7 +143,7 @@ the full library can be handled.
 \subsubsection*{Infrastructure}
 
 Developing an infrastructure to make the proofs accessible raises a
-different methodology issues. Here the technology of web services,
+different methodology questions. Here the technology of web services,
 distribution package, ergonomic user interfaces, search engines is
 mature and we need to rely on this existing technology.
 
@@ -217,12 +218,13 @@ But there is also a more empirical aspect in this work: for instance,
 although, in principle not all Matita proofs can be translated to
 Isabelle/HOL, we have established that the full arithmetic library of
 Matita could. So it is important to consider specific case studies,
-such as construvtivization, elimination of universes, elimination of
+such as construvtivisation, elimination of universes, elimination of
 dependent types, elimination of the axiom of choice, etc.
 
-It is important to notice that Logipedia permits to build Bridges
+It is important to notice that Logipedia permits to build bridges
 between theoretical work and experimental work here. For instance,
-there are many constructivization algorithms or many algorithms to
+there are many mathematical algorithms, such as 
+constructivisation algorithms or algorithms to
 eliminate the axiom of choice that have been developed in theoretical
 papers. Logipedia, allowing us to translate proofs from a classical to
 a constructive theory, gives us a unique opportunity to experiment

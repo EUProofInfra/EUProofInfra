@@ -17,7 +17,7 @@ like the correctness proofs of the automatic Paris metro line 14
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
 been empirically observed that compilers and operating systems often
-have bugs, but proved ones, such as seL4 or CompCert have none or much
+have bugs, but proved ones, such as seL4 or CompCert have none, or much
 fewer.  This is why certification processes require proofs, and not
 only testing, at the highest Evaluation Assurance Levels of the Common
 Criteria security evaluation international standard, in effect since
@@ -29,13 +29,12 @@ mathematics, and several important advances, such as the proof of the
 Feit-Thompson theorem \cite{Gonthier13} and Hales' theorem (Kepler's
 conjecture) \cite{Hales17}, show the wide range of applications to of
 formal proofs, from safety and security of software to mathematics.
+
 These formal proofs are developed using research infrastrucures called
-``proof systems''.
-These proof systems are research infrastructures, as they allow
-computer scientists, mathematicians, engineers, and logicians to build
-and study formal proofs, just like particle accelerators allow
-physicists to build and study particles.
-Some twenty major proof systems exist in the world
+``proof systems''.  These proof systems allow computer scientists,
+mathematicians, engineers, and logicians to build and study formal
+proofs, just like particle accelerators allow physicists to build and
+study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
 
 A lot of formal proofs developed for one critical system could be used
@@ -89,18 +88,18 @@ Thus, the universality of logical truth itself is jeopardized.
 \begin{framed}
 \begin{center}
 \begin{tabular}{l@{\hspace{3cm}}l}
-\underline{Abella}    & Acl 2\\
+Abella                & Acl 2\\
 \underline{Agda}      & \underline{HOL Light}\\
 \underline{Atelier B} & IMPS\\
 \underline{Coq}       & Lean\\
 \underline{FoCaliZe}  & \underline{LFSC}\\
 \underline{HOL4}      & Nuprl\\
 \underline{Isabelle}  & \underline{PVS}\\
-\underline{Matita}    &  \underline{TSTP}\\
+\underline{Matita}    & \underline{TSTP}\\
 \underline{Minlog}\\  
 \underline{Mizar}\\
 \underline{ProB}\\
-Rodin\\
+\underline{Rodin}\\
 \underline{TLA+}\\
 \underline{Smart}\\
 \underline{Why3}\\
@@ -134,12 +133,12 @@ systems, through data sharing.
 
 Such an infrastructure is, in many ways, new in the European Strategy
 on Research Infrastructures. We can even say that the idea to
-structure a networking activity around the construction and the use
-of a large scale infrastructure is relatively new in computer science and
+structure a networking activity around the construction and the use of
+a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist. Our goal is therefore also trigger a
-little, but significative, evolution on the organization of research
-in computer science and mathematics in Europe.
+little, but significant, evolution on the organization of research in
+computer science and mathematics in Europe.
 
 \begin{framed}
 \begin{center}
@@ -154,7 +153,7 @@ she is taken two euros, if she has at least two.  When the game is
 over, the player wins the money she got, except if she has zero, in
 which case she looses one million.
 
-This game can be modeled by program $p$
+This game can be modeled by programme $p$
 %import random 
 \begin{verbatim}
 n = 11
@@ -173,25 +172,78 @@ print(n)
 \end{verbatim}
 
 To be on the safe side, the player wants to be sure, before starting
-playing, that she will never finish with zero.  And indeed, in all runs,
-the content of the variable {\tt n} is always an odd number, thus it
-cannot be zero. This property is a consequence of two simple
-theorems of arithmetic
+playing, that she will never finish with zero.  And indeed, in all
+runs, the content of the variable {\tt n} is always an odd number,
+thus it cannot be zero. This property ``nothing bad happens'' is
+called the ``safety'' of this programme. This property is a
+consequence of two simple theorems of arithmetic
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
-Hence, verifying the safety of this program, that is that the
+Hence, verifying the safety of this programme, that is that the
 proposition 
 ${\mbox{\it safe}}(p)$ holds, 
 amounts to prove these three theorems of arithmetic.
 
-A tiny bug in the program, for instance replacing the {\tt 2} by a
-{\tt 3} in the instruction {\tt n = n + 2 * n} makes the program unsafe
+A tiny bug in the programme, for instance replacing the {\tt 2} by a
+{\tt 3} in the instruction {\tt n = n + 2 * n} makes the programme unsafe
 as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
-this program will, most likely, not reveal this bug, that manifests
+this programme will, most likely, not reveal this bug, that manifests
 very rarely.  In contrast, attempting to prove the correctness of this
-program will
+programme will
 reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
+\end{framed}
+\pagebreak
+\begin{framed}
+  \begin{center} {\bf \Large Non trivial mathematics are sometime
+      needed to verify that a programme is correct}
+\end{center}
+
+Prime numbers are used in a very wide variety of applications:
+pseudo-random number generation, cryptographic algorithms, etc.
+The correctness of complex primality testing algorithms is 
+critical due to this prevalent use of prime numbers.  
+
+To do so, one needs first to pose a definition of primality, for instance
+
+\begin{verbatim}
+Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
+\end{verbatim}
+
+To lower the cost of primality testing, we use more efficient
+primality tests.  For instance, a very simple improvement over the
+naive use of the definition is to test the divisibility of the
+considered number, not by each of the smaller natural numbers, but
+only up to its square root.  Indeed, if a natural number $p$ can be
+factored into the product of two smaller natural numbers $m$ and $n$,
+one of them has to be smaller than or equal to the square root of $p$.
+Therefore, one could give the following more complex, but more
+efficient, definition.
+
+\begin{verbatim}
+Definition prime' p :=
+  1 < p /\ (forall n, (1 < n /\ (n * n) <= p) -> ~ (n | p)).
+\end{verbatim}
+
+To ensure that these definitions are equivalent one needs to prove
+the following statement.
+
+\begin{verbatim}
+Theorem prime_alt : forall p, prime' p <-> prime p.
+\end{verbatim}
+
+It would have been easy to introduce a small bug
+in the new definition.  For example, one could have written
+\verb!(n * n) < p! instead of \verb!(n * n) <= p!.
+
+\begin{verbatim}
+Definition prime'' p :=
+  1 < p /\ (forall n, (1 < n /\ (n * n) < p) -> ~ (n | p)).
+\end{verbatim}
+This would have resulted in accepting squares of primes as primes.
+
+Yet, attempting to prove the equivalence of these two definitions would have 
+revealed the bug, as they are not provably equivalent.
 \end{framed}
 \pagebreak
 \begin{framed}

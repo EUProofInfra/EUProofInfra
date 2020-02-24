@@ -5,20 +5,21 @@
 
 \medskip
 
-The multiplication of systems and theories in which formal proofs are
-developed jeopardizes the universality of logical truth. But it is not
-the first time in history that the universality of logical truth is
-challenged.  In the 19th century, for instance, the universality of
-logical truth had been challenged in a similar way, by the
-non-Euclidean geometries, as some statements could be true in one
-geometry, but false in others.  At the beginning of the 20th century,
-a solution to this problem was found.  The definition of the various
-geometries in predicate logic \cite{HilbertAckermann} permitted to
-understand which axiom was used in which proof, restoring the
-universality of the truth of judgements of the form ``the proposition
-$B$ is true under the axioms $A_1, ..., A_n$''.
+We have said that the multiplication of systems and theories in which
+formal proofs are developed jeopardizes the universality of logical
+truth. But it is not the first time in history that the universality
+of logical truth is challenged.  In the 
+19$^{\mbox{\footnotesize th}}$ century, for instance,
+the universality of logical truth had been challenged in a similar
+way, by the non-Euclidean geometries, as some statements could be true
+in one geometry, but false in others.  At the beginning of the 20$^{\mbox{\footnotesize th}}$ 
+century, a solution to this problem was found.  The definition of the
+various geometries in predicate logic \cite{HilbertAckermann}
+permitted to understand which axiom was used in which proof, restoring
+the universality of the truth of judgements of the form ``the
+proposition $B$ is true under the axioms $A_1, ..., A_n$''.
 
-Predicate logic is not a theory in itself, but it is a framework in
+Predicate logic is not {\em per se} a theory, but it is a framework in
 which one can express theories, as sets of axioms: {\em a logical
   framework}. As we shall see, expressing the various theories
 implemented in Coq, Matita, Isabelle/HOL, PVS, etc.  in a common
@@ -27,16 +28,15 @@ logical framework will permit, in a similar way, to analyze which
 proof is correct, and in which systems it can be used.
 
 In 1928, predicate logic was a huge success, since three important
-theories used at that time (geometry, arithmetic and set theory) could
-be expressed in it. But it also has limitations, which explains that
-another of the major theories used at that time (Russell's type
+theories used at that time (geometry, arithmetic, and set theory)
+could be expressed in it. But it also has limitations, which explains
+that another of the major theories used at that time (Russell's type
 theory, from The Principia Mathematica) has not been expressed in
 it. Since then, several other theories, such as Church's type theory
 \cite{Church40}, Martin-L\"of's type Theory \cite{Martin-Lof84}, and
 the Calculus of constructions \cite{CoquandHuet88}, have also been
-defined as autonomous theories. These theories are those implemented
-in most of the current proof systems, yet they cannot be expressed in
-predicate logic.
+defined as autonomous theories, and not in predicate logic.  These
+theories are those implemented in most of the current proof systems.
 
 This failure has led, in the field of proof systems, to the
 abandonment of predicate logic, and even of the concept of logical
@@ -48,14 +48,14 @@ limitations of predicate logic and to propose other logical frameworks
 repairing them. The most prominent limitations of predicate logic are
 the lack of function symbols binding variables, the lack of a syntax
 for proof terms, the lack of a notion of computation, the lack of a
-notion of cut for axiomatic theories, and the impossibility to express
-constructive proofs. These limitations have led to the development of
-other logical frameworks such as $\lambda$-Prolog
-\cite{NadathurMiller88, MillerNadathur12}, Isabelle \cite{Paulson90},
-the $\lambda \Pi$-calculus (also called the ``Edinburgh logical
-framework'') \cite{HarperHonsellPlotkin91}, Deduction modulo theory
-\cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
-\cite{Berardi88,Terlouw89}, and ecumenical logics
+notion of proof reduction for axiomatic theories, and the
+impossibility to express constructive proofs. These limitations have
+led to the development of other logical frameworks such as
+$\lambda$-Prolog \cite{NadathurMiller88, MillerNadathur12}, Isabelle
+\cite{Paulson90}, the $\lambda \Pi$-calculus (also called the
+``Edinburgh logical framework'') \cite{HarperHonsellPlotkin91},
+Deduction modulo theory \cite{DowekHardinKirchner03, DowekWerner03},
+Pure Type Systems \cite{Berardi88,Terlouw89}, and ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
 
 All these logical frameworks have been unified in the $\lambda
@@ -71,7 +71,7 @@ and 3 rewrite rules.
 
 \begin{framed}
 \begin{center}
-Church's type theory expressed in Dedukti
+{\bf \Large Church's type theory expressed in Dedukti}
 \end{center}
 
 $\begin{array}{rcl}
@@ -121,8 +121,7 @@ the general structure of the encyclopedia.
 
 To measure the level of integration of an existing proof system and
 associated proof library in Logipedia, we introduce a metric: {\em the
-  Logipedia integration levels} (Figure \ref{lil}) that counts six
-levels.
+  Logipedia integration levels} that counts six levels.
 
 \begin{framed}
 \begin{center}
@@ -152,8 +151,8 @@ levels.
 \end{itemize}
 \end{framed}
 
-The sixteen systems addressed in this project currently have different
-integration levels, and we have different targeted levels for them..
+The eighteen systems addressed in this project currently have different
+integration levels, and we have different targeted levels for them.
 
 \begin{center}
 \begin{tabular}{|l|c|c|}
@@ -178,33 +177,33 @@ Isabelle & 2 & 5\\
 \hline
 HOL4 & 1 & 5\\
 \hline
-TSTP & 1 & {\color{red} ???}\\
+TSTP & 1 & 4\\
 \hline
 Smart & 1 & 3\\
+\hline
+Rodin & 1 & 3\\
 \hline
 Minlog & 0 & 4\\
 \hline
 PVS & 0 & 2\\
 \hline
-Abella & 0 & 2\\
-\hline
 Mizar & 0 & 4\\
 \hline
 TLA$^+$ & 0 & 2\\
 \hline
- Why3 & 0 & {\color{red} ???}\\
+Why3 & 0 & 4\\
 \hline
-LFSC & 0 & {\color{red} ???}\\
+LFSC & 0 & 4\\
 \hline
 \end{tabular}
 \end{center}
 
 These systems can be roughly divided into two groups. Those in the
-first half of the array (Matita, HOL Light, FoCaLize, Coq, Agda,
-Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, and Smart) for which we
-have preliminary results and that we plan to bring to a very high
-level of integration. Those in the second half (Minlog, PVS, Abella,
-Mizar, Smart, TLA$^+$, SMT-Lib, Why3, and LFSC) with which we are
+first half of the table (Matita, HOL Light, FoCaLize, Coq, Agda,
+Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, Smart, and Rodin) for which
+we have preliminary results and that we plan to bring to a very high
+level of integration. Those in the second half (Minlog, PVS, 
+Mizar, TLA$^+$, Why3, and LFSC) with which we are
 starting and for which our goal are less ambitious.
 
 These two groups of systems will be addressed in different work
@@ -218,7 +217,7 @@ future of the infrastructure.
 {\bf \Large \underline{Integration}}
 
 \medskip
-
+  
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has already
 been expressed in Dedukti. The next step is to implement a method to
 automatically translate proofs from system $X$ to its expression in
@@ -288,9 +287,9 @@ Isabelle logical framework \cite{paulson700} is an intermediate
 between Type-Theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
 
-  \paragraph*{Systems based on set theory and predicate logic (Atelier B, ProB, Smart).}
+  \paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB, Smart).}
 
-Atelier B and ProB are platforms or tools to develop models written
+Atelier B, Rodin and ProB are platforms or tools to develop models written
 using the B method, a version of set theory expressed in predicate
 logic.  A model in these systems expresses a state machine constrained
 by invariant properties. Verification of the model correctness implies
@@ -491,7 +490,7 @@ nature.  They cover various domains and various kinds of application,
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
 proof of
-programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
+programmes~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
 where they are given thousands of small problems in a combination of
 quantified theories.
 
@@ -835,7 +834,9 @@ align distant concepts, which will be affordable with automation.
 
 \subsubsection*{Success}
 
-{\color{red} To to}
+The success of the integration of proofs coming from automated theorem
+proving systems, SAT solvers, SMT solvers, and model checkers, can be
+measured by the size of the proofs imported from these systems to Logipedia.
 
 \bigskip
 
@@ -863,7 +864,7 @@ structure and documentation.
 
 The libraries are curated for end-user application. That is, they are
 structured according to application specific ontologies that support
-browsing and search. The structuring leverages the infrastructures of
+browsing and search. The structuring leverages the infrastructure
 and will be a stress test for the results of structuring discussed
 below: is the metadata infrastructure capable of representing the
 structure of large libraries?
@@ -1079,11 +1080,11 @@ The CakeML compiler library consists of the CakeML programming language
 definition, its compiler and the correctness proofs about the
 compiler. This is a cutting edge compiler library and one of only two
 verified compilers for real languages, the other being CompCert. Its
-export to Dedukti is one of the KERs of this project. Because of the
-size and importance of this library, we will approach the export from
-two angles.
+export to Dedukti is one of the KERs of this project.
+% Because of the size and importance of this library,
+%we will approach the export from two angles.
 
-The first approach utilizes OpenTheory-based technology. The CakeML
+The CakeML
 compiler development lives within the HOL4 prover. HOL4 can export
 definitions and proofs in the OpenTheory format, which can in turn be
 translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
@@ -1094,14 +1095,14 @@ OpenTheory to scale better, possibly taking inspiration from an
 OpenTheory-like approach that scaled well for the HOL light
 prover~\cite{KaliszykK13}.
 
-The second approach establishes a connection from HOL4 via Isabelle to
-Dedukti. The basis is a promising new approach of virtualizing HOL4
-inside Isabelle \cite{ImmlerRW19}. That is, the inference
-kernel of HOL4 is replaced by that of Isabelle and the resulting
-system produces Isabelle theorems instead of HOL4 theorems. This has
-the invaluable additional benefit that tools, not just theorems, can
-be shared. As a benchmark of the viability of this approach we plan to
-export CakeML via Isabelle to Dedukti.
+%The second approach establishes a connection from HOL4 via Isabelle to
+%Dedukti. The basis is a promising new approach of virtualizing HOL4
+%inside Isabelle \cite{ImmlerRW19}. That is, the inference
+%kernel of HOL4 is replaced by that of Isabelle and the resulting
+%system produces Isabelle theorems instead of HOL4 theorems. This has
+%the invaluable additional benefit that tools, not just theorems, can
+%be shared. As a benchmark of the viability of this approach we plan to
+%export CakeML via Isabelle to Dedukti.
 
 \subsubsection*{Challenges}
 
@@ -1164,7 +1165,7 @@ Web site for students
 
 \medskip
 
-Like programs, formal proofs exist at two levels: the user-written
+Like programmes, formal proofs exist at two levels: the user-written
 source code and the kernel representation.
 
 The expression of theories in Dedukti focuses on integrating the low
@@ -1239,7 +1240,7 @@ There are other systems, that are still at level 0, that is that we
 do not know how to express. Part of our project is to work on such
 systems, to understand how to express their theory in Dedukti.
 
-These systems range from specialized systems such as Abella or Minlog
+These systems range from specialized systems such as Minlog
 used in academia to mainstream systems such as PVS or TLA$^+$ that
 have been used in major scientific or industrial projects. They
 provide specific features that are relevant to their target domains
@@ -1255,7 +1256,7 @@ advanced Logipedia integration levels. For example, accessing Mizar's
 rich library of formalized mathematics would be beneficial to
 developers of machine-checked mathematical results. Second, the
 smaller systems have been used for specific tasks such as reasoning
-about the meta-theory of program calculi, but they do not provide rich
+about the meta-theory of programme calculi, but they do not provide rich
 general-purpose standard libraries, say, about integer or real
 arithmetic as the more mature systems. Finally, for some of the
 systems only one implementation able to check the proofs exists. As
@@ -1266,53 +1267,6 @@ exporting or importing full libraries. Nevertheless, the work carried
 out here is a necessary stepping stone and enabler
 for making Logipedia a universally accepted encyclopedia of formal
 proofs.
-
-\paragraph*{Abella.}
-Abella\footnote{\url{http://abella-prover.org}}~\cite{baelde:abella}
-is an interactive theorem prover that is particularly well suited to
-formalizing the meta-theory of formalisms that can be specified by a
-system of inference rules, including type systems, proof systems or
-process calculi. Formalizations that have been carried out in Abella
-include representations of different variants of the $\pi$-calculus
-with the theory of bisimulation (including open bisimulation and
-bisimulation up to equivalence relations), the meta-theory of the
-$\lambda$-calculus with proofs of (weak and strong) normalization and
-standardization, an encoding of PCF with a formalization of Howe's
-techniques of establishing applicative bisimilarity and a verified
-compiler to an intermediate representation in predicate logic using
-step-indexed logical relations, as well as one of the first proposed
-solutions to the POPLMark challenge.
-
-At its core, Abella is based on constructive predicate logic specified using
-Church's simple theory of types, with a fixed collection of inference rules
-expressed in sequence calculus. The logic also allows users to define
-non-logical constants using (least or greatest) fixed-point definitions. For
-this purpose, predicate logic is extended by considering both equality and the
-least fixed point operator as logical connectives. Currently, there are two
-implementations of this logic: Abella and Bedwyr (providing automatic proof
-search). The latter is being incorporated into the Abella system.
-
-The fixed point connectives allow users to define inductive and
-co-inductive logical relations, without the restriction to Horn
-clauses (as in Prolog). For example, constructive logic and
-constructive Simple type theory themselves, can be defined
-inductively as an object logic. In this way, one can reason about the
-relational specification of an object logic. Abella makes use of terms
-of the $\lambda$-calculus, together with their equational theory, to
-represent the syntactic constructs of the encoded systems. This
-representation is known as $\lambda$-tree syntax, a form of
-higher-order abstract syntax where $\lambda$-terms are considered
-modulo $\alpha\beta\eta$-equivalence, and it yields a declarative,
-high-level, and versatile approach for representing binding constructs
-of encoded formalisms, such as name restriction in process calculi.
-
-Our goal in this project is to lift Abella from LIL $0$ to LIL $2$. The main
-challenges are support for co-induction and co-recursion, which are not available
-directly in Dedukti where induction is supported by an axiom schema, support for
-$\lambda$-tree syntax, instrumenting Abella for extracting explicit invariants
-from cyclic proofs with size annotations, and recasting Abella's trusted
-unification engine in the Dedukti framework.
-
 
 \paragraph*{Homotopy type theory (HoTT).}
 Introduced by Vladimir Voevodsky, Michael Warren and others, HoTT aims at
@@ -1342,8 +1296,8 @@ The
 Minlog\footnote{\url{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}}
 system is based on the Curry-Howard correspondence between constructive proofs
 in natural deduction and terms in typed $\lambda$-calculus and supports
-extracting programs from proofs. It has also been extended for extracting
-programs from proofs in classical logic. Minlog supports function definitions by
+extracting programmes from proofs. It has also been extended for extracting
+programmes from proofs in classical logic. Minlog supports function definitions by
 computation and rewrite rules and identifies terms with a common reduct. Its
 main applications are in constructive analysis~\cite{miyamoto:real}: we extract
 computational content from a proof of a mathematical statement in an extension
@@ -1356,7 +1310,7 @@ the extracted terms. Minlog accommodates co-recursion via partial functionals in
 the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
 objects of type level at most $1$, where extensionality and totality coincide.
 
-Besides extracting programs from proofs in constructive analysis, other notable
+Besides extracting programmes from proofs in constructive analysis, other notable
 applications of Minlog include the unification of $\lambda$-calculus and
 combinatory logic, embedding classical logic in minimal implicational logic, and
 the extraction of the DPLL algorithm underlying propositional Satisfiability
@@ -1365,7 +1319,7 @@ solving from a proof.
 In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
 This is facilitated by the fact that the foundations of Minlog and Dedukti are
 rather close (both have proof terms and deduction modulo); the main challenges
-are support for co-induction and co-recursion. We plan to export program
+are support for co-induction and co-recursion. We plan to export programme
 extraction to Dedukti through realizability and also aim for being able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
@@ -1415,7 +1369,7 @@ objects.
 
 PVS has been used in numerous academic and industrial projects for
 verifying hardware systems, fault-tolerant algorithms or dynamically
-linked Java programs, among others. It is particularly known for its
+linked Java programmes, among others. It is particularly known for its
 applications to avionics systems and airborne conflict detection and
 avoidance systems, e.g.\ \cite{munoz:unmanned}, by Rockwell Collins,
 NASA, and the National Institute of Aerospace.
@@ -1661,7 +1615,7 @@ well-established topic.
 One consequence of this work is that it can make features of one
 system available in other systems. For example, Minlog implements the
 refined Dragalin-Friedman $A$-translation, so that classical proofs in
-a certain class can be constructivised, which means that programs can
+a certain class can be constructivised, which means that programmes can
 be extracted from such transformed proofs.  We would like to make this
 feature of Minlog available to other proof assistants through Dedukti.
 In order to carry it out, we will study both-directed encodings
