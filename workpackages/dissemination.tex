@@ -1,18 +1,21 @@
 \begin{workpackage}[id=dissemination,wphases=0-48,type=MGT,
   short=Dissemination,% for Figure 5.
-  title={Dissemination, communication, and exploitation},
-  lead=Inr,
-  BolRM=3,
-  InrRM=10]
+  title={Dissemination, communication and exploitation},
+  lead=Inr]
 
 \begin{wpobjectives}
   The objective of this work package is to \ldots
 
-Scientific research and education at all levels are concerned with the discovery, verification, communi- cation, archival and usage of mathematical results. These tasks have been supported by physical books, conferences and other means.
-The avaibility of a formal online encyclopedia which propose in a single place the communication, archival and verification of mathematical knowledge will be of prime importance for researchers, industrials, teachers and editors.
+  Scientific research and education at all levels are concerned with
+  the discovery, verification, communi- cation, archival and usage of
+  mathematical results. These tasks have been supported by physical
+  books, conferences and other means.  The avaibility of a formal
+  online encyclopedia which propose in a single place the
+  communication, archival and verification of mathematical knowledge
+  will be of prime importance for researchers, industrials, teachers
+  and editors.
 
-
-This includes notably:
+  This includes notably:
   \begin{compactitem}
   \item \ldots
   \end{compactitem}
@@ -30,14 +33,21 @@ This includes notably:
 \end{wpdescription}
 
 \begin{tasklist}
-  \begin{task}[id=com,title=Communication]
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=com,
+      title=Communication,
+      lead=Inr,InrRM=4]
     We will setup a small group in charge of setting up communication
     tools targeting the different users of Logipedia: researchers,
     engineers, certification authorities, universities, teachers,
     publishers, etc. (web site, videos, mailing, etc.)
   \end{task}
 
-  \begin{task}[id=schools,title=Training Logipedia users]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=training,
+      title=Training Logipedia developers and users,
+      lead=Inr,InrRM=2,IrtRM=2]
     We will organize schools targeted to the different Logipedia users:
     \begin{itemize}
     \item Master and PhD students: training on formal proofs, proof
@@ -50,7 +60,10 @@ This includes notably:
     \end{itemize}
   \end{task}
 
-  \begin{task}[id=research,title=Expanding the use of Logipedia in research]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=research-club,
+      title=Expanding the use of Logipedia in research,
+      lead=Bir,BirRM=2]
     We will create and animate of club of researchers using Logipedia
     in their work. We will invite researchers on formal methods,
     theoretical computer science or mathematics to join this
@@ -62,7 +75,10 @@ This includes notably:
     \end{itemize}
   \end{task}
 
-  \begin{task}[id=industry,title=Expanding the use of Logipedia in the industry]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=industrial-club,
+      title=Expanding the use of Logipedia in the industry,
+      lead=Irt,IrtRM=2]
     We will create and animate a club of industrial users. We will
     invite companies working on or using formal methods to join this
     club. This club will be an opportunity for them to do:
@@ -76,37 +92,55 @@ This includes notably:
     of Logipedia and discuss the use of Logipedia in the industry.
   \end{task}
 
-  \begin{task}[id=certif,title=Expanding the use of Logipedia within certification authorities]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=certif-club,
+      title=Expanding the use of Logipedia within certification authorities,
+      lead=Irt,IrtRM=2]
     We will propose to certification authorities to use the tools
     developed for Logipedia for checking some formal proofs submitted
     to them. Preliminary contact with ANSSI. Extension of other
     European certification authorities?
   \end{task}
 
-  \begin{task}[id=education,title=Expanding the use of Logipedia in education]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=teachers-club,
+      title=Expanding the use of Logipedia in education,
+      lead=Str,StrRM=2] The club of users in education gathers
+    teachers who are already actively using formal proof for teaching
+    in computer science, mathematics and logic but are not necessarily
+    members of the cummunity of researchers in formal theorem
+    proving. These early adopters, will provide continuous feedback to
+    the project members on the usuability and accessibility of the
+    system from this particular point of view.  More than 15 persons
+    have already accepted to take part in this club.
 
-The club of users in education gathers teachers who are
-already actively using formal proof for teaching in computer science,
-mathematics and logic but are not necessarily members of the cummunity
-of researchers in formal theorem proving. These early adopters, will
-provide continuous feedback to the project members on the usuability
-and accessibility of the system from this particular point of view.
-More than 15 persons have already accepted to take part in this club.
+    Along the standard intuitive descriptions of theorem statements
+    and proofs, having a formal description is crucial in the
+    education. Indeed, students are often faced to the difficulty of
+    understanding mathematical concepts and proofs based on pieces of
+    informations found in heteregoneous sources (books, lecture notes,
+    \ldots) with varying definitions, notations. The informal proofs
+    are often given omitting details or relying on implicit knowledge
+    that students may not already be familiar with.
 
-Along the standard intuitive descriptions of theorem statements and proofs, having a formal description is crucial in the education. Indeed, students are often faced to the difficulty of understanding mathematical concepts and proofs based on pieces of informations found in heteregoneous sources (books, lecture notes, \ldots) with varying definitions, notations. The informal proofs are often given omitting details or relying on implicit knowledge that students may not already be familiar with.
+    Moreover, devlopment of mathematics in education, is often based
+    not on the systematic development of mathematics in the style of
+    Bourbaki, but on so-called deductive islands: sets of local
+    assumptions used in a curriculum, a lecture or an exercise.  On
+    top of the coherent foundations provided by the base libraries
+    incorporated in Logipedia, we will need to build coherent
+    collection of mathematical results suitable for being used in a
+    given classroom.
 
-Moreover, devlopment of mathematics in education, is often based not on the systematic development of mathematics in the style of Bourbaki, but on so-called deductive islands: sets of local assumptions used in a curriculum, a lecture or an exercise.
-On top of the coherent foundations provided by the base libraries incorporated in Logipedia, we will need to build coherent collection of mathematical results suitable for being used in a given classroom.
-
-The role of the club of users of proof assistants in education will be to:
-    \begin{itemize}
+    The role of the club of users of proof assistants in education will be to:
+    \begin{compactitem}
     \item Express the needs of students and teachers wrt proof
       presentations and tools in Logipedia.
     \item Exchange their experience in teaching formal proofs or using
       theorem provers in class by participating in the ThEdu community.
     \item Provide use cases.
     \item Contribute to the dissemination of information about Logipedia.
-    \end{itemize}
+    \end{compactitem}
 
 Delivrables:
 \begin{enumerate}
@@ -116,33 +150,41 @@ Delivrables:
 \item intregation in Logipedia of the formalization of highschool curriculum for geometry.
 \end{enumerate}
 
-
   \end{task}
 
-  \begin{task}[id=publishers,title=Expanding the use of Logipedia in publishing]
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=publishers-club,
+      title=Expanding the use of Logipedia in publishing,
+      lead=Zib,ZibRM=14]
     We will create and animate a club of publishers. We will invite
     people and organization working in the publication of research
     works to join this club: publication archives (arXiv, CCSD-HAL,
     Lipics, ACM, zbMath, etc.), conference steering committees (CPP,
     ITP, POPL, CICM, etc.), journal editorial boards (JFR, JFM,
     etc.). It will be an opportunity to:
-    \begin{itemize}
+    \begin{compactitem}
     \item Discuss with them how to use Logipedia to store and check
       proofs presented or used in scientific publications.
     \item Express their needs wrt Logipedia.
-    \end{itemize}
+    \end{compactitem}
   \end{task}
+
 \end{tasklist}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=3,miles=startup,id=requirements,dissem=PU,nature=DEM,lead=Inr]
-      {Requirements Analysis and Synchronization}
-\end{wpdeliv}
+  
+  \begin{wpdeliv}[due=1,miles=startup,id=requirements,dissem=PU,nature=DEC,lead=Inr]{Logipedia website}Initial version of the Logipedia website
+  \end{wpdeliv}
+
 \end{wpdelivs}
+
 \end{workpackage}
 
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../propB"
+%%% mode: flyspell
+%%% ispell-local-dictionary: "english"
 %%% End:
