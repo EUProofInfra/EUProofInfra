@@ -2,11 +2,16 @@
   short=Instrument Provers,% for Figure 5.
   title=Instrument proof systems to produce Dedukti proofs,
   lead=Del,
+  DelRM=14,
+  GotRM=4,
+  TumRM=5,
+  ChaRM=20,
+  CleRM=0,  % TODO
+  ImtRM=0,  % TODO
+  TouRM=0,  % TODO
+  SouRM=0,  % TODO
   BolRM=16, % 12 on Coq, 4 on Matita
-  InrRM=22, % 10? + 12 Enrico on Coq
-  DelRM=24,
-  GotRM=18,
-  TumRM=5]  % 3 Makarius (25 TEUR), 2 David Matthews (15 TEUR)
+  InrRM=0]  % TODO
 
 \ednote{MK: We need one coordinating site. original coordinators: Frédéric Blanqui and
   Jesper Cockx}
@@ -28,27 +33,50 @@ Wenzel, Nicolas Magaud, Gaspard Férey, Ulf Norell, Claudio Sacerdoti Coen}
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=agda,title=Instrument Agda]
+\begin{task}[id=agda,
+  title=Instrument Agda,
+  lead=Del,
+  DelRM=14,
+  GotRM=4]
 \input{workpackages/agda}
 \end{task}
 
-\begin{task}[id=isabelle,title=Instrument Isabelle]
+\begin{task}[id=isabelle,
+  title=Instrument Isabelle,
+  lead=Tum,
+  TumRM=5]
 \input{workpackages/isabelle}
 \end{task}
 
-\begin{task}[id=HOL4,title=Instrument HOL4]
+\begin{task}[id=HOL4,
+  title=Instrument HOL4,
+  lead=Cha,
+  ChaRM=20]
 \input{workpackages/hol4}
 \end{task}
 
-\begin{task}[id=atelier-b,title=Instrument Atelier-B/Rodin]
+\begin{task}[id=atelier-b,
+  title=Instrument Atelier-B/Rodin,
+  lead=Cle,
+  CleRM=0, % TODO
+  ImtRM=0, % TODO
+  TouRM=0, % TODO
+  SouRM=0] % TODO
 \input{workpackages/b_method}
 \end{task}
 
-\begin{task}[id=matita,title=Integrate the Matita translator in Matita itself]
+\begin{task}[id=matita,
+  title=Integrate the Matita translator in Matita itself,
+  lead=Bol,
+  BolRM=4]
 \input{workpackages/matita}
 \end{task}
 
-\begin{task}[id=coq,title=Instrument Coq]
+\begin{task}[id=coq,
+  title=Instrument Coq,
+  lead=Bol,
+  BolRM=12,
+  InrRM=0]  %TODO
 \input{workpackages/coq}
 \end{task}
 \end{tasklist}
