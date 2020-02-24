@@ -233,33 +233,30 @@ cannot be lost by the company.
 
 \item Interoperability.
 
-Several companies use several proof systems. First because some proof
-systems are better for some application domains and other are better
-for others, and also because these companies hire researchers and
-engineers that have different cultures and are more efficient using the
-tools they know.
+  Some industrial programme verification tools rely only on one single
+  proof system and any missing feature of its library forces the
+  end-user to prove complicated theorems that probably exist in other
+  proof systems. Logipedia will make it possible to access all
+  standard libraries and proofs of all systems. It makes the overall
+  proof of programmes much less costly.
 
-A side effect of the construction of the Logipedia platform is
-that such development are made interoperable. First because a proof
-developed in one system can be translated into another. Second because
-proofs developed in different systems can be combined in 
-Logipedia itself.
+  Other industrial programme verification tools use several proof
+  systems. First because some proof systems are better for some
+  application domains and other are better for others, and also
+  because these companies hire researchers and engineers that have
+  different cultures and are more efficient using the tools they know.
 
-- {\color{red} Benjamin M.}:
-
-Industrial programme verification tools usually rely only on one single
-proof system and any missing feature of its library forces the
-end-user to prove complicated theorems that probably exist in other
-proof systems. Thanks to Logipedia it becomes possible to access all
-standard libraries and proofs of all systems. It makes the overall
-cost of the proof of programmes much less costly.
-
+  A side effect of the construction of the Logipedia platform is that
+  such development are made interoperable. First because a proof
+  developed in one system can be translated into another. Second
+  because proofs developed in different systems can be combined in
+  Logipedia itself.
 \end{enumerate}
 
-The participation of industry to the project is twofold.
-First, CEA LIST, Clearsy, Edukera, MED-EL, OCamlPro, Prove\&Run, and
-SystemX, are full partners of the project and will contribute to its
-work packages and tasks.
+The participation of industry to the project is twofold.  First, CEA
+LIST, Clearsy, Edukera, MED-EL, OCamlPro, Prove\&Run, and SystemX, are
+full partners of the project and will contribute to its work packages
+and tasks.
 
 Second, we will build over the project duration time a {\em club of
   industrial users of Logipedia}. This club already contains
@@ -332,7 +329,21 @@ formal methods in the European industry.
 \begin{framed}
 {\bf \Large Impact of Logipedia on the energy industry}
 
-{\color{red} François}  
+\medskip
+
+Energy, specially nuclear energy, is a one of the key industrial sectors 
+where safety and security are of prime importance.
+
+The certification process in the energy industry is very specific
+depending on the country. Indeed they don't share common certification
+practice, unlike in the aeronautic industry. So a company who
+certified critical software used in a nuclear plant in one country
+needs to redo the certification in other country using different
+tools. The tools recognized by one certification authority are
+different in another.
+
+Logipedia by allowing to share proof and models,
+would ease the adaptation to another certification authority.
 \end{framed}
 
 \begin{framed}
@@ -343,11 +354,25 @@ formal methods in the European industry.
 
 \subsection{Closer interaction between a larger number of researchers}
 
-We have already discussed lengthily the impact of a joint project like
-Logipedia on the community of academic and industrial researchers in
-formal methods and, more generally, in logic.
+We have already discussed lengthily the impact of Logipedia on the
+community of academic and industrial researchers in formal methods
+and, more generally, in logic.
+The European Union has already invested a lot in logic and formal
+methods, and we believe it is our duty to propose a project to
+integrate the results of all this research.
 
-We want to insist also on the fact that everywhere mathematics and
+Scientific research and education at all levels are concerned with the
+discovery, verification, communication, archival and usage of
+mathematical results.  These tasks have been supported by physical
+books, conferences and other means.
+
+The project can lead to a societal breakthrough opening the use of
+formal proofs by a larger group of users, from experts users coming
+from the formal proof community to a group of non expert users
+(mathematicians, education and researchers in other science using
+mathematical statements).
+
+We want to insist on this last point: everywhere mathematics and
 computer science are used (in physics, in some parts of biology and
 social sciences, in engineering, in particular through simulation,
 etc.) a quest for higher level of rigor should pave the way for a
@@ -387,48 +412,81 @@ Kevin Buzzard (not yet contacted)
 Sébastien Gouëzel (not yet contacted)
 \end{framed}
 
-\subsection{Better management of the continuous flow of data.}
+\subsection{Better management of the continuous flow of data}
 
-A shared encyclopedia allows a better sustainability of the formal
-proofs developed over time. Too many formal proofs developed in the
-past are not available any more.
+Organizing a continuous flow of data is at the center of a project
+like Logipedia. We already instead on the aspects of interoperability,
+sustainability, cross verification, and ergonomy of the interfaces.
 
-UPLOAD feature of Logipedia
-
-Service to the certification authorities
+We want also to insist on the fact that Logipedia will be a service to
+certification authorities, specially in security, as witnessed by the
+presence of a representative of ANSSI in the advisory board,
+Prove\&Run among the partners, and several other companies focused on
+security in the club of industrial users.
 
 \subsection{Socio-economic impact}
 
-{\color{red} Safety and security of software contribute to a more ethical
-  and safer socity}
+One aspect of the socio-economic impact of formal method in general
+and integration activities such as Logipedia, is that making the 
+digital society safer and more secure contributes to a safer and more 
+secure society in general.
 
-Make Europe a leader in ITP/ATP
-
-EU Spent money on TYPES, Nicolas Tabareau's ERC. Formath, Circo... 
-
-Now we integrate the results of all this research
-
-{\color{red} Key exploitable results?}
+We are also interested in the recent trend to add a third pillar to
+safety and security: ethics. For instance, proving properties of
+software including the respect of privacy or, in the case of
+electronic voting systems, secret of vote, auditability, etc.  is not
+directly part of our project, but the development of formal methods
+contributes to promote these values.
 
 \subsection{Education}
 
-Scientific research and education at all levels are concerned with the discovery, verification, communication, archival and usage of mathematical results.
-These tasks have been supported by physical books, conferences and other means.
+The availability of a formal online encyclopedia which propose in a
+single place the communication, archival and verification of
+mathematical knowledge will be of prime importance for teachers.
 
-The avaibility of a formal online encyclopedia which propose in a single place the communication, archival and verification of mathematical  knowledge will be of prime importance for researchers and teachers.
 
+\paragraph*{At university}
 Education to formal methods in computer science and to formal proofs
 in mathematics always hits the same obstacle: the need to choose a
-specific theory or system, the need to focus on foundational issues in contradiction with the claimed universality of logical truth. 
+specific theory or system, the need to focus on foundational issues in
+contradiction with the claimed universality of logical truth.
 
-Education to formal methods and formal proofs will gain in universality once it will be demonstrated that this choice amounts to include, or not, a few axioms and rewrite
-rules. 
-The usage of formal proofs in the class room is also slown down by the lack of a large and well organized library of results.
-We defend that this renewal of logic education at university level and before is of prime importance in our ``post-truth era''.
+Education to formal methods and formal proofs will gain in
+universality once it will be demonstrated that this choice amounts to
+include, or not, a few axioms and rewrite rules.  
 
-The project can lead to a societal breakthrough opening the use of formal proofs by a larger group of users, from experts users comming from the formal proof community  to a group of non expert users (mathematicians, education and researchers in other science using mathematical statements). 
+This will allow teaching formal methods at a lower level of university
+than what is currently done.
 
-{\color{red} Key exploitable results?}
+\paragraph*{In secondary education}
+The usage of formal proofs in the class room is also slown down by the
+lack of a large and well organized library of results.  Logipedia,
+through a specific interface, can be used to teach mathematics, for
+instance geometry, in secondary school.  It can also be used to write
+textbooks promoting mathematical rigor by having in a textbook only
+theorems that have formal proofs, even if the proofs in the textbook
+are not presented formally. 
+
+This is why we have included, in the project, a company that has 
+already experimented the development of software to teach rigorous proof
+in high school. 
+
+We also defend that this renewal of logic education in secondary education
+is of prime importance in our ``post-truth era''.
+
+Because several of us are involved in the renewal of teaching
+mathematics and computer science in secondary education and in the
+first years of university, we felt the need to include in the project
+a club of users of Logipedia in education.
+
+\begin{framed}
+\begin{center}
+  {\bf \Large The current members of the club of users in education}
+\end{center}
+
+
+
+\end{framed}
 
 
 \subsection{Publishing}
