@@ -79,17 +79,12 @@ with prohibitive resource requirements will be omitted.
 %\ednote{TU München (Nipkow)}
 This library consists of more than
 200.000 lines of definitions and proofs, corresponding to almost 4000 printed
-pages. It covers topology, homology, multivariate, functional and complex
-analysis, measure and probability theory, and a dedicated library for
-ordinary differential equations. It is fair to say that it is the most
+pages. It is fair to say that it is the most
 advanced machine-checked library in the area of analysis and probability
-theory. Moreover, it is the only existing library in this area where
-proofs are structured and readable. Due to its size and generality and
-because analysis and probability theory are pervasive in any application in
-the engineering and natural sciences and economics, this library will be a
+theory. Because analysis and probability theory are key to many applications
+in enginnering and science, this library will be a
 KER of the project: it is a fundamental enabling resource for almost any
-formal verification activity in these areas, for example autonomous driving
-and mathematical finance. The purpose of this task is to structure, document
+formal verification activity in these application areas. The purpose of this task is to structure, document
 and develop this library for optimal accessibility, ease of use and
 comprehensiveness.
 
@@ -97,15 +92,13 @@ For better access, the library needs to be modularized, which requires
 a significant refactoring effort.  At the same time we need to add
 metadata (as provided by \WPref{structuring}) to the source material
 to turn this structured collection of theorems and proofs into a
-curated library at the Logipedia level. To increase accessibility
-we will also include links from the library into Wikipedia and in
-particular in the other direction to raise the awareness of Logipedia.
+curated library at the Logipedia level.
 
 The following areas of the library need to be developed further. The
 library support for integrals is extensive but suffers from the
 coexistence of different kinds of integrals. This requires unification
-and refactoring. Further essential material needs to be added because
-of its importance for mathematics, physics and especially engineering: Fourier
+and refactoring. Further essential material for mathematics, physics
+and engineering needs to be added: Fourier
 analysis and esp.\ the Fourier transform; stability theory for
 differential equations and dynamical systems, in particular Lyapunov
 functions; stochastic differential equations.
@@ -122,9 +115,8 @@ One of the remaining obstacles is the frequent use of computational steps in Coq
 \begin{task}[id=flyspeck,title=The Flyspeck library]
 \ednote{Saclay (Grienenberger)}
 The {HOL Light} library is large and varied. One of its key libraries is the 
-multivariate analysis 
-library
-\footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
+multivariate analysis library
+%\footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
 integration. The {Flyspeck} project gives a formal proof of the {Kepler}
@@ -153,11 +145,12 @@ the whole {HOL Light} library, and of the {Flyspeck} in {Dedukti}.
 The CakeML
 compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
 languages, the other being CompCert. Its export to Dedukti is one of
-the KERs of this project. Because of the size and importance of this
-library, we will approach the export from two angles.
+the KERs of this project.
+% Because of the size and importance of this
+%library, we will approach the export from two angles.
 
-The first approach utilizes OpenTheory-based technology. HOL4 can
-export proofs in the OpenTheory format, which can in turn be
+%The first approach utilizes OpenTheory-based technology.
+HOL4 can export proofs in the OpenTheory format, which can in turn be
 translated into Dedukti. Currently this link from HOL4 via OpenTheory
 to Dedukti does not scale to something as sizeable as the CakeML
 compiler proof. This part of this task will rework the route via
@@ -165,13 +158,13 @@ OpenTheory to scale better, possibly taking inspiration from an
 OpenTheory-like approach that scaled well for the HOL light
 prover~\cite{KaliszykK13}.
 
-The second approach establishes a connection from HOL4 via Isabelle to
-Dedukti. The basis is a promising new approach of virtualizing HOL4
-inside Isabelle \cite{ImmlerRW19}. That is, the inference kernel of
-HOL4 is replaced by that of Isabelle and the resulting system produces
-Isabelle theorems instead of HOL4 theorems. As a benchmark of the
-viability of this approach we plan to export CakeML via Isabelle to
-Dedukti.
+%The second approach establishes a connection from HOL4 via Isabelle to
+%Dedukti. The basis is a promising new approach of virtualizing HOL4
+%inside Isabelle \cite{ImmlerRW19}. That is, the inference kernel of
+%HOL4 is replaced by that of Isabelle and the resulting system produces
+%Isabelle theorems instead of HOL4 theorems. As a benchmark of the
+%viability of this approach we plan to export CakeML via Isabelle to
+%Dedukti.
 \end{task}
 
 %\begin{task}[id=unimath,title=The UniMath library]

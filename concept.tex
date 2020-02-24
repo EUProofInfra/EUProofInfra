@@ -1080,11 +1080,11 @@ The CakeML compiler library consists of the CakeML programming language
 definition, its compiler and the correctness proofs about the
 compiler. This is a cutting edge compiler library and one of only two
 verified compilers for real languages, the other being CompCert. Its
-export to Dedukti is one of the KERs of this project. Because of the
-size and importance of this library, we will approach the export from
-two angles.
+export to Dedukti is one of the KERs of this project.
+% Because of the size and importance of this library,
+%we will approach the export from two angles.
 
-The first approach utilizes OpenTheory-based technology. The CakeML
+The CakeML
 compiler development lives within the HOL4 prover. HOL4 can export
 definitions and proofs in the OpenTheory format, which can in turn be
 translated into Dedukti. This link from HOL4 via OpenTheory to Dedukti
@@ -1095,14 +1095,14 @@ OpenTheory to scale better, possibly taking inspiration from an
 OpenTheory-like approach that scaled well for the HOL light
 prover~\cite{KaliszykK13}.
 
-The second approach establishes a connection from HOL4 via Isabelle to
-Dedukti. The basis is a promising new approach of virtualizing HOL4
-inside Isabelle \cite{ImmlerRW19}. That is, the inference
-kernel of HOL4 is replaced by that of Isabelle and the resulting
-system produces Isabelle theorems instead of HOL4 theorems. This has
-the invaluable additional benefit that tools, not just theorems, can
-be shared. As a benchmark of the viability of this approach we plan to
-export CakeML via Isabelle to Dedukti.
+%The second approach establishes a connection from HOL4 via Isabelle to
+%Dedukti. The basis is a promising new approach of virtualizing HOL4
+%inside Isabelle \cite{ImmlerRW19}. That is, the inference
+%kernel of HOL4 is replaced by that of Isabelle and the resulting
+%system produces Isabelle theorems instead of HOL4 theorems. This has
+%the invaluable additional benefit that tools, not just theorems, can
+%be shared. As a benchmark of the viability of this approach we plan to
+%export CakeML via Isabelle to Dedukti.
 
 \subsubsection*{Challenges}
 
