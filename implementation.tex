@@ -99,26 +99,25 @@ Pro & x &   &   &   &   &   &   \\
 \input{workplan}
 
 \subsection{Work Package List}\label{sec:wplist}
->>>>>>> refs/remotes/origin/master
 
 %\makeatletter\wp@total@RM{management}\makeatother
 \wpfigstyle{\footnotesize}
 \wpfig[pages,type,start,end]
 
-\newpage\input{deliverables}
+\input{deliverables}
 
 \subsection{Work Package Descriptions}\label{sec:workpackages}
 \begin{workplan}
-  \newpage\input{workpackages/instrumentation}
-  \newpage\input{workpackages/theories}
-  \newpage\input{workpackages/libraries}
-  \newpage\input{workpackages/atpetc}
-  \newpage\input{workpackages/reversemath}
-  \newpage\input{workpackages/alignment}
-  \newpage\input{workpackages/structuring}
-  \newpage\input{workpackages/dissemination}
-  \newpage\input{workpackages/access}
-  \newpage\input{workpackages/management}
+  \input{workpackages/instrumentation}
+  \input{workpackages/theories}
+  \input{workpackages/libraries}
+  \input{workpackages/atpetc}
+  \input{workpackages/reversemath}
+  \input{workpackages/alignment}
+  \input{workpackages/structuring}
+  \input{workpackages/dissemination}
+  \input{workpackages/access}
+  \input{workpackages/management}
 \end{workplan}
 
 \ganttchart[draft,xscale=.45] 
@@ -143,9 +142,9 @@ Pro & x &   &   &   &   &   &   \\
   \underline{Milestones}: means control points in the project that help to chart progress. Milestones may correspond to the completion of a key deliverable, allowing the next phase of the work to begin. They may also be needed at intermediary points so that, if problems have arisen, corrective measures can be taken. A milestone may be a critical decision point in the project where, for example, the consortium must decide which of several technologies to adopt for further development.
 \end{todo}
 
-\newpage\input{milestones}
-\newpage\input{risks}
-\newpage\input{management}
+\input{milestones}
+\input{risks}
+\input{management}
 
 \section{Consortium as a whole}\label{sec:consortium}
 
@@ -187,6 +186,8 @@ Please note that the distribution of resources between access (TA/VA), JRA, and 
 %%% Local Variables: 
 %%% mode: LaTeX
 %%% TeX-master: "propB"
+%%% mode: flyspell
+%%% ispell-local-dictionary: "english"
 %%% End: 
 
 % LocalWords:  pn newpage site-FAU site-efo site-baz jointpub efo baz
