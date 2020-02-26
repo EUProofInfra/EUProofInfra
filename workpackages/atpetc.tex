@@ -6,8 +6,8 @@
   InnRM=4,
   PraRM=5,
   BelRM=12,
-  SacRM=0,%9
-  ImtRM=0,%9
+  SacRM=9,%9
+  ImtRM=9,%9
   OcaRM=12,
   CeaRM=18,
 %  CleRM=24,
@@ -79,12 +79,15 @@ obligation. A large-scale application about the semi-automatic verification of C
 code will validate this infrastructure.
 \end{wpdescription}
 
+
 \begin{tasklist}
   \begin{task}[id=instrumenting,
       title=Instrumenting ATPs to produce traces,
       lead=Lie,
       LieRM=28,
       ImtRM=0,
+      OcaRM=12,
+      BelRM=6,
     ]
   % WP Leader supervision: Pascal
   % Participants
@@ -108,12 +111,11 @@ code will validate this infrastructure.
     enable work on the next task.  The final tools fully connectable to the
     Logipedia infrastructure will be delivered at the end of the project.
 
-    \begin{compactitem}
-    \item Goal: TODO
-    \item Milestones: TODO
-    \item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Lie+Stu) + 3 p.m + 10 p.m engineer (Cle)
-      permanent (Bel)
-    \end{compactitem}
+    %% \begin{compactitem}
+    %% \item Goal: TODO
+    %% \item Milestones: TODO
+    %% \item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Lie+Stu) + 3 p.m permanent (Bel) + 10 p.m engineer (Cle)
+    %% \end{compactitem}
 
 % Considered provers:
 % \begin{itemize}
@@ -141,7 +143,9 @@ code will validate this infrastructure.
   \begin{task}[id=tracetodedukti,
       title=Translate ATP traces into Dedukti,
       lead=Imt,
-      LieRM=12
+      LieRM=12,
+      ImtRM=8,
+      SacRM=2,
     ]
   % Pascal Fontaine
   % Chantal Keller
@@ -158,15 +162,17 @@ code will validate this infrastructure.
 
     This task focuses on the design and implementation of the tool (Ekstrakto)
     to translate into Dedukti the proof traces from the automatic theorem
-    provers from task **** .
+    provers from task~\taskref{atpetc}{instrumenting}.  This task depends on
+    task~\taskref{atpetc}{instrumenting}, but can be partly executed in
+    parallel.
 
-\begin{compactitem}
-\item Goal: TODO
-\item Milestones: TODO
-\item Depends on T1 for some provers
-\item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Imt) + 2 p.m + 10 p.m engineer (Cle)
-  permanent (Sac)
-\end{compactitem}
+%% \begin{compactitem}
+%% \item Goal: TODO
+%% \item Milestones: TODO
+%% \item Depends on T1 for some provers
+%% \item Resources: 15 p.m engineer (Oca) + 36 p.m phd (Imt) + 2 p.m + 10 p.m engineer (Cle)
+%%   permanent (Sac)
+%% \end{compactitem}
 
 % As pointed out in Task~\localtaskref{instrumenting}, it is easier to
 % instrument provers to make them output traces instead of directly
@@ -270,8 +276,12 @@ code will validate this infrastructure.
 
   \begin{task}[id=deduktitoatp,
       title=Translate Dedukti statements into ATPs inputs,
-      Lead=Imt,
-      LieRM=8]
+      lead=Oca,
+      LieRM=8,
+      SacRM=3,
+      BelRM=3,
+      OcaRM=3
+    ]
     % Task leader: Guillaume Bury (WP leader contact: Chantal Keller)
     % Guillaume Bury
     % Chantal Keller
@@ -282,13 +292,17 @@ code will validate this infrastructure.
     To be fully integrated into Logipedia, automatic tools need to understand
     Dedukti statements.  This task is about creating the software infrastructure
     to translate Logipedia statements into the standardized input format for
-    some automatic tools, namely TPTP and SMT-LIB
-    
-    \begin{compactitem}
-    \item Goal: TODO
-    \item Milestones: TODO
-    \item Resources: 3 p.m engineer (Oca) + 3 p.m permanent (Bel) + 3 p.m permanent (Sac)+ 4 p.m engineer (Cle)
-    \end{compactitem}
+    some automatic tools, namely TPTP and SMT-LIB.  This task can be conducted
+    in parallel of tasks~\taskref{atpetc}{instrumenting}
+    and~\taskref{atpetc}{tracetodedukti}.  It also relates to Work Package
+    \WPref{reversemath}.
+
+    TODO Deliverable
+    %% \begin{compactitem}
+    %% \item Goal: TODO
+    %% \item Milestones: TODO
+    %% \item Resources: 3 p.m engineer (Oca) + 3 p.m permanent (Bel) + 3 p.m permanent (Sac)+ 4 p.m engineer (Cle)
+    %% \end{compactitem}
   
 % \begin{itemize}
 % \item encodings into FOL
@@ -329,44 +343,22 @@ code will validate this infrastructure.
   %% \end{task}
 
 
-  \begin{task}[id=reconstruction,
-      title=ATPs for Logipedia,
-      lead=Inn
+
+  \begin{task}[id=readiness,
+      title=ATPs to increase Logipedia readiness,
+      lead=Sac,
+      SacRM=4,
+      InnRM=6,
+      BelRM=3
     ]
-    % Task leader: Cezary Kaliszyk (WP leader contact: Chantal Keller)
+    %  Task leader: Chantal Keller
 
-    % Chantal Keller
-    % Josef Urban
-    % Martin Suda
-
-    \begin{compactitem}
-    \item Goal: TODO
-    \item Milestones: TODO
-    \item Depends on T3
-    \item Resources: 6 p.m post-doc (Inn) + 1 p.m permanent (Sac)
-    \end{compactitem}
-
-%   Six month PhD student
-
-% \begin{itemize}
-% \item native provers for Logipedia
-% \item proof reconstruction
-% \end{itemize}
-
-  \end{task}
-
-
-\begin{task}[id=readiness, title=Using ATPs to increase Logipedia readiness]
-  Task leader: Chantal Keller
-
+    This task depends on tasks~\taskref{atpetc}{instrumenting}, \taskref{atpetc}{tracetodedukti} and
+    \taskref{atpetc}{deduktitoatp}.
+    
+    
   % Guillaume Burel
   % People from other packages?  
-
-\begin{compactitem}
-\item Goal: TODO
-\item Milestones: TODO
-\item Resources: 3 p.m permanent (Bel) + 3 p.m permanent (Sac)
-\end{compactitem}
 
 % \begin{itemize}
 % \item ATPs can be used to fill the holes in proofs (e.g. PVS)
@@ -377,19 +369,20 @@ code will validate this infrastructure.
 
 
 \begin{task}[id=cooperation,
-    title=Make ATPs cooperate,
-    lead=Oca]
+    title=Logipedia and ATP end-to-end,
+    lead=Cea,
+    CeaRM=18]
 %  Task leader: François Bobot (Contact: Chantal Keller)
 
   % François Bobot (Why3)
   % Chantal Keller
 
-\begin{compactitem}
-\item Goal: TODO
-\item Milestones: TODO
-\item Depends on T1,2,3,4
-\item Resources: 30 p.m permanent (Cea)
-\end{compactitem}
+%% \begin{compactitem}
+%% \item Goal: TODO
+%% \item Milestones: TODO
+%% \item Depends on T1,2,3,4
+%% \item Resources: 30 p.m permanent (Cea)
+%% \end{compactitem}
 
 % \begin{itemize}
 % \item Why3: gather the proof from the called provers, add traces for the
