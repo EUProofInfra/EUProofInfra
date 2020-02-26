@@ -1,9 +1,5 @@
-\bigskip
-
-\noindent
-{\bf \Large \underline{Logical Frameworks}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Logical Frameworks}
 
 We have said that the multiplication of systems and theories in which
 formal proofs are developed jeopardizes the universality of logical
@@ -100,12 +96,8 @@ mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
 systems each proof can be used.  This analysis is the basis of the
 interoperability between proof systems.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{The Logipedia integration levels}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{The Logipedia integration levels}
 
 Thus, to make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
@@ -211,12 +203,8 @@ packages, but both are key to the project. The first ones will
 constitute Logipedia in 2024 and the second ones prepare the long term
 future of the infrastructure.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Integration}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Integration}
   
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has already
 been expressed in Dedukti. The next step is to implement a method to
@@ -471,12 +459,7 @@ following tools:
 The success of this integration project is measured by the LIL of the various
 systems discussed at the end of the project.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Automatic theorem provers, SAT/SMT solvers, model checkers, etc.}}
-
-\medskip
+\cmsection{Automatic theorem provers, SAT/SMT solvers, model checkers, etc.}
 
 We have previously discussed the instrumentation of proof systems,
 such as Coq, Isabelle/HOL, Agda, etc.  that is interactive systems,
@@ -838,12 +821,8 @@ The success of the integration of proofs coming from automated theorem
 proving systems, SAT solvers, SMT solvers, and model checkers, can be
 measured by the size of the proofs imported from these systems to Logipedia.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Large libraries}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Large libraries}
 
 We have seen how to instrument proof systems and automated theorem
 provers to produce proofs in Dedukti, and how to share these proofs in
@@ -1128,12 +1107,8 @@ second measure of success is how well we are able to restructure the
 libraries for end-user access and how well this structure can be
 transferred to Logipedia and thus to end-users.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Infrastructure of the encyclopedia}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Infrastructure of the encyclopedia}
 
 In the three last sections dedicated to integration, automated theorem
 proving and large libraries, we have described the concepts that are
@@ -1158,12 +1133,8 @@ Web site for students
 
 \subsubsection*{Success}
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Source Level Structure and Metadata}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Source Level Structure and Metadata}
 
 Like programmes, formal proofs exist at two levels: the user-written
 source code and the kernel representation.
@@ -1223,12 +1194,8 @@ semantic web-style queries in languages like SPARQL.
 
 {\color{red} To do}
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{New theories, new systems}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{New theories, new systems}
 
 Finally, after discussing the concepts related to the networking activities
 needed to collect the content of Logipedia and the infrastructure development
@@ -1434,14 +1401,14 @@ binders, definitional constructions, or have rich type systems that
 are not easily encoded in the $\lambda\Pi$-calculus modulo theory that
 underlies Dedukti.  Although the details vary between the systems,
 there are commonalities that should be addressed jointly. For example,
-Abella and Minlog have strong support for co-induction and co-recursion
+Minlog havs strong support for co-induction and co-recursion
 for which foundational support should be provided in Dedukti. Mizar
 and (to a lesser degree) TLA$^+$ make use of soft types for assisting
 proof search, and PVS emphasizes predicate sub-typing, which is also
 used in the SMT encoding used in TLA$^+$.
 
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
-Abella, HoTT, and Minlog are based on type theories with explicit proof objects
+HoTT and Minlog are based on type theories with explicit proof objects
 and are in this respect close to Dedukti, although the details differ. PVS has a
 type system reminiscent of Simple type theory but adds predicate
 sub-typing, whereas Mizar and TLA$^+$ are based on classical set theories. The
@@ -1470,12 +1437,8 @@ theories and proofs can be exported. A secondary measure is the overhead
 incurred by the encodings and instrumentations and thus the complexity of proof
 checking by Dedukti.
 
-\bigskip
-
-\noindent
-{\bf \Large \underline{Proof engineering}}
-
-\medskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cmsection{Proof engineering}
 
 The development of formal reasoning tools has led to an ever-growing
 corpus of mechanized mathematical theories. As these libraries span a

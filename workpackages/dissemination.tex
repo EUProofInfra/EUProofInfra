@@ -88,12 +88,11 @@
      \item Logipedia school 2023
      \item An electronic forum for exchanging on the use of computer proof assistants in teaching and learning.
     \end{itemize}
-
-    
+   
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=research-club,
+  \begin{task}[id=researchers-club,
       title=Expanding the use of Logipedia in research,
       lead=Bir,BirRM=2]
     The purpose of this task is to ensure a tight interaction, and to establish a feedback loop, between, on the one hand, the developers and, on the other hand, the intended users of Logipedia.
@@ -126,8 +125,6 @@
      \item User days
      \item Electronic seminar series
     \end{itemize}
-
-    
 
 %     We will create and animate of club of researchers using Logipedia
 %     in their work. We will invite researchers on formal methods,
@@ -207,20 +204,12 @@
     \item Contribute to the dissemination of information about Logipedia.
     \end{compactitem}
 
-Delivrables:
-\begin{enumerate}
-\item At university level: Organization of a summer school for introducing teacher/researchers to interactive theorem proving.
-\item For highschool teachers: Organization of seminars/continuous education sessions about the role of logic in maths teaching and the use of proof assistants in class.
-\item For university teachers: creation and dissemination of teaching material for introduction to the concept of proof to fresh maths students.
-\item intregation in Logipedia of the formalization of highschool curriculum for geometry.
-\end{enumerate}
-
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=publishers-club,
       title=Expanding the use of Logipedia in publishing,
-      lead=Zib,ZibRM=14]
+      lead=Zib,ZibRM=12]
     We will create and animate a club of publishers. We will invite
     people and organization working in the publication of research
     works to join this club: publication archives (arXiv, CCSD-HAL,
@@ -234,12 +223,102 @@ Delivrables:
     \end{compactitem}
   \end{task}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=zib,
+      title=Expanding the use of Logipedia in publishing,
+      lead=Zib,ZibRM=12]
+    We will build a service for Logipedia which provides an overview
+    about the development in logic and an intuitive access to the
+    following classes of objects - axioms - theories/calculi -
+    software (theorem provers) - applications based on logic tools
+    (e.g. the metro in Paris, other SAT problems)
+
+    The objects and the relations between the objects could be
+    realized via a graph.  We could do this in the following way:
+    \begin{compactitem}
+    \item Defining the objects of each class (we could start from the
+      theorem provers, apply the publication-based approach for the
+      software and search for references to axioms, theories, and
+      applications)
+    \item Definition of a special ontology to describe linking and
+      dependencies between the objects (metadata)
+    \item add these metadata to all objects
+    \item graph visualization of the network (lattice) and development
+      of a search engine
+    \end{compactitem}    
+    This gives the user a comprehensive entry point into an emerging
+    topic.
+  \end{task}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=edukera,
+      title=Web interface for doing proofs at school,
+      lead=Edu,EduRM=12]
+      Current formal proof systems require to learn a specific formal
+      language and a command-line interface to compile and execute the
+      language.  This level of technicity is not compliant with mass
+      adoption by teachers or students outside computer science. For
+      educational purposes, it is therefore mandatory to develop an
+      intuitive and easy-to-handle user-interface for the logipedia
+      formal proof system. This interface, based on a WYSIWYG design
+      (What You See Is What You Get), will provide two main features:
+      \begin{compactitem}
+      \item the structured display of the proof in a high (latex-like) quality
+      \item the possibility to build the proof with simple
+        point-and-click interactions
+      \end{compactitem}
+
+      The digital nature of the formal proof enables specific view features to
+      understand its structure: eagle-eye view, folding/unfolding of scopes,
+      highlighting the use of variables (on hover), showing/hiding context,
+      and so on.
+
+      Interactions are the point-and-click commands to develop the structure
+      of the proof. They consist in applying theorems (or axioms or lemmas)
+      to statements and rewriting rules to a selected element of a statement;
+      this is done in deductive or abductive mode (resp. forward or backward).
+
+      Theorems and rewrite rules should be presented and searched using
+      technology developed in \WPref{dissemination}.
+
+      The research of proof must be automated at some point in order to ease
+      and speed up the process and to comply with the level of required detail
+      in education; the output of \WPref{atpetc} will be used for this task.
+
+      The development tasks are listed below:
+      \begin{compactitem}
+      \item graphical web component to display a Logipedia proof
+      \item point-and-click interaction engine on top of Logipedia
+      \item interactive proof interface application
+      \end{compactitem}
+
+      It will be possible to use the graphical proof component throughout
+      the Logipedia website.
+  \end{task}
+
 \end{tasklist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wpdelivs}
+
+  % deliverables for T1 communication
   
   \begin{wpdeliv}[due=1,miles=startup,id=requirements,dissem=PU,nature=DEC,lead=Inr]{Logipedia website}Initial version of the Logipedia website
+  \end{wpdeliv}
+
+  % deliverables for T2 training
+  
+  \begin{wpdeliv}[due=18,miles=???,id=summerschool,dissem=PU,nature=other,lead=Str]{At university level: Organization of a summer school for introducing teacher/researchers to interactive theorem proving.}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=18,miles=???,id=continuoused,dissem=PU,nature=other,lead=Str]{
+ For highschool teachers: Organization of seminars/continuous education sessions about the role of logic in maths teaching and the use of proof assistants in class.}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=18,miles=???,id=course-proof,dissem=PU,nature=other,lead=Str]{ For university teachers: creation and dissemination of teaching material for introduction to the concept of proof to fresh maths students.}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=18,miles=???,id=geom-curriculum,dissem=PU,nature=other,lead=Str]{ intregation in Logipedia of the formalization of highschool curriculum for geometry.}
   \end{wpdeliv}
 
 \end{wpdelivs}

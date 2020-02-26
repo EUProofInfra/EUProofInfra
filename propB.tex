@@ -4,9 +4,11 @@
 % - public.tex (like submit.tex, but no financials either) 
 \providecommand{\classoptions}{,keys} % to be overwritten in variants
 \documentclass[12pt,noworkareas,deliverables,report,propB\classoptions]{euproposal}
+\extrafloats{1000}
 \usepackage{nimbusserif}
 \usepackage{logipedia}
 \usepackage{framed}
+\usepackage{multicol}
 \addbibresource{lib/kbibs/kwarcpubs.bib}
 \addbibresource{lib/kbibs/extpubs.bib}
 \addbibresource{lib/kbibs/kwarccrossrefs.bib}
@@ -53,6 +55,8 @@
   site=Med,
   site=Pro,
   site=Zib,
+  site=Ias,
+  site=Run,
   botupPM, % we want to work via bottom up PM distribution,
   % alternative: (can be combined)
   % topdownPM, % the coordinator distributes PM as follows:
@@ -88,21 +92,43 @@
 
   \newcommand\logo[1]{\includegraphics[width=3cm]{logos/#1}}
 
-  {\bf Club of industrial users:} % in alphabetical order
-  \vspace*{3mm}
+  \includegraphics[width=16cm]{map-countries}
+  \vspace*{1cm}
   
-  \begin{tabular}{ccccc}
-    Alstom & \logo{CEAList} & \logo{ClearSy} & \logo{Edukera} & \logo{Facebook}\\[8mm]
-    \logo{IBM} & \logo{MED-EL} & \logo{MERCE} & \logo{NomadicLabs} & \logo{OCamlPro}\\[8mm]
-    \logo{OriginLabs} & \logo{ProveRun} & TrustInSoft & RATP & \logo{SystemX}\\[8mm]
-    \logo{Systerel}\\
+  \begin{center}
+    {\Large\bf Club of industrial users:}
+  \end{center}
+
+  \vspace*{5mm}
+  \begin{tabular}{ccccc}% in alphabetical order
+    Alstom
+    & \logo{ARM}
+    & \logo{CEAList}
+    & \logo{ClearSy}
+    & \logo{Edukera}
+    \\[8mm]
+    \logo{Facebook}
+    & \logo{IBM}
+    & \logo{MED-EL}
+    & \logo{MERCE}
+    & \logo{NomadicLabs}
+    \\[8mm]
+    \logo{OCamlPro}
+    & Onera
+    & \logo{OriginLabs}
+    & \logo{ProveRun}
+    & TrustInSoft
+    \\[8mm]
+    RATP
+    & \logo{SystemX}
+    & \logo{Systerel}\\
   \end{tabular}
   
   \begin{abstract}
     \ednote{Gilles: write something here}
   \end{abstract}
 
-\tableofcontents
+  \tableofcontents
 
 \input{excellence}
 \newpage\input{impact}
