@@ -14,14 +14,14 @@ way, by the non-Euclidean geometries, as some statements could be true
 in one geometry, but false in others.  At the beginning of the 20$^{\mbox{\footnotesize th}}$ 
 century, a solution to this problem was found.  The definition of the
 various geometries in predicate logic \cite{HilbertAckermann}
-permitted to understand which axiom was used in which proof, restoring
+allowed mathematicians to understand which axiom was used in which proof, restoring
 the universality of the truth of judgements of the form ``the
 proposition $B$ is true under the axioms $A_1, ..., A_n$''.
 
 Predicate logic is not {\em per se} a theory, but it is a framework in
 which one can express theories, as sets of axioms: {\em a logical
   framework}. As we shall see, expressing the various theories
-implemented in Coq, Matita, Isabelle/HOL, PVS, etc.  in a common
+implemented in Coq, Matita, Isabelle/HOL, PVS, etc.\ in a common
 logical framework will permit, in a similar way, to analyze which
 ``axiom'' is used in which proof, and hence, in which theories this
 proof is correct, and in which systems it can be used.
@@ -43,8 +43,8 @@ framework: the theories implemented in Coq, Matita, etc., are often
 defined as autonomous systems, and not in a logical framework.
 
 However, a different line of research has attempted to understand the
-limitations of predicate logic and to propose other logical frameworks
-repairing them. The most prominent limitations of predicate logic are
+limitations of predicate logic and to propose more powerful logical frameworks.
+The most prominent limitations of predicate logic are
 the lack of function symbols binding variables, the lack of a syntax
 for proof terms, the lack of a notion of computation, the lack of a
 notion of proof reduction for axiomatic theories, and the
@@ -93,7 +93,7 @@ o&:&type\\
 So the theories implemented in various systems can all be expressed in
 Dedukti and the proofs developed in these systems can be translated to
 Dedukti. Just like in the case of non Euclidean geometry, this allows
-to analyse the symbols and rewrite rules used in each proof
+the symbols and rewrite rules used in each proof to be analysed
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
 mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
 systems each proof can be used.  This analysis is the basis of the
@@ -116,7 +116,7 @@ the general structure of the encyclopedia.
 
 To measure the level of integration of an existing proof system and
 associated proof library in Logipedia, we introduce a metric: {\em the
-  Logipedia integration levels} that counts six levels.
+  six Logipedia integration levels}.
 
 \begin{framed}
 \begin{center}
@@ -133,10 +133,10 @@ associated proof library in Logipedia, we introduce a metric: {\em the
 \item[LIL 3:] A significant part of the library of the system has been
   exported and checked in Dedukti.
 
-\item[LIL 4:] A significant part of the library of the system have
+\item[LIL 4:] A significant part of the library of the system has
   been made available in Logipedia.
 
-\item[LIL 5:] A tool has been defined to analyze the Dedukti proofs
+\item[LIL 5:] A tool has been built to analyze the Dedukti proofs
   for the system, detect those that can be expressed in a theory
   weaker than that of the system, and translate those proofs into a
   weaker logic.
@@ -196,10 +196,10 @@ LFSC & 0 & 4\\
 These systems can be roughly divided into two groups. Those in the
 first half of the table (Matita, HOL Light, FoCaLize, Coq, Agda,
 Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, Smart, and Rodin) for which
-we have preliminary results and that we plan to bring to a very high
+we have preliminary results and that we plan to bring to a high
 level of integration. Those in the second half (Minlog, PVS, 
 Mizar, TLA$^+$, Why3, and LFSC) with which we are
-starting and for which our goal are less ambitious.
+starting and for which our goal are generally less ambitious.
 
 These two groups of systems will be addressed in different work
 packages, but both are key to the project. The first ones will
@@ -225,9 +225,9 @@ theory, and those based on set theory and predicate logic.
 Coq is an interactive theorem prover developed at Inria since 1984.
 It is based on Type Theory and was used to formally verify the
 correctness of both industrially relevant software such as the
-CompCert C compiler and complex mathematical proofs such as the one of
-the Four Color theorem and the one of the Odd Order theorem. In 2013
-Coq received the ACM system award.
+CompCert C compiler and complex mathematical proofs such as those of
+the Four Color theorem and the Odd Order theorem. In 2013
+Coq received the ACM System Award.
 
 Matita is an interactive theorem prover developed at the University of
 Bologna and used for teaching logic courses and to verify software and
@@ -256,7 +256,7 @@ Matita, but is more focused on interactive development and direct
 manipulation of proof terms (in contrast to using a tactic language to
 generate the proof terms). To support the construction of proof terms,
 Agda provides powerful features such as dependent pattern and
-copattern matching, eta equality for functions and record types,
+co-pattern matching, eta equality for functions and record types,
 first-class universe polymorphism, and definitional proof
 irrelevance. In addition, Agda provides an experimental option for
 extending the language with user-defined rewrite rules, which are very
@@ -274,42 +274,32 @@ University of Cambridge.
 HOL Light is an implementation of Simple type theory.
 
 Isabelle/HOL is an implementation of Simple type theory in the
-Isabelle logical framework \cite{paulson700} is an intermediate
-between Type-Theory proof systems (like Coq or Agda) and classic
+Isabelle logical framework \cite{paulson700}. It sits in
+between type-theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
 
-  \paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB, Smart).}
+\paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB).}
 
 Atelier B, Rodin and ProB are platforms or tools to develop models written
 using the B method, a version of set theory expressed in predicate
 logic.  A model in these systems expresses a state machine constrained
-by invariant properties. Verification of the model correctness implies
-to verify some proof obligations produced by a weakest precondition
-calculus. For example, spanning trees algorithms, distributed
-algorithms, access control policies have been formalized
-respectively in EventB and B method.  The development process for
-the B method is based on formal proof: proof obligations are
+by invariant properties. Verification of the correctness of the model requires
+discharging a number of proof obligations produced by a weakest precondition
+calculus. For example, spanning tree algorithms, distributed
+algorithms or access control policies have been formalized
+respectively in the EventB and (classical) B methods.  The development process for
+both versions of the B method is based on formal proof: proof obligations are
 automatically generated and must be proven by automatic or interactive
 provers. This can include external solvers such as SMT solvers, and
 (in the case of ProB) constraint solvers such as Sicstus
 Prolog. Finally, ProB is an animator and model checker: it helps users
-to gain confidence in their specifications, and it can be used as a
+gain confidence in their specifications, and it can be used as a
 dis-prover to discover counter-examples to proof obligations.
   
-Smart is a proof language developed by the company ProveNRun. It is
-based on a classical predicate logic, extended with rank-1
-polymorphism, algebraic datatypes, recursive definitions and inductive
-predicates. ProvenTools will turn models implemented in Smart to proof
-obligations which can be proved in the system using a mix of
-interactive and automated proving. The resulting proofs are reviewable
-objects, akin to proof traces built of the various atomic proof rules
-supported by ProvenTools' kernel, such as definition unfolding, case
-analysis or equality propagation.
-
 \bigskip
   
 Despite the differences between these three classes of proof systems,
-there are several common points between them where solutions that work
+there are multiple common points between them where solutions that work
 for one system can also be applied to other systems. Working together
 on implementing these tools will allow the researchers from these
 different communities to come together and learn more about the
@@ -331,10 +321,10 @@ practice. For example:
 \item Many Agda libraries (as well as some Coq libraries) rely heavily
   on type-directed conversion rules such as eta-equality for functions
   and record types, or definitional proof irrelevance. These rules
-  have to be expressed by adding additional type information to the
-  proof terms. This can hence lead to a large blow-up in the size of
+  have to be expressed by adding type information to the
+  proof terms. This can in turn lead to a large blow-up in the size of
   those proof terms, and thus greatly increase the cost of
-  typechecking, thus this blow-up has to be tamed by the choice of a
+  typechecking. This blow-up has to be tamed by the choice of a
   clever expression of the theory.
 
 \item Coq, Agda, and Matita all provide support for coinductive
@@ -347,7 +337,7 @@ practice. For example:
   to express universe polymorphism in dependent type theories. While
   Dedukti has support for AC rewriting, the current implementation is
   very slow, which makes typechecking the proofs in Dedukti
-  unfeasible. Thus, expressing these theories requires to improve
+  infeasible. Thus, expressing these theories requires improvements in
   Dedukti itself.
 \end{itemize}
 
@@ -387,7 +377,7 @@ When translating a proof from some external system to Dedukti, we want
 to produce proof terms that are as small as possible, so it is easy to
 store them, recheck them, or export them to a different
 system. However, there are at least two reasons why proof terms might
-become large. First, a typical proof in external system may be large
+become large. First, a typical proof in an external system may be large
 (because big parts of it are constructed automatically). Second,
 translating a proof to Dedukti may increase the size of the proof, for
 example by normalizing it or by adding type annotations.  This means
@@ -405,11 +395,11 @@ they can be inferred from the rest of the proof.
 \bigskip  
 
 For each of the systems considered in this project, we can identify
-some preliminary work, of various maturities, on translating proofs to
-Dedukti.  We plan to build upon the previous work done on the
-following tools:
+some preliminary work, of varying maturity, on translating proofs to
+Dedukti.  We plan to build upon the previous work done for the
+following systems:
 \begin{itemize}
-\item The standard and arithmetic libraries of Matita has been the
+\item The standard and arithmetic libraries of Matita have been the
   first libraries to be exported to Logipedia using Krajono, a fork of
   Matita. We plan to make this translation a part of the code of
   Matita itself so that it is maintained with the rest of the system.
@@ -447,7 +437,7 @@ following tools:
   OpenTheory proofs into Dedukti.
 
 \item In the context of the BWare project, an expression of the set
-  theory of the B method has been provided as a theory modulo, i.e. a
+  theory of the B method has been provided as a theory modulo, i.e.\ a
   rewrite system rather than a set of axioms. This expression is used
   by the automatic prover Zenon modulo which features a back-end to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
@@ -460,7 +450,7 @@ following tools:
 \subsubsection*{Measuring success}
 
 The success of this integration project is measured by the LIL of the various
-systems discussed at the end of the project.
+considered systems at the end of the project.
 
 \cmsection{Automatic theorem provers, SAT/SMT solvers, model checkers, etc.}
 
@@ -1218,6 +1208,16 @@ and are therefore preferred by users for developing theories and
 proofs in these areas.  The objective is to bring them (at least) to
 LIL $2$ in order to prepare the grounds for a longer-term integration
 into Logipedia.
+
+% Smart is a proof language developed by the company ProveNRun. It is
+% based on a classical predicate logic, extended with rank-1
+% polymorphism, algebraic datatypes, recursive definitions and inductive
+% predicates. ProvenTools will turn models implemented in Smart to proof
+% obligations which can be proved in the system using a mix of
+% interactive and automated proving. The resulting proofs are reviewable
+% objects, akin to proof traces built of the various atomic proof rules
+% supported by ProvenTools' kernel, such as definition unfolding, case
+% analysis or equality propagation.
 
 There are various motivations for including these systems in
 Logipedia. First, being able to export theories and proofs developed
