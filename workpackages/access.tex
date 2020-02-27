@@ -202,18 +202,29 @@ todo
     sessions in order to allow administrators to guarantee the
     sustainability of Logipedia.
 
-    It includes:
-    \begin{compactitem}
-    \item Administration procedures
-    \item Upgrade procedures
-    \item Backup procedures
-    \end{compactitem}
+    It includes administration , upgrade and backup procedures.
 
     Although these sessions are necessary for the launch, all the
     documentation will be accessible publicly on a website in order
     for anyone to become maintainer.
   \end{task}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=dedukti,
+      title=Development of Dedukti checking and translation tools
+      lead=Irt,InrRM=24]
+
+    We will consolidate the source code of Dedukti, the tool allowing
+    to check the correctness of proofs added in Logipedia, so as to
+    handle the proofs generated in \WPref{instrumentation} and the
+    large libraries considered in \WPref{libraries}. We will also
+    extend it so as to handle the new theories that will be developed
+    in \WPref{theories}.
+
+    All this work will be done using continuous integration and
+    deployment tools.
+  \end{task}
+  
 \end{tasklist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
