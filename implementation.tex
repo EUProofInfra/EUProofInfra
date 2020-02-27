@@ -1,5 +1,17 @@
 \chapter{Implementation}\label{chap:implementation}
 
+{\color{red} a table with all the work packages}
+
+Gant diagaram : A line for each task
+
+Lead / Task and a A Column for each month. Finishes with a
+miletones, deliverable and project meeting in each column.
+
+Put a lot of deliverables at Month 18 and 36 and 48
+
+
+
+
 \section{Work plan -- Work packages, deliverables}
 
 \begin{todo}{}\color{red}
@@ -100,6 +112,9 @@
 
 \input{workplan}
 
+{\color{red} Every task indicates pm and where}
+
+
 \subsection{Work Package List}\label{sec:wplist}
 
 %\makeatletter\wp@total@RM{management}\makeatother
@@ -110,16 +125,16 @@
 
 \subsection{Work Package Descriptions}\label{sec:workpackages}
 \begin{workplan}
-  \input{workpackages/instrumentation}
-  \input{workpackages/theories}
-  \input{workpackages/libraries}
-  \input{workpackages/atpetc}
-  \input{workpackages/reversemath}
-  \input{workpackages/alignment}
-  \input{workpackages/structuring}
-  \input{workpackages/dissemination}
-  \input{workpackages/access}
-  \input{workpackages/management}
+\input{workpackages/instrumentation}
+\input{workpackages/atpetc}
+\input{workpackages/libraries}
+\input{workpackages/access}
+\input{workpackages/structuring}
+\input{workpackages/theories}
+%\input{workpackages/reversemath}
+\input{workpackages/alignment}
+\input{workpackages/dissemination}
+\input{workpackages/management}
 \end{workplan}
 
 \ganttchart[draft,xscale=.45] 
@@ -139,19 +154,32 @@
 
   * Give a summary of the trans-national and/or virtual access to be provided (table 3.2c).
 
+
+  {\color{red} A table for risks
+
+    Risk name / WP / Impact if occurs / Probability / LEvels / Prevetive and
+    Contengency action.
+
+    
+
+  
   {\bf Definition:}
   
   \underline{Milestones}: means control points in the project that help to chart progress. Milestones may correspond to the completion of a key deliverable, allowing the next phase of the work to begin. They may also be needed at intermediary points so that, if problems have arisen, corrective measures can be taken. A milestone may be a critical decision point in the project where, for example, the consortium must decide which of several technologies to adopt for further development.
 \end{todo}
 
-\input{milestones}
-\input{risks}
+
+{\color{red} A table wiyj a lis of milestones}
+
 \input{management}
 
 \section{Consortium as a whole}\label{sec:consortium}
 
+
 \begin{todo}{}\color{red}
-  The individual members of the consortium are described in a separate section 4. There is no need to repeat that information here.
+
+  The individual members of the consortium are described in a separate
+  section 4. There is no need to repeat that information here.
 
   Describe the consortium. How will it match the project’s objectives, and bring together the necessary expertise? How do the members complement one another (and cover the value chain, where appropriate)? 
 
@@ -163,6 +191,10 @@
 \end{todo}
 
 \input{consortium}
+
+{\color{red} A table with all partners in lines and Key expertise in colum
+  and explain who is good at what}
+
 
 \section{Resources to be Committed}\label{sec:resources}
 
@@ -178,10 +210,28 @@ Please provide the following:
 Please note that the distribution of resources between access (TA/VA), JRA, and NA components must be duly justified.
 \end{todo}
 
-\subsection{Travel Costs and Consumables}\label{sec:travel-costs}
-\subsection{Subcontracting Costs}
 
-\ednote{@Rabe: add subcontracting cost for Wenzel for WP 7}
+{\color{red} A table with WP in columns and parners in line and
+  ressources in pm}
+
+\subsection{Travel Costs and Consumables}\label{sec:travel-costs}
+
+\subsection{Subcontracting Costs}\label{sec:subcontracting-costs}
+
+As explained in Section~\ref{sec:subcontracting}, \site{Tum} asks for
+EUR~50.000 and \site{Fau} for EUR~20.000 to subcontract Dr.\ M.\ Wenzel to
+carry out (part of) the work in task
+\taskref{instrumentation}{isabelle}, \taskref{libraries}{afp} and
+\taskref{structuring}{strontorepml}. Further EUR~15.000 are required
+by \site{Tum} to subcontract Dr.\ D.\ Matthews to participate in
+critical parts of task \taskref{instrumentation}{isabelle}.
+\ednote{Rabe@Dowek: This is part
+  of the WP7 budget. But it is not included in the PMs in WP7 because
+  money for subcontracts must be declared in a different column in the
+  official EU tables. Instead, it is listed here.}
+
+
+
 
 \subsection{Other Costs}
 

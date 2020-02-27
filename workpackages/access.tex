@@ -6,18 +6,22 @@
   % + 15K machines
 
 \begin{wpobjectives}
-  The objective of this work package is to \ldots
-
-This includes notably:
-  \begin{compactitem}
-  \item \ldots
-  \end{compactitem}
-  A key aspect will be to foster \ldots
+  The objectives of this work package are:
+  \begin{compactenum}[(a)]
+  \item Define and build the Logipedia hardware and software
+    infrastructure in which the proofs developed in
+    \WPref{instrumentation} and \WPref{libraries} will be
+    integrated.
+  \item Give access to the Logipedia infrastructure to everyone
+    (researchers, engineers, teachers, publishers) by providing a
+    publicly accessible web site for displaying the proofs added in
+    Logipedia, search tools to query the database, and a tool to
+    automatically download and install those proofs in one's own
+    machine.
+  \item Develop the tools necessary to check the correctness of proofs
+    added in Logipedia and transform them from one theory to another.
+  \end{compactenum}
 \end{wpobjectives}
-
-\begin{wpdescription}
-todo
-\end{wpdescription}
 
 \begin{tasklist}
 
@@ -59,16 +63,15 @@ todo
     \end{compactitem}
 
     Finally, we will define the tooling architecture necessary for
-    continuous integration and continuous deployment (CI/CD) of the
-    logipedia application itself and new validated proof files in the
-    logipedia database.
+    continuous integration and continuous deployment (CI/CD) of
+    Logipedia and new validated proof files in the database.
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=infra,
       title=Defining the hardware architecture for the infrastructure,
       lead=Irt,IrtRM=1]
-    Based on the work done in task~\taskref{access}{archi}, we will
+    Based on the work done in \taskref{access}{archi}, we will
     size the needed hardware architecture to fit the objectives of the
     project. The goal is to define a scalable infrastructure in order
     to be able to manage an increasing traffic on the website to
@@ -84,17 +87,17 @@ todo
     Finally, the hosting strategy will be decided taking into account
     costs, efficiency and sustainability.  The platform can be hosted:
     \begin{compactitem}
-    \item on premise on some server at Inria with redundancy in Münich
-    \item on public cloud services like Amazon Web Services (AWS) or
-      the European cloud providers OVH.com or Scaleway
+    \item on premise on some server at Inria with redundancy in Münich,
+    \item on public cloud services like OVH.com, Scaleway or Amazon
+      Web Services,
     \item on a private cloud, which is a compromise between both
       previous options.
     \end{compactitem}
-    SystemX operates its own private cloud based on open-source tools
-    (multiple hardware servers running OpenStack and Kubernetes) and
-    will bring its expertise, knowledge and skills to define the best
-    hosting strategy.
-
+    % to be moved in section 3.3
+    %SystemX operates its own private cloud based on open-source tools
+    %(multiple hardware servers running OpenStack and Kubernetes) and
+    %will bring its expertise, knowledge and skills to define the best
+    %hosting strategy.
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,22 +115,41 @@ todo
     proofs and download them.  We will then deploy the software on the
     hardware infrastructure.
 
-    All this work will be done using CI/CD tooling. SystemX will bring
-    its expertise on deploying a software factory and using it in
-    internal projects.  SystemX's software factory is based on
-    open-source components widely used such as gitlab or jenkins.  The
-    CI/CD will be used in two cases:
+    % to be moved to section 3.3
+    %SystemX will bring
+    %its expertise on deploying a software factory and using it in
+    %internal projects.  SystemX's software factory is based on
+    %open-source components widely used such as gitlab or jenkins.
+    All this work will be done using CI/CD tooling for:
     \begin{compactitem}
-    \item Automatic building/deployment of the Logipedia application
-      on the hardware infrastructure
-    \item Automatic integration of new validated proof files in the
-      logipedia database
+    \item automatic building/deployment of the Logipedia application
+      on the hardware infrastructure,
+    \item automatic integration of new validated proof files in the
+      logipedia database.
     \end{compactitem}
 
     Finally, we will perform unitary tests and integration tests,
     especially with components developed in other tasks: opam
-    repository from task~\taskref{access}{opam} and search tools from
-    task~\taskref{access}{search}.
+    repository from \taskref{access}{opam} and search tools from
+    \taskref{access}{search}.
+  \end{task}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=transfer,
+      title=Transfer for the sustainability of the system,
+      lead=Irt,IrtRM=1]
+    Once the platform will be up and running, and available to all
+    users, it will be necessary to share the ownership with other
+    maintainers. To this purpose, we will produce the documentation
+    necessary to operate the system and organize technical transfer
+    sessions in order to allow administrators to guarantee the
+    sustainability of Logipedia.
+
+    It includes administration , upgrade and backup procedures.
+
+    Although these sessions are necessary for the launch, all the
+    documentation will be accessible publicly on a website in order
+    for anyone to become maintainer.
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,18 +157,19 @@ todo
       title=Giving access to the infrastructure in proof tools,
       lead=Oca,
       OcaRM=6]
-    Users need to have an easy access to the proofs in logipedia, to
-    integrate/use them in their ongoing work; this access should be
-    guaranteed universal, without lock-in, web standards-compliant,
-    through an open source tool. While WP7 will give a structure to
-    the proof database, and T3 of this WP will give access to that
-    structured database through web browsing, this task aims at
-    providing a proof manager for users of Logipedia. This proof
+    %Users need to have an easy access to the proofs in logipedia, to
+    %integrate/use them in their ongoing work; this access should be
+    %guaranteed universal, without lock-in, web standards-compliant,
+    %through an open source tool. While \WPref{structuring} will give
+    % a structure to
+    %the proof database, and \taskref{access}{web} will give access to that
+    %structured database through web browsing,
+    This task will provide a proof manager for users of Logipedia. This proof
     manager will enable users to automatically download and install
     proofs as well as their dependencies in order to ease the
-    integration of proofs from logipedia in developments.
+    integration of proofs from Logipedia in their own developments.
 
-    Opam \cite{opam} is an open-source source-based package manager,
+    Opam \cite{OPAM} is an open-source source-based package manager,
     which has been successfully used by the OCaml community since
     2012, where it manages 2585 versioned packages for a total of
     13196 combinations of package and version, guaranteeing its
@@ -155,16 +178,15 @@ todo
     OCaml, but to any language, which is why it is already used as a
     proof manager by the Coq community where it has been proven to be
     reliable and suited to managing formal proofs. This makes it a
-    prime candidate to be the proof manager for logipedia.
+    prime candidate to be the proof manager for Logipedia.
 
-    This task would thus use the opam management tool to develop a
-    repository containing all the proofs in logipedia, allowing users
+    This task will use the Opam management tool to develop a
+    repository containing all the proofs of Logipedia, allowing users
     across Europe to automatically and transparently download and
-    install proofs and their dependencies via opam. This would
-    primarily entail the creation of a new tool able to read the proof
-    database of logipedia and create a corresponding opam repository,
-    as well as the necessary work to automate this work so that it can
-    run automatically on the infrastructure built in T3.
+    install proofs and their dependencies. This
+    requires to develop a tool able to read the proof
+    database of Logipedia and create an Opam repository,
+    and integrate it in the infrastructure built in \taskref{access}{web}.
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,117 +213,62 @@ todo
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=transfer,
-      title=Transfer for the sustainability of the system,
-      lead=Irt,IrtRM=1]
-    Once the platform will be up and running, and available to all
-    users, it will be necessary to share the ownership with other
-    maintainers. To this purpose, we will produce the documentation
-    necessary to operate the system and organize technical transfer
-    sessions in order to allow administrators to guarantee the
-    sustainability of Logipedia.
-
-    It includes:
-    \begin{compactitem}
-    \item Administration procedures
-    \item Upgrade procedures
-    \item Backup procedures
-    \end{compactitem}
-
-    Although these sessions are necessary for the launch, all the
-    documentation will be accessible publicly on a website in order
-    for anyone to become maintainer.
+  \begin{task}[id=dedukti,
+      title=Development of Dedukti checking and translation tools,
+      lead=Inr,InrRM=24]
+    We will consolidate the source code of Dedukti, the tool allowing
+    to check the correctness of proofs added in Logipedia, so as to
+    handle the proofs generated in \WPref{instrumentation} and the
+    large libraries considered in \WPref{libraries}. We will also
+    extend it so as to handle the new theories that will be developed
+    in \WPref{theories}.
+    All this work will be done using continuous integration and
+    deployment tools.
   \end{task}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=edukera,
-      title=Web interface for doing proofs at school,
-      lead=Edu,EduRM=12]
-      Current formal proof systems require to learn a specific formal
-      language and a command-line interface to compile and execute the
-      language.  This level of technicity is not compliant with mass
-      adoption by teachers or students outside computer science. For
-      educational purposes, it is therefore mandatory to develop an
-      intuitive and easy-to-handle user-interface for the logipedia
-      formal proof system. This interface, based on a WYSIWYG design
-      (What You See Is What You Get), will provide two main features:
-      \begin{compactitem}
-      \item the structured display of the proof in a high (latex-like) quality
-      \item the possibility to build the proof with simple
-        point-and-click interactions
-      \end{compactitem}
-
-      The digital nature of the formal proof enables specific view features to
-      understand its structure: eagle-eye view, folding/unfolding of scopes,
-      highlighting the use of variables (on hover), showing/hiding context,
-      and so on.
-
-      Interactions are the point-and-click commands to develop the structure
-      of the proof. They consist in applying theorems (or axioms or lemmas)
-      to statements and rewriting rules to a selected element of a statement;
-      this is done in deductive or abductive mode (resp. forward or backward).
-
-      Theorems and rewrite rules should be presented and searched using
-      technology developed in \WPref{dissemination}.
-
-      The research of proof must be automated at some point in order to ease
-      and speed up the process and to comply with the level of required detail
-      in education; the output of \WPref{atpetc} will be used for this task.
-
-      The development tasks are listed below:
-      \begin{compactitem}
-      \item graphical web component to display a Logipedia proof
-      \item point-and-click interaction engine on top of Logipedia
-      \item interactive proof interface application
-      \end{compactitem}
-
-      It will be possible to use the graphical proof component throughout
-      the Logipedia website.
-
-  \end{task}
-
+  
 \end{tasklist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=2,miles=???,id=opamtool,dissem=PU,nature=DEM,lead=Oca]{Proof to Opam tool}
-    Tool to translate the logipedia database format into an Opam repository
+
+  % ocamlpro
+  
+  \begin{wpdeliv}[due=18,miles=???,id=opamtool,dissem=PU,nature=OTHER,lead=Oca]{Proof to Opam tool}
+    Tool to translate the Logipedia database format into an Opam repository
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=2,miles=???,id=opamrepo,dissem=PU,nature=DEM,lead=Oca]{Proof Opam repository}
+  \begin{wpdeliv}[due=19,miles=???,id=opamrepo,dissem=PU,nature=OTHER,lead=Oca]{Proof Opam repository}
     Opam repository populated with the generated proof packages
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=1,miles=???,id=opamconfig,dissem=PU,nature=DEM,lead=Oca]{Opam for logipedia}
-    Opam configuration to use it (only or also) for logipedia
+  \begin{wpdeliv}[due=20,miles=???,id=opamconfig,dissem=PU,nature=OTHER,lead=Oca]{Opam for logipedia}
+    Opam configuration to use it (only or also) for Logipedia
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=1,miles=???,id=opaminstall,dissem=PU,nature=DEM,lead=Oca]{Provide Opam for Logipedia}
+  \begin{wpdeliv}[due=21,miles=???,id=opaminstall,dissem=PU,nature=OTHER,lead=Oca]{Provide Opam for Logipedia}
     Installation of the repository in the infrastructure of task \taskref{access}{infra}
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=18,miles=???,id=archi-spec,dissem=PU,nature=R,lead=Irt]{Software and functional architecture}
+  % systemx
+  
+  \begin{wpdeliv}[due=5,miles=???,id=archi-spec,dissem=PU,nature=R,lead=Irt]{Software and functional architecture}
     Specification document describing the target functional and software architecture
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=20,miles=???,id=infra-spec,dissem=PU,nature=R,lead=Irt]{Hardware architecture}
+  \begin{wpdeliv}[due=7,miles=???,id=infra-spec,dissem=PU,nature=R,lead=Irt]{Hardware architecture}
     Specification document describing the target hardware architecture for the infrastructure
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=48,miles=???,id=website,dissem=PU,nature=D,lead=Irt]{Logipedia website}
-    The logipedia website itself, developed following specification documents
+  \begin{wpdeliv}[due=14,miles=???,id=website,dissem=PU,nature=DEM,lead=Irt]{Logipedia website}
+    Prototype version of the Logipedia platform
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=48,miles=???,id=transfer-doc,dissem=PU,nature=R,lead=Irt]{Transfer documentation}
-    Documentation for the exploitation of the logipedia platform
+  \begin{wpdeliv}[due=27,miles=???,id=website,dissem=PU,nature=OTHER,lead=Irt]{Logipedia website}
+    The final Logipedia platform
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=36,miles=???,id=edu-display,dissem=PU,nature=D,lead=Edu]{Web display a Logipedia Proof}
-    Graphical web component to display a Logipedia proof
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=36,miles=???,id=edu-app,dissem=PU,nature=OTHER,lead=Edu]{Web application for education based on Logipedia}
-    Web interactive proof application for education
+  \begin{wpdeliv}[due=29,miles=???,id=transfer-doc,dissem=PU,nature=R,lead=Irt]{Transfer documentation}
+    Documentation for the exploitation of the Logipedia platform
   \end{wpdeliv}
 
 \end{wpdelivs}
