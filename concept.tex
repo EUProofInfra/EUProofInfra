@@ -4,24 +4,23 @@
 
 \cmsection{Logical Frameworks}
 
-We have said that the multiplication of systems and theories in which
+As we have said, the multiplication of systems and theories in which
 formal proofs are developed jeopardizes the universality of logical
-truth. But it is not the first time in history that the universality
-of logical truth is challenged.  In the 
-19$^{\mbox{\footnotesize th}}$ century, for instance,
+truth. But it is not the first time in history this has happened.
+For instance, in the 19$^{\mbox{\footnotesize th}}$ century,
 the universality of logical truth had been challenged in a similar
 way, by the non-Euclidean geometries, as some statements could be true
-in one geometry, but false in others.  At the beginning of the 20$^{\mbox{\footnotesize th}}$ 
+in one geometry, but false in others.  At the beginning of the 20$^{\mbox{\footnotesize th}}$
 century, a solution to this problem was found.  The definition of the
 various geometries in predicate logic \cite{HilbertAckermann}
-permitted to understand which axiom was used in which proof, restoring
+allowed mathematicians to understand which axiom was used in which proof, restoring
 the universality of the truth of judgements of the form ``the
 proposition $B$ is true under the axioms $A_1, ..., A_n$''.
 
-Predicate logic is not {\em per se} a theory, but it is a framework in
+Predicate logic is not a theory {\em per se}, but it is a framework in
 which one can express theories, as sets of axioms: {\em a logical
   framework}. As we shall see, expressing the various theories
-implemented in Coq, Matita, Isabelle/HOL, PVS, etc.  in a common
+implemented in Coq, Matita, Isabelle/HOL, PVS, etc.\ in a common
 logical framework will permit, in a similar way, to analyze which
 ``axiom'' is used in which proof, and hence, in which theories this
 proof is correct, and in which systems it can be used.
@@ -31,9 +30,9 @@ theories used at that time (geometry, arithmetic, and set theory)
 could be expressed in it. But it also has limitations, which explains
 that another of the major theories used at that time (Russell's type
 theory, from The Principia Mathematica) has not been expressed in
-it. Since then, several other theories, such as Church's type theory
-\cite{Church40}, Martin-L\"of's type Theory \cite{Martin-Lof84}, and
-the Calculus of constructions \cite{CoquandHuet88}, have also been
+it. Since then, several other theories, such as Church's Type Theory
+\cite{Church40}, Martin-L\"of's Type Theory \cite{Martin-Lof84}, and
+the Calculus of Constructions \cite{CoquandHuet88}, have also been
 defined as autonomous theories, and not in predicate logic.  These
 theories are those implemented in most of the current proof systems.
 
@@ -43,8 +42,8 @@ framework: the theories implemented in Coq, Matita, etc., are often
 defined as autonomous systems, and not in a logical framework.
 
 However, a different line of research has attempted to understand the
-limitations of predicate logic and to propose other logical frameworks
-repairing them. The most prominent limitations of predicate logic are
+limitations of predicate logic and to propose more powerful logical frameworks.
+The most prominent limitations of predicate logic are
 the lack of function symbols binding variables, the lack of a syntax
 for proof terms, the lack of a notion of computation, the lack of a
 notion of proof reduction for axiomatic theories, and the
@@ -53,7 +52,7 @@ led to the development of other logical frameworks such as
 $\lambda$-Prolog \cite{NadathurMiller88, MillerNadathur12}, Isabelle
 \cite{Paulson90}, the $\lambda \Pi$-calculus (also called the
 ``Edinburgh logical framework'') \cite{HarperHonsellPlotkin91},
-Deduction modulo theory \cite{DowekHardinKirchner03, DowekWerner03},
+Deduction Modulo Theory \cite{DowekHardinKirchner03, DowekWerner03},
 Pure Type Systems \cite{Berardi88,Terlouw89}, and ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
 
@@ -93,7 +92,7 @@ o&:&type\\
 So the theories implemented in various systems can all be expressed in
 Dedukti and the proofs developed in these systems can be translated to
 Dedukti. Just like in the case of non Euclidean geometry, this allows
-to analyse the symbols and rewrite rules used in each proof
+the symbols and rewrite rules used in each proof to be analysed
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
 mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
 systems each proof can be used.  This analysis is the basis of the
@@ -102,7 +101,7 @@ interoperability between proof systems.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{The Logipedia integration levels}
 
-Thus, to make a formal proof, developed in some system $X$, accessible
+To make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
 $D[X]$, implemented in the system $X$, in the logical framework
 Dedukti.  Then, we must instrument the system $X$ so that the proof
@@ -116,7 +115,7 @@ the general structure of the encyclopedia.
 
 To measure the level of integration of an existing proof system and
 associated proof library in Logipedia, we introduce a metric: {\em the
-  Logipedia integration levels} that counts six levels.
+  six Logipedia integration levels}.
 
 \begin{framed}
 \begin{center}
@@ -133,10 +132,10 @@ associated proof library in Logipedia, we introduce a metric: {\em the
 \item[LIL 3:] A significant part of the library of the system has been
   exported and checked in Dedukti.
 
-\item[LIL 4:] A significant part of the library of the system have
+\item[LIL 4:] A significant part of the library of the system has
   been made available in Logipedia.
 
-\item[LIL 5:] A tool has been defined to analyze the Dedukti proofs
+\item[LIL 5:] A tool has been built to analyze the translated Dedukti proofs
   for the system, detect those that can be expressed in a theory
   weaker than that of the system, and translate those proofs into a
   weaker logic.
@@ -193,13 +192,13 @@ LFSC & 0 & 4\\
 \end{tabular}
 \end{center}
 
-These systems can be roughly divided into two groups. Those in the
+These systems can be roughly divided into two groups. For those in the
 first half of the table (Matita, HOL Light, FoCaLize, Coq, Agda,
-Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, Smart, and Rodin) for which
-we have preliminary results and that we plan to bring to a very high
-level of integration. Those in the second half (Minlog, PVS, 
-Mizar, TLA$^+$, Why3, and LFSC) with which we are
-starting and for which our goal are less ambitious.
+Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, Smart, and Rodin)
+we have preliminary results and we plan to bring them to a high
+level of integration. For those in the second half (Minlog, PVS, 
+Mizar, TLA$^+$, Why3, and LFSC) we are only starting out
+and our goals within this project are generally less ambitious.
 
 These two groups of systems will be addressed in different work
 packages, but both are key to the project. The first ones will
@@ -208,7 +207,7 @@ future of the infrastructure.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Integration}
-  
+
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has already
 been expressed in Dedukti. The next step is to implement a method to
 automatically translate proofs from system $X$ to its expression in
@@ -225,9 +224,9 @@ theory, and those based on set theory and predicate logic.
 Coq is an interactive theorem prover developed at Inria since 1984.
 It is based on Type Theory and was used to formally verify the
 correctness of both industrially relevant software such as the
-CompCert C compiler and complex mathematical proofs such as the one of
-the Four Color theorem and the one of the Odd Order theorem. In 2013
-Coq received the ACM system award.
+CompCert C compiler and complex mathematical proofs such as those of
+the Four Color theorem and the Odd Order theorem. In 2013
+Coq received the ACM System Award.
 
 Matita is an interactive theorem prover developed at the University of
 Bologna and used for teaching logic courses and to verify software and
@@ -252,11 +251,11 @@ Complexity).
 Agda is a dependently typed programming language and interactive proof
 assistant developed at Chalmers University of Technology as well as
 other places in Europe. The theory of Agda is similar to Coq and
-Matita, but is more focused on interactive development and direct
+Matita, but it is more focused on interactive development and direct
 manipulation of proof terms (in contrast to using a tactic language to
 generate the proof terms). To support the construction of proof terms,
 Agda provides powerful features such as dependent pattern and
-copattern matching, eta equality for functions and record types,
+co-pattern matching, eta equality for functions and record types,
 first-class universe polymorphism, and definitional proof
 irrelevance. In addition, Agda provides an experimental option for
 extending the language with user-defined rewrite rules, which are very
@@ -271,51 +270,42 @@ specifications include the formal semantics of the CakeML language
 instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
 
-HOL Light is an implementation of Simple type theory.
+HOL Light is an implementation of Simple Type Theory.
 
-Isabelle/HOL is an implementation of Simple type theory in the
-Isabelle logical framework \cite{paulson700} is an intermediate
-between Type-Theory proof systems (like Coq or Agda) and classic
+Isabelle/HOL is an implementation of Simple Type Theory in the
+Isabelle logical framework \cite{paulson700}. It sits in
+between type-theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
 
-  \paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB, Smart).}
+\paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB).}
 
 Atelier B, Rodin and ProB are platforms or tools to develop models written
 using the B method, a version of set theory expressed in predicate
 logic.  A model in these systems expresses a state machine constrained
-by invariant properties. Verification of the model correctness implies
-to verify some proof obligations produced by a weakest precondition
-calculus. For example, spanning trees algorithms, distributed
-algorithms, access control policies have been formalized
-respectively in EventB and B method.  The development process for
-the B method is based on formal proof: proof obligations are
+by invariant properties. Verification of the correctness of the model requires
+discharging a number of proof obligations produced by a weakest precondition
+calculus. For example, spanning tree algorithms, distributed
+algorithms, and access control policies have been formalized
+respectively in the EventB and (classical) B methods.  The development process for
+both versions of the B method is based on formal proof: proof obligations are
 automatically generated and must be proven by automatic or interactive
 provers. This can include external solvers such as SMT solvers, and
 (in the case of ProB) constraint solvers such as Sicstus
 Prolog. Finally, ProB is an animator and model checker: it helps users
 to gain confidence in their specifications, and it can be used as a
-dis-prover to discover counter-examples to proof obligations.
+disprover to discover counter-examples to proof obligations.
   
-Smart is a proof language developed by the company ProveNRun. It is
-based on a classical predicate logic, extended with rank-1
-polymorphism, algebraic datatypes, recursive definitions and inductive
-predicates. ProvenTools will turn models implemented in Smart to proof
-obligations which can be proved in the system using a mix of
-interactive and automated proving. The resulting proofs are reviewable
-objects, akin to proof traces built of the various atomic proof rules
-supported by ProvenTools' kernel, such as definition unfolding, case
-analysis or equality propagation.
-
 \bigskip
-  
+
 Despite the differences between these three classes of proof systems,
-there are several common points between them where solutions that work
+there are multiple common points between them where solutions that work
 for one system can also be applied to other systems. Working together
 on implementing these tools will allow the researchers from these
 different communities to come together and learn more about the
 similarities and differences between these systems.
 
-Instrumenting some of these systems is straightforward, but this also
+Defining a basic instrumentation of some of these systems is
+straightforward, but building tools that also work well in practice
 raises new research challenges:
 
 
@@ -331,10 +321,10 @@ practice. For example:
 \item Many Agda libraries (as well as some Coq libraries) rely heavily
   on type-directed conversion rules such as eta-equality for functions
   and record types, or definitional proof irrelevance. These rules
-  have to be expressed by adding additional type information to the
-  proof terms. This can hence lead to a large blow-up in the size of
+  have to be expressed by adding type information to the
+  proof terms. This can in turn lead to a large blow-up in the size of
   those proof terms, and thus greatly increase the cost of
-  typechecking, thus this blow-up has to be tamed by the choice of a
+  typechecking. This blow-up has to be tamed by the choice of a
   clever expression of the theory.
 
 \item Coq, Agda, and Matita all provide support for coinductive
@@ -347,7 +337,7 @@ practice. For example:
   to express universe polymorphism in dependent type theories. While
   Dedukti has support for AC rewriting, the current implementation is
   very slow, which makes typechecking the proofs in Dedukti
-  unfeasible. Thus, expressing these theories requires to improve
+  infeasible. Thus, expressing these theories efficiently requires improvements in
   Dedukti itself.
 \end{itemize}
 
@@ -387,7 +377,7 @@ When translating a proof from some external system to Dedukti, we want
 to produce proof terms that are as small as possible, so it is easy to
 store them, recheck them, or export them to a different
 system. However, there are at least two reasons why proof terms might
-become large. First, a typical proof in external system may be large
+become large. First, a typical proof in an external system may be large
 (because big parts of it are constructed automatically). Second,
 translating a proof to Dedukti may increase the size of the proof, for
 example by normalizing it or by adding type annotations.  This means
@@ -402,14 +392,14 @@ normalization or duplication of (parts of) proofs. We will also
 investigate what parts of each proof can be safely omitted because
 they can be inferred from the rest of the proof.
 
-\bigskip  
+\bigskip
 
 For each of the systems considered in this project, we can identify
-some preliminary work, of various maturities, on translating proofs to
-Dedukti.  We plan to build upon the previous work done on the
-following tools:
+some preliminary work, of varying maturity, on translating proofs to
+Dedukti.  We plan to build upon the previous work done for the
+following systems:
 \begin{itemize}
-\item The standard and arithmetic libraries of Matita has been the
+\item The standard and arithmetic libraries of Matita have been the
   first libraries to be exported to Logipedia using Krajono, a fork of
   Matita. We plan to make this translation a part of the code of
   Matita itself so that it is maintained with the rest of the system.
@@ -447,7 +437,7 @@ following tools:
   OpenTheory proofs into Dedukti.
 
 \item In the context of the BWare project, an expression of the set
-  theory of the B method has been provided as a theory modulo, i.e. a
+  theory of the B method has been provided as a theory modulo, i.e.\ a
   rewrite system rather than a set of axioms. This expression is used
   by the automatic prover Zenon modulo which features a back-end to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
@@ -460,14 +450,14 @@ following tools:
 \subsubsection*{Measuring success}
 
 The success of this integration project is measured by the LIL of the various
-systems discussed at the end of the project.
+considered systems at the end of the project.
 
 \cmsection{Automatic theorem provers, SAT/SMT solvers, model checkers, etc.}
 
-We have previously discussed the instrumentation of proof systems,
-such as Coq, Isabelle/HOL, Agda, etc.  that is interactive systems,
+We have previously discussed the instrumentation of \emph{interactive}
+proof systems such as Coq, Isabelle/HOL, Agda, etc.,
 where the users build formal proofs with the help of the
-machine. Automatic Theorem Proving are another class of systems, where
+machine. Automatic theorem provers are another class of systems, where
 the machine builds proofs without any human intervention. The proofs
 built by these systems are often expressed in simpler theories than
 those developed using proof systems, but they are not of a different
@@ -476,26 +466,26 @@ nature.  They cover various domains and various kinds of application,
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
 proof of
-programmes~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
+programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
 where they are given thousands of small problems in a combination of
 quantified theories.
 
-Including, in Logipedia, proofs built by such automatic systems,
+Including proofs built by such automatic systems in Logipedia,
 whether they are called automatic theorem provers, SAT solvers, SMT
 solvers, etc. is both a goal {\em per se}, and a tool to help to
-integrate proofs developed in proof systems.  For instance we will use
-automatic theorem provers to automatically make a coherent whole out
+integrate proofs developed in proof systems and make a coherent whole out
 of Logipedia. A fruitful interaction between formal proofs requires
 low-level glue which falls in the scope of automatic theorem provers.
 For instance, they will be employed to fill the holes that appear when
 considering provers with various granularity, to reduce the gaps
 between proof systems, and to discharge proofs of concept alignment.
 
-Finally, automatic theorem provers will also benefit from
+On the other hand, automatic theorem provers will also benefit from
 Logipedia. Obviously, Logipedia will be an extensive library of formal
 statements that can be used and combined by automatic theorem provers
-in their proof search. This is not trivial though: lemma selection is
-crucial to avoid an overhead. It can also be a source of benchmarks to
+in their proof search. This is not trivial though: automatic theorem
+provers have to select the right lemmas for a proof, which becomes
+more difficult the more lemmas there are. It can also be a source of benchmarks to
 evaluate their expressivity and automation.  Lastly, Logipedia and
 Dedukti will form a framework to make automatic theorem provers
 cooperate with each other and with other tools, in a safe way.
@@ -503,7 +493,7 @@ cooperate with each other and with other tools, in a safe way.
 
 \subsubsection*{From automatic theorem provers to Dedukti}
 
-Similarly to Interactive Theorem Provers, connecting automatic theorem
+Similarly to interactive theorem provers, connecting automatic theorem
 provers to the Logipedia infrastructure strongly relies on the ability
 for automatic theorem provers to import statements from Dedukti and
 export proofs in some theory in Dedukti.
@@ -520,11 +510,11 @@ proof traces~\cite{TODO} and most SAT solvers are actually able to
 produce proof traces in that format.  So, considering SAT solvers, the
 current status is actually meeting the Logipedia needs on this aspect.
 
-Considering other automated reasoners however, it is mandatory to
+Considering other automated reasoners however, it is necessary to
 significantly improve the picture.  Some SMT (Satisifiability Modulo
 Theories) solvers do produce some kind of proof trace, but the format
 is specific to the solver, and the proofs are sometimes difficult to
-replay due to their granularity.  Most mainstream theorem provers for
+replay due to their (lack of) granularity.  Most mainstream theorem provers for
 predicate logic output proofs in a standardized language~\cite{TODO},
 but this language does not clearly specify the semantics of the proof
 steps.  Model-checkers do not provide proof traces per se, although
@@ -532,7 +522,7 @@ such traces would be useful for various usages and notably
 certification.
 
 Our goals are to improve reasoning tools to demonstrate the
-feasibility to produce sufficiently detailed proofs for connecting to
+feasibility of producing sufficiently detailed proofs for connecting to
 Logipedia, and to design a set of theoretical methods and practical
 tools that can be used to further connect Logipedia to the other
 existing automated reasoners of the same kind.  We will work on three
@@ -540,25 +530,25 @@ SMT solvers (alt-ergo, CVC4, veriT), two provers for predicate logic
 (the E-prover, Zipperposition), and one model-checker (cubicle).  We
 will also consider more specific reasoning tools, with the aim to
 demonstrate that this approach also applies to more specific
-reasoners.  We envision to experiment the approach on a Coherent Logic
-reasoner.  These reasoners are particularly useful for geometry
+reasoners.  We envision to experiment with this approach on a reasoner
+for Coherent Logic.  These reasoners are particularly useful for geometric
 reasoning, and as such, they are quite complementary to the other
-considered automatic reasoners.  They are also very suitable as as a
+automatic reasoners considered.  They are also very suitable as as a
 first experiment, since their proofs are fairly straightforward to
 interpret.  They thus constitute a very interesting low hanging fruit.
-  
+
 It is not possible, and not even desirable, to require all tools to
 directly talk in the language of Logipedia.  Indeed, proof trace
 languages that are specific to one kind of reasoning tool are more
 appropriate than Dedukti for instrumenting already large pieces of
-software, enabling quick output, and allowing proof post-processing at
-the right level of abstraction on the produced proof traces.
+software, enabling quick output, and allowing post-processing the
+produced proof traces at the right level of abstraction.
 Furthermore, provided that those proofs are detailed enough,
-translation of traces to Dedukti will not be a difficult task, and a
+translation of traces to Dedukti will not be a difficult task, and
 the work necessary to translate proof traces for a myriad of very
-different reasoners will be implemented in a unique tool (Ekstrakto,
-see below) to take advantage of the fact that reasoning techniques,
-and thus proof methods, are themselves pretty shared among the
+different reasoners will be implemented in a single tool (Ekstrakto,
+see below) to take advantage of the fact that there is quite a lot of
+sharing of reasoning techniques, and thus proof methods, among the
 solvers.
 
 \paragraph*{Translate automatic theorem provers traces into Dedukti.}
@@ -588,7 +578,7 @@ was also designed to be agnostic w.r.t.\ the prover used to prove the
 sub-problems; it is only required that the prover can output a Dedukti
 proof in the correct expression of predicate logic.
 
-Although Ekstrakto has already shown that it is a valuable approach,
+Although work on Ekstrakto has already shown that approach is valuable,
 it is a work in progress. In particular, the following issues will be
 addressed in the project:
 
@@ -627,7 +617,7 @@ addressed in the project:
   axioms in predicate logic, it is almost certain that neither Zenon
   Modulo nor ArchSAT could be able to find non-trivial proofs using
   these axioms. Here, the idea would be to develop small provers
-  dedicated to a particular theory, and outputting Dedukti
+  dedicated to a particular theory that can output Dedukti
   proofs. Such provers would be called when a step in the trace relies
   on said theory. These provers need not be very optimized, since
   trace steps are relatively small; this should help producing Dedukti
@@ -635,7 +625,7 @@ addressed in the project:
   indeed, Zenon modulo can find proofs modulo arithmetic, but it is
   not able to produce a Dedukti proof yet.
 \end{enumerate}
-  
+
 \subsubsection*{From Dedukti to automatic theorem provers}
 
 %\label{concept:wp4:deduktitoatp}
@@ -649,19 +639,19 @@ Automatic theorem provers are mostly based on (parts of) predicate
 logic.  Logipedia theorems, which mostly come from interactive
 provers, will be expressed in the Dedukti encodings of much more
 expressive logics, such as dependent type theory or simple type
-theory.  Theorem statements thus need to be expressed again to be
-manipulable by automatic theorem provers.
+theory.  Theorem statements thus need to be expressed in a different way
+to be manipulable by automatic theorem provers.
 
-Encodings from expressive logics to predicate logic already exist,
+Encodings of expressive logics in predicate logic already exist,
 and are used for instance in {\em hammers} for using automatic theorem
 provers into interactive theorem
 provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.
-In these works, the encodings are specific to one system to be
+In these tools, the encodings are specific to one system to be
 affordable. In Logipedia, we have to combine and take benefit from
 statements coming from the encodings of different systems based on
 different logics. The key challenge here are thus:
 \begin{itemize}
-\item to avoid the loss of meaning coming from a succession of
+\item to avoid the loss of meaning arising from a succession of
   encodings; and
   \item to encompass statements coming from different systems.
 \end{itemize}
@@ -669,29 +659,30 @@ different logics. The key challenge here are thus:
 We plan to investigate a new approach where, instead of hammers, the
 encoding is a succession of fine-grained encodings dedicated to one
 aspect. These ``small'' encodings will offer the possibility to be
-activated independently depending on the origin of the statement. They
-give the other advantages of being modular, easily extensible, and
+activated independently depending on the origin of the statement. In
+addition, they have the other advantages of being modular, easily extensible, and
 more reliable: each encoding is simple, and may output proofs, {\em
   e.g.} using Ekstrakto. They will be performed modulo the concept
 alignment.
 
 It is common in the automatic theorem proving community to evaluate
-the performance on sets of benchmarks. As a side effect of this task,
-a new set of benchmarks will be extracted from Logipedia to measure
+the performance of a particular tool on sets of benchmarks. As a side
+effect of our work on integrating automatic theorem provers, we will
+be able to extract a new set of benchmarks from Logipedia to measure
 the performance of automatic theorem provers on problems coming from
 different logics, and from a combination of these logics. In our case,
 it will not only allow to compare automatic theorem provers but also
-to measure the success of this task by evaluated the quality of
-encodings, and comparing our ``small'' encodings by activating them or
-not.
+to measure the success of this task by evaluating the quality of the
+encodings, and comparing the impact of each of our ``small'' encodings
+by activating or deactivating them individually.
 
 \paragraph*{Logipedia as a source of knowledge for automatic theorem provers.}
 The amount of knowledge available in the whole of Logipedia is
-significantly larger than in any of the individual proof assistant
-libraries, and as such selecting the knowledge relevant for a
+significantly larger than in any library of an individual proof assistant,
+and as such selecting the knowledge relevant for a
 particular goal might require more complex techniques than
-before~\cite{Irving-deepmath}.  We will experiment with machine
-learning techniques for formal proofs. This includes both techniques
+before~\cite{Irving-deepmath}.  We will experiment with integrating techiques
+from machine learning to the construction of formal proofs. This includes both techniques
 for selection of relevant knowledge for a goal and for the selection
 of most promising constructors in the direct proof term
 construction~\cite{ZielenkiewiczSchubert2016}.
@@ -702,61 +693,61 @@ The use of formal methods in the industry requires to have approaches
 that apply to a wide variety of cases. For the verification of C code,
 the Frama-C platform features numerous techniques. One of them relies
 on automatic solvers: Frama-C-WP. Since automatic theorem provers are
-built by making many choices such as which heuristics or which
+built by making many choices, such as which heuristics or which
 algorithms to use, they display blind spots where they are less
-efficient to solve some cases.  In order to overcome that, it is
-necessary to use the wide variety of solvers which exist in a
-portfolio manner. The Why3 tool features the ability to send problems
-to lots of provers in a uniform way. However with so many tools
-written by different teams involved, the meaning of the same concept
-in the different tools could be different. It would lead to errors in
-the overall verification results. Moreover in order to be applied more
+efficient to solve some cases. To overcome this limitation, it is
+necessary to use a wide variety of solvers in a
+portfolio manner. For instance, the Why3 tool features the ability to send problems
+to lots of provers in a uniform way. However, with so many tools
+written by different teams, the meaning of the same concept
+in the different tools could be different. This can lead to errors in
+the overall verification results. Moreover, in order to be applied more
 widely, formal methods must handle more concepts such as floating
-points where their exact meaning is less clear that mathematical
-integers. That leads to more opportunities for two tools to interpret
-differently the same concept. Finally, an industrial user sometimes
-needs to add some reasoning or simplifications for their particular
-concept so that it is better handled by automatic solvers. It is very
+point numbers whose exact meaning is less clear that mathematical
+integers. This leads to more chances for two tools to interpret
+the same concept differently. Finally, industrial users sometimes
+need to add a kind of reason or a simplification that is specific to their particular
+concept, so that it is better handled by automatic solvers. It is very
 easy to make an error in those simplifications.
 
-In order to overcome these problems, we propose to gain insurances in
-the interaction of these different tools and to speed the addition of
-new features to handle new cases by using proof objects:
+In order to overcome these problems, we propose to improve the assurances in
+the interaction between these different tools, and to speed up the addition of
+new features for handling new cases by using proof objects:
 \begin{itemize}
-\item Where the industrial user needs to define the concepts he wants
-  to verify in its C code, we will add the possibility to import
-  concepts from Logipedia. The user gain time by not having to define
-  them himself and it ensures that we have proofs for the accompanying
+\item For the industrial users who need to define the concepts they want
+  to verify in their C code, we will add the possibility to import
+  concepts from Logipedia. The user gains time by not having to define
+  these concepts themselves and by being able to use proofs for accompanying
   lemmas.
 
-\item Where the simplification rules written for the industrial case
-  are executed in Frama-C-WP, we will instrument it to generate
-  Ekstrakto input in order to produce a proof of the correction of
+\item For writing the simplification rules for industrial use cases,
+  we will instrument Frama-C-WP to generate
+  Ekstrakto input in order to produce a proof of the correctness of
   these simplifications.
 
-\item Where the problems are transformed to fit the different provers
-  in Why3, we will inspire from the fine-grained encodings (previous
-  paragraph) to also generate Ekstrakto proof.
+\item For transforming problems to fit the different provers
+  in Why3, we will take inspiration from the fine-grained encodings
+  (see above) to also generate an Ekstrakto proof.
 
-\item In the end, we will gather the Dedukti or Ekstrakto proof of the
+\item In the end, we will gather the Dedukti or Ekstrakto proofs of the
   provers, the encodings, and the simplification rules, in order to
   assemble them in a coherent whole.
 \end{itemize}
 
 This part thus combines and validates most of the previous aspects of
-this theme of automatic theorem proving, but also constitutes the
-challenge to instrument a large-scale formal tool.
+automatic theorem proving, but also constitutes the
+challenge to instrument a large-scale formal tool for transforming
+and combining proofs extracted from automatic theorem provers.
 
 \subsubsection*{Automatic theorem provers to increase Logipedia readiness}
 
 Providing automation on the level of an encyclopedia of formal proofs
-is both interesting and challenging. Indeed, making so much formal
+is both interesting and challenging. Indeed, making so many different formal
 systems cooperate requires a lot of proof manipulation,
-transformations, gluing, that can only be reasonably done with
+transformations, and gluing, which can only be reasonably done with
 automation. On a higher level, being able to more efficiently write
-proofs directly in Dedukti would be of interest to the community in
-itself. Making this automation practicable in Logipedia raises the
-question of scalability.
+proofs directly in Dedukti would also be of interest to the community in
+itself. Thus a major challenge is to make this automation practicable and scalable.
 
 \paragraph*{Automatic theorem provers for Dedukti.}
 Automation has been a key to the success of proof assistants, since it
@@ -765,7 +756,7 @@ Many different techniques to provide proof assistant automation have
 been developed over the years: techniques based on rewriting,
 tableaux~\cite{Paulson-blast}, or even the integration of efficient
 superposition-based provers for predicate logic~\cite{hurd-metis} and
-Simple type theory~\cite{asperti-matita-paramodulation}. Most
+simple type theory~\cite{asperti-matita-paramodulation}. Most
 recently, various machine learning techniques have been developed for
 proof assistants allowing for more precise selection of relevant
 knowledge~\cite{blanchette-h4qed-jfr} or even the prediction of useful
@@ -774,15 +765,15 @@ proof techniques~\cite{gauthier-tactictoe}.
 The automation techniques offered by different proof assistants differ
 significantly. For systems mostly based on classical predicate logic
 it is often possible to provide sound and complete translations to the
-most efficient automatic theorem provers for predicate logic by only
+existing efficient theorem provers for predicate logic by only
 expressing the intricacies of their type
 systems~\cite{kaliszyk-miz40}. This allows for straightforward native
-proof reconstruction. On the other end of the spectrum, providing
-efficient automation for systems based on involved foundations, such
+proof reconstruction. On the other end of the spectrum, for
+systems based on involved foundations, such
 as the constructive type theory behind Coq and its variants,
 providing even a slightly useful automation is a significant
 challenge. Most efficient automation still relies on translations to
-external tools, however the useful translations from such logics to
+external tools, but the current translations from such logics to
 the logic of SMT solvers~\cite{DBLP:conf/cpp/ArmandFGKTW11} or
 predicate logic~\cite{DBLP:journals/jar/CzajkaK18} are incomplete
 and often (partially) unsound. This means that to reconstruct such
@@ -803,18 +794,18 @@ automated theorem provers developed in the other parts.
 \paragraph*{Automation for Logipedia.}
 The aforementioned automation will be crucial to enable full proof
 verification. Considering systems one at a time, a number of proof
-exports are not complete, that is the actual systems do not provide
-all the proof step details and internal Logipedia automation would be
-necessary. More demanding, automation will be used to fill the gaps
-between systems. In particular, concept alignments need to be formally
-established. More generally, proof transformations coming from
+exports are not complete, i.e.~the actual systems do not provide
+all the proof step details and internal automation for Logipedia would be
+necessary. More demandingly, automation will be used to fill the gaps
+between systems. In particular, concept alignments need to be established
+formally. More generally, proof obligations arising from translations,
 encodings into Dedukti, reverse mathematics, \dots must be discharged
 as automatically as possible.
 
 As it has been the case for interactive theorem provers, automation
 will also provide support for Logipedia developers and users. During
 the project, many Dedukti developments shall be performed, in
-particular to define theories in Dedukti. In a longer term, Dedukti
+particular to define theories in Dedukti. In the longer term, Dedukti
 will also be used, {\em e.g.} for new proof transformations or to
 align distant concepts, which will be affordable with automation.
 
@@ -831,24 +822,24 @@ We have seen how to instrument proof systems and automated theorem
 provers to produce proofs in Dedukti, and how to share these proofs in
 Logipedia.
 
-Very large proofs, requiring large libraries, have been developed in
-some proof systems and these large proofs and libraries are
-interesting for our project in two respects. First they constitute an
-excellent benchmark for the methods developed above. Then they will
-constitute one of the lion's share of proofs in Logipedia for end-user
+Very large proofs, requiring large libraries of auxiliary results, have been developed in
+some proof systems. These large proofs and libraries are
+interesting for our project in two respects. First, they constitute an
+excellent benchmark for the methods developed above. Secondly, they will
+serve as the source for the lion's share of proofs in Logipedia for end-user
 applications.
 
-The target libraries are dedicated to particular application
-areas. They provide a substantial coverage of that application area
-and do so in a structured manner. This may require reworking the
-libraries for better access. Any library is only as useful as its
-structure and documentation.
+The libraries we target are dedicated to particular application
+areas. They provide a substantial coverage of one application area
+and do so in a structured manner. Thus integrating it into a general encyclopedia
+may require reworking the libraries for better access. Any library
+is only as useful as its structure and documentation.
 
 The libraries are curated for end-user application. That is, they are
 structured according to application specific ontologies that support
-browsing and search. The structuring leverages the infrastructure
+browsing and search. This structuring leverages the infrastructure
 and will be a stress test for the results of structuring discussed
-below: is the metadata infrastructure capable of representing the
+below: is our metadata infrastructure capable of representing the
 structure of large libraries?
 
 The libraries we focus on have been selected according to the
@@ -904,14 +895,14 @@ mathematics. Moreover, it is the only existing library in this area
 where proofs are structured and readable. Due to its size and
 generality and because analysis and probability theory are pervasive
 in any application in the engineering and natural sciences and
-economics, this library is a KER of the project: it is a fundamental
-enabling resource for almost any formal verification activity in these
-areas, for example autonomous driving and mathematical finance. The
-purpose of this task is to structure, document and develop this
-library for optimal accessibility, ease of use and
-comprehensiveness. The aim is a curated library for applications.
-Therefore some material will need revising for ease of use and some
-essential material will need to be added.
+economics, this library is a key exploitable result of the project: it
+is a fundamental enabling resource for almost any formal verification
+activity in these areas, for example autonomous driving and
+mathematical finance. The purpose of this task is to structure,
+document and develop this library for optimal accessibility, ease of
+use and comprehensiveness. The aim is a curated library for
+applications.  Therefore some material will need revising for ease of
+use and some essential material will need to be added.
 
 \emph{Accessibility:}
 The library is a large collection of theories with a hierarchical dependency
@@ -921,10 +912,11 @@ to be modularized. This requires a significant refactoring effort.
 %
 At the same time we need to add metadata to the source material to turn this
 structured collection of theorems and proofs into a curated library at the
-Dedukti level (see below). We
-will be test drivers of the metadata infrastructure provided by that WP, in
+Dedukti level (see below). The Analysis \& Probability Theory library will be
+used as a first test case of the infrastructure
+for handling metadata that will also be developed in this project, in
 particular the ability to describe ontologies for structuring in the large.
-This will also entail annotating those statements in the library that
+This will entail in particular annotating those statements in the library that
 correspond to proper mathematical theorems as opposed to auxiliary lemmas
 required only for the benefit of the theorem prover.
 To increase accessibility we will also include links from the library into
@@ -952,8 +944,8 @@ dynamical systems with stochastic components, from physics to financial markets.
 The GeoCoq library consists of more than 100.000 lines of definitions
 and proofs in geometry. It is mostly based on synthetic approaches,
 where the axiom system is based on some geometric objects and axioms
-about them, but, following Descartes and Tarski, we prove that the
-analytic approach can be derived , where a field $F$ is assumed
+about them, but, following Descartes and Tarski, it proves that the
+analytic approach can be derived, where a field $F$ is assumed
 (usually $\mathbb{R}$) and the space is defined as $F^n$. Moreover, it
 contains a model, based on the analytic approach, of one of the
 synthetic approaches present in the library, namely Tarski's system of
@@ -984,12 +976,12 @@ refinement of Pejas' classification of parallel postulates together
 with proofs of the classification of 34 versions of the parallel
 postulate.
 
-\emph{Challenges:} A lot of preliminary work has been done on the
-GeoCoq library.  One of the remaining obstacles is the use of
-computational steps in Coq proofs. The issue is that proofs containing
+\emph{Challenges:} A lot of preliminary work has been done on making the
+GeoCoq library available in Logipedia.  One of the remaining obstacles is the use of
+computational steps in Coq proofs. The issue is that proofs making use of
 proof by reflection reach a level of complexity that currently makes
 verification by Dedukti impractical, but these proofs are very
-frequent in Coq.  An approach is to isolate these proofs by
+frequent in Coq.  One possible approach is to isolate these proofs by
 reflection so that they are not perceived as simple conversion steps
 in the type theory proofs, but marked as proofs to be treated by an
 automatic tool. The coherent logic theorem prover should handle part
@@ -997,26 +989,26 @@ of these proofs. The other ones should be handled by specific provers
 for geometry, as they correspond to proofs obtained by the Gr\"obner
 basis method in GeoCoq.  Another challenge is that CoqInE, a tool
 developed to translate Coq proofs into Dedukti type-checkable terms,
-produces terms in a expressing of the Calculus of Inductive
+produces terms in an encoding of the Calculus of Inductive
 Constructions into the $\lambda \Pi$-calculus modulo theory on which
 Dedukti is based. Currently, it is not possible to export these
-Dedukti terms to other proof assistant. However, another tool,
+Dedukti terms to other proof assistants. However, another tool,
 Universo, has been developed and paves the way for the export of these
 terms.  The last challenge is that part of GeoCoq relies on the
-mathcomp library. 
+MathComp library, which should also be exported to Dedukti to complete
+the integration of GeoCoq into Logipedia.
 
 \emph{Refinements:}
 The pragmatic approach that has been adopted so far has motivated a
-few choices that should be reconsidered once the obstacles,
-encountered throughout this process, which triggered the need for
-these choices will have been solved when instrumenting Coq. The solution that
+few choices that should be reconsidered once the obstacles with the instrumentation of Coq,
+encountered throughout this process, have been solved. So far, the solution that
 has been preferred in most cases was to modify the Coq script so that
 it does not rely of features, such as universe polymorphism, that were
-not handled by CoqInE when the obstacles were encountered. For
+not handled by CoqInE. For
 example, the use of module functors was removed from GeoCoq, some
-proofs produced by tactics, such as intuition, relied indirectly on
+proofs produced by tactics, such as `intuition', that relied indirectly on
 parts of the standard library of Coq that were not available with
-CoqInE were reworked by hand to avoid such dependencies, or direct
+CoqInE, were reworked by hand to avoid such dependencies, or direct
 dependencies were avoided. Another choice that could be reconsidered
 is to use of automated theorem provers to replace the proofs by reflection.
 
@@ -1040,11 +1032,11 @@ be very large, adding to the already existing issue of the scalability of
 exporting software for large libraries
 \cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,DBLP:conf/itp/KellerW10,
 DBLP:conf/cade/Kumar13}. As an example, the size of the standard library is
-1.5M in {HOL Light} files, while the same files once
-exported as {Dedukti} files scale to 2G, and the whole
+1.5MB in {HOL Light} files, while the same files once
+exported as {Dedukti} files grow to 2GB, and the whole
 {HOL Light} library and the {Flyspeck} project are each as
-large as 30M. The multitude of automatic tactics and their increasing
-complexity and number of dependencies suggests that the generation time, size,
+large as 30MB. The multitude of automatic tactics, their increasing
+complexity, and the number of dependencies suggests that the generation time, size,
 and rechecking time of exported proofs will not increase linearly. Scalable
 export techniques {HOL Light} proofs have been investigated
 \cite{KaliszykK13} and can provide a solid base to
@@ -1059,7 +1051,7 @@ library, and the import of the {Flyspeck} in {Dedukti}.
 \paragraph*{The CakeML compiler library.}
 
 The CakeML compiler library consists of the CakeML programming language
-definition, its compiler and the correctness proofs about the
+definition, its compiler, and the correctness proofs about the
 compiler. This is a cutting edge compiler library and one of only two
 verified compilers for real languages, the other being CompCert. Its
 export to Dedukti is one of the KERs of this project.
@@ -1139,7 +1131,7 @@ Web site for students
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
 
-Like programmes, formal proofs exist at two levels: the user-written
+Like programs, formal proofs exist at two levels: the user-written
 source code and the kernel representation.
 
 The expression of theories in Dedukti focuses on integrating the low
@@ -1150,14 +1142,14 @@ number of proof assistants.
 But this eliminates a lot of salient information that is present in
 the original sources, including
 \begin{itemize}
-\item library structure in the form of documents, sections, or
-  theories,
+\item library structure in the form of documents, sections,
+  theories, or modules,
 
 \item high-level statements and operators (which proof assistants
-  typically elaborate when compiling the sources into,
+  typically elaborate when compiling the sources),
 
 \item extra-logical statements such as comments, metadata annotations,
-  or processing instructions, the kernel representation).
+  or processing instructions.
 \end{itemize}
 
 So, we need to complement the current expression of proofs in Dedukti
@@ -1179,18 +1171,18 @@ where it might be used can be enough to find it.  We will develop a
 reference ontology for formal libraries and extend our encodings to
 make use of it.
 
-This method works particularly well in connection with the alignments
-developed below. Because, in its simplest form, alignment is just a
-binary relation between identifier in different libraries that mean
+This method works particularly well in connection with the concept alignments
+described below. Because, in its simplest form, alignment is just a
+binary relation between identifiers in different libraries that mean
 the same thing, it can be integrated with this ontology directly.  It
 then enables queries that span multiple libraries, e.g., to find all
-theorem about a certain concept that have been in some provers but not
+theorems about a certain concept that have been in some provers but not
 others.
 
 These data structures developed will be used
 critically in development of search engines for Logipedia.  This
-includes (i) the use of source level syntax in queries that is matched
-against corresponding source syntax in the libraries as well as (ii)
+includes the use of source level syntax in queries that is matched
+against corresponding source syntax in the libraries as well as
 semantic web-style queries in languages like SPARQL.
 
 \subsubsection*{Measuring success}
@@ -1201,13 +1193,13 @@ semantic web-style queries in languages like SPARQL.
 \cmsection{New theories, new systems}
 
 Finally, after discussing the concepts related to the networking activities
-needed to collect the content of Logipedia and the infrastructure development
-needed to make it accessible, let us turn to joint research projects. 
+needed to collect the content of Logipedia and the development of the infrastructure
+needed to make it accessible, let us turn to joint research projects.
 
-We have considered above systems that were already at LIL 1, that is
+So far, we have considered systems that were already at LIL 1, that is,
 systems that implement a theory that we know how to express in Dedukti.
-There are other systems, that are still at level 0, that is that we
-do not know how to express. Part of our project is to work on such
+There are other systems, that are still at level 0, that is, we
+do not yet know how to express them. Part of our project is to work on such
 systems, to understand how to express their theory in Dedukti.
 
 These systems range from specialized systems such as Minlog
@@ -1216,8 +1208,18 @@ have been used in major scientific or industrial projects. They
 provide specific features that are relevant to their target domains
 and are therefore preferred by users for developing theories and
 proofs in these areas.  The objective is to bring them (at least) to
-LIL $2$ in order to prepare the grounds for a longer-term integration
-into Logipedia.
+LIL $2$ in order to prepare the grounds for their integration
+into Logipedia in the longer term.
+
+% Smart is a proof language developed by the company ProveNRun. It is
+% based on a classical predicate logic, extended with rank-1
+% polymorphism, algebraic datatypes, recursive definitions and inductive
+% predicates. ProvenTools will turn models implemented in Smart to proof
+% obligations which can be proved in the system using a mix of
+% interactive and automated proving. The resulting proofs are reviewable
+% objects, akin to proof traces built of the various atomic proof rules
+% supported by ProvenTools' kernel, such as definition unfolding, case
+% analysis or equality propagation.
 
 There are various motivations for including these systems in
 Logipedia. First, being able to export theories and proofs developed
@@ -1226,12 +1228,12 @@ advanced Logipedia integration levels. For example, accessing Mizar's
 rich library of formalized mathematics would be beneficial to
 developers of machine-checked mathematical results. Second, the
 smaller systems have been used for specific tasks such as reasoning
-about the meta-theory of programme calculi, but they do not provide rich
+about the meta-theory of program calculi, but they do not provide rich
 general-purpose standard libraries, say, about integer or real
 arithmetic as the more mature systems. Finally, for some of the
 systems only one implementation able to check the proofs exists. As
-such, in the long run we can cross verify the proofs stemming from the
-target systems.  Neither goal will be fully achieved at the end of the
+such, by exporting these proofs stemming from the target systems we
+will be able to cross-verify them.  Neither goal will be fully achieved at the end of the
 project since higher Logipedia integration levels are necessary for
 exporting or importing full libraries. Nevertheless, the work carried
 out here is a necessary stepping stone and enabler
@@ -1248,7 +1250,7 @@ be discriminated---unlike set theory where accidental identifications can arise
 depending on how structures are represented.
 
 In its simplest form, HoTT is an extension of Martin-L\"of type theory by the
-univalence axiom. More modern forms include Cubical type theory (CTT,
+univalence axiom. More modern forms include Cubical Type Theory (CubTT,
 \cite{cohen:cubical}) that is both constructive (i.e., proving the existence of
 an object provides an algorithm for effectively computing the object) and where
 univalence is a theorem. All type-theoretic proof systems have very small steps
@@ -1256,7 +1258,7 @@ that are omitted in proofs (e.g., trivial equalities such as $1+1=2$). In the
 context of HoTT, these are called coherence conditions. Two-level type theory
 (2LTT~\cite{annenkov:two-level}) was introduced as a stepping stone where the
 small proof steps are made explicit, and we will start by expressing 2LTT in
-Dedukti and then move to CTT. This will allow us to gain experience with
+Dedukti and then move to CubTT. This will allow us to gain experience with
 the extent to which coherence conditions can be supported as rewriting steps in
 $\lambda\Pi$-calculus modulo theories, and which conditions require proof
 elaboration.
@@ -1265,11 +1267,11 @@ elaboration.
 The
 Minlog\footnote{\url{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}}
 system is based on the Curry-Howard correspondence between constructive proofs
-in natural deduction and terms in typed $\lambda$-calculus and supports
-extracting programmes from proofs. It has also been extended for extracting
-programmes from proofs in classical logic. Minlog supports function definitions by
+in natural deduction and terms in typed $\lambda$-calculus. It supports
+extracting programs from constructive proofs, and has also been extended for extracting
+programs from proofs in classical logic. Minlog supports function definitions by
 computation and rewrite rules and identifies terms with a common reduct. Its
-main applications are in constructive analysis~\cite{miyamoto:real}: we extract
+main applications are in constructive analysis~\cite{miyamoto:real}: it can extract
 computational content from a proof of a mathematical statement in an extension
 of Gödel's system $T$ and generate a formal proof that the extracted term
 realizes the statement, viewed as a specification.
@@ -1280,17 +1282,17 @@ the extracted terms. Minlog accommodates co-recursion via partial functionals in
 the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
 objects of type level at most $1$, where extensionality and totality coincide.
 
-Besides extracting programmes from proofs in constructive analysis, other notable
+Besides extracting programs from proofs in constructive analysis, other notable
 applications of Minlog include the unification of $\lambda$-calculus and
 combinatory logic, embedding classical logic in minimal implicational logic, and
-the extraction of the DPLL algorithm underlying propositional Satisfiability
-solving from a proof.
+the extraction of the DPLL algorithm underlying propositional satisfiability
+solving from its proof.
 
 In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
 This is facilitated by the fact that the foundations of Minlog and Dedukti are
 rather close (both have proof terms and deduction modulo); the main challenges
-are support for co-induction and co-recursion. We plan to export programme
-extraction to Dedukti through realizability and also aim for being able to
+are support for co-induction and co-recursion. We plan to support program
+extraction to Dedukti through realizability, and also aim to be able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
 
@@ -1304,18 +1306,18 @@ operations can be represented using adjectives, predicates, and functors, as
 well as a hierarchy of soft types. Proofs are expressed in a declarative way
 based on natural deduction.
 
-The Mizar community maintains a centralized data base, the Mizar Mathematical
+The Mizar community maintains a centralized database, the Mizar Mathematical
 Library. Based on the axioms of Tarski-Grothendieck set theory, it provides a
 framework on top of which new theories can be built in the form of ``articles''.
 The library constitutes one of the largest collections of formal mathematics with
 a number of results that are not present in other systems. Apart from purely
 mathematical formalizations, the system has been used for developing formal
 descriptions of theoretical models of computation, cryptography, digital circuit
-design, and software verification. The Mizar library provides a data base for
+design, and software verification. The Mizar library provides a database for
 training automated theorem provers and other projects based on machine learning
 techniques.
 
-The Mizar proof checker differs from other proof assistants because the
+The Mizar proof checker differs from other proof assistants in that the
 semantics of a proof step corresponds to the notion of ``obviousness'' to a
 human mathematician. Mizar contains modules that check different aspects of the
 correctness of Mizar articles in a compiler-like manner, from purely syntactic
@@ -1328,7 +1330,7 @@ explicit and allow Mizar proofs to be checked by Dedukti.
 
 \paragraph*{PVS.}
 PVS\footnote{\url{https://pvs.csl.sri.com}}~\cite{owre:pvs} is a specification
-system and proof assistant that is based on Simple type theory with a rich type
+system and proof assistant that is based on Simple Type Theory with a rich type
 system including predicate sub-typing. This feature is used extensively in PVS,
 for example for defining a hierarchy of numerical types. Predicate sub-typing
 makes type checking in PVS undecidable, and PVS emits corresponding proof
@@ -1339,13 +1341,13 @@ objects.
 
 PVS has been used in numerous academic and industrial projects for
 verifying hardware systems, fault-tolerant algorithms or dynamically
-linked Java programmes, among others. It is particularly known for its
+linked Java programs, among others. It is particularly known for its
 applications to avionics systems and airborne conflict detection and
 avoidance systems, e.g.\ \cite{munoz:unmanned}, by Rockwell Collins,
 NASA, and the National Institute of Aerospace.
 
 Our objective in this project is the translation of a substantial part of the
-PVS Prelude (the standard library) into Logipedia. A core of the PVS logic,
+PVS Prelude (the standard library of PVS) into Logipedia. A core version of the PVS logic,
 restricted to a fragment with decidable type checking, has been defined in
 $\lambda\Pi$-calculus modulo theory~\cite{gilbert:extending}. The main
 challenges for achieving our objective are to effectively extend this fragment
@@ -1385,7 +1387,7 @@ One of the case studies will be the specification of one of the software
 systems developed within MED-EL, which requires an ad-hoc modification of
 instances of the pre-defined process. Every new change to the process might
 contain fewer, more or different steps that should be performed by an end user
-(by a patient), but the requirement is that the already running instances
+(a patient), but the requirement is that the already running instances
 should get updated according to the new process definition. The formal
 verification of this system should guarantee that the process executed by the
 particular MED-ELs user, is never out of sync, meaning, it does not contain
@@ -1404,7 +1406,7 @@ binders, definitional constructions, or have rich type systems that
 are not easily encoded in the $\lambda\Pi$-calculus modulo theory that
 underlies Dedukti.  Although the details vary between the systems,
 there are commonalities that should be addressed jointly. For example,
-Minlog havs strong support for co-induction and co-recursion
+Minlog has strong support for co-induction and co-recursion
 for which foundational support should be provided in Dedukti. Mizar
 and (to a lesser degree) TLA$^+$ make use of soft types for assisting
 proof search, and PVS emphasizes predicate sub-typing, which is also
@@ -1413,7 +1415,7 @@ used in the SMT encoding used in TLA$^+$.
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
 HoTT and Minlog are based on type theories with explicit proof objects
 and are in this respect close to Dedukti, although the details differ. PVS has a
-type system reminiscent of Simple type theory but adds predicate
+type system reminiscent of Simple Type Theory but adds predicate
 sub-typing, whereas Mizar and TLA$^+$ are based on classical set theories. The
 three latter systems do not provide proof objects and require instrumentation
 for providing traces that can then be interpreted by Dedukti. In all cases, a
@@ -1430,7 +1432,7 @@ missing proofs. First, we will attempt to instrument these tools in
 order to record and export proof traces, and there are clear
 opportunities for sharing notions of proof traces and concrete proof
 formats in order to avoid duplicate effort. Second, we will use native
-Dedukti automation to re-create the missing proof parts.
+Dedukti automation to re-create the proof parts that are still missing.
 
 \subsubsection*{Success}
 
@@ -1446,9 +1448,9 @@ checking by Dedukti.
 The development of formal reasoning tools has led to an ever-growing
 corpus of mechanized mathematical theories. As these libraries span a
 wide spectrum of proof assistants, the underlying logical foundations
-of these systems and libraries can different greatly. For example,
+of these systems and libraries can differ greatly. For example,
 some proof assistants use set theory as a foundation while others use
-Simple type theory, Martin-L\"of's type theory, the Calculus of
+Simple Type Theory, Martin-L\"of's type theory, the Calculus of
 Constructions, etc.  In order to combine the power of different proof
 assistants and their respective communities, it is critically
 important that these different logical foundations can be related to
@@ -1465,7 +1467,7 @@ In the simplest case, an alignment is a pair of symbol identifiers
 from two different libraries such that both symbols are ``the same
 informal mathematical concept''. For example, although real numbers
 can be defined by Cauchy sequences, Dedekind cuts, and also stream
-representations due to co-recursion, all such different formalizations
+representations using co-recursion, all such different formalizations
 introduce essentially the same mathematical concept. More precisely,
 following the work of \site{Fau} and \site{Inn}
 \cite{GKKMR:alignments:17} and the alignment-based mediator developed
@@ -1484,9 +1486,9 @@ The source of alignments can vary and include manual collections
 
 Even when the various different proof assistants are all exporting their
 proofs in Dedukti, the proper alignment of the theories underpinning
-those systems is an essential task: for examples, simply taking the
-union of all the different theories can create an inconsistent and,
-therefore, useless combination.
+those systems is an essential task: for example, simply combining
+all the different theories without adaptations can create an
+inconsistent and, therefore, useless combination.
 %
 Alignments can also be useful for joining formalizations done within a
 single prover, since different formal libraries developed within a
@@ -1498,7 +1500,7 @@ To explain the need for concept alignment, we can compare this aspect
 of the Logipedia project to the virtualization of computer operating
 systems. In such virtualized systems, it is not sufficient for the
 user to be able to run system A inside system B, she also needs to
-have access to some device of the host system as device of the guest
+have access to some device of the host system from within the guest
 system. For example, all operating systems have the concept of file
 systems, keyboards, mice, etc, but they are all using technically
 different definitions of these concepts.  For virtualization to
@@ -1507,7 +1509,7 @@ connect the different versions of these concepts.
 
 Our goals are first to understand the concept of
 alignment, then to identify alignments across the various proof
-assistants, and then to build tools to bridge these alignments. We
+assistants, and finally to build tools to construct these alignments. We
 will develop standards, tools, and techniques that will allow concepts
 to be aligned so that formal proof developments from one proof
 assistant can be meaningfully used in other systems.
@@ -1516,37 +1518,36 @@ assistant can be meaningfully used in other systems.
 
 Concept alignment can happen at different levels:
 \begin{itemize}
-\item Alignments of logical foundations. just like Euclidean and
-  non-Euclidean geometries are not completely independent theories but
-  differ just from a few axioms, the various type theories or set theories 
-implemented in the proof systems have some axioms in common. 
-We want to divide these theories in clusters,
-according to their key parameters, and then to build a
-web of syntactic translations between systems. We do not expect full
-back-and-forth translations, as some systems are well-known to be
-proof-theoretically stronger than others, but we will seek to
-establish suitable equiprovability results for fragments of the
-relevant languages.
-
-\item Alignments of theorem proving objects deals with aligning named concepts such as types,
+\item Alignment of logical foundations. 
+\item Alignment of theorem proving objects such as types,
   constants, and theorems.
-\item Alignment of proofs deals with aligning tactics and
-  inference rules that have similar effects on the state of proof
-  development.
+\item Alignment of proofs and proof techniques such as tactics and
+  inference rules.
 \end{itemize}
-We will primarily focus on the alignment of
-logics and theorem proving objects (the first two of these levels).
+We will primarily focus our efforts on the alignment of
+logics and theorem proving objects (the first two of these three levels).
 
 % The following is used instead of \subsubsection* in the alignment WP.
-\newcommand{\parag}[1]{\medskip \noindent {\bf #1}} 
+\newcommand{\parag}[1]{\medskip \noindent {\bf #1}}
 % To revert, uncomment the following line
 %\newcommand{\parag}[1]{\subsubsection*{#1}}
 
 \subsubsection*{Aligning logical foundations}
 
+Just like Euclidean and non-Euclidean geometries are not completely
+independent theories but differ just from a few axioms, the various
+type theories or set theories implemented in the proof systems have
+some axioms in common.  We want to divide these theories in clusters,
+according to their key parameters, and then to build a web of
+syntactic translations between systems. We do not expect full
+back-and-forth translations, as some systems are well-known to be
+proof-theoretically stronger than others, but we will seek to
+establish suitable equiprovability results for fragments of the
+relevant languages.
+
 In order to align logical foundations we will develop novel ways of
-relating theories represented in Dedukti, building on extensive
-experience of the team in type theory, computer-assisted
+relating theories represented in Dedukti, building on our extensive
+experience in type theory, computer-assisted
 formalisation, proof theory and reverse mathematics. We will
 articulate our work according to the following key parameters for
 distinguishing between theories: classical vs constructive logic,
@@ -1563,8 +1564,8 @@ fragment of predicate logic.  Such a treatment of geometric logic
 will be of interest because we
 believe that, over theories in such a logic, we can transform
 classical proofs, using the law of excluded middle and the axiom of
-choice, into constructive proofs.  This transformation will not also be
-a theoretical result but also have practical value since we 
+choice, into constructive proofs.  This transformation will not only be
+a theoretical result but also have practical value since we
 will seek to obtain feasible algorithms to
 transform proofs based on classical principles to constructive proofs.
 This effort will add a new dimension to a long-standing development of
@@ -1581,10 +1582,10 @@ well-established topic.
 One consequence of this work is that it can make features of one
 system available in other systems. For example, Minlog implements the
 refined Dragalin-Friedman $A$-translation, so that classical proofs in
-a certain class can be constructivised, which means that programmes can
+a certain class can be constructivised, which means that programs can
 be extracted from such transformed proofs.  We would like to make this
 feature of Minlog available to other proof assistants through Dedukti.
-In order to carry it out, we will study both-directed encodings
+In order to carry out this plan, we will study bidirectional encodings
 between a subsystem of Dedukti and Minlog.
 
 \paragraph*{Aligning theorem proving objects (case studies).}
@@ -1602,9 +1603,9 @@ relies on a unary representation of numbers which is suitable for
 proving theorems. But for computing, a definition based on a binary
 representation is better. For real numbers and functions, their
 definitions often differ even between different libraries of the same
-proof assistant.  Real numbers, for example, can be defined using 
-Bishop style modulated Cauchy sequence, regular Cauchy sequence,
-Dedekind cut, and stream representations using co-recursion.
+proof assistant.  Real numbers, for example, can be defined using
+Bishop style modulated Cauchy sequences, regular Cauchy sequences,
+Dedekind cuts, and stream representations using co-recursion.
 Similarly, geometry can be defined synthetically using Hilbert’s,
 Euclid’s or Tarski’s axioms or analytically using coordinate systems and
 algebra.  Therefore, our first step will be to import into Dedukti the
@@ -1629,7 +1630,7 @@ certified matching-based engine. The engine will provide a way of
 inferring new alignments, based on the alignment of the primitive
 concepts and on a set of rules that will describe further
 derivations. In order to enable flexible alignments, we are prepared
-to allow not only exact matchings, but also matchings with respect to
+to allow not only exact matches, but also matches with respect to
 a given similarity measure, as in \cite{???}.
 
 An alternative method for discovering ontologies of alignments is to
@@ -1644,7 +1645,7 @@ assistant libraries imported in Logipedia.
 \paragraph*{Alignment-based services.}
 This task is concerned with the implementation of useful services
 enabled by the discovered alignments. Each service implemented on top
-of Dedukti---such as accessing a library via browsing or searching or
+of Dedukti---such as accessing a library via browsing and searching or
 interoperability and reuse provided by translations across
 libraries---will benefit from working up-to-alignments. For example, a
 user of system $L$ can go to Logipedia to find a theorem about $t’$
@@ -1663,8 +1664,8 @@ ways. Firstly, we will use alignments to search across libraries. In
 its simplest form, this involves a simple search interface into which
 the user enters the term $t$ and the system finds $t’$ because it uses
 the alignment $\langle c,c’\rangle$. Secondly, we will develop
-translation services that use alignments to port proofs across
-libraries. This translation will allow porting the proof of $t’$ in
+translation services that use alignments to transport proofs across
+libraries. This translation will allow transporting the proof of $t’$ in
 $L’$ to a (potential) proof of $t$ in $L$.
 
 
@@ -1672,18 +1673,18 @@ $L’$ to a (potential) proof of $t$ in $L$.
 
 Often there are many notions that are tightly connected but not
 equivalent.
-
-For example, some definitions are only special cases of the others,
-sometimes there are definitions valid in any dimension and some that
-are valid only in some dimension, and sometimes definitions differ
-only in the treatment of some corner cases (e.g., Hilbert's axioms of
+%
+For example, some definitions are only special cases of others,
+some definitions are valid in any dimension and some
+are valid only in some dimension, and some definitions differ
+only in the treatment of certain corner cases (e.g., Hilbert's axioms of
 geometry use the strict betweenness while Tarski's axioms use the
 non-strict betweenness relation).  Although alignments of such
 definitions are also needed, they are very hard to detect and use. An
 automatic prover would fail to formally relate such a pair of concepts
 since they are not equivalent: all the same, such a pair can usually
-be related by an ``equivalent-up-to'' some special cases.  While some
-equivalences are trivial, others equivalences can be expected to be
+be related by an equivalence ``up-to'' some special cases.  While some
+equivalences are trivial, others equivalences cannot be expected to be
 proved automatically.
 
 \subsubsection*{Contribution}

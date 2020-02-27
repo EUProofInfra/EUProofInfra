@@ -12,7 +12,8 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 
 \ednote{specify the main tasks and reference the respective work packages}
 \begin{compactitem}
-\item \taskref{atpetc}{instrumenting} and \taskref{atpetc}{tracetodedukti}: implement a Dedukti output for the SMT solver Alt-Ergo.
+\item \taskref{atpetc}{instrumenting}: implement a proof trace output for the SMT solver Alt-Ergo.
+\item \taskref{atpetc}{deduktitoatp}: task leader on the translation of dedukti statements into input format for automatic tools.
 \item \taskref{access}{opam}: provide access to proofs using the opam package manager.
 \end{compactitem}
 
@@ -21,7 +22,21 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 \ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
 
 \begin{compactitem}
-\item
+\item The Alt-Ergo solver\cite{ae2.2} is an SMT solver developped and maintained by OCamlPro.
+  It is used behind software verification tools such as Frama-C, SPARK, Why3,
+  Atelier-B and Caveat.
+\item Guillaume Bury's PhD thesis\cite{BURY19} presented a new automated theorem
+  prover, named Archsat, capable of generating formal dedukti proofs. To date,
+  Archsat and the tableaux-based theorem prover Zenon are the only two automated
+  theorem provers able to produce dedukti proofs.
+\item Opam\cite{OPAM} is a source-based package manager developped by OCamlPro,
+  which has been successfully used by the OCaml community since 2012, where
+  it manages 2585 versioned packages for a total of 13196 combinations of package
+  and version, guaranteeing its ability to connect people across large communities.
+  Furthermore, opam is meant to provide management capabilities not only to
+  OCaml, but to any language, which is why it is already used as a proof manager
+  by the Coq community where it has been proven to be reliable and suited to
+  managing formal proofs.
 \end{compactitem}
 
 \paragraph{Previous projects or activities:}
@@ -29,7 +44,7 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 \ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
 
 \begin{compactitem}
-\item
+\item French R\&D projects: FUI LCHIP (2017-2020), ANR Vocal (2015-2020), ANR BWare (2013-2016), FUI HILITE (2010-2013)
 \end{compactitem}
 
 \paragraph{Infrastructures or technical equipments:}
@@ -39,8 +54,26 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 \paragraph{Persons primarily responsible for carrying out the proposed activities:}
 
 \begin{itemize} % in alphabetical order
-\item{\bf Dr.\ Guillaume Bury}
-
+  \item{\bf Dr.\ Raja Boujbel} Raja holds a PhD in software deployment and
+    multi-agent systems from University of Toulouse. Previously, she had studied
+    functional programming and compiler design at Université Pierre et Marie
+    Curie, then worked on the Opa language among MLstate’s distribution team.
+    She joined OCamlPro in March 2018 as a lead maintainer for opam, an
+    open-source package manager for OCaml.
+\item{\bf Dr.\ Guillaume Bury} Guillaume holds a research Master in computer
+    science from Ecole Normale Supérieure in Paris, France, and has studied the
+    integration of rewriting techniques inside SMT solvers during his PhD
+    obtained under the direction of Gilles Dowek and David Delahaye in
+    Deducteam at ENS Cachan. He joined OCamlPro in October 2018 and works in
+    the Flambda team, on optimizations passes for the OCaml compiler.
+\item{\bf Dr.\ Albin Coquereau} Albin has a PhD in computer science,
+    which he obtained for his work on improving the performance of the SMT
+    solver Alt-Ergo. He also helped adding a support for the SMT-LIB standard
+    in Alt-Ergo allowing it to participate to the SMTCOMP 2018.
+\item{\bf Dr.\ Mattias Roux} Mattias Roux holds a PhD in computer science
+    for his work on the model checker Cubicle, with an extension of the backward
+    reachability algorithm. He now works at OCamlPro on the Alt-ergo theorem
+    prover.
 \end{itemize}
 
 \end{sitedescription}
