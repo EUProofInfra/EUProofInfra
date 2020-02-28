@@ -4,7 +4,7 @@
 
 \cmsection{Logical Frameworks}
 
-As we have said, the multiplication of systems and theories in which
+The multiplication of systems and theories in which
 formal proofs are developed jeopardizes the universality of logical
 truth. But it is not the first time in history this has happened.
 For instance, in the 19$^{\mbox{\footnotesize th}}$ century,
@@ -1111,22 +1111,113 @@ at the center of the networking activities that will populate
 Logipedia with formal proofs coming from the libraries of various
 systems.
 
-Let us now turn to the development of the infrastructure itself, with
-a focus on accessibility. It is not sufficient to provide a
+Let us now turn to the development of the integrating infrastructure
+itself and its accessibility.
+
+It is not sufficient to provide a
 trans-national and virtual access to make such an infrastructure
 usable. We must also provide an ergonomic web interface, a package
 distribution system, a search engine, a structure of encyclopedia
 that rests upon an enrichment of the data with metadata.
 
-{\color{red} To do}
+\subsubsection*{Sharing a common platform}
 
-Web site
+The libraries of proofs described in previous sections can be quite
+large: several Gigabits for millions of mathematical objects
+(definition or theorem) in thousands of files. Translating them to
+Dedukti may increase this size by one or two orders of magnitude as
+the Dedukti proof format is of a lower level than the high level
+languages used by humans in interactive proof assistants for defining
+objects or proving properties.
 
-Packages
+Moreover, these mathematical objects can have many dependencies
+between each other: a proof of a theorem usually relies on the
+definition of various objects and other proofs as well
+(lemmas). Hence, verifying the correctness of a proof requires to
+check the correctness of other proofs, and translating a proof
+requires the translation of many other definitions and proofs.
 
-Web site for students
+We also want to provide a unique identifier for each proof in
+Logipedia in order for researchers and publishers to easily refer to
+their work, and allow reproducibility in mathematics as the
+correctness of Dedukti proofs is formally checked.
+
+For all these reasons, it is convenient to gather on a single server
+all these proofs, as well as all the new proofs that will be developed
+in the future. We will need some mirror-site though for ensuring the
+permanent availability of the service even in case of technical
+problems or system updates.
+
+Generating those Dedukti proofs can also be quite demanding in terms
+of computation power and computation time: depending on their size or
+complexity, translating those libraries to the Dedukti format may
+require just a few minutes, a few hours, or up to a few days.
+
+It is therefore convenient that the consortium shares high performance
+computers to generate those proofs, and all the proofs that will
+developed and added in the future.
+
+\begin{figure}[h]
+    \begin{center}
+      \begin{tabular}{|c|c|c|c|c|}\hline
+        Library & Nb files & Nb objects & Size (Mb) & Dedukti\\\hline
+        Opam-Coq & 16,000 & 473,000 & 235 & $\times 7$\\\hline
+        AFP & 7,000 & 90,000 & 135 & $\times 30$\\\hline
+        MML & 1,400 & 77,000 & 101 & $\times 5-\times 14$\\\hline
+        Flyspeck & & 14,185 & 34 & $\times 67$\\\hline
+      \end{tabular}
+      \caption{Examples of big proof libraries\label{fig-stats}}
+    \end{center}
+\end{figure}
+
+\subsubsection*{Online FAIR access}
+
+The vast majority of formal proofs developed in the world are publicly
+available, released under some free license, and accessible on the
+Internet. Even in the industry, only the parts that are very specific
+to a project or a client need to be protected and are not publicly
+available.
+
+In order to provide the largest possible audience to Logipedia in
+research, education, industry and publishing, it is therefore natural
+to make the platform shared by the consortium easily and freely
+accessible from the Internet. This will ensure findability,
+accessibility and reusability of those data, their interoperability
+being at the heart of the Logipedia project.
+
+On the other hand, for security reasons, the access to the computation
+power of the platform has to be allowed to pre-identified persons only.
+
+\subsubsection*{Search tools}
+
+\subsubsection*{Access on everyone's computer}
+
+In order to allow researchers, students and engineers to study and
+reuse the proofs available in Logipedia in their own work environment
+and tools, it is important to provide an application enabling anyone
+to download and install Logipedia proofs on one's own computer, and to
+translate those Dedukti proofs to the proof format (Coq, Isabelle/HOL,
+etc.) used by the user on her machine.
+
+This tool will have to manage in a transparent way the many
+dependencies between mathematical objects. Hence, when the user will
+request a given proof, the tool will automatically download and
+install all the definitions and proofs it relies on as well.
+
+\subsubsection*{Interface for teaching}
 
 \subsubsection*{Measuring success}
+
+We will use several metrics to measure the success of the platform:
+\begin{compactitem}
+\item The number of proof files and their sizes added to the platform.
+\item The number of references to Logipedia proofs in scientific
+  publications.
+\item The number of file downloads from the server.
+\item The number of accesses on the web interface. 
+\item The number of uses of the teaching interface.
+\item The number of teachers and courses using the teaching interface.
+\end{compactitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
