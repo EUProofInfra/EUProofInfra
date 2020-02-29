@@ -1,15 +1,14 @@
 \thispagestyle{empty}
 
-Bugs kill.  Testing programs may reveal some bugs, but only formal
-verification can guarantee their absence.  Thus, we should never fly
-in an autonomous plane driven by a piece of software that has not been
-formally verified.
-
-The trust in critical systems today relies on formal verification, in
-particular formal proofs, that guarantee the safety of the people
-using transportation systems (autonomous cars, subways, trains,
-planes, etc.), health systems (robotic surgery, etc.), energy provided
-by nuclear plants, financial applications, e-governance, etc.
+Bugs kill.  Testing software permits to reveal some bugs, but only
+formal verification can guarantee their absence.  The trust in
+critical systems today relies on formal verification, in particular
+formal proofs, that guarantee the safety of the people using
+transportation systems (autonomous cars, subways, trains, planes,
+etc.), health systems (robotic surgery, etc.), energy provided by
+nuclear plants, financial applications, e-governance, etc.  We should
+never fly in an autonomous plane driven by a piece of software that
+has not been formally verified.
 
 This crucial role of formal proof is highlighted by several successes,
 like the correctness proofs of the automatic Paris metro line 14
@@ -17,18 +16,20 @@ like the correctness proofs of the automatic Paris metro line 14
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
 been empirically observed that compilers and operating systems often
-have bugs, but proved ones, such as seL4 or CompCert have none, or
-much fewer.  This is why certification processes require proofs, and
-not only testing, at the highest Evaluation Assurance Levels of the
-Common Criteria security evaluation international standard, in effect
-since 1999. Because a bug can cause people to die and companies to go
-bankrupt, formal methods are crucial in the development of the
-information society, and hence it is crucial for Europe to master this
-technology and its evolution.
+have bugs, but proved ones, such as seL4 or CompCert, have none, or
+much fewer.  This is why, at the highest Evaluation Assurance Levels
+of the Common Criteria security evaluation international standard, in
+effect since 1999, certification processes require proofs, and not
+only testing.
 
-Proof systems are also used to develop proofs in mathematics, and
-several important advances, such as the proof of the Feit-Thompson
-theorem \cite{Gonthier13} and Hales' theorem (Kepler's conjecture)
+Because a bug can cause people to die and companies to go bankrupt,
+formal methods are crucial in the development of the information
+society, and hence it is crucial for Europe to master this technology
+and its evolution.
+
+Formal proofs are also used in mathematics, and several important
+advances, such as the proof of the Feit-Thompson theorem
+\cite{Gonthier13} and Hales' theorem (Kepler's conjecture)
 \cite{Hales17}, show the wide range of applications of formal proofs,
 from safety and security of software to mathematics.
 
@@ -38,6 +39,12 @@ mathematicians, engineers, and logicians to build and study formal
 proofs, just like particle accelerators allow physicists to build and
 study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
+
+\begin{center}
+  
+\bigstar \bigstar \bigstar
+
+\end{center}
 
 A lot of formal proofs developed for one critical system could be used
 in another.  Unfortunately, the development of formal methods is
@@ -49,7 +56,7 @@ Nasa detect-and-avoid system for unmanned aircraft system has been
 proved correct in PVS, the seL4 operating system has been proved
 correct in Isabelle/HOL, and the compiler CompCert has been proved
 correct in Coq.  Some projects, such as the proof of Hales' theorem
-(Kepler's conjecture) \cite{Hales17}, have been started in different
+(Kepler's conjecture), have been started in different
 systems and required significant integration effort for obtaining the
 overall result.
 
@@ -82,7 +89,15 @@ for the use of formal proofs in industry or by working mathematicians.
 On more philosophical grounds, while we had in the past an (informal)
 proof of Pythagoras' theorem or Fermat's little theorem, the same
 proof now has different formalizations in PVS, Isabelle/HOL, Coq, etc.
-Thus, the universality of logical truth itself is jeopardized.
+Thus, the universality of logical truth itself is jeopardized.  As we
+shall see, it is not the first time in history that this universality
+of logical truth is jeopardized. For instance, it already has in the
+19$^{\mbox{\footnotesize th}}$ century, with the non-Euclidean
+geometries. This crisis of the non-Euclidean geometries has been
+solved at the beginning of the 20$^{\mbox{\footnotesize th}}$ with the
+invention of a logical framework: predicate logic
+\cite{HilbertAckermann}, in which the various geometries could be
+defined.
 
 \begin{figure}
 \begin{framed}
@@ -105,44 +120,94 @@ Abella                & Acl 2\\
 \underline{Why3}\\
 \end{tabular}
 \end{center}
-\caption{Some major proof systems or formats. The European ones are in the first column.
+    {\color{red} Who is working on ProB, and on Rodin?}
+    \caption{Some major proof systems or formats. The European ones are in the first column.
   Those addressed in the project are underlined\label{systems}}
 \end{framed}
 \end{figure}
 
-{\color{red} Who is working on ProB, and on Rodin?}
+\begin{center}
+  
+\bigstar \bigstar \bigstar
 
-Making these systems interoperable would avoid duplication of work,
+\end{center}
+
+Making proof systems interoperable would avoid duplication of work,
 reduce development time, enable cross-verification, and make formal
 proofs accessible to a much larger community.  After three decades
 dedicated to the development of these systems, allowing such a
-cooperation between these systems is the next step in the development
-of the formal proof technology.
+cooperation between systems is the next step in the development of the
+formal proof technology.
 
 Each proof system comes with its own libraries, and these libraries
 are also part of research infrastructure.  To address the challenge of
 improving cooperation between these proof systems, we will develop an
 online encyclopedia of formal proofs. Each proof in this library will
 have versions in each theory where it can be expressed, so that it can
-be used in as many systems as possible. This will allow
-interoperability, sustainability, and cross-verification of all formal
-proofs in the encyclopedia.
+be used in as many systems as possible.  This is made possible by the
+expression of the theories implemented in these proof systems in a
+common logical framework, called the $\lambda \Pi$-calculus modulo
+theory, and implemented in the system Dedukti.  Building such an
+encyclopedia will thus allow interoperability, sustainability, and
+cross-verification of all formal proofs in the encyclopedia.
 
 This encyclopedia will be called Logipedia.
 
 Logipedia is thus a research infrastructure that integrates proof
 systems, through the sharing of data in the form of formal proofs.
 
+\begin{center}
+  
+\bigstar \bigstar \bigstar
+
+\end{center}
+
 Such an infrastructure is, in many ways, new in the European Strategy
 on Research Infrastructures. We can even say that the idea to
 structure a networking activity around the construction and the use of
 a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
-{\em Software Heritage} do exist. Our goal is therefore also trigger a
+{\em Software Heritage} do exist.
+
+Our goal is therefore also trigger a
 small, but significant, evolution on the organization of research in
 computer science and mathematics in Europe.
 
 \begin{framed}
+  \vspace*{-0.5cm}
+  \begin{center}
+{\bf \Large History of the project}
+\end{center}
+
+Convinced that a cloud of formal proofs could bring to the
+applications of formal proof technology the same boost that the cloud
+has brought to computing, and also that managing a large encyclopedia
+required some interdisciplinary effort,
+we developed a proof of concept containing a few hundreds lemmas
+expressed in the language of six systems and organized, in January 2019,
+a meeting to discuss the future of this project.
+This
+meeting brought together 38 researchers from Austria, the Czech
+Republic, France, Italy, the Netherlands, and Poland, some of them
+being from the TYPES community, others not.
+\begin{center}
+\includegraphics[height=2cm]{photo.png}
+\end{center}
+During this meeting, the idea of making this proof of concept a European
+infrastructure emerged.
+Since then,
+colleagues from Belgium, Germany, Serbia, Sweden, and the United
+Kingdom, from academia and industry, have manifested interest in
+participating in this effort.  These researchers and engineers are
+ready to contribute to develop this encyclopedia, aiming at sharing
+proofs, under a creative commons licence, making them findable,
+accessible, interoperable, and reusable.
+\end{framed}
+
+\newpage
+~\vfill
+\begin{framed}
+\vspace*{-0.5cm}
 \begin{center}
 {\bf \Large How do proofs contribute to safety and security of software?}
 \end{center}
@@ -194,19 +259,21 @@ program will
 reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{framed}
+\vfill~
 \pagebreak
+~\vfill
 \begin{framed}
-  \begin{center} {\bf \Large Non-trivial mathematics are sometimes
-      needed to verify that a program is correct}
+\vspace*{-0.5cm}
+\begin{center} {\bf \Large Non-trivial mathematics are sometimes
+needed to verify that a program is correct}
 \end{center}
 
 Prime numbers are used in a wide variety of applications:
-pseudo-random number generation, cryptographic algorithms, etc.
-Due to this prevalent use of prime numbers, verifying the correctness
-of complex primality testing algorithms is critical.
+pseudo-random number generation, cryptographic algorithms, etc.  Thus,
+verifying the correctness of complex primality testing algorithms is
+critical.
 
-To do so, one needs first to pose a definition of primality, for instance
-
+To do so, we need first to define primality, for instance
 \begin{verbatim}
 Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
 \end{verbatim}
@@ -235,7 +302,7 @@ Theorem prime_alt : forall p, prime' p <-> prime p.
 
 It would have been easy to introduce a small bug
 in the new definition.  For example, one could have written
-\verb!(n * n) < p! instead of \verb!(n * n) <= p!.
+\verb!(n * n) < p!, instead of \verb!(n * n) <= p!.
 
 \begin{verbatim}
 Definition prime'' p :=
@@ -246,13 +313,15 @@ This would have resulted in accepting squares of primes as primes.
 Yet, attempting to prove the equivalence of these two definitions would
 have revealed the bug, as they cannot be proven to be equivalent.
 \end{framed}
+\vfill~
 \pagebreak
 \begin{framed}
+  \vspace*{-0.5cm}
   \begin{center}
     {\bf \Large What is a formal proof? What is a proof system?}
     \end{center}
 
-Since antiquity, we have known that
+Since Antiquity, we have known that
 proofs, both purely mathematical ones, as in Euclid's elements or the
 recent proof of the Kepler conjecture by Thomas Hales, and proofs used
 to establish the safety and security of software, can be built with a
@@ -265,7 +334,7 @@ limited number of rules, for example
 Yet for most of mathematical history, proofs have been written in
 a pidgin of natural language and mathematical formulas. When proofs are
 very long (as it is often the case for the proofs used in safety and security,
-but also for some proofs in pure mathematics), mistakes in proofs are
+but also for some proofs in pure mathematics), mistakes are
 very difficult to detect. For instance, dozens of wrong proofs of
 the parallel postulate have been given through history, sometimes by the
 best of mathematicians such as Ptolémée, Proclus, al-Haytam, Tacket,
@@ -284,8 +353,11 @@ In the language implemented in Automath, this proof is written
 $$\lambda x \lambda h~(g~x~(f~x~h))$$
 \end{framed}
 
+\vfill
+
 \begin{framed}
-\begin{center}
+\vspace*{-0.5cm}
+  \begin{center}
 {\bf \Large What is a theory?}
 \end{center}
 
@@ -308,37 +380,7 @@ alternative theories for mathematics.
 
 This is the major obstacle to interoperability between proof systems.
 \end{framed}
-
-
-\begin{framed}
-\begin{center}
-{\bf \Large History of the project}
-\end{center}
-
-Convinced that a cloud of formal proofs could bring to the
-applications of formal proof technology the same boost that the cloud
-has brought to computing, and also that managing a large encyclopedia
-required some interdisciplinary effort,
-we developed a proof of concept containing a few hundreds lemmas
-expressed in the language of six systems and organized, in January 2019,
-a meeting to discuss the future of this project.
-This
-meeting brought together 38 researchers from Austria, the Czech
-Republic, France, Italy, the Netherlands, and Poland, some of them
-being from the TYPES community, others not.
-\begin{center}
-\includegraphics[height=2cm]{photo.png}
-\end{center}
-During this meeting, the idea of making this proof of concept a European
-infrastructure emerged.
-Since then,
-colleagues from Belgium, Germany, Serbia, Sweden, and the United
-Kingdom, from academia and industry, have manifested interest in
-participating in this effort.  These researchers and engineers are
-ready to contribute to develop this encyclopedia, aiming at sharing
-proofs, under a creative commons licence, making them findable,
-accessible, interoperable, and reusable.
-\end{framed}
+\pagebreak
 
 %%% Local Variables:
 %%%   mode: latex
