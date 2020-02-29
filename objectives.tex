@@ -1,22 +1,3 @@
-Table with
-high level objectives
-
-Specific objective
-
-Activity of achiete this objective
-
-KPI (Results and way to measure it)
-
-
-
-
-
-{\color{red} include KPI} LIL are KPI's
-
-
-
-
-
 To foster the interoperability of proof systems and the sustainability
 and the cross-verification of formal proofs, we propose to collect
 them in an online encyclopedia, called Logipedia.  For each proof,
@@ -38,105 +19,262 @@ European industry. That is why the consortium gathers most of the
 European actors active on formal proof systems, while also developing
 links with non-European partners.
 
+To define our performance indicators we use the common notion of
+technological readiness level. But to measure the level of integration
+of an existing proof system and associated proof libraries in Logipedia,
+we have introduced another metric: the {\em Logipedia integration
+  levels}, that counts six levels.
+
+\begin{framed}
+\begin{center}
+{\bf The Logipedia integration levels (LIL)\label{lil}}
+\end{center}
+
+\begin{itemize}
+\item[LIL 0:] Nothing has been done.
+
+\item[LIL 1:] The theory implemented in the system has been defined in
+  the $\lambda\Pi$-calculus modulo theory and in Dedukti.
+
+\item[LIL 2:] The system has been instrumented so some of its proofs
+  can be exported and checked in Dedukti.
+
+\item[LIL 3:] A significant part of the library of the system has been
+  exported and checked in Dedukti.
+
+\item[LIL 4:] A significant part of the library of the system has
+  been made available in Logipedia.
+
+\item[LIL 5:] A tool has been built to analyze the translated Dedukti proofs
+  for the system, detect those that can be expressed in a theory
+  weaker than that of the system, and translate those proofs into a
+  weaker logic.
+
+\item[LIL 6:] All proofs of the system have been exported, translated,
+  and made available in Logipedia.
+\end{itemize}
+\end{framed}
+
 The ultimate goal of Logipedia is to have all the formal proofs
 available to mankind in a single encyclopedia.  A first proof of
 concept contains a few hundred lemmas, from the Matita library,
 expressed in the logic of six different systems: Matita, Coq, Lean,
-HOL Light, Isabelle/HOL, and PVS.  In the next four years, we plan to
-address, with different ambitions, the libraries of Agda, Atelier B,
-Coq, FoCaLiZe, HOL Light, HOL4, Isabelle, Matita, Minlog, Mizar, ProB,
-PVS, Rodin, TLA+, and Why3.  Beyond our main focus on interactive
-systems, we also plan to integrate some proofs coming from automated
-theorem provers, SMT solvers, and model checkers, when these proofs
-have a manageable size.
+HOL Light, Isabelle/HOL, and PVS.
 
-Building this encyclopedia is {\em per se} a networking activity
-between the partners, from academia and industry, involved in the
-project.
+In the next four years, we plan to address, with different ambitions,
+the libraries of Agda, Atelier B, Coq, FoCaLiZe, HOL Light, HOL4,
+Isabelle/HOL, Matita, Minlog, Mizar, ProB, PVS, Rodin, Smart, TLA+,
+and Why3.  The systems currently have different integration levels,
+and we have different targeted levels for them.
 
-Logipedia will be freely accessible through a web browser, from any
-country in Europe and beyond. So, by construction, the access will be
-trans-national and virtual. But beyond these two objectives of a
-trans-national and virtual access, an important effort will be made to
-make this encyclopedia accessible to a large community of specialists
-and non-specialists. This requires to develop an ergonomic web
-interface and a package distribution system, to develop a search
-engine, and to structure the content of the encyclopedia into
-libraries, books, chapters, etc., reaping the benefit of the structure
-(modules, qualified names, etc.) of some of the libraries we start
-with.
+These systems can be roughly divided into two groups.  For those that
+currently have a integration level 1 or higher (Matita, HOL Light,
+FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, ProB, Rodin, and HOL4)
+we have preliminary results, and we plan to bring them to a high level
+of integration.  For those that have a current integration level of 0
+(Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart) we are only starting
+out and our goals within this project are generally less ambitious.
+These two groups of systems correspond to different objectives, but
+both are key to the project. The first ones will constitute Logipedia
+in four years and the second ones prepare the long term future of the
+infrastructure.
 
-Finally, this project will trigger joint research activities between
-its users and between its developers.
+Beyond this focus on proof systems, we also plan to integrate some
+proofs coming from automated theorem provers, SAT solvers, SMT
+solvers, and model checkers, when these proofs have a manageable
+size. To do so, we focus on two formats, TSTP and LFSC, that are
+already used in the Automated theorem proving community and in the SMT
+solvers community to express proofs.
 
-For some proof systems, the theory implemented they implement has
-already been analyzed and related to other systems, so we can
-immediately start integrating proofs from these systems into
-Logipedia, for others, more research work is needed.
+Very large proofs, requiring large libraries of auxiliary results,
+have been developed in some proof systems. These large libraries
+constitute an excellent benchmark for the methods developed and
+contribute to populating Logipedia with a large number of elements.
+We focus, in this project, mostly on five libraries: the Isabelle
+Archive of formal proofs, the Isabelle probability and analysis
+library, the Coq geometry library the flyspeck library, and the Cake
+ML library.  The targeted integration level for all these libraries is
+LIL 4.
 
-A research effort will also be made to engineer these proofs: to analyze
-what axioms they use, to translate them into other theories, etc.  In
-addition, each system has its own definitions of natural numbers, real
-numbers, etc. that must be aligned: structural results proved for one
-definition of real numbers, for instance, will be transported to any
-isomorphic structure, regardless of the way it has been defined.
+The integration of systems of the first group, the integration of
+automated theorem proving systems, and the integration of these large
+libraries will provide the content of Logipedia, and collecting all
+these formal proofs is {\em per se} a networking activity.
 
-All these objectives contribute to building a new formal proof
-community, focused on the values of
-knowledge sharing, safety, security, privacy, open access, education, etc.
+If we now turn to the access to these formal proofs, our objective is
+to develop an infrastructure that make them freely accessible through
+a web browser. So, by construction, the access will be trans-national
+and virtual. But beyond these two objectives of a trans-national and
+virtual access, an important effort will be made to make this
+encyclopedia accessible to a large community of specialists and
+non-specialists.  This requires to develop an ergonomic web interface
+and a package distribution system, but also a search engine.
 
-\newpage
+To make this infrastructure accessible, we also need to structure its
+content into libraries, books, chapters, etc., reaping the benefit of
+the structure (modules, qualified names, etc.) of some of the
+libraries we start with and to enrich the data with meta-data.
 
-\begin{framed}
-\begin{center}
-{\bf Main objectives}
-\end{center}
+For these two objectives the Logipedia integration levels are not
+relevant and we use the common Technology readiness level.
 
-\begin{tabular}{l}
-  Integration of proof systems\\
-  Integration of automated theorem proving\\
-  Integration of libraries\\
-  \\
-  Development of the infrastructure\\
-  Structuring the infrastuture\\
-  \\
-  New theories, new systems\\
-  Proof engineering\\
+We have already noticed that for some proof systems, the implemented
+theory already been been analyzed and related to other systems, so we
+can immediately start integrating proofs from these systems into
+Logipedia. For others (Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart), 
+more research work is needed. Understanding how the theories
+implemented in these systems can be expressed in Logipedia is one of
+our joint research objective.
+
+Finally, to be able to export formal proofs to systems different from
+that in which they have been developed, we need to analyze what axioms
+they use, and, when it is possible, transform them so that they do not
+use such an axiom anymore.  In addition, each system has its own
+definitions of natural numbers, real numbers, etc. that must be
+aligned: structural results proved for one definition of real numbers,
+for instance, will be transported to any isomorphic structure,
+regardless of the way it has been defined. This is our last objective.
+Its performance indicator is the number of proofs we are able to
+bring from level LIL 4 to level LIL 5.
+
+\begin{longtable}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.32\textwidth}|}
+\hline
+Objective
+&
+Activity to achieve this objective
+&
+Key performance indicator\\
+\hline
+Integration of proof systems
+&
+Integrate the librairies of Matita, HOL Light, FoCaLiZe, Coq,
+Isabelle/HOL, Agda, Atelier B, ProB, Rodin, and HOL4.
+&
+\vspace*{-0.41cm}
+
+\hspace*{-0.24cm}
+\begin{tabular}{p{0.127\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}}
+System & current & targeted\\
+\hline
+Matita & LIL 5 & LIL 6\\
+\hline
+HOL Light & LIL 3 & LIL 5\\
+\hline
+FoCaLiZe & LIL 3 & LIL 5\\
+\hline
+Coq & LIL 3 & LIL 5\\
+\hline
+Isabelle/HOL & LIL 2 & LIL 5\\
+\hline
+Agda & LIL 2 & LIL 4\\
+\hline
+Atelier B & LIL 1 & LIL 5\\
+\hline
+ProB & LIL 1 & LIL 5\\
+\hline
+Rodin & LIL 1 & LIL 3\\
+\hline
+HOL4 & LIL 1 & LIL 5\\
 \end{tabular}
-\end{framed}
+\\
+\hline
+Integration of automated theorem proving
+&
+Integrate proofs of coming from automated
+theorem provers and SMT solvers.
+&
+\vspace*{-0.41cm}
 
+\hspace*{-0.24cm}
+\begin{tabular}{p{0.127\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}}
+Format & current & targeted\\
+\hline
+TSTP & LIL 1 & LIL 4\\
+\hline
+LFSC & LIL 0 & LIL 4\\
+\end{tabular}
+\\
+\hline
+Integration of libraries
+&
+Integrate the Isabelle Archive of formal proofs, the Isabelle
+probability and analysis library, the Coq geometry library, the
+flyspeck library, and the Cake ML library.
+&
+\vspace*{-0.41cm}
 
-\begin{framed}
+\hspace*{-0.24cm}
+\begin{tabular}{p{0.127\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}}
+Library & current & targeted\\
+\hline
+AFP & LIL 2 & LIL 4\\
+\hline
+Proba / analysis & LIL 2 & LIL 4\\
+\hline
+GeoCoq & LIL 2 & LIL 4\\
+\hline
+Flyspeck & LIL 2 & LIL 4\\
+\hline
+CakeML & LIL 2 & LIL 4\\
+\end{tabular}
+\\
+\hline
+Development of the infrastructure
+&
+Make Logipedia will be freely accessible through a web browser, and a
+package distribution system.
+&
+TRL 4
+\\
+\hline
+Structuring the encyclopedia
+&
+Structure the content of Logipedia into libraries, books, chapters,
+etc., reaping the benefit of the structure (modules, qualified names,
+etc.) of some of the libraries we start with and to enrich the data
+with meta-data.
+&
+TRL 4
+\\
+\hline
+New theories, new systems
+&
+Express the theories of 
+Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart in Dedukti.
+&
+\vspace*{-0.41cm}
 
-\begin{center}
-{\bf \Large History of the project}
-\end{center}
+\hspace*{-0.24cm}
+\begin{tabular}{p{0.127\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}}
+System & current & targeted \\
+\hline
+Mizar & LIL 0 & LIL 4\\
+\hline
+TLA$^+$ & LIL 0 & LIL 2\\
+\hline
+PVS & LIL 0 & LIL 2\\
+\hline
+Minlog & LIL 0 & LIL 4\\
+\hline
+Why3 & LIL 0 & LIL 4\\
+\hline
+Smart & LIL 0 & LIL 3\\
+\end{tabular}
+\\
+\hline
+Proof engineering
+&
+Develop algorithm to analyze which axioms are used in a proof, to
+eliminate axioms, and to align concepts.
+&
+From LIL 4 to LIL 5
+\\ \hline
+\end{longtable}
 
-Convinced that a cloud of formal proofs could bring to the
-applications of formal proof technology the same boost that the cloud
-has brought to computing, and also that managing a large encyclopedia
-required some interdisciplinary effort,
-we developed a proof of concept containing a few hundreds lemmas
-expressed in the language of six systems and organized, in January 2019,
-a meeting to discuss the future of this project.
-This
-meeting brought together 38 researchers from Austria, the Czech
-Republic, France, Italy, the Netherlands, and Poland, some of them
-being from the TYPES community, others not.
-\begin{center}
-\includegraphics[height=2cm]{photo.png}
-\end{center}
-During this meeting, the idea of making this proof of concept a European
-infrastructure emerged.
-Since then,
-colleagues from Belgium, Germany, Serbia, Sweden, and the United
-Kingdom, from academia and industry, have manifested interest in
-participating in this effort.  These researchers and engineers are
-ready to contribute to develop this encyclopedia, aiming at sharing
-proofs, under a creative commons licence, making them findable,
-accessible, interoperable, and reusable.
-
-\end{framed}
+The seven objectives give a first idea of the shape of the project.
+They all contribute to building a new formal proof community, focused
+on the values of knowledge sharing, safety, security, privacy, open
+access, education, etc.
 
 %%% Local Variables:
 %%%   mode: latex
