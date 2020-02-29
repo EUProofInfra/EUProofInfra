@@ -8,17 +8,27 @@ Runtime Verification Inc. is a startup company aimed at using runtime verificati
 techniques to improve the safety, reliability, and correctness of software systems.
 
 Runtime Verification SRL is a research and development branch of RV Inc. based
-in Bucharest Romania.
-
+in Bucharest Romania.  Its main activities include the design and development of
+the symbolic execution and program verification backend of the K framework,
+as well as offering consultance with modeling and proving properties about
+consensus protocols (in the presence of Byzantine faults),
+with a focus of those used in Blockchains.
 
 \paragraph{Main tasks:}
 
 \ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
 
+RV will lead the task of instrumenting the K Prover (WP1) to emit enough information
+about the proving process, in order to allow extracting matching logic (ML) proofs from
+program verification problems.  Additionally, RV will assist the UAIC team with
+translating Kore (the language of ML) into Dedukti.
+These will be achieved through the following activities:
+
 \ednote{specify the main tasks and reference the respective work packages}
 
 \begin{compactitem}
-\item
+\item Generating proof traces for the K Prover
+\item Translating Kore into Dedukti 
 \end{compactitem}
 
 \paragraph{Publications, products or services:}
@@ -26,28 +36,40 @@ in Bucharest Romania.
 \ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
 
 \begin{compactitem}
-\item 
+\item K Framework Tools \url{https://github.com/kframework/k} is an open source
+ rewrite-based executable semantic framework in which programming languages,
+ type systems and formal analysis tools can be defined using configurations,
+ computations and rules. Originally designed and prototyped by Grigore Roșu and 
+ Traian Șerbănuță, it is currently maintained by a team spread between teh US and 
+ Romanian branches of RV. 
+\item Kore \url{https://github.com/kframework/kore} provides a language for
+expressing matching logic, as well as a rewrting-based engine for perfoming 
+matching-logic deduction.  Kore currently serves as a symbolic execution and 
+program verification backend for the K framework. Most of the team developing Kore
+is part of RV Romania.
+\item Kasampalis, T., Guth, D., Moore, B., Șerbănuță, T. F., Zhang, Y., Filaretti, D., ... & Roşu, G. (2019, October). IELE: A rigorously designed language and tool ecosystem for the blockchain. In International Symposium on Formal Methods (pp. 593-610). Springer, Cham.
+\item Rosu, G., Serbanuta, T. F., Moore, B., Mereuta, R., Ciobaca, S., & Stefanescu, A. (2019). All-Path Reachability Logic. Logical Methods in Computer Science, 15.
+\item Chen, X., & Roşu, G. (2019, June). Matching μ-Logic. In 2019 34th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS) (pp. 1-13). IEEE.
 \end{compactitem}
 
-\paragraph{Previous projects or activities:}
+%\paragraph{Previous projects or activities:}
 
-\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
+%\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
 
-\begin{compactitem}
-\item 
-\end{compactitem}
+%\begin{compactitem}
+%\item 
+%\end{compactitem}
 
 \paragraph{Infrastructures or technical equipments:}
 
 \ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
+RV Romania already possesses the infrastructure required for carrying out the tasks proposed.
 
 \paragraph{Persons primarily responsible for carrying out the proposed activities:}
 
 \begin{itemize} % in alphabetical order
 
-\item{\bf Andrei Burdușa} is a software engineer at RV Romania, involved with the
-research and development of the symbolic execution and program verification
-backend of the K framework.
+\item{\bf Andrei Burdușa} is a software engineer at RV Romania.
 His research interests lay in functional programming, type theory and logic.
 His Bachelor's degree project at the University of Bucharest was focused on Haskell.
 He is currently pursuing two Master’s degrees: one in Security and Applied Logic,
