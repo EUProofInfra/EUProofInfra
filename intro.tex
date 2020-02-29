@@ -1,9 +1,9 @@
 \thispagestyle{empty}
 
-Bugs kill. Although testing may reveal some bugs, only formal
-verification can guarantee their absence.  Thus, we
-should never fly in an autonomous plane driven by a piece of software
-that has not been formally verified.
+Bugs kill.  Testing programs may reveal some bugs, but only formal
+verification can guarantee their absence.  Thus, we should never fly
+in an autonomous plane driven by a piece of software that has not been
+formally verified.
 
 The trust in critical systems today relies on formal verification, in
 particular formal proofs, that guarantee the safety of the people
@@ -17,18 +17,20 @@ like the correctness proofs of the automatic Paris metro line 14
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
 been empirically observed that compilers and operating systems often
-have bugs, but proved ones, such as seL4 or CompCert have none, or much
-fewer.  This is why certification processes require proofs, and not
-only testing, at the highest Evaluation Assurance Levels of the Common
-Criteria security evaluation international standard, in effect since
-1999. Because a bug can cause people to die and companies to go bankrupt,
-formal methods are crucial in the development of the
-information society, and hence it is crucial for Europe to master this technology
-and its evolution.  Proof systems are also used to develop proofs in
-mathematics, and several important advances, such as the proof of the
-Feit-Thompson theorem \cite{Gonthier13} and Hales' theorem (Kepler's
-conjecture) \cite{Hales17}, show the wide range of applications to of
-formal proofs, from safety and security of software to mathematics.
+have bugs, but proved ones, such as seL4 or CompCert have none, or
+much fewer.  This is why certification processes require proofs, and
+not only testing, at the highest Evaluation Assurance Levels of the
+Common Criteria security evaluation international standard, in effect
+since 1999. Because a bug can cause people to die and companies to go
+bankrupt, formal methods are crucial in the development of the
+information society, and hence it is crucial for Europe to master this
+technology and its evolution.
+
+Proof systems are also used to develop proofs in mathematics, and
+several important advances, such as the proof of the Feit-Thompson
+theorem \cite{Gonthier13} and Hales' theorem (Kepler's conjecture)
+\cite{Hales17}, show the wide range of applications of formal proofs,
+from safety and security of software to mathematics.
 
 These formal proofs are developed using research infrastrucures called
 ``proof systems''.  These proof systems allow computer scientists,
@@ -68,16 +70,14 @@ correctness) are restricted.
 The fragmentation of these infrastucutures hinders productivity
 because foundational work (for instance, developing a calculus library
 with theorems about the sinus and cosinus functions, derivatives,
-etc.) has to be repeated instead of being reused.
-%
-It also limits the spreading of formal proofs in non-specialist
-communities. For instance, teaching formal proving to undergraduate
-students in a logic course is difficult, as it requires the choice of
-a specific language, a specific theory and a specific system that
-orients the course towards this language, theory, and system, instead
-of orienting it to fundamental principles that are useful
-everywhere. The same is true for the use of formal proofs in industry
-or by working mathematicians.
+etc.) has to be repeated instead of being reused.  It also limits the
+spreading of formal proofs in non-specialist communities. For
+instance, teaching formal proving to undergraduate students in a logic
+course is difficult, as it requires the choice of a specific language,
+a specific theory and a specific system that orients the course
+towards this language, theory, and system, instead of orienting it to
+fundamental principles that are useful everywhere. The same is true
+for the use of formal proofs in industry or by working mathematicians.
 
 On more philosophical grounds, while we had in the past an (informal)
 proof of Pythagoras' theorem or Fermat's little theorem, the same
@@ -110,21 +110,23 @@ Abella                & Acl 2\\
 \end{framed}
 \end{figure}
 
-Making these systems interoperable would avoid
-duplication of work, reduce development time, enable
-cross-verification, and make formal proofs accessible to a much larger
-community.  After three decades dedicated to the development of these
-systems, allowing such a cooperation between these systems is the next
-step in the development of the formal proof technology.
+{\color{red} Who is working on ProB, and on Rodin?}
 
-Each proof system comes with its own library (or several libraries),
-and these libraries are also part of research
-infrastructure.  To address the challenge of improving cooperation between
-these proof systems, we will develop an online encyclopedia of
-formal proofs. Each proof in this library will have versions in each
-theory where it can be expressed, so that it can be used in as many systems
-as possible. This will allow interoperability, sustainability, and
-cross-verification of all formal proofs in the encyclopedia.
+Making these systems interoperable would avoid duplication of work,
+reduce development time, enable cross-verification, and make formal
+proofs accessible to a much larger community.  After three decades
+dedicated to the development of these systems, allowing such a
+cooperation between these systems is the next step in the development
+of the formal proof technology.
+
+Each proof system comes with its own libraries, and these libraries
+are also part of research infrastructure.  To address the challenge of
+improving cooperation between these proof systems, we will develop an
+online encyclopedia of formal proofs. Each proof in this library will
+have versions in each theory where it can be expressed, so that it can
+be used in as many systems as possible. This will allow
+interoperability, sustainability, and cross-verification of all formal
+proofs in the encyclopedia.
 
 This encyclopedia will be called Logipedia.
 

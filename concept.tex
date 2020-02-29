@@ -1,5 +1,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 {\color{red} Speak about TRL}
 
 \cmsection{Logical Frameworks}
@@ -98,8 +97,10 @@ mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
 systems each proof can be used.  This analysis is the basis of the
 interoperability between proof systems.
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cmsection{The Logipedia integration levels}
+\cmsection{Integration of proof systems}
 
 To make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
@@ -113,100 +114,6 @@ can be expressed.  Finally, we must align its concepts with the
 definitions already present in Logipedia and decide where it fits in
 the general structure of the encyclopedia.
 
-To measure the level of integration of an existing proof system and
-associated proof library in Logipedia, we introduce a metric: {\em the
-  six Logipedia integration levels}.
-
-\begin{framed}
-\begin{center}
-{\bf The Logipedia integration levels (LIL)\label{lil}}
-\end{center}
-
-\begin{itemize}
-\item[LIL 1:] The theory implemented in the system has been defined in
-  the $\lambda\Pi$-calculus modulo theory and in Dedukti.
-
-\item[LIL 2:] The system has been instrumented so some of its proofs
-  can be exported and checked in Dedukti.
-
-\item[LIL 3:] A significant part of the library of the system has been
-  exported and checked in Dedukti.
-
-\item[LIL 4:] A significant part of the library of the system has
-  been made available in Logipedia.
-
-\item[LIL 5:] A tool has been built to analyze the translated Dedukti proofs
-  for the system, detect those that can be expressed in a theory
-  weaker than that of the system, and translate those proofs into a
-  weaker logic.
-
-\item[LIL 6:] All proofs of the system have been exported, translated,
-  and made available in Logipedia.
-\end{itemize}
-\end{framed}
-
-The eighteen systems addressed in this project currently have different
-integration levels, and we have different targeted levels for them.
-
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-System & current level & targeted level\\
-\hline
-Matita & 5 & 6\\
-\hline
-HOL Light & 3 & 5\\
-\hline
-FoCaLiZe & 3 & 5\\
-\hline
-Coq & 3 & 5\\
-\hline
-Agda & 2 & 4\\
-\hline
-Atelier B & 1 & 5\\
-\hline
-ProB & 1 & 5\\
-\hline
-Isabelle & 2 & 5\\
-\hline
-HOL4 & 1 & 5\\
-\hline
-TSTP & 1 & 4\\
-\hline
-Smart & 1 & 3\\
-\hline
-Rodin & 1 & 3\\
-\hline
-Minlog & 0 & 4\\
-\hline
-PVS & 0 & 2\\
-\hline
-Mizar & 0 & 4\\
-\hline
-TLA$^+$ & 0 & 2\\
-\hline
-Why3 & 0 & 4\\
-\hline
-LFSC & 0 & 4\\
-\hline
-\end{tabular}
-\end{center}
-
-These systems can be roughly divided into two groups. For those in the
-first half of the table (Matita, HOL Light, FoCaLize, Coq, Agda,
-Atelier B, ProB, Isabelle/HOL, HOL4, TSTP, Smart, and Rodin)
-we have preliminary results and we plan to bring them to a high
-level of integration. For those in the second half (Minlog, PVS, 
-Mizar, TLA$^+$, Why3, and LFSC) we are only starting out
-and our goals within this project are generally less ambitious.
-
-These two groups of systems will be addressed in different work
-packages, but both are key to the project. The first ones will
-constitute Logipedia in 2024 and the second ones prepare the long term
-future of the infrastructure.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cmsection{Integration}
 
 Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has already
 been expressed in Dedukti. The next step is to implement a method to
@@ -822,12 +729,12 @@ We have seen how to instrument proof systems and automated theorem
 provers to produce proofs in Dedukti, and how to share these proofs in
 Logipedia.
 
-Very large proofs, requiring large libraries of auxiliary results, have been developed in
-some proof systems. These large proofs and libraries are
-interesting for our project in two respects. First, they constitute an
-excellent benchmark for the methods developed above. Secondly, they will
-serve as the source for the lion's share of proofs in Logipedia for end-user
-applications.
+Very large proofs, requiring large libraries of auxiliary results,
+have been developed in some proof systems. These large proofs and
+libraries are interesting for our project in two respects. First, they
+constitute an excellent benchmark for the methods developed
+above. Secondly, they will serve as the source for the lion's share of
+proofs in Logipedia for end-user applications.
 
 The libraries we target are dedicated to particular application
 areas. They provide a substantial coverage of one application area
