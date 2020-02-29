@@ -72,11 +72,11 @@ currently have a integration level 1 or higher (Matita, HOL Light,
 FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, ProB, Rodin, and HOL4)
 we have preliminary results, and we plan to bring them to a high level
 of integration.  For those that have a current integration level of 0
-(Minlog, PVS, Mizar, TLA$^+$, and Why3) we are only starting out and
-our goals within this project are generally less ambitious.  These two
-groups of systems correspond to different objectives, but both are key
-to the project. The first ones will constitute Logipedia in four years
-and the second ones prepare the long term future of the
+(Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart) we are only starting
+out and our goals within this project are generally less ambitious.
+These two groups of systems correspond to different objectives, but
+both are key to the project. The first ones will constitute Logipedia
+in four years and the second ones prepare the long term future of the
 infrastructure.
 
 Beyond this focus on proof systems, we also plan to integrate some
@@ -87,16 +87,14 @@ already used in the Automated theorem proving community and in the SMT
 solvers community to express proofs.
 
 Very large proofs, requiring large libraries of auxiliary results,
-have been developed in some proof systems. These large libraries 
+have been developed in some proof systems. These large libraries
 constitute an excellent benchmark for the methods developed and
 contribute to populating Logipedia with a large number of elements.
-We focus, in this project, mostly on five libraries: 
-the Isabelle Archive of formal proofs,
-the Isabelle probability and analysis library, 
-the Coq geometry library
-the flyspeck library, and the 
-Cake ML	library.
-The targeted integration level for all these libraries is LIL 4.
+We focus, in this project, mostly on five libraries: the Isabelle
+Archive of formal proofs, the Isabelle probability and analysis
+library, the Coq geometry library the flyspeck library, and the Cake
+ML library.  The targeted integration level for all these libraries is
+LIL 4.
 
 The integration of systems of the first group, the integration of
 automated theorem proving systems, and the integration of these large
@@ -120,6 +118,25 @@ libraries we start with and to enrich the data with meta-data.
 For these two objectives the Logipedia integration levels are not
 relevant and we use the common Technology readiness level.
 
+We have already noticed that for some proof systems, the implemented
+theory already been been analyzed and related to other systems, so we
+can immediately start integrating proofs from these systems into
+Logipedia. For others (Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart), 
+more research work is needed. Understanding how the theories
+implemented in these systems can be expressed in Logipedia is one of
+our joint research objective.
+
+Finally, to be able to export formal proofs to systems different from
+that in which they have been developed, we need to analyze what axioms
+they use, and, when it is possible, transform them so that they do not
+use such an axiom anymore.  In addition, each system has its own
+definitions of natural numbers, real numbers, etc. that must be
+aligned: structural results proved for one definition of real numbers,
+for instance, will be transported to any isomorphic structure,
+regardless of the way it has been defined. This is our last objective.
+Its performance indicator is the number of proofs we are able to
+bring from level LIL 4 to level LIL 5.
+
 \begin{longtable}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.32\textwidth}|}
 \hline
 Objective
@@ -130,7 +147,7 @@ Key performance indicator\\
 \hline
 Integration of proof systems
 &
-Integration of the librairies of Matita, HOL Light, FoCaLiZe, Coq,
+Integrate the librairies of Matita, HOL Light, FoCaLiZe, Coq,
 Isabelle/HOL, Agda, Atelier B, ProB, Rodin, and HOL4.
 &
 \vspace*{-0.41cm}
@@ -163,7 +180,7 @@ HOL4 & LIL 1 & LIL 5\\
 \hline
 Integration of automated theorem proving
 &
-Integration of proofs of coming from automated
+Integrate proofs of coming from automated
 theorem provers and SMT solvers.
 &
 \vspace*{-0.41cm}
@@ -180,7 +197,7 @@ LFSC & LIL 0 & LIL 4\\
 \hline
 Integration of libraries
 &
-Integration of the Isabelle Archive of formal proofs, the Isabelle
+Integrate the Isabelle Archive of formal proofs, the Isabelle
 probability and analysis library, the Coq geometry library, the
 flyspeck library, and the Cake ML library.
 &
@@ -204,8 +221,8 @@ CakeML & LIL 2 & LIL 4\\
 \hline
 Development of the infrastructure
 &
-Making Logipedia will be freely accessible through a web browser, and
-a package distribution system.
+Make Logipedia will be freely accessible through a web browser, and a
+package distribution system.
 &
 TRL 4
 \\
@@ -220,11 +237,10 @@ with meta-data.
 TRL 4
 \\
 \hline
-New theories, new systems &
-For some proof systems, the theory implemented they implement has
-already been analyzed and related to other systems, so we can
-immediately start integrating proofs from these systems into
-Logipedia, for others, more research work is needed.
+New theories, new systems
+&
+Express the theories of 
+Mizar, TLA$^+$, PVS, Minlog, Why3, and Smart in Dedukti.
 &
 \vspace*{-0.41cm}
 
@@ -232,39 +248,33 @@ Logipedia, for others, more research work is needed.
 \begin{tabular}{p{0.127\textwidth}|p{0.07\textwidth}|p{0.07\textwidth}}
 System & current & targeted \\
 \hline
-Smart & LIL 0 & LIL 3\\
-\hline
-Minlog & LIL 0 & LIL 4\\
-\hline
-PVS & LIL 0 & LIL 2\\
-\hline
 Mizar & LIL 0 & LIL 4\\
 \hline
 TLA$^+$ & LIL 0 & LIL 2\\
 \hline
+PVS & LIL 0 & LIL 2\\
+\hline
+Minlog & LIL 0 & LIL 4\\
+\hline
 Why3 & LIL 0 & LIL 4\\
+\hline
+Smart & LIL 0 & LIL 3\\
 \end{tabular}
 \\
 \hline
 Proof engineering
 &
-A research effort will also be made to engineer these proofs: to analyze
-what axioms they use, to translate them into other theories, etc.  In
-addition, each system has its own definitions of natural numbers, real
-numbers, etc. that must be aligned: structural results proved for one
-definition of real numbers, for instance, will be transported to any
-isomorphic structure, regardless of the way it has been defined.
+Develop algorithm to analyze which axioms are used in a proof, to
+eliminate axioms, and to align concepts.
 &
-\\
-\hline
+From LIL 4 to LIL 5
+\\ \hline
 \end{longtable}
 
-All these objectives contribute to building a new formal proof
-community, focused on the values of
-knowledge sharing, safety, security, privacy, open access, education, etc.
-
-
-
+The seven objectives give a first idea of the shape of the project.
+They all contribute to building a new formal proof community, focused
+on the values of knowledge sharing, safety, security, privacy, open
+access, education, etc.
 
 %%% Local Variables:
 %%%   mode: latex
