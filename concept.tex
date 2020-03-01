@@ -834,7 +834,7 @@ integrals. This complicates proofs about integrals in applications and needs
 to be unified, which entails further refactoring. The rest of the
 development adds further essential material:
 \begin{enumerate}
-  \item Fourier analysis because of its extreme important both for pure mathematics and for
+  \item Fourier analysis because of its extreme importance both for pure mathematics and for
 engineering and physics (especially the Fourier
 transform). A formalization of basic properties of the Laplace transform is already available in the AFP.
 \item Stability theory for differential equations and
@@ -1189,23 +1189,23 @@ semantic web-style queries in languages like SPARQL.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{New theories, new systems}
 
-Finally, after discussing the concepts related to the networking activities
-needed to collect the content of Logipedia and the development of the infrastructure
-needed to make it accessible, let us turn to joint research projects.
+Having discussed the concepts related to the networking activities required for
+collecting the content of Logipedia and to the development of the infrastructure
+needed to make it accessible, we will describe joint research projects.
 
 So far, we have considered systems that were already at LIL 1, that is,
 systems that implement a theory that we know how to express in Dedukti.
-There are other systems, that are still at level 0, that is, we
+Other relevant systems are still at level 0, that is, we
 do not yet know how to express them. Part of our project is to work on such
-systems, to understand how to express their theory in Dedukti.
+systems, in order to understand how to express their theory in Dedukti.
 
 These systems range from specialized systems such as Minlog
-used in academia to mainstream systems such as PVS or TLA$^+$ that
+used in academia to mainstream systems such as Mizar or PVS that
 have been used in major scientific or industrial projects. They
 provide specific features that are relevant to their target domains
 and are therefore preferred by users for developing theories and
-proofs in these areas.  The objective is to bring them (at least) to
-LIL $2$ in order to prepare the grounds for their integration
+proofs in these areas.  The objective is to bring them to
+LIL $2$ or higher in order to prepare the grounds for their integration
 into Logipedia in the longer term.
 
 % Smart is a proof language developed by the company ProveNRun. It is
@@ -1223,9 +1223,9 @@ Logipedia. First, being able to export theories and proofs developed
 in these systems makes them available to those systems with more
 advanced Logipedia integration levels. For example, accessing Mizar's
 rich library of formalized mathematics would be beneficial to
-developers of machine-checked mathematical results. Second, the
-smaller systems have been used for specific tasks such as reasoning
-about the meta-theory of program calculi, but they do not provide rich
+developers of machine-checked mathematical results. Second, certain
+systems such as \tlaplus have been used for specific tasks such as reasoning
+about distributed algorithms, but they do not provide rich
 general-purpose standard libraries, say, about integer or real
 arithmetic as the more mature systems. Finally, for some of the
 systems only one implementation able to check the proofs exists. As
@@ -1259,6 +1259,38 @@ Dedukti and then move to CubTT. This will allow us to gain experience with
 the extent to which coherence conditions can be supported as rewriting steps in
 $\lambda\Pi$-calculus modulo theories, and which conditions require proof
 elaboration.
+
+\paragraph*{Matching logic.}
+Matching logic~\cite{rosu:matching} (ML) was designed as a unifying foundational
+logic for specifying and verifying programming languages. Extending first-order
+modal logic by features such as many-sorted universes and least fixpoints, it
+designates a family of logics that underlie a framework for describing and
+reasoning about both static structures and dynamic features by means of patterns
+and pattern matching. A language definition in ML presents both the operational
+and the axiomatic aspects in a uniform way, with the semantics of the language
+expressed as a set of rewrite rules, which are special patterns in ML. A
+language-independent proof system can then be used to derive both the
+operational behavior and formal properties of a program.
+
+ML serves as the foundation for the K
+framework\footnote{\url{https://github.com/kframework/k}} that allows the
+designer of a programming languages to specify its formal semantics and to
+derive analysis tools for the language in a correct-by-construction manner. K
+specifications (which are ML theories) exist for a variety of languages
+including C, Java, JavaScript, and EVM. The K prover~\cite{stefanescu:semantics}
+supports coinductive proofs of reachability properties that underlie the
+correctness of programs defined using K. It is based on Reachability Logic,
+formalized in ML, and proofs can be desugared into ML proofs.
+
+Challenges of encoding ML and proofs generated by the K prover in Dedukti
+include the translation of the ML theory expressing the definition of a
+particular language (where the ML axioms are patterns expressing transition
+relations), the translation of the ML proof system, including its coinductive
+reachability rules, and the certification of the automatic proof tools (such as
+SMT solvers) that the prover relies upon. Our objective in this project is to
+have translated into Dedukti the semantics of (at least) a simple programming
+language such as IMP, the proof system for reachability properties and a few
+proofs of paradigmatic program properties.
 
 \paragraph*{Minlog.}
 The
@@ -1296,7 +1328,7 @@ libraries available in Logipedia.
 \paragraph*{Mizar.}
 Mizar\footnote{\url{http://mizar.org}}~\cite{banczerek:mizar} is one of the
 earliest proof assistants. It was initially created as a typesetting system for
-mathematics with proof checking functionality added later. The language is
+mathematics, with proof checking functionality added later. The language is
 designed to be as close as possible to the traditional language of mathematics
 where basic elements are represented as nouns, whereas their properties and
 operations can be represented using adjectives, predicates, and functors, as
@@ -1352,6 +1384,46 @@ to full PVS, in a way that identifies superficially different proofs of the
 inhabitedness of sub-types, and to instrument PVS in order to generate proof
 traces that can be checked by Dedukti.
 
+\paragraph*{Smart.}
+ProvenTools is an interactive environment for designing programs and proofs that
+has been developed at Prove \& Run. Programs and
+specifications are written in \textsf{Smart}, a functional language that
+emphasizes a separation between control flow and data flow and brings a uniform
+monadic style to handling exceptions and different return cases.
+% \textsf{Smart} is based on a classical first-order logic with rank-1
+% polymorphism, algebraic data types, recursive definitions, and inductive
+% predicates.
+% Proof obligations generated from \textsf{Smart} models are presented as virtual
+% execution paths and can be proved using a mix of interactive and automated
+% proving.
+ProvenTools can also be used to generate efficient C code from a subset
+of the \textsf{Smart} language, and the tool performs static analysis to ensure
+that the extraction is safe and correct.
+
+ProvenTools has been used to design, develop, and formally verify
+ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
+been certified at the highest Common Criteria level (EAL7). The proofs represent
+about 400kloc of \textsf{Smart}, covering all process management including page
+tables, shared memory, process creation, code loading, etc. ProvenTools has also
+been used to develop user-side applications, in particular in the case of filter
+applications~\cite{bolignano:security}. The proofs ensure that the data
+exchanged conforms with the intended protocol, guaranteeing that no agent
+attacks another one by producing ill-formed messages.
+
+The logic underlying ProvenTools is similar to that of other program
+verification environments such as Why3. The main challenge in translating
+\textsf{Smart} models and proofs to Dedukti is that ProvenTools does not
+manipulate formulas or proof terms explicitly. Instead, models are translated to
+an intermediate format called \textsf{Smil} that resembles control flow graphs
+with sink states representing erroneous behavior. Proof obligations are
+generated in the form of virtual execution paths that must be proved infeasible.
+A further challenge resides in the scalability of an encoding of models and
+proofs to the level of industrially relevant applications. An ultimate benchmark
+would be to be able to handle the standard library of ProvenTools. A main
+benefit of encoding \textsf{Smart} in Dedukti will be to enable cross-checking
+proofs using Dedukti. This would be very valuable in the context of certified
+developments.
+
 \paragraph*{TLA$^+$.}
 \tlaplus~\cite{lamport:specifying} is a specification language based on
 Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a dialect of
@@ -1361,7 +1433,7 @@ discrete systems and in particular of distributed algorithms and systems.
 cloud systems, e.g.~\cite{newcombe:amazon-cacm}. The two main software tools for
 analyzing and verifying \tlaplus specifications are the model checker
 TLC~\cite{yu:model-checking} and
-TLA$^+$\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
+TLAPS\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
 the \tlaplus Proof System~\cite{cousineau:tla-proofs}.
 
 \tlaplus proofs are written in a declarative, hierarchical style based on
@@ -1374,15 +1446,15 @@ and a decision procedure for linear-time temporal logic.
 
 Our objective in this project is to lift the non-temporal fragment of
 TLA$^+$ (which covers the overwhelming majority of proof obligations
-arising in system verification) from LIL $0$ to LIL $2$. The main
+arising in system verification) from LIL $0$ to at least LIL $2$. The main
 challenges are encoding the untyped set theory underlying \tlaplus in
 $\lambda\Pi$-calculus modulo theory and to instrument TLA$^+$ in order
 to export proof traces that can be checked in Dedukti, starting with
 the Zenon and Isabelle back-ends.
 
 One of the case studies will be the specification of one of the software
-systems developed within MED-EL, which requires an ad-hoc modification of
-instances of the pre-defined process. Every new change to the process might
+systems developed within MED-EL, which requires ad-hoc modifications of
+instances of a pre-defined process. Every new change to the process might
 contain fewer, more or different steps that should be performed by an end user
 (a patient), but the requirement is that the already running instances
 should get updated according to the new process definition. The formal
@@ -1403,25 +1475,25 @@ binders, definitional constructions, or have rich type systems that
 are not easily encoded in the $\lambda\Pi$-calculus modulo theory that
 underlies Dedukti.  Although the details vary between the systems,
 there are commonalities that should be addressed jointly. For example,
-Minlog has strong support for co-induction and co-recursion
+Matching Logic and Minlog have strong support for co-induction and co-recursion
 for which foundational support should be provided in Dedukti. Mizar
 and (to a lesser degree) TLA$^+$ make use of soft types for assisting
 proof search, and PVS emphasizes predicate sub-typing, which is also
 used in the SMT encoding used in TLA$^+$.
 
 \paragraph*{Set-theoretic vs.\ type-theoretic foundations.}
-HoTT and Minlog are based on type theories with explicit proof objects
-and are in this respect close to Dedukti, although the details differ. PVS has a
-type system reminiscent of Simple Type Theory but adds predicate
-sub-typing, whereas Mizar and TLA$^+$ are based on classical set theories. The
-three latter systems do not provide proof objects and require instrumentation
-for providing traces that can then be interpreted by Dedukti. In all cases, a
-crucial point to consider for defining an encoding into $\lambda\Pi$-calculus
-modulo theory is that of exploiting Dedukti's rewrite capabilities for
-controlling the size of proof objects.
+HoTT and Minlog are based on type theories with explicit proof objects and are
+in this respect close to Dedukti, although the details differ. Matching Logic
+and PVS have a type system reminiscent of Simple Type Theory but add features
+such as modal logic or predicate sub-typing, whereas Mizar and TLA$^+$ are based
+on classical set theories. All systems except HoTT and Minlog do not provide
+proof objects and require instrumentation for providing traces that can then be
+interpreted by Dedukti. In all cases, a crucial point to consider for defining
+an encoding into $\lambda\Pi$-calculus modulo theory is that of exploiting
+Dedukti's rewrite capabilities for controlling the size of proof objects.
 
 \paragraph*{Automatic proof tools.}
-Many of the systems considered call upon automatic back-ends for proof
+Many of the systems that we consider call upon automatic back-ends for proof
 search and in many cases, these do not natively produce traces. Even
 when they do, they are not in a form that is suited for replay in
 Dedukti. There are two ways how we will try to tackle the problem of
