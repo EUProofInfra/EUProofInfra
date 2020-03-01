@@ -1520,11 +1520,12 @@ checking by Dedukti.
 The development of formal reasoning tools has led to an ever-growing
 corpus of mechanized mathematical theories. As these libraries span a
 wide spectrum of proof assistants, the underlying logical foundations
-of these systems and libraries can differ greatly. For example,
-some proof assistants use set theory as a foundation while others use
-Simple type theory, Martin-L\"of's type theory, the Calculus of
-Constructions, etc.  In order to combine the power of different proof
-assistants and their respective communities, it is critically
+of these systems and libraries can differ greatly. For example, some
+proof assistants use set theory as a foundation while others use
+Simple type theory \cite{Church40}, Martin-L\"of's type theory
+\cite{Martin-Lof84}, the Calculus of Constructions
+\cite{CoquandHuet88}, etc.  In order to combine the power of different
+proof assistants and their respective communities, it is critically
 important that these different logical foundations can be related to
 each other in ways that ensure their interoperability.  Even when one
 has successfully aligned these different logical foundations, one must
@@ -1543,7 +1544,7 @@ representations using co-recursion, all such different formalizations
 introduce essentially the same mathematical concept. More precisely,
 following the work of \site{Fau} and \site{Inn}
 \cite{GKKMR:alignments:17} and the alignment-based mediator developed
-by \site{Fau} in the {\em OpenDreamKit} project \cite{ODK:mitm:18}, we
+by \site{Fau} in the {\em OpenDreamKit} project \cite{DBLP:conf/mkm/DehayeIKKLMPRTW16}, we
 consider an alignment to be a pair of
 \begin{itemize}
   \item two identifiers $c,c’$ (usually from two different libraries
@@ -1554,7 +1555,7 @@ consider an alignment to be a pair of
 \end{itemize}
 The source of alignments can vary and include manual collections
 \cite{MRLR:alignments:17} and automatic, machine-learned collections
-\cite{align_kaliszyk}.
+\cite{GAUTHIER201989}.
 
 Even when the various different proof assistants are all exporting their
 proofs in Dedukti, the proper alignment of the theories underpinning
@@ -1699,17 +1700,18 @@ certified matching-based engine. The engine will provide a way of
 inferring new alignments, based on the alignment of the primitive
 concepts and on a set of rules that will describe further
 derivations. In order to enable flexible alignments, we are prepared
-to allow not only exact matches, but also matches with respect to
-a given similarity measure, as in \cite{???}.
+to allow not only exact matches, but also matches with respect to a
+given similarity measure, as in \cite{GAUTHIER201989}.
 
 An alternative method for discovering ontologies of alignments is to
 use unsupervised learning methods to find alignments between proof
 assistant repositories. For this, heuristic algorithms and dynamic
-processes have been tried in the past \cite{???}.  As part of the
-project we intend to also try to use unsupervised machine translation
-algorithms \cite{???} to directly find correspondences between
-statements and their constituent constants and types in proof
-assistant libraries imported in Logipedia.
+processes have been tried in the past \cite{GAUTHIER201989}.  As part
+of the project we intend to also try to use unsupervised machine
+translation algorithms \cite{DBLP:journals/corr/abs-1804-07755} to
+directly find correspondences between statements and their constituent
+constants and types in proof assistant libraries imported in
+Logipedia.
 
 \paragraph*{Alignment-based services.}
 This task is concerned with the implementation of useful services
