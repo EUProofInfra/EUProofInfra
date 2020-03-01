@@ -10,35 +10,26 @@
   ]
   % Sac 60 = 36 for HoTT and 24 for Abella
 
-\ednote{MK: We need one coordinating site. original coordinators: Cezary Kaliszyk and Stephan Merz}
-
-\ednote{MK: interested parties (add their sites and RM here): David Deharbe,
-  Stephan Merz, Helmut Schwichtenberg, Guillaume Genestier, Guillaume Burel,
-  Yamine Ait Ameur, Jean-Paul Bodeveix, Mamoun Filali, Arthur Chargueraud,
-  Gaspard Férey
-}
-
 \begin{wpobjectives}
-\end{wpobjectives}
-\begin{wpdescription}
-  This work package addresses proof systems that are currently at LIL $0$, i.e.\
+  This work package addresses proof systems that are currently at LIL 0, i.e.\
   whose logic and theories have not yet been expressed in \textsc{Dedukti}. Our
-  objective is to bring them to LIL $2$ over the duration of the project so that
-  at least elementary proofs can be exported and checked in \textsc{Dedukti}.
-  For some of the systems, it may be possible to achieve LIL $3$.
+  objective is to bring them to LIL 2 or better over the duration of the
+  project so that at least elementary proofs can be exported and checked in
+  \textsc{Dedukti}.
 
   Achieving these goals requires (i) expressing the logics and proof systems
   that underlie these systems in the $\lambda\Pi$-calculus modulo theory and
   (ii) instrumenting the original proof systems so that they can export proofs
   that can be checked in Dedukti. Much of the work required in this work package
   is of foundational nature.
-
+\end{wpobjectives}
+\begin{wpdescription}
   The tasks are presented according to the individual systems. Nevertheless,
-  the project will focus on cross-cutting concerns and foundational aspects such
+  the project addresses cross-cutting concerns and foundational aspects such
   as set-theoretic vs.\ type-theoretic foundations, predicate and dependent
   types, (co-)recursive definitions and (co-)inductive proofs and so on. The
   network established in this project will avoid ``reinventing the wheel'', also
-  taking advantage of the experiences of the systems considered in
+  taking advantage of the experiences of the more mature systems considered in
   \WPref{instrumentation} and of the work carried out in \WPref{atpetc}.
 \end{wpdescription}
 
@@ -48,29 +39,101 @@
 %   \input{workpackages/abella}
 % \end{task}
 
-\begin{task}[id=hott,title=Express Homotopy Type Theory in Dedukti]
-  \ednote{B. Barras, Saclay}
-  \input{workpackages/hott}
+\begin{task}[id=hott,
+  title=Express Homotopy Type Theory in Dedukti,
+  lead=Inr, % B. Barras
+  InrRM=0, % TODO
+  BirRM=0 % TODO
+  ]
+  \begin{enumerate}
+  \item Express 2-Level Type Theory (2LTT) as an object theory in Dedukti, as
+    a stepping stone towards encoding more expressive variants of homotopy type
+    theory.
+  \item Express a core Cubical Type Theory (CubTT) in 2LTT: here, the main challenge is
+    that equality in cubical type theory is more expressive than what can be
+    expressed through rewrite rules in Dedukti.
+  \item Define structures such as cartesian cubical type theory on top of the
+    core, and compare these structures.
+  \item Import the UniMath library into Dedukti and translate it into Cubical
+    Type Theory. The UniMath library extends a version of
+    Martin-Löf type theory by the univalence axiom. It provides an interesting
+    case study for our encoding of CubTT.
+  \end{enumerate}
 \end{task}
 
-\begin{task}[id=minlog,title=Express the theory of Minlog in Dedukti]
-  \ednote{H. Schwichtenberg, LMU}
-  \input{workpackages/minlog}
+\begin{task}[id=minlog,
+  title=Express the theory of Minlog in Dedukti,
+  lead=Lmu,
+  LmuRM=0 % TODO
+  ]
+  \begin{enumerate}
+  \item Further develop and implement extensional realizability in Minlog as
+    a necessary first step for bridging Minlog and Dedukti.
+  \item Express the core Minlog logic and proofs in Dedukti, benefitting from
+    the work on realizability for exporting programme extraction to Dedukti.
+  \item Properly encode coinduction and corecursion in Dedukti: these concepts are
+    fundamental to Minlog, for example for representing real numbers as streams of
+    digits, but they are not native to Dedukti.
+  \item Import a subset of Dedukti into Minlog, apply program development by proof
+    transformation, and export back. This will make Dedukti a usable tool for the
+    development of proofs and programs in constructive analysis and allow Minlog
+    users to benefit from theories formalized using other proof assistants.
+  \end{enumerate}
 \end{task}
 
-\begin{task}[id=mizar,title=Express the theory of Mizar in Dedukti]
-  \ednote{Artur Korni{\l}owicz, UwB}
-  \input{workpackages/mizar}
+\begin{task}[id=mizar,
+  title=Express the theory of Mizar in Dedukti,
+  lead=Bia,   % Artur Korni{\l}owicz
+  BiaRM=0, % TODO
+  InnRM=0 % TODO
+  ]
+  \begin{enumerate}
+  \item Express the foundations of Mizar (first-order Tarski-Grothendieck set
+    theory) in $\lambda\Pi$-calculus modulo theory, together with Mizar's soft
+    type system. Take advantage of Dedukti's rewriting capabilities to automate
+    parts of type inference.
+  \item Instrument Mizar to export type disambiguation data. Exporting the
+    information present in the Mizar types will enable us to optimize the
+    representation of Mizar statements in Dedukti.
+  \item Express Mizar's equality checking and unification steps as a mix of
+    small proof steps and rewrite rules so that Dedukti's proof kernel can
+    verify them. Export necessary semantic information that is not currently
+    available outside of the Mizar checker in order to check the basis of the
+    Mizar library and make it available in Logipedia.
+  \end{enumerate}
 \end{task}
 
-\begin{task}[id=pvs,title=Express the theory of PVS in Dedukti]
-  \ednote{Gabriel Hondet, Saclay}
-  \input{workpackages/pvs}
+\begin{task}[id=pvs,
+  title=Express the theory of PVS in Dedukti,
+  lead=Inr,   % Gabriel Hondet
+  InrRM=0  % TODO
+  ]
+  \begin{enumerate}
+  \item Extend the existing encoding in $\lambda\Pi$-calculus modulo theory,
+    restricted to a fragment of PVS with decidable type checking, and represent
+    proofs of type checking conditions for predicate subtypes.
+  \item Instrument PVS to export proof traces to Dedukti given that PVS proof
+    tactics do not produce proof terms.
+  \item Design and implement a PVS proof checker in Dedukti based on the
+    reconstruction of proof traces exported from PVS.
+  \end{enumerate}
 \end{task}
 
-\begin{task}[id=tla,title=Express the theory of \tlaplus in Dedukti]
-  \ednote{Stephan Merz, Nancy}
-  \input{workpackages/tlaplus}
+\begin{task}[id=tla,
+  title=Express the theory of \tlaplus in Dedukti,
+  lead=Inr,   % Stephan Merz
+  InrRM=0,   % TODO
+  MedRM=0    % TODO
+  ]
+  \begin{enumerate}
+  \item Express the untyped \tlaplus set theory with choice in
+    $\lambda\Pi$-calculus modulo theory.
+  \item Instrument backends of the \tlaplus Proof System to export proofs,
+    taking advantage of Dedukti's rewriting capabilities in order to compress
+    the size of proofs.
+  \item Formalize a distributed assignment of rehabilitation programs to
+    patients and updates of the process in MED-EL's software.
+  \end{enumerate}
 \end{task}
 
 \end{tasklist}
