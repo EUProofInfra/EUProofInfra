@@ -562,10 +562,10 @@ We plan to investigate a new approach where, instead of hammers, the
 encoding is a succession of fine-grained encodings dedicated to one
 aspect. These ``small'' encodings will offer the possibility to be
 activated independently depending on the origin of the statement. In
-addition, they have the other advantages of being modular, easily extensible, and
-more reliable: each encoding is simple, and may output proofs, {\em
-  e.g.} using Ekstrakto. They will be performed modulo the concept
-alignment.
+addition, they have the other advantages of being modular, easily
+extensible, and more reliable: each encoding is simple, and may output
+proofs, {\em e.g.} using Ekstrakto. They will be performed modulo the
+concept alignment.
 
 It is common in the automatic theorem proving community to evaluate
 the performance of a particular tool on sets of benchmarks. As a side
@@ -598,19 +598,19 @@ on automatic solvers: Frama-C-WP. Since automatic theorem provers are
 built by making many choices, such as which heuristics or which
 algorithms to use, they display blind spots where they are less
 efficient to solve some cases. To overcome this limitation, it is
-necessary to use a wide variety of solvers in a
-portfolio manner. For instance, the Why3 tool features the ability to send problems
-to lots of provers in a uniform way. However, with so many tools
-written by different teams, the meaning of the same concept
-in the different tools could be different. This can lead to errors in
-the overall verification results. Moreover, in order to be applied more
-widely, formal methods must handle more concepts such as floating
-point numbers whose exact meaning is less clear that mathematical
-integers. This leads to more chances for two tools to interpret
-the same concept differently. Finally, industrial users sometimes
-need to add a kind of reason or a simplification that is specific to their particular
-concept, so that it is better handled by automatic solvers. It is very
-easy to make an error in those simplifications.
+necessary to use a wide variety of solvers in a portfolio manner. For
+instance, the Why3 tool features the ability to send problems to lots
+of provers in a uniform way. However, with so many tools written by
+different teams, the meaning of the same concept in the different
+tools could be different. This can lead to errors in the overall
+verification results. Moreover, in order to be applied more widely,
+formal methods must handle more concepts such as floating point
+numbers whose exact meaning is less clear that mathematical
+integers. This leads to more chances for two tools to interpret the
+same concept differently. Finally, industrial users sometimes need to
+add a kind of reason or a simplification that is specific to their
+particular concept, so that it is better handled by automatic
+solvers. It is very easy to make an error in those simplifications.
 
 In order to overcome these problems, we propose to improve the assurances in
 the interaction between these different tools, and to speed up the addition of
@@ -1195,10 +1195,9 @@ So far, we have considered systems that were already at LIL 1, that
 is, systems that implement a theory that we know how to express in
 Dedukti.  Other relevant systems are still at level 0, that is, we do
 not yet know how to express them. Part of our project is to work on
-such systems: Mizar, TLA$^+$, PVS, Minlog, Why3, Smart, and Matching
-logic in order to understand how to express their theory in Dedukti.
-We also consider Homotopy type theory that is a theory, but not a
-system.
+their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, Smart, and
+Matching logic, and Homotopy type theory, in order to understand how
+to express their theory in Dedukti.
 
 These systems range from specialized systems such as Minlog
 used in academia to mainstream systems such as Mizar or PVS that
