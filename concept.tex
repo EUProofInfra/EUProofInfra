@@ -1225,7 +1225,7 @@ So far, we have considered systems that were already at LIL 1, that
 is, systems that implement a theory that we know how to express in
 Dedukti.  Other relevant systems are still at level 0, that is, we do
 not yet know how to express them. Part of our project is to work on
-their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, Smart, and
+their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
 Matching logic, and Homotopy type theory, in order to understand how
 to express their theory in Dedukti.
 
@@ -1238,10 +1238,10 @@ proofs in these areas.  The objective is to bring them to
 LIL $2$ or higher in order to prepare the grounds for their integration
 into Logipedia in the longer term.
 
-% Smart is a proof language developed by the company ProveNRun. It is
+% ProvenTools is a proof language developed by the company ProveNRun. It is
 % based on a classical predicate logic, extended with rank-1
 % polymorphism, algebraic datatypes, recursive definitions and inductive
-% predicates. ProvenTools will turn models implemented in Smart to proof
+% predicates. ProvenTools will turn models implemented in ProvenTools to proof
 % obligations which can be proved in the system using a mix of
 % interactive and automated proving. The resulting proofs are reviewable
 % objects, akin to proof traces built of the various atomic proof rules
@@ -1402,26 +1402,26 @@ libraries available in Logipedia.
 {\color{red} To do ?}
 
 
-\paragraph*{Smart.}
+\paragraph*{ProvenTools.}
 ProvenTools is an interactive environment for designing programs and proofs that
 has been developed at Prove \& Run. Programs and
-specifications are written in \textsf{Smart}, a functional language that
+specifications are written in ProvenTools, a functional language that
 emphasizes a separation between control flow and data flow and brings a uniform
 monadic style to handling exceptions and different return cases.
-% \textsf{Smart} is based on a classical first-order logic with rank-1
+% ProvenTools is based on a classical first-order logic with rank-1
 % polymorphism, algebraic data types, recursive definitions, and inductive
 % predicates.
-% Proof obligations generated from \textsf{Smart} models are presented as virtual
+% Proof obligations generated from ProvenTools models are presented as virtual
 % execution paths and can be proved using a mix of interactive and automated
 % proving.
 ProvenTools can also be used to generate efficient C code from a subset
-of the \textsf{Smart} language, and the tool performs static analysis to ensure
+of the ProvenTools language, and the tool performs static analysis to ensure
 that the extraction is safe and correct.
 
 ProvenTools has been used to design, develop, and formally verify
 ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
 been certified at the highest Common Criteria level (EAL7). The proofs represent
-about 400kloc of \textsf{Smart}, covering all process management including page
+about 400kloc of ProvenTools, covering all process management including page
 tables, shared memory, process creation, code loading, etc. ProvenTools has also
 been used to develop user-side applications, in particular in the case of filter
 applications~\cite{bolignano:security}. The proofs ensure that the data
@@ -1430,15 +1430,15 @@ attacks another one by producing ill-formed messages.
 
 The logic underlying ProvenTools is similar to that of other program
 verification environments such as Why3. The main challenge in translating
-\textsf{Smart} models and proofs to Dedukti is that ProvenTools does not
+ProvenTools models and proofs to Dedukti is that ProvenTools does not
 manipulate formulas or proof terms explicitly. Instead, models are translated to
-an intermediate format called \textsf{Smil} that resembles control flow graphs
+an intermediate format called Smil that resembles control flow graphs
 with sink states representing erroneous behavior. Proof obligations are
 generated in the form of virtual execution paths that must be proved infeasible.
 A further challenge resides in the scalability of an encoding of models and
 proofs to the level of industrially relevant applications. An ultimate benchmark
 would be to be able to handle the standard library of ProvenTools. A main
-benefit of encoding \textsf{Smart} in Dedukti will be to enable cross-checking
+benefit of encoding ProvenTools in Dedukti will be to enable cross-checking
 proofs using Dedukti. This would be very valuable in the context of certified
 developments.
 
