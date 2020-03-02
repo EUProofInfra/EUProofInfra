@@ -28,10 +28,16 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{textcomp}
+\if@notecites
+\RequirePackage[style=verbose-note,hyperref=auto,defernumbers=true,giveninits=true,maxbibnames=9,maxcitenames=3]{biblatex}[2010/11-19]
+\renewcommand{\cite}{\footcite}
+\renewcommand{\multicitedelim}{\\*\hspace*{18pt}}
+\else
 \if@numericcites
 \RequirePackage[style=numeric,hyperref=auto,defernumbers=true,giveninits=true,maxbibnames=9,maxcitenames=3]{biblatex}[2010/11-19]
 \else
 \RequirePackage[style=alphabetic,hyperref=auto,defernumbers=true,giveninits=true,maxbibnames=9,maxcitenames=3]{biblatex}[2010/11-19]
+\fi
 \fi
 \RequirePackage{csquotes}
 \RequirePackage{mdframed}
