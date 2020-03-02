@@ -2,7 +2,7 @@
 % Variants with different class options are 
 % - submit.tex (no draft stuff, no ednotes, no revision information)
 % - public.tex (like submit.tex, but no financials either) 
-\providecommand{\classoptions}{,keys} % to be overwritten in variants
+\providecommand{\classoptions}{,notecites} % to be overwritten in variants
 \documentclass[12pt,noworkareas,deliverables,report,propB\classoptions]{euproposal}
 \extrafloats{1000}
 \usepackage{nimbusserif}
@@ -12,7 +12,6 @@
 \usepackage{longtable}
 \usepackage{array}
 
-
 \addbibresource{lib/kbibs/kwarcpubs.bib}
 \addbibresource{lib/kbibs/extpubs.bib}
 \addbibresource{lib/kbibs/kwarccrossrefs.bib}
@@ -20,15 +19,18 @@
 \addbibresource{lib/pub_rabe.bib}
 \addbibresource{lib/rabe.bib}
 \addbibresource{lib/proposal.bib}
+
 \input{lib/WApersons}% Some sections of the included files depend on this.
+
+\counterwithout{figure}{chapter}
 
 \begin{document}
 \begin{proposal}[%
   coordinator=GiDo,
   coordinatorsite=Inr,
   acronym={Logipedia},
-  acrolong={Logipedia},
-  title=\pn: \protect\pnlong, % sites in the order of the submission site
+  acrolong={},
+  title=\pn \protect\pnlong, % sites in the order of the submission site
   site=Inr,
   site=Str,
   site=Tou, 
@@ -42,13 +44,11 @@
   site=Sac, 
   site=Fau,
   site=Lee,
-  site=Sou, 
   site=Got,
   site=Cha,
   site=Lmu,
   site=Imt,
   site=Bia,
-  site=Dus,
   site=Oca,
   site=Cle,
   site=Bir,
@@ -84,7 +84,7 @@
   % USoRM=72,
   % UStrRM=72,
   % NPITRM=72,
-  callname = Integrating and opening research infrastructures of European interest,
+  callname = Integrating and opening research infrastructures\\ of European interest,
   callid = H2020-INFRAIA-2018-2020,
   instrument=instrument,
   challengeid=challengeid,
@@ -118,7 +118,7 @@
     & \logo{NomadicLabs}
     \\[8mm]
     \logo{OCamlPro}
-    & Onera
+    & \logo{Onera}
     & \logo{OriginLabs}
     & \logo{ProveRun}
     & TrustInSoft
@@ -129,16 +129,21 @@
   \end{tabular}
   
   \begin{abstract}
-    \ednote{Gilles: write something here}
+
   \end{abstract}
 
   \tableofcontents
 
 \input{excellence}
-\newpage\input{impact}
-\newpage\input{implementation}
-\newpage\input{members}
+\newpage
+\input{impact}
+\newpage
+\input{implementation}
+\newpage
+\input{members}
+\newpage
 \input{issues}
+
 \end{proposal}
 
 \end{document}

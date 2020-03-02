@@ -1,48 +1,164 @@
 \begin{sitedescription}{Pro}
+  % To editor: don't know if it is OK to define a command here,
+  % I assume the risk of another command called \provenrun
+  % already existing is pretty slim...
+\newcommand{\provenrun}[0]{Prove\ \&\ Run}
 
 \ednote{a description of the legal entity}
 
 \logo{ProveRun}
 
-TODO
+\provenrun's mission is to help its customers resolve the security
+challenges linked to the large-scale deployment of connected devices
+and of the Internet of Things. Thanks to an innovative software
+development toolchain (called ProvenTools) based on state of the art
+proof techniques, \provenrun{} can deal with the development of the
+most sensitive software components (microkernels, hypervisors, OSes,
+secure bootloaders, etc) and meet the highest security requirements
+(such as CC EAL7) in a cost effective manner, taking also into account
+time-to-market and required skill levels constraints.
 
-\paragraph{Main tasks:}
-
-\ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
-
-\ednote{specify the main tasks and reference the respective work packages}
-
+Using ProvenTools, \provenrun{} has developed two unique critical
+off-the-shelf software bricks:
 \begin{compactitem}
-\item
+\item ProvenCore: a next generation ultra-secure OS (TEE) available
+  for ARM® Cortex®-A, Cortex®-M and RISC-V processors, certified at
+  the EAL7 level according to the Common Criteria evaluation scheme.
+\item ProvenVisor: an ultra-secure hypervisor available for ARM
+  Cortex-A processors.
 \end{compactitem}
 
-\paragraph{Publications, products or services:}
+\provenrun{} was founded in 2009 and today employs 40 engineers. It is
+independent and privately owned.
 
-\ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
+\paragraph*{Main tasks:}
+
+\ednote{its main tasks, with an explanation of how its profile matches
+  the tasks in the proposal}
+
+\ednote{specify the main tasks and reference the respective work
+  packages}
 
 \begin{compactitem}
-\item 
+\item \WPref{???}, task \taskref{???} (WP2, Task ..?): Translate models and proofs from ProvenTools to Dedukti (Lescuyer)
+\item \WPref{dissemination}, task \taskref{dissemination}{certif-club}: ... (Dufay)
 \end{compactitem}
 
-\paragraph{Previous projects or activities:}
+\paragraph*{Publications, products or services:}
 
-\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
+\ednote{a list of up to 5 relevant publications, and/or products,
+  services (including widely-used datasets or software), or other
+  achievements relevant to the call content}
 
 \begin{compactitem}
-\item 
+\item Dominique Bolignano. ``Security Filters for IoT Domain
+  Isolation'', Embedded Conference, 2018
+\item Dominique Bolignano. ``Formally Proven and Certified
+  Off-The-Shelf Software Components'', C\&SAR,
+  2016
+\item Dominique Bolignano. ``Proven Security for the Internet of
+  Things'' Embedded Conference, 2016
+\item Stéphane Lescuyer. ``ProvenCore: Towards a Verified Isolation
+  Micro-Kernel'', 10th HiPEAC Conference, 2015
 \end{compactitem}
 
-\paragraph{Infrastructures or technical equipments:}
+\paragraph*{Previous projects or activities:}
 
-\ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
+\ednote{a list of up to 5 relevant previous projects or activities,
+  connected to the subject of this proposal}
 
-\paragraph{Persons primarily responsible for carrying out the proposed activities:}
+\begin{compactitem}
+\item EPI: The European Processor Initiative (EPI) is a project
+  financed by the European Commission, whose aim is to design and
+  implement a roadmap for a new family of low-power European
+  processors for extreme scale computing, high-performance Big-Data
+  and a range of emerging applications. \provenrun{} is the Security
+  Leader of this project.
+\item CPS4EU: The CPS4EU project aims to arm Europe with an extensive
+  value chain across key sectors by: 1. Strengthening Cyber-Physical
+  Systems (CPS) technology providers, mainly European SMEs, to
+  increase their market share and their competitiveness to become
+  world leaders, 2. Improve design efficiency and productivity and
+  enable secure certification, 3. Enabling the creation of innovative
+  European CPS products that will strengthen the leadership and
+  competitiveness of Europe by both large groups and SMEs, 4. Large
+  dissemination of CPS technologies.
+\item SECREDAS: European collaborative research project aimed at
+  developing an innovative solution for the safety, security, and
+  privacy of automated systems, including a reference architecture,
+  powerful components, and common approaches to integration and
+  verification in the automotive, health and rail sectors, led by
+  NXP.
+\item MuSiC: European collaborative research project aimed at
+  providing a scalable and certifiable security solution for the mid
+  to high data-rate cost-effective devices in order to secure against
+  application, OS, web, and network based threats and protect critical
+  services on shared networks, led by STMicroelectronics.
+\end{compactitem}
 
-\begin{itemize} % in alphabetical order
+\paragraph*{Infrastructures or technical equipments:}
 
-\item{\bf ZZZ}
+\ednote{a description of any significant infrastructure and/or any
+  major items of technical equipment, relevant to the proposed work}
 
-\end{itemize}
+No significant infrastructure or major item of technical equipement
+involved in the proposed work.
+
+\paragraph*{Persons primarily responsible for carrying out the proposed activities:}
+
+\begin{compactitem} % in alphabetical order
+
+\item {\bf Dr. Dominique Bolignano} led the formal methods'
+  group of Bull until 1996, prior to taking charge of all the
+  technology transfer initiatives of the Dyade GIE (created by INRIA
+  and Bull) within the formal methods and security areas. In 1999 he
+  created Trusted Logic, a start-up of INRIA, which he led for eleven
+  years, until its sale to Gemalto in 2009. With more than one hundred
+  experts, researchers and engineers, Trusted Logic became the world
+  leader in its field: operating systems and middleware security for
+  smart cards and mobile terminals. In 2009 he founded \provenrun{} and
+  is currently its CEO. In parallel with these activities, he has
+  maintained many academic positions. In particular he was Associate
+  Professor at the Paris Dauphine University for nine years and then a
+  member of the Scientific Council of CNRS in the field of engineering
+  and computer science for four years, until September 2010. Most
+  recently he chaired the AERES evaluation committee for the INRIA
+  Rennes Bretagne and led the quadrennial assessment of its research
+  laboratories.
+
+\item {\bf Dr. Guillaume Dufay} (PhD, CISSP) has more than 15 years of
+  experience in security architecture and security evaluation for
+  connected and embedded devices. This experience was acquired from
+  academic research and security consulting missions in various
+  vertical domains (Mobile, Financial services, IoT, Transport, DRM,
+  Enterprise). He is the author of ARM PSA Certified security
+  certification scheme and ARM IoT Protection Profiles; co-author of
+  the GlobalPlatform TEE, Java Card and (U)SIM Protection Profiles;
+  and the author of security targets based on Java Card, secure
+  signature, payment, TPM, car-to-car and e-passport Protection
+  Profiles. He managed several Common Criteria evaluations of
+  smartcards and similar devices products including the interactions
+  with ITSEFs and certification bodies.
+
+\item {\bf David Garnier} holds a Master's Degree in Engineering from
+  the Ecole des Mines de Nantes and a Master's Degree in Computer
+  Science from the University of Nantes. He worked for four years at
+  Trusted Logic, leading studies in the field of secure embedded
+  computing for customers such as Orange and SFR. He then created the
+  Integration Group within Trusted Labs and led the implementation of
+  prototypes of secure embedded system in collaboration with the DGA
+  and RATP, among others. Prior to joining \provenrun{}, he obtained an
+  MBA from the Rotterdam School of Management.
+
+\item {\bf Dr. Stéphane Lescuyer} graduated from the Ecole
+  Polytechnique and is a State Engineer of the Mines, a technical
+  corps of the French state. He earned a PhD degree from University
+  Paris-Sud in the field of automation of formal proofs in the Coq
+  proof assistant, as part of the INRIA Saclay - Ile-de-France. He
+  has ten years of experience of working on formal methods and
+  program verification at \provenrun, and is the lead architect
+  of ProvenCore's design and proofs.
+\end{compactitem}
 
 \end{sitedescription}
 

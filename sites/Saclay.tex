@@ -1,5 +1,7 @@
 \begin{sitedescription}{Sac}
 
+\logo{Saclay}
+
 Université Paris-Saclay is a newly created university since the 1st of
 January 2020. Created from the merger of Université Paris-Sud and the
 community of universities and institutions "Université Paris-Saclay", it
@@ -25,58 +27,51 @@ the Area of Verification and Validation of Algorithms, Languages and
 Systems, right in the heart of the scientific field of Formal Methods.
 Its group working on \pn will include Chantal Keller and Burkhart Wolff.
 
-\paragraph{Main tasks:}
-
-\begin{itemize}
-\item WP4: \dots
-\item WP6: \dots
-\item WP7: \dots
-\end{itemize}
+\paragraph*{Main tasks:}
 
 \begin{compactitem}
-\item\ednote{specify the main tasks and reference the respective work packages} 
+\item Interoperability between ATPs and Logipedia: \WPref{atpetc}, tasks
+  \taskref{atpetc}{tracetodedukti}, \taskref{atpetc}{deduktitoatp} and
+  \taskref{atpetc}{readiness}
+\item Extending Dedukti with metadata, and generating them:
+  \WPref{structuring}, tasks \taskref{structuring}{strlibstructure},
+  \taskref{structuring}{strdofimpl}, \taskref{structuring}{strrefonto} and
+  \taskref{structuring}{strontorepml}
+%\item UNDER PROGRESS: \WPref{theories}
+\item Automatic proofs of concept alignment: \WPref{alignment}, task
+  \taskref{alignment}{aligntheories}
 \end{compactitem}
 
-\paragraph{Publications, products or services:}
+\paragraph*{Publications, products or services:}
 
-\ednote{a list of up to 5 relevant publications, and/or products,
-  services (including widely-used datasets or software), or other
-  achievements relevant to the call content}
-
-\begin{itemize}
+\begin{compactitem}
 \item An automatic tool to import proofs between the two interactive
   theorem provers HOL Light and Coq, companion
   paper:~\cite{DBLP:conf/itp/KellerW10}
-\item The SMTCoq project: \url{https://smtcoq.github.io} (companion
-  papers:~\cite{DBLP:conf/cpp/ArmandFGKTW11,DBLP:conf/cav/EkiciMTKKRB17})
+\item The \href{https://smtcoq.github.io}{SMTCoq} project
+  \cite{DBLP:conf/cpp/ArmandFGKTW11,DBLP:conf/cav/EkiciMTKKRB17}
 \item Isabelle/DOF : Design and Implementations.
  Sources/Papers: \cite{brucker_achim_d_2019_3370483,brucker.ea:isabelle-ontologies:2018}
 \item Applications of Ontologies in the Context of Formal Software Engineering.
  \cite{brucker.ea:ontologies-certification:2019}
-\end{itemize}
+\end{compactitem}
 
-\paragraph{Previous projects or activities:}
+\paragraph*{Previous projects or activities:}
 
-\ednote{a list of up to 5 relevant previous projects or activities,
-  connected to the subject of this proposal}
-
-\begin{itemize}
-\item The ANR-project Paral-ITP (\url{www.lri.fr/~wolff/projects/ANR-Paral-ITP/}) with the  
+\begin{compactitem}
+\item The ANR-project \href{http://www.lri.fr/~wolff/projects/ANR-Paral-ITP/}{Paral-ITP} with the  
       partners INRIA Roquencourt, INRIA Saclay (Bruno Barras) 
       and U-PSud/LRI (B.Wolff, Project Leader) was targeting 
       of advanced parallelisation techniques for Coq and Isabelle.
 \item The EU-Project EUROMILS (Oct. 2012 - Sept. 2015 ) and 
-      ANR Project PST (\url{http://www.irt-systemx.fr/en/project/pst/})
+      ANR Project \href{http://www.irt-systemx.fr/en/project/pst/}{PST}
       were both targeting at applying Formal Methods in an industrial
       effort aiming at a high-level certification (Common Criteria EAL6, 
       CENELEC SIL4). The latter project incited the development of 
       Isabelle/DOF\cite{brucker_achim_d_2019_3370483}.
-\end{itemize} 
+\end{compactitem} 
 
-\paragraph{Infrastructures or technical equipments:}
-
-\ednote{a description of any significant infrastructure and/or any major
-  items of technical equipment, relevant to the proposed work}
+\paragraph*{Infrastructures or technical equipments:}
 
 The group has a mainstream experience in interoperability between proof
 systems. It is in particular the leader of the SMTCoq project, a tool to
@@ -96,10 +91,10 @@ The group also has experience in the representation of proofs as
 high-level documents and tool integration at the implementation level
 of Coq and Isabelle. 
 
-\paragraph{Persons primarily responsible for carrying out the proposed
+\paragraph*{Persons primarily responsible for carrying out the proposed
   activities:}
 
-\begin{itemize} % in alphabetical order
+\begin{compactitem} % in alphabetical order
 
 \item {\bf Chantal Keller} is Associate Professor at Université
   Paris-Saclay since 2015. She obtained her PhD (2013) at École
@@ -112,7 +107,7 @@ of Coq and Isabelle.
   automatic theorem provers. She has strong expertise in interactive
   (conception and use) and automatic (mainly use) theorem provers, and
   interoperability between them. She is one of the two coordinators of
-  WP4.
+  \WPref{atpetc}.
 
 \item {\bf Burkhart Wolff} is full professor at Université
   Paris-Saclay since 2008. He has a strong background in interactive
@@ -129,9 +124,9 @@ of Coq and Isabelle.
   role of a mediator between the technical needs for (efficient)
   alignments on the one hand and end-users of the Logipedia libraries
   needing advanced search mechanisms in order to access its mathematical
-  knowledge. He is one of the two coordinators of WP7.
+  knowledge. He is one of the two coordinators of \WPref{structuring}.
 
-\end{itemize}
+\end{compactitem}
 
 \end{sitedescription}
 

@@ -2,47 +2,108 @@
 
 \ednote{a description of the legal entity}
 
-%\logo{YYY}
+\logo{RV}
 
-TODO
+Runtime Verification Inc. is a startup company aimed at using runtime verification-based
+techniques to improve the safety, reliability, and correctness of software systems.
 
-\paragraph{Main tasks:}
+Runtime Verification SRL is a research and development branch of RV Inc. based
+in Bucharest Romania.  Its main activities include the design and development of
+the symbolic execution and program verification backend of the K framework,
+as well as offering consultance with modeling and proving properties about
+consensus protocols (in the presence of Byzantine faults),
+with a focus of those used in Blockchains.
+
+\paragraph*{Main tasks:}
 
 \ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
+
+RV will lead the task of instrumenting the K Prover (WP6) to emit enough information
+about the proving process, in order to allow extracting matching logic (ML) proofs from
+program verification problems.  Additionally, RV will assist the UAIC team with
+translating Kore (the language of ML) into Dedukti.
+These will be achieved through the following activities:
 
 \ednote{specify the main tasks and reference the respective work packages}
 
 \begin{compactitem}
-\item
+\item Generating proof traces for the K Prover
+\item Translating Kore into Dedukti 
 \end{compactitem}
 
-\paragraph{Publications, products or services:}
+\paragraph*{Publications, products or services:}
 
 \ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
 
 \begin{compactitem}
-\item 
+\item K Framework Tools \url{https://github.com/kframework/k} is an open source
+ rewrite-based executable semantic framework in which programming languages,
+ type systems and formal analysis tools can be defined using configurations,
+ computations and rules. Originally designed and prototyped by Grigore Roșu and 
+ Traian Șerbănuță, it is currently maintained by a team spread between teh US and 
+ Romanian branches of RV. 
+\item Kore \url{https://github.com/kframework/kore} provides a language for
+expressing matching logic, as well as a rewrting-based engine for perfoming 
+matching-logic deduction.  Kore currently serves as a symbolic execution and 
+program verification backend for the K framework. Most of the team developing Kore
+is part of RV Romania.
+\item Kasampalis, T., Guth, D., Moore, B., Șerbănuță, T. F., Zhang, Y., Filaretti, D., ... \& Roşu, G. (2019, October). IELE: A rigorously designed language and tool ecosystem for the blockchain. In International Symposium on Formal Methods (pp. 593-610). Springer, Cham.
+\item Rosu, G., Serbanuta, T. F., Moore, B., Mereuta, R., Ciobaca, S., \& Stefanescu, A. (2019). All-Path Reachability Logic. Logical Methods in Computer Science, 15.
+\item Chen, X., \& Roşu, G. (2019, June). Matching $\mu$-Logic. In 2019 34th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS) (pp. 1-13). IEEE.
 \end{compactitem}
 
-\paragraph{Previous projects or activities:}
+%\paragraph*{Previous projects or activities:}
 
-\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
+%\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
 
-\begin{compactitem}
-\item 
-\end{compactitem}
+%\begin{compactitem}
+%\item 
+%\end{compactitem}
 
-\paragraph{Infrastructures or technical equipments:}
+\paragraph*{Infrastructures or technical equipments:}
 
 \ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
+RV Romania already possesses the infrastructure required for carrying out the tasks proposed.
 
-\paragraph{Persons primarily responsible for carrying out the proposed activities:}
+\paragraph*{Persons primarily responsible for carrying out the proposed activities:}
 
-\begin{itemize} % in alphabetical order
+\begin{compactitem} % in alphabetical order
 
-\item{\bf ZZZ}
+\item{\bf Andrei Burdușa} is a software engineer at RV Romania.
+His research interests lay in functional programming, type theory and logic.
+His Bachelor's degree project at the University of Bucharest was focused on Haskell.
+He is currently pursuing two Master’s degrees: one in Security and Applied Logic,
+and another one in Analytic Philosophy, both from the University of Bucharest.
 
-\end{itemize}
+\item{\bf Ana Pantilie} is a software engineer at RV Romania, involved with the
+research and development of the symbolic execution and program verification
+backend of the K framework.
+She enjoys learning about functional programming languages and formal methods.
+In addition to her duties at RV, Ana is pursuing a Master's degree in Software
+Engineering at the University of Bucharest.
+She completed her Bachelor's degree project in Clojure, developing a music
+composition application.
+
+\item{\bf Grigore Roșu} is a full professor of computer science at the
+University of Illinois and the founder of Runtime Verification, Inc., and of 
+Runtime Verification Romania. He is interested in programming languages,
+formal methods and software engineering, and especially in how to combine
+these to increase the safety, security and dependability of computing systems.
+He was offered the NSF CAREER award, the UIUC outstanding junior award,
+the Dean's award for excellence in research, and several best paper awards.
+Grigore got his Ph.D. from the University of California at San Diego.
+
+\item{\bf Traian Florin Șerbănuță} is an associate professor of computer science
+at the University of Bucharest and a research consultant for RV, where he serves
+as the K Technical Lead.
+Traian completed his Ph.D. at UIUC, working with Grigore Rosu
+on the first prototype of K, which serves as a basis for the semantics-based execution
+and semantics-based program verification tools developed by RV.
+Additionally, Traian designed a maximal causal model for sequential consistency
+which serves as a basis for runtime verification of concurrent programs in tools
+such as RV-Predict.
+
+\end{compactitem}
 
 \end{sitedescription}
 

@@ -1,43 +1,64 @@
 \begin{sitedescription}{Bol}
 
-\paragraph{Organization:}
-Founded in 1088, the Alma Mater Studiorum – Università di Bologna (UNIBO) is known as the oldest University of the western world. Nowadays, UNIBO still remains one of the most important institutions of higher education across Europe and the second largest university in Italy. UNIBO is organized in a multicampus structure with 5 operating sites and, since 1998, also a permanent headquarters in Buenos Aires: 11 Schools, 33 Departments, 12 Research and Innovation Centers and more than 84.000 students.
+\logo{Bologna}
 
-The activity of the University of Bologna are conducted within the Department of Computer Science and Engineering (DISI), which is one of the top Computer Science and Engineering departments in Italy, offering a broad spectrum of expertise ranging from theoretical computer science to software, hardware and application design and development.
+Founded in 1088, the Alma Mater Studiorum – Università di Bologna (UNIBO) is known as the oldest University of the western world. Nowadays, UNIBO still remains one of the most important institutions of higher education across Europe and the second largest university in Italy. UNIBO is organized in a multicampus structure with 5 operating sites and, since 1998, also a permanent headquarters in Buenos Aires: 11 Schools, 33 Departments, 12 Research and Innovation Centers and more than 84.000 students. The Alma Mater has already been partner or coordinator of more than 244 EU projects in the Horizon 2020 program, for a grand total of more than 100,000,000 euros.
+
+The activity of the University of Bologna are conducted within the Department of Computer Science and Engineering (DISI), which is one of the top Computer Science and Engineering departments in Italy, offering a broad spectrum of expertise ranging from theoretical computer science to software, hardware and application design and development. DISI is currently member or coordinator of 12 on-going EU projects.
 
 The research group that will be in charge of Logipedia at UNIBO is leaded by Dr. Claudio Sacerdoti Coen. The group is active in the areas of formal methods, interactive theorem proving and mathematical knowledge management, which are all relevant to the project.
 
-\paragraph{Main tasks:}
+\paragraph*{Main tasks:}
 
 \begin{compactitem}
-\item\ednote{specify the main tasks and reference the respective work packages} 
+\item \WPref{instrumentation}, task \taskref{instrumentation}{matita}: Integrate the Matita translator in Matita itself (Asperti, Post-Doc)
+\item \WPref{instrumentation}, task \taskref{instrumentation}{coq}: Instrument Coq (Sacerdoti Coen, Post-Doc)
+\item \WPref{structuring}, task \taskref{structuring}{strontorepml}: Ontological Representation of Formal Libraries (Asperti, Sacerdoti Coen, Post-Doc)
+\item \WPref{alignment}, task \taskref{alignment}{alignproofs}: Alignment-Based  Proof-Rewriting (Sacerdoti Coen, Post-Doc)
 \end{compactitem}
 
-
-\paragraph{Relevant previous experience:}
-
-Under the former supervision of Prof. Andrea Asperti, the research group coorinated the FET-Open EU Project MoWGLI (Math on the Web: Get it by Logic and Interfaces). The project was focused on making the library of the Coq prover easily accessible outside the system and on the Web. MoWGLI explored independent verification, indexing, search and retrieval and transformation of proofs coming from Coq. All the previous services were implemented as web services using W3C technologies. Logipedia is more ambitious in aiming at providing the same services but for every system at once.
-
-The code implemented in MoWGLI became later the core of the interactive theorem prover Matita, which has now been developed in Bologna for about 15 years and that constituted the first important testbench for the technology at the base of Logipedia. Matita was also central to the FET Open EU Project CerCo (Certified Complexity), coordinated by Dr. Sacerdoti Coen and focused on formal proofs applied to formal methods in the domain of real time systems and complexity preserving compilation.
-
-An on-going collaboration with INRIA is focused on the development of ELPI, a very high level higher order constraint logic programming language that is an excellent domain specific language for writing interactive provers and programmes that explicitly manipulate formulae and proofs. ELPI will be integrated with Dedukti in Logipedia to implement proof transformations in some work packages.
-
-\paragraph{Specific expertise:}
+\paragraph*{Publications, products or services:}
 
 \begin{compactitem}
-\item Mathematical Knowledge Management
-\item Implementation of Interactive Theorem Provers
-\item Developers of Matita
-\item Co-developers of the ELPI language
+\item F. Guidi, C. Sacerdoti Coen, E. Tassi:
+Implementing type theory in higher order constraint logic programming. Mathematical Structures in Computer Science 29(8): 1125-1150 (2019)
+\item A. Condoluci, M. Kohlhase, D. Müller, F. Rabe, C. Sacerdoti Coen, M. Wenzel: Relational Data Across Mathematical Libraries. CICM 2019: 61-76
+\item C. Dunchev, F. Guidi, C. Sacerdoti Coen, E. Tassi:
+ELPI: Fast, Embeddable, $\lambda$Prolog Interpreter. LPAR 2015: 460-468
+\item A. Asperti, C. Sacerdoti Coen, E. Tassi, S. Zacchiroli:
+User Interaction with the Matita Proof Assistant. J. Autom. Reasoning 39(2): 109-139 (2007)
+\item A. Asperti, F. Guidi, C. Sacerdoti Coen, E. Tassi, S. Zacchiroli:
+A Content Based Mathematical Search Engine: Whelp. TYPES 2004: 17-32
 \end{compactitem}
 
-\paragraph{Staff members undertaking the work:}~
+\paragraph*{Previous projects or activities:}
 
-\begin{itemize}
-\item \textbf{Claudio Sacerdoti Coen Leader} is associate professor of computer science since 2015. He published more than 15 journal papers and 50 conference papers on Mathematical Knowledge Management, Interactive Theorem Proving and the theory of lambda-calculus. The most recent project he coordinated was the EU FET Open Project CerCo (Certified Complexity). He was also work-package leader for the EU FET Open Project MoWGLI (Math on the Web, Get it by Logic and Interfaces).
+Members of the group have expertise in the fields of Mathematical Knowledge Management and Interactive Theorem Proving, notably designing and implementing of theorem provers and building (web-)services for mathematical libraries.
+They have been part of several national and international projects, including
 
-\item \textbf{Andrea Asperti} is full professor of computer science at the University of Bologna. Before becoming an expert in interactive theorem proving he worked on category theory, lambda-calculus and linear logic. His current research interests also cover machine learning.
-\end{itemize}
+\begin{compactitem}
+\item FET-Open EU Project MoWGLI (Math on the Web: Get it by Logic and Interfaces). The project was focused on making the library of the Coq prover easily accessible outside the system and on the Web. MoWGLI explored independent verification, indexing, search and retrieval and transformation of proofs coming from Coq. All the previous services were implemented as web services using W3C technologies. Logipedia is more ambitious in aiming at providing the same services but for every system at once. They by-product of MoWGLI was the creation of the interactive theorem prover Matita.
+
+\item FET-Open EU Project CerCo (Certified Complexity). The project focused on formal proofs applied to formal methods in the domain of real time systems and complexity preserving compilation. The main technical tool employed was Matita.
+
+\item IST-2001-37057 MKMNET, the COST Action EUTypes and a number of previous succesfull European projects on Mathematical Knowledge Management and on Type Theory.
+\end{compactitem}
+
+\paragraph*{Infrastructures or technical equipments:}
+
+\begin{compactitem}
+\item The ELPI Higher Order Constraint Logic Programming language, co-developed with INRIA, a general purpose programming language that doubles as a domain specific language for the manipulation of logical and mathematical expressions and for the implementation of proof transformations.
+\item The interactive theorem prover Matita
+\item Web services developed in the MoWGLI EU project to provide access on the Web to Coq proofs, with indexing and searching capabilities.
+\end{compactitem}
+
+\paragraph*{Persons primarily responsible for carrying out the proposed activities:}
+
+\begin{compactitem}
+\item \textbf{Claudio Sacerdoti Coen Leader} is associate professor of computer science since 2015. He published more than 15 journal papers and 50 conference papers on Mathematical Knowledge Management, Interactive Theorem Proving and the theory of lambda-calculus. The most recent project he coordinated was the EU FET Open Project CerCo (Certified Complexity). He was also work-package leader for the EU FET Open Project MoWGLI (Math on the Web, Get it by Logic and Interfaces). He is one of the main developers of Matita and co-developer of the ELPI language.
+
+\item \textbf{Andrea Asperti} is full professor of computer science at the University of Bologna, one of the founders of the Mathematical Knowledge Management discipline and the previous coordinator of the HELM project that lead to the development of Matita. Before becoming an expert in interactive theorem proving he worked on category theory, lambda-calculus and linear logic. His current research interests also cover machine learning.
+\end{compactitem}
 
 \end{sitedescription}
 %%% Local Variables: 
