@@ -19,6 +19,7 @@
 \newif\if@svninfo\@svninfofalse
 \newif\if@gitinfo\@gitinfofalse
 \newif\if@numericcites\@numericcitesfalse
+\newif\if@notecites\@notecitesfalse
 \newif\if@longtasklabels\@longtasklabelsfalse
 \def\proposal@class{article}
 \DeclareOption{wpsubsection}{\@wpsubsectiontrue}
@@ -26,6 +27,7 @@
 \DeclareOption{grantagreement}{\grantagreementtrue}
 \DeclareOption{gitinfo}{\@gitinfotrue}
 \DeclareOption{numericcites}{\@numericcitestrue}
+\DeclareOption{notecites}{\@notecitestrue}
 \DeclareOption{svninfo}{\@svninfotrue}
 \DeclareOption{public}{\publictrue}
 \DeclareOption{noworkareas}{\work@areasfalse\PassOptionsToClass{\CurrentOption}{pdata}}
