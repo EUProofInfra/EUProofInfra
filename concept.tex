@@ -199,7 +199,7 @@ provers. This can include external solvers such as SMT solvers, and
 Prolog. Finally, ProB is an animator and model checker: it helps users
 to gain confidence in their specifications, and it can be used as a
 disprover to discover counter-examples to proof obligations.
-  
+
 \bigskip
 
 Despite the differences between these three classes of proof systems,
@@ -1063,7 +1063,7 @@ Flyspeck & & 14,185 & 34 & $\times 67$\\\hline
 \end{tabular}
 
 \medskip
-      
+
 Examples of big proof libraries
 \end{center}
 
@@ -1128,10 +1128,18 @@ Is What You Get), should provide two main features:
   interactions.
 \end{compactitem}
 
+The structure of a formal proof is an acyclic oriented graph.
+The interface should provide several types of presentations of the graph:
+deductive, a stack of scopes (assumptions and a statement to be justified),
+sequent tree style, and so on.
+
 The digital nature of formal proofs enables specific view features
 to understand its structure: eagle-eye view, folding/unfolding of
 scopes, highlighting the use of variables (on hover), showing/hiding
 context, and so on.
+
+Mathematical symbols must be drawn with high-quality typography equivalent
+to current standards (Latex, Mathjax, ...)
 
 Interactions are the point-and-click commands to develop the structure
 of the proof. They consist in applying theorems (or axioms or lemmas)
@@ -1139,13 +1147,16 @@ to statements and rewriting rules to a selected element of a
 statement; this is done in deductive or abductive mode (resp. forward
 or backward).
 
-The research of proof must be automated at some point in order to ease
-and speed up the process and to comply with the level of required detail
-in education.
+One of the difficulties is to provide a way for the students to discover
+and integrate hundreds of lemmas and rewriting rules necessary to solve
+exercices. The solution consists of a mixture of step-wise tutorials and
+training exercises, plus an adapted ergonomic design of the application menus.
+In this regard, theorems and rewriting rules should be presented and searched using
+technology developed in \WPref{dissemination}.
 
-
-
-
+The research of proof must be automated at some point in order to ease and
+speed up the process and to comply with the level of required detail in education;
+the output of \WPref{access} will be used for this task.
 
 \vspace*{2cm}{\color{red} to be moved somewhere else:}
 
@@ -1155,7 +1166,7 @@ We will use several indicators to measure the success of the platform:
 \item The number of references to Logipedia proofs in scientific
   publications.
 \item The number of file downloads from the server.
-\item The number of accesses on the web interface. 
+\item The number of accesses on the web interface.
 \item The number of uses of the teaching interface.
 \item The number of teachers and courses using the teaching interface.
 \end{compactitem}
@@ -1629,7 +1640,7 @@ of the way it has been defined.
 
 Concept alignment can happen at different levels:
 \begin{itemize}
-\item Alignment of logical foundations. 
+\item Alignment of logical foundations.
 \item Alignment of theorem proving objects such as types,
   constants, and theorems.
 \item Alignment of proofs and proof techniques such as tactics and
