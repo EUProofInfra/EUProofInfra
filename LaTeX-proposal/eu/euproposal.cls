@@ -74,7 +74,7 @@
 \newpage
 \fi% ifgrantagreement
 \setcounter{tocdepth}{2}\setcounter{part}{2}}
-{\newpage\printbibliography[heading=warnpubs]%
+{\if@notecites\else\newpage\printbibliography[heading=warnpubs]\fi%
 \if@split
 \newwrite\@@SPLIT%
 \immediate\openout\@@SPLIT=SPLIT.at%
