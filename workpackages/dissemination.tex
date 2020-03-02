@@ -59,7 +59,7 @@
 
 %     We will organize schools targeted to the different Logipedia users:
     \begin{itemize}
-    \item [\textbf{Master and PhD students:}]
+    \item [\textbf{Master and PhD students}]
       We will support the planning and running of schools
       on various computer proof assistants.
       We are also planning to run a school dedicated to the topic of Logipedia, on the translation of proofs between different systems.
@@ -68,8 +68,8 @@
       Both activities form an
       opportunity to improve the gender balance in our community by
       attracting female students.
-    \item [\textbf{Engineers and certifiers:}] training on formal proofs tools.
-    \item [\textbf{Teachers:}]
+    \item [\textbf{Engineers and certifiers}] training on formal proofs tools.
+    \item [\textbf{Teachers}]
        We will set up a forum for exchange of tipps and tricks for the use of computer proof assistants and formal proofs in teaching such classes.
        Particular emphasis will be on the sharing of teaching materials, which we will encourage to make available under free licenses.
     \end{itemize}
@@ -161,7 +161,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=certif-club,
       title=Expanding the use of Logipedia within certification authorities,
-      lead=Irt,IrtRM=2]
+      lead=Imt,ImtRM=2]
     We will propose to certification authorities to use the tools
     developed for Logipedia for checking some formal proofs submitted
     to them. Preliminary contact with ANSSI. Extension of other
@@ -213,7 +213,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=publishers-club,
       title=Expanding the use of Logipedia in publishing,
-      lead=Zib,ZibRM=12]
+      lead=Zib,ZibRM=2]
     We will create and animate a club of publishers. We will invite
     people and organization working in the publication of research
     works to join this club: publication archives (arXiv, CCSD-HAL,
@@ -229,7 +229,7 @@
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=zib,
-      title=Expanding the use of Logipedia in publishing,
+      title=Linking scientific publications to Logipedia,
       lead=Zib,ZibRM=12]
     We will build a service for Logipedia which provides an overview
     about the development in logic and an intuitive access to the
@@ -237,18 +237,18 @@
     software (theorem provers) - applications based on logic tools
     (e.g. the metro in Paris, other SAT problems)
 
-    The objects and the relations between the objects could be
-    realized via a graph.  We could do this in the following way:
+    The objects and the relations between the objects will be
+    realized via a graph. We will do this in the following way:
     \begin{compactitem}
-    \item Defining the objects of each class (we could start from the
+    \item Defining the objects of each class (we will start from the
       theorem provers, apply the publication-based approach for the
       software and search for references to axioms, theories, and
-      applications)
+      applications).
     \item Definition of a special ontology to describe linking and
-      dependencies between the objects (metadata)
-    \item add these metadata to all objects
-    \item graph visualization of the network (lattice) and development
-      of a search engine
+      dependencies between the objects (metadata).
+    \item Add these metadata to all objects
+    \item Graph visualization of the network (lattice) and development
+      of a search engine.
     \end{compactitem}
     This gives the user a comprehensive entry point into an emerging
     topic.
@@ -258,46 +258,12 @@
   \begin{task}[id=edukera,
       title=Web interface for doing proofs at school,
       lead=Edu,EduRM=12]
-      Current formal proof systems require to learn a specific formal
-      language and a command-line interface to compile and execute the
-      language.  This level of technicity is not compliant with mass
-      adoption by teachers or students outside computer science. For
-      educational purposes, it is therefore mandatory to develop an
-      intuitive and easy-to-handle user-interface for the logipedia
-      formal proof system. This interface, based on a WYSIWYG design
-      (What You See Is What You Get), will provide two main features:
-      \begin{compactitem}
-      \item the structured display of the proof in a high (latex-like) quality
-      \item the possibility to build the proof with simple
-        point-and-click interactions
-      \end{compactitem}
-
-      The digital nature of the formal proof enables specific view features to
-      understand its structure: eagle-eye view, folding/unfolding of scopes,
-      highlighting the use of variables (on hover), showing/hiding context,
-      and so on.
-
-      Interactions are the point-and-click commands to develop the structure
-      of the proof. They consist in applying theorems (or axioms or lemmas)
-      to statements and rewriting rules to a selected element of a statement;
-      this is done in deductive or abductive mode (resp. forward or backward).
-
-      Theorems and rewrite rules should be presented and searched using
-      technology developed in \WPref{dissemination}.
-
-      The research of proof must be automated at some point in order to ease
-      and speed up the process and to comply with the level of required detail
-      in education; the output of \WPref{atpetc} will be used for this task.
-
       The development tasks are listed below:
       \begin{compactitem}
       \item graphical web component to display a Logipedia proof
       \item point-and-click interaction engine on top of Logipedia
       \item interactive proof interface application
       \end{compactitem}
-
-      It will be possible to use the graphical proof component throughout
-      the Logipedia website.
   \end{task}
 
 \end{tasklist}
