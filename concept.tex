@@ -1530,14 +1530,26 @@ Simple type theory \cite{Church40}, Martin-L\"of's type theory
 \cite{CoquandHuet88}, etc.  In order to combine the power of different
 proof assistants and their respective communities, it is critically
 important that these different logical foundations can be related to
-each other in ways that ensure their interoperability.  Even when one
-has successfully aligned these different logical foundations, one must
-also align the many different mathematical concepts and theorems that
-are in the libraries produced by the various proof assistants. Thus,
-successful interoperability of both proof assistants and formalized
-mathematical libraries starts with identifying the correspondences
-between the concepts underpinning these formalizations, i.e., their
-alignment.
+each other in ways that ensure their interoperability. However, using
+a common logical foundations is just a starting step. Even when one
+has successfully related these different logical foundations, one must
+also align the many different mathematical concepts (e.g., sets,
+numbers, functions) and theorems that are in the libraries produced by
+the various proof assistants. Thus, successful interoperability of
+both proof assistants and formalized mathematical libraries starts
+with identifying the correspondences between the concepts underpinning
+these formalizations, i.e., their alignment. Even when the various
+proof assistants are all exporting their proofs in Dedukti, the proper
+alignment of the theories underpinning those systems is an essential
+task: for example, simply combining all the different theories without
+adaptations can create an inconsistent and, therefore, useless
+combination.
+%
+Alignments can also be useful for joining formalizations done within a
+single prover, since different formal libraries developed within a
+single system can introduce different definitions of the same
+mathematical concept (each more suitable to the library where it is
+introduced).
 
 In the simplest case, an alignment is a pair of symbol identifiers
 from two different libraries such that both symbols are ``the same
@@ -1560,18 +1572,6 @@ The source of alignments can vary and include manual collections
 \cite{MRLR:alignments:17} and automatic, machine-learned collections
 \cite{GAUTHIER201989}.
 
-Even when the various different proof assistants are all exporting their
-proofs in Dedukti, the proper alignment of the theories underpinning
-those systems is an essential task: for example, simply combining
-all the different theories without adaptations can create an
-inconsistent and, therefore, useless combination.
-%
-Alignments can also be useful for joining formalizations done within a
-single prover, since different formal libraries developed within a
-single system can introduce different definitions of the same
-mathematical concept (each more suitable to the library where it is
-introduced).
-
 To explain the need for concept alignment, we can compare this aspect
 of the Logipedia project to the virtualization of computer operating
 systems. In such virtualized systems, it is not sufficient for the
@@ -1583,12 +1583,15 @@ different definitions of these concepts.  For virtualization to
 succeed, significant work is required to build bridges that formally
 connect the different versions of these concepts.
 
-Our goals are first to understand the concept of
-alignment, then to identify alignments across the various proof
-assistants, and finally to build tools to construct these alignments. We
-will develop standards, tools, and techniques that will allow concepts
-to be aligned so that formal proof developments from one proof
-assistant can be meaningfully used in other systems.
+Our goals are first to understand the concept of alignment, then to
+identify alignments across the various proof assistants, and finally
+to build tools to construct and use these alignments. We will develop
+standards, tools, and techniques that will allow concepts to be
+aligned so that formal proof developments from one proof assistant can
+be meaningfully used in other systems. For example, fundamental
+properties of natural numbers proved for one definition of natural
+numbers, must be transported to any isomorphic structure, regardless
+of the way it has been defined.
 
 Concept alignment can happen at different levels:
 \begin{itemize}
@@ -1607,7 +1610,6 @@ logics and theorem proving objects (the first two of these three levels).
 %\newcommand{\parag}[1]{\subsubsection*{#1}}
 
 \subsubsection*{Aligning logical foundations}
-
 Just like Euclidean and non-Euclidean geometries are not completely
 independent theories but differ just from a few axioms, the various
 type theories or set theories implemented in the proof systems have
@@ -1652,46 +1654,40 @@ in the context of second-order arithmetic. Again, the presence of
 proof terms (expressed using Dedukti) adds a new dimension to a
 well-established topic.
 
-One consequence of this work is that it can make features of one
-system available in other systems. For example, Minlog implements the
-refined Dragalin-Friedman $A$-translation, so that classical proofs in
-a certain class can be constructivised, which means that programs can
-be extracted from such transformed proofs.  We would like to make this
-feature of Minlog available to other proof assistants through Dedukti.
-In order to carry out this plan, we will study bidirectional encodings
-between a subsystem of Dedukti and Minlog.
-
 \paragraph*{Aligning theorem proving objects (case studies).}
 Since sets, functions, relations and numbers are ubiquitous in all
 formalized mathematics, we will pay special attention to their
 alignment. Additionally, geometry is a very interesting case study,
 since it is traditionally introduced in many quite different ways
 (both analytically, using various number fields, and synthetically,
-using different axiom systems), and we shall pay special attention
-to aligning different existing formalizations of geometry.
+using different axiom systems), and we shall pay special attention to
+aligning different existing formalizations of geometry.
 
 There are several ways to define numbers. For the natural numbers, one
 can, for example, choose a definition based on Peano’s axioms which
 relies on a unary representation of numbers which is suitable for
-proving theorems. But for computing, a definition based on a binary
-representation is better. For real numbers and functions, their
-definitions often differ even between different libraries of the same
-proof assistant.  Real numbers, for example, can be defined using
-Bishop style modulated Cauchy sequences, regular Cauchy sequences,
-Dedekind cuts, and stream representations using co-recursion.
+proving theorems, but for computing, a definition based on a binary
+representation is better, and these different definitions can be
+aligned \cite{magaud03DataRepresentation}. For real numbers and
+functions, their definitions often differ even between different
+libraries of the same proof assistant.  Real numbers, for example, can
+be defined using Bishop style modulated Cauchy sequences, regular
+Cauchy sequences, Dedekind cuts, and stream representations using
+co-recursion.
+
 Similarly, geometry can be defined synthetically using Euclid’s,
-Hilbert’s, or Tarski’s axioms or analytically using coordinate systems
-and algebra.  Therefore, our first step will be to import into Dedukti
-the equivalence theorems between these different axiomatizations. In
-practice we want to use a theorem $\Gamma \vdash_S T$ expressed in
-system $S$ based on some axioms $\Gamma$ in a system $S’$ based on
-different axioms $\Gamma'$ and different definitions.
+Hilbert’s, or Tarski’s axioms (as in GeoCoq library) or analytically
+using coordinate systems and algebra. Therefore, our first step will
+be to import into Dedukti the equivalence theorems between these
+different axiomatizations. In practice we want to use a theorem
+$\Gamma \vdash_S T$ expressed in system $S$ based on some axioms
+$\Gamma$ in a system $S’$ based on different axioms $\Gamma'$ and
+different definitions.
 
 \paragraph*{Automated theory alignment.}
 Although alignments can be manually discovered and described, the
 sheer size of existing formal libraries forces us to develop automated
 support for finding and organizing alignments.
-
 
 We propose a workflow based on database and semantic web
 methodologies. Specifically, we aim to build an automatic alignment

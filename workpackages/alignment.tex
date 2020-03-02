@@ -1,4 +1,4 @@
-\begin{workpackage}[id=alignment,wphases=0-48,type=RTD,
+\begin{workpackage}[id=alignment,wphases=6-48,type=RTD,
   short=Concept Alignment,% for Figure 5.
   title=Concept Alignment,
   lead=Lee,
@@ -68,7 +68,7 @@
     task, automated methods for detecting and organizing alignments
     will be developed on top of an ontology framework that defines
     mappings between base concepts belonging to different
-    theories. Unsupervised learning methods to directly find
+    theories. Unsupervised machine learning methods to directly find
     correspondences between statements and their constituent constants
     and types will be developed and applied.
   \end{task}
@@ -81,7 +81,7 @@
   
   \begin{task}[id=alignproofs,title=Alignment-Based Proof-Rewriting,lead=Bol,BolRM=13,InrRM=6]
     This task will develop methods to automaticaly rewrite proofs and
-    statements.  A mix of ELPI (developed by a join Ubo-Inr team) and
+    statements by a mix of ELPI (developed by a join Ubo-Inr team) and
     Dedukti rewrite rules. Statement rewriting will find direct
     application to alignment based search and browsing as well
     (developed in \localtaskref{alignsearch}).
@@ -89,52 +89,30 @@
 \end{tasklist}
 
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=3,miles=startup,id=prooftheoretical,dissem=PU,nature=DEM,lead=Lee]
+  \begin{wpdeliv}[due=24,miles=startup,id=prooftheoretical,dissem=PU,nature=DEM,lead=Lee]
     {Proof-theoretical results relating different logical foundations}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=translatingstatements,dissem=PU,nature=DEM,lead=Lee]
+  \begin{wpdeliv}[due=42,miles=startup,id=translatingstatements,dissem=PU,nature=DEM,lead=Lee]
     {Efficient algorithms for translating statements from one logical system to another}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=deduktitominilog,dissem=PU,nature=DEM,lead=Lmu]
-    {Translator from a subsystem of Dedukti to Minlog. }
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligningnumbers,dissem=PU,nature=DEM,lead=Str]
+  \begin{wpdeliv}[due=24,miles=startup,id=aligningnumbers,dissem=PU,nature=DEM,lead=Str]
     {Manually created basic alignments for some of the examples of the
       study: $\mathbb{N}$, $\mathbb{R}$, $\mathbb{C}$, $\mathbb{R}
       \rightarrow \mathbb{R}$, between Coq and Isabelle and between
       Coq and MinlogTranslator from a subsystem of Dedukti to
       Minlog.}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligningnumbersminilog,dissem=PU,nature=DEM,lead=Lmu]
-    {Manually created alignments between the Bishop style real numbers
-      and functions and the corresponding corecursive approaches in
-      Minlog.}
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligningconstructiveanalysisminilog,dissem=PU,nature=DEM,lead=Lmu]
-    {Manually created alignments between constructive analysis in Coq
-      and Minlog, and also between the Bishop style one and the
-      coinductive approach in Minlog.}
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligninggeometries,dissem=PU,nature=DEM,lead=Bel]
+  \begin{wpdeliv}[due=36,miles=startup,id=aligninggeometries,dissem=PU,nature=DEM,lead=Bel]
     {A manually created alignments between Tarski's geometry defined
       in Coq, Tarski's geometry defined in Isabelle, Analytic Geometry
       defined in Coq, Analytic Geometry in Isabelle.}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligninggeometrieshighschool,dissem=PU,nature=DEM,lead=Str]
-    {Alignment of definitions in geometry, in order to be able to
-      perform highschool level exercises about the geometry of the
-      triangle in 2D.}
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=3,miles=startup,id=aligningpoincare,dissem=PU,nature=DEM,lead=Bel]
-    {Poincar\'e disk model ported to Coq}
-  \end{wpdeliv}
-
   \begin{wpdeliv}[due=36,miles=???,id=alignsearch,dissem=PU,nature=DEM,lead=Fau]
-    {This deliverable reports on the alignment-based search service.}
+    {Implementation of the alignment-based search service.}
   \end{wpdeliv}
 	
   \begin{wpdeliv}[due=36,miles=???,id=alignproofrewr,dissem=PU,nature=DEM,lead=Bol]
-    {This deliverable reports on the proof-rewriting service.}
+    {Implementation of the alignment based proof-rewriting service.}
   \end{wpdeliv}
 
 \end{wpdelivs}
