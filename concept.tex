@@ -182,9 +182,9 @@ Isabelle logical framework \cite{paulson700}. It sits in
 between type-theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
 
-\paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin, ProB).}
+\paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin).}
 
-Atelier B, Rodin and ProB are platforms or tools to develop models written
+Atelier B and Rodin are platforms or tools to develop models written
 using the B method, a version of set theory expressed in predicate
 logic.  A model in these systems expresses a state machine constrained
 by invariant properties. Verification of the correctness of the model requires
@@ -194,11 +194,7 @@ algorithms, and access control policies have been formalized
 respectively in the EventB and (classical) B methods.  The development process for
 both versions of the B method is based on formal proof: proof obligations are
 automatically generated and must be proven by automatic or interactive
-provers. This can include external solvers such as SMT solvers, and
-(in the case of ProB) constraint solvers such as Sicstus
-Prolog. Finally, ProB is an animator and model checker: it helps users
-to gain confidence in their specifications, and it can be used as a
-disprover to discover counter-examples to proof obligations.
+provers. This can include external solvers such as SMT solvers.
 
 \bigskip
 
@@ -1240,7 +1236,7 @@ So far, we have considered systems that were already at LIL 1, that
 is, systems that implement a theory that we know how to express in
 Dedukti.  Other relevant systems are still at level 0, that is, we do
 not yet know how to express them. Part of our project is to work on
-their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, Smart, and
+their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
 Matching logic, and Homotopy type theory, in order to understand how
 to express their theory in Dedukti.
 
@@ -1253,10 +1249,10 @@ proofs in these areas.  The objective is to bring them to
 LIL $2$ or higher in order to prepare the grounds for their integration
 into Logipedia in the longer term.
 
-% Smart is a proof language developed by the company ProveNRun. It is
+% ProvenTools is a proof language developed by the company ProveNRun. It is
 % based on a classical predicate logic, extended with rank-1
 % polymorphism, algebraic datatypes, recursive definitions and inductive
-% predicates. ProvenTools will turn models implemented in Smart to proof
+% predicates. ProvenTools will turn models implemented in ProvenTools to proof
 % obligations which can be proved in the system using a mix of
 % interactive and automated proving. The resulting proofs are reviewable
 % objects, akin to proof traces built of the various atomic proof rules
@@ -1389,7 +1385,7 @@ programs from proofs in classical logic. Minlog supports function definitions by
 computation and rewrite rules and identifies terms with a common reduct. Its
 main applications are in constructive analysis~\cite{miyamoto:real}: it can extract
 computational content from a proof of a mathematical statement in an extension
-of Gödel's system $T$ and generate a formal proof that the extracted term
+of G\"odel's system $T$ and generate a formal proof that the extracted term
 realizes the statement, viewed as a specification.
 
 Real numbers are best represented as streams of (signed) digits, and handling
@@ -1417,26 +1413,26 @@ libraries available in Logipedia.
 {\color{red} To do ?}
 
 
-\paragraph*{Smart.}
+\paragraph*{ProvenTools.}
 ProvenTools is an interactive environment for designing programs and proofs that
 has been developed at Prove \& Run. Programs and
-specifications are written in \textsf{Smart}, a functional language that
+specifications are written in ProvenTools, a functional language that
 emphasizes a separation between control flow and data flow and brings a uniform
 monadic style to handling exceptions and different return cases.
-% \textsf{Smart} is based on a classical first-order logic with rank-1
+% ProvenTools is based on a classical first-order logic with rank-1
 % polymorphism, algebraic data types, recursive definitions, and inductive
 % predicates.
-% Proof obligations generated from \textsf{Smart} models are presented as virtual
+% Proof obligations generated from ProvenTools models are presented as virtual
 % execution paths and can be proved using a mix of interactive and automated
 % proving.
 ProvenTools can also be used to generate efficient C code from a subset
-of the \textsf{Smart} language, and the tool performs static analysis to ensure
+of the ProvenTools language, and the tool performs static analysis to ensure
 that the extraction is safe and correct.
 
 ProvenTools has been used to design, develop, and formally verify
 ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
 been certified at the highest Common Criteria level (EAL7). The proofs represent
-about 400kloc of \textsf{Smart}, covering all process management including page
+about 400kloc of ProvenTools, covering all process management including page
 tables, shared memory, process creation, code loading, etc. ProvenTools has also
 been used to develop user-side applications, in particular in the case of filter
 applications~\cite{bolignano:security}. The proofs ensure that the data
@@ -1445,15 +1441,15 @@ attacks another one by producing ill-formed messages.
 
 The logic underlying ProvenTools is similar to that of other program
 verification environments such as Why3. The main challenge in translating
-\textsf{Smart} models and proofs to Dedukti is that ProvenTools does not
+ProvenTools models and proofs to Dedukti is that ProvenTools does not
 manipulate formulas or proof terms explicitly. Instead, models are translated to
-an intermediate format called \textsf{Smil} that resembles control flow graphs
+an intermediate format called Smil that resembles control flow graphs
 with sink states representing erroneous behavior. Proof obligations are
 generated in the form of virtual execution paths that must be proved infeasible.
 A further challenge resides in the scalability of an encoding of models and
 proofs to the level of industrially relevant applications. An ultimate benchmark
 would be to be able to handle the standard library of ProvenTools. A main
-benefit of encoding \textsf{Smart} in Dedukti will be to enable cross-checking
+benefit of encoding ProvenTools in Dedukti will be to enable cross-checking
 proofs using Dedukti. This would be very valuable in the context of certified
 developments.
 
@@ -1607,11 +1603,11 @@ following the work of \site{Fau} and \site{Inn}
 by \site{Fau} in the {\em OpenDreamKit} project \cite{DBLP:conf/mkm/DehayeIKKLMPRTW16}, we
 consider an alignment to be a pair of
 \begin{itemize}
-  \item two identifiers $c,c’$ (usually from two different libraries
-    $L,L’$), which are considered to represent the same mathematical
+  \item two identifiers $c,c'$ (usually from two different libraries
+    $L,L'$), which are considered to represent the same mathematical
     concept,
   \item additional data that governs how $L$-expressions using $c$ and
-    $L’$-expressions using $c’$ correspond to each other.
+    $L'$-expressions using $c'$ correspond to each other.
 \end{itemize}
 The source of alignments can vary and include manual collections
 \cite{MRLR:alignments:17} and automatic, machine-learned collections
@@ -1709,7 +1705,7 @@ using different axiom systems), and we shall pay special attention to
 aligning different existing formalizations of geometry.
 
 There are several ways to define numbers. For the natural numbers, one
-can, for example, choose a definition based on Peano’s axioms which
+can, for example, choose a definition based on Peano's axioms which
 relies on a unary representation of numbers which is suitable for
 proving theorems, but for computing, a definition based on a binary
 representation is better, and these different definitions can be
@@ -1720,13 +1716,13 @@ be defined using Bishop style modulated Cauchy sequences, regular
 Cauchy sequences, Dedekind cuts, and stream representations using
 co-recursion.
 
-Similarly, geometry can be defined synthetically using Euclid’s,
-Hilbert’s, or Tarski’s axioms (as in GeoCoq library) or analytically
+Similarly, geometry can be defined synthetically using Euclid's,
+Hilbert's, or Tarski's axioms (as in GeoCoq library) or analytically
 using coordinate systems and algebra. Therefore, our first step will
 be to import into Dedukti the equivalence theorems between these
 different axiomatizations. In practice we want to use a theorem
 $\Gamma \vdash_S T$ expressed in system $S$ based on some axioms
-$\Gamma$ in a system $S’$ based on different axioms $\Gamma'$ and
+$\Gamma$ in a system $S'$ based on different axioms $\Gamma'$ and
 different definitions.
 
 \paragraph*{Automated theory alignment.}
@@ -1763,13 +1759,13 @@ enabled by the discovered alignments. Each service implemented on top
 of Dedukti---such as accessing a library via browsing and searching or
 interoperability and reuse provided by translations across
 libraries---will benefit from working up-to-alignments. For example, a
-user of system $L$ can go to Logipedia to find a theorem about $t’$
-about concept $c’$, defined in $L’$ that is missing in the library of
-$L$. Even if $L$ contains the corresponding concept $c$, because $t’$
-is stated and proved in the logic of $L’$, it will use a different
-definition of $c’$ in $L’$ than the one of $c$ in $L$.  Therefore,
-$t’$ cannot be directly used in $L$. By translating $t’$ along the
-alignment $(c,c’)$, it induces a theorem $t$ that can be used in
+user of system $L$ can go to Logipedia to find a theorem about $t'$
+about concept $c'$, defined in $L'$ that is missing in the library of
+$L$. Even if $L$ contains the corresponding concept $c$, because $t'$
+is stated and proved in the logic of $L'$, it will use a different
+definition of $c'$ in $L'$ than the one of $c$ in $L$.  Therefore,
+$t'$ cannot be directly used in $L$. By translating $t'$ along the
+alignment $(c,c')$, it induces a theorem $t$ that can be used in
 $L$. The details are subtle both in theory and in practice, and this
 task will explore how to scale up the alignments to provide strong
 services.
@@ -1777,11 +1773,11 @@ services.
 This task will leverage this simple idea in multiple different
 ways. Firstly, we will use alignments to search across libraries. In
 its simplest form, this involves a simple search interface into which
-the user enters the term $t$ and the system finds $t’$ because it uses
-the alignment $\langle c,c’\rangle$. Secondly, we will develop
+the user enters the term $t$ and the system finds $t'$ because it uses
+the alignment $\langle c,c'\rangle$. Secondly, we will develop
 translation services that use alignments to transport proofs across
-libraries. This translation will allow transporting the proof of $t’$ in
-$L’$ to a (potential) proof of $t$ in $L$.
+libraries. This translation will allow transporting the proof of $t'$ in
+$L'$ to a (potential) proof of $t$ in $L$.
 
 
 \subsubsection*{Challenges}
@@ -1843,7 +1839,7 @@ learned and several milestones must be achieved.
 
 {\color{red} To be more detailed and compared to Logipedia.}
 
-% from François Bobot:
+% from Francois Bobot:
 The H2020 \href{https://www.decoder-project.eu}{Decoder} aims at
 providing a unified interface for storing and querying any kind of
 information related to a given software project, from initial

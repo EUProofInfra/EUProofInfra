@@ -1,4 +1,3 @@
-%%
 %% This is file `euproposal.cls',
 %% generated with the docstrip utility.
 %%
@@ -44,28 +43,28 @@
 \renewenvironment{prop@proposal}
 {\ifgrantagreement\else
   \thispagestyle{empty}\begin{center}
-  {\Large \prop@gen@instrument}\\[.2cm]
+%  {\Large \prop@gen@instrument}\\[.2cm]
   {\Large\textbf\prop@gen@callname}\\[.4cm]
   {\LARGE \prop@gen@callid}\\[.8cm]
   {\huge\textbf\prop@gen@title}\\[.4cm]
-  \ifx\prop@gen@acronym\@empty\else{\LARGE Acronym: {\prop@gen@acronym}}\\[2cm]\fi
+  \item[Coordinator:] \wa@ref3{person}\prop@gen@coordinator{name}
+(\wa@ref3{person}\prop@gen@coordinator{email})
 \end{center}
-{\large\textbf{Date of Preparation: \today: \currenttime}}
-\\[1em]
-\begin{large}
- \begin{description}
+%\\[1em]
+% \begin{description}
   % \item[Work program topics addressed by \pn:]
   %   \@ifundefined{prop@gen@topicsaddressed}
   %   {\textbf{Challenge \prop@gen@challengeid}: \prop@gen@challenge,
   %   \textbf{Objective \prop@gen@objectiveid}: \prop@gen@objective,
   %   \textbf{target outcome \prop@gen@outcomeid}) \prop@gen@outcome.
   %   {\prop@gen@topicsaddressed}\\[1em]
-  \item[Coordinator:] \wa@ref3{person}\prop@gen@coordinator{name}
-  \item[e-mail:] \wa@ref3{person}\prop@gen@coordinator{email}
-  \item[tel/fax:] \wa@ref3{person}\prop@gen@coordinator{worktelfax}
-    \@ifundefined{prop@gen@keywords}{}{\item[Keywords:]  \prop@gen@keywords}
-  \end{description}
-\end{large}
+%  \item[Coordinator:] \wa@ref3{person}\prop@gen@coordinator{name}
+%(\wa@ref3{person}\prop@gen@coordinator{email})
+%  \item[e-mail:] \wa@ref3{person}\prop@gen@coordinator{email}
+%  \item[tel/fax:] \wa@ref3{person}\prop@gen@coordinator{worktelfax}
+%    \@ifundefined{prop@gen@keywords}{}{\item[Keywords:]  \prop@gen@keywords}
+%  \end{description}
+
 \vspace*{1em}
 \begin{center}
 \prop@sites@table\vfill
@@ -75,7 +74,7 @@
 \newpage
 \fi% ifgrantagreement
 \setcounter{tocdepth}{2}\setcounter{part}{2}}
-{\newpage\printbibliography[heading=warnpubs]%
+{\if@notecites\else\newpage\printbibliography[heading=warnpubs]\fi%
 \if@split
 \newwrite\@@SPLIT%
 \immediate\openout\@@SPLIT=SPLIT.at%
