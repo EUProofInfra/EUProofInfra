@@ -1,17 +1,5 @@
 \chapter{Implementation}\label{chap:implementation}
 
-{\color{red} a table with all the work packages}
-
-Gant diagaram : A line for each task
-
-Lead / Task and a A Column for each month. Finishes with a
-miletones, deliverable and project meeting in each column.
-
-Put a lot of deliverables at Month 18 and 36 and 48
-
-
-
-
 \section{Work plan -- Work packages, deliverables}
 
 \begin{todo}{}\color{red}
@@ -46,98 +34,61 @@ Put a lot of deliverables at Month 18 and 36 and 48
   - \underline{Deliverable}: means a distinct output of the project, meaningful in terms of the project's overall objectives and constituted by a report, a document, a technical diagram, a software etc.
 \end{todo}
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\subsection{Overall structure of the work plan}
+
+A table with all the work packages
+
+\subsection{Timing of the different work packages and their components}
+
+Gant diagaram : a line for each task
+and a column for each month.
+
+Finishes with a miletones, deliverable and project meeting.
+
+Put a lot of deliverables at Month 18 and 36 and 48
+
+\ganttchart[draft,xscale=.45] 
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-    & 1 & 4 & 3 & 9 & 7 & 2 & 5 \\
+& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48\\
 \hline
-\textsl{Inr} &   &   &   & x &   & x & x \\
-\hline
-\textsl{Str} &   &   & x &   &   &   &   \\
-\hline
-\textsl{Tou} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Inn} &   & x &   &   & x & x &   \\
-\hline
-\textsl{Lie} &   & x &   &   &   &   &   \\
-\hline
-\textsl{Bol} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Pra} &   & x &   &   &   &   & x \\
-\hline
-\textsl{Bel} &   &   & x &   &   &   & x \\
-\hline
-\textsl{Tum} & x &   & x &   &   &   &   \\
-\hline
-\textsl{Del} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Sac} &   & x &   &   & x &   &   \\
-\hline
-\textsl{Fau} &   &   &   &   & x &   &   \\
-\hline
-\textsl{Lee} &   &   &   &   &   & x & x \\
-\hline
-\textsl{Sou} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Got} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Cha} & x &   & x &   &   &   &   \\
-\hline
-\textsl{Lmu} &   &   &   &   &   & x &   \\
-\hline
-\textsl{Imt} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Bia} &   &   &   &   &   & x &   \\
-\hline
-\textsl{Dus} & x &   &   &   &   &   &   \\
-\hline
-\textsl{Oca} &   &   &   & x &   &   &   \\
-\hline
-\textsl{Cle} & x & x &   &   &   &   &   \\
-\hline
-\textsl{Bir} &   &   &   &   &   & x &   \\
-\hline
-\textsl{Cea} &   & x &   &   &   &   &   \\
-\hline
-\textsl{Stu} &   & x &   &   &   &   &   \\
-\hline
-\textsl{Irt} &   &   &   & x &   &   &   \\
-\hline
-\textsl{Edu} &   &   &   & x &   &   &   \\
-\hline
-\textsl{Pro} & x &   &   &   &   &   &   \\
+\textsl{aaa} \\
 \hline
 \end{tabular}
-\end{center}
 
-\input{workplan}
+\subsection{Detailed work description}
 
-{\color{red} Every task indicates pm and where}
-
-
-\subsection{Work Package List}\label{sec:wplist}
-
-%\makeatletter\wp@total@RM{management}\makeatother
 \wpfigstyle{\footnotesize}
 \wpfig[pages,type,start,end]
 
-\input{deliverables}
+\newpage
 
-\subsection{Work Package Descriptions}\label{sec:workpackages}
 \begin{workplan}
 \input{workpackages/instrumentation}
+\newpage  
 \input{workpackages/atpetc}
+\newpage  
 \input{workpackages/libraries}
+\newpage  
 \input{workpackages/access}
+\newpage
 \input{workpackages/structuring}
+\newpage
 \input{workpackages/theories}
-%\input{workpackages/reversemath}
+\newpage
 \input{workpackages/alignment}
+\newpage
 \input{workpackages/dissemination}
+\newpage
 \input{workpackages/management}
 \end{workplan}
 
-\ganttchart[draft,xscale=.45] 
+\newpage
+
+
+\input{deliverables}
+
 
 \section{Management structure, milestones and procedures}
 
@@ -160,16 +111,13 @@ Put a lot of deliverables at Month 18 and 36 and 48
     Risk name / WP / Impact if occurs / Probability / LEvels / Prevetive and
     Contengency action.
 
-    
-
-  
   {\bf Definition:}
   
   \underline{Milestones}: means control points in the project that help to chart progress. Milestones may correspond to the completion of a key deliverable, allowing the next phase of the work to begin. They may also be needed at intermediary points so that, if problems have arisen, corrective measures can be taken. A milestone may be a critical decision point in the project where, for example, the consortium must decide which of several technologies to adopt for further development.
 \end{todo}
 
 
-{\color{red} A table wiyj a lis of milestones}
+{\color{red} A table with a list of milestones}
 
 \input{management}
 
