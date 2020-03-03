@@ -1077,17 +1077,15 @@ pipeline to manage the development process.
 The pipeline is composed of several open source tools orchestrated
 to automatically deliver new versions of the Logipedia platform.
 
-\paragraph*{Version control System (VCS)}
-
+\begin{compactitem}
+\item
 A Version Control System (VCS) stores and manages the source code and
 allows its modification securely and with traceability. Git is the leader
 open source VCS tool and will be used for Logipedia source code. Git implements
 a distributed version control system that applies perfectly to the context of
 a European collaborative project. For Logipedia, the VCS will handle the
 source code of the Logipedia web site itself as well as the formal proof libraries.
-
-\paragraph*{CI/CD platform}
-
+\item
 A CI/CD platform is used to automate the integration of modifications
 as soon as a new version is pushed to the VCS. The automatic integration
 consists in building the new application, executing tests to ensure
@@ -1096,6 +1094,7 @@ Jenkins is a widely used CI/CD tool and will be used for Logipedia.
 Once packages are built, the CI/CD platform can trigger the automatic
 deployment of the new version on the target infrastructure.
 This step is called continuous delivery.
+\end{compactitem}
 
 In practice, the automatic delivery is often done on a test environment
 to allow users to verify that the new version of the platform
@@ -1146,8 +1145,6 @@ install all the definitions and proofs it relies on as well.
 
 \subsubsection*{Interface for teaching}
 
-{\color{red} To do by Benoit (Edukera), Julien and Pierre-Yves}
-
 Current formal proof systems require to learn a specific formal
 language and a command-line interface to compile and execute the
 language. This level of technicity is not compliant with mass
@@ -1185,13 +1182,10 @@ One of the difficulties is to provide a way for the students to discover
 and integrate hundreds of lemmas and rewriting rules necessary to solve
 exercices. The solution consists of a mixture of step-wise tutorials and
 training exercises, plus an adapted ergonomic design of the application menus.
-In this regard, theorems and rewriting rules should be presented and searched using
-technology developed in \WPref{dissemination}.
+In this regard, one should be able to search for theorems and rewriting rules.
 
 The research of proof must be automated at some point in order to ease and
-speed up the process and to comply with the level of required detail in education;
-the output of \WPref{access} will be used for this task.
-
+speed up the process and to comply with the level of required detail in education.
 
 The existing user interfaces for proving theorems in the classroom can be sorted roughly in two categories: 
 the systems built by the community of educators and the systems built by specialist of interactive theorem proving.
@@ -1212,16 +1206,18 @@ In the category of system which have developed by people from the interactive th
 PCoq \cite{amerkad_mathematics_2001}, Coq Web \cite{blanc_proofs_2007}, ProofWeb \cite{kaliszyk_deduction_2008}, Edukera \cite{rognier_presentation_2016}; and those who use an automatic theorem prover above a pseudo natural language input:
 SAD \cite{lyaletski_sad_2006}, Naproche \cite{cramer_naproche_2010}, Lurch \cite{carter_lurch:_nodate}, ELFE \cite{dore_elfe_2018}, CalcCheck \cite{kahl_calccheck:_2018}.
 
-We will use several indicators to measure the success of the platform:
-\begin{compactitem}
-\item The number of proof files and their sizes added to the platform.
-\item The number of references to Logipedia proofs in scientific
-  publications.
-\item The number of file downloads from the server.
-\item The number of accesses on the web interface.
-\item The number of uses of the teaching interface.
-\item The number of teachers and courses using the teaching interface.
-\end{compactitem}
+% to be moved somewhere else
+
+%We will use several indicators to measure the success of the platform:
+%\begin{compactitem}
+%\item The number of proof files and their sizes added to the platform.
+%\item The number of references to Logipedia proofs in scientific
+%  publications.
+%\item The number of file downloads from the server.
+%\item The number of accesses on the web interface.
+%\item The number of uses of the teaching interface.
+%\item The number of teachers and courses using the teaching interface.
+%\end{compactitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
@@ -1467,23 +1463,23 @@ libraries available in Logipedia.
 \paragraph*{ProvenTools.}
 ProvenTools is an interactive environment for designing programs and proofs that
 has been developed at Prove \& Run. Programs and
-specifications are written in ProvenTools, a functional language that
+specifications are written in Smart, a functional language that
 emphasizes a separation between control flow and data flow and brings a uniform
 monadic style to handling exceptions and different return cases.
-% ProvenTools is based on a classical first-order logic with rank-1
+% Smart is based on a classical first-order logic with rank-1
 % polymorphism, algebraic data types, recursive definitions, and inductive
 % predicates.
-% Proof obligations generated from ProvenTools models are presented as virtual
+% Proof obligations generated from Smart models are presented as virtual
 % execution paths and can be proved using a mix of interactive and automated
 % proving.
 ProvenTools can also be used to generate efficient C code from a subset
-of the ProvenTools language, and the tool performs static analysis to ensure
+of the Smart language, and the tool performs static analysis to ensure
 that the extraction is safe and correct.
 
 ProvenTools has been used to design, develop, and formally verify
 ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
 been certified at the highest Common Criteria level (EAL7). The proofs represent
-about 400kloc of ProvenTools, covering all process management including page
+about 400kloc of Smart, covering all process management including page
 tables, shared memory, process creation, code loading, etc. ProvenTools has also
 been used to develop user-side applications, in particular in the case of filter
 applications~\cite{bolignano:security}. The proofs ensure that the data
@@ -1492,7 +1488,7 @@ attacks another one by producing ill-formed messages.
 
 The logic underlying ProvenTools is similar to that of other program
 verification environments such as Why3. The main challenge in translating
-ProvenTools models and proofs to Dedukti is that ProvenTools does not
+Smart models and proofs to Dedukti is that ProvenTools does not
 manipulate formulas or proof terms explicitly. Instead, models are translated to
 an intermediate format called Smil that resembles control flow graphs
 with sink states representing erroneous behavior. Proof obligations are
@@ -1523,7 +1519,7 @@ The K framework allows the designer of a programming languages to
 specify its formal semantics and to derive analysis tools for the
 language in a correct-by-construction manner. K specifications (which
 are Matching Logic theories) exist for a variety of languages
-including C, Java, JavaScript, and EVM. The K
+including C, Java, JavaScript, and the Ethereum Virtual Machine. The K
 prover~\cite{stefanescu:semantics} supports coinductive proofs of
 reachability properties that underlie the correctness of programs
 defined using K. It is based on Reachability Logic, formalized in
@@ -1542,7 +1538,7 @@ semantics of (at least) a simple programming language such as IMP, the
 proof system for reachability properties and a few proofs of
 paradigmatic program properties.
 
-\paragraph*{Homotopy type theory (HoTT).}
+\paragraph*{Homotopy and cubical type theory (HoTT).}
 Introduced by Vladimir Voevodsky, Michael Warren and others, HoTT aims at
 connecting type theory and homotopy theory, the study of abstract shapes. It is
 considered as an alternative to set theory for providing foundations for all
