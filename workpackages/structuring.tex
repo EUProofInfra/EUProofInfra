@@ -36,7 +36,7 @@ Florian Rabe has extensive experience in designing and implementing knowledge re
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=8, SacRM=6]
+\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=8, SacRM=6, wphases=0-28!.5]
 This task extends the Dedukti language with primitives for representing library, document, informal annotations, and theory structure.
 This includes in particular the definition of unique identifiers for all declarations, which is critical for alignments.
 %We extend the Dedukti language with features for high-level representations.
@@ -53,7 +53,7 @@ This includes in particular the definition of unique identifiers for all declara
 %Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
 \end{task} 
 
-\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=24]
+\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=24,wphases=0-24!1.0]
 This tasks extends the Dedukti language with a framework for meta-data annotations.
 This will cover all levels of the structure introduced in \localtaskref{strlibstructure} as well as the 
 level of subexpressions of Dedukti expressions. It will also provide a mechanism to validate meta-data
@@ -72,7 +72,7 @@ according to assertions.
 %\end{compactitem}
 %\end{task} 
 
-\begin{task}[id=strrefonto,title=Reference Ontology,lead=Sac,FauRM=6,SacRM=6]
+\begin{task}[id=strrefonto,title=Reference Ontology,lead=Sac,FauRM=6,SacRM=6,wphases=12-36!.5]
 This tasks compiles, integrates, and curates the various ontologies used for describing libraries in the project.
 These come from several sources:
 \begin{compactitem}
@@ -83,7 +83,7 @@ These come from several sources:
 \end{compactitem}
 \end{task}
 
-\begin{task}[id=strontorepml,title=Ontological Representation of Formal Libraries,lead=Fau,FauRM=6,BolRM=4,SacRM=4]
+\begin{task}[id=strontorepml,title=Ontological Representation of Formal Libraries,lead=Fau,FauRM=6,BolRM=4,SacRM=4,wphases=12-48!.5]
 This task extends the exports from Isabelle and Coq developed in \WPref{libraries} with structural and ontological data that conforms to the language features introduced in Tasks~\localtaskref{strlibstructure} and \localtaskref{strdofimpl}.
 It will also build on the ontological export of ULO data developed for Isabelle and Coq in \cite{CKMRSW:ulo:19}.
 
