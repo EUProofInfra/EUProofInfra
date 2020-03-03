@@ -1066,8 +1066,46 @@ Examples of big proof libraries
 {\color{red} Could not we use the same examples as above?}
 
 \subsubsection*{Continuous integration and deployment}
+Modifying the Logipedia platform in order to add new features or implement
+new formal proofs will be a collaborative work. To ensure the reliability
+of the platform and in the meantime to be able to efficiently and
+frequently update it on the production infrastructure,
+it is necessary to rely on best software development practices.
+We will use continuous integration and continuous deployment (CI/CD)
+pipeline to manage the development process.
 
-{\color{red} To do by SystemX}
+The pipeline is composed of several open source tools orchestrated
+to automatically deliver new versions of the Logipedia platform.
+
+\paragraph*{Version control System (VCS)}
+
+A Version Control System (VCS) stores and manages the source code and
+allows its modification securely and with traceability. Git is the leader
+open source VCS tool and will be used for Logipedia source code. Git implements
+a distributed version control system that applies perfectly to the context of
+a European collaborative project. For Logipedia, the VCS will handle the
+source code of the Logipedia web site itself as well as the formal proof libraries.
+
+\paragraph*{CI/CD platform}
+
+A CI/CD platform is used to automate the integration of modifications
+as soon as a new version is pushed to the VCS. The automatic integration
+consists in building the new application, executing tests to ensure
+the quality is maintained, and producing packages of the application.
+Jenkins is a widely used CI/CD tool and will be used for Logipedia.
+Once packages are built, the CI/CD platform can trigger the automatic
+deployment of the new version on the target infrastructure.
+This step is called continuous delivery.
+
+In practice, the automatic delivery is often done on a test environment
+to allow users to verify that the new version of the platform
+behaves as expected. When manual tests are done, maintainers can push
+the new version to the production environment.
+
+Automating integration and delivery ensures that the full process
+will always be the same, regardless of who made the modification
+of the source code. It also makes certain that tests are executed and passed
+to keep a good quality level and a high availability of the platform.
 
 \subsubsection*{Online access of findable, accessible, interoperable, and
 reusable formal proofs}
@@ -1257,7 +1295,7 @@ So far, we have considered systems that were already at LIL 1, that
 is, systems that implement a theory that we know how to express in
 Dedukti.  Other relevant systems are still at level 0, that is, we do
 not yet know how to express them. Part of our project is to work on
-their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
+their theories: those of Mizar, TLA$^+$, PVS, Minlog, ProvenTools, and
 K Prover, and Homotopy type theory, in order to understand how
 to express their theory in Dedukti.
 
@@ -1428,11 +1466,6 @@ are support for co-induction and co-recursion. We plan to support program
 extraction to Dedukti through realizability, and also aim to be able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
-
-\paragraph*{Why3.}
-
-{\color{red} To do ?}
-
 
 \paragraph*{ProvenTools.}
 ProvenTools is an interactive environment for designing programs and proofs that
