@@ -71,26 +71,24 @@ HOL Light, Isabelle/HOL, and PVS.
 In the next four years, we plan to address, with different ambitions,
 the libraries of Agda, Atelier B, Coq, FoCaLiZe, HOL Light, HOL4,
 Isabelle/HOL, K Prover, Matita, Minlog, Mizar, PVS, Rodin,
-ProvenTools, TLA+, and Why3.
+ProvenTools, TLA+, and Why3, to which we must add two formats used in
+Automated theorem proving: TSTP and LFSC.
 
-These systems can be roughly divided into two groups.  For those that
-currently have a integration level 1 or higher (Matita, HOL Light,
-FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, Rodin, and HOL4)
+These systems can be roughly divided into three groups.  For those
+that currently have a integration level 1 or higher (Matita, HOL
+Light, FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, Rodin, and HOL4)
 we have preliminary results, and we plan to bring them to a high level
 of integration.  For those that have a current integration level of 0
-(Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and K Prover) we are
-only starting out and our goals within this project are generally less
-ambitious.  These two groups of systems correspond to different
-objectives, but both are key to the project. The first ones will
-constitute Logipedia in four years and the second ones prepare the
-long term future of the infrastructure.
+(Mizar, TLA$^+$, PVS, Minlog, ProvenTools, and K Prover) we are only
+starting out and our goals within this project are generally less
+ambitious. Finally, TSTP, and LFSC, and Why3 are formats that permit
+to exchange information with Automated theorem proving systems.
 
-Beyond this focus on proof systems, we also plan to integrate some
-proofs coming from automated theorem provers, SAT solvers, SMT
-solvers, and model checkers, when these proofs have a manageable
-size. To do so, we focus on two formats, TSTP and LFSC, that are
-already used in the Automated theorem proving community and in the SMT
-solvers community to express proofs.
+These three groups of systems correspond to different
+objectives, but all three are key to the project. The first ones will
+constitute Logipedia in four years and the second ones prepare the
+long term future of the infrastructure, the third one extend the
+frontier of Logipedia beyond the proof systems.
 
 Very large proofs, requiring large libraries of auxiliary results,
 have been developed in some proof systems. These large libraries
@@ -128,7 +126,7 @@ relevant and we use the common Technology readiness level indicator.
 We have already noticed that for some proof systems, the implemented
 theory already been analyzed and related to other systems, so we can
 immediately start integrating proofs from these systems into
-Logipedia. For others (Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
+Logipedia. For others (Mizar, TLA$^+$, PVS, Minlog, ProvenTools, and
 K Prover), more research work is needed. Understanding how the
 theories implemented in these systems can be expressed in Logipedia is
 one of our joint research objectives.  We also add here Homotopy type
@@ -200,6 +198,8 @@ Format & current & targeted\\
 TSTP & LIL 1 & LIL 4\\
 \hline
 LFSC & LIL 0 & LIL 4\\
+\hline
+Why3 & LIL 0 & LIL 4\\
 \end{tabular}
 \\
 \hline
@@ -247,7 +247,7 @@ TRL 4
 \hline
 New theories, new systems
 &
-Express the theories of Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
+Express the theories of Mizar, TLA$^+$, PVS, Minlog, ProvenTools, and
 K Prover, and Homotopy type theory in Dedukti.
 &
 \vspace*{-0.41cm}
@@ -263,8 +263,6 @@ TLA$^+$ & LIL 0 & LIL 2\\
 PVS & LIL 0 & LIL 2\\
 \hline
 Minlog & LIL 0 & LIL 4\\
-\hline
-Why3 & LIL 0 & LIL 4\\
 \hline
 ProvenTools & LIL 0 & LIL 3\\
 \hline
