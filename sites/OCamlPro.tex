@@ -7,21 +7,34 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 \paragraph*{Main tasks:}
 
 \begin{compactitem}
-\item \taskref{atpetc}{instrumenting}: implement a proof trace output for the SMT solver Alt-Ergo.
-\item \taskref{atpetc}{deduktitoatp}: task leader on the translation of dedukti statements into input format for automatic tools.
-\item \taskref{access}{opam}: provide access to proofs using the opam package manager.
+\item \taskref{atpetc}{instrumenting}: Implement a proof trace output for
+  the SMT solver Alt-Ergo. As the maintainers and maind eveloppers of Alt-Ergo,
+  OCamlPro is uniquely competent in modifying the source code of Alt-Ergo
+  for such a purpose. Additionally, Guillaume Bury already has experience
+  generating formal proofs from an SMT solver as described in his PhD
+  thesis\cite{BURY19}.
+\item \taskref{atpetc}{deduktitoatp}: Task leader on the translation of
+  dedukti statements into input format for automatic tools. As the developper
+  of the dolmen\cite{dolmen} library for parsing input format for automatic
+  tools, Guillaume Bury already has experience manipulating such formats,
+  and is thus suited to leading this task aimed at translating dedukti
+  statements into such formats.
+\item \taskref{access}{opam}: provide access to proofs using the opam
+  package manager. As the author, developper and maintainer of opam,
+  OCamlPro is again uniquely suited to leading this task given its
+  unparraleled expertise on the opam package manager.
 \end{compactitem}
 
 \paragraph*{Publications, products or services:}
 
 \begin{compactitem}
-\item The Alt-Ergo solver\cite{ae2.2} is an SMT solver developped and maintained by OCamlPro.
-  It is used behind software verification tools such as Frama-C, SPARK, Why3,
-  Atelier-B and Caveat.
 \item Guillaume Bury's PhD thesis\cite{BURY19} presented a new automated theorem
   prover, named Archsat, capable of generating formal dedukti proofs. To date,
   Archsat and the tableaux-based theorem prover Zenon are the only two automated
   theorem provers able to produce dedukti proofs.
+\item Dolmen\cite{dolmen} is an OCaml library developped by Guillaume Bury,
+  that deals with parsing and type-checking most input languages used in
+  the automated theorem prover community.
 \item Opam\cite{OPAM} is a source-based package manager developped by OCamlPro,
   which has been successfully used by the OCaml community since 2012, where
   it manages 2585 versioned packages for a total of 13196 combinations of package
@@ -34,11 +47,21 @@ The software company OCamlPro was created in 2011. They harness their OCaml expe
 
 \paragraph*{Previous projects or activities:}
 
+French R\&D projects:
 \begin{compactitem}
-\item French R\&D projects: FUI LCHIP (2017-2020), ANR Vocal (2015-2020), ANR BWare (2013-2016), FUI HILITE (2010-2013)
+\item FUI LCHIP (2017-2020)
+\item ANR Vocal (2015-2020)
+\item ANR BWare (2013-2016)
+\item FUI HILITE (2010-2013)
 \end{compactitem}
 
 \paragraph*{Infrastructures or technical equipments:}
+
+\begin{compactitem}
+\item The Alt-Ergo solver\cite{ae2.2} is an SMT solver developped and
+  maintained by OCamlPro. It is used behind software verification tools
+  such as Frama-C, SPARK, Why3, Atelier-B and Caveat.
+\end{compactitem}
 
 \paragraph*{Persons primarily responsible for carrying out the proposed activities:}
 
