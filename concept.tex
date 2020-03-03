@@ -1127,7 +1127,70 @@ power of the platform has to be allowed to pre-identified persons only.
 
 \subsubsection*{Search tools}
 
-{\color{red} To do by Pierre Senellart}
+Again, to make the encyclopedia usable, it is necessary to add search
+functionalities to efficiently find specific theorems and proofs of
+interest by a user. It should be possible to search by name, other
+metadata, semantic annotations, and by the actual structure and content
+of these theorems and proofs.
+
+Searching in a collection of millions of regular documents, representing
+gigabytes of data or more, is a problem easily solved by standard
+\emph{information retrieval} techniques \cite{DBLP:books/daglib/0021593}, 
+which routinely scale to several orders of magnitude higher when indexing
+huge corpora, such as the World Wide Web.
+Elasticsearch\footnote{\url{https://www.elastic.co/fr/elasticsearch}} is
+an example of a highly customizable and scalable search engine for large
+document collections. But these techniques and tools are
+adapted to the case of (semi-structured) natural language documents by
+full text queries, along with other metadata, not to the case of
+mathematical statements with complex content and structure, as well as
+semantic annotations.
+
+The case of semantic annotations is relatively easy to solve. SPARQL
+\cite{sparql} is a
+query language for (RDF) semantic annotations expressing complex semantic
+queries, for which numerous
+query engines exist; popular (and open-source) ones include
+Apache Jena\footnote{\url{https://jena.apache.org/}} and
+Virtuoso\footnote{\url{http://vos.openlinksw.com/owiki/wiki/VOS}}. These
+systems also support efficient indexing and querying of textual content
+\cite{DBLP:conf/esws/MinackSN09}, which allows queries combining textual
+search and semantic annotations.
+
+Exploiting the structure and content of mathematical statements is a more
+challenging, open, and interesting issue.
+
+Early efforts have simply considered
+basic exact keyword and regular expression matching 
+\cite{DBLP:conf/mkm/BancerekR03}, or searching for the exact type of a lemma,
+which requires type isomorphism tests\cite{DBLP:conf/types/Delahaye99}.
+
+One approach to improve on such techniques is to
+adapt standard information retrieval techniques to work with terms
+occurring in mathematical tools. This has been done\cite{DBLP:conf/mkm/Cairns04}
+with \emph{latent semantic indexing}, an
+indexing and retrieval technique based on co-occurrences of terms within
+documents, which is adapted to work with statements from the Mizar
+Mathematical Library (MML): terms, which are (lemmatized or stemmed)
+words in regular natural language documents, are chosen to be type names,
+operators, etc., in the mathematical language of the MML. Similarly to
+regular information retrieval techniques, however, such a search cannot
+interpret complex structures.
+
+To deal with the actual (hierarchical) content of mathematical formulas
+and statements, systems such as
+MathWebSearch\cite{DBLP:conf/aisc/KohlhaseMP12} (in the context of
+mathematical formulas in MathML within XHTML documents) and
+Whelp\cite{DBLP:conf/types/AspertiGCTZ04} (in the context of the standard
+library of Coq) propose to index not only individual terms, but the
+relation that these terms have with each other, allowing to search for
+somewhat complex hierarchical patterns within mathematical statements.
+
+As an ambition of the Logipedia project, we aim to build search tools that allow
+combining full-text, semantic, and content search, with state of the art
+information retrieval and indexing techniques, adapted to the case of
+a library of mathematical results and proofs in a diversity of languages
+and formalisms.
 
 \subsubsection*{Access on everyone's computer}
 
