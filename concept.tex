@@ -64,7 +64,7 @@ Calculus of constructions can be expressed in this framework.
 
 For instance, although the details are not important, Church's type
 theory can be expressed in Dedukti, with 11 ``axioms'': 8 declarations
-and 3 rewrite rules.
+and 3 computation rules.
 
 \begin{framed}
 \vspace{-0.5cm}
@@ -92,7 +92,7 @@ o&:&type\\
 So the theories implemented in various systems can all be expressed in
 Dedukti and the proofs developed in these systems can be translated to
 Dedukti. Just like in the case of non Euclidean geometry, this allows
-the symbols and rewrite rules used in each proof to be analysed
+the symbols and computation rules used in each proof to be analysed
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
 mathematics'' \cite{Friedman76,Simpson09}) and to deduce in which
 systems each proof can be used.  This analysis is the basis of the
@@ -104,7 +104,7 @@ $D[X]$, implemented in the system $X$, in the logical framework
 Dedukti.  Then, we must instrument the system $X$ so that the proof
 can be exported from it, as a piece of data, expressed as a proof in
 $D[X]$ and included in Logipedia. Next, we need to analyze this proof
-in order to determine which symbols, axioms and rewrite rules of
+in order to determine which symbols, axioms and computation rules of
 $D[X]$ it actually uses and, thus, in which alternative theories it
 can be expressed.  Finally, we must align its concepts with the
 definitions already present in Logipedia and decide where it fits in
@@ -163,8 +163,8 @@ Agda provides powerful features such as dependent pattern and
 co-pattern matching, $\eta$-equality for functions and record types,
 first-class universe polymorphism, and definitional proof
 irrelevance. In addition, Agda provides an experimental option for
-extending the language with user-defined rewrite rules, which are very
-similar to the rewrite rules provided by Dedukti.
+extending the language with user-defined computation rules, which are very
+similar to the computation rules provided by Dedukti.
 
 \paragraph*{Systems based on simple type theory (HOL4, HOL Light, and Isabelle/HOL).}
 
@@ -229,7 +229,7 @@ practice. For example:
   clever expression of the theory.
 
 \item Coq, Agda, and Matita all provide support for coinductive
-  (infinite) structures, which can be expressed by rewrite rules in
+  (infinite) structures, which can be expressed by computation rules in
   Dedukti, but this expression must be carefully chosen so that the
   proofchecker does not go into an infinite loop.
 
@@ -338,8 +338,8 @@ following systems:
   OpenTheory proofs into Dedukti.
 
 \item In the context of the BWare project, an expression of the set
-  theory of the B method has been provided as a theory modulo, i.e.\ a
-  rewrite system rather than a set of axioms. This expression is used
+  theory of the B method has been provided as a theory modulo, i.e.\ 
+  computation rules rather than a set of axioms. This expression is used
   by the automatic prover Zenon modulo which features a back-end to
   Dedukti. Thus, as a first step through instrumentation of Atelier B
   proof obligations coming from Atelier B can be proved by Zenon
@@ -1271,16 +1271,6 @@ In this regard, one should be able to search for theorems and rewriting rules.
 The research of proof must be automated at some point in order to ease and
 speed up the process and to comply with the level of required detail in education.
 
-%We will use several indicators to measure the success of the platform:
-%\begin{compactitem}
-%\item The number of proof files and their sizes added to the platform.
-%\item The number of references to Logipedia proofs in scientific
-%  publications.
-%\item The number of file downloads from the server.
-%\item The number of accesses on the web interface.
-%\item The number of uses of the teaching interface.
-%\item The number of teachers and courses using the teaching interface.
-%\end{compactitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
@@ -1497,7 +1487,7 @@ system is based on the Curry-Howard correspondence between constructive proofs
 in natural deduction and terms in typed $\lambda$-calculus. It supports
 extracting programs from constructive proofs, and has also been extended for extracting
 programs from proofs in classical logic. Minlog supports function definitions by
-computation and rewrite rules and identifies terms with a common reduct. Its
+computation and computation rules and identifies terms with a common reduct. Its
 main applications are in constructive analysis~\cite{miyamoto:real}: it can extract
 computational content from a proof of a mathematical statement in an extension
 of G\"odel's system $T$ and generate a formal proof that the extracted term
@@ -1574,7 +1564,7 @@ reasoning about both static structures and dynamic features by means
 of patterns and pattern matching. A language definition in Matching
 Logic presents both the operational and the axiomatic aspects in a
 uniform way, with the semantics of the language expressed as a set of
-rewrite rules, which are special patterns in Matching Logic. A
+computation rules, which are special patterns in Matching Logic. A
 language-independent proof system can then be used to derive both the
 operational behavior and formal properties of a program.
 
@@ -1652,7 +1642,7 @@ on classical set theories. All systems except HoTT and Minlog do not provide
 proof objects and require instrumentation for providing traces that can then be
 interpreted by Dedukti. In all cases, a crucial point to consider for defining
 an encoding into $\lambda\Pi$-calculus modulo theory is that of exploiting
-Dedukti's rewrite capabilities for controlling the size of proof objects.
+Dedukti's computation capabilities for controlling the size of proof objects.
 
 \paragraph*{Automatic proof tools.}
 Many of the systems that we consider call upon automatic back-ends for proof
