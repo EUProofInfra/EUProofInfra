@@ -29,67 +29,80 @@ Its group working on \pn will include Chantal Keller and Burkhart Wolff.
 
 \paragraph*{Main tasks:}
 
-\begin{compactitem}
-\item Interoperability between ATPs and Logipedia: \WPref{atpetc}, tasks
-  \taskref{atpetc}{tracetodedukti}, \taskref{atpetc}{deduktitoatp} and
-  \taskref{atpetc}{readiness}
-\item Extending Dedukti with metadata, and generating them:
-  \WPref{structuring}, tasks \taskref{structuring}{strlibstructure},
-  \taskref{structuring}{strdofimpl}, \taskref{structuring}{strrefonto} and
-  \taskref{structuring}{strontorepml}
-%\item UNDER PROGRESS: \WPref{theories}
-\item Automatic proofs of concept alignment: \WPref{alignment}, task
-  \taskref{alignment}{aligntheories}
-\end{compactitem}
+Chantal Keller is one of the two coordinators of \WPref{atpetc}. She has
+strong expertise in interoperability between interactive and automatic
+theorem provers (ATPs). She is the leader of the SMTCoq project that
+links the Coq proof assistant with external ATPs. In this EU project,
+she will contribute to make automatic theorem provers interact with
+Logipedia: proofs will be exchange to and fro, ATPs will be used to
+check proofs from other systems and increase interaction between them,
+and to detect, organize and discharge theory alignments
+(\taskref{alignment}{aligntheories} of \WPref{alignment}).
+
+Burkhart Wolff is one of the two coordinators of \WPref{structuring}. He
+pioneered an Ontological Framework, which is currently mostly used for
+document ontologies and ontologies imposing a particular theory
+structure and typed meta-data. He implemented this framework in
+Isabelle/HOL, together with Prof. A.D. Brucker. In this EU project, his
+role is to supervise the conception and implementation of a
+Dedukti-oriented ontological framework. He will contribute to the
+conception of ontologies used for prover interoperability as well as
+domain-specific ontologies supporting advanced search and access
+mechanisms. As such, he has the role of a mediator between the technical
+needs for (efficient) alignments on the one hand and end-users of the
+Logipedia libraries needing advanced search mechanisms in order to
+access its mathematical knowledge.
 
 \paragraph*{Publications, products or services:}
 
 \begin{compactitem}
-\item An automatic tool to import proofs between the two interactive
-  theorem provers HOL Light and Coq, companion
-  paper:~\cite{DBLP:conf/itp/KellerW10}
-\item The \href{https://smtcoq.github.io}{SMTCoq} project
-  \cite{DBLP:conf/cpp/ArmandFGKTW11,DBLP:conf/cav/EkiciMTKKRB17}
-\item Isabelle/DOF : Design and Implementations.
- Sources/Papers: \cite{brucker_achim_d_2019_3370483,brucker.ea:isabelle-ontologies:2018}
-\item Applications of Ontologies in the Context of Formal Software Engineering.
- \cite{brucker.ea:ontologies-certification:2019}
+\item ``Importing HOL Light into Coq'', by Chantal Keller and Benjamin
+  Werner, First International Conference on Interactive Theorem Proving,
+  2010.
+\item ``A Modular Integration of SAT/SMT Solvers to Coq through Proof
+  Witnesses'', by Michaël Armand, Germain Faure, Benjamin Grégoire,
+  Chantal Keller, Laurent Théry and Benjamin Werner, First International
+  Conference on Certified Programs and Proofs, 2011.
+\item ``SMTCoq: A Plug-In for Integrating SMT Solvers into Coq'', by
+  Burak Ekici, Alain Mebsout, Cesare Tinelli, Chantal Keller, Guy Katz,
+  Andrew Reynolds and Clark W. Barrett, 29th International Conference on
+  Computer Aided Verification, 2017.
+\item ``Using The Isabelle Ontology Framework: Linking the Formal with
+  the Informal'', by Achim D. Brucker, Idir Ait-Sadoune, Paolo
+  Crisafulli and Burkhart Wolff, 11th Conference on Intelligent Computer
+  Mathematics, 2018.
+\item ``Using Ontologies in Formal Developments Targeting
+  Certification'', by Achim D. Brucker and Burkhart Wolff, 15th
+  International Conference on Integrated Formal Methods, 2019.
 \end{compactitem}
 
 \paragraph*{Previous projects or activities:}
 
 \begin{compactitem}
-\item The ANR-project \href{http://www.lri.fr/~wolff/projects/ANR-Paral-ITP/}{Paral-ITP} with the  
-      partners INRIA Roquencourt, INRIA Saclay (Bruno Barras) 
-      and U-PSud/LRI (B.Wolff, Project Leader) was targeting 
-      of advanced parallelisation techniques for Coq and Isabelle.
-\item The EU-Project EUROMILS (Oct. 2012 - Sept. 2015 ) and 
-      ANR Project \href{http://www.irt-systemx.fr/en/project/pst/}{PST}
-      were both targeting at applying Formal Methods in an industrial
-      effort aiming at a high-level certification (Common Criteria EAL6, 
-      CENELEC SIL4). The latter project incited the development of 
-      Isabelle/DOF\cite{brucker_achim_d_2019_3370483}.
+\item Burkhart Wolff was a member of the ANR project
+  \href{http://www.lri.fr/~wolff/projects/ANR-Paral-ITP/}{Paral-ITP}
+  with the partners INRIA Roquencourt, INRIA Saclay (Bruno Barras) and
+  U-PSud/LRI (B.Wolff, Project Leader), which was targeting of advanced
+  parallelisation techniques for Coq and Isabelle.
+\item Burkhart Wolff was a member of the EU-Project EUROMILS (Oct. 2012
+  - Sept. 2015 ) and the ANR project
+  \href{http://www.irt-systemx.fr/en/project/pst/}{PST}, which were both
+  targeting at applying Formal Methods in an industrial effort aiming at
+  a high-level certification (Common Criteria EAL6, CENELEC SIL4). The
+  latter project incited the development of
+  Isabelle/DOF\cite{brucker_achim_d_2019_3370483}.
 \end{compactitem} 
 
 \paragraph*{Infrastructures or technical equipments:}
 
-The group has a mainstream experience in interoperability between proof
-systems. It is in particular the leader of the SMTCoq project, a tool to
-benefit from both worlds of interactive and automatic theorem provers.
-This tool allows one to check automatic theorem provers with great
-confidence, as well as to enjoin proof automation in the Coq proof
-assistant.
-
-Concept alignment is fundamental in this project, to relate Coq
-mathematical objects with the built-in theories of automatic provers,
-and thus benefit from the best possible automation. The necessity to
-align concepts for proof interoperability was pioneered by one member of
-the group, in a project to import proofs between the two interactive
-theorem provers HOL Light and Coq.
-
-The group also has experience in the representation of proofs as
-high-level documents and tool integration at the implementation level
-of Coq and Isabelle. 
+\begin{compactitem}
+\item Université Paris-Saclay participates in the development of the Coq
+  and Isabelle interactive theorem provers.
+\item Université Paris-Saclay is the leader of the SMTCoq project since
+  2015.
+\item Université Paris-Saclay participates in the development of the
+  Isabelle/DOF implementation of the Ontological Framework.
+\end{compactitem}
 
 \paragraph*{Persons primarily responsible for carrying out the proposed
   activities:}
@@ -98,33 +111,18 @@ of Coq and Isabelle.
 
 \item {\bf Chantal Keller} is Associate Professor at Université
   Paris-Saclay since 2015. She obtained her PhD (2013) at École
-  polytechnique. She is a pioneer of interoperability between proof
-  systems as the developer of one of the first tools to import proofs
-  between two interactive theorem provers with very different underlying
-  logics: HOL Light and Coq. In this work, the alignment of mathematical
-  concepts was the key to re-usability of proofs. She is the leader of
-  the SMTCoq project that links the Coq proof assistant with external
-  automatic theorem provers. She has strong expertise in interactive
-  (conception and use) and automatic (mainly use) theorem provers, and
-  interoperability between them. She is one of the two coordinators of
-  \WPref{atpetc}.
+  polytechnique. Her research focus on the development, democratization,
+  use and interoperability of formal methods. She is a pioneer of
+  interoperability between proof systems as the developer of one of the
+  first tools to import proofs between two interactive theorem provers
+  with very different underlying logics: HOL Light and Coq.
 
-\item {\bf Burkhart Wolff} is full professor at Université
+\item {\bf Burkhart Wolff} is Full Professor at Université
   Paris-Saclay since 2008. He has a strong background in interactive
   theorem proving for the modeling of languages semantics as well as
-  applications to model-based testing. He pioneered an Ontological
-  Framework, which is currently mostly used for document ontologies and
-  ontologies imposing a particular theory structure and typed meta-data.
-  He implemented this framework in Isabelle/HOL, together with Prof.
-  A.D. Brucker. In this EU project, his role is to supervise the
-  conception and implementation of an Dedukti-oriented ontological
-  framework. He will contribute to the conception of ontologies used for
-  prover interoperability as well as domain-specific ontologies
-  supporting advanced search and access mechanisms. As such, he has the
-  role of a mediator between the technical needs for (efficient)
-  alignments on the one hand and end-users of the Logipedia libraries
-  needing advanced search mechanisms in order to access its mathematical
-  knowledge. He is one of the two coordinators of \WPref{structuring}.
+  applications to model-based testing. He recently proposed an
+  ontological framework for document consistency and meta-data, which is
+  implemented on top of Isabelle/HOL.
 
 \end{compactitem}
 
