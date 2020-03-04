@@ -21,7 +21,13 @@
 \end{wpobjectives}
 
 \begin{wpdescription}
-  Concretely, this work package includes the following tasks:
+  The concrete work that has to be performed to integrate a particular
+  system into Logipedia depends on how much of the theory of that
+  system has already been encoded in Dedukti, and how mature the
+  existing (prototype) tools for exporting proofs are already. Thus
+  the tasks in this work package are divided among the different
+  interactive theorem provers we consider: Agda, Isabelle, HOL4,
+  Atelier-B and Rodin, and Matita.
 \end{wpdescription}
 
 \begin{tasklist}
@@ -30,12 +36,12 @@
   lead=Del,
   DelRM=14,
   GotRM=4]
-%\input{workpackages/agda}
+% \input{workpackages/agda}
 \begin{compactitem}
-\item Implement a basic version of Agda2Dedukti that can handle core
-  features of Agda such as inductive datatypes and dependent pattern
-  matching.
-\item Extend Agda2Dedukti with $\eta$-equality for record types.
+\item Continue the development of the prototype Agda2Dedukti tool to
+handle core features of Agda such as inductive datatypes and dependent
+pattern matching in a robust manner.
+\item Extend Agda2Dedukti with $\eta$-equality for record types and definitional irrelevance.
 \item Extend Agda2Dedukti with first-class universe level polymorphism.
 \end{compactitem}
 \end{task}
@@ -50,9 +56,11 @@
   Isabelle/HOL logic implementation, such as normalization of proofs,
   type-class reasoning, and special representation of derived rules
   and definition principles.
-\item Reduce the volume of proof terms in the Dedukti encoding.
-\item Improve memory usage of the Isabelle/ML implementation
-  platform.
+\item Reduce the volume of proof terms in the Dedukti encoding, by
+taking more structure of the target language (Dedukti) into account
+and omitting certain low-level reasoning of HOL (e.g.\ for inductive
+types).
+\item Improve memory usage of the Isabelle/ML implementation platform.
 \end{compactitem}
 \end{task}
 
@@ -80,7 +88,8 @@
 \item Continue the encoding of the B set theory in Dedukti to be
   able to handle all kind of proof obligations and rules.
 \item Instrument and Exporting B models to Dedukti.
-\item Importing logipedia lemmas in B models
+\item Develop a tool for importing lemmas coming from from Logipedia
+into B models.
 \end{compactitem}
 \end{task}
 
@@ -88,7 +97,7 @@
   title=Integrate the Matita translator in Matita itself,
   lead=Bol,
   BolRM=4]
-%\input{workpackages/matita}
+  % \input{workpackages/matita}
 \begin{compactitem}
 \item Merge Krajono and Matita, update the code to the latest
   version and transfer the maintenance effort to the Matita team.
@@ -104,16 +113,17 @@
   lead=Bol,
   BolRM=12,
   InrRM=0]  %TODO
-%\input{workpackages/coq}
+  % \input{workpackages/coq}
 \begin{compactitem}
 \item Access Coq internal data structures to gather logical data, such as
-statements and proof terms (for tasks in WP3)
-\item Implement the translation of Coq terms to Dedukti terms
+statements and proof terms (for tasks in WP3).
+\item Implement the required instrumentation to translate of Coq terms
+to Dedukti terms as a part of Coq proper.
 \item Access Coq internal data structures to gather extra-logical data,
 such as the role played by a constant in the library like begin an implicit
-cast from one algebraic structure to another (for tasks in WP3)
+cast from one algebraic structure to another (for tasks in WP3).
 \item Make extra-logical data available in a structured and
-  extensible format (for tasks in WP5)
+  extensible format (for tasks in WP5).
 \end{compactitem}
 \end{task}
 \end{tasklist}
