@@ -38,3 +38,6 @@ auto
 *.synctex.gz
 .ipynb_checkpoints/
 TAGS
+SPLIT.at
+main.pdf
+submit.pdf
