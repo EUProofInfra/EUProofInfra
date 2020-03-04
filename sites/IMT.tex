@@ -1,22 +1,38 @@
 \begin{sitedescription}{Imt}
 
-\paragraph*{Organization:}
-\ednote{Give a one-paragraph run-down of the site and the team there. }
+\logo{imt_logo}
+
 IMT (Institut Mines-T\'el\'ecom) is a French institute that groups together 13 engineering and management graduate schools, around 12,300 students from Bachelor to PhD degrees.
-ENSIIE is an engineering school centered on applied mathematics and computer science, this school is associated to this group. SAMOVAR is a research unit under the IMT umbrella that gathers researchers from T\'el\'ecom SudParis (which part of IMT) and ENSIIE. Its key domains are Applied Mathematics,  Computer Science, Networks, IT applications and uses, Signal and image processing. EUProofInfra participants are members of the METHODES team whose research activities are devoted to
+ENSIIE is an engineering school centered on applied mathematics and computer science; this school is associated to the IMT group. SAMOVAR is a research unit under the IMT umbrella that gathers researchers from T\'el\'ecom SudParis (which is part of IMT) and ENSIIE. Its key domains are Applied Mathematics,  Computer Science, Networks, IT applications and uses, Signal and image processing. EUProofInfra participants are members of the METHODES team, whose research activities are devoted to
 optimization, verification and performance evaluation.
 
 \paragraph*{Main tasks:}
 
 \begin{compactitem}
-\item Translate ATP traces into Dedukti \WPref{atpetc}
-
-
-  \ednote{specify the main tasks and reference the respective work packages} 
+\item Translate ATP traces into Dedukti \WPref{atpetc}. Guillaume Burel leads Task \taskref{atpetc}{tracetodedukti}; he is one
+of the experts on the translation of SAT-solver traces into Dedukti and on the reconstruction of TSTP traces.
+\item Automatic detection of alignments \WPref{alignment}. Stefania Dumbrava leads Task \taskref{alignment}{aligntheories}; she will be 
+in charge of investigating approaches to aligning theories based on ontology reasoning methods. She is one of the experts on automated reasoning and databases.
+\item Export B models to Dedukti \WPref{instrumentation}. Catherine Dubois leads the Task \taskref{instrumentation}{atelier-b}. She developed the translator of FoCaLiZe into Dedukti and 
+partipated in the Bware project, concerning Dedukti-based proofs and B proof obligations. 
+\item Expand the use of Logipedia within certification authorities \WPref{dissemination}. Catherine Dubois also leads the Task \taskref{dissemination}{certif-club}. She has already worked 
+with the French security agency, ANSII, to study the security of functional languages.
 \end{compactitem}
 
+\paragraph*{Publications, products or services:}
 
-\paragraph*{Relevant previous experience:}
+\begin{compactitem}
+ \item ``CoqInE: Translating the Calculus of Inductive Constructions
+   into the $\lambda{}\Pi{}$-calculus Modulo'', by M. Boespflug and
+   G. Burel. 2nd Intl. Workshop on Proof Exchange for Theorem Proving,
+   2012.
+ \item ``Translating HOL to Dedukti'', by A. Assaf and G.Burel. 4th Intl. Workshop on Proof eXchange for Theorem Proving, 2015.
+ \item ``ML Pattern-Matching, Recursion, and Rewriting: From FoCaLiZe to Dedukti'', by R. Cauderlier and C. Dubois. Proceedings of ICTAC, 2016.
+ \item ``FoCaLiZe and Dedukti to the Rescue for Proof Interoperability'', by R. Cauderlier and C. Dubois. Proceedings of ITP, 2017.
+ \item ``Certifying Standard and Stratified Datalog Inference Engines in SSReflect'', by V. Benzaken, E. Contejean, and S. Dumbrava. Proceedings of ITP, 2017.
+\end{compactitem}
+
+\paragraph*{Previous projects or activities:}
 
 \begin{compactitem}
 \item ``BWare, A Proof-Based Mechanized Plate-Forme for the Verification of B Proof Obligations'',
@@ -24,11 +40,7 @@ funded by French National Research Agency, project manager: David
 Delahaye, 08/2012 -- 12/2016
 \end{compactitem}
 
-
-\ednote{give an overview over previous work and projects that add to the \pn project}
-
-\paragraph*{Specific expertise:}
-
+\paragraph*{Infrastructures or technical equipments:}
 
 \begin{compactitem}
 \item Production of Dedukti proofs by automated theorem provers (\href{http://www.ensiie.fr/~guillaume.burel/blackandwhite_iProverModulo.html.en}{iProverModulo})
@@ -40,11 +52,10 @@ Delahaye, 08/2012 -- 12/2016
   \item Interoperability of HOL and Coq through FoCaLiZe and Dedukti (proof of concept)
 \end{compactitem}
 
-\paragraph*{Staff members undertaking the work:}
+\paragraph*{Persons primarily responsible for carrying out the proposed activities:}
 
 \begin{compactitem} % in alphabetical order
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item{\bf Guillaume Burel}
  is
 assistant professor at the ENSIIE since 2010. He defended his PhD,
@@ -64,27 +75,27 @@ main developer of
 \href{http://www.ensiie.fr/~guillaume.burel/blackandwhite_iProverModulo.html.en}{iProverModulo}.
 
 \item {\bf Catherine Dubois} is a professor at ENSIIE since 2000. She defended her PhD, entitled ``Static determination of types for the SetL language'', in 1989 and her Habilitation in 2000 entitled a
-\emph{A journey from programming to proof}. She is a 
+\emph{A journey from programming to proof}. She is a
 member of the Samovar laboratory (T\'el\'ecom
 SudParis), in the METHODES team. Before, she was the leader of a research team at the CEDRIC laboratory (CNAM). Her research activities concern the application of formal methods (in particular with Coq, FoCaLiZe and B) and their combination with testing techniques. She supervised 10 Phd thesis and is currently supervising one PhD student. She participated to the translation of FoCaLiZe into Dedukti and the interoperability of Coq and HOL proofs through Dedukti.
+She is one of the task leaders of \WPref{dissemination}.
 
 \item{\bf Stefania Dumbrava}
-is an Assistant Professor at ENSIIE since 2019. She is also a permanent researcher in the SAMOVAR laboratory (UMR 5157 CNRS T\'el\'ecom
-Sud Paris), where she belongs to the METHODES team. She obtained her PhD at Universit\'e Paris-Saclay in 2016 with a thesis on the formalization 
-of relational and deductive databases. Her fields of expertise are theorem proving, in particular with the Coq proof assistant, and databases. 
-She is one of the task leaders of WP6. 
+is an assistant professor at ENSIIE since 2019. She is also a permanent researcher in the SAMOVAR laboratory (UMR 5157 CNRS T\'el\'ecom
+Sud Paris), where she belongs to the METHODES team. She obtained her PhD at Universit\'e Paris-Saclay in 2016 with a thesis on the formalization
+of relational and deductive databases. Her fields of expertise are theorem proving, in particular with the Coq proof assistant, and databases.
+This expertise is relevant for the research concerning automated alignment detection using reasoning engines. She is one of the task leaders of \WPref{alignment}.
 \end{compactitem}
 
-\ednote{provide the key publications below}
-\keypubs{boespflug12coqine,burel13shallow,assaf15translating}
-\keypubs{CauderlierDubois17,CauderlierDubois17,CauderlierDubois16,DuboisG18}
-\keypubs{BCD14,BCD17,BDA18}
+% \keypubs{boespflug12coqine,burel13shallow,assaf15translating}
+% \keypubs{CauderlierDubois17,CauderlierDubois17,CauderlierDubois16,DuboisG18}
+% \keypubs{BCD14,BCD17,BDA18}
 
 \end{sitedescription}
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../propB"
-%%% End: 
+%%% End:
 
 % LocalWords:  site-jacu.tex clange sitedescription emph compactitem pn semmath
 % LocalWords:  prosuming-flexiformal KohSuc asemf06 GinJucAnc alsaacl09 StaKoh

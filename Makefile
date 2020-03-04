@@ -23,7 +23,7 @@ PDFLATEX = pdflatex $(MODE) -file-line-error
 PROPCLS.dir = $(PROP.dir)/base
 PROPETC.dir = $(PROP.dir)/etc
 EUPROPCLS.dir = $(PROP.dir)/eu
-TEXINPUTS := .//:$(PROPCLS.dir)//:$(EUPROPCLS.dir)//:$(PROPETC.dir)//:
+TEXINPUTS := $(PROPCLS.dir)//:$(EUPROPCLS.dir)//:$(PROPETC.dir)//:
 BIBINPUTS := lib/kbibs:$(BIBINPUTS)
 export TEXINPUTS
 export BIBINPUTS

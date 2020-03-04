@@ -1,6 +1,6 @@
-\begin{workpackage}[id=instrumentation,wphases=0-48,type=RTD,
-  short=Instrument Provers,% for Figure 5.
-  title=Instrument proof systems to produce Dedukti proofs,
+\begin{workpackage}[id=instrumentation,type=RTD,
+  short=Integration,% for Figure 5.
+  title=Integration,
   lead=Del,
   DelRM=14,
   GotRM=4,
@@ -12,15 +12,9 @@
   BolRM=16, % 12 on Coq, 4 on Matita
   InrRM=0]  % TODO
 
-%\ednote{MK: We need one coordinating site. original coordinators: Frédéric Blanqui and
-%  Jesper Cockx}
-%\ednote{MK: interested parties (add their sites and RM here): David Deharbe,
-%Tobias Nipkow, Guillaume Genestier, Jesper Cockx, Guillaume Burel, Filip Marić, Makarius
-%Wenzel, Nicolas Magaud, Gaspard Férey, Ulf Norell, Claudio Sacerdoti Coen}
-
 \begin{wpobjectives}
-  The objective of this work package is to bring systems already at
-  LIL level 2 to higher LIL levels, that is, to instrument the systems
+  The objective of this work package is to bring systems already at least at
+  LIL 1 to higher LIL levels, that is, to instrument the systems
   for which we already know how to encode the proofs in Dedukti, and
   make available these proofs in Logipedia so that
   they can be exported to other systems.
@@ -36,21 +30,43 @@
   lead=Del,
   DelRM=14,
   GotRM=4]
-\input{workpackages/agda}
+%\input{workpackages/agda}
+\begin{compactitem}
+\item Implement a basic version of Agda2Dedukti that can handle core
+  features of Agda such as inductive datatypes and dependent pattern
+  matching.
+\item Extend Agda2Dedukti with $\eta$-equality for record types.
+\item Extend Agda2Dedukti with first-class universe level polymorphism.
+\end{compactitem}
 \end{task}
 
 \begin{task}[id=isabelle,
   title=Instrument Isabelle,
   lead=Tum,
   TumRM=5]
-\input{workpackages/isabelle}
+%\input{workpackages/isabelle}
+\begin{compactitem}
+\item Improve the efficiency of important aspects of the
+  Isabelle/HOL logic implementation, such as normalization of proofs,
+  type-class reasoning, and special representation of derived rules
+  and definition principles.
+\item Reduce the volume of proof terms in the Dedukti encoding.
+\item Improve memory usage of the Isabelle/ML implementation
+  platform.
+\end{compactitem}
 \end{task}
 
 \begin{task}[id=HOL4,
   title=Instrument HOL4,
   lead=Cha,
   ChaRM=20]
-\input{workpackages/hol4}
+%\input{workpackages/hol4}
+\begin{compactitem}
+\item Develop the current proof-of-concept prototype
+    HOL4-to-OpenTheory and OpenTheory-to-Dedukti tools to the point
+    where they scale (both in terms of time and space) to cope with
+    real examples of interest.
+\end{compactitem}
 \end{task}
 
 \begin{task}[id=atelier-b,
@@ -59,14 +75,28 @@
   CleRM=0, % TODO
   ImtRM=0, % TODO
   TouRM=0] % TODO
-\input{workpackages/b_method}
+%\input{workpackages/b_method}
+\begin{compactitem}
+\item Continue the encoding of the B set theory in Dedukti to be
+  able to handle all kind of proof obligations and rules.
+\item Instrument and Exporting B models to Dedukti.
+\item Importing logipedia lemmas in B models
+\end{compactitem}
 \end{task}
 
 \begin{task}[id=matita,
   title=Integrate the Matita translator in Matita itself,
   lead=Bol,
   BolRM=4]
-\input{workpackages/matita}
+%\input{workpackages/matita}
+\begin{compactitem}
+\item Merge Krajono and Matita, update the code to the latest
+  version and transfer the maintenance effort to the Matita team.
+\item Extend Krajono in order to record metadata that allow to
+  invert the translation.
+\item Optimize the code and the translation in order to be able to
+  export all the libraries of Matita.
+\end{compactitem}
 \end{task}
 
 \begin{task}[id=coq,
@@ -74,7 +104,17 @@
   lead=Bol,
   BolRM=12,
   InrRM=0]  %TODO
-\input{workpackages/coq}
+%\input{workpackages/coq}
+\begin{compactitem}
+\item Access Coq internal data structures to gather logical data, such as
+statements and proof terms (for tasks in WP3)
+\item Implement the translation of Coq terms to Dedukti terms
+\item Access Coq internal data structures to gather extra-logical data,
+such as the role played by a constant in the library like begin an implicit
+cast from one algebraic structure to another (for tasks in WP3)
+\item Make extra-logical data available in a structured and
+  extensible format (for tasks in WP5)
+\end{compactitem}
 \end{task}
 \end{tasklist}
 

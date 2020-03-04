@@ -1,6 +1,6 @@
-\begin{workpackage}[id=libraries,wphases=0-48,type=RTD,
-  short=Libraries,% for Figure 5.
-  title=Libraries,
+\begin{workpackage}[id=libraries,type=RTD,
+  short={Large libraries},% for Figure 5.
+  title={Large libraries},
   lead=Tum,
   StrRM=18,
   ChaRM=12,
@@ -103,7 +103,7 @@ The GeoCoq library consists of more than 100.000 lines of definitions and proofs
 One of the remaining obstacles is the frequent use of computational steps in Coq proofs. The issue is that proofs containing "proof by reflection" reach a level of complexity that makes verification by Dedukti impractical. An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions into the lambda Pi-calculus Modulo on which Dedukti is based. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
 \end{task}
 
-\begin{task}[id=flyspeck,title=The Flyspeck library,lead=Sac]
+\begin{task}[id=flyspeck,title=The Flyspeck library,lead=Inr]
 %\ednote{Saclay (Grienenberger)}
 The {HOL Light} library is large and varied. One of its key libraries is the 
 multivariate analysis library
@@ -131,7 +131,7 @@ The main milestones of this task are the further automation of the export from
 the whole {HOL Light} library, and of the {Flyspeck} in {Dedukti}.
 \end{task}
 
-\begin{task}[id=cakeml,title=The CakeML compiler library,lead=Cha,ChaRM=10]
+\begin{task}[id=cakeml,title=The CakeML compiler library,lead=Cha,ChaRM=12]
 The CakeML
 compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
 languages, the other being CompCert. Its export to Dedukti is one of
