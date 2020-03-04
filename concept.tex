@@ -1939,76 +1939,131 @@ learned and several milestones must be achieved.
 \subsubsection*{European projects}
 
 \begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
-\hline
-Matryoshka & 
-ERC Starting Grant
- Proof assistants are increasingly used to verify hardware and software and to formalize mathematics. However, despite the success stories, they remain very laborious to use. The situation has improved with the integration of first-order automatic theorem provers—superposition provers and SMT (satisfiability modulo theories) solvers—through middleware such as Sledgehammer for Isabelle/HOL and HOLyHammer for HOL Light and HOL4; but this research has now reached the point of diminishing returns. Only so much can be done when viewing automatic provers as black boxes.
-
-To make interactive verification more cost-effective, we propose to deliver very high levels of automation to users of proof assistants by fusing and extending two lines of research: automatic and interactive theorem proving. This is our grand challenge. Our starting point is that first-order (FO) automatic provers are the best tools available for performing most of the logical work. Our approach will be to enrich superposition and SMT with higher-order (HO) reasoning in a careful manner, to preserve their desirable properties. We will design proof rules and strategies, guided by representative benchmarks from interactive verification.
-
-With higher-order superposition and higher-order SMT in place, we will develop highly automatic provers building on modern superposition provers and SMT solvers, following a novel stratified architecture. To reach end users, these new provers will be integrated in proof assistants and will be available as backends to more specialized verification tools. The users of proof assistants and similar tools stand to experience substantial productivity gains: From 2010 to 2016, the success rate of automatic provers on interactive proof obligations from a representative benchmark suite called Judgment Day has risen from 
-47\% to 77\%; with this project, we aim at 90\%–95\% proof automation. 
+\hline 
+{\bf Alexandria}
+&
+Alexandria is a ERC project led by Lawrence Paulson aiming at the
+creation of a proof developmentenvironment for working mathematicians.
 \\
-
-OpenDreamKit & \\
-
-Software Heritage & \\
-
-
+&
+\hspace{0.4cm}
+Synergy with between Alexandria and Logipedia is clear as Alexandria
+is built on top of Isabelle and Isabelle and including Isabelle proofs
+in Logipedia is one of our main objectives.  The participation of
+Angeliki Koutsoukou-Argyraki to our club of academic users is also
+a factor facilitating the synergy.
+\\
+\hline
+{\bf Matryoshka} 
+& 
+Matryoshka is a ERC Starting Grant led by Jasmin Blanchette aiming at
+delivering very high levels of automation to users of proof assistants
+by fusing and extending two lines of research: automatic and
+interactive theorem proving.
+\\
+&
+\hspace{0.4cm} Synergy with between Matryoshka and Logipedia is clear
+as Matryoshka could produce proofs for Logipedia and use Logipedia
+proofs. The participation of Pascal Fontaine to both project is also a
+factor facilitating the synergy.
+\\
+\hline
+{\bf OpenDreamKit} 
+& 
+OpenDreamKit is a European Research Infrastructure project led by
+Nicolas Thierry which ran from 2015 to 2019 that has built a the joint
+ecosystems of software for mathematics.
+\\
+&
+\hspace{0.4cm}
+OpenDreamKit and Logipedia's goal are related but different as OpenDreamKit
+targets software for mathematics and Logipedia formal proofs. But both type 
+of objects are used to mathematicians, computer scientists, scientists in 
+general and engineers. The continuity between the two projects is manifested 
+by several common members: Michael Kohlhase, Dennis Müller, 
+Florian Rabe, and Makarius Wenzel. 
+\\
+\hline
 \end{longtable}
 
 \subsubsection*{Other projects}
 
 \begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
 \hline
-Formal abstracts & 
-The \href{https://formalabstracts.github.io/}{Formal Abstracts}
-project, headed by Thomas Hales (UK), will establish a formal abstract
-service that will express the results of mathematical publications in
-a computer-readable form (the Lean syntax) that captures the semantic
-content of publications.
+{\bf DeepSpec}
+&
+DeepSpec is a project led by Andrew Appel aiming at eliminating
+software bugs that can lead to security vulnerabilities and computing
+errors by improving the formal methods by which software is developed
+and verified.
 \\
-
+&
+\hspace{0.4cm}
+Although DeepSpec and Logipedia pursue different goals, the DeepSpec
+library can be a interesting benchmark for Logipedia's project to
+express proofs in different theories and proof systems.
+\\
+\hline
+{\bf Formal Abstracts} & 
+Formal Abstracts is a project lead by Thomas Hales, aiming at
+formalization of the main results (constructions, definitions, proofs,
+conjectures) of a piece of informal mathematics, such as a research
+paper.  Proofs of statements are omitted.
+\\
+&
+\hspace{0.4cm} Synergy with between Formal Abstracts and Logipedia is
+clear as Formal Abstracts provide a first step towards formalizing all
+the mathematical knowledge. The two projects are very complementary as 
+Formal abstracts proposes to formalize everything except proofs and
+Logipedia to formalize proofs.
+\\
+\hline
+{\bf ProofPeer}
+&
+ProofPeer is a British project led by Jacques Fleuriot that 
+brings together interactive theorem proving technology with
+the power of the social web, allowing many peers to develop a proof 
+in a cooperative way.\\
+&
+\hspace{0.4cm}
+Synergy with between ProofPeer and Logipedia is clear as ProofPeer
+could produce proofs for Logipedia and use Logipedia proofs.  We also
+share with ProofPeer that works with Matita, Mizar, Coq, and for any
+proof system in principle, the will to transcend the use of a single
+system. The participation of Jacques Fleuriot to our club of academic users 
+is also a factor facilitating the synergy.\\
+\hline
+{\bf Software Heritage} & 
+Software Heritage is a project lead by Roberto Di Cosmo, aiming at 
+collecting and preserving software in source code form.\\
+&
+\hspace{0.4cm} Software Heritage and Logipedia focus on different
+objects: programs and proofs, but they share the same values and the same 
+belief that these objects embody our technical and scientific knowledge 
+and humanity cannot afford the risk of losing it.
+\\
+\hline
+{\bf Xena} 
+&
+Xena is a British project, headed by Kevin Buzzard 
+aims at
+introducing mathematicians and students
+to formal proofs.\\
+&
+\hspace{0.4cm} Although Xena and Logipedia use different means they
+share the same values, in particular the dissemination of formal
+proofs. The examples developed in Xena could be an excellent benchmark
+for Logipedia's project to express elementary proofs in different theories
+and proof systems. 
+The participation of Kevin Buzzard to our club of academic users 
+is also a factor facilitating the synergy.\\
+\hline
 \end{longtable}
 
-
-% from Francois Bobot:
-The H2020 \href{https://www.decoder-project.eu}{Decoder} aims at
-providing a unified interface for storing and querying any kind of
-information related to a given software project, from initial
-requirements to code, to formal specifications and analysis results,
-including proof artifacts. It would of course be very beneficial for
-both projects to agree on a common exchange format for such objects, and
-coordination with the Decoder consortium (in which CEA acts as technical
-leader) will seek to achieve that.
-
-
-The \href{http://www.proofpeer.net/}{ProofPeer} project, headed by
-Jacques Fleuriot (UK), aims at designing a framework for (massively)
-collaborative theorem proving, using some extension of simple type
-theory and set theory to be defined compatible with HOL Light.
-
-The
-\href{https://www.cl.cam.ac.uk/~lp15/Grants/Alexandria/}{Alexandria}
-project, headed by Larry Paulson (UK), aims at creating a proof
-development environment attractive to working mathematicians,
-utilising the best technology available across computer science, based
-on Isabelle/HOL and set theory.
-
-The \href{https://deepspec.org/}{DeepSpec} project, headed by Andrew
-Appel, aims at eliminating software "bugs" that can lead to security
-vulnerabilities and computing errors by improving the formal methods
--- or the mathematically based techniques -- by which software is
-developed and verified. It is based on the Coq language.
-
-The \href{https://xenaproject.wordpress.com/}{Xena} project, headed by
-Kevin Buzzard (UK) aims at introducing mathematicians to formal proof
-verification software, and to digitise the undergraduate mathematics
-curriculum of Imperial College London.
-
-
+%%% TeX-master: "propB"
+%%% End:
 %%% Local Variables:
 %%%   mode: latex
+%%%   mode: flyspell
 %%%   ispell-local-dictionary: "english"
-%%% TeX-master: "propB"
 %%% End:
