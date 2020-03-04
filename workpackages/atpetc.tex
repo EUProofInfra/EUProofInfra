@@ -298,7 +298,7 @@ code will validate this infrastructure.
     in parallel of tasks~\taskref{atpetc}{instrumenting}
     and~\taskref{atpetc}{tracetodedukti}.
 
-    TODO Deliverable
+
     %% \begin{compactitem}
     %% \item Goal: TODO
     %% \item Milestones: TODO
@@ -381,6 +381,25 @@ code will validate this infrastructure.
     lead=Cea,
     CeaRM=18]
 %  Task leader: François Bobot (Contact: Chantal Keller)
+
+    Everything will be put together in the verification {\em a
+      posteriori} of the Frama-C-WP tool for formal verification of C
+    code and its back-end Why3. In this platform, the correctness of C
+    programs relies on the automatic generation of proof obligations
+    from annotated programs, and their automatic proofs using a
+    combinations of ATPs and user-defined rewrite rules. In this task:
+    \begin{itemize}
+    \item the generation of proof obligations and the rewrite engine
+      will be instrumented to produce Dedukti proofs, relying on (parts
+      of) Ektrakto;
+    \item ATPs will produce Dedukti proofs following
+      tasks~\taskref{atpetc}{instrumenting} and
+      \taskref{atpetc}{tracetodedukti};
+    \item users will have access to the Logipedia library following
+      task~\taskref{atpetc}{deduktitoatp}.
+    \end{itemize}
+    In the end, Dedukti proofs will be assembled together in a coherent
+    whole.
 
   % François Bobot (Why3)
   % Chantal Keller
