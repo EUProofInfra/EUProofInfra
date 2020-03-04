@@ -1936,16 +1936,41 @@ learned and several milestones must be achieved.
 
 \cmsection{Synergy with related projects}
 
-%Matryoshka
+\subsubsection*{European projects}
 
-{\color{red} To do}
+\begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
+\hline
+Matryoshka & 
+ERC Starting Grant
+ Proof assistants are increasingly used to verify hardware and software and to formalize mathematics. However, despite the success stories, they remain very laborious to use. The situation has improved with the integration of first-order automatic theorem provers—superposition provers and SMT (satisfiability modulo theories) solvers—through middleware such as Sledgehammer for Isabelle/HOL and HOLyHammer for HOL Light and HOL4; but this research has now reached the point of diminishing returns. Only so much can be done when viewing automatic provers as black boxes.
 
-{\color{red} Should be a table}
+To make interactive verification more cost-effective, we propose to deliver very high levels of automation to users of proof assistants by fusing and extending two lines of research: automatic and interactive theorem proving. This is our grand challenge. Our starting point is that first-order (FO) automatic provers are the best tools available for performing most of the logical work. Our approach will be to enrich superposition and SMT with higher-order (HO) reasoning in a careful manner, to preserve their desirable properties. We will design proof rules and strategies, guided by representative benchmarks from interactive verification.
 
-{\color{red} Compare with OpenDreamKit, Software Heritage, ProofPeer,
-  Wolfram alfa, etc.}
+With higher-order superposition and higher-order SMT in place, we will develop highly automatic provers building on modern superposition provers and SMT solvers, following a novel stratified architecture. To reach end users, these new provers will be integrated in proof assistants and will be available as backends to more specialized verification tools. The users of proof assistants and similar tools stand to experience substantial productivity gains: From 2010 to 2016, the success rate of automatic provers on interactive proof obligations from a representative benchmark suite called Judgment Day has risen from 
+47\% to 77\%; with this project, we aim at 90\%–95\% proof automation. 
+\\
 
-{\color{red} To be more detailed and compared to Logipedia.}
+OpenDreamKit & \\
+
+Software Heritage & \\
+
+
+\end{longtable}
+
+\subsubsection*{Other projects}
+
+\begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
+\hline
+Formal abstracts & 
+The \href{https://formalabstracts.github.io/}{Formal Abstracts}
+project, headed by Thomas Hales (UK), will establish a formal abstract
+service that will express the results of mathematical publications in
+a computer-readable form (the Lean syntax) that captures the semantic
+content of publications.
+\\
+
+\end{longtable}
+
 
 % from Francois Bobot:
 The H2020 \href{https://www.decoder-project.eu}{Decoder} aims at
@@ -1957,11 +1982,6 @@ both projects to agree on a common exchange format for such objects, and
 coordination with the Decoder consortium (in which CEA acts as technical
 leader) will seek to achieve that.
 
-The \href{https://formalabstracts.github.io/}{Formal Abstracts}
-project, headed by Thomas Hales (UK), will establish a formal abstract
-service that will express the results of mathematical publications in
-a computer-readable form (the Lean syntax) that captures the semantic
-content of publications.
 
 The \href{http://www.proofpeer.net/}{ProofPeer} project, headed by
 Jacques Fleuriot (UK), aims at designing a framework for (massively)
