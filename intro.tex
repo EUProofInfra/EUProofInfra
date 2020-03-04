@@ -146,9 +146,16 @@ improving cooperation between these proof systems, we will integrate
 these libraries in an online encyclopedia of formal proofs. Each proof
 in this encyclopedia will have versions in each theory where it can be
 expressed, so that it can be used in as many systems as possible.
-This is made possible by the expression of the theories implemented in
-these proof systems in a common logical framework, called the $\lambda
-\Pi$-calculus modulo theory, and implemented in the system Dedukti.
+
+Each proof system implements a different theory. So Logipedia will
+encyclopedia contain proofs expressed in different theories.  Such a
+theory-independent infrastructure is made possible, because the
+theories implemented in these different proof systems can be expressed
+in a common logical framework: the $\lambda \Pi$-calculus modulo
+theory, implemented in the system Dedukti.  Dedukti is thus the {\em
+lingua franca} that permits this theory-independent encyclopedia to 
+exist.
+
 Building such an encyclopedia will thus allow interoperability,
 sustainability, and cross-verification of all formal proofs in the
 encyclopedia.

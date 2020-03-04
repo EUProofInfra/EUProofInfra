@@ -886,8 +886,7 @@ for geometry, as they correspond to proofs obtained by the Gr\"obner
 basis method in GeoCoq.  Another challenge is that CoqInE, a tool
 developed to translate Coq proofs into Dedukti type-checkable terms,
 produces terms in an encoding of the Calculus of Inductive
-Constructions into the $\lambda \Pi$-calculus modulo theory on which
-Dedukti is based. Currently, it is not possible to export these
+Constructions in Dedukti. Currently, it is not possible to export these
 Dedukti terms to other proof assistants. However, another tool,
 Universo, has been developed and paves the way for the export of these
 terms.  The last challenge is that part of GeoCoq relies on the
@@ -1439,7 +1438,7 @@ Our objective in this project is to lift the non-temporal fragment of
 TLA$^+$ (which covers the overwhelming majority of proof obligations
 arising in system verification) from LIL $0$ to at least LIL $2$. The main
 challenges are encoding the untyped set theory underlying \tlaplus in
-$\lambda\Pi$-calculus modulo theory and to instrument TLA$^+$ in order
+Dedukti and to instrument TLA$^+$ in order
 to export proof traces that can be checked in Dedukti, starting with
 the Zenon and Isabelle back-ends.
 
@@ -1474,7 +1473,7 @@ NASA, and the National Institute of Aerospace.
 Our objective in this project is the translation of a substantial part of the
 PVS Prelude (the standard library of PVS) into Logipedia. A core version of the PVS logic,
 restricted to a fragment with decidable type checking, has been defined in
-$\lambda\Pi$-calculus modulo theory~\cite{gilbert:extending}. The main
+Dedukti~\cite{gilbert:extending}. The main
 challenges for achieving our objective are to effectively extend this fragment
 to full PVS, in a way that identifies superficially different proofs of the
 inhabitedness of sub-types, and to instrument PVS in order to generate proof
@@ -1611,8 +1610,7 @@ context of HoTT, these are called coherence conditions. Two-level type theory
 small proof steps are made explicit, and we will start by expressing 2LTT in
 Dedukti and then move to CubTT. This will allow us to gain experience with
 the extent to which coherence conditions can be supported as rewriting steps in
-$\lambda\Pi$-calculus modulo theories, and which conditions require proof
-elaboration.
+Dedukti, and which conditions require proof elaboration.
 
 \subsubsection*{Challenges}
 
@@ -1624,8 +1622,7 @@ that this project will allow us to address synergistically.
 \paragraph*{Rich syntactic and semantic features.}
 Several systems provide support for representing and reasoning about
 binders, definitional constructions, or have rich type systems that
-are not easily encoded in the $\lambda\Pi$-calculus modulo theory that
-underlies Dedukti.  Although the details vary between the systems,
+are not easily encoded in Dedukti.  Although the details vary between the systems,
 there are commonalities that should be addressed jointly. For example,
 K Prover and Minlog have strong support for co-induction and co-recursion
 for which foundational support should be provided in Dedukti. Mizar
@@ -1641,7 +1638,7 @@ such as modal logic or predicate sub-typing, whereas Mizar and TLA$^+$ are based
 on classical set theories. All systems except HoTT and Minlog do not provide
 proof objects and require instrumentation for providing traces that can then be
 interpreted by Dedukti. In all cases, a crucial point to consider for defining
-an encoding into $\lambda\Pi$-calculus modulo theory is that of exploiting
+an encoding in Dedukti, that of exploiting
 Dedukti's computation capabilities for controlling the size of proof objects.
 
 \paragraph*{Automatic proof tools.}
