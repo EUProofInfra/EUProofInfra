@@ -2,67 +2,62 @@
 
   \logo{FAU}
   
-  Friedrich Alexander Universit\"at Erlangen/N\"urnberg (FAU) is a public research
-  university in the cities of Erlangen and Nuremberg, Germany. FAU is the second largest
-  state university in the state Bavaria. It has 5 faculties, 23 departments/schools, 30
-  clinical departments, 19 autonomous departments, 656 professors, and ca 40\,000
-  students.
+FAU is the second largest state university in the state Bavaria.
+It has 5 faculties, 23 departments/schools, 30 clinical departments, 19 autonomous departments, 656 professors, and about 40\,000 students.
 
-  The KWARC (KnoWledge Adaptation and Reasoning for Content~\cite{KWARC:on}) Group
-  headed by {\emph{Prof.\ Dr.\ Michael Kohlhase}} specialises in knowledge management for
-  STEM.  Formal logic, natural language semantics, and semantic web technology provide the
-  foundations for the research of the group. Its group working on \pn will include: Michael
-  Kohlhase, Florian Rabe, Tom Wiesing, and Jonas Betzendahl.
+FAU has a strong departments of Computer Science and Mathematics (both 25 Professors) with strong groups in scientific computing, mathematical modeling, and simulation, data management, data visualization, and Pattern recognition.
+All of these deal with mathematical data in some way and thus constitute a conducive and supportive environment for \pn.
+Importantly the collaborating departments constitute a reservoir of know-how and potential user expertise the \pn project can draw upon for evaluation and testing.
 
-% \subsubsection*{Curriculum vitae}
-% % Curriculum of the personnel at this institution
-% \input{CVs/Michael.Kohlhase}
-% \input{CVs/Christian.Maeder}
-% \input{CVs/Mihnea.Iancu}
+The site leader is Prof. Dr. Michael Kohlhase.
+PD Dr. Florian Rabe will be co-PI for the site.
 
-\subsubsection*{Relevant previous experience:}
+\paragraph*{Main tasks:}
 
-The KWARC group is the lead implementor of the OMDoc (Open Mathematical Document) format
-for representing mathematical knowledge \cite{Kohlhase:OMDoc1.2} and redeveloped its
-formal core in the OMDoc/MMT format~\cite{RabKoh:WSMSML13}. The latter has been
-implemented in the MMT system~\cite{MMTSVN:on,RabKoh:WSMSML13} which provides efficient
-implementations of the computational primitives such as type checking, flattening, and
-presentation at a logic/foundation-independent level.  The group has developed services
-powered by such semantically rich representations, different paths to obtaining them, as
-well as platforms that integrate both aspects.  \emph{Services} include the adaptive
-context-sensitive presentation framework provided by the MMT API and the semantic search
-engine MathWebSearch\cite{KohSuc:asemf06,ProKoh:mwssofse12}. 
+The site co-leads \WPtref{structuring} and leads task \tasktref{alignment}{alignsearch}.
 
-Semantic services can be integrated into the documents generated from OMDoc/MMT
-representations, making them into ``active documents'', i.e. documents that are
-interactive and adaptive to the user and situation.  For \emph{obtaining} rich content,
-the group investigates assisted manual editing \cite{JucKoh:sidesc10:biblatex} as well as
-automatic annotation using linguistic techniques \cite{GinJucAnc:alsaacl09}.  Finally,
-KWARC has developed the \textsf{MathHub.info} portal a community-based library and
-knowledge management system for flexiformal libraries, which can be used for semantic
-publishing and eLearning~ \cite{KohDavGin:psewads11,MathHub:on,IanJucKoh:sdm14}.
+\paragraph*{Publications, products or services:}
 
-The \textsf{OMDoc/MMT} knowledge representation format and the \textsf{MathHub.info}
-system will an important basis for the developments Work Packages 4 and 6.
-
-Michael Kohlhase has initiated and led the CALCULEMUS! IHP-Research and Training Network
-and participated in the FP6 IST MoWGLI (Mathematics on the Web: Get it by Logic and
-Interfaces) project, the FP6 CSA Once-CS (Open Network of Centres of Excellence in Complex
-Systems), The FP7 EDC project WebALT (Web Advanced Learning Technologies), and the H2020
-Infrastructure project OpenDreanKit.
-
-\subsubsection*{Specific expertise:}
+% a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the call content
+The site developed 
 \begin{compactitem}
-\item Modelling formal structures of mathematical knowledge in a web-scalable way.
-\item Transforming large collections of legacy scientific publications to semantically
-  structured markup.
-\item Designing user interfaces for authoring and interacting with mathematical knowledge.
+ \item the OMDoc (Open Mathematical Document) format for representing mathematical knowledge \cite{Kohlhase:OMDoc1.2}, which anticipated much of the research proposed here,
+ \item the MMT logical framework \cite{RabKoh:WSMSML13} (which uses OMDoc as its representation format), a close relative of Dedukti,
+ \item the notion of alignments \cite{GKKMR:alignments:17}, which will be critical in \WPref{alignment},
+ \item the comprehensive representation of many major proof assistant libraries (albeit often proof objects) in OMDoc/MMT \cite{KR:oafexp:20},
+ \item the MathWebSearch search engine for symbolic formulas knowledge \cite{ProKoh:mwssofse12}.
 \end{compactitem}
 
-\site{Fau} leads \WPtref{structuring} and tasks related to formal alignments and
-alignment-based translation in \WPtref{alignment}.
+\paragraph*{Previous projects or activities:}
 
-\ednote{@Rabe: add 15 line CV}
+% a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal
+
+\begin{compactitem}
+ \item Prof. Kohlhase and Dr. Rabe were co-PIs of the OpenDreamKit H2020 infrastructure project (2015--2019) on virtual research environments that integrate mathematical computation systems.
+ \item Prof. Kohlhase and Dr. Rabe are the PIs of the German-funded OAF project (2014--2020) about representing proof assistant libraries in logical frameworks, specifically the MMT framework.
+ \item Prof. Kohlhase co-initiated and organized the three NTCIR community challenges for mathematics information retrieval in 2014/16/17.
+ \item Prof. Kohlhase initiated and led the CALCULEMUS! IHP-Research and Training Network.
+ \item Prof. Kohlhase participated in the FP6 IST MoWGLI (Mathematics on the Web: Get it by Logic and Interfaces) project.
+\end{compactitem}
+
+\paragraph*{Infrastructures or technical equipments:}
+% description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work
+
+The site hosts \url{http://mathhub.info}, a portal for formalized mathematics, mathematical databases, and active mathematical documents.
+It hosts about 10GB of data (Theorem Prover Libraries, OEIS, semantic course materials and a multilingual mathematical glossary), serves it via the MMT system and a lightweight browser-based front-end, and includes services like 2D/3D theory graph visualization of the modular structure.
+
+\paragraph*{Persons primarily responsible for carrying out the proposed activities:}
+
+\textbf{Michael Kohlhase} holds the \emph{Professorship for Knowledge Representation and Management} in the Computer Science Department.
+The KWARC (KnoWledge Adaptation and Reasoning for Content~\cite{KWARC:online}) Group headed by him specializes in knowledge management for Science, Technology, Engineering, and Mathematics (STEM), focusing on the last as a test subject.
+Formal logic, natural language semantics, and semantic web technology provide the foundations for the research of the group.
+Its group working on \pn will be composed of the following non-exhaustive list: Prof. Dr. Michael Kohlhase, Dr. Florian Rabe, Tom Wiesing, Dennis M\"uller, Jonas Betzendahl and Jan Frederik Schaefer.
+
+\textbf{Florian Rabe} obtained his PhD in 2008 and his habilitation in 2014 and is now Akad. Oberrat and Privatdozent in the KWARC group.
+Within the group, Kohlhase and Rabe co-advise most students and have shared the administration of research projects for 10 years.
+He is an expert in the design, implementation, and evaluation of representation languages for mathematical knowledge and meta-logical frameworks.
+He currently chairs the steering committee of \emph{Logical Frameworks and Meta-Languages: Theory and Practice}.
+He is the main developer of the MMT language and system and the LATIN logic atlas and has designed and overseen the representation of proof assistant libraries in the OAF project.
 \end{sitedescription}
 
 %%% Local Variables: 

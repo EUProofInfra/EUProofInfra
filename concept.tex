@@ -1015,7 +1015,7 @@ that rests upon an enrichment of the data with metadata.
 \subsubsection*{Sharing a common platform}
 
 The libraries of proofs described in previous sections can be quite
-large: several Gigabits for millions of mathematical objects
+large: several gigabytes for millions of mathematical objects
 (definition or theorem) in thousands of files. Translating them to
 Dedukti may increase this size by one order of magnitude as the
 Dedukti proof format is of a lower level than the high level languages
@@ -1066,8 +1066,45 @@ Examples of big proof libraries
 {\color{red} Could not we use the same examples as above?}
 
 \subsubsection*{Continuous integration and deployment}
+Modifying the Logipedia platform in order to add new features or implement
+new formal proofs will be a collaborative work. To ensure the reliability
+of the platform and in the meantime to be able to efficiently and
+frequently update it on the production infrastructure,
+it is necessary to rely on best software development practices.
+We will use continuous integration and continuous deployment (CI/CD)
+pipeline to manage the development process.
 
-{\color{red} To do by SystemX}
+The pipeline is composed of several open source tools orchestrated
+to automatically deliver new versions of the Logipedia platform.
+
+\begin{compactitem}
+\item
+A Version Control System (VCS) stores and manages the source code and
+allows its modification securely and with traceability. Git is the leader
+open source VCS tool and will be used for Logipedia source code. Git implements
+a distributed version control system that applies perfectly to the context of
+a European collaborative project. For Logipedia, the VCS will handle the
+source code of the Logipedia web site itself as well as the formal proof libraries.
+\item
+A CI/CD platform is used to automate the integration of modifications
+as soon as a new version is pushed to the VCS. The automatic integration
+consists in building the new application, executing tests to ensure
+the quality is maintained, and producing packages of the application.
+Jenkins is a widely used CI/CD tool and will be used for Logipedia.
+Once packages are built, the CI/CD platform can trigger the automatic
+deployment of the new version on the target infrastructure.
+This step is called continuous delivery.
+\end{compactitem}
+
+In practice, the automatic delivery is often done on a test environment
+to allow users to verify that the new version of the platform
+behaves as expected. When manual tests are done, maintainers can push
+the new version to the production environment.
+
+Automating integration and delivery ensures that the full process
+will always be the same, regardless of who made the modification
+of the source code. It also makes certain that tests are executed and passed
+to keep a good quality level and a high availability of the platform.
 
 \subsubsection*{Online access of findable, accessible, interoperable, and
 reusable formal proofs}
@@ -1090,7 +1127,70 @@ power of the platform has to be allowed to pre-identified persons only.
 
 \subsubsection*{Search tools}
 
-{\color{red} To do by Pierre Senellart}
+Again, to make the encyclopedia usable, it is necessary to add search
+functionalities to efficiently find specific theorems and proofs of
+interest by a user. It should be possible to search by name, other
+metadata, semantic annotations, and by the actual structure and content
+of these theorems and proofs.
+
+Searching in a collection of millions of regular documents, representing
+gigabytes of data or more, is a problem easily solved by standard
+\emph{information retrieval} techniques \cite{DBLP:books/daglib/0021593}, 
+which routinely scale to several orders of magnitude higher when indexing
+huge corpora, such as the World Wide Web.
+Elasticsearch\footnote{\url{https://www.elastic.co/fr/elasticsearch}} is
+an example of a highly customizable and scalable search engine for large
+document collections. But these techniques and tools are
+adapted to the case of (semi-structured) natural language documents by
+full text queries, along with other metadata, not to the case of
+mathematical statements with complex content and structure, as well as
+semantic annotations.
+
+The case of semantic annotations is relatively easy to solve. SPARQL
+\cite{sparql} is a
+query language for (RDF) semantic annotations expressing complex semantic
+queries, for which numerous
+query engines exist; popular (and open-source) ones include
+Apache Jena\footnote{\url{https://jena.apache.org/}} and
+Virtuoso\footnote{\url{http://vos.openlinksw.com/owiki/wiki/VOS}}. These
+systems also support efficient indexing and querying of textual content
+\cite{DBLP:conf/esws/MinackSN09}, which allows queries combining textual
+search and semantic annotations.
+
+Exploiting the structure and content of mathematical statements is a more
+challenging, open, and interesting issue.
+
+Early efforts have simply considered
+basic exact keyword and regular expression matching 
+\cite{DBLP:conf/mkm/BancerekR03}, or searching for the exact type of a lemma,
+which requires type isomorphism tests\cite{DBLP:conf/types/Delahaye99}.
+
+One approach to improve on such techniques is to
+adapt standard information retrieval techniques to work with terms
+occurring in mathematical tools. This has been done\cite{DBLP:conf/mkm/Cairns04}
+with \emph{latent semantic indexing}, an
+indexing and retrieval technique based on co-occurrences of terms within
+documents, which is adapted to work with statements from the Mizar
+Mathematical Library (MML): terms, which are (lemmatized or stemmed)
+words in regular natural language documents, are chosen to be type names,
+operators, etc., in the mathematical language of the MML. Similarly to
+regular information retrieval techniques, however, such a search cannot
+interpret complex structures.
+
+To deal with the actual (hierarchical) content of mathematical formulas
+and statements, systems such as
+MathWebSearch\cite{DBLP:conf/aisc/KohlhaseMP12} (in the context of
+mathematical formulas in MathML within XHTML documents) and
+Whelp\cite{DBLP:conf/types/AspertiGCTZ04} (in the context of the standard
+library of Coq) propose to index not only individual terms, but the
+relation that these terms have with each other, allowing to search for
+somewhat complex hierarchical patterns within mathematical statements.
+
+As an ambition of the Logipedia project, we aim to build search tools that allow
+combining full-text, semantic, and content search, with state of the art
+information retrieval and indexing techniques, adapted to the case of
+a library of mathematical results and proofs in a diversity of languages
+and formalisms.
 
 \subsubsection*{Access on everyone's computer}
 
@@ -1129,7 +1229,9 @@ In the category of system which have developed by people from the interactive th
 PCoq \cite{amerkad_mathematics_2001}, Coq Web \cite{blanc_proofs_2007}, ProofWeb \cite{kaliszyk_deduction_2008}, Edukera \cite{rognier_presentation_2016}; and those who use an automatic theorem prover above a pseudo natural language input:
 SAD \cite{lyaletski_sad_2006}, Naproche \cite{cramer_naproche_2010}, Lurch \cite{carter_lurch:_nodate}, ELFE \cite{dore_elfe_2018}, CalcCheck \cite{kahl_calccheck:_2018}.
 
-Current state of the art formal proof systems require to learn a specific formal language and a command-line interface to compile and execute the language. This level of technicality is not compliant with mass
+Current formal proof systems require to learn a specific formal
+language and a command-line interface to compile and execute the
+language. This level of technicity is not compliant with mass
 adoption by teachers and students outside computer science. For
 educational purposes, it is therefore mandatory to develop an
 intuitive and easy-to-handle user-interface for the logipedia formal
@@ -1164,27 +1266,21 @@ One of the difficulties is to provide a way for the students to discover
 and integrate hundreds of lemmas and rewriting rules necessary to solve
 exercises. The solution consists of a mixture of step-wise tutorials and
 training exercises, plus an adapted ergonomic design of the application menus.
-In this regard, theorems and rewriting rules should be presented and searched using
-technology developed in \WPref{dissemination}.
+In this regard, one should be able to search for theorems and rewriting rules.
 
 The research of proof must be automated at some point in order to ease and
-speed up the process and to comply with the level of required detail in education;
-the output of \WPref{access} will be used for this task.
+speed up the process and to comply with the level of required detail in education.
 
-
-
-\vspace*{2cm}{\color{red} to be moved somewhere else:}
-
-We will use several indicators to measure the success of the platform:
-\begin{compactitem}
-\item The number of proof files and their sizes added to the platform.
-\item The number of references to Logipedia proofs in scientific
-  publications.
-\item The number of file downloads from the server.
-\item The number of accesses on the web interface.
-\item The number of uses of the teaching interface.
-\item The number of teachers and courses using the teaching interface.
-\end{compactitem}
+%We will use several indicators to measure the success of the platform:
+%\begin{compactitem}
+%\item The number of proof files and their sizes added to the platform.
+%\item The number of references to Logipedia proofs in scientific
+%  publications.
+%\item The number of file downloads from the server.
+%\item The number of accesses on the web interface.
+%\item The number of uses of the teaching interface.
+%\item The number of teachers and courses using the teaching interface.
+%\end{compactitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
@@ -1255,7 +1351,7 @@ So far, we have considered systems that were already at LIL 1, that
 is, systems that implement a theory that we know how to express in
 Dedukti.  Other relevant systems are still at level 0, that is, we do
 not yet know how to express them. Part of our project is to work on
-their theories: those of Mizar, TLA$^+$, PVS, Minlog, Why3, ProvenTools, and
+their theories: those of Mizar, TLA$^+$, PVS, Minlog, ProvenTools, and
 K Prover, and Homotopy type theory, in order to understand how
 to express their theory in Dedukti.
 
@@ -1427,31 +1523,26 @@ extraction to Dedukti through realizability, and also aim to be able to
 import a subset of Dedukti proofs into Minlog in order to benefit from the
 libraries available in Logipedia.
 
-\paragraph*{Why3.}
-
-{\color{red} To do ?}
-
-
 \paragraph*{ProvenTools.}
 ProvenTools is an interactive environment for designing programs and proofs that
 has been developed at Prove \& Run. Programs and
-specifications are written in ProvenTools, a functional language that
+specifications are written in Smart, a functional language that
 emphasizes a separation between control flow and data flow and brings a uniform
 monadic style to handling exceptions and different return cases.
-% ProvenTools is based on a classical first-order logic with rank-1
+% Smart is based on a classical first-order logic with rank-1
 % polymorphism, algebraic data types, recursive definitions, and inductive
 % predicates.
-% Proof obligations generated from ProvenTools models are presented as virtual
+% Proof obligations generated from Smart models are presented as virtual
 % execution paths and can be proved using a mix of interactive and automated
 % proving.
 ProvenTools can also be used to generate efficient C code from a subset
-of the ProvenTools language, and the tool performs static analysis to ensure
+of the Smart language, and the tool performs static analysis to ensure
 that the extraction is safe and correct.
 
 ProvenTools has been used to design, develop, and formally verify
 ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
 been certified at the highest Common Criteria level (EAL7). The proofs represent
-about 400kloc of ProvenTools, covering all process management including page
+about 400kloc of Smart, covering all process management including page
 tables, shared memory, process creation, code loading, etc. ProvenTools has also
 been used to develop user-side applications, in particular in the case of filter
 applications~\cite{bolignano:security}. The proofs ensure that the data
@@ -1460,7 +1551,7 @@ attacks another one by producing ill-formed messages.
 
 The logic underlying ProvenTools is similar to that of other program
 verification environments such as Why3. The main challenge in translating
-ProvenTools models and proofs to Dedukti is that ProvenTools does not
+Smart models and proofs to Dedukti is that ProvenTools does not
 manipulate formulas or proof terms explicitly. Instead, models are translated to
 an intermediate format called Smil that resembles control flow graphs
 with sink states representing erroneous behavior. Proof obligations are
@@ -1491,7 +1582,7 @@ The K framework allows the designer of a programming languages to
 specify its formal semantics and to derive analysis tools for the
 language in a correct-by-construction manner. K specifications (which
 are Matching Logic theories) exist for a variety of languages
-including C, Java, JavaScript, and EVM. The K
+including C, Java, JavaScript, and the Ethereum Virtual Machine. The K
 prover~\cite{stefanescu:semantics} supports coinductive proofs of
 reachability properties that underlie the correctness of programs
 defined using K. It is based on Reachability Logic, formalized in
@@ -1510,7 +1601,7 @@ semantics of (at least) a simple programming language such as IMP, the
 proof system for reachability properties and a few proofs of
 paradigmatic program properties.
 
-\paragraph*{Homotopy type theory (HoTT).}
+\paragraph*{Homotopy and cubical type theory (HoTT).}
 Introduced by Vladimir Voevodsky, Michael Warren and others, HoTT aims at
 connecting type theory and homotopy theory, the study of abstract shapes. It is
 considered as an alternative to set theory for providing foundations for all

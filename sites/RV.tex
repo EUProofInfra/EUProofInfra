@@ -1,6 +1,6 @@
 \begin{sitedescription}{Run}
 
-\ednote{a description of the legal entity}
+%\ednote{a description of the legal entity}
 
 \logo{RV}
 
@@ -12,70 +12,76 @@ in Bucharest Romania.  Its main activities include the design and development of
 the symbolic execution and program verification backend of the K framework,
 as well as offering consultance with modeling and proving properties about
 consensus protocols (in the presence of Byzantine faults),
-with a focus of those used in Blockchains.
+with a focus on those used in Blockchains.
 
 \paragraph*{Main tasks:}
 
-\ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
+%\ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
 
-RV will lead the task of instrumenting the K Prover (WP6) to emit enough information
-about the proving process, in order to allow extracting matching logic (ML) proofs from
-program verification problems.  Additionally, RV will assist the UAIC team with
-translating Kore (the language of ML) into Dedukti.
-These will be achieved through the following activities:
-
-\ednote{specify the main tasks and reference the respective work packages}
+%\ednote{specify the main tasks and reference the respective work packages}
 
 \begin{compactitem}
-\item Generating proof traces for the K Prover
-\item Translating Kore into Dedukti 
+\item RV SRL will lead the task of instrumenting the K Prover to emit enough information
+about the proving process, in order to allow extracting matching logic (ML)
+proofs from program verification problems~\WPtref{theories}~\taskref{theories}{matching}.
+\item RV SRL will assist the UAIC team with translating Kore (the language of ML)
+into Dedukti~\WPtref{theories}~\taskref{theories}{matching}.
 \end{compactitem}
 
 \paragraph*{Publications, products or services:}
 
-\ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
+%\ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
 
 \begin{compactitem}
-\item K Framework Tools \url{https://github.com/kframework/k} is an open source
- rewrite-based executable semantic framework in which programming languages,
- type systems and formal analysis tools can be defined using configurations,
- computations and rules. Originally designed and prototyped by Grigore Roșu and 
- Traian Șerbănuță, it is currently maintained by a team spread between teh US and 
- Romanian branches of RV. 
-\item Kore \url{https://github.com/kframework/kore} provides a language for
-expressing matching logic, as well as a rewrting-based engine for perfoming 
-matching-logic deduction.  Kore currently serves as a symbolic execution and 
-program verification backend for the K framework. Most of the team developing Kore
-is part of RV Romania.
-\item Kasampalis, T., Guth, D., Moore, B., Șerbănuță, T. F., Zhang, Y., Filaretti, D., ... \& Roşu, G. (2019, October). IELE: A rigorously designed language and tool ecosystem for the blockchain. In International Symposium on Formal Methods (pp. 593-610). Springer, Cham.
-\item Rosu, G., Serbanuta, T. F., Moore, B., Mereuta, R., Ciobaca, S., \& Stefanescu, A. (2019). All-Path Reachability Logic. Logical Methods in Computer Science, 15.
-\item Chen, X., \& Roşu, G. (2019, June). Matching $\mu$-Logic. In 2019 34th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS) (pp. 1-13). IEEE.
+\item ``A rigorously designed language and tool ecosystem for the blockchain'', by Kasampalis, T., Guth, D., Moore, B., Șerbănuță, T. F., Zhang, Y., Filaretti, D., \ldots \& Roşu, G. (2019, October). In International Symposium on Formal Methods (pp. 593-610). Springer, Cham.
+\item ``All-Path Reachability Logic'', by Rosu, G., Serbanuta, T. F., Moore, B., Mereuta, R., Ciobaca, S., \& Stefanescu, A. (2019). Logical Methods in Computer Science, 15.
+\item ``Matching $\mu$-Logic'', by Chen, X., \& Roşu, G. (2019, June). In 2019 34th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS) (pp. 1-13).
+\item ``From Hybrid Modal Logic to Matching Logic and back'', by Leustean, I., Moanga, N., \& Serbanuta, T. F. (2019). In Working Formal Methods Symposium (FROM), EPTCS 303, 16-31. arXiv:1907.05029.
+\item ``An overview of the K semantic framework'', by Roșu, G., \& Șerbănută, T. F. (2010).  Journal of Logic and Algebraic Programming, 79(6), 397-434.
 \end{compactitem}
 
-%\paragraph*{Previous projects or activities:}
+\paragraph*{Previous projects or activities:}
 
 %\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
 
-%\begin{compactitem}
-%\item 
-%\end{compactitem}
+RV SRL is young company and therefore it was not yet involved in EU/national funded projects.
+However, besides contributing to the developement of the infrastructure described below,
+here are some activities in which RV SRL played an important role:
+\begin{compactitem}
+\item \href{https://github.com/runtimeverification/casper-cbc-proofs}{The formal modelling}
+(using Coq) of the full-node and light-node Casper-CBC, as well as the partial
+modelling of new VLSM model proposed by Vlad Zamfir, as part of a research
+project funded by Casper Labs.
+\item The design and development of a gas model for
+\href{https://github.com/runtimeverification/iele-semantics}{IELE}, a new
+virtual machine language for the blockchain aimed at improving security and
+verification-readiness. IELE was developed as part of a project funded
+by Input Output Hong Kong.
+\end{compactitem}
 
 \paragraph*{Infrastructures or technical equipments:}
 
-\ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
-RV Romania already possesses the infrastructure required for carrying out the tasks proposed.
+%\ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
+
+\begin{compactitem}
+\item \href{https://github.com/kframework/k}{K Framework} is an open source
+ rewrite-based executable semantic framework in which programming languages,
+ type systems and formal analysis tools can be defined using configurations,
+ computations and rules. Originally designed and prototyped by Grigore Roșu and 
+ Traian Șerbănuță, it is currently maintained by a team spread between the US and 
+ Romanian branches of RV. 
+\item \href{https://github.com/kframework/kore}{Kore} provides a language for
+expressing matching logic, as well as a rewrting-based engine for perfoming 
+matching-logic deduction.  Kore currently serves as a symbolic execution and 
+program verification backend for the K framework. Most of the team developing Kore
+is part of RV SRL.
+\end{compactitem}
 
 \paragraph*{Persons primarily responsible for carrying out the proposed activities:}
 
 \begin{compactitem} % in alphabetical order
 
-\item{\bf Andrei Burdușa} is a software engineer at RV Romania.
-His research interests lay in functional programming, type theory and logic.
-His Bachelor's degree project at the University of Bucharest was focused on Haskell.
-He is currently pursuing two Master’s degrees: one in Security and Applied Logic,
-and another one in Analytic Philosophy, both from the University of Bucharest.
-
-\item{\bf Ana Pantilie} is a software engineer at RV Romania, involved with the
+\item{\bf Ana Pantilie} is a software engineer at RV SRL, involved with the
 research and development of the symbolic execution and program verification
 backend of the K framework.
 She enjoys learning about functional programming languages and formal methods.
@@ -86,7 +92,7 @@ composition application.
 
 \item{\bf Grigore Roșu} is a full professor of computer science at the
 University of Illinois and the founder of Runtime Verification, Inc., and of 
-Runtime Verification Romania. He is interested in programming languages,
+Runtime Verification SRL. He is interested in programming languages,
 formal methods and software engineering, and especially in how to combine
 these to increase the safety, security and dependability of computing systems.
 He was offered the NSF CAREER award, the UIUC outstanding junior award,
