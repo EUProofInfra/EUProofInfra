@@ -1110,9 +1110,26 @@ install all the definitions and proofs it relies on as well.
 
 {\color{red} To do by Benoit (Edukera), Julien and Pierre-Yves}
 
-Current formal proof systems require to learn a specific formal
-language and a command-line interface to compile and execute the
-language. This level of technicity is not compliant with mass
+The existing user interfaces for proving theorems in the classroom can be sorted roughly in two categories: 
+the systems built by the community of educators and the systems built by specialist of interactive theorem proving.
+
+The Geometry Tutor~\cite{anderson_geometry_1985}, Mentoniezh ~\cite{py_reconnaissance_1990},
+Defi~\cite{ag-almouloud_ordinateur_1992}, Chypre~\cite{bernat_chypre:_1993}, Cabri-Eulide ~\cite{luengo_cabri-euclide:_1997}, Geometrix~\cite{gressier_geometrix_1988}  and Baghera ~\cite{balacheff_baghera_1999},
+2002) systems belongs to the first category. Using these systems the
+student can produce proofs interactively using a set of known theorems.
+In most of these systems the student can not invent a proof very different
+from what the program had pre-computed using automated theorem
+proving methods. As far as we know, the exception is Cabri-Euclide
+which contains a small formal system and therefore gives more freedom
+to the student. Baghera includes also e-learning features, such as task
+management and network communication between teachers and their
+students.
+
+In the category of system which have developed by people from the interactive theorem proving community, we can distinguish between system which add syntactic sugar over a state of the art proof assistant:
+PCoq \cite{amerkad_mathematics_2001}, Coq Web \cite{blanc_proofs_2007}, ProofWeb \cite{kaliszyk_deduction_2008}, Edukera \cite{rognier_presentation_2016}; and those who use an automatic theorem prover above a pseudo natural language input:
+SAD \cite{lyaletski_sad_2006}, Naproche \cite{cramer_naproche_2010}, Lurch \cite{carter_lurch:_nodate}, ELFE \cite{dore_elfe_2018}, CalcCheck \cite{kahl_calccheck:_2018}.
+
+Current state of the art formal proof systems require to learn a specific formal language and a command-line interface to compile and execute the language. This level of technicality is not compliant with mass
 adoption by teachers and students outside computer science. For
 educational purposes, it is therefore mandatory to develop an
 intuitive and easy-to-handle user-interface for the logipedia formal
@@ -1145,7 +1162,7 @@ or backward).
 
 One of the difficulties is to provide a way for the students to discover
 and integrate hundreds of lemmas and rewriting rules necessary to solve
-exercices. The solution consists of a mixture of step-wise tutorials and
+exercises. The solution consists of a mixture of step-wise tutorials and
 training exercises, plus an adapted ergonomic design of the application menus.
 In this regard, theorems and rewriting rules should be presented and searched using
 technology developed in \WPref{dissemination}.
@@ -1154,25 +1171,6 @@ The research of proof must be automated at some point in order to ease and
 speed up the process and to comply with the level of required detail in education;
 the output of \WPref{access} will be used for this task.
 
-
-The existing user interfaces for proving theorems in the classroom can be sorted roughly in two categories: 
-the systems built by the community of educators and the systems built by specialist of interactive theorem proving.
-
-The Geometry Tutor~\cite{anderson_geometry_1985}, Mentoniezh ~\cite{py_reconnaissance_1990},
-Defi~\cite{ag-almouloud_ordinateur_1992}, Chypre~\cite{bernat_chypre:_1993}, Cabri-Eulide ~\cite{luengo_cabri-euclide:_1997}, Geometrix~\cite{gressier_geometrix_1988}  and Baghera ~\cite{balacheff_baghera_1999},
-2002) systems belongs to the first category. Using these systems the
-student can produce proofs interatively using a set of known theorems.
-In most of these systems the student can not invent a proof very dierent
-from what the program had pre-computed using automated theorem
-proving methods. As far as we know, the exeption is Cabri-Eulide
-whih ontains a small formal system and therefore gives more freedom
-to the student. Baghera inludes also e-learning features, suh as task
-management and network communiation between teachers and their
-students.
-
-In the category of system which have developed by people from the interactive theorem proving community, we can distinguish between system which add syntactic sugar over a state of the art proof assistant:
-PCoq \cite{amerkad_mathematics_2001}, Coq Web \cite{blanc_proofs_2007}, ProofWeb \cite{kaliszyk_deduction_2008}, Edukera \cite{rognier_presentation_2016}; and those who use an automatic theorem prover above a pseudo natural language input:
-SAD \cite{lyaletski_sad_2006}, Naproche \cite{cramer_naproche_2010}, Lurch \cite{carter_lurch:_nodate}, ELFE \cite{dore_elfe_2018}, CalcCheck \cite{kahl_calccheck:_2018}.
 
 
 \vspace*{2cm}{\color{red} to be moved somewhere else:}
