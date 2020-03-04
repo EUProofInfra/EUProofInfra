@@ -89,6 +89,7 @@ code will validate this infrastructure.
       ImtRM=1,
       OcaRM=12,
       BelRM=6,
+      wphases=0-48!1.0
     ]
   % WP Leader supervision: Pascal
   % Participants
@@ -148,6 +149,7 @@ code will validate this infrastructure.
       LieRM=12,
       ImtRM=8,
       SacRM=2,
+      wphases=6-48!.5
     ]
   % Pascal Fontaine
   % Chantal Keller
@@ -282,7 +284,8 @@ code will validate this infrastructure.
       LieRM=8,
       SacRM=3,
       BelRM=3,
-      OcaRM=2
+      OcaRM=2,
+      wphases=0-48!.5
     ]
     % Task leader: Guillaume Bury (WP leader contact: Chantal Keller)
     % Guillaume Bury
@@ -298,7 +301,7 @@ code will validate this infrastructure.
     in parallel of tasks~\taskref{atpetc}{instrumenting}
     and~\taskref{atpetc}{tracetodedukti}.
 
-    TODO Deliverable
+
     %% \begin{compactitem}
     %% \item Goal: TODO
     %% \item Milestones: TODO
@@ -350,7 +353,8 @@ code will validate this infrastructure.
       lead=Inn,
       SacRM=4,
       InnRM=6,
-      BelRM=3
+      BelRM=3,
+      wphases=0-48!.5
     ]
     %  Task leader: Cezary Kaliszyk
 
@@ -379,8 +383,29 @@ code will validate this infrastructure.
 \begin{task}[id=cooperation,
     title=Logipedia and ATP end-to-end,
     lead=Cea,
-    CeaRM=18]
+    CeaRM=18,
+    wphases=12-48!.5
+    ]
 %  Task leader: François Bobot (Contact: Chantal Keller)
+
+    Everything will be put together in the verification {\em a
+      posteriori} of the Frama-C-WP tool for formal verification of C
+    code and its back-end Why3. In this platform, the correctness of C
+    programs relies on the automatic generation of proof obligations
+    from annotated programs, and their automatic proofs using a
+    combinations of ATPs and user-defined rewrite rules. In this task:
+    \begin{itemize}
+    \item the generation of proof obligations and the rewrite engine
+      will be instrumented to produce Dedukti proofs, relying on (parts
+      of) Ektrakto;
+    \item ATPs will produce Dedukti proofs following
+      tasks~\taskref{atpetc}{instrumenting} and
+      \taskref{atpetc}{tracetodedukti};
+    \item users will have access to the Logipedia library following
+      task~\taskref{atpetc}{deduktitoatp}.
+    \end{itemize}
+    In the end, Dedukti proofs will be assembled together in a coherent
+    whole.
 
   % François Bobot (Why3)
   % Chantal Keller
@@ -471,20 +496,44 @@ code will validate this infrastructure.
 % \end{tasklist}
 
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=6,miles=startup,id=ATPtrace1,dissem=PU,nature=DEM,lead=Inr]
+  \begin{wpdeliv}[due=6,miles=??,id=ATPtrace1,dissem=PU,nature=DEM,lead=Lie]
     {Prototypes of Trace producing Automatic Theorem Prover and Satisfiability Modulo Theories solver}
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=18,miles=startup,id=Trace2Dedukti1,dissem=PU,nature=DEM,lead=Imt]
-    {Translator for traces to Dedukti}
+  \begin{wpdeliv}[due=18,miles=??,id=Trace2Dedukti1,dissem=PU,nature=DEM,lead=Imt]
+    {Prototype of a translator for some traces to Dedukti}
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=48,miles=startup,id=ATPtrace2,dissem=PU,nature=DEM,lead=Inr]
-    {Trace producing Automatic Theorem Prover and Satisfiability Modulo Theories solver}
+  \begin{wpdeliv}[due=24,miles=??,id=Dedukti2ATP1,dissem=PU,nature=DEM,lead=Sac]
+    {Prototype of a translator from Dedukti statements into TPTP and
+      SMT-LIB, application to simple libraries}
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=48,miles=startup,id=Trace2Dedukti2,dissem=PU,nature=DEM,lead=Imt]
-    {Translator for traces to Dedukti}
+  \begin{wpdeliv}[due=36,miles=??,id=ReadinessCode,dissem=PU,nature=DEM,lead=Sac]
+    {Tools based on ATPs to increase Logipedia Readiness}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=48,miles=??,id=ATPtrace2,dissem=PU,nature=DEM,lead=Lie]
+    {Trace producing Automatic Theorem Prover, Satisfiability Modulo
+      Theories solvers, and Coherent Logic Solver}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=48,miles=??,id=Trace2Dedukti2,dissem=PU,nature=DEM,lead=Imt]
+    {Translator for most traces to Dedukti}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=48,miles=??,id=Dedukti2ATP2,dissem=PU,nature=DEM,lead=Sac]
+    {Translator from expressive Dedukti statements into TPTP and
+      SMT-LIB, application to large libraries}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=48,miles=??,id=ReadinessReport,dissem=PU,nature=R,lead=Inn]
+    {Report on the Proof Automation for Logipedia}
+  \end{wpdeliv}
+
+  \begin{wpdeliv}[due=48,miles=??,id=Why3,dissem=PU,nature=DEM,lead=Cea]
+    {A posteriori verification of non trivial C programs in the
+      Frama-C-WP platform}
   \end{wpdeliv}
 
 \end{wpdelivs}
