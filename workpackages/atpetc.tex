@@ -49,16 +49,18 @@ automated theorem provers fixes a syntactic template for proofs rather
 than providing an unambiguous framework to express proofs
 semantically.
 
-Some preliminary works predating this proposal clearly establish that Dedukti
-can accommodate proofs in Satisfiability Modulo Theories, automated theorem
-provers, and SMT.  In this work package, we will build on those preliminary work
-and provide a set of conduits from the established formats used in automated
-tools. For the tools that do not have yet an established format, we select one
-automated theorem prover, i.e.\ the E prover, and one SMT solver, i.e.\ veriT,
-and provide conduits for those tools.  These conduits and the techniques used
-in the embedded translation will be properly documented, to ease integration of
-further tools of the kind.  If a standardized proof format appears for some kind
-of tools, the conduits will be updated to adopt the new standard.
+Some preliminary works predating this proposal clearly establish that
+Dedukti can accommodate proofs in Satisfiability Modulo Theories,
+automated theorem provers, and SMT. In this work package, we will build
+on those preliminary work and provide a set of conduits from the
+established formats used in automated tools. For the tools that do not
+have yet an established format, we concentrate on some provers: the
+first-order theorem prover E, the SMT solvers veriT and Alt-Ergo, and a
+coherent logic reasoner, and provide conduits for those tools. These
+conduits and the techniques used in the embedded translation will be
+properly documented, to ease integration of further tools of the kind.
+If a standardized proof format appears for some kind of tools, the
+conduits will be updated to adopt the new standard.
 
 In this work package, we also plan to integrate in Logipedia some well-chosen
 proofs coming from automated tools.  Well-chosen proofs will have to be
@@ -102,9 +104,10 @@ code will validate this infrastructure.
   % Sylvain Conchon (OCamlPro)
   % François Bobot (Why3)
 
-    Automated theorem provers should produce details proof traces, with
+    Automated theorem provers should produce detailed proof traces, with
     sufficient information to be understood in the Logipedia context.  We will
-    consider here the first-order theorem prover E, the SMT solver veriT, and a
+    consider here the first-order theorem prover E, the SMT solvers
+    veriT and Alt-Ergo, and a
     coherent logic reasoner, and instrument them to produce detailed proof
     traces.  A first prototype will be made available early in the project, to
     enable work on the next task.  The final tools fully connectable to the
@@ -159,7 +162,7 @@ code will validate this infrastructure.
   % Sylvain Conchon (OCamlPro)
     % François Bobot (Why3)
 
-    This task focuses on the design and implementation of the tool (Ekstrakto)
+    This task focuses on the design and implementation of the tool Ekstrakto
     to translate into Dedukti the proof traces from the automatic theorem
     provers from task~\taskref{atpetc}{instrumenting}.  This task depends on
     task~\taskref{atpetc}{instrumenting}, but can be partly executed in
@@ -293,10 +296,9 @@ code will validate this infrastructure.
     to translate Logipedia statements into the standardized input format for
     some automatic tools, namely TPTP and SMT-LIB.  This task can be conducted
     in parallel of tasks~\taskref{atpetc}{instrumenting}
-    and~\taskref{atpetc}{tracetodedukti}.  It also relates to Work Package
-    \WPref{reversemath}.
+    and~\taskref{atpetc}{tracetodedukti}.
 
-    TODO Deliverable
+
     %% \begin{compactitem}
     %% \item Goal: TODO
     %% \item Milestones: TODO
@@ -350,12 +352,19 @@ code will validate this infrastructure.
       InnRM=6,
       BelRM=3
     ]
-    %  Task leader: Chantal Keller
+    %  Task leader: Cezary Kaliszyk
 
-    This task depends on tasks~\taskref{atpetc}{instrumenting}, \taskref{atpetc}{tracetodedukti} and
-    \taskref{atpetc}{deduktitoatp}.
-    
-    
+    Internal automatic strategies will be defined for Dedukti, based on
+    automatic theorem proving and machine learning. In combination with
+    external ATPs through the results of
+    tasks~\taskref{atpetc}{instrumenting},
+    \taskref{atpetc}{tracetodedukti} and \taskref{atpetc}{deduktitoatp},
+    they will be used to increase Logipedia readiness, e.g. by helping
+    proof checking, by automatically combining proofs, or by discharging
+    alignment concept obligations (in a joint effort with
+    \taskref{alignment}{aligntheories} of \WPref{alignment}).
+
+
   % Guillaume Burel
   % People from other packages?  
 
@@ -372,6 +381,25 @@ code will validate this infrastructure.
     lead=Cea,
     CeaRM=18]
 %  Task leader: François Bobot (Contact: Chantal Keller)
+
+    Everything will be put together in the verification {\em a
+      posteriori} of the Frama-C-WP tool for formal verification of C
+    code and its back-end Why3. In this platform, the correctness of C
+    programs relies on the automatic generation of proof obligations
+    from annotated programs, and their automatic proofs using a
+    combinations of ATPs and user-defined rewrite rules. In this task:
+    \begin{itemize}
+    \item the generation of proof obligations and the rewrite engine
+      will be instrumented to produce Dedukti proofs, relying on (parts
+      of) Ektrakto;
+    \item ATPs will produce Dedukti proofs following
+      tasks~\taskref{atpetc}{instrumenting} and
+      \taskref{atpetc}{tracetodedukti};
+    \item users will have access to the Logipedia library following
+      task~\taskref{atpetc}{deduktitoatp}.
+    \end{itemize}
+    In the end, Dedukti proofs will be assembled together in a coherent
+    whole.
 
   % François Bobot (Why3)
   % Chantal Keller
