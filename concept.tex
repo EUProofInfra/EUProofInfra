@@ -351,7 +351,7 @@ following systems:
 The success of this integration project is measured by the LIL of the various
 considered systems at the end of the project.
 
-\cmsection{Automatic theorem provers, SAT/SMT solvers, model checkers, etc.}
+\cmsection{Automatic theorem provers}
 
 We have previously discussed the instrumentation of \emph{interactive}
 proof systems such as Coq, Isabelle/HOL, Agda, etc.,
@@ -397,14 +397,14 @@ for automatic theorem provers to import statements from Dedukti and
 export proofs in some theory in Dedukti.
 
 
-\paragraph*{Instrumenting automatic theorem provers to produce proof traces.}
+\subparagraph*{Instrumenting automatic theorem provers to produce proof traces.}
 The first step for connecting automatic theorem provers to the
 Logipedia infrastructure, and the library of proofs, is that automatic
 theorem provers should actually output some kind of proof, without
 enforcing strong requirement on the format or even the level of
 granularity of those proofs.  SAT (satisfiability) solvers for
 propositional logic do have a perfectly well specified format for
-proof traces~\cite{TODO} and most SAT solvers are actually able to
+proof traces~\cite{DBLP:conf/sat/WetzlerHH14} and most SAT solvers are actually able to
 produce proof traces in that format.  So, considering SAT solvers, the
 current status is actually meeting the Logipedia needs on this aspect.
 
@@ -413,7 +413,7 @@ significantly improve the picture.  Some SMT (Satisifiability Modulo
 Theories) solvers do produce some kind of proof trace, but the format
 is specific to the solver, and the proofs are sometimes difficult to
 replay due to their (lack of) granularity.  Most mainstream theorem provers for
-predicate logic output proofs in a standardized language~\cite{TODO},
+predicate logic output proofs in a standardized language~\cite{DBLP:conf/csr/Sutcliffe07},
 but this language does not clearly specify the semantics of the proof
 steps.  Model-checkers do not provide proof traces {\em per se}, although
 such traces would be useful for various usages and notably
@@ -424,8 +424,8 @@ feasibility of producing sufficiently detailed proofs for connecting to
 Logipedia, and to design a set of theoretical methods and practical
 tools that can be used to further connect Logipedia to the other
 existing automated reasoners of the same kind.  We will work on three
-SMT solvers (Alt-ergo, CVC4, VeriT), two provers for predicate logic
-(the E-prover, Zipperposition), and one model-checker (Cubicle).  We
+SMT solvers (Alt-ergo, CVC4, VeriT) and two provers for predicate logic
+(the E-prover, Zipperposition).  We
 will also consider more specific reasoning tools, with the aim to
 demonstrate that this approach also applies to more specific
 reasoners.  We envision to experiment with this approach on a reasoner
@@ -449,7 +449,7 @@ see below) to take advantage of the fact that there is quite a lot of
 sharing of reasoning techniques, and thus proof methods, among the
 solvers.
 
-\paragraph*{Translate automatic theorem provers traces into Dedukti.}
+\subparagraph*{Translate automatic theorem provers traces into Dedukti.}
 As pointed out above, it is easier to instrument provers to make them
 output traces, instead of directly provide Dedukti proofs. The second
 step to connect automatic theorem provers to the Logipedia
@@ -531,7 +531,7 @@ In the other direction, Logipedia will constitute a source of
 knowledge for automatic theorem provers. For this to be affordable,
 this project will study the following challenges.
 
-\paragraph*{Translate Dedukti statements into automatic theorem provers
+\subparagraph*{Translate Dedukti statements into automatic theorem provers
   inputs.}
 Automatic theorem provers are mostly based on (parts of) predicate
 logic.  Logipedia theorems, which mostly come from interactive
@@ -574,7 +574,7 @@ to measure the success of this task by evaluating the quality of the
 encodings, and comparing the impact of each of our ``small'' encodings
 by activating or deactivating them individually.
 
-\paragraph*{Logipedia as a source of knowledge for automatic theorem provers.}
+\subparagraph*{Logipedia as a source of knowledge for automatic theorem provers.}
 The amount of knowledge available in the whole of Logipedia is
 significantly larger than in any library of an individual proof assistant,
 and as such selecting the knowledge relevant for a
@@ -647,7 +647,7 @@ automation. On a higher level, being able to more efficiently write
 proofs directly in Dedukti would also be of interest to the community in
 itself. Thus a major challenge is to make this automation practicable and scalable.
 
-\paragraph*{Automatic theorem provers for Dedukti.}
+\subparagraph*{Automatic theorem provers for Dedukti.}
 Automation has been a key to the success of proof assistants, since it
 allows much more efficient formalization~\cite{Hales-Developments}.
 Many different techniques to provide proof assistant automation have
@@ -689,7 +689,7 @@ construction~\cite{ZielenkiewiczSchubert2016}. Finally we plan to look
 at computational proof reconstruction, to complement the link to
 automated theorem provers developed in the other parts.
 
-\paragraph*{Automation for Logipedia.}
+\subparagraph*{Automation for Logipedia.}
 The aforementioned automation will be crucial to enable full proof
 verification. Considering systems one at a time, a number of proof
 exports are not complete, i.e.~the actual systems do not provide
@@ -707,9 +707,19 @@ particular to define theories in Dedukti. In the longer term, Dedukti
 will also be used, {\em e.g.} for new proof transformations or to
 align distant concepts, which will be affordable with automation.
 
+
+\subsubsection*{Success measures for ATPs}
+
 The success of the integration of proofs coming from automated theorem
-proving systems, SAT solvers, SMT solvers, and model checkers, can be
+proving systems, SAT solvers, SMT solvers, first-order provers and other
+automatic reasoning tools, can be
 measured by the size of the proofs imported from these systems to Logipedia.
+%
+The success of the export of Logipedia proofs into automated provers can
+be measured by the number of exported theorems.
+%
+The number and complexity of C programs verified with {\em a posteriori}
+proof checking will measure the success of combining ATPs with Logipedia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Large libraries}
