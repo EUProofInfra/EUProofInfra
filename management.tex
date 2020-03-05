@@ -225,46 +225,111 @@ European Commission.
 
 \subsection{Significant risks and associated contingency plans}\label{sec:risks}
 
-\begin{todo}{from the proposal template}
-  Describe any significant risks, and associated contingency plans
-\end{todo}
-\begin{oldpart}{need to integrate this somewhere. CL: I will check other proposals to see how they did it; the Guide does not really prescribe anything.}
-\paragraph{Global Risk Management}
-The crucial problem of \pn (and similar endeavors that offer a new basis for communication
-and interaction) is that of community uptake: Unless we can convince scientists and
-knowledge workers industry to use the new tools and interactions, we will
-never be able to assemble the large repositories of flexiformal mathematical knowledge we
-envision. We will consider uptake to be the main ongoing evaluation criterion for the network.
-\end{oldpart}
+\subsubsection*{Scientific risks}
+
+\begin{longtable}{|p{0.30\textwidth}|p{0.10\textwidth}|p{0.50\textwidth}|}
+\hline
+{\bf Description of the risk}
+&
+{\bf Work packages involved}
+&
+{\bf Proposed measure of mitigation}
+\\
+\hline
+Some theories are difficult to express in Dedukti.
+(Probability: low. Severity: low.)
+&
+WP6
+&
+We have carefully divided the systems into two groups: the non risky
+ones (WP1) and the risky ones (WP6). The success we got with the
+theories implemented in systems of the first group gives us confidence
+that the theories implemented in those of the second can also be
+expressed in Dedukti.  If one of them happens to be more difficult, we
+can still build a large encyclopedia with the systems of the first
+group. We can also extend Dedukti so that is can express more theories,
+as we have already done in the past.
+\\
+\hline
+Some libraries require too much time and memory
+to be expressed in Dedukti (Probability medium. Severity low.)
+&
+WP3
+&
+There are several ways to mitigate this risk: optimize the
+representation of data (sharing, elimination of redundancies, etc.), 
+use faster and larger computers. This may also mean that some tasks
+of this work package are premature and that we have to wait for
+faster computers, that Moore's law will provide.
+\\
+\hline
+No adoption from the community. (Probability: low. Severity: high.)
+&
+WP4, WP1, all 
+&
+The community may fail to adopt Logipedia for several reasons. Because
+of a problem of design of Logipedia, in which case we will have to
+understand what needs to be changed in a second version.  It may be
+because the Logipedia community is too small.  This explains that we
+have decided to include twenty nine partners in the project.  It may
+also be because of an insufficient dissemination activity.  This is
+why we propose to create the four clubs of users and we will devote
+time and energy to the animation of these clubs, together with other
+dissemination activities, such as summer schools and conferences.
+\\
+\hline
+\end{longtable}
+
+\subsubsection*{Management risks}
 
 
+\begin{longtable}{|p{0.30\textwidth}|p{0.10\textwidth}|p{0.50\textwidth}|}
+\hline
+Brexit (Probability: low. Impact: medium.)
+&
+WP6, WP7, All
+&
+As we have two partners from the United Kingdom, Brexit is a jeopardy
+for our project. Yet, we are quite confident that scientific
+cooperation will continue after Brexit and that the British partners
+of the project will be funded in a way of another. If it were not the
+case, we would have to redefine the work packages 6 and 7 to face
+this unlikely situation.
+\\
+\hline
+One partner leaves (Probability: low. Impact: depends on the partner.)
+&
+All
+&
+The impact of such a default of one partner of course depends on the
+partner. But, during the preparation of this project, we have been
+careful to develop an atmosphere of trust and solidarity between the
+partners (including organizing a meeting). If this happened
+we would need to redefine the objectives of the project.
+\\
+\hline
+Difficulty to find people (doctoral students, post-docs, engineers, etc.)
+&
+All
+&
+This project will require to hire a fair number of people. This may be
+difficult in some European countries. If this happens we will use the
+size of the network to find more peoples in other countries to meet
+the objectives of the project.\\
+\hline
+\end{longtable}
 
-1. Risks
+%2.  Opportunities
 
-- more difficult that expected (probability: low, severity medium). Mitigation: at least some systems
+%- More people want to join: model checking, sat solvers… 
 
-- too many specific proofs (probability: low (empirical evidence in informal maths), severity medium). Mitigation: do not translate these proofs and start understanding why they need strong axioms, but translate the rest (basic maths).
-
-- too high complexity (time and memory), difficulty to scale up (probability medium, severity medium). Mitigation: lower the objectives (basic maths, use more powerful machines, wait for Moore's law to help you).
-
-- one partner leaves (probability low) or does not deliver (probability medium). Mitigation: downsize the project.
-
-- difficulty to find people (doctoral students, post-docs) in some countries. Mitigation use the size of the network to find more peoples in others.
-
-- Logipedia splits into several libraries: face the risk  (we have avoided to have a classical and a constructive logipedia, a predicative one and a non-predicative one, the diversity of theories expressed in logipedia permits to make the probability very low). 
-
-- a beautiful encyclopedia, but nobody cares (probability low). Mitigation: improve the interface, the communication, make it more completed
-
-2.  Opportunities
-
-- More people want to join: model checking, sat solvers… 
-
-- math teachers want to use it for teaching
+%- math teachers want to use it for teaching
 
 
-{\color{red} Draft a list of milestones}
+{\subsection{Milestones}\label{sec:milestones}
 
-\subsection{Milestones}\label{sec:milestones}
+
+\color{red} Draft a list of milestones}
 
 \begin{todo}{from the proposal template}
   Milestones are control points where decisions are needed with regard to the next stage
@@ -313,3 +378,9 @@ envision. We will consider uptake to be the main ongoing evaluation criterion fo
      {Release of a tool able to translate a complete development in Atelier B into a complete Dedukti proof}
 
 \end{milestones}
+
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:
