@@ -3,7 +3,7 @@
 
 The multiplication of systems and theories in which formal proofs are
 developed jeopardizes the universality of logical truth. But it is not
-the first time in history this has happened.  For instance, in the
+the first time in history this happened.  For instance, in the
 19$^{\mbox{\footnotesize th}}$ century, the universality of logical
 truth had been challenged in a similar way, by the non-Euclidean
 geometries, as some statements could be true in one geometry, but
@@ -15,7 +15,7 @@ axiom was used in which proof, restoring the universality of the truth
 of judgements of the form ``the proposition $B$ is true under the
 axioms $A_1, ..., A_n$''.
 
-Predicate logic is not a theory {\em per se}, but it is a framework in
+Predicate logic is not a theory {\em per se}, but a framework in
 which one can express theories, as sets of axioms: a ``logical
 framework''. As we shall see, expressing the various theories
 implemented in Coq, Matita, Isabelle/HOL, PVS, etc.\ in a common
@@ -28,17 +28,15 @@ theories used at that time (geometry, arithmetic, and set theory)
 could be expressed in it. But it also has limitations, which explains
 that another of the major theories used at that time (Russell's type
 theory, from {\em The Principia Mathematica}) has not been expressed
-in it. Since then, several other theories, such as Church's Type
+in it. Since then, several other theories, such as Church's Simple Type
 Theory \cite{Church40}, Martin-L\"of's Type Theory
 \cite{Martin-Lof84}, and the Calculus of Constructions
 \cite{CoquandHuet88}, have also been defined as autonomous theories,
-and not in predicate logic.  These theories are those implemented in
-most of the current proof systems.
+and not in predicate logic.
 
-This failure has led, in the field of proof systems, to the
-abandonment of predicate logic, and even of the concept of logical
-framework: the theories implemented in Coq, Matita, etc., are often
-defined as autonomous systems, and not in a logical framework.
+These theories are those implemented in most of the current proof systems.
+
+This failure has led, in the field of proof systems, to the abandonment of predicate logic, and even of the concept of logical framework: the theories implemented in Coq, Matita, etc., are often defined as autonomous systems, and not in a logical framework.
 
 However, a different line of research has attempted to understand the
 limitations of predicate logic and to propose more powerful logical
@@ -62,7 +60,7 @@ based. Geometry, arithmetic and set theory, but also Russell's type
 theory, Church's type theory, Martin-L\"of's type theory, and the
 Calculus of constructions can be expressed in this framework.
 
-For instance, although the details are not important, Church's type
+For instance, Church's type
 theory can be expressed in Dedukti, with 11 ``axioms'': 8 declarations
 and 3 computation rules.
 
@@ -101,8 +99,8 @@ interoperability between proof systems.
 So, to make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
 $D[X]$, implemented in the system $X$, in the logical framework
-Dedukti.  Then, we must instrument the system $X$ so that the proof
-can be exported from it, as a piece of data, expressed as a proof in
+Dedukti.  Then, we must instrument the system $X$ so that a proof in system $X$
+can be exported from it as a piece of data expressed as a proof in
 $D[X]$ and included in Logipedia. Next, we need to analyze this proof
 in order to determine which symbols, axioms and computation rules of
 $D[X]$ it actually uses and, thus, in which alternative theories it
@@ -113,7 +111,7 @@ the general structure of the encyclopedia.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Integration of proof systems}
 
-Consider a system $X$ at LIL 1, so the basic theory $D[X]$ has already
+Consider a system $X$ at Logipedia Integration Level (LIL) 1 so that the basic theory $D[X]$ has already
 been expressed in Dedukti. The next step is to implement a method to
 automatically translate proofs from system $X$ to its expression in
 Dedukti, and make these proofs available in Logipedia so they can be
@@ -121,16 +119,16 @@ exported to other systems. This step is called the
 ``instrumentation'' of system $X$.
 
 The systems we consider fall into three broad classes: the systems
-based on dependent type theory, the systems based on simple type
+based on dependent type theory, those based on simple type
 theory, and those based on set theory and predicate logic.
 
 \paragraph*{Systems based on dependent type theory (Agda, Coq, and Matita).}
 
 Coq is an interactive theorem prover developed at Inria since 1984.
-It is based on the Calculus of constructions and was used to formally
+It is based on the Calculus of Constructions and was used to formally
 verify the correctness of both industrially relevant software such as
 the CompCert C compiler and complex mathematical proofs such as those
-of the Four Color theorem and the Feit-Thompson theorem. In 2013 Coq
+of the Four Color theorem and the Feit-Thompson theorem. In 2013, Coq
 received the ACM System Award.
 
 Matita is an interactive theorem prover developed at the University of
@@ -156,9 +154,9 @@ Complexity).
 Agda is a dependently typed programming language and interactive proof
 assistant developed at Chalmers University of Technology as well as
 other places in Europe. The theory of Agda is similar to Coq and
-Matita, but it is more focused on interactive development and direct
+Matita, but it is more focused on direct
 manipulation of proof terms (in contrast to using a tactic language to
-generate the proof terms). To support the construction of proof terms,
+generate proof terms). To support the construction of proof terms,
 Agda provides powerful features such as dependent pattern and
 co-pattern matching, $\eta$-equality for functions and record types,
 first-class universe polymorphism, and definitional proof
@@ -171,7 +169,7 @@ similar to the computation rules provided by Dedukti.
 HOL4 is home to a few medium to large scale specifications and
 associated proof developments that have value outside of HOL4. These
 specifications include the formal semantics of the CakeML language
-(and its verified compiler) and an extensive specification of the ARM
+(and its certified compiler) and an extensive specification of the ARM
 instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
 
@@ -184,7 +182,7 @@ LCF-style systems (like HOL Light or HOL4).
 
 \paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin).}
 
-Atelier B and Rodin are platforms or tools to develop models written
+Atelier B and Rodin are platforms to develop models written
 using the B method, a version of set theory expressed in predicate
 logic.  A model in these systems expresses a state machine constrained
 by invariant properties. Verification of the correctness of the model requires
@@ -192,7 +190,7 @@ discharging a number of proof obligations produced by a weakest precondition
 calculus. For example, spanning tree algorithms, distributed
 algorithms, and access control policies have been formalized
 respectively in the EventB and (classical) B methods.  The development process for
-both versions of the B method is based on formal proof: proof obligations are
+both versions of the B method is based on formal proofs: proof obligations are
 automatically generated and must be proven by automatic or interactive
 provers. This can include external solvers such as SMT solvers.
 
@@ -202,13 +200,12 @@ Despite the differences between these three classes of proof systems,
 there are multiple common points between them where solutions that work
 for one system can also be applied to other systems. Working together
 on implementing these tools will allow the researchers from these
-different communities to come together and learn more about the
+different communities to learn more about the
 similarities and differences between these systems.
 
 Defining a basic instrumentation of some of these systems is
 straightforward, but building tools that also work well in practice
 raises new research challenges:
-
 
 \paragraph*{Improving encodings.}
 Even when we have understood how to express the basic theory of these
@@ -217,8 +214,8 @@ systems that require further work.  Moreover even when we know how to
 express all features of some system \emph{in theory}, depending on the
 choice of expression, the instrumentation may be simpler or harder in
 practice. For example:
-\begin{itemize}
 
+\begin{compactitem}
 \item Many Agda libraries (as well as some Coq libraries) rely heavily
   on type-directed conversion rules such as $\eta$-equality for functions
   and record types, or definitional proof irrelevance. These rules
@@ -240,7 +237,7 @@ practice. For example:
   very slow, which makes typechecking the proofs in Dedukti
   infeasible. Thus, expressing these theories efficiently requires improvements in
   Dedukti itself.
-\end{itemize}
+\end{compactitem}
 
 Finding better ways to express such features could have a great impact
 on the quality and speed of the translation process.  We plan to
@@ -299,7 +296,8 @@ For each of the systems considered in this project, we can identify
 some preliminary work, of varying maturity, on translating proofs to
 Dedukti.  We plan to build upon the previous work done for the
 following systems:
-\begin{itemize}
+
+\begin{compactitem}
 \item The standard and arithmetic libraries of Matita have been the
   first libraries to be exported to Logipedia using Krajono, a fork of
   Matita. We plan to make this translation a part of the code of
@@ -346,11 +344,12 @@ following systems:
   modulo producing Dedukti proofs, hence providing a better confidence
   in the proofs produced by the native proof tools of Atelier B
   \cite{Bury18}.
-\end{itemize}
+\end{compactitem}
 
 The success of this integration project is measured by the LIL of the various
 considered systems at the end of the project.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Automatic theorem provers}
 
 We have previously discussed the instrumentation of \emph{interactive}
@@ -546,11 +545,11 @@ tools, the encodings are specific to one system and tuned to their logic. In
 Logipedia, we have to combine and take benefit from statements coming from the
 encodings of different systems based on different logics. The key challenge here
 are thus:
-\begin{itemize}
+\begin{compactitem}
 \item to avoid the loss of meaning arising from a succession of
   encodings; and
   \item to encompass statements coming from different systems.
-\end{itemize}
+\end{compactitem}
 
 We plan to investigate a new approach where, instead of hammers, the
 encoding is a succession of fine-grained encodings dedicated to one
@@ -609,7 +608,7 @@ solvers. It is very easy to make an error in those simplifications.
 In order to overcome these problems, we propose to improve the assurances in
 the interaction between these different tools, and to speed up the addition of
 new features for handling new cases by using proof objects:
-\begin{itemize}
+\begin{compactitem}
 \item For the industrial users who need to define the concepts they want
   to verify in their C code, we will add the possibility to import
   concepts from Logipedia. The user gains time by not having to define
@@ -628,7 +627,7 @@ new features for handling new cases by using proof objects:
 \item In the end, we will gather the Dedukti or Ekstrakto proofs of the
   provers, the encodings, and the simplification rules, in order to
   assemble them in a coherent whole.
-\end{itemize}
+\end{compactitem}
 
 This part thus combines and validates most of the previous aspects of
 automatic theorem proving, but also constitutes the
@@ -748,14 +747,14 @@ structure of large libraries?
 
 The libraries we focus on have been selected according to the
 following criteria:
-\begin{itemize}
+\begin{compactitem}
 \item Relevance: the libraries should support core areas of mathematics
   and computer science.
 \item Coverage: the libraries should have a wide coverage of an
   application area.
 \item Maturity: the libraries should have been used in a significant
   application already.
-\end{itemize}
+\end{compactitem}
 
 As a result we selected the following libraries: the Archive of Formal
 Proofs, Isabelle's revised Analysis and Probability library, GeoCoq,
@@ -1058,7 +1057,7 @@ developed and added in the future.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}\hline
-Library & Nb files & Nb objects & Size (Mb) & Dedukti\\\hline
+Library & Nb files & Nb objects & Size (Mb) & Dedukti Size\\\hline
 Opam-Coq & 16,000 & 473,000 & 235 & $\times 7$\\\hline
 AFP & 7,000 & 90,000 & 135 & $\times 30$\\\hline
 MML & 1,400 & 77,000 & 101 & $\times 5-\times 14$\\\hline
@@ -1274,7 +1273,6 @@ In this regard, one should be able to search for theorems and rewriting rules.
 The research of proof must be automated at some point in order to ease and
 speed up the process and to comply with the level of required detail in education.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
 
@@ -1288,7 +1286,7 @@ number of proof assistants.
 
 But this eliminates a lot of salient information that is present in
 the original sources, including
-\begin{itemize}
+\begin{compactitem}
 \item library structure in the form of documents, sections,
   theories, or modules,
 
@@ -1297,7 +1295,7 @@ the original sources, including
 
 \item extra-logical statements such as comments, metadata annotations,
   or processing instructions.
-\end{itemize}
+\end{compactitem}
 
 So, we need to complement the current expression of proofs in Dedukti
 and Logipedia, by integrating source level representations.
@@ -1709,13 +1707,13 @@ following the work of \site{Fau} and \site{Inn}
 \cite{GKKMR:alignments:17} and the alignment-based mediator developed
 by \site{Fau} in the {\em OpenDreamKit} project \cite{DBLP:conf/mkm/DehayeIKKLMPRTW16}, we
 consider an alignment to be a pair of
-\begin{itemize}
+\begin{compactitem}
   \item two identifiers $c,c'$ (usually from two different libraries
     $L,L'$), which are considered to represent the same mathematical
     concept,
   \item additional data that governs how $L$-expressions using $c$ and
     $L'$-expressions using $c'$ correspond to each other.
-\end{itemize}
+\end{compactitem}
 The source of alignments can vary and include manual collections
 \cite{MRLR:alignments:17} and automatic, machine-learned collections
 \cite{GAUTHIER201989}.
@@ -1742,13 +1740,13 @@ numbers, must be transported to any isomorphic structure, regardless
 of the way it has been defined.
 
 Concept alignment can happen at different levels:
-\begin{itemize}
+\begin{compactitem}
 \item Alignment of logical foundations.
 \item Alignment of theorem proving objects such as types,
   constants, and theorems.
 \item Alignment of proofs and proof techniques such as tactics and
   inference rules.
-\end{itemize}
+\end{compactitem}
 We will primarily focus our efforts on the alignment of
 logics and theorem proving objects (the first two of these three levels).
 
@@ -1919,7 +1917,7 @@ that enable both searching and browsing modulo alignment as well as
 automated translation of theorem proving objects and proofs.  However,
 before such an ambitious goal can be achieved, many lessons must be
 learned and several milestones must be achieved.
-\begin{itemize}
+\begin{compactitem}
 \item A very precise definition of alignments should be given and a
   format (and an ontology) for describing and organizing alignments
   must be described.
@@ -1933,8 +1931,9 @@ learned and several milestones must be achieved.
 \item A case study of geometry must show that it is possible to align
   large formal theories developed in different theorem provers, based
   on different approaches (synthetic vs. analytic).
-\end{itemize}
+\end{compactitem}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Synergy with related projects}
 
 \subsubsection*{European projects}
