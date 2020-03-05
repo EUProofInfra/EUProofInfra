@@ -12,8 +12,7 @@ methodology required to achieve this goal varies a lot with respect to
 the proof system considered. We distinguish three broad categories of
 systems:
 
-\begin{itemize}
-
+\begin{compactitem}
 \item
 Some existing proof systems, the ``Automath-like systems'', such as Coq, Agda, and
 Matita, already have a notion of proof-term, that is an explicit
@@ -43,7 +42,7 @@ fill the gaps between the propositions of the proof-trace, we thus
 need to use an external automated theorem prover. In addition, we need
 to instrument this automated theorem prover itself, so that we can
 build a complete proof proof from the trace.
-\end{itemize}
+\end{compactitem}
 
 In all these cases, we need to take also into account that these proof
 systems may rely on external tools to build automatically some parts
@@ -122,7 +121,7 @@ theories and the translations we do have. Most likely, some efficiency
 issues will manifest and we will have to understand where these
 efficiency issues come from.
 
-\begin{itemize}
+\begin{compactitem}
 \item It may be because, we are using a computer that is too slow or
   does not have enough memory.
 \item It may be because Dedukti itself is too slow and we need to modify
@@ -134,7 +133,7 @@ efficiency issues come from.
 \item It may be because the expression of the theory itself has to be
   revised, as has happened in the past with the translation of
   inductive types.
-\end{itemize}
+\end{compactitem}
 
 Depending on the result of this analysis, the computer we use, Dedukti,
 the translation function, or the theory itself has to be improved, until
