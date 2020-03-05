@@ -7,7 +7,7 @@ the first time in history this happened.  For instance, in the
 19$^{\mbox{\footnotesize th}}$ century, the universality of logical
 truth had been challenged in a similar way, by the non-Euclidean
 geometries, as some statements could be true in one geometry, but
-false in others.  At the beginning of the 20$^{\mbox{\footnotesize
+false in others. At the beginning of the 20$^{\mbox{\footnotesize
     th}}$ century, a solution to this problem was found.  The
 definition of the various geometries in predicate logic
 \cite{HilbertAckermann} allowed mathematicians to understand which
@@ -395,9 +395,10 @@ provers to the Logipedia infrastructure strongly relies on the ability
 for automatic theorem provers to import statements from Dedukti and
 export proofs in some theory in Dedukti.
 
+\begin{itemize}
+\item{\bf Instrumenting automatic theorem provers to produce proof traces.}
 
-\subparagraph*{Instrumenting automatic theorem provers to produce proof traces.}
-The first step for connecting automatic theorem provers to the
+  The first step for connecting automatic theorem provers to the
 Logipedia infrastructure, and the library of proofs, is that automatic
 theorem provers should actually output some kind of proof, without
 enforcing strong requirement on the format or even the level of
@@ -447,7 +448,8 @@ see below) to take advantage of the fact that there is quite a lot of
 sharing of reasoning techniques, and thus proof methods, among the
 provers and solvers.
 
-\subparagraph*{Translate automatic theorem provers traces into Dedukti.}
+\item{\bf Translate automatic theorem provers traces into Dedukti.}
+  
 As pointed out above, it is easier to instrument provers to make them
 output traces, instead of directly provide Dedukti proofs. The second
 step to connect automatic theorem provers to the Logipedia
@@ -478,7 +480,7 @@ Although the experience we already have with Ekstrakto gives us a total
 confidence that the approach will be successful, it is a work in progress. In
 particular, the following issues will be addressed in the project:
 
-\begin{enumerate}
+\begin{compactitem}
   % extension to other proof trace formats
 \item Up to now, Ekstrakto can only understand traces in TSTP format as
   input. We plan to make it accept traces in other formats, notably traces
@@ -519,7 +521,8 @@ particular, the following issues will be addressed in the project:
   traces. A way to achieve this could be to extend Zenon Modulo:
   indeed, Zenon modulo can find proofs modulo arithmetic, but it is
   not able to produce a Dedukti proof yet.
-\end{enumerate}
+\end{compactitem}
+\end{itemize}
 
 \subsubsection*{From Dedukti to automatic theorem provers}
 
@@ -528,8 +531,10 @@ In the other direction, Logipedia will constitute a source of
 knowledge for automatic theorem provers. For this to be affordable,
 this project will study the following challenges.
 
-\subparagraph*{Translate Dedukti statements into automatic theorem provers
+\begin{itemize}
+\item{\bf Translate Dedukti statements into automatic theorem provers
   inputs.}
+
 Automatic theorem provers are mostly based on (parts of) predicate
 logic.  Logipedia theorems, which mostly come from interactive
 provers, will be expressed in the Dedukti encodings of much more
@@ -548,7 +553,7 @@ are thus:
 \begin{compactitem}
 \item to avoid the loss of meaning arising from a succession of
   encodings; and
-  \item to encompass statements coming from different systems.
+\item to encompass statements coming from different systems.
 \end{compactitem}
 
 We plan to investigate a new approach where, instead of hammers, the
@@ -571,8 +576,9 @@ to measure the success of this task by evaluating the quality of the
 encodings, and comparing the impact of each of our ``small'' encodings
 by activating or deactivating them individually.
 
-\subparagraph*{Logipedia as a source of knowledge for automatic theorem provers.}
-The amount of knowledge available in the whole of Logipedia is
+\item{\bf Logipedia as a source of knowledge for automatic theorem provers.}
+
+  The amount of knowledge available in the whole of Logipedia is
 significantly larger than in any library of an individual proof assistant,
 and as such selecting the knowledge relevant for a
 particular goal might require more complex techniques than
@@ -581,6 +587,7 @@ from machine learning to the construction of formal proofs. This includes both t
 for selection of relevant knowledge for a goal and for the selection
 of most promising constructors in the direct proof term
 construction~\cite{ZielenkiewiczSchubert2016}.
+\end{itemize}
 
 \subsubsection*{Large scale application: formal verification of C code}
 
@@ -644,8 +651,10 @@ automation. On a higher level, being able to more efficiently write
 proofs directly in Dedukti would also be of interest to the community in
 itself. Thus a major challenge is to make this automation practicable and scalable.
 
-\subparagraph*{Automatic theorem provers for Dedukti.}
-Automation has been a key to the success of proof assistants, since it
+\begin{itemize}
+\item{\bf Automatic theorem provers for Dedukti.}
+
+  Automation has been a key to the success of proof assistants, since it
 allows much more efficient formalization~\cite{Hales-Developments}.
 Many different techniques to provide proof assistant automation have
 been developed over the years: techniques based on rewriting,
@@ -686,8 +695,9 @@ construction~\cite{ZielenkiewiczSchubert2016}. Finally we plan to look
 at computational proof reconstruction, to complement the link to
 automated theorem provers developed in the other parts.
 
-\subparagraph*{Automation for Logipedia.}
-The aforementioned automation will be crucial to enable full proof
+\item{\bf Automation for Logipedia.}
+
+  The aforementioned automation will be crucial to enable full proof
 verification. Considering systems one at a time, a number of proof
 exports are not complete, i.e.~the actual systems do not provide
 all the proof step details and internal automation for Logipedia would be
@@ -703,7 +713,7 @@ the project, many Dedukti developments shall be performed, in
 particular to define theories in Dedukti. In the longer term, Dedukti
 will also be used, {\em e.g.} for new proof transformations or to
 align distant concepts, which will be affordable with automation.
-
+\end{itemize}
 
 \subsubsection*{Success measures for automatic theorem provers}
 
@@ -832,8 +842,8 @@ from the (necessary) coexistence of different kinds of
 integrals. This complicates proofs about integrals in applications and needs
 to be unified, which entails further refactoring. The rest of the
 development adds further essential material:
-\begin{enumerate}
-  \item Fourier analysis because of its extreme importance both for pure mathematics and for
+\begin{compactitem}
+\item Fourier analysis because of its extreme importance both for pure mathematics and for
 engineering and physics (especially the Fourier
 transform). A formalization of basic properties of the Laplace transform is already available in the Archive of formal proofs.
 \item Stability theory for differential equations and
@@ -841,7 +851,7 @@ dynamical systems, in particular Lyapunov functions, because of their
 relevance for the verification of cyber-physical systems.
 \item Stochastic differential equations to model a large range of
 dynamical systems with stochastic components, from physics to financial markets.
-\end{enumerate}
+\end{compactitem}
 
 \paragraph*{The GeoCoq library.}
 The GeoCoq library consists of more than 100.000 lines of definitions
@@ -1289,10 +1299,8 @@ the original sources, including
 \begin{compactitem}
 \item library structure in the form of documents, sections,
   theories, or modules,
-
 \item high-level statements and operators (which proof assistants
   typically elaborate when compiling the sources),
-
 \item extra-logical statements such as comments, metadata annotations,
   or processing instructions.
 \end{compactitem}
