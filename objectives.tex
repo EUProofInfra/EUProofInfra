@@ -31,36 +31,39 @@ existing proof system and associated proof libraries in Logipedia, we
 have introduced another metric: the {\em Logipedia integration
   level}.
 
-\begin{framed}
-  \vspace{-0.5cm}
+\begin{figure}[ht]
+\definecolor{shadecolor}{named}{cyan}
+\begin{shaded}
+%\vspace{-0.5cm}
 \begin{center}
 {\bf \Large The Logipedia integration levels (LIL)\label{lil}}
 \end{center}
 
 \begin{itemize}
-\item[LIL 0:] Nothing has been done.
+\item[\bf LIL 0:] Nothing has been done.
 
-\item[LIL 1:] The theory implemented in the system has been defined in
+\item[\bf LIL 1:] The theory implemented in the system has been defined in
   the logical framework Dedukti.
 
-\item[LIL 2:] The system has been instrumented so some of its proofs
+\item[\bf LIL 2:] The system has been instrumented so some of its proofs
   can be exported and checked in Dedukti.
 
-\item[LIL 3:] A significant part of the library of the system has been
+\item[\bf LIL 3:] A significant part of the library of the system has been
   exported and checked in Dedukti.
 
-\item[LIL 4:] A significant part of the library of the system has
+\item[\bf LIL 4:] A significant part of the library of the system has
   been made available in Logipedia.
 
-\item[LIL 5:] A tool has been built to analyze the translated Dedukti proofs
+\item[\bf LIL 5:] A tool has been built to analyze the translated Dedukti proofs
   for the system, detect those that can be expressed in a theory
   weaker than that of the system, and translate those proofs into a
   weaker theory.
 
-\item[LIL 6:] All proofs of the system have been exported, translated,
+\item[\bf LIL 6:] All proofs of the system have been exported, translated,
   and made available in Logipedia.
 \end{itemize}
-\end{framed}
+\end{shaded}
+\end{figure}
 
 The ultimate goal of Logipedia is to have all the formal proofs
 available to mankind in a single encyclopedia.  A first proof of
@@ -145,15 +148,14 @@ regardless of the way it has been defined. This is our last objective.
 Its performance indicator is the number of proofs we are able to
 bring from level LIL 4 to level LIL 5.
 
-\newpage
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{longtable}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.32\textwidth}|}
 \hline
-Objective
+{\bf Objective}
 &
-Activity to achieve this objective
+{\bf Activity to achieve this objective}
 &
-Key performance indicator\\
+{\bf Key performance indicator}\\
 \hline
 Integration of proof systems
 &
@@ -188,7 +190,7 @@ HOL4 & LIL 1 & LIL 5\\
 \hline
 Integration of automated theorem proving
 &
-Integrate proofs of coming from automated
+Integrate proofs coming from automated
 theorem provers and SMT solvers.
 &
 \vspace*{-0.41cm}
