@@ -3,9 +3,9 @@
 Bugs kill.  Testing software permits to reveal the presence of bugs,
 but only formal verification can guarantee their absence.  Thus, the
 trust in critical systems today relies on formal verification, in
-particular formal proofs, that guarantee the safety of the people
+particular formal proofs, that guarantee the safety of people
 using transportation systems (autonomous cars, subways, trains,
-planes, etc.), health systems (robotic surgery, etc.), energy provided
+planes, etc.), health systems (robotic surgery, ear implants, etc.), energy provided
 by nuclear plants, financial applications, e-governance, etc.  We
 should never fly in an autonomous plane driven by a piece of software
 that has not been formally verified.
@@ -103,7 +103,7 @@ interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
 proof decades after it has been developed), and cross-verification
 (the possibility to verify a proof in a system different from that in
-which it has been constructed, thus giving a higher assurance of its
+which it has been constructed resulting in a higher assurance of its
 correctness) are restricted.
 
 The fragmentation of these infrastructures hinders productivity
@@ -144,7 +144,7 @@ cooperation between systems is the next step in the development of the
 formal proof technology.
 
 Each proof system comes with its own libraries, and these libraries
-are also part of research infrastructure.  To address the challenge of
+are also part of research infrastructures. To address the challenge of
 improving cooperation between these proof systems, we will integrate
 these libraries in an online encyclopedia of formal proofs. Each proof
 in this encyclopedia will have versions in each theory where it can be
@@ -155,7 +155,7 @@ encyclopedia contain proofs expressed in different theories.  Such a
 theory-independent infrastructure is made possible, because the
 theories implemented in these different proof systems can be expressed
 in a common logical framework: the $\lambda \Pi$-calculus modulo
-theory, implemented in the system Dedukti.  Dedukti is thus the {\em
+theory, implemented in the system \href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
 lingua franca} that permits this theory-independent encyclopedia to 
 exist.
 
@@ -180,8 +180,8 @@ a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist.
 
-Our goal is therefore also trigger a
-small, but significant, evolution on the organization of research in
+Our goal is therefore also to trigger a
+significant evolution on the organization of research in
 computer science and mathematics in Europe.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -259,6 +259,7 @@ called the ``safety'' of this program. This property is a
 consequence of two simple theorems of arithmetic:
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
+meaning that, for all $x$, if $x$ is an odd number, then $x+2*x$ and $x-2$ are odd numbers too.
 Hence, verifying the safety of this programme
 %, that is that the proposition ${\mbox{\it safe}}(p)$ holds,
 amounts to prove these two theorems.
@@ -286,9 +287,11 @@ verifying the correctness of complex primality testing algorithms is
 critical.
 
 To do so, we need first to define primality, for instance
-\begin{verbatim}
-Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
-\end{verbatim}
+
+$$prime(p) := 1<p \wedge (\forall n, (1<n\wedge n<p) \Rightarrow \neg(n\mid p))$$
+
+where $\wedge$ is the conjunction, $\Rightarrow$ is the implication,
+$\neg$ is the negation, and $n\mid p$ means that $n$ divides $p$.
 
 To lower the cost of primality testing, we use tests that are more
 efficient than the naive use of the definition.  For instance, a very
@@ -299,26 +302,16 @@ product of two smaller natural numbers $m$ and $n$, one of them has to
 be smaller than or equal to the square root of $p$.  Therefore, one
 could give the following more complex, but more efficient, definition.
 
-\begin{verbatim}
-Definition prime' p :=
-  1 < p /\ (forall n, (1 < n /\ (n * n) <= p) -> ~ (n | p)).
-\end{verbatim}
+$$prime'(p) := 1<p \wedge (\forall n, (1<n \wedge n*n\leq p) \Rightarrow \neg(n\mid p))$$
 
 To ensure that these definitions are equivalent one needs to prove
-the following statement.
+the following statement:
 
-\begin{verbatim}
-Theorem prime_alt : forall p, prime' p <-> prime p.
-\end{verbatim}
+$$\forall p, prime'(p) \Leftrightarrow prime(p)$$
 
 It would have been easy to introduce a small bug
 in the new definition.  For example, one could have written
-\verb!(n * n) < p!, instead of \verb!(n * n) <= p!.
-
-\begin{verbatim}
-Definition prime'' p :=
-  1 < p /\ (forall n, (1 < n /\ (n * n) < p) -> ~ (n | p)).
-\end{verbatim}
+$n*n < p$, instead of $n*n \leq p$.
 This would have resulted in accepting squares of primes as primes.
 
 Yet, attempting to prove the equivalence of these two definitions would
@@ -338,8 +331,8 @@ recent proof of the Kepler's conjecture by Thomas Hales, and proofs used
 to establish the safety and security of software, can be built with a
 limited number of rules, for example
 \begin{itemize}
-\item From $A \Rightarrow B$ and $A$, deduce $B$.
-\item From $A$, deduce $A~\mbox{\it or}~B$.
+\item From $A\Rightarrow B$ (``$A$ implies $B$'') and $A$, deduce $B$.
+\item From $A$, deduce $A\vee B$ (``$A$ or $B$'').
 \item etc.
 \end{itemize}
 Yet for most of mathematical history, proofs have been written in
@@ -354,8 +347,9 @@ Clairaut, Legendre, etc.
 In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
 correctness of a mathematical proof could be checked by a
 computer. This led to the development of the two first proof systems
-in history: Milner's LCF and De Bruijn's Automath.  From
-the axioms
+in history: Milner's LCF and De Bruijn's Automath.
+
+For instance, from the axioms
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
 $$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
 we can deduce
