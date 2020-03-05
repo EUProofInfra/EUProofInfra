@@ -43,10 +43,9 @@ proofs, just like particle accelerators allow physicists to build and
 study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-  
 $\bigstar$ $\bigstar$ $\bigstar$
-
 \end{center}
 
 A lot of formal proofs developed for one critical system could be used
@@ -101,6 +100,7 @@ invention of a logical framework: predicate logic
 \cite{HilbertAckermann}, in which the various geometries could be
 defined.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \begin{framed}
 \begin{center}
@@ -123,16 +123,14 @@ ProB\\
 \underline{Why3}\\
 \end{tabular}
 \end{center}
-
 \caption{Some major proof systems. The European ones are in the first column.
   Those addressed in the project are underlined\label{systems}}
 \end{framed}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-  
 $\bigstar$ $\bigstar$ $\bigstar$
-
 \end{center}
 
 Making proof systems interoperable would avoid duplication of work,
@@ -167,10 +165,9 @@ This encyclopedia will be called Logipedia.
 Logipedia is thus a research infrastructure that integrates proof
 systems, through the sharing of data in the form of formal proofs.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-  
 $\bigstar$ $\bigstar$ $\bigstar$
-
 \end{center}
 
 Such an infrastructure is, in many ways, new in the European Strategy
@@ -184,11 +181,13 @@ Our goal is therefore also trigger a
 small, but significant, evolution on the organization of research in
 computer science and mathematics in Europe.
 
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{shadecolor}{named}{lightgray}
+\begin{shaded}
   \vspace*{-0.5cm}
   \begin{center}
-{\bf \Large History of the project}
-\end{center}
+    {\bf \Large History of the project}
+  \end{center}
 
 Convinced that a cloud of formal proofs could bring to the
 applications of formal proof technology the same boost that the cloud
@@ -211,11 +210,10 @@ this effort.  These researchers and engineers are ready to contribute
 to develop this encyclopedia, aiming at sharing proofs, under a
 creative commons licence, making them searchable, accessible,
 interoperable, and reusable.
-\end{framed}
+\end{shaded}
 
-\newpage
-~\vfill
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
 \begin{center}
 {\bf \Large How do proofs contribute to safety and security of software?}
@@ -229,8 +227,9 @@ has. If it is a one she loses two euros, if she has at least two.
 When the game ends, the player wins the money she got, except if she
 has zero, in which case she loses one million euros.
 
-This game can be modeled by programme $p$
-%import random
+This game can be modeled by the following programme:
+\begin{center}
+    \begin{minipage}{10cm}
 \begin{verbatim}
 n = 11
 stay = True;
@@ -246,6 +245,8 @@ while stay:
                 n = n - 2
 print(n)
 \end{verbatim}
+    \end{minipage}
+\end{center}
 
 To be on the safe side, the player wants to be sure, before starting
 playing, that she will never finish with zero.  And indeed, at all times
@@ -267,11 +268,10 @@ very rarely.  In contrast, attempting to prove the correctness of this
 program will
 reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
-\end{framed}
-\vfill~
-\pagebreak
-~\vfill
-\begin{framed}
+\end{shaded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
 \begin{center} {\bf \Large Non-trivial mathematics are sometimes
 needed to verify that a program is correct}
@@ -320,10 +320,10 @@ This would have resulted in accepting squares of primes as primes.
 
 Yet, attempting to prove the equivalence of these two definitions would
 have revealed the bug, as they cannot be proven to be equivalent.
-\end{framed}
-\vfill~
-\pagebreak
-\begin{framed}
+\end{shaded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
   \vspace*{-0.5cm}
   \begin{center}
     {\bf \Large What is a formal proof? What is a proof system?}
@@ -359,11 +359,10 @@ we can deduce
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
 In the language implemented in Automath, this proof is written
 $$\lambda x \lambda h~(g~x~(f~x~h))$$
-\end{framed}
+\end{shaded}
 
-\vfill
-
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
   \begin{center}
 {\bf \Large What is a theory?}
@@ -387,8 +386,7 @@ computer-checked formal proofs has led to a multiplication of
 alternative theories for mathematics.
 
 This is the major obstacle to interoperability between proof systems.
-\end{framed}
-\pagebreak
+\end{shaded}
 
 %%% Local Variables:
 %%%   mode: latex
