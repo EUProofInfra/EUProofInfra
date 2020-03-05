@@ -1,6 +1,6 @@
 \begin{sitedescription}{Inr}
 
-\ednote{a description of the legal entity}
+%\ednote{a description of the legal entity}
 
 \logo{Inria}
 
@@ -18,9 +18,9 @@ Inria is also playing a lead role in the development of the Knowledge and Innova
 
 \paragraph*{Main tasks:}
 
-\ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
+%\ednote{its main tasks, with an explanation of how its profile matches the tasks in the proposal}
 
-\ednote{specify the main tasks and reference the respective work packages}
+%\ednote{specify the main tasks and reference the respective work packages}
 \begin{compactitem}
 \item Gilles Dowek is the coordinator of the project and leads
   \WPref{management}. He developed the Dedukti proof format and
@@ -32,36 +32,40 @@ Inria is also playing a lead role in the development of the Knowledge and Innova
   (ISR).
 \item Stephan Merz leads the \WPref{theories} and task \taskref{theories}{tla}.
   He is one of the designers and developers of the \tlaplus Proof System.
-\item Enrico Tassi participates to WP1.T6 (Coq
-instrumentation) and WP7.T5 (Alignment based proof rewriting). He is a core
-developer of the Coq system and of the ELPI programming language (used in WP7.T5).
+\item Bruno Barras leads task \taskref{theories}{hott}.
+\item Enrico Tassi participates to \taskref{instrumentation}{coq} and \taskref{alignment}{alignproofs}. He is a core
+developer of the Coq system and of the ELPI programming language (used in \taskref{alignment}{alignproofs}).
 \end{compactitem}
 
 \paragraph*{Publications, products or services:}
 
-\ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
+%\ednote{a list of up to 5 relevant publications, and/or products, services (including widely-used datasets or software), or other achievements relevant to the  call content}
 
 \begin{compactitem}
 \item ``Dedukti: a logical framework based on the $\lambda\Pi$-calculus modulo theory'', by A. Assaf, G. Burel, R. Cauderlier, D. Delahaye, G. Dowek, C. Dubois, F. Gilbert, P. Halmagrand, O. Hermant and R. Saillard, Technical report, 2019.
+\item ``A generalization of the Takeuti–Gandy interpretation'', by B. Barras, T. Coquand and S. Huber. In Mathematical Structures in Computer Science, vol 25(5), pp 1071-1099, 2015.
 \item ``\tlaplus Proofs'', by D.\ Cousineau, D.\ Doligez, L.\ Lamport, S.\ Merz, D.\  Ricketts, H.\ Vanzetto. 18th Intl.\ Symp.\ Formal Methods (FM 2012).
 \item ``ELPI: fast, Embeddable, $\lambda$Prolog Interpreter'', by Cvetan Dunchev, Ferruccio Guidi, Claudio Sacerdoti Coen, Enrico Tassi. Proceedings of LPAR, Nov 2015.
 \end{compactitem}
 
 \paragraph*{Previous projects or activities:}
 
-\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
+%\ednote{a list of up to 5 relevant previous projects or activities, connected to the subject of this proposal}
 
 \begin{compactitem}
 \item Stephan Merz is a core member of the team designing and developing the \tlaplus Proof System at the Joint Microsoft Research-Inria Centre. He also is a senior collaborator in the project \emph{Matryoshka} (Principal investigator: Jasmin Blanchette, Vrije Universiteit Amsterdam, ERC Starting Grant 2016, Grant agreement no.\ 713999) on reducing the gap between efficient automated reasoning systems and more expressive interactive proof assistants.
+\item Bruno Barras has been a member of the ANR project
+  \href{http://www.lri.fr/~wolff/projects/ANR-Paral-ITP/}{Paral-ITP}, led by Burkhart Wolff (University Paris-Saclay), which was targeting of advanced
+  parallelisation techniques for Coq and Isabelle.
 \end{compactitem}
 
 \paragraph*{Infrastructures or technical equipments:}
 
-\ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
+%\ednote{a description of any significant infrastructure and/or any major items of technical equipment, relevant to the proposed work}
 
 \begin{compactitem}
 \item Inria develops tools around the Dedukti proof format since 2009.
-\item Since 1985, Inria develops the Coq proof assistant which
+\item Since 1984, Inria develops the Coq proof assistant which
   received in 2013 the ACM SIGPLAN Programming Languages Sofware and
   the ACM Software System awards.
 \item Since 2006 Inria has supported the development of the Mathematical Components
@@ -111,14 +115,13 @@ He co-organizes and designs tasks for the french version of the Bebras Contest,
 attended each year by 700.000+ pupils aged 8 to 18.
 %He also co-organized the Summer School for Young Reseachers (EJCP) in Strasbourg in 2019.
 
-
 \item{\bf Gilles Dowek} is the coordinator of the project.
 He is a researcher at Inria and professor at the École
 normale supérieure de Paris-Saclay. He has previously been a professor
 at the École polytechnique and a consultant for the NASA Langley
 research center. He has published several textbooks, popular science
 books, and philosophy of science books. Some of them have been
-translated to Chineese, English, German, Greek, Italian, Korean,
+translated to Chinese, English, German, Greek, Italian, Korean,
 Romanian, and Spanish. He has been active in the promotion of
 Computer science education in K-12 in France. He has been the
 President of the Scientific Board of the French informatics society.
@@ -129,6 +132,14 @@ aerospace systems, and the epistemology and ethics of informatics.
 Together with Denis Cousineau, he is at the origin of the
 $\lambda\Pi$-calculus modulo theory. He is the head of the Deducteam
 group, where the logical framework Dedukti has been developed.
+
+\item{\bf Hugo Herbelin} is a member of the $\pi r^2$ Inria team
+located in Paris. Former coordinator of the Coq development team,
+his research mixes contributions to proof theory and logical
+foundations and contributions to the development of the Coq proof
+assistant. His interests are moving towards the design and development
+of proof assistant features targetting mathematics the way
+mathematicians think about them.
 
 \item{\bf Dominique M\'ery}  is a professor of computer science at the
   University of Lorraine (Telecom Nancy)  and head of the
@@ -193,7 +204,6 @@ He is a core developer of the Coq system, the Mathematical Components library
 and the Elpi programming language. He regularly serves as PC member of
 international conferences such as ITP, CPP, PADL, MKM. He regularly organizes
 schools on Coq and the Mathematical Components library.
-
 
 \item {\bf Pierre-Yves Strub}
 is Teaching Assistant in Computer Sciences at École

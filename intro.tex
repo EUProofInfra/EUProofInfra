@@ -3,47 +3,80 @@
 Bugs kill.  Testing software permits to reveal the presence of bugs,
 but only formal verification can guarantee their absence.  Thus, the
 trust in critical systems today relies on formal verification, in
-particular formal proofs, that guarantee the safety of the people
+particular formal proofs, that guarantee the safety of people
 using transportation systems (autonomous cars, subways, trains,
-planes, etc.), health systems (robotic surgery, etc.), energy provided
+planes, etc.), health systems (robotic surgery, ear implants, etc.), energy provided
 by nuclear plants, financial applications, e-governance, etc.  We
 should never fly in an autonomous plane driven by a piece of software
 that has not been formally verified.
 
 This crucial role of formal proof is highlighted by several successes,
 like the correctness proofs of the automatic Paris metro line 14
-\cite{metro14}, the detect-and-avoid system for unmanned aircraft
+\cite{Behm98,Lecomte17}, the detect-and-avoid system for unmanned aircraft
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
 been empirically observed that compilers and operating systems often
 have bugs, but proved ones, such as seL4 or CompCert, have none, or
-much fewer.  This is why, at the highest Evaluation Assurance Levels
-of the Common Criteria security evaluation international standard, in
+much fewer.  This is why, at the highest Evaluation Assurance Levels (EAL)
+of the Common Criteria (CC) security evaluation international standard, in
 effect since 1999, certification processes require proofs, and not
 only testing.
 
 Because a bug can cause people to die and companies to go bankrupt,
 formal methods are crucial in the development of the information
-society, and hence it is crucial for Europe to master this technology
-and its evolution.
+society. Making formal methods more accessible to companies, via
+better theories, better tools and better-training of workers, can
+bring a significant competitive advantage to Europe.  Hence it is
+crucial for Europe to master this technology and its evolution.
 
-Formal proofs are also used in mathematics, and several important
-advances, such as the proof of the Feit-Thompson theorem
+Proofs have also always been the basis of mathematics, and hence of
+many mathematised sciences, and several important advances, are based
+on formal proofs, such as the proof of the Feit-Thompson theorem
 \cite{Gonthier13} and Hales' theorem (Kepler's conjecture)
 \cite{Hales17}, show the wide range of applications of formal proofs,
 from safety and security of software to mathematics.
 
-These formal proofs are developed using research infrastrucures called
+These formal proofs are developed using research infrastructures called
 ``proof systems''.  These proof systems allow computer scientists,
 mathematicians, engineers, and logicians to build and study formal
 proofs, just like particle accelerators allow physicists to build and
 study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+  \definecolor{shadecolor}{named}{cyan}
+\begin{shaded}
 \begin{center}
-  
-$\bigstar$ $\bigstar$ $\bigstar$
+    {\bf \Large Major proof systems}\\[3mm]
 
+\begin{tabular}{l@{\hspace{3cm}}l}
+Abella                & Acl 2\\
+\underline{Agda}      & \underline{HOL Light}\\
+\underline{Atelier B} & IMPS\\
+\underline{Coq}       & Lean\\
+\underline{FoCaliZe}  & \underline{LFSC}\\
+\underline{HOL4}      & Nuprl\\
+\underline{Isabelle}  & \underline{PVS}\\
+\underline{K Prover}  & \underline{TSTP}\\
+\underline{Matita}\\
+\underline{Minlog}\\
+\underline{Mizar}\\
+ProB\\
+\underline{ProvenTools}\\
+\underline{Rodin}\\
+\underline{TLA+}\\
+\underline{Why3}\\
+\end{tabular}
+\end{center}
+\vspace{-5mm}\caption{The European ones are in the first column.
+  Those addressed in the project are underlined\label{systems}}
+\end{shaded}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+$\bigstar$ $\bigstar$ $\bigstar$
 \end{center}
 
 A lot of formal proofs developed for one critical system could be used
@@ -70,10 +103,10 @@ interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
 proof decades after it has been developed), and cross-verification
 (the possibility to verify a proof in a system different from that in
-which it has been constructed, thus giving a higher assurance of its
+which it has been constructed resulting in a higher assurance of its
 correctness) are restricted.
 
-The fragmentation of these infrastucutures hinders productivity
+The fragmentation of these infrastructures hinders productivity
 because foundational work (for instance, developing a calculus library
 with theorems about the sinus and cosinus functions, derivatives,
 etc.) has to be repeated instead of being reused.  It also limits the
@@ -98,38 +131,9 @@ invention of a logical framework: predicate logic
 \cite{HilbertAckermann}, in which the various geometries could be
 defined.
 
-\begin{figure}
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-\begin{tabular}{l@{\hspace{3cm}}l}
-Abella                & Acl 2\\
-\underline{Agda}      & \underline{HOL Light}\\
-\underline{Atelier B} & IMPS\\
-\underline{Coq}       & Lean\\
-\underline{FoCaliZe}  & \underline{LFSC}\\
-\underline{HOL4}      & Nuprl\\
-\underline{Isabelle}  & \underline{PVS}\\
-\underline{K Prover}  & \underline{TSTP}\\
-\underline{Matita}\\
-\underline{Minlog}\\
-\underline{Mizar}\\
-ProB\\
-\underline{ProvenTools}\\
-\underline{Rodin}\\
-\underline{TLA+}\\
-\underline{Why3}\\
-\end{tabular}
-\end{center}
-
-\caption{Some major proof systems. The European ones are in the first column.
-  Those addressed in the project are underlined\label{systems}}
-\end{framed}
-\end{figure}
-
-\begin{center}
-  
 $\bigstar$ $\bigstar$ $\bigstar$
-
 \end{center}
 
 Making proof systems interoperable would avoid duplication of work,
@@ -140,14 +144,21 @@ cooperation between systems is the next step in the development of the
 formal proof technology.
 
 Each proof system comes with its own libraries, and these libraries
-are also part of research infrastructure.  To address the challenge of
+are also part of research infrastructures. To address the challenge of
 improving cooperation between these proof systems, we will integrate
 these libraries in an online encyclopedia of formal proofs. Each proof
 in this encyclopedia will have versions in each theory where it can be
 expressed, so that it can be used in as many systems as possible.
-This is made possible by the expression of the theories implemented in
-these proof systems in a common logical framework, called the $\lambda
-\Pi$-calculus modulo theory, and implemented in the system Dedukti.
+
+Each proof system implements a different theory. So Logipedia will
+encyclopedia contain proofs expressed in different theories.  Such a
+theory-independent infrastructure is made possible, because the
+theories implemented in these different proof systems can be expressed
+in a common logical framework: the $\lambda \Pi$-calculus modulo
+theory, implemented in the system \href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
+lingua franca} that permits this theory-independent encyclopedia to 
+exist.
+
 Building such an encyclopedia will thus allow interoperability,
 sustainability, and cross-verification of all formal proofs in the
 encyclopedia.
@@ -157,10 +168,9 @@ This encyclopedia will be called Logipedia.
 Logipedia is thus a research infrastructure that integrates proof
 systems, through the sharing of data in the form of formal proofs.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-  
 $\bigstar$ $\bigstar$ $\bigstar$
-
 \end{center}
 
 Such an infrastructure is, in many ways, new in the European Strategy
@@ -170,15 +180,17 @@ a large scale infrastructure is relatively new in computer science and
 mathematics, even if other projects, such as {\em OpenDreamKit} and
 {\em Software Heritage} do exist.
 
-Our goal is therefore also trigger a
-small, but significant, evolution on the organization of research in
+Our goal is therefore also to trigger a
+significant evolution on the organization of research in
 computer science and mathematics in Europe.
 
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{shadecolor}{named}{lightgray}
+\begin{shaded}
   \vspace*{-0.5cm}
   \begin{center}
-{\bf \Large History of the project}
-\end{center}
+    {\bf \Large History of the project}
+  \end{center}
 
 Convinced that a cloud of formal proofs could bring to the
 applications of formal proof technology the same boost that the cloud
@@ -189,8 +201,7 @@ expressed in the language of six systems and organized, in January 2019,
 a meeting to discuss the future of this project.
 This
 meeting brought together 38 researchers from Austria, the Czech
-Republic, France, Italy, the Netherlands, and Poland, some of them
-being from the TYPES community, others not.
+Republic, France, Italy, the Netherlands, and Poland.
 \begin{center}
 \includegraphics[height=2cm]{photo.png}
 \end{center}
@@ -200,13 +211,12 @@ Germany, Romania, Serbia, Sweden, and the United Kingdom, from
 academia and industry, have manifested interest in participating in
 this effort.  These researchers and engineers are ready to contribute
 to develop this encyclopedia, aiming at sharing proofs, under a
-creative commons licence, making them findable, accessible,
+creative commons licence, making them searchable, accessible,
 interoperable, and reusable.
-\end{framed}
+\end{shaded}
 
-\newpage
-~\vfill
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
 \begin{center}
 {\bf \Large How do proofs contribute to safety and security of software?}
@@ -220,8 +230,9 @@ has. If it is a one she loses two euros, if she has at least two.
 When the game ends, the player wins the money she got, except if she
 has zero, in which case she loses one million euros.
 
-This game can be modeled by programme $p$
-%import random
+This game can be modeled by the following programme:
+\begin{center}
+    \begin{minipage}{10cm}
 \begin{verbatim}
 n = 11
 stay = True;
@@ -237,6 +248,8 @@ while stay:
                 n = n - 2
 print(n)
 \end{verbatim}
+    \end{minipage}
+\end{center}
 
 To be on the safe side, the player wants to be sure, before starting
 playing, that she will never finish with zero.  And indeed, at all times
@@ -246,6 +259,7 @@ called the ``safety'' of this program. This property is a
 consequence of two simple theorems of arithmetic:
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
+meaning that, for all $x$, if $x$ is an odd number, then $x+2*x$ and $x-2$ are odd numbers too.
 Hence, verifying the safety of this programme
 %, that is that the proposition ${\mbox{\it safe}}(p)$ holds,
 amounts to prove these two theorems.
@@ -258,11 +272,10 @@ very rarely.  In contrast, attempting to prove the correctness of this
 program will
 reveal the bug as it is impossible to prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
-\end{framed}
-\vfill~
-\pagebreak
-~\vfill
-\begin{framed}
+\end{shaded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
 \begin{center} {\bf \Large Non-trivial mathematics are sometimes
 needed to verify that a program is correct}
@@ -274,9 +287,11 @@ verifying the correctness of complex primality testing algorithms is
 critical.
 
 To do so, we need first to define primality, for instance
-\begin{verbatim}
-Definition prime p := 1 < p /\ (forall n, 1 < n < p -> ~ (n | p)).
-\end{verbatim}
+
+$$prime(p) := 1<p \wedge (\forall n, (1<n\wedge n<p) \Rightarrow \neg(n\mid p))$$
+
+where $\wedge$ is the conjunction, $\Rightarrow$ is the implication,
+$\neg$ is the negation, and $n\mid p$ means that $n$ divides $p$.
 
 To lower the cost of primality testing, we use tests that are more
 efficient than the naive use of the definition.  For instance, a very
@@ -287,34 +302,24 @@ product of two smaller natural numbers $m$ and $n$, one of them has to
 be smaller than or equal to the square root of $p$.  Therefore, one
 could give the following more complex, but more efficient, definition.
 
-\begin{verbatim}
-Definition prime' p :=
-  1 < p /\ (forall n, (1 < n /\ (n * n) <= p) -> ~ (n | p)).
-\end{verbatim}
+$$prime'(p) := 1<p \wedge (\forall n, (1<n \wedge n*n\leq p) \Rightarrow \neg(n\mid p))$$
 
 To ensure that these definitions are equivalent one needs to prove
-the following statement.
+the following statement:
 
-\begin{verbatim}
-Theorem prime_alt : forall p, prime' p <-> prime p.
-\end{verbatim}
+$$\forall p, prime'(p) \Leftrightarrow prime(p)$$
 
 It would have been easy to introduce a small bug
 in the new definition.  For example, one could have written
-\verb!(n * n) < p!, instead of \verb!(n * n) <= p!.
-
-\begin{verbatim}
-Definition prime'' p :=
-  1 < p /\ (forall n, (1 < n /\ (n * n) < p) -> ~ (n | p)).
-\end{verbatim}
+$n*n < p$, instead of $n*n \leq p$.
 This would have resulted in accepting squares of primes as primes.
 
 Yet, attempting to prove the equivalence of these two definitions would
 have revealed the bug, as they cannot be proven to be equivalent.
-\end{framed}
-\vfill~
-\pagebreak
-\begin{framed}
+\end{shaded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
   \vspace*{-0.5cm}
   \begin{center}
     {\bf \Large What is a formal proof? What is a proof system?}
@@ -326,8 +331,8 @@ recent proof of the Kepler's conjecture by Thomas Hales, and proofs used
 to establish the safety and security of software, can be built with a
 limited number of rules, for example
 \begin{itemize}
-\item From $A \Rightarrow B$ and $A$, deduce $B$.
-\item From $A$, deduce $A~\mbox{\it or}~B$.
+\item From $A\Rightarrow B$ (``$A$ implies $B$'') and $A$, deduce $B$.
+\item From $A$, deduce $A\vee B$ (``$A$ or $B$'').
 \item etc.
 \end{itemize}
 Yet for most of mathematical history, proofs have been written in
@@ -342,19 +347,19 @@ Clairaut, Legendre, etc.
 In the 1960s, Robin Milner and Nicolaas De Bruijn noticed that the
 correctness of a mathematical proof could be checked by a
 computer. This led to the development of the two first proof systems
-in history: Milner's LCF and De Bruijn's Automath.  From
-the axioms
+in history: Milner's LCF and De Bruijn's Automath.
+
+For instance, from the axioms
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em human}(x))$$
 $$\forall x~(\mbox{\em human}(x) \Rightarrow \mbox{\em mortal}(x))$$
 we can deduce
 $$\forall x~(\mbox{\em philosopher}(x) \Rightarrow \mbox{\em mortal}(x))$$
 In the language implemented in Automath, this proof is written
 $$\lambda x \lambda h~(g~x~(f~x~h))$$
-\end{framed}
+\end{shaded}
 
-\vfill
-
-\begin{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{shaded}
 \vspace*{-0.5cm}
   \begin{center}
 {\bf \Large What is a theory?}
@@ -370,7 +375,7 @@ At the beginning of the 20$^{\mbox{\footnotesize th}}$ century, an
 axiomatic theory, {\em set theory}, has been proposed to express all
 mathematical proofs. In the first half of the 20$^{\mbox{\footnotesize
     th}}$ century a few variants of set theory have been proposed, as
-well as a few alternatives (such as \emph{Simple type theory}).  But
+well as a few alternatives (such as \emph{Simple Type Theory}).  But
 because these theories had not been designed for being implemented on
 a computer, each proof system such as Coq, Isabelle/HOL, Mizar,
 Atelier B, etc. implements its own theory.  Thus the rise of
@@ -378,8 +383,7 @@ computer-checked formal proofs has led to a multiplication of
 alternative theories for mathematics.
 
 This is the major obstacle to interoperability between proof systems.
-\end{framed}
-\pagebreak
+\end{shaded}
 
 %%% Local Variables:
 %%%   mode: latex

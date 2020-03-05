@@ -3,7 +3,7 @@
 % - submit.tex (no draft stuff, no ednotes, no revision information)
 % - public.tex (like submit.tex, but no financials either) 
 \providecommand{\classoptions}{,notecites} % to be overwritten in variants
-\documentclass[12pt,noworkareas,deliverables,report,propB\classoptions]{euproposal}
+\documentclass[12pt,noworkareas,deliverables,report\classoptions]{euproposal}
 \extrafloats{1000}
 \usepackage{nimbusserif}
 \usepackage{logipedia}
@@ -26,6 +26,8 @@
 \counterwithout{figure}{chapter}
 
 \begin{document}
+%{\color{red} version du 5 mars à 10:29}
+
 \begin{proposal}[%
   coordinator=GiDo,
   coordinatorsite=Inr,
@@ -38,7 +40,6 @@
   site=Inn, 
   site=Lie,
   site=Bol,
-  site=Pra,
   site=Bel,
   site=Tum,
   site=Del, 
@@ -66,25 +67,6 @@
   % alternative: (can be combined)
   % topdownPM, % the coordinator distributes PM as follows:
   % FAURM=72,
-  % UBelRM=72,
-  % UBiaRM=72,
-  % UBoRM=72,
-  % CleRM=72,
-  % DelRM=72,
-  % GURM=72,
-  % UInRM=72,
-  % ULeRM=72,
-  % ULiRM=72,
-  % TUMRM=72,
-  % LMURM=72,
-  % INaRM=72,
-  % IPaRM=72,
-  % UPraRM=72,
-  % ISaRM=72,
-  % ISARM=72,
-  % USoRM=72,
-  % UStrRM=72,
-  % NPITRM=72,
   callname = Integrating and opening research infrastructures\\ of European interest,
   callid = H2020-INFRAIA-2018-2020,
   instrument=instrument,
@@ -101,7 +83,7 @@
   \vspace*{1cm}
   
   \begin{center}
-    {\Large\bf Club of industrial users:}
+    {\Large\bf Companies willing to join\footnote{Their letters of support are provided in the Appendix.} the club of industrial users:}
   \end{center}
 
   \vspace*{5mm}
@@ -122,15 +104,32 @@
     & \logo{Onera}
     & \logo{OriginLabs}
     & \logo{ProveRun}
-    & TrustInSoft
+    & \logo{TrustInSoft}
     \\[8mm]
     RATP
+    & \logo{RV}
     & \logo{SystemX}
     & \logo{Systerel}\\
   \end{tabular}
   
   \begin{abstract}
+    max 2000 characters
 
+    the objectives of the proposal
+
+    how they will be achieved
+
+    their relevance to the work programme
+
+    will be used as the short description  of the proposal in the evaluation process and in communications  with the programme management committees and other interested parties
+
+    do not include any confidential information
+
+    use plain typed text, avoiding formulae and other special characters
+
+    use e-infrastructure
+
+    key-words: 200 characters max
   \end{abstract}
 
   \tableofcontents
