@@ -110,7 +110,7 @@
 \end{wrapfigure}%
 \fi% end box
 \pdata@target{site}{#2}%
-{\subsubsection{\wa@ref3{institution}{#2}{acronym}: % space here
+{\subsection{\wa@ref3{institution}{#2}{acronym}: % space here
 {\textsc{\wa@ref3{institution}{#2}{name}}  (\wa@ref3{institution}{#2}{countryshort})}}}%
 \small%
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
