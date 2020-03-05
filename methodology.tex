@@ -8,7 +8,7 @@ modifying existing ones, experimenting, proving theorems, etc.
 
 To integrate existing proof systems into Logipedia, we need to
 \emph{instrument} these systems to export their proofs to Dedukti. The
-methodology required to achieve this goal varies a lot in function of
+methodology required to achieve this goal varies a lot with respect to
 the proof system considered. We distinguish three broad categories of
 systems:
 
@@ -76,11 +76,10 @@ often slows down the instrumented system a little bit and if this is
 acceptable for interactive proof systems---the user being anyway
 slower than the software---this is often not acceptable for automated
 theorem provers.
-
 So, these systems must be instrumented in a minimal way, so that they
-execution is not perturbed by the instrumentation. In most of the
-cases, we can just extract a proof trace, as in the third case above,
-and fill the gaps in these proofs by using another, less powerful but better
+execution is not impacted by the instrumentation.  Most of the
+time, we can just extract a proof trace, as in the third case above,
+and fill the gaps in these proofs using another, less powerful but better
 instrumented automated theorem prover, to fill the gaps.
 
 Some automated theorem provers already output proof traces, meaning
@@ -88,7 +87,6 @@ that we can see them as black-boxes and concentrate on the translation
 from these traces to Dedukti. To this end, we plan to extend the
 prototype tool Ekstrakto to handle more proof formats and increase its
 expressivity.
-
 For the others, a preliminary task is to instrument them.  We target
 proof formats that will be already integrated into Dedukti, in
 particular TSTP, for automated theorem provers, and LSFC, for SMT solvers.
