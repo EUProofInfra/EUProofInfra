@@ -67,7 +67,7 @@ types).
 \begin{task}[id=HOL4,
   title=Instrument HOL4,
   lead=Cha,
-  ChaRM=20]
+  ChaRM=16.5]
 %\input{workpackages/hol4}
 \begin{compactitem}
 \item Develop the current proof-of-concept prototype
@@ -112,7 +112,7 @@ into B models.
   title=Instrument Coq,
   lead=Bol,
   BolRM=12,
-  InrRM=0]  %TODO
+  InrRM=6]
   % \input{workpackages/coq}
 \begin{compactitem}
 \item Access Coq internal data structures to gather logical data, such as
@@ -129,25 +129,25 @@ cast from one algebraic structure to another (for tasks in WP3).
 \end{tasklist}
 
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=3,miles=startup,id=requirements,dissem=PU,nature=DEM,lead=Inr]
+  \begin{wpdeliv}[due=3,miles=startup,id=requirements,dissem=PU,nature=DEM,lead=Inr,whpases=0-3]
       {Requirements Analysis and Synchronization}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=isabelle1,dissem=PU,nature=DEM,lead=Tum]
+  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=isabelle1,dissem=PU,nature=DEM,lead=Tum,wphases=0-12]
       {Robust export of proof terms for Isabelle}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=isabelle1,dissem=PU,nature=DEM,lead=Tum]
+  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=isabelle1,dissem=PU,nature=DEM,lead=Tum,wphases=0-12]
       {Improved memory management and monitoring for Poly/ML}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=18,miles=agda-stdlib,id=agda,dissem=PU,nature=DEM,lead=Del]
+  \begin{wpdeliv}[due=18,miles=logipedia-v2,id=agda,dissem=PU,nature=DEM,lead=Del,wphases=6-18]
       {Export Agda's standard library to Dedukti}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=8,miles=logipedia-v1,id=coq1,dissem=PU,nature=DEM,lead=Inr]
+  \begin{wpdeliv}[due=8,miles=logipedia-v1,id=coq1,dissem=PU,nature=DEM,lead=Inr,wphases=0-8]
     {Export of proof terms from Coq, no meta data}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=24,miles=logipedia-v2,id=coq2,dissem=PU,nature=DEM,lead=Bol]
+  \begin{wpdeliv}[due=24,miles=logipedia-v2,id=coq2,dissem=PU,nature=DEM,lead=Bol,wphases=8-24]
     {More scalable export of proof terms and meta data from Coq}
   \end{wpdeliv}
-  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=matita1,dissem=PU,nature=DEM,lead=Bol]
+  \begin{wpdeliv}[due=12,miles=logipedia-v1,id=matita1,dissem=PU,nature=DEM,lead=Bol,wphases=0-12]
     {Export of proof terms and meta data from Matita}
   \end{wpdeliv}
 \end{wpdelivs}
