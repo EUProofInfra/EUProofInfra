@@ -231,7 +231,7 @@ practice. For example:
 \item Coq, Agda, and Matita all provide support for coinductive
   (infinite) structures, which can be expressed by computation rules in
   Dedukti, but this expression must be carefully chosen so that the
-  proofchecker does not go into an infinite loop.
+  proof checker does not go into an infinite loop.
 
 \item A few of the systems rely on AC rewriting (i.e.~rewriting modulo
   associativity and commutativity of certain operations), for example
@@ -361,16 +361,16 @@ the machine builds proofs without any human intervention. The proofs
 built by these systems are often expressed in simpler theories than
 those developed using proof systems, but they are not of a different
 nature.  They cover various domains and various kinds of application,
-{\em e.g.}  combinatorial
+{\em e.g.}\ combinatorial
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
-proof of
+verification of
 programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD17},
 where they are given thousands of small problems in a combination of
 quantified theories.
 
 Including proofs built by such automatic systems in Logipedia,
-whether they are called automatic theorem provers, SAT solvers, SMT
+whether they are called first-order automatic theorem provers, SAT solvers, SMT
 solvers, etc. is both a goal {\em per se}, and a tool to help to
 integrate proofs developed in proof systems and make a coherent whole out
 of Logipedia. A fruitful interaction between formal proofs requires
@@ -381,13 +381,13 @@ between proof systems, and to discharge proofs of concept alignment.
 
 On the other hand, automatic theorem provers will also benefit from
 Logipedia. Obviously, Logipedia will be an extensive library of formal
-statements that can be used and combined by automatic theorem provers
-in their proof search. This is not trivial though: automatic theorem
-provers have to select the right lemmas for a proof, which becomes
-more difficult the more lemmas there are. It can also be a source of benchmarks to
-evaluate their expressivity and automation.  Lastly, Logipedia and
-Dedukti will form a framework to make automatic theorem provers
-cooperate with each other and with other tools, in a safe way.
+statements that can be used and combined by automatic theorem provers in their
+proof search. This is not trivial though: automatic theorem provers have to
+select the right lemmas for a proof, which becomes more difficult the more
+lemmas there are.  Logipedia can also be a source of benchmarks to evaluate the
+expressivity and automation of automatic tools.  Lastly, Logipedia and Dedukti
+will form a framework to make automatic theorem provers cooperate with each
+other and with other tools, in a safe way.
 
 \subsubsection*{From automatic theorem provers to Dedukti}
 
@@ -415,25 +415,24 @@ is specific to the solver, and the proofs are sometimes difficult to
 replay due to their (lack of) granularity.  Most mainstream theorem provers for
 predicate logic output proofs in a standardized language~\cite{DBLP:conf/csr/Sutcliffe07},
 but this language does not clearly specify the semantics of the proof
-steps.  Model-checkers do not provide proof traces {\em per se}, although
-such traces would be useful for various usages and notably
-certification.
+steps.
+%Model-checkers do not provide proof traces {\em per se}, although
+%such traces would be useful for various usages and notably
+%certification.
 
-Our goals are to improve reasoning tools to demonstrate the
-feasibility of producing sufficiently detailed proofs for connecting to
-Logipedia, and to design a set of theoretical methods and practical
-tools that can be used to further connect Logipedia to the other
-existing automated reasoners of the same kind.  We will work on three
-SMT solvers (Alt-ergo, CVC4, VeriT) and two provers for predicate logic
-(the E-prover, Zipperposition).  We
-will also consider more specific reasoning tools, with the aim to
-demonstrate that this approach also applies to more specific
-reasoners.  We envision to experiment with this approach on a reasoner
-for Coherent Logic.  These reasoners are particularly useful for geometric
-reasoning, and as such, they are quite complementary to the other
-automatic reasoners considered.  They are also very suitable as as a
-first experiment, since their proofs are fairly straightforward to
-interpret.  They thus constitute a very interesting low hanging fruit.
+Our goals are to improve reasoning tools to demonstrate the feasibility of
+producing sufficiently detailed proofs for connecting to Logipedia, and to
+design a set of theoretical methods and practical tools that can be used to
+further connect Logipedia to the other existing automated reasoners of the same
+kind.  We will mainly work on two SMT solvers (Alt-ergo, VeriT) and one prover
+for predicate logic (the E-prover).  We will also consider more specific
+reasoning tools, with the aim to demonstrate that this approach also applies to
+more specific reasoners.  We envision to experiment with this approach on a
+reasoner for Coherent Logic.  These reasoners are particularly useful for
+geometric reasoning, and as such, they are quite complementary to the other
+automatic reasoners considered.  They are also very suitable as a first
+experiment, since their proofs are fairly straightforward to interpret.  They
+thus constitute a very interesting low hanging fruit.
 
 It is not possible, and not even desirable, to require all tools to
 directly talk in the language of Logipedia.  Indeed, proof trace
@@ -447,7 +446,7 @@ the work necessary to translate proof traces for a myriad of very
 different reasoners will be implemented in a single tool (Ekstrakto,
 see below) to take advantage of the fact that there is quite a lot of
 sharing of reasoning techniques, and thus proof methods, among the
-solvers.
+provers and solvers.
 
 \subparagraph*{Translate automatic theorem provers traces into Dedukti.}
 As pointed out above, it is easier to instrument provers to make them
@@ -468,7 +467,7 @@ from traces produced by automated theorem provers.
 
 This scheme has already been prototyped in a tool called
 Ekstrakto. Ekstrakto takes a TSTP file, as can be produced by
-e.g.\ the provers E and Zipperposition, and it uses Zenon Modulo and
+e.g.\ the E prover for first-order logic, and it uses Zenon Modulo and
 ArchSAT to prove the sub-problems. Ekstrakto was designed to be
 agnostic with respect to the prover producing the trace; in particular
 it does not depend on the specific set of inference rules of the
@@ -476,9 +475,9 @@ prover. It was also designed to be agnostic w.r.t.\ the prover used to
 prove the sub-problems; it is only required that the prover can output
 a Dedukti proof in the correct expression of predicate logic.
 
-Although work on Ekstrakto has already shown that approach is valuable,
-it is a work in progress. In particular, the following issues will be
-addressed in the project:
+Although the experience we already have with Ekstrakto gives us a total
+confidence that the approach will be successful, it is a work in progress. In
+particular, the following issues will be addressed in the project:
 
 \begin{enumerate}
   % extension to other proof trace formats
@@ -500,7 +499,7 @@ addressed in the project:
   since provability is preserved, it should be possible to transform a
   proof using the conclusion of the step into a proof using its
   premises. Such a transformation depends on the nature of the step
-  that has been used. We plan to include in Ekstrakto a way to handle
+  that has been used. We will include in Ekstrakto a mechanism to handle
   Skolemization and definition introduction, which are the two step
   families that are missing to be able to manage all traces from the
   major theorem provers for predicate logic.
@@ -508,13 +507,12 @@ addressed in the project:
   % specialization for theories
 
 \item Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo
-  and ArchSAT, are meant for pure predicate logic. However, we would
-  like to deal with proof traces that use some specialized theory,
+  and ArchSAT, are meant for pure predicate logic. However, it will be necessary  to deal with proof traces that use some specialized theory,
   e.g.\ arithmetic or bit-vectors, as could be output by SMT
   solvers. Although such theories could be presented as a set of
   axioms in predicate logic, it is almost certain that neither Zenon
   Modulo nor ArchSAT could be able to find non-trivial proofs using
-  these axioms. Here, the idea would be to develop small provers
+  these axioms. Here, the idea is to develop small provers
   dedicated to a particular theory that can output Dedukti
   proofs. Such provers would be called when a step in the trace relies
   on said theory. These provers need not be very optimized, since
@@ -540,14 +538,14 @@ expressive logics, such as dependent type theory or simple type
 theory.  Theorem statements thus need to be expressed in a different way
 to be manipulable by automatic theorem provers.
 
-Encodings of expressive logics in predicate logic already exist,
-and are used for instance in {\em hammers} for using automatic theorem
-provers into interactive theorem
-provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.
-In these tools, the encodings are specific to one system to be
-affordable. In Logipedia, we have to combine and take benefit from
-statements coming from the encodings of different systems based on
-different logics. The key challenge here are thus:
+Encodings of expressive logics in predicate logic already exist, and are used
+for instance in {\em hammers} for using automatic theorem provers into
+interactive theorem
+provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.  In these
+tools, the encodings are specific to one system and tuned to their logic. In
+Logipedia, we have to combine and take benefit from statements coming from the
+encodings of different systems based on different logics. The key challenge here
+are thus:
 \begin{itemize}
 \item to avoid the loss of meaning arising from a succession of
   encodings; and
@@ -708,7 +706,7 @@ will also be used, {\em e.g.} for new proof transformations or to
 align distant concepts, which will be affordable with automation.
 
 
-\subsubsection*{Success measures for ATPs}
+\subsubsection*{Success measures for automatic theorem provers}
 
 The success of the integration of proofs coming from automated theorem
 proving systems, SAT solvers, SMT solvers, first-order provers and other
@@ -719,7 +717,7 @@ The success of the export of Logipedia proofs into automated provers can
 be measured by the number of exported theorems.
 %
 The number and complexity of C programs verified with {\em a posteriori}
-proof checking will measure the success of combining ATPs with Logipedia.
+proof checking will measure the success of combining automatic theorem provers with Logipedia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Large libraries}
@@ -1967,21 +1965,21 @@ interactive theorem proving.
 &
 \hspace{0.4cm} Synergy with between Matryoshka and Logipedia is clear
 as Matryoshka could produce proofs for Logipedia and use Logipedia
-proofs. The participation of Pascal Fontaine to both project is also a
+proofs. The participation of Pascal Fontaine to both projects is also a
 factor facilitating the synergy.
 \\
 \hline
 {\bf OpenDreamKit} 
 & 
 OpenDreamKit is a European Research Infrastructure project led by
-Nicolas Thierry which ran from 2015 to 2019 that has built a the joint
+Nicolas Thierry which ran from 2015 to 2019 that has built the joint
 ecosystems of software for mathematics.
 \\
 &
 \hspace{0.4cm}
 OpenDreamKit and Logipedia's goal are related but different as OpenDreamKit
-targets software for mathematics and Logipedia formal proofs. But both type 
-of objects are used to mathematicians, computer scientists, scientists in 
+targets software for mathematics, whereas Logipedia focuses on formal proofs. But both type 
+of objects are used by mathematicians, computer scientists, scientists in 
 general and engineers. The continuity between the two projects is manifested 
 by several common members: Michael Kohlhase, Dennis Müller, 
 Florian Rabe, and Makarius Wenzel. 
@@ -2031,8 +2029,8 @@ in a cooperative way.\\
 \hspace{0.4cm}
 Synergy with between ProofPeer and Logipedia is clear as ProofPeer
 could produce proofs for Logipedia and use Logipedia proofs.  We also
-share with ProofPeer that works with Matita, Mizar, Coq, and for any
-proof system in principle, the will to transcend the use of a single
+share with ProofPeer --- working with Matita, Mizar, Coq, and with any
+proof system in principle --- the will to transcend the use of a single
 system. The participation of Jacques Fleuriot to our club of academic users 
 is also a factor facilitating the synergy.\\
 \hline
@@ -2049,11 +2047,11 @@ and humanity cannot afford the risk of losing it.
 {\bf Xena} 
 &
 Xena is a British project, headed by Kevin Buzzard 
-aims at
+which aims at
 introducing mathematicians and students
 to formal proofs.\\
 &
-\hspace{0.4cm} Although Xena and Logipedia use different means they
+\hspace{0.4cm} Although Xena and Logipedia use different means, they
 share the same values, in particular the dissemination of formal
 proofs. The examples developed in Xena could be an excellent benchmark
 for Logipedia's project to express elementary proofs in different theories
