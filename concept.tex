@@ -775,8 +775,11 @@ As a result we selected the following libraries: the Archive of Formal
 Proofs, Isabelle's revised Analysis and Probability library, GeoCoq,
 Flyspeck and CakeML.  Other very interesting libraries such as
 MathComp, Coq's revised Analysis library, CompCert, seL4, and selected
-Mizar and PVS libraries are left for future work.
+Mizar and PVS libraries are left for future work.\\
 
+\hspace{-1cm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
 \paragraph*{Isabelle's Archive of Formal Proofs.}
 Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
 growing user-contributed online library for Isabelle. In Feb-2020, the
@@ -787,6 +790,11 @@ is to scale up the Isabelle instrumentation for Dedukti further, to
 cover major parts of this library. We do not intend to restructure or
 document the library further beyond what is provided by the authors of
 each article and by the hierarchical dependencies among the articles.
+ \end{minipage}
+&\begin{minipage}{3cm}
+  \logo{AFP}
+\end{minipage}
+\end{tabular}
 
 The key challenge is scaling. The ultimate aim is to export the main
 substance of the Archive of formal proofs without promising full coverage: some entries
@@ -816,11 +824,11 @@ in any application in the engineering and natural sciences and
 economics, this library is a key exploitable result of the project: it
 is a fundamental enabling resource for almost any formal verification
 activity in these areas, for example autonomous driving and
-mathematical finance. The purpose of this task is to structure,
+mathematical finance. We therefore need to structure,
 document and develop this library for optimal accessibility, ease of
-use and comprehensiveness. The aim is a curated library for
-applications.  Therefore some material will need revising for ease of
-use and some essential material will need to be added.
+use and comprehensiveness. The goal is to have a curated library for
+applications. So, some material will need some revisions
+and some new material will need to be added as well.
 
 \emph{Accessibility:}
 The library is a large collection of theories with a hierarchical dependency
@@ -844,7 +852,7 @@ of Logipedia.
 \emph{Development:}
 Although the library support for integrals is extensive, it suffers
 from the (necessary) coexistence of different kinds of
-integrals. This complicates proofs about integrals in applications and needs
+integrals. This complicates proofs about integrals and so needs
 to be unified, which entails further refactoring. The rest of the
 development adds further essential material:
 \begin{compactitem}
@@ -858,6 +866,9 @@ relevance for the verification of cyber-physical systems.
 dynamical systems with stochastic components, from physics to financial markets.
 \end{compactitem}
 
+\bigskip
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
 \paragraph*{The GeoCoq library.}
 The GeoCoq library consists of more than 100.000 lines of definitions
 and proofs in geometry. It is mostly based on synthetic approaches,
@@ -869,6 +880,12 @@ contains a model, based on the analytic approach, of one of the
 synthetic approaches present in the library, namely Tarski's system of
 geometry, thus establishing the connection between these two
 approaches in the opposite direction.
+\end{minipage}
+&\begin{minipage}{3cm}
+  \logo{geocoq}\\
+  (GeoCoq logo)
+\end{minipage}
+\end{tabular}
 
 The fact that the analytic approach can be derived from the synthetic
 one is called the arithmetization and coordinatization of geometry and
@@ -965,8 +982,11 @@ translation from {HOL Light} to {Dedukti}, the import of the
 multivariate analysis library, the import of the whole {HOL Light}
 library, and the import of the {Flyspeck} in {Dedukti}.
 
+\bigskip
+\hspace{-1cm}
+\begin{tabular}{ll}
+\begin{minipage}{13cm}
 \paragraph*{The CakeML compiler library.}
-
 The CakeML compiler library consists of the CakeML programming language
 definition, its compiler, and the correctness proofs about the
 compiler. This is a cutting edge compiler library and one of only two
@@ -974,6 +994,11 @@ verified compilers for real languages, the other being CompCert. Its
 export to Dedukti is one of the key exploitable results of this project.
 % Because of the size and importance of this library,
 %we will approach the export from two angles.
+ \end{minipage}
+&\begin{minipage}{4cm}
+  \includegraphics[width=4cm]{logos/CakeML}
+\end{minipage}
+\end{tabular}
 
 The CakeML compiler development lives within the HOL4 prover. HOL4 can
 export definitions and proofs in the OpenTheory format, which can in
@@ -1068,11 +1093,11 @@ require just a few minutes, a few hours, or up to a few days.
 
 It is therefore convenient that the consortium shares high performance
 computers to generate those proofs, and all the proofs that will
-developed and added in the future.
+be developed in the future.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}\hline
-Library & Nb files & Nb objects & Size (Mb) & Dedukti Size\\\hline
+\rowcolor{cyan}Library & Nb files & Nb objects & Size (Mb) & Dedukti Size\\\hline
 Opam-Coq & 16,000 & 473,000 & 235 & $\times 7$\\\hline
 AFP & 7,000 & 90,000 & 135 & $\times 30$\\\hline
 MML & 1,400 & 77,000 & 101 & $\times 5-\times 14$\\\hline
@@ -1571,8 +1596,12 @@ benefit of encoding ProvenTools in Dedukti will be to enable cross-checking
 proofs using Dedukti. This would be very valuable in the context of certified
 developments.
 
+\bigskip
+\hspace{-1cm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
 \paragraph*{K Prover.}
-K Prover \footnote{\url{https://github.com/kframework/k}} is an
+\href{https://github.com/kframework/k}{K Prover} is an
 implementation of Matching Logic~\cite{rosu:matching}, designed as a
 unifying foundational logic for specifying and verifying programming
 languages. Extending first-order modal logic by features such as
@@ -1585,6 +1614,11 @@ uniform way, with the semantics of the language expressed as a set of
 computation rules, which are special patterns in Matching Logic. A
 language-independent proof system can then be used to derive both the
 operational behavior and formal properties of a program.
+ \end{minipage}
+&\begin{minipage}{3cm}
+  \logo{k}
+\end{minipage}
+\end{tabular}
 
 The K framework allows the designer of a programming languages to
 specify its formal semantics and to derive analysis tools for the

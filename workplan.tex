@@ -5,9 +5,11 @@ The first group of work packages is dedicated to the networking
 activities that are needed to gather the proofs today located in
 different libraries.
 
-\begin{longtable}{|p{0.02\textwidth}|p{0.2\textwidth}|p{0.7\textwidth}|}
+\begin{longtable}{|p{0.05\textwidth}|p{0.2\textwidth}|p{0.65\textwidth}|}
 \hline
-1
+\rowcolor{orange}\multicolumn{3}{|l|}{\bf Networking activities:}\\
+\hline
+WP1
 &
 Integration
 &
@@ -15,7 +17,7 @@ Instrument the systems for which we already know how to encode the
 proofs in Dedukti, and make available these proofs in Logipedia.
 \\
 \hline
-2
+WP2
 &
 Automatic theorem proving
 & 
@@ -23,7 +25,7 @@ Develop automatic theorem provers to populate,
 help, and benefit from Logipedia.
 \\
 \hline
-3
+WP3
 &
 Large libraries
 &
@@ -32,11 +34,15 @@ to Logipedia for end-user applications.
 \\
 \hline
 \end{longtable}
+
 The second is dedicated to making these proofs accessible, beyond
 trans-national and virtual access.
-\begin{longtable}{|p{0.02\textwidth}|p{0.2\textwidth}|p{0.7\textwidth}|}
+
+\begin{longtable}{|p{0.05\textwidth}|p{0.2\textwidth}|p{0.65\textwidth}|}
 \hline
-4
+\rowcolor{orange}\multicolumn{3}{|l|}{\bf Trans-national and virtual access:}\\
+\hline
+WP4
 &
 Access
 &
@@ -44,7 +50,7 @@ Define and build the Logipedia hardware and software infrastructure in
 which the proofs will be integrated.
 \\
 \hline
-5
+WP5
 &
 Structure of the encyclopedia
 &
@@ -54,11 +60,15 @@ libraries in Logipedia.
 \\
 \hline
 \end{longtable}
+
 The third is dedicated to joint research activities that prepare
-the future of Logipedia. 
-\begin{longtable}{|p{0.02\textwidth}|p{0.2\textwidth}|p{0.7\textwidth}|}
+the future of Logipedia.
+
+\begin{longtable}{|p{0.05\textwidth}|p{0.2\textwidth}|p{0.65\textwidth}|}
 \hline
-6
+\rowcolor{orange}\multicolumn{3}{|l|}{\bf Joint research activities:}\\
+\hline
+WP6
 &
 Theories
 &
@@ -66,25 +76,32 @@ Bringing proof systems implementing a theory
 that has not yet been expressed in Dedukti LIL 2 or better.
 \\
 \hline
-7&Proof engineering &
+WP7
+&
+Proof engineering
+&
 Investigate methods for detecting concept alignments and apply
 them to build a library of alignments present across the Logipedia database.
 \\
 \hline
 \end{longtable}
+
 Together with these seven scientific work packages, 
 two more work packages are dedicated to dissemination, communication and
-exploitation and to madagement.
-\begin{longtable}{|p{0.02\textwidth}|p{0.2\textwidth}|p{0.7\textwidth}|}
+exploitation and to management.
+
+\begin{longtable}{|p{0.05\textwidth}|p{0.2\textwidth}|p{0.65\textwidth}|}
 \hline
-8
+\rowcolor{orange}\multicolumn{3}{|l|}{\bf Dissemination, communication, exploitation, and management:}\\
+\hline
+WP8
 &
 Dissemination, communication, and exploitation
 &
 Expand the use of Logipedia in research, industry, education, and publishing.
 \\
 \hline
-9
+WP9
 &
 Management
 &
@@ -108,12 +125,13 @@ different systems.  It therefore has a larger number of partners.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Timing of the different work packages and their components}
 
-Gant diagaram : a line for each task
+{\color{red}
+Gantt diagaram : a line for each task
 and a column for each month.
 
 Finishes with a miletones, deliverable and project meeting.
 
-Put a lot of deliverables at Month 18 and 36 and 48
+Put a lot of deliverables at Month 18 and 36 and 48}
 
 \ganttchart[draft,xscale=.32] 
 
@@ -128,39 +146,45 @@ Put a lot of deliverables at Month 18 and 36 and 48
 \subsection{Detailed work description}
 
 \begin{workplan}
+
+% the template says: "indicate in the work package title the type of activity"
+  
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 1: Integration (Networking activity)\end{minipage}}
+
 \input{workpackages/instrumentation}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 2: Automatic theorem provers (Networking activity)\end{minipage}}
 
 \input{workpackages/atpetc}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 3: Large libraries (Networking activity)\end{minipage}}
 
 \input{workpackages/libraries}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 4: Access (Trans-national and virtual access)\end{minipage}}
 
 \input{workpackages/access}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 5: Structure of the encyclopedia (Trans-national and virtual access)\end{minipage}}
 
 \input{workpackages/structuring}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 6: Theories (Joint research activity)\end{minipage}}
 
 \input{workpackages/theories}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 7: Proof engineering (Joint research activity)\end{minipage}}
 
 \input{workpackages/alignment}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 8: Dissemination, communication and exploitation\end{minipage}}
 
 \input{workpackages/dissemination}
 
-\begin{center}$\bigstar$ $\bigstar$ $\bigstar$\end{center}
+\noindent\colorbox{cyan}{\begin{minipage}\textwidth Work Package 9: Management\end{minipage}}
 
 \input{workpackages/management}
+
 \end{workplan}
 
 \input{deliverables}
