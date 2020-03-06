@@ -210,7 +210,8 @@ Defining a basic instrumentation of some of these systems is
 straightforward, but building tools that also work well in practice
 raises new research challenges:
 
-\paragraph*{(1) Improving encodings.}
+\begin{enumerate}
+\item{\bf Improving encodings.}
 Even when we have understood how to express the basic theory of these
 systems, implementation often reveals some advanced features of these
 systems that require further work.  Moreover even when we know how to
@@ -251,7 +252,7 @@ redundant and can thus be omitted. Second, if this is not possible, we
 will investigate what minimal changes need to be made to Dedukti
 itself in order to overcome these limitations.
 
-\paragraph*{(2) Reconstructing transient proof components.}
+\item{\bf Reconstructing transient proof components.}
 In all proof systems, there is some information that is created during
 the process of checking a proof that is not stored in the final proof
 term. In systems such as Coq, Agda, and Matita, this concerns for
@@ -273,7 +274,7 @@ external provers such as Isabelle or Atelier B. In order to handle these
 cases, we will instrument these external provers so they can produce
 the missing parts of the proof terms.
 
-\paragraph*{(3) Producing more compact proofs.}
+\item{\bf Producing more compact proofs.}
 When translating a proof from some external system to Dedukti, we want
 to produce proof terms that are as small as possible, so it is easy to
 store them, recheck them, or export them to a different
@@ -292,8 +293,7 @@ Dedukti, we plan to investigate how to avoid unnecessary
 normalization or duplication of (parts of) proofs. We will also
 investigate what parts of each proof can be safely omitted because
 they can be inferred from the rest of the proof.
-
-\bigskip
+\end{enumerate}
 
 For each of the systems considered in this project, we can identify
 some preliminary work, of varying maturity, on translating proofs to
