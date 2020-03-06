@@ -99,14 +99,13 @@ interoperability between proof systems.
 So, to make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
 $D[X]$, implemented in the system $X$, in the logical framework
-Dedukti.  Then, we must instrument the system $X$ so that a proof in system $X$
-can be exported from it as a piece of data expressed as a proof in
-$D[X]$ and included in Logipedia. Next, we need to analyze this proof
-in order to determine which symbols, axioms and computation rules of
-$D[X]$ it actually uses and, thus, in which alternative theories it
-can be expressed.  Finally, we must align its concepts with the
-definitions already present in Logipedia and decide where it fits in
-the general structure of the encyclopedia.
+Dedukti.  Then, we must instrument the system $X$, that is modify the
+system $X$, in such a way that it exports proofs in $D[X]$.  Next, we
+need to analyze this proof in order to determine which symbols, axioms
+and computation rules of $D[X]$ it actually uses and, thus, in which
+alternative theories it can be expressed.  Finally, we must align its
+concepts with the definitions already present in Logipedia and decide
+where it fits in the general structure of the encyclopedia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Integration of proof systems}
@@ -182,17 +181,18 @@ LCF-style systems (like HOL Light or HOL4).
 
 \paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin).}
 
-Atelier B and Rodin are platforms to develop models written
-using the B method, a version of set theory expressed in predicate
-logic.  A model in these systems expresses a state machine constrained
-by invariant properties. Verification of the correctness of the model requires
-discharging a number of proof obligations produced by a weakest precondition
-calculus. For example, spanning tree algorithms, distributed
-algorithms, and access control policies have been formalized
-respectively in the EventB and (classical) B methods.  The development process for
-both versions of the B method is based on formal proofs: proof obligations are
-automatically generated and must be proven by automatic or interactive
-provers. This can include external solvers such as SMT solvers.
+Atelier B and Rodin are platforms to develop models written using the
+B method, a version of set theory expressed in predicate logic.  A
+model in these systems expresses a state machine constrained by
+invariant properties. Verification of the correctness of the model
+requires discharging a number of proof obligations produced by a
+weakest precondition calculus. For example, spanning tree algorithms,
+distributed algorithms, and access control policies have been
+formalized respectively in the Event B and (classical) B methods.  The
+development process for both versions of the B method is based on
+formal proofs: proof obligations are automatically generated and must
+be proven by automatic or interactive provers. This can include
+external solvers such as SMT solvers.
 
 \bigskip
 
@@ -207,7 +207,7 @@ Defining a basic instrumentation of some of these systems is
 straightforward, but building tools that also work well in practice
 raises new research challenges:
 
-\paragraph*{Improving encodings.}
+\paragraph*{(1) Improving encodings.}
 Even when we have understood how to express the basic theory of these
 systems, implementation often reveals some advanced features of these
 systems that require further work.  Moreover even when we know how to
@@ -216,11 +216,11 @@ choice of expression, the instrumentation may be simpler or harder in
 practice. For example:
 
 \begin{compactitem}
-\item Many Agda libraries (as well as some Coq libraries) rely heavily
+\item Many Agda libraries (as well as some Coq libraries) heavily rely
   on type-directed conversion rules such as $\eta$-equality for functions
   and record types, or definitional proof irrelevance. These rules
   have to be expressed by adding type information to the
-  proof terms. This can in turn lead to a large blow-up in the size of
+  proof terms. This can in turn lead to a large increase in the size of
   those proof terms, and thus greatly increase the cost of
   typechecking. This blow-up has to be tamed by the choice of a
   clever expression of the theory.
@@ -248,7 +248,7 @@ redundant and can thus be omitted. Second, if this is not possible, we
 will investigate what minimal changes need to be made to Dedukti
 itself in order to overcome these limitations.
 
-\paragraph*{Reconstructing transient proof components.}
+\paragraph*{(2) Reconstructing transient proof components.}
 In all proof systems, there is some information that is created during
 the process of checking a proof that is not stored in the final proof
 term. In systems such as Coq, Agda, and Matita, this concerns for
@@ -262,15 +262,15 @@ information is thus crucial.
 In order to instrument systems with transient proof information, the
 proof terms need to be complemented with this transient information by
 either logging or re-synthesizing it on demand. Both approaches may be
-used, depending on the the trade-off between computation time and space
+used, depending on the trade-off between computation time and space
 for storage.
 
 However, this approach is insufficient for systems that rely on
-external provers such as Isabelle or Event B. In order to handle these
+external provers such as Isabelle or Atelier B. In order to handle these
 cases, we will instrument these external provers so they can produce
 the missing parts of the proof terms.
 
-\paragraph*{Producing more compact proofs.}
+\paragraph*{(3) Producing more compact proofs.}
 When translating a proof from some external system to Dedukti, we want
 to produce proof terms that are as small as possible, so it is easy to
 store them, recheck them, or export them to a different
@@ -356,7 +356,10 @@ We have previously discussed the instrumentation of \emph{interactive}
 proof systems such as Coq, Isabelle/HOL, Agda, etc.,
 where the users build formal proofs with the help of the
 machine. Automatic theorem provers are another class of systems, where
-the machine builds proofs without any human intervention. The proofs
+the machine builds proofs without any human intervention.
+These systems are called first-order automatic theorem provers, SAT solvers, SMT
+solvers, etc.
+The proofs
 built by these systems are often expressed in simpler theories than
 those developed using proof systems, but they are not of a different
 nature.  They cover various domains and various kinds of application,
@@ -368,9 +371,8 @@ programs~\cite{DBLP:conf/esop/FilliatreP13,DBLP:journals/pacmpl/ProtzenkoZRRWBD1
 where they are given thousands of small problems in a combination of
 quantified theories.
 
-Including proofs built by such automatic systems in Logipedia,
-whether they are called first-order automatic theorem provers, SAT solvers, SMT
-solvers, etc. is both a goal {\em per se}, and a tool to help to
+Including proofs built by such automatic systems in Logipedia
+is both a goal {\em per se}, and a tool to help to
 integrate proofs developed in proof systems and make a coherent whole out
 of Logipedia. A fruitful interaction between formal proofs requires
 low-level glue which falls in the scope of automatic theorem provers.

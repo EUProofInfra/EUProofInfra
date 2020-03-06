@@ -1,7 +1,8 @@
-\thispagestyle{empty}
+a\thispagestyle{empty}
 
-Bugs kill.  Testing software permits to reveal the presence of bugs,
-but only formal verification can guarantee their absence.  Thus, the
+Bugs kill.  If testing software allows the presence of bugs to be
+revealed, only formal verification can guarantee their absence.
+Thus, the
 trust in critical systems today relies on formal verification, in
 particular formal proofs, that guarantee the safety of people
 using transportation systems (autonomous cars, subways, trains,
@@ -15,8 +16,10 @@ like the correctness proofs of the automatic Paris metro line 14
 \cite{Behm98,Lecomte17}, the detect-and-avoid system for unmanned aircraft
 system developed by NASA \cite{Munoz16}, the operating system seL4
 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It has
-been empirically observed that compilers and operating systems often
-have bugs, but proved ones, such as seL4 or CompCert, have none, or
+been empirically observed that operating systems and compilers
+often
+have bugs, but proved systems and compilers, such as seL4 or CompCert, have
+none, or
 much fewer.  This is why, at the highest Evaluation Assurance Levels (EAL)
 of the Common Criteria (CC) security evaluation international standard, in
 effect since 1999, certification processes require proofs, and not
@@ -87,7 +90,7 @@ proved correct in PVS, the seL4 operating system has been proved
 correct in Isabelle/HOL, and the compiler CompCert has been proved
 correct in Coq.  Some projects, such as the proof of Hales' theorem,
 have been started in different systems and required significant
-integration effort for obtaining the overall result.
+integration efforts for obtaining the overall result.
 
 Thus, the development of formal methods is slowed down by the lack of
 integration of these research infrastructures.  Because of this lack
@@ -99,7 +102,7 @@ is no longer maintained, the library may disappear.  Thus,
 interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
 proof decades after it has been developed), and cross-verification
-(the possibility to verify a proof in a system different from that in
+(the possibility to verify a proof in a system different from the ones in
 which it has been constructed resulting in a higher assurance of its
 correctness) are restricted.
 
@@ -107,21 +110,21 @@ The fragmentation of these infrastructures hinders productivity
 because foundational work (for instance, developing a calculus library
 with theorems about the sinus and cosinus functions, derivatives,
 etc.) has to be repeated instead of being reused.  It also limits the
-spreading of formal proofs in non-specialist communities. For
+dissemination of formal proofs in non-specialist communities. For
 instance, teaching formal proving to undergraduate students in a logic
 course is difficult, as it requires the choice of a specific language,
-a specific theory and a specific system that orients the course
-towards this language, theory, and system, instead of orienting it to
-fundamental principles that are useful everywhere. The same is true
-for the use of formal proofs in industry or by working mathematicians.
+a specific theory and a specific system that restrict the scope of the
+course, instead of giving students the tools that are useful
+everywhere. The same is true for the use of formal proofs in industry
+or by working mathematicians.
 
-On more philosophical grounds, while we had in the past an (informal)
-proof of Pythagoras' theorem or Fermat's little theorem, the same
-proof now has different formalizations in PVS, Isabelle/HOL, Coq, etc.
-Thus, the universality of logical truth itself is jeopardized.  As we
-shall see, it is not the first time in history that this universality
-of logical truth is jeopardized: it already has been, for instance, in the
-19$^{\mbox{\footnotesize th}}$ century, with the non-Euclidean
+On philosophical grounds, while we had in the past an (informal) proof
+of Pythagoras' theorem or Fermat's little theorem, the same proof now
+has different formalizations in PVS, Isabelle/HOL, Coq, etc.  Thus,
+the universality of logical truth itself is jeopardized.  As we shall
+see, it is not the first time in history that this universality of
+logical truth is jeopardized: it already has been, for instance, in
+the 19$^{\mbox{\footnotesize th}}$ century, with the non-Euclidean
 geometries. This crisis of the non-Euclidean geometries has been
 solved at the beginning of the 20$^{\mbox{\footnotesize th}}$ with the
 invention of a logical framework: predicate logic
@@ -148,17 +151,18 @@ in this encyclopedia will have versions in each theory where it can be
 expressed, so that it can be used in as many systems as possible.
 
 Each proof system implements a different theory. So Logipedia will
-encyclopedia contain proofs expressed in different theories.  Such a
+contain proofs expressed in different theories.  Such a
 theory-independent infrastructure is made possible, because the
 theories implemented in these different proof systems can be expressed
 in a common logical framework: the $\lambda \Pi$-calculus modulo
-theory, implemented in the system \href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
-lingua franca} that permits this theory-independent encyclopedia to 
+theory, implemented in the system
+\href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
+  lingua franca} that permits this theory-independent encyclopedia to
 exist.
 
-Building such an encyclopedia will thus allow interoperability,
-sustainability, and cross-verification of all formal proofs in the
-encyclopedia.
+{\bf Building such an encyclopedia will thus allow interoperability,
+  sustainability, and cross-verification of all formal proofs in the
+  encyclopedia.}
 
 This encyclopedia will be called Logipedia.
 
@@ -171,15 +175,16 @@ $\bigstar$ $\bigstar$ $\bigstar$
 \end{center}
 
 Such an infrastructure is, in many ways, new in the European Strategy
-on Research Infrastructures. We can even say that the idea to
-structure a networking activity around the construction and the use of
-a large scale infrastructure is relatively new in computer science and
-mathematics, even if other projects, such as {\em OpenDreamKit} and
-{\em Software Heritage} do exist.
+on Research Infrastructures. The idea to structure a networking
+activity around the construction and the use of a large scale
+infrastructure is relatively new in computer science and mathematics,
+even if other projects, such as {\em OpenDreamKit} and {\em Software
+Heritage} do exist.
 
-Our goal is therefore also to trigger a
-significant evolution on the organization of research in
-computer science and mathematics in Europe.
+So, we also aim at contributing to an evolution of the organisation of
+research in the computer science and mathematics in Europe.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{shadecolor}{named}{lightgray}
@@ -205,10 +210,10 @@ Republic, France, Italy, the Netherlands, and Poland.
 During this meeting, the idea of making this proof of concept a
 European infrastructure emerged.  Since then, colleagues from Belgium,
 Germany, Romania, Serbia, Sweden, and the United Kingdom, from
-academia and industry, have manifested interest in participating in
-this effort.  These researchers and engineers are ready to contribute
-to develop this encyclopedia, aiming at sharing proofs, under a
-creative commons licence, making them searchable, accessible,
+academia and industry, have expressed their interest in participating
+in this effort.  These researchers and engineers are ready to
+contribute to develop this encyclopedia, aiming at sharing proofs,
+under a creative commons licence, making them searchable, accessible,
 interoperable, and reusable.
 \end{shaded}
 
@@ -220,7 +225,7 @@ interoperable, and reusable.
 \end{center}
 
 Imagine the following casino game. At the beginning, a player is given
-eleven euros. At each round, she throws a six-sided die. If the
+eleven euros. At each round, she throws a six-sided dice. If the
 results is a six, then the game ends.  If it is a five, a four, a
 three, or a two, she is given twice the amount of money she already
 has. If it is a one she loses two euros, if she has at least two.
@@ -251,31 +256,31 @@ print(n)
 To be on the safe side, the player wants to be sure, before starting
 playing, that she will never finish with zero.  And indeed, at all times
 the content of the variable {\tt n} is an odd number,
-thus it cannot be zero. This property ``nothing bad happens'' is
-called the ``safety'' of this program. This property is a
+thus it cannot be zero. {\bf This property ``nothing bad happens'' is
+called the ``safety'' of this program.} This property is a
 consequence of two simple theorems of arithmetic:
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 2 * x))$$
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x - 2))$$
 meaning that, for all $x$, if $x$ is an odd number, then $x+2*x$ and $x-2$ are odd numbers too.
-Hence, verifying the safety of this programme
-%, that is that the proposition ${\mbox{\it safe}}(p)$ holds,
-amounts to prove these two theorems.
+Hence, proving the safety of this programme amounts to prove these two
+theorems.
 
-A tiny bug in the program, for instance replacing the {\tt 2} by a
-{\tt 3} in the instruction {\tt n = n + 2 * n} makes the programme unsafe
-as shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing
-this program will, most likely, not reveal this bug, since it only manifests
-very rarely.  In contrast, attempting to prove the correctness of this
-program will
-reveal the bug as it is impossible to prove the proposition
+Let's now consider the case where there is a tiny bug in the
+program. For instance the {\tt 2} has been replaced by a {\tt 3} in
+the instruction {\tt n = n + 2 * n}. The programme is then unsafe as
+shown by the sequence $11, 9, 7, 5, 3, 1, 4, 2, 0$. Yet, testing this
+program will, most likely, not reveal this bug, since it only
+manifests very rarely.  In contrast, attempting to prove the
+correctness of this program will reveal the bug as it is impossible to
+prove the proposition
 $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{shaded}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{shaded}
 \vspace*{-0.5cm}
-\begin{center} {\bf \Large Non-trivial mathematics are sometimes
-needed to verify that a program is correct}
+\begin{center} {\bf \Large When mathematics are needed to verify the
+    correctness of a programme}
 \end{center}
 
 Prime numbers are used in a wide variety of applications:
@@ -297,7 +302,7 @@ number, not by each of the smaller natural numbers, but only up to its
 square root.  Indeed, if a natural number $p$ can be factored into the
 product of two smaller natural numbers $m$ and $n$, one of them has to
 be smaller than or equal to the square root of $p$.  Therefore, one
-could give the following more complex, but more efficient, definition.
+could give the following more complex, but more efficient, definition:
 
 $$prime'(p) := 1<p \wedge (\forall n, (1<n \wedge n*n\leq p) \Rightarrow \neg(n\mid p))$$
 
@@ -375,11 +380,11 @@ mathematical proofs. In the first half of the 20$^{\mbox{\footnotesize
 well as a few alternatives (such as \emph{Simple Type Theory}).  But
 because these theories had not been designed for being implemented on
 a computer, each proof system such as Coq, Isabelle/HOL, Mizar,
-Atelier B, etc. implements its own theory.  Thus the rise of
+Atelier B, etc. implements its own theory.  {\bf Thus the rise of
 computer-checked formal proofs has led to a multiplication of
 alternative theories for mathematics.
 
-This is the major obstacle to interoperability between proof systems.
+This is the major obstacle to interoperability between proof systems.}
 \end{shaded}
 
 %%% Local Variables:
