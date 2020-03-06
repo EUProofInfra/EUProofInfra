@@ -54,7 +54,12 @@ PVS have reached LIL 2).
 %\ednote{Innsbruck, Bialystok}
 %\end{task}
 
-\begin{task}[id=afp,title=Isabelle's Archive of Formal Proofs,lead=Tum,TumRM=3]
+\begin{task}[
+  id=afp,
+  title=Isabelle's Archive of Formal Proofs,
+  lead=Tum,
+  TumRM=3,
+  wphases=13-18]
 %\ednote{Wenzel}
 Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
 growing user-contributed online library for Isabelle. In Feb-2020, the
@@ -67,9 +72,14 @@ substance of the AFP without promising full coverage: some entries
 with prohibitive resource requirements will be omitted.
 \end{task}
 
-\begin{task}[id=isaAnalysisProb,
+\begin{task}[
+  id=isaAnalysisProb,
   title=The Isabelle Analysis \& Probability Theory library,
-  lead=Tum,TumRM=24] This library consists of more than 200.000 lines
+  lead=Tum,
+  TumRM=24,
+  wphases=0-23]
+%
+  This library consists of more than 200.000 lines
   of definitions and proofs, corresponding to almost 4000 printed
   pages. It is fair to say that it is the most advanced
   machine-checked library in the area of analysis and probability
@@ -97,41 +107,57 @@ differential equations and dynamical systems, in particular Lyapunov
 functions; stochastic differential equations.
 \end{task}
 
-\begin{task}[id=geocoq,title=The GeoCoq library,lead=Str,StrRM=18]
+\begin{task}[
+  id=geocoq,
+  title=The GeoCoq library,
+  lead=Str,
+  StrRM=18,
+  wphases=0-17]
+%
 The GeoCoq library consists of more than 100.000 lines of definitions and proofs. It is mostly based on synthetic approaches, where the axiom system is based on some geometric objects and axioms about them, but, following Descartes and Tarski, the analytic approach can be derived, where a field F is assumed (usually R) and the space is defined as $F^n$. Moreover, it contains a model of Tarski's axioms, based on the analytic approach, thus establishing the connection between these two approaches in the opposite direction. The main axiom system in this library is the one of Tarski, but Hilbert's axiom system and a version of Euclid's axioms sufficient to prove the propositions in Book 1 of Euclid's Elements are also defined. In the library, the focus is not only on axiom systems but also on axioms themselves. Eleven continuity axioms are available and are hierarchically organised. Finally, it contains a new refinement of Pejas’ classification of parallel postulates together with proofs of the classification of 34 versions of the parallel postulate.
 
 One of the remaining obstacles is the frequent use of computational steps in Coq proofs. The issue is that proofs containing "proof by reflection" reach a level of complexity that makes verification by Dedukti impractical. An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions in Dedukti. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
 \end{task}
 
-\begin{task}[id=flyspeck,title=The Flyspeck library,lead=Inr]
+\begin{task}[
+  id=flyspeck,
+  title=The Flyspeck library,
+  lead=Inr,
+  wphases=0-35]
 %\ednote{Saclay (Grienenberger)}
-The {HOL Light} library is large and varied. One of its key libraries is the 
+The {HOL Light} library is large and varied. One of its key libraries is the
 multivariate analysis library
 %\footnote{\url{https://github.com/jrh13/hol-light/tree/master/Multivariate}},
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
 integration. The {Flyspeck} project gives a formal proof of the {Kepler}
-conjecture, based on an original proof of Thomas {Hales} 
+conjecture, based on an original proof of Thomas {Hales}
 \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15}, and formalized
 largely in {HOL Light} \url{https://github.com/flyspeck/flyspeck}.
-Some of these results are not formalized in any other system, motivating the 
-project of importing the {HOL Light} library and {Flyspeck} project in the 
+Some of these results are not formalized in any other system, motivating the
+project of importing the {HOL Light} library and {Flyspeck} project in the
 {Dedukti} system, in view of its integration into {Logipedia}.
 
 \textbf{Challenges:}
-Proofs coming from the HOL systems, including {HOL Light}, are known to be very 
-large, adding to the issue of the scalability of exporting software for large 
+Proofs coming from the HOL systems, including {HOL Light}, are known to be very
+large, adding to the issue of the scalability of exporting software for large
 libraries \cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,
-DBLP:conf/itp/KellerW10,DBLP:conf/cade/Kumar13}. Scalable export techniques 
-{HOL Light} proofs have been investigated \cite{KaliszykK13} and can provide a 
+DBLP:conf/itp/KellerW10,DBLP:conf/cade/Kumar13}. Scalable export techniques
+{HOL Light} proofs have been investigated \cite{KaliszykK13} and can provide a
 solid base to this project.
 
-The main milestones of this task are the further automation of the export from 
-{HOL Light} to {Dedukti}, the import of the multivariate analysis library, of 
+The main milestones of this task are the further automation of the export from
+{HOL Light} to {Dedukti}, the import of the multivariate analysis library, of
 the whole {HOL Light} library, and of the {Flyspeck} in {Dedukti}.
 \end{task}
 
-\begin{task}[id=cakeml,title=The CakeML compiler library,lead=Cha,ChaRM=12]
+\begin{task}[
+  id=cakeml,
+  title=The CakeML compiler library,
+  lead=Cha,
+  ChaRM=12,
+  wphases=12-23]
+%
 The CakeML
 compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
 languages, the other being CompCert. Its export to Dedukti is one of
