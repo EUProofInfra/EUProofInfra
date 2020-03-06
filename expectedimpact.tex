@@ -678,42 +678,44 @@ Josef Urban (Czech Institute of Informatics, CZ)
 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-{\bf Integration of major scientific knowledge resources}
-&
-{\color{red}TODO ?}
-\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hline
 {\bf Integrated and harmonised access to resources facilitating evidence-based policy making}
 &
-{\color{red}TODO ? relation with ANSSI and other certification authorities? certification du code des impôts? }
-\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hline
-{\bf Better management of the continuous flow of data}
-&
-Organizing a continuous flow of data is at the center of a project
-like Logipedia. We already insisted on the aspects of interoperability,
-sustainability, cross verification, and ergonomy of the interfaces. 
-A data management plan will be provided according to Inria's compliance
-policy with EU regulations.
-The management of this continuous flow of data is monitored by the 
-very precise metric we have defined: the Logipedia integration levels.
-\\
-&
-\hspace{0.4cm}
-We also want to insist on the fact that Logipedia will be a service to
+Certification authorities like the French National Agency for the
+Security of Information Systems (ANSSI) are very interested in having
+a unique language for formal proofs, rather than several ones which
+require as many experts.
+
+Logipedia will be a service to
 certification authorities, especially in security, as witnessed by the
 presence of a representative of ANSSI in the advisory board,
 Prove\&Run among the partners, and several other companies focused on
-security in the club of industrial users.\\
+security in the club of industrial users.
+
+Formal methods can also have applications in the verification of legal
+rules like, for instance, the rules for computing one's income tax
+\cite{merigoux20jfla}.
+\\
 &
 \colorbox{color3}{\bf Performance indicators:}
 \begin{compactitem}
 \item number of times Dedukti and Logipedia have been used for 
-cross-verification
-\item in particular by certification authorities
+cross-verification, in particular by certification authorities
 \end{compactitem}
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+{\bf Better management of the continuous flow of scientific data}
+&
+Logipedia integrates major scientific equipments and knowledge resources
+(provers and proof libraries).
+Organizing this continuous flow of data is at the center of the
+Logipedia project. We already insisted on the aspects of interoperability,
+sustainability, cross verification, and ergonomy of the interfaces. 
+The management of this continuous flow of data will be monitored by the 
+metric we have defined: the Logipedia Integration Level.
+A data management plan will be provided for making these data findable,
+accessible, interoperable and reusable (FAIR), and Logipedia will participate
+to the Open Research Data Pilot H2020 project.
 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
@@ -758,17 +760,57 @@ movement of Open data, Open science, and Open innovation.\\
 &
 \hspace{0.4cm}
 Then, the creative common licence, and other free licences, promoted by 
-Logipedia also contribute to this movement.\\
-&
-\hspace{0.4cm}
-Finally, because of its size, such an encyclopedia, provides a better
-dataset for machine learning algorithms, and more generally
-statistical analysis of the properties of mathematical developments.
+Logipedia also contribute to this movement.
 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
-{\bf TODO}
+{\bf Scientific publishing, proof verification, long-term proof archiving and reproducibility}
 &
+Published proofs often contain gaps, sometimes errors, and can be difficult
+to check or complete by humans because of their length or
+complexity. Frans and Kosolosky noted that, at each level of the
+publication process, there is a lack of discipline to emphasize the
+importance of checking and correcting proofs
+\cite{frans14theoria}. Given this state of the field, they came up
+with several ways in which mathematics can and should be improved.
+One way is related to the reviewing process itself. Another
+way is to appeal to online databases.
+
+\hspace{0.4cm}
+Logipedia will provide various services to the community of
+mathematicians and to the community of scientific publishers. By
+providing hyperlinks to Logipedia proof objects, authors can focus on
+the presentation of their results and help reviewers and editors in
+evaluating the correctness and interest of them. Readers can be
+confident in the correctness of the results as all Logipedia proofs
+are formally checked. They can also get a better understanding of them
+by looking at the proofs through some editor or web interface. They
+can also visualize the axioms and theorems they rely on.
+
+\hspace{0.4cm}
+Moreover, as Logipedia proofs are represented in a machine-independent
+format, they can be rechecked and reused as long as they are available,
+thus improving result verification and reproducibility in mathematical
+sciences.
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+{\bf Providing data to machine learning algorithms}
+&
+The success of machine learning techniques heavely relies on the
+availability of big amounts of data. Various companies (Wolfram,
+Facebook, etc.) are interested in applying deep learning techniques to
+automated theorem proving, symbolic computation, mathematical
+knowledge, and automatic language translation (between formal
+languages, or between formal languages and natural languages), with
+applications in software engineering, education and computer algebra
+systems.
+
+\hspace{0.4cm}
+By gathering proofs coming from many different proof systems, in a
+unique format, Logipedia will be an important source of training data for
+machine learning algorithms, and more generally for
+statistical analysis of the properties of mathematical developments.
 \\
 \hline
 \end{longtable}
