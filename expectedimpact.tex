@@ -489,6 +489,49 @@ models, would ease the adaptation for one certification authority to
 another.
 \end{shaded}
 \\
+&
+\begin{shaded}
+{\bf\large Impact on the blockchain industry}
+
+Public blockchains are about removing the need for trusted third
+parties. Formal proofs, as promoted by the Logipedia project, can be
+checked independently of any central authority. Thanks to this key
+aspect of formal proofs, they can be used in blockchain protocols. For
+example, the Zen protocol\cite{zenprotocol_whitepaper} uses formal
+proofs to guarantee resource bounds on the execution of its smart
+contracts (a smart contract is a program running on a blockchain).
+
+
+\hspace{0.4cm}
+Blockchain protocols require standardisation of data formats but,
+because the blockchain technology and its applications evolve fast,
+keeping these standards as generic as possible is needed to avoid
+forbidding future yet-unknown use-cases. Formal proof systems are very
+generic languages but Logipedia pushes genericity even further by
+promoting a proof format that is powerful enough to encode most (if
+not all) other proof formats.
+
+\hspace{0.4cm}
+Last but not least, the importance of formal methods is acknowledged
+by a growing proportion of the blockchain community. In the case of
+the Tezos\cite{Tezos_whitepaper} blockchain for example, applicability
+of formal methods has even been one of the main advertised features
+since the start of the project. Parts of the Tezos node software are
+certified in F* and Coq and various formal verification systems are
+used or being developed to certify Tezos smart contracts.  Because of
+the decentralised nature of blockchains, software is hard to update in
+this industry. Moreover, software in the blockchain industry often
+manages valuable digital assets, evaluating the risk of software bugs
+and budgeting for formal verification is easier in this industry than
+in others. Blockchain systems are however complex because they are
+related to many fields of computer science (cryptography, theory of
+programming languages, network security, decentralised computing, game
+theory) so verifying their code usually requires a combination of
+specialised tools which raise the question of interoperability between
+these specialized proof systems. Answering this question of
+interoperability is one of the main purposes of the Logipedia project.
+\end{shaded}
+\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 {\bf A new generation of researchers is educated}
