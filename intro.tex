@@ -277,50 +277,48 @@ $$\forall x~(\mbox{\it odd}(x) \Rightarrow \mbox{\it odd}(x + 3 * x))$$
 \end{shaded}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{shaded}
-\vspace*{-0.5cm}
-\begin{center} {\bf \Large When mathematics are needed to verify the
-    correctness of a programme}
-\end{center}
-
-{\color{red} Remove}
-
-Prime numbers are used in a wide variety of applications:
-pseudo-random number generation, cryptographic algorithms, etc.  Thus,
-verifying the correctness of complex primality testing algorithms is
-critical.
-
-To do so, we need first to define primality, for instance
-
-$$prime(p) := 1<p \wedge (\forall n, (1<n\wedge n<p) \Rightarrow \neg(n\mid p))$$
-
-where $\wedge$ is the conjunction, $\Rightarrow$ is the implication,
-$\neg$ is the negation, and $n\mid p$ means that $n$ divides $p$.
-
-To lower the cost of primality testing, we use tests that are more
-efficient than the naive use of the definition.  For instance, a very
-simple improvement is to test the divisibility of the considered
-number, not by each of the smaller natural numbers, but only up to its
-square root.  Indeed, if a natural number $p$ can be factored into the
-product of two smaller natural numbers $m$ and $n$, one of them has to
-be smaller than or equal to the square root of $p$.  Therefore, one
-could give the following more complex, but more efficient, definition:
-
-$$prime'(p) := 1<p \wedge (\forall n, (1<n \wedge n*n\leq p) \Rightarrow \neg(n\mid p))$$
-
-To ensure that these definitions are equivalent one needs to prove
-the following statement:
-
-$$\forall p, prime'(p) \Leftrightarrow prime(p)$$
-
-It would have been easy to introduce a small bug
-in the new definition.  For example, one could have written
-$n*n < p$, instead of $n*n \leq p$.
-This would have resulted in accepting squares of primes as primes.
-
-Yet, attempting to prove the equivalence of these two definitions would
-have revealed the bug, as they cannot be proven to be equivalent.
-\end{shaded}
+%\begin{shaded}
+%\vspace*{-0.5cm}
+%\begin{center} {\bf \Large When mathematics are needed to verify the
+%    correctness of a programme}
+%\end{center}
+%
+%Prime numbers are used in a wide variety of applications:
+%pseudo-random number generation, cryptographic algorithms, etc.  Thus,
+%verifying the correctness of complex primality testing algorithms is
+%critical.
+%
+%To do so, we need first to define primality, for instance
+%
+%$$prime(p) := 1<p \wedge (\forall n, (1<n\wedge n<p) \Rightarrow \neg(n\mid p))$$
+%
+%where $\wedge$ is the conjunction, $\Rightarrow$ is the implication,
+%$\neg$ is the negation, and $n\mid p$ means that $n$ divides $p$.
+%
+%To lower the cost of primality testing, we use tests that are more
+%efficient than the naive use of the definition.  For instance, a very
+%simple improvement is to test the divisibility of the considered
+%number, not by each of the smaller natural numbers, but only up to its
+%square root.  Indeed, if a natural number $p$ can be factored into the
+%product of two smaller natural numbers $m$ and $n$, one of them has to
+%be smaller than or equal to the square root of $p$.  Therefore, one
+%could give the following more complex, but more efficient, definition:
+%
+%$$prime'(p) := 1<p \wedge (\forall n, (1<n \wedge n*n\leq p) \Rightarrow \neg(n\mid p))$$
+%
+%To ensure that these definitions are equivalent one needs to prove
+%the following statement:
+%
+%$$\forall p, prime'(p) \Leftrightarrow prime(p)$$
+%
+%It would have been easy to introduce a small bug
+%in the new definition.  For example, one could have written
+%$n*n < p$, instead of $n*n \leq p$.
+%This would have resulted in accepting squares of primes as primes.
+%
+%Yet, attempting to prove the equivalence of these two definitions would
+%have revealed the bug, as they cannot be proven to be equivalent.
+%\end{shaded}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{shaded}
