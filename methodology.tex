@@ -7,7 +7,7 @@ modifying existing ones, experimenting, proving theorems, etc.
 \cmsection{Integration}
 
 To integrate existing proof systems into Logipedia, we need to
-\emph{instrument} these systems to export their proofs to Dedukti. The
+\emph{instrumentat} these systems to export their proofs to Dedukti. The
 methodology required to achieve this goal varies a lot with respect to
 the proof system considered. We distinguish three broad categories of
 systems:
@@ -34,14 +34,13 @@ OpenTheory. So, we can reap the benefit of these developments and just
 translate the OpenTheory proofs to Dedukti.
 
 \item A third category of proof systems require a different and more
-complex methodology. For these systems, such as PVS or Mizar, all we
-can extract is a proof-trace, that is a sequence of propositions, such
-that the transition from one to the next is ``easy'', just like hoping
-from stone to the next is ``easy'' when crossing a river on a ford. To
-fill the gaps between the propositions of the proof-trace, we thus
-need to use an external automated theorem prover. In addition, we need
-to instrument this automated theorem prover itself, so that we can
-build a complete proof proof from the trace.
+  complex methodology. For these systems, such as PVS or Mizar, all we
+  can extract is a proof-trace, that is a sequence of propositions,
+  such that the transition from one to the next is ``easy''.
+  To fill the gaps between the propositions of the proof-trace,
+  we thus need to use an external automated theorem prover. In
+  addition, we need to instrument this automated theorem prover
+  itself, so that we can build a complete proof proof from the trace.
 \end{compactitem}
 
 In all these cases, we need to take also into account that these proof
@@ -66,7 +65,7 @@ relevant maturity.
 
 Instrumenting automatic theorem provers, SAT/SMT, predicate solvers,
 \dots
-raises different methodology questions, as these systems
+raises different methodological questions, as these systems
 must be very efficient to be useful. This yields two new issues.
 
 First, these systems include many optimizations that make their code
@@ -111,15 +110,13 @@ as well as to select potential proof term components.
 
 \cmsection{Large libraries}
 
-Translating a large library from a given system to Dedukti is much
-more related to that of experimental sciences: in principle, if we can
-translate a small library, we can translate a large one. In practice,
-things are more complicated.
-
-Hence, the first thing we need to do is to experiment with the
-theories and the translations we do have. Most likely, some efficiency
-issues will manifest and we will have to understand where these
-efficiency issues come from.
+Translating a large library from a given system to Dedukti is almost
+an experimental sciences: in principle, if we can translate a small
+library, we can translate a large one. In practice, things are more
+complicated.  Hence, the first thing we need to do is to experiment
+with the theories and the translations we do have. Most likely, some
+efficiency issues will manifest and we will have to understand where
+these efficiency issues come from:
 
 \begin{compactitem}
 \item It may be because, we are using a computer that is too slow or
@@ -142,11 +139,11 @@ the full library can be handled.
 \cmsection{Infrastructure}
 
 Developing an infrastructure to make the proofs more easily accessible
-raises different methodology questions. Here the technology of web
+raises different methodological questions. Here the technology of web
 services, distribution package, ergonomic user interfaces, search
 engines is mature and we need to rely on this existing technology.
 
-Yet this raises two methodology issues. The first one is that some of
+Yet this raises two methodological issues. The first one is that some of
 these technologies must be adapted for the case of proofs. This is,
 for instance, the case of the search engines technology, as plain text
 search is not adapted to formal proofs. First because logical formulas
@@ -220,27 +217,28 @@ Matita could. So it is important to consider specific case studies,
 such as constructivisation, elimination of universes, elimination of
 dependent types, elimination of the axiom of choice, etc.
 
-It is important to notice that Logipedia permits to build bridges
+It is important to notice that Logipedia allows bridges to be built
 between theoretical work and experimental work. For instance, there
 are many mathematical algorithms, such as constructivisation
 algorithms or algorithms to eliminate the axiom of choice that have
-been developed in theoretical papers. Logipedia gives us a unique
+been developed in theoretical papers. {\bf Logipedia gives us a unique
 opportunity to experiment with these algorithms for translating proofs
 from a classical to a constructive theory on real size proofs that
-have been developed for other purposes.
+have been developed for other purposes.}
 
 Another methodological innovation we propose is that of small scale
 concept alignment. For instance, a small step concept alignment might
-be to identify that an algebraic structure called $N$ in one theory
-with another called $nat$ in a different theory refer to the same
-object, that is are isomorphic. Before proving this isomorphism,
-either by hand or automatically, we need to discover such potential
-isomorphisms. For this task, heuristics and machine learning seem to
-be the right methods. So this work on Logipedia is also part of a
-current to apply machine learning in automated theorem proving and in
-formal proof technology. In some sense, building a large encyclopedia
-paves the way to consider proofs as big data and apply statistical
-methods to proofs, including machine learning.
+be to identify that an algebraic structure, called $N$ in one theory,
+and another, called $nat$ in a different theory, refer to the same
+object, which means that these stuctures are isomorphic. Before
+proving this isomorphism, either by hand or automatically, we need to
+discover such potential isomorphisms. For this task, heuristics and
+machine learning seem to be the right methods. So this work on
+Logipedia is also part of a current to apply machine learning in
+automated theorem proving and in formal proof technology. In some
+sense, building a large encyclopedia paves the way to consider proofs
+as big data and apply statistical methods to proofs, including machine
+learning.
 
 %%% Local Variables:
 %%%   mode: latex
