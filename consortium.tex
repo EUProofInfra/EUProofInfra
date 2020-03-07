@@ -1,48 +1,327 @@
-\begin{todo}{from the proposal template}
-  Describe how the participants collectively constitute a consortium capable of achieving
-  the project objectives, and how they are suited and are committed to the tasks assigned
-  to them. Show the complementarity between participants. Explain how the composition of
-  the consortium is well-balanced in relation to the objectives of the project.
+Building an infrastructure like Logipedia requires to have all the
+major proof systems in the project. We currently have eighteen out of
+the twenty four systems presented Figure 1, and fourteen out of the
+sixteen European ones.  The only reason why we do not have them all is
+because of budget limits.
 
-  If appropriate describe the industrial/commercial involvement to ensure exploitation of
-  the results. Show how the opportunity of involving SMEs has been addressed
-\end{todo}
+This explains why the consortium has to be large.  We have twenty-nine
+partners in the consortium which is almost all the groups working on
+formal proof technology in Europe.  A smaller consortium would not
+reach the universality which is a key factor of success.  Being such a
+large consortium is a strategic decision.
 
-\subsection{Subcontracting}\label{sec:subcontracting}
+Each partner brings a different expertise to the project.  Eighteen
+partners bring their expertise on one specific system.  Eight partners
+bring their expertise on different aspects of automated theorem
+proving. Four bring their expertise on some specific library. Twelve
+partners bring their expertise on a transverse issue: access (three
+partners), proof engineering (nine partners), publishing (one partner).
 
-\begin{todo}{from the proposal template}
-  If any part of the work is to be sub-contracted by the participant responsible for it,
-  describe the work involved and explain why a sub-contract approach has been chosen for
-  it.
-\end{todo}
 
-The tasks \taskref{instrumentation}{isabelle},
-\taskref{libraries}{afp} (both handled by \site{Tum}) and part of
-task~\taskref{structuring}{strontorepml} (handled by \site{Fau}) will
-be carried out by subcontracting Dr.\ M.\ Wenzel.  Each subcontract
-will cover roughly the equivalent of $3$ person-months.  Concretely,
-it concerns the export of proof terms and other data from the Isabelle
-system.  Wenzel is the main Isabelle developer and has spent the
-last $10$ years building the technological prerequisites for the
-required work and is the natural person to carry it out.  However, he
-has left academia and started his own company that specializes on
-Isabelle kernel development and routinely carries out subcontracts for
-Isabelle-related research projects.  Therefore, a subcontract is the
-best option as developing the necessary expertise in-house would take
-an additional 6-12 person-months per task.  \site{Fau} has already worked with
-Wenzel in similar subcontracts twice before (including the
-OpenDreamKit EU infrastructure project), and the collaborations have
-been very effective and efficient. Wenzel obtained his Ph.D. at
-\site{Tum} advised by Nipkow.
+Finally, among the twenty nine, eight are industrial partners.
+Two of them are industrial research centers, six of them are companies.
 
-The task \taskref{instrumentation}{isabelle} (handled by \site{Tum})
-requires special assistance by Dr.\ David Matthews (PROLINGUA LTD,
-Edinburgh): As provider of the underlying Poly/ML infrastructure,
-Matthews is in a unique position to provide extra scalability of ML
-heap management, and thus allow Isabelle to export more library
-material.
+Four are transverse formal methods partners and four of them are
+focused on one industrial sector: transportation, health care, energy,
+security, and education. These six companies are small and
+medium-sized enterprises. In contrast the companies in the club of
+industrial users are very different sizes, from small and medium-sized
+enterprises to very large companies such as Alstom or Siemens.
+
+\begin{longtable}{|p{0.3\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+{\bf Partner}
+&
+{\bf Systems}
+&
+{\bf ATP}
+&
+{\bf Libraries}
+&
+{\bf Transverse}
+&
+{\bf Industrial sector}
+\\
+\hline
+Institut National de Recherche en Informatique et Automatique
+&
+HOL Light, PVS, Coq, TLA+, HoTT
+&
+&
+Flyspeck
+&
+Proof engineering
+&
+\\
+\hline
+Université de Strasbourg
+&
+&
+&
+GeoCoq
+&
+Proof engineering
+&
+\\
+\hline
+Institut National Polytechnique de Toulouse
+&
+Rodin
+&
+&
+&
+&
+\\
+\hline
+Universität Innsbruck
+&
+Mizar
+&
+x
+&
+&
+Proof engineering
+&
+\\
+\hline
+Université de Liège
+&
+&
+x
+&
+&
+&
+\\
+\hline
+Alma Mater Studiorum --- Università di Bologna
+&
+Matita, Coq
+&
+&
+&
+Proof engineering
+&
+\\
+\hline
+Faculty of Mathematics, University of Belgrade
+&
+&
+x
+&
+&
+Proof engineering
+&
+\\
+\hline
+Technische Universität München
+&
+Isabelle/HOL
+&
+&
+AFP, Proba / analysis
+&
+&
+\\
+\hline
+Technische Universiteit Delft
+&
+Agda
+&
+&
+&
+&
+\\
+\hline
+Université Paris-Saclay
+&
+&
+x
+&
+&
+Proof engineering
+&
+\\
+\hline
+Friedrich-Alexander Universität Erlangen-Nürnberg
+&
+&
+&
+&
+Access, Proof engineering
+&\\
+\hline
+University of Leeds
+&
+HoTT
+&
+&
+&
+Proof engineering
+&
+\\
+\hline
+Göteborgs Universitet
+&
+Agda
+&
+&
+&
+&
+\\
+\hline
+Chalmers Tekniska Högskola
+&
+HOL4
+&
+&
+CakeML 
+&
+&
+\\
+\hline
+Ludwig-Maximilians-Universität München
+&
+Minlog
+&
+&
+&
+&
+\\
+\hline
+Institut Mines-Télécom
+&
+Atelier B, FoCaLiZe
+&
+x
+&
+&
+Proof engineering
+&
+\\
+\hline
+Uniwersytet w Białymstoku
+&
+Mizar
+&&&&\\
+\hline
+OCamlPro
+&
+&
+x
+&
+&
+&
+\\
+\hline
+ClearSy
+&
+Atelier B
+&
+&
+&
+&
+Transportation
+\\
+\hline
+University of Birmingham
+&
+HoTT
+&
+&
+&
+&
+\\
+\hline
+Commissariat à l’Energie Atomique et aux Energies Alternatives
+&
+Why3
+&
+x
+&
+&
+&
+Energy
+\\
+\hline
+Duale Hochschule Baden-Württemberg
+&
+&
+x
+&
+&
+&
+\\
+\hline
+Institut de Recherche Technologique System X
+&
+&
+&
+&
+Access
+&
+\\
+\hline
+Edukera
+&
+&
+&
+&
+Access
+&
+Education
+\\
+\hline
+MED-EL Elektromedizinische Geraete GmbH
+&
+&
+&
+&
+&
+Health care
+\\
+\hline
+Prove \& Run
+&
+ProvenTools
+&
+&
+&
+&
+Security
+\\
+\hline
+Konrad-Zuse-Zentrum für Informationstechnik Berlin
+&
+&
+&
+&
+Publishing
+&
+\\
+\hline
+Universitatea Alexandru Ioan Cuza din Iasi
+&
+K Prover
+&
+&
+&
+&
+\\
+\hline
+Runtime Verification SRL
+&
+K Prover
+&
+&
+&
+&
+\\
+\hline
+\end{longtable}
 
 %%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "propB"
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
 %%% End:

@@ -17,36 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Consortium as a whole}\label{sec:consortium}
 
-\begin{todo}{}\color{red}
-
-  The individual members of the consortium are described in a separate
-  section 4. There is no need to repeat that information here.
-
-  Describe the consortium. How will it match the project’s objectives, and bring together the necessary expertise? How do the members complement one another (and cover the value chain, where appropriate)? 
-
-  In what way does each of them contribute to the project? Show that each has a valid role, and adequate resources in the project to fulfil that role. 
-
-  If applicable, describe the industrial/commercial involvement in the project to ensure exploitation of the results and explain why this is consistent with and will help to achieve the specific measures which are proposed for exploitation of the results of the project (see section 2.2). 
-
-  Other countries and international organisations: If one or more of the participants requesting EU funding is based in a country or is an international organisation that is not automatically eligible for such funding (entities from Member States of the EU, from Associated Countries, from one of the countries in the exhaustive list included in General Annex A of the work programme, and, under specific conditions, from further countries identified in the work programme1,are automatically eligible for EU funding), explain why the participation of the entity in question is essential to carrying out the project .
-\end{todo}
-
-Why are we the best to to it.
-
-Right number of partners
-
-Academia and industry
-
-Complementary but not redundant
-
-Table: who has what skill
-
-Include non-EU cooperation
-
 \input{consortium}
-
-{\color{red} A table with all partners in lines and Key expertise in colum
-  and explain who is good at what}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resources to be committed}\label{sec:resources}
@@ -72,6 +43,40 @@ Please note that the distribution of resources between access (TA/VA), JRA, and 
   ressources in pm}
 
 \subsection{Travel costs and consumables}\label{sec:travel-costs}
+
+\subsection{Subcontracting}\label{sec:subcontracting}
+
+\begin{todo}{from the proposal template}
+  If any part of the work is to be sub-contracted by the participant responsible for it,
+  describe the work involved and explain why a sub-contract approach has been chosen for
+  it.
+\end{todo}
+
+The tasks \taskref{instrumentation}{isabelle},
+\taskref{libraries}{afp} (both handled by \site{Tum}) and part of
+task~\taskref{structuring}{strontorepml} (handled by \site{Fau}) will
+be carried out by subcontracting Dr.\ M.\ Wenzel.  Each subcontract
+will cover roughly the equivalent of $3$ person-months.  Concretely,
+it concerns the export of proof terms and other data from the Isabelle
+system.  Wenzel is the main Isabelle developer and has spent the
+last $10$ years building the technological prerequisites for the
+required work and is the natural person to carry it out.  However, he
+has left academia and started his own company that specializes on
+Isabelle kernel development and routinely carries out subcontracts for
+Isabelle-related research projects.  Therefore, a subcontract is the
+best option as developing the necessary expertise in-house would take
+an additional 6-12 person-months per task.  \site{Fau} has already worked with
+Wenzel in similar subcontracts twice before (including the
+OpenDreamKit EU infrastructure project), and the collaborations have
+been very effective and efficient. Wenzel obtained his Ph.D. at
+\site{Tum} advised by Nipkow.
+
+The task \taskref{instrumentation}{isabelle} (handled by \site{Tum})
+requires special assistance by Dr.\ David Matthews (PROLINGUA LTD,
+Edinburgh): As provider of the underlying Poly/ML infrastructure,
+Matthews is in a unique position to provide extra scalability of ML
+heap management, and thus allow Isabelle to export more library
+material.
 
 \subsection{Subcontracting costs}\label{sec:subcontracting-costs}
 
