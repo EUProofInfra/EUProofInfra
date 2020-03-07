@@ -91,7 +91,7 @@
     \prop@tl\prop@gen@PIs{\wa@ref3{institution}{\wa@ref3{person}\tl@ext{affiliation}}{name}}
  \end{tabular}\\[2cm]
 \end{center}
-\setcounter{tocdepth}{2}\tableofcontents\newpage\setcounter{page}{1}}
+\setcounter{tocdepth}{2}\tableofcontents\newpage}
 {\section{List of Attachments}
 \begin{itemize}
 \@for\@I:=\prop@gen@PIs\do{%
@@ -114,7 +114,6 @@
 \@ifundefined{prop@gen@sites}{}{\@for\@I:=\prop@gen@sites\do{\stepcounter{@sites}}
 \pdata@def{all}{site}{ids}{\prop@gen@sites}%
 \pdata@def{all}{site}{count}{\the@site}}
-\setcounter{page}{0}
 \begin{prop@proposal}}
 {\end{prop@proposal}
 \pdata@def{prop}{page}{last}{\thepage}\ofpagefalse%
