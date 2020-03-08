@@ -317,75 +317,82 @@ the objectives of the project.\\
 \hline
 \end{longtable}
 
-%2.  Opportunities
-
-%- More people want to join: model checking, sat solvers… 
-
-%- math teachers want to use it for teaching
-
-
 {\subsection{Milestones}\label{sec:milestones}
 
+As show by the Pert diagram above, two work packages, are critical, as
+many others depend on them: work package 4 ``Access to the
+encyclopedia'' that is focused on the development of the
+infrastructure itself and work package 1 ``Integration'' that focuses
+on populating this infrastructure with theories and proofs. All work
+packages depend on work package 4, and work packages 3 ``Large
+libraries'', work package 5 ``Structure of the encyclopedia'', and
+work package 7 ``Proof engineering'' depend on work package 1.
 
-\color{red} Draft a list of milestones}
+As a consequence or milestones are completions of the key tasks of
+work packages 4 and 1.
 
-\begin{todo}{}\color{red}
+Remark that all milestones have to be completed in the first and second year
+of the project, which is a sign of controllability of the project.
+Remark also that no milestone is the completion of a
+task of the two, more risky, joint research activity work packages:
+work package 6 ``Theories'' and work package 7 ``Proof engineering'',
+which is a sign of robustness of the project.
+  
 
-  * Give a summary of the trans-national and/or virtual access to be provided (table 3.2c).
+\begin{longtable}{|p{0.1\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+1
+&
+Prototype version of Logipedia platform
+&
+deliverable D4.7
+&
+M 14
+\\
+\hline
+2
+&
+Opam for Logipedia
+&
+deliverable D4.3
+&
+M 20
+\\
+\hline
+\end{longtable}
 
-  \underline{Milestones}: means control points in the project that help to chart progress. Milestones may correspond to the completion of a key deliverable, allowing the next phase of the work to begin. They may also be needed at intermediary points so that, if problems have arisen, corrective measures can be taken. A milestone may be a critical decision point in the project where, for example, the consortium must decide which of several technologies to adopt for further development.
-\end{todo}
-
----
-
-
-\begin{todo}{from the proposal template}
-  Milestones are control points where decisions are needed with regard to the next stage
-  of the project. For example, a milestone may occur when a major result has been
-  achieved, if its successful attainment is a requirement for the next phase of
-  work. Another example would be a point when the consortium must decide which of several
-  technologies to adopt for further development.
-
-  Means of verification: Show how you will confirm that the milestone has been
-  attained. Refer to indicators if appropriate. For examples: a laboratory prototype
-  completed and running flawlessly, software released and validated by a user group, field
-  survey complete and data quality validated.
-\end{todo}
-
-\ednote{maybe automate the milestones}
-
-\ednote{Rabe: I suggest having exactly 3 milestones, namely at months 18, 36, and 48 (corresponding to the EU's review schedule), possibly more milestones in the beginning e.g., at months 6 and 12}
-
-\begin{milestones}
-  \milestone[id=kickoff,verif=Inspection,month=1]
-    {Organization setup}
-    {Set up the organizational infrastructure of the project: mailing lists, web site, consortium agreement, activity tracking, \ldots}
-
-  \milestone[id=logipedia-v1,verif=Inspection,month=12]
-     {Logipedia v1}
-     {Release of a first version of Logipedia with HOL Light standard library and parts of Matita standard library in 5 different systems: Coq, Matita, Lean, HOL and PVS}
-
-  \milestone[id=coq-stdlib,verif=Inspection,month=24]
-     {Coq in Logipedia}
-     {Integration of most of Coq standard library in Logipedia}
-
-  \milestone[id=isabelle-stdlib,verif=Inspection,month=24]
-     {Isabelle/HOL in Logipedia}
-     {Integration of most of Isabelle/HOL standard library in Logipedia}
-
-  \milestone[id=compcert,verif=Inspection,month=36]
-     {CompCert in Logipedia}
-     {Integration of most of the CompCert library in Logipedia}
-
-  \milestone[id=logipedia-v2,verif=Inspection,month=36]
-     {Logipedia v2}
-     {Release of a second version of Logipedia integrating important parts of the libraries of Isabelle, Coq, Matita and HOL4, and their translations in other systems}
-
-  \milestone[id=atelierb,verif=Inspection,month=48]
-     {Atelier B in Logipedia}
-     {Release of a tool able to translate a complete development in Atelier B into a complete Dedukti proof}
-
-\end{milestones}
+\begin{longtable}{|p{0.1\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+3
+&
+Instrumentation of Isabelle 
+&
+deliverable D1.2
+&
+M 12
+\\
+\hline
+4
+&
+Instrumentation of HOL4 
+&
+deliverable D1.3
+&
+M 12
+\\
+\hline
+5
+&
+Instrumentation of Coq 
+&
+deliverable D1.6
+&
+M 8
+\\
+\hline
+\end{longtable}
 
 %%% Local Variables:
 %%%   mode: latex
