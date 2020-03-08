@@ -1833,20 +1833,20 @@ predicative vs. impredicative definitions, treatments of equality, and
 presence and absence of certain additional axioms, e.g., the axiom of
 choice.
 
-One of the major goals of this task will be the formulation and
-representation in Dedukti of a core logical system that is both common
-to all logical systems and supportive of modular analysis of its
-extensions. We believe that such a logical system can be obtained as a
-type-theoretic version of geometric logic, a certain well-behaved
-fragment of predicate logic.  Such a treatment of geometric logic will
-be of interest because we believe that, over theories in such a logic,
-we can transform classical proofs, using the law of excluded middle
-and the axiom of choice, into constructive proofs.  This
-transformation will not only be a theoretical result but also have
-practical value since we will seek to obtain feasible algorithms to
-transform proofs based on classical principles to constructive proofs.
-This effort will add a new dimension to a long-standing development of
-proof theory that is still very much unexplored.
+One of the major goals will be the formulation and representation in
+Dedukti of a core logical system that is both common to all logical
+systems and supportive of modular analysis of its extensions. We
+believe that such a logical system can be obtained as a type-theoretic
+version of geometric logic, a certain well-behaved fragment of
+predicate logic.  Such a treatment of geometric logic will be of
+interest because we believe that, over theories in such a logic, we
+can transform classical proofs, using the law of excluded middle and
+the axiom of choice, into constructive proofs.  This transformation
+will not only be a theoretical result but also have practical value
+since we will seek to obtain feasible algorithms to transform proofs
+based on classical principles to constructive proofs.  This effort
+will add a new dimension to a long-standing development of proof
+theory that is still very much unexplored.
 
 A further reason for the interest in this type theory is that it could
 provide, with a sequence of extensions, a new setting for the
@@ -1914,30 +1914,29 @@ correspondences between statements and their constituent constants and
 types in proof assistant libraries imported in Logipedia.
 
 \paragraph*{Alignment-based services.}
-This task is concerned with the implementation of useful services
-enabled by the discovered alignments. Each service implemented on top
-of Dedukti---such as accessing a library via browsing and searching or
-interoperability and reuse provided by translations across
-libraries---will benefit from working up-to-alignments. For example, a
-user of system $L$ can go to Logipedia to find a theorem about $t'$
-about concept $c'$, defined in $L'$ that is missing in the library of
-$L$. Even if $L$ contains the corresponding concept $c$, because $t'$
-is stated and proved in the logic of $L'$, it will use a different
-definition of $c'$ in $L'$ than the one of $c$ in $L$.  Therefore,
-$t'$ cannot be directly used in $L$. By translating $t'$ along the
-alignment $(c,c')$, it induces a theorem $t$ that can be used in
-$L$. The details are subtle both in theory and in practice, and this
-task will explore how to scale up the alignments to provide strong
-services.
 
-This task will leverage this simple idea in multiple different
-ways. Firstly, we will use alignments to search across libraries. In
-its simplest form, this involves a simple search interface into which
-the user enters the term $t$ and the system finds $t'$ because it uses
-the alignment $\langle c,c'\rangle$. Secondly, we will develop
-translation services that use alignments to transport proofs across
-libraries. This translation will allow transporting the proof of $t'$ in
-$L'$ to a (potential) proof of $t$ in $L$.
+Each service implemented on top of Dedukti---such as accessing a
+library via browsing and searching or interoperability and reuse
+provided by translations across libraries---will benefit from working
+up-to-alignments. For example, a user of system $L$ can go to
+Logipedia to find a theorem about $t'$ about concept $c'$, defined in
+$L'$ that is missing in the library of $L$. Even if $L$ contains the
+corresponding concept $c$, because $t'$ is stated and proved in the
+logic of $L'$, it will use a different definition of $c'$ in $L'$ than
+the one of $c$ in $L$.  Therefore, $t'$ cannot be directly used in
+$L$. By translating $t'$ along the alignment $(c,c')$, it induces a
+theorem $t$ that can be used in $L$. The details are subtle both in
+theory and in practice, and this task will explore how to scale up the
+alignments to provide strong services.
+
+Implementation of services will leverage this simple idea in multiple
+different ways. Firstly, we will use alignments to search across
+libraries. In its simplest form, this involves a simple search
+interface into which the user enters the term $t$ and the system finds
+$t'$ because it uses the alignment $\langle c,c'\rangle$. Secondly, we
+will develop translation services that use alignments to transport
+proofs across libraries. This translation will allow transporting the
+proof of $t'$ in $L'$ to a (potential) proof of $t$ in $L$.
 
 
 \subsubsection*{Challenges}
