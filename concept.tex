@@ -1846,11 +1846,12 @@ a common logical foundations is just a starting step. Even when one
 has successfully related these different logical foundations, one must
 also align the many different mathematical concepts (e.g., sets,
 numbers, functions) and theorems that are in the libraries produced by
-the various proof assistants. Thus, successful interoperability of
-both proof assistants and formalized mathematical libraries starts
-with identifying the correspondences between the concepts underpinning
-these formalizations, i.e., their alignment. Even when the various
-proof assistants are all exporting their proofs in Dedukti, the proper
+the various proof assistants. The goal of proof engineering is to
+achive a successful interoperability of both proof assistants and
+formalized mathematical libraries. This starts with identifying the
+correspondences between the concepts underpinning these
+formalizations, i.e., their alignment. Even when the various proof
+assistants are all exporting their proofs in Dedukti, the proper
 alignment of the theories underpinning those systems is an essential
 task: for example, simply combining all the different theories without
 adaptations can create an inconsistent and, therefore, useless
@@ -1904,23 +1905,18 @@ properties of natural numbers proved for one definition of natural
 numbers, must be transported to any isomorphic structure, regardless
 of the way it has been defined.
 
-Concept alignment can happen at different levels:
-\begin{compactitem}
-\item Alignment of logical foundations.
-\item Alignment of theorem proving objects such as types,
-  constants, and theorems.
-\item Alignment of proofs and proof techniques such as tactics and
-  inference rules.
-\end{compactitem}
-We will primarily focus our efforts on the alignment of
-logics and theorem proving objects (the first two of these three levels).
+Proof engineering happens at different levels: logical foundations,
+concepts such as types, constants, and theorems, and proofs and proof
+techniques such as tactics and inference rules. We will primarily
+focus our efforts on the alignment of logical foundations and
+concepts.
 
 % The following is used instead of \subsubsection* in the alignment WP.
 \newcommand{\parag}[1]{\medskip \noindent {\bf #1}}
 % To revert, uncomment the following line
 %\newcommand{\parag}[1]{\subsubsection*{#1}}
 
-\subsubsection*{Aligning logical foundations}
+\paragraph*{Logical foundations.}
 Just like Euclidean and non-Euclidean geometries are not completely
 independent theories but differ just from a few axioms, the various
 type theories or set theories implemented in the proof systems have
@@ -1934,20 +1930,19 @@ relevant languages.
 
 In order to align logical foundations we will develop novel ways of
 relating theories represented in Dedukti, building on our extensive
-experience in type theory, computer-assisted
-formalisation, proof theory and reverse mathematics. We will
-articulate our work according to the following key parameters for
-distinguishing between theories: classical vs. constructive logic,
-predicative vs. impredicative definitions, treatments of equality, and
-presence and absence of certain additional axioms, e.g., the axiom of
-choice.
+experience in type theory, computer-assisted formalisation, proof
+theory and reverse mathematics. We will articulate our work according
+to the following key parameters for distinguishing between theories:
+classical vs. constructive logic, predicative vs. impredicative
+definitions, treatments of equality, and presence and absence of
+certain additional axioms, e.g., the axiom of choice.
 
 One of the major goals will be the formulation and representation in
 Dedukti of a core logical system that is both common to all logical
 systems and supportive of modular analysis of its extensions. We
 believe that such a logical system can be obtained as a type-theoretic
 version of geometric logic, a certain well-behaved fragment of
-predicate logic.  Such a treatment of geometric logic will be of
+predicate logic. Such a treatment of geometric logic will be of
 interest because we believe that, over theories in such a logic, we
 can transform classical proofs, using the law of excluded middle and
 the axiom of choice, into constructive proofs.  This transformation
@@ -1965,7 +1960,7 @@ in the context of second-order arithmetic. Again, the presence of
 proof terms (expressed using Dedukti) adds a new dimension to a
 well-established topic.
 
-\paragraph*{Aligning theorem proving objects (case studies).}
+\paragraph*{Concept alignment (case studies).}
 Since sets, functions, relations and numbers are ubiquitous in all
 formalized mathematics, we will pay special attention to their
 alignment. Additionally, geometry is a very interesting case study,
@@ -1995,10 +1990,10 @@ $\Gamma \vdash_S T$ expressed in system $S$ based on some axioms
 $\Gamma$ in a system $S'$ based on different axioms $\Gamma'$ and
 different definitions.
 
-\paragraph*{Automated theory alignment.}
+\paragraph*{Automated proof engineering.}
 Although alignments can be manually discovered and described, the
 sheer size of existing formal libraries forces us to develop automated
-support for finding and organizing alignments.
+support for proof engineering.
 
 We propose a workflow based on database and semantic web
 methodologies. Specifically, we aim at building an automatic alignment
@@ -2022,8 +2017,7 @@ algorithms \cite{DBLP:journals/corr/abs-1804-07755} to directly find
 correspondences between statements and their constituent constants and
 types in proof assistant libraries imported in Logipedia.
 
-\paragraph*{Alignment-based services.}
-
+\paragraph*{Proof engineering services.}
 Each service implemented on top of Dedukti---such as accessing a
 library via browsing and searching or interoperability and reuse
 provided by translations across libraries---will benefit from working
