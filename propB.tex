@@ -37,9 +37,6 @@
 \begin{document}
 {\color{red} version du 9 mars à 09:50}% modified by Frédéric only
 
-{\color{red} We need an extra colum with the type of partner: industrial or
-academic}
-
 \begin{proposal}[%
   coordinator=GiDo,
   coordinatorsite=Inr,
@@ -89,17 +86,68 @@ academic}
   months=48,
   compactht]
 
-  \newcommand\logo[1]{\includegraphics[width=3cm]{logos/#1}}
+  \pagestyle{empty}
+  \newcommand\ap{{\color{Green3}$\bullet$}}% academic partner
+  \newcommand\ip{{\color{DarkOrange2}$\bullet$}}% industrial partner
 
-  \includegraphics[width=16cm]{map-countries}
-  \vspace*{1cm}
-  
   \begin{center}
+    {\Large\bf Integrating and opening research infrastructures\\of European interest}\\[10mm]
 
-    {\Large\bf Companies willing to join\footnote{Their letters of support are available on request.} the club of industrial users:}
+    {\LARGE H2020-INFRAIA-2018-2020}\\[10mm]
 
+    \fbox{\LARGE\bf Logipedia}\\[10mm]
+
+    Coordinator: Gilles Dowek (gilles.dowek@inria.fr)\\[10mm]
+    
+  \begin{tabular}{|c|l|l|c|c|}\hline
+    \# & Participant organisation name & Short name & Country & Type\\\hline
+    1 & Institut National de Recherche en Informatique et Automatique & Inria & FR & \ap\\\hline
+    2 & Université de Strasbourg & Unistra & FR & \ap\\\hline
+    3 & Institut National Polytechnique de Toulouse & INPT & FR & \ap\\\hline
+    4 & Universität Innsbruck & UIBK & AT & \ap\\\hline
+    5 & Université de Liège & ULiege & BE & \ap\\\hline
+    6 & Alma Mater Studiorum – Università di Bologna & Unibo & IT & \ap\\\hline
+    7 & Faculty of Mathematics, University of Belgrade & UBel & RS & \ap\\\hline
+    8 & Technische Universität München & TUM & DE & \ap\\\hline
+    9 & Technische Universiteit Delft & TUDelft & NL & \ap\\\hline
+    10 & Université Paris-Saclay & USaclay & FR & \ap\\\hline
+    11 & Friedrich-Alexander Universit\"at Erlangen-N\"urnberg & FAU & DE & \ap\\\hline
+    12 & University of Leeds & ULeeds & UK & \ap\\\hline
+    13 & G\"oteborgs Universitet & UGot & SE & \ap\\\hline
+    14 & Chalmers Tekniska H\"ogskola & Chalmers & SE & \ap\\\hline
+    15 & Ludwig-Maximilians-Universit\"at M\"unchen & LMU & DE & \ap\\\hline
+    16 & Institut Mines-Télécom & IMT & FR & \ap\\\hline
+    17 & Uniwersytet w Białymstoku & UBia & PL & \ap\\\hline
+    18 & ClearSy & ClearSy & FR & \ip\\\hline
+    19 & OCamlPro & OCamlPro & FR & \ip\\\hline
+    20 & University of Birmingham & UoB & UK & \ap\\\hline
+    21 & Commissariat à l'Energie Atomique et aux Energies Alternatives & CEA & FR & \ip\\\hline
+    22 & Duale Hochschule Baden-Württemberg & DHBW & DE & \ap\\\hline
+    23 & Institut de Recherche Technologique System X & SystemX & FR & \ip\\\hline
+    24 & Edukera & Edukera & FR & \ip\\\hline
+    25 & MED-EL Elektromedizinische Geraete GmbH & MED-EL & DE & \ip\\\hline
+    26 & Prove \& Run & P\&R & FR & \ip\\\hline
+    27 & Konrad-Zuse-Zentrum für Informationstechnik Berlin & ZIB & DE & \ap\\\hline
+    28 & Universitatea Alexandru Ioan Cuza din Iasi & UAIC & RO & \ap\\\hline
+    29 & Runtime Verification SRL & RV & RO & \ip\\\hline
+  \end{tabular}
+
+  \bigskip
+  \ap~Academic participant \quad\quad \ip~Industrial participant
   \end{center}
 
+  \newpage
+  \begin{center}
+    \includegraphics[width=8cm]{map-countries.jpg}
+  \end{center}
+
+  \vspace*{5mm}
+  \begin{center}
+    {\Large\bf Companies willing to join\footnote{Their letters of support are available on request.} the club of industrial users:}
+  \end{center}
+
+  \newcommand\logo[1]{\includegraphics[width=28mm]{logos/#1}}
+  
   \vspace*{5mm}
   \begin{tabular}{ccccc}% in alphabetical order
     \logo{Alstom}
@@ -124,7 +172,8 @@ academic}
     & \logo{RV}
     & Siemens
     & \logo{SystemX}
-    & \logo{Systerel}\\
+    & \logo{Systerel}\\[8mm]
+    \logo{TrustedLabs}
   \end{tabular}
 
   \newpage\null\vfil
