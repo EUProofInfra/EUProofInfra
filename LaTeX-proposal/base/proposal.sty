@@ -162,6 +162,7 @@
 \newcounter{allwp}
 \newcommand\update@wps[1]{\@ifundefined{@wps}{\xdef\@wps{#1}}{\xdef\@wps{\@wps,#1}}}
 \newcommand\update@tasks[1]{\@ifundefined{@tasks}{\xdef\@tasks{#1}}{\xdef\@tasks{\@tasks,#1}}}
+\newcommand\update@delivs[1]{\@ifundefined{@delivs}{\xdef\@delivs{#1}}{\xdef\@delivs{\@delivs,#1}}}
 \newcommand\update@deps[1]{\@ifundefined{task@deps}{\xdef\task@deps{#1}}{\xdef\task@deps{\task@deps,#1}}}
 \ifwork@areas\def\update@was#1{\@ifundefined{@was}{\xdef\@was{#1}}{\xdef\@was{\@was,#1}}}\fi
 \newcommand\decode@wphase[1]{\expandafter\decode@p@start#1@%
@@ -187,6 +188,7 @@
 \pdata@def{wp}\wp@id{start}\wphase@start\pdata@def{wp}\wp@id{end}\wphase@end%
 \@ifundefined{wp@type}{}{\pdata@def{wp}\wp@id{type}\wp@type}%
 \let\@tasks=\relax%
+\let\@delivs=\relax%
 \edef\wp@num{\ifwork@areas\thewa.\fi\thewp}%
 \pdata@def{wp}\wp@id{label}{\wp@label\wp@num}%
 \pdata@def{wp}\wp@id{number}{\thewp}%
@@ -203,7 +205,8 @@
 \if@RAM\pdata@def{wp}\wp@id{RAM}{\thewp@RAM}\fi%
 \fi% if@sites
 \ifx\wp@status\@@status@canceled\color{lightgray}\fi}
-{\@ifundefined{@tasks}{}{\pdata@def{\wp@id}{task}{ids}\@tasks}}
+{\@ifundefined{@tasks}{}{\pdata@def{\wp@id}{task}{ids}\@tasks}%
+\@ifundefined{@delivs}{}{\pdata@def{\wp@id}{delivs}{ids}\@delivs}}
 \newenvironment{workpackage}[1][]%
 {\begin{work@package}[#1]%
 \ifgrantagreement\else%
@@ -411,6 +414,7 @@
 \newcommand\workphase[1]{\PackageError{proposal}
   {The \protect\workphase macro is deprecated,\MessageBreak
     use the attributes wphase on the workpackage environment instead!}}
+\newcommand\delivin[2]{#2@#1}
 \newcommand\taskin[2]{#2@#1}
 \newcommand\taskref[2]{\pdataRef{task}{#1@#2}{label}}
 \newcommand\taskreflong[2]{\pdataRef{task}{#2}{label}}
@@ -511,6 +515,7 @@
    \else\expandafter\xdef\csname\@I delivs\endcsname%if not add it
    {\csname\@I delivs\endcsname\d@sep\wpg@id @\deliv@id}\fi}}%
 }% end gray color
+\update@delivs{\delivin\deliv@id\wp@id}
 }
 \newenvironment{wadeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wa}\else\deliv@error\fi}{}
 \newenvironment{wpdeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wp}\else\deliv@error\fi}{}

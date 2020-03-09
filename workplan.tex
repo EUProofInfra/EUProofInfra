@@ -125,9 +125,68 @@ different systems.  It therefore has a larger number of partners.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Timing of the different work packages and their components}
 
-{\color{red} Gantt chart}
-
-%\ganttchart[draft,xscale=.32] 
+\makeatletter
+\begin{figure}[h]
+\begin{ganttchart}
+[
+vgrid=true,
+hgrid=true,
+title height=1,
+y unit title=\baselineskip,
+y unit chart=.6\baselineskip,
+x unit=10pt,
+group peaks width=0,
+group peaks height=0,
+group left shift=0,
+group right shift=0,
+group top shift=.25,
+group height=.5,
+group/.append style={fill=blue},
+group label node/.append style={font=\bf},
+bar top shift=.25,
+bar height=.5,
+bar/.append style={fill=green,rounded corners=3pt},
+bar label node/.append style={font=\footnotesize},
+milestone left shift=.5,
+milestone right shift=.5,
+milestone top shift=0,
+milestone height=1,
+milestone/.append style={fill=yellow},
+milestone inline label node/.append style={anchor=north,below=2pt,font=\footnotesize},
+vrule/.style={very thick,red},
+]
+{1}{\pdataref@aux{prop}{gen}{months}}
+\gantttitle{\makebox[0pt][r]{\textbf{\textit{Year\ }}}}{0}
+\gantttitlelist{1,...,\numexpr\pdataref@aux{prop}{gen}{months}/12\relax}{12}
+\\
+\gantttitle{\makebox[0pt][r]{\textbf{\textit{Month\ }}}}{0}
+\gantttitlelist{1,...,\pdataref@aux{prop}{gen}{months}}{1}
+\edef\@wps{\pdataref@aux{all}{wp}{ids}}
+\@for\@wp:=\@wps\do{
+\\\\
+\ganttgroup{\pdataRef{wp}{\@wp}{label}}{1}{48}
+\edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
+\@for\@deliv:=\@delivs\do{
+\ganttmilestone[inline]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+}
+\\
+\edef\@tasks{\pdataref@aux{\@wp}{task}{ids}}
+\@for\@task:=\@tasks\do{
+\\
+\edef\@wphases{\pdataref@safe{task}{\@task}{wphases}}
+\@for\@wphase:=\@wphases\do{
+\decode@wphase\@wphase
+\ganttbar{\pdataRef{task}{\@task}{label}}{\wphase@start}{\wphase@end}
+}
+}
+}
+\edef\@miles{\pdataref@aux{all}{mile}{ids}}
+\@for\@mile:=\@miles\do{
+\ganttvrule{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
+}
+\end{ganttchart}
+\end{figure}
+\makeatother
 
 \subsection{Detailed work description}
 
