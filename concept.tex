@@ -1473,8 +1473,8 @@ into Logipedia in the longer term.
 
 There are various motivations for including these systems in
 Logipedia. First, being able to export theories and proofs developed
-in these systems makes them available to those systems with more
-advanced Logipedia integration levels. For example, accessing Mizar's
+in these systems makes them available to systems with more
+advanced integration level. For example, accessing Mizar's
 rich library of formalized mathematics would be beneficial to
 developers of machine-checked mathematical results. Second, certain
 systems such as \tlaplus have been used for specific tasks such as
@@ -1489,12 +1489,11 @@ necessary for exporting or importing full libraries. Nevertheless, the
 work carried out here is a necessary stepping stone and enabler for
 making Logipedia a universally accepted encyclopedia of formal proofs.
 
-\bigskip
+\medskip
 \hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
-\paragraph*{Mizar.}
-Mizar\footnote{\url{http://mizar.org}}~\cite{banczerek:mizar} is one of the
+\noindent{\bf\href{http://mizar.org}{Mizar}} is one of the
 earliest proof assistants. It was initially created as a typesetting system for
 mathematics, with proof checking functionality added later. The language is
 designed to be as close as possible to the traditional language of mathematics
@@ -1504,18 +1503,18 @@ well as a hierarchy of soft types. Proofs are expressed in a declarative way
 based on natural deduction.
 \end{minipage}
 &\begin{minipage}{3cm}
-  \vspace{-6cm}\logo{Mizar}
+  \logo{Mizar}
 \end{minipage}
 \end{tabular}
 
 The Mizar community maintains a centralized database, the Mizar Mathematical
-Library. Based on the axioms of Tarski-Grothendieck set theory, it provides a
+Library (MML). Based on the axioms of Tarski-Grothendieck set theory, Mizar\cite{banczerek:mizar} provides a
 framework on top of which new theories can be built in the form of ``articles''.
 The library constitutes one of the largest collections of formal mathematics with
-a number of results that are not present in other systems. Apart from purely
-mathematical formalizations, the system has been used for developing formal
+a number of results that are not present in other systems. Apart from
+mathematical formalizations, Mizar has been also used for developing formal
 descriptions of theoretical models of computation, cryptography, digital circuit
-design, and software verification. The Mizar library provides a database for
+design, and software verification. MML provides a database for
 training automated theorem provers and other projects based on machine learning
 techniques.
 
@@ -1532,27 +1531,28 @@ definitions in a uniform way and to instrument the
 system to make this implicit knowledge explicit and allow Mizar proofs
 to be checked by Dedukti.
 
-\bigskip
+\medskip
 \hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
-\paragraph*{\tlaplus.}
-\tlaplus~\cite{lamport:specifying} is a specification language based
+{\bf\href{http://lamport.azurewebsites.net/tla/tla.html}\tlaplus}
+is a specification language based
 on Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a
 dialect of linear-time temporal logic. It is intended for the precise
 description of discrete systems and in particular of distributed
-algorithms and systems.  \tlaplus has been substantially adopted by
-enterprises working on distributed and cloud systems,
-e.g.~\cite{newcombe:amazon-cacm}. The two main software tools for
+algorithms and systems.
+\end{minipage}
+&\begin{minipage}{3cm}
+  \vspace{-5mm}\logo{TLA}
+\end{minipage}
+\end{tabular}
+
+\tlaplus\cite{lamport:specifying} has been substantially adopted by
+companies working on distributed and cloud systems\cite{newcombe:amazon-cacm}. The two main software tools for
 analyzing and verifying \tlaplus specifications are the model checker
 TLC~\cite{yu:model-checking} and
 TLAPS\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
 the \tlaplus Proof System~\cite{cousineau:tla-proofs}.
-\end{minipage}
-&\begin{minipage}{3cm}
-  \vspace{-6cm}\logo{TLA}
-\end{minipage}
-\end{tabular}
 
 \tlaplus proofs are written in a declarative, hierarchical style based on
 natural deduction that allows the user to break down the proof of high-level
