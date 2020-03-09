@@ -94,7 +94,7 @@ o&:&type\\
 
 So the theories implemented in various systems can all be expressed in
 Dedukti and the proofs developed in these systems can be translated to
-Dedukti. Just like in the case of non Euclidean geometry, this allows
+Dedukti. Just like in the case of non-Euclidean geometry, this allows
 the symbols and computation rules used in each proof to be analysed
 \cite{Thire18,Dowek17} (a domain traditionally called ``reverse
 mathematics'' \cite{Friedman75,Simpson09}) and to deduce in which
@@ -104,7 +104,7 @@ interoperability between proof systems.
 So, to make a formal proof, developed in some system $X$, accessible
 to the users of other systems, the first step is to express the theory
 $D[X]$, implemented in the system $X$, in the logical framework
-Dedukti.  Then, we must instrument of the system $X$, that is modify the
+Dedukti.  Then, we must instrument of the system $X$, that is, modify the
 system $X$, in such a way that it exports proofs in $D[X]$.  Next, we
 need to analyze this proof in order to determine which symbols, axioms
 and computation rules of $D[X]$ it actually uses and, thus, in which
@@ -216,7 +216,7 @@ raises new research challenges:
 \item{\bf Improving encodings.}
 Even when we have understood how to express the basic theory of these
 systems, implementation often reveals some advanced features of these
-systems that require further work.  Moreover even when we know how to
+systems that require further work.  Moreover, even when we know how to
 express all features of some system \emph{in theory}, depending on the
 choice of expression, the instrumentation may be simpler or harder in
 practice. For example:
@@ -228,7 +228,7 @@ practice. For example:
   have to be expressed by adding type information to the
   proof terms. This can in turn lead to a large increase in the size of
   those proof terms, and thus greatly increase the cost of
-  typechecking. This blow-up has to be tamed by the choice of a
+  type checking. This blow-up has to be tamed by the choice of a
   clever expression of the theory.
 
 \item Coq, Agda, and Matita all provide support for coinductive
@@ -285,7 +285,7 @@ become large. First, a typical proof in an external system may be large
 (because big parts of it are constructed automatically). Second,
 translating a proof to Dedukti may increase the size of the proof, for
 example by normalizing it or by adding type annotations.  This means
-translating the proofs can take a very long time, and doing anything
+translating the proofs can take a long time, and doing anything
 with the translated proof will be difficult. This also has an obvious
 impact on the exporting of large libraries to Dedukti, discussed
 below.
@@ -308,7 +308,7 @@ following systems:
   Matita. We plan to make this translation a part of the code of
   Matita itself so that it is maintained with the rest of the system.
 
-\item The standard library of HOL Light and FoCaLiZe already have been
+\item The standard libraries of HOL Light and of FoCaLiZe already have been
   translated to Dedukti.
 
 \item CoqInE is a prototype tool that can translate Coq proofs to
@@ -366,8 +366,8 @@ These systems are called first-order automatic theorem provers, SAT solvers, SMT
 solvers, etc.
 The proofs
 built by these systems are often expressed in simpler theories than
-those developed using proof systems, but they are not of a different
-nature.  They cover various domains and various kinds of application,
+those developed using interactive proof systems, but they are not of a different
+nature.  They cover various domains and various kinds of applications,
 {\em e.g.}\ combinatorial
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
@@ -378,7 +378,7 @@ quantified theories.
 
 Including proofs built by such automatic systems in Logipedia
 is both a goal {\em per se}, and a tool to help to
-integrate proofs developed in proof systems and make a coherent whole out
+integrate proofs developed in interactive proof systems and make a coherent whole out
 of Logipedia. A fruitful interaction between formal proofs requires
 low-level glue which falls in the scope of automatic theorem provers.
 For instance, they will be employed to fill the holes that appear when
@@ -390,15 +390,15 @@ Logipedia. Obviously, Logipedia will be an extensive library of formal
 statements that can be used and combined by automatic theorem provers in their
 proof search. This is not trivial though: automatic theorem provers have to
 select the right lemmas for a proof, which becomes more difficult the more
-lemmas there are.  Logipedia can also be a source of benchmarks to evaluate the
-expressivity and automation of automatic tools.  Lastly, Logipedia and Dedukti
+lemmas there are.  Logipedia can also be a source of benchmarks for evaluating the
+expressiveness and automation of automatic tools.  Lastly, Logipedia and Dedukti
 will form a framework to make automatic theorem provers cooperate with each
 other and with other tools, in a safe way.
 
 \subsubsection*{From automatic theorem provers to Dedukti}
 
 Similarly to interactive theorem provers, connecting automatic theorem
-provers to the Logipedia infrastructure strongly relies on the ability
+provers to the Logipedia infra\-struc\-ture strongly relies on the ability
 for automatic theorem provers to import statements from Dedukti and
 export proofs in some theory in Dedukti.
 
@@ -413,11 +413,11 @@ granularity of those proofs.  SAT (satisfiability) solvers for
 propositional logic do have a perfectly well specified format for
 proof traces~\cite{DBLP:conf/sat/WetzlerHH14} and most SAT solvers are actually able to
 produce proof traces in that format.  So, considering SAT solvers, the
-current status is actually meeting the Logipedia needs on this aspect.
+current status already meets the needs of Logipedia on this aspect.
 
 Considering other automated reasoners however, it is necessary to
 significantly improve the picture.  Some SMT (Satisifiability Modulo
-Theories) solvers do produce some kind of proof trace, but the format
+Theories) solvers can produce some kind of proof trace, but the format
 is specific to the solver, and the proofs are sometimes difficult to
 replay due to their (lack of) granularity.  Most mainstream theorem provers for
 predicate logic output proofs in a standardized language~\cite{DBLP:conf/csr/Sutcliffe07},
@@ -439,23 +439,23 @@ reasoner for Coherent Logic.  These reasoners are particularly useful for
 geometric reasoning, and as such, they are quite complementary to the other
 automatic reasoners considered.  They are also very suitable as a first
 experiment, since their proofs are fairly straightforward to interpret.  They
-thus constitute a very interesting low hanging fruit.
+thus constitute a very interesting low-hanging fruit.
 
 It is not possible, and not even desirable, to require all tools to
-directly talk in the language of Logipedia.  Indeed, proof trace
+directly be fluent in the language of Logipedia.  Indeed, proof trace
 languages that are specific to one kind of reasoning tool are more
-appropriate than Dedukti for the instrumentation of already large pieces of
+appropriate than Dedukti for the instrumentation of large pieces of
 software, enabling quick output, and allowing post-processing the
 produced proof traces at the right level of abstraction.
 Furthermore, provided that those proofs are detailed enough,
 translation of traces to Dedukti will not be a difficult task, and
 the work necessary to translate proof traces for a myriad of very
 different reasoners will be implemented in a single tool (Ekstrakto,
-see below) to take advantage of the fact that there is quite a lot of
+see below) in order to take advantage of the fact that there is quite a lot of
 sharing of reasoning techniques, and thus proof methods, among the
 provers and solvers.
 
-\item{\bf Translate automatic theorem provers traces into Dedukti.}
+\item{\bf Translate traces of automatic theorem provers into Dedukti.}
   
 As pointed out above, it is easier to instrument
 provers to make them output traces, instead of directly provide
@@ -485,7 +485,7 @@ prove the sub-problems; it is only required that the prover can output
 a Dedukti proof in the correct expression of predicate logic.
 
 Although the experience we already have with Ekstrakto gives us a total
-confidence that the approach will be successful, it is a work in progress. In
+confidence that the approach will be successful, it is work in progress. In
 particular, the following issues will be addressed in the project:
 
 \begin{compactitem}
@@ -500,7 +500,7 @@ particular, the following issues will be addressed in the project:
   conclusion is not a logical consequence of their premises. However,
   they preserve provability: the original problem has a proof if and
   only if the problem with the conclusion of the step also has a
-  proof. This is the case for instance of the Skolemization step an
+  proof. This is the case for instance of the Skolemization step performed by an
   automated theorem prover for predicate logic, of the introduction of
   new definitions, as well as the RAT property in traces produced by
   SAT solvers. The approach of Ekstrakto cannot be used here, because
@@ -509,8 +509,8 @@ particular, the following issues will be addressed in the project:
   proof using the conclusion of the step into a proof using its
   premises. Such a transformation depends on the nature of the step
   that has been used. We will include in Ekstrakto a mechanism to handle
-  Skolemization and definition introduction, which are the two step
-  families that are missing to be able to manage all traces from the
+  Skolemization and definition introduction, which are sufficient
+  for managing all traces from the
   major theorem provers for predicate logic.
 
   % specialization for theories
@@ -527,8 +527,8 @@ particular, the following issues will be addressed in the project:
   on said theory. These provers need not be very optimized, since
   trace steps are relatively small; this should help producing Dedukti
   traces. A way to achieve this could be to extend Zenon Modulo:
-  indeed, Zenon modulo can find proofs modulo arithmetic, but it is
-  not able to produce a Dedukti proof yet.
+  indeed, Zenon modulo can find proofs modulo arithmetic, but it cannot
+  produce a Dedukti proof yet.
 \end{compactitem}
 \end{enumerate}
 
@@ -543,18 +543,18 @@ this project will study the following challenges.
 \item{\bf Translate Dedukti statements into automatic theorem provers
   inputs.}
 
-Automatic theorem provers are mostly based on (parts of) predicate
+Automatic theorem provers are mostly based on (fragments of) predicate
 logic.  Logipedia theorems, which mostly come from interactive
 provers, will be expressed in the Dedukti encodings of much more
 expressive logics, such as dependent type theory or simple type
 theory.  Theorem statements thus need to be expressed in a different way
-to be manipulable by automatic theorem provers.
+so that automatic theorem provers can manipulate them.
 
 Encodings of expressive logics in predicate logic already exist, and are used
-for instance in {\em hammers} for using automatic theorem provers into
+for instance in \emph{hammers} for using automatic theorem provers inside
 interactive theorem
 provers~\cite{DBLP:conf/lpar/PaulsonB10,DBLP:journals/jar/CzajkaK18}.  In these
-tools, the encodings are specific to one system and tuned to their logic. In
+tools, the encodings are specific to one system and tuned to its logic. In
 Logipedia, we have to combine and take benefit from statements coming from the
 encodings of different systems based on different logics. The key challenge here
 are thus:
@@ -567,10 +567,10 @@ are thus:
 We plan to investigate a new approach where, instead of hammers, the
 encoding is a succession of fine-grained encodings dedicated to one
 aspect. These ``small'' encodings will offer the possibility to be
-activated independently depending on the origin of the statement. In
+activated independently, depending on the origin of the statement. In
 addition, they have the other advantages of being modular, easily
 extensible, and more reliable: each encoding is simple, and may output
-proofs, {\em e.g.} using Ekstrakto. They will be performed modulo the
+proofs, \emph{e.g.} using Ekstrakto. They will be performed modulo the
 concept alignment.
 
 It is common in the automatic theorem proving community to evaluate
@@ -579,7 +579,8 @@ effect of our work on integrating automatic theorem provers, we will
 be able to extract a new set of benchmarks from Logipedia to measure
 the performance of automatic theorem provers on problems coming from
 different logics, and from a combination of these logics. In our case,
-it will not only allow to compare automatic theorem provers but also
+this will not only allow automatic theorem provers to be compared against
+each other but also
 to measure the success of this task by evaluating the quality of the
 encodings, and comparing the impact of each of our ``small'' encodings
 by activating or deactivating them individually.
@@ -588,7 +589,7 @@ by activating or deactivating them individually.
 
   The amount of knowledge available in the whole of Logipedia is
 significantly larger than in any library of an individual proof assistant,
-and as such selecting the knowledge relevant for a
+and selecting the knowledge relevant for a
 particular goal might require more complex techniques than
 before~\cite{Irving-deepmath}.  We will experiment with integrating techiques
 from machine learning to the construction of formal proofs. This includes both techniques
@@ -599,13 +600,13 @@ construction~\cite{ZielenkiewiczSchubert2016}.
 
 \subsubsection*{Large scale application: formal verification of C code}
 
-The use of formal methods in the industry requires to have approaches
+The use of formal methods in industry requires approaches
 that apply to a wide variety of cases. For the verification of C code,
 the Frama-C platform features numerous techniques. One of them relies
 on automatic solvers: Frama-C-WP. Since automatic theorem provers are
 built by making many choices, such as which heuristics or which
-algorithms to use, they display blind spots where they are less
-efficient to solve some cases. To overcome this limitation, it is
+algorithms to use, they display blind spots: specific cases than are not solved
+efficiently. To overcome this limitation, it is
 necessary to use a wide variety of solvers in a portfolio manner. For
 instance, the Why3 tool features the ability to send problems to lots
 of provers in a uniform way. However, with so many tools written by
@@ -613,10 +614,10 @@ different teams, the meaning of the same concept in the different
 tools could be different. This can lead to errors in the overall
 verification results. Moreover, in order to be applied more widely,
 formal methods must handle more concepts such as floating point
-numbers whose exact meaning is less clear that mathematical
+numbers whose exact meaning is less clear than mathematical
 integers. This leads to more chances for two tools to interpret the
 same concept differently. Finally, industrial users sometimes need to
-add a kind of reason or a simplification that is specific to their
+add a form of reasoning or a simplification that is specific to their
 particular concept, so that it is better handled by automatic
 solvers. It is very easy to make an error in those simplifications.
 
@@ -631,7 +632,7 @@ new features for handling new cases by using proof objects:
   lemmas.
 
 \item For writing the simplification rules for industrial use cases,
-  we will instrument of Frama-C-WP to generate
+  we will instrument Frama-C-WP to generate
   Ekstrakto input in order to produce a proof of the correctness of
   these simplifications.
 
@@ -651,20 +652,20 @@ proofs extracted from automatic theorem provers.
 
 \subsubsection*{Automatic theorem provers to increase Logipedia readiness}
 
-Providing automation on the level of an encyclopedia of formal proofs
+Providing automation at the level of an encyclopedia of formal proofs
 is both interesting and challenging. Indeed, making so many different formal
 systems cooperate requires a lot of proof manipulation,
 transformations, and gluing, which can only be reasonably done with
 automation. On a higher level, being able to more efficiently write
-proofs directly in Dedukti would also be of interest to the community in
-itself. Thus a major challenge is to make this automation practicable and scalable.
+proofs directly in Dedukti would in itself be of interest to the community. 
+Thus a major challenge is to make this automation practicable and scalable.
 
 \begin{enumerate}[\bf(a)]
 \item{\bf Automatic theorem provers for Dedukti}
 
   Automation has been a key to the success of proof assistants, since it
-allows much more efficient formalization~\cite{Hales-Developments}.
-Many different techniques to provide proof assistant automation have
+allows for much more efficient formalization~\cite{Hales-Developments}.
+Many different techniques for providing automation to proof assistants have
 been developed over the years: techniques based on rewriting,
 tableaux~\cite{Paulson-blast}, or even the integration of efficient
 superposition-based provers for predicate logic~\cite{hurd-metis} and
@@ -676,8 +677,8 @@ proof techniques~\cite{gauthier-tactictoe}.
 
 The automation techniques offered by different proof assistants differ
 significantly. For systems mostly based on classical predicate logic
-it is often possible to provide sound and complete translations to the
-existing efficient theorem provers for predicate logic by only
+it is often possible to provide sound and complete translations to
+existing efficient theorem provers for predicate logic by
 expressing the intricacies of their type
 systems~\cite{kaliszyk-miz40}. This allows for straightforward native
 proof reconstruction. On the other end of the spectrum, for
@@ -688,7 +689,7 @@ challenge. Most efficient automation still relies on translations to
 external tools, but the current translations from such logics to
 the logic of SMT solvers~\cite{DBLP:conf/cpp/ArmandFGKTW11} or
 predicate logic~\cite{DBLP:journals/jar/CzajkaK18} are incomplete
-and often (partially) unsound. This means that to reconstruct such
+and sometimes (partially) unsound. This means that to reconstruct such
 proofs in the logic of the proof assistant separate intricate
 components need to be developed.
 
@@ -707,19 +708,19 @@ automated theorem provers developed in the other parts.
 
   The aforementioned automation will be crucial to enable full proof
 verification. Considering systems one at a time, a number of proof
-exports are not complete, i.e.~the actual systems do not provide
-all the proof step details and internal automation for Logipedia would be
+exports are not complete, i.e.\ the actual systems do not provide
+all the proof step details, and internal automation for Logipedia would be
 necessary. More demandingly, automation will be used to fill the gaps
 between systems. In particular, concept alignments need to be established
 formally. More generally, proof obligations arising from translations,
-encodings into Dedukti, reverse mathematics, \dots must be discharged
+encodings into Dedukti, reverse mathematics etc.\ must be discharged
 as automatically as possible.
 
 As it has been the case for interactive theorem provers, automation
 will also provide support for Logipedia developers and users. During
 the project, many Dedukti developments shall be performed, in
 particular to define theories in Dedukti. In the longer term, Dedukti
-will also be used, {\em e.g.} for new proof transformations or to
+will also be used, \emph{e.g.}\ for new proof transformations or to
 align distant concepts, which will be affordable with automation.
 \end{enumerate}
 
