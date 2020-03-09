@@ -7,43 +7,41 @@
 \hline
 {\bf Wider, simplified, and more efficient access}&
 
-{\color{red} This is context, remove}
-
-The shift from informal pencil-and-paper proofs to formal computerized
-proofs has been a major improvement on the never ending quest for
-logical rigor. It has made and continues to make a strong impact both
-on computer science, where it allows to dramatically improve safety
-and security, and on mathematics, where it can be used to build much
-more complex proofs.\\
-&
-\hspace{0.4cm}
-But this major step forward also has a negative side effect: we have
-evolved from a time where we had (informal) proofs of Fermat's little
-theorem, to a time where we have (formal) proofs in Coq, in Matita, in
-HOL Light, in PVS, etc.  of this theorem, jeopardizing the
-universality of logical truth.\\
-&
-\hspace*{0.4cm} This loss of universality of logical truth is the main
-obstacle to the access to formal proofs in the communities of computer
-scientists and mathematicians, but also researchers of other
-disciplines, engineers, and students. As a consequence, the use of
-formal proofs is restricted to a community of specialists, that has
-fortunately been growing with time, but not fast enough
-compared to the needs for formal proofs in the digital society.  Our
-long-term goal is to restore the universality of logical truth, in
-order to build a strong formal proof community including specialists
-and non-specialists, making formal proofs findable, accessible,
-interoperable, and reusable.\\ 
-&
-\hspace{0.4cm}
-This requires to express the theories implemented in these systems in
-a common logical framework, with axioms and computation rules. This allows
-to say which axioms and computation rules are used in
-each proof, as we have been used to, since the development of
-non-Euclidean geometries.\\
-&
-\hspace{0.4cm}
-In such a shared public encyclopedia providing virtual access, each
+%The shift from informal pencil-and-paper proofs to formal computerized
+%proofs has been a major improvement on the never ending quest for
+%logical rigor. It has made and continues to make a strong impact both
+%on computer science, where it allows to dramatically improve safety
+%and security, and on mathematics, where it can be used to build much
+%more complex proofs.\\
+%&
+%\hspace{0.4cm}
+%But this major step forward also has a negative side effect: we have
+%evolved from a time where we had (informal) proofs of Fermat's little
+%theorem, to a time where we have (formal) proofs in Coq, in Matita, in
+%HOL Light, in PVS, etc.  of this theorem, jeopardizing the
+%universality of logical truth.\\
+%&
+%\hspace*{0.4cm} This loss of universality of logical truth is the main
+%obstacle to the access to formal proofs in the communities of computer
+%scientists and mathematicians, but also researchers of other
+%disciplines, engineers, and students. As a consequence, the use of
+%formal proofs is restricted to a community of specialists, that has
+%fortunately been growing with time, but not fast enough
+%compared to the needs for formal proofs in the digital society.  Our
+%long-term goal is to restore the universality of logical truth, in
+%order to build a strong formal proof community including specialists
+%and non-specialists, making formal proofs findable, accessible,
+%interoperable, and reusable.\\ 
+%&
+%\hspace{0.4cm}
+%This requires to express the theories implemented in these systems in
+%a common logical framework, with axioms and computation rules. This allows
+%to say which axioms and computation rules are used in
+%each proof, as we have been used to, since the development of
+%non-Euclidean geometries.\\
+%&
+%\hspace{0.4cm}
+Logipedia provides universal access to formal proofs, each
 user, in research, industry, and education, can find the formal proofs
 she needs in the logic she wants, independently of the logic and system in
 which this
@@ -90,9 +88,8 @@ summer schools, etc.
 &
 \colorbox{color2}{\bf Performance indicators:}
 \begin{compactitem}
-\item number of proofs added to Logipedia
-\item number of downloads from the server
 \item number of accesses on the web interface
+\item number of downloads from the server
 \item number of uses of the teaching interface
 \item number of teachers and courses using Logipedia
 \end{compactitem}
@@ -177,9 +174,8 @@ $\blacktriangleright$ As mathematics and software are ubiquitous in modern scien
 &
 \colorbox{color2}{\bf Performance indicators:}
 \begin{compactitem}
-\item number of references to Logipedia proofs in scientific publications
-\item number of publications using Logipedia as a dataset
-\item availability of Logipedia proofs after a long period of time
+\item number of proofs added in Logipedia
+\item number of proof systems supported by Logipedia
 \end{compactitem}
 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,7 +205,7 @@ between relatively close communities, such as the Coq and
   Agda communities that meet every year at the TYPES conference, but
 also to more distant communities, such as the TYPES community, the HOL
 community (that already meet around the OpenTheory standard),
-the B and TLA+ communities, and the Mizar community.\\
+the B and \tlaplus communities, and the Mizar community.\\
 &
 \hspace{0.4cm}
 More importantly, this data exchange between researchers and engineers
@@ -246,7 +242,7 @@ publishing.\\
 \colorbox{color2}{\bf Performance indicators:}
 \begin{compactitem}
   \item number of proofs developed in one system and used in another
-  \item number of proof systems generating a checkable certificate
+  \item number of interactive proof systems generating a checkable certificate
   \item number of automatic theorem provers generating a checkable certificate 
   \item activity of the clubs (meetings, workshops, etc.)
 \end{compactitem}
@@ -360,12 +356,12 @@ Second, we will build over the project duration time a {\em club of
 % in alphabetical order
 Alstom (Luis-Fernando Meija, FR),
 Arm (Dominic Mulligan, UK),
-CEA LIST (Florent Kirchner, FR),
+CEA List (Florent Kirchner, FR),
 ClearSy (David Déharbe, FR),
 Edukera (Benoit Rognier, FR),
 Facebook France (François Charton, FR),
 IBM Research (Louis Mandel, FR),
-MED-EL (Michel Zaremba, AU),
+MED-EL (Michal Zaremba, AT),
 Mitsubishi Electric R\&D Centre Europe (Denis Cousineau, FR),
 Nomadic Labs (Raphaël Cauderlier, FR),
 OCamlPro (Guillaume Bury, FR),
@@ -377,7 +373,9 @@ Runtime Verification (Grigore Rosu, RO),
 Siemens (Danko Ilik, FR),
 IRT System X (Patrice Aknin, FR),
 Systerel (Laurent Voisin, FR),
-TrustInSoft (Benjamin Monate, FR)
+Thales (FR),
+TrustedLabs (Quang-Huy Nguyen, FR),
+TrustInSoft (Benjamin Monate, FR),
 \end{shaded}\\
 &
 \hspace{0.4cm}
@@ -544,7 +542,7 @@ The availability of a formal online encyclopedia that offers, in a
 single place, the communication, archival and verification of
 mathematical knowledge will be of prime importance for teachers.\\
 &
-{\bf PhD Students.} The project will contribute to the formation of a new
+{\bf PhD students.} The project will contribute to the formation of a new
 generation of researchers, through the many theses and post-doc it shall
 propose.\\
 &
@@ -586,6 +584,7 @@ a club of users in education.
 &
 \colorbox{color2}{\bf Performance indicators:}
 \begin{compactitem}
+\item number of training sessions organized
 \item growth of the club of users in education
 \item number of pedagogical experiments using formal proofs
 \item use of the pedagogical interface
@@ -679,13 +678,12 @@ must take care that they can have access to the best libraries of
 basic mathematics, whatever system
 they use.\\
 &
-{\color{red} A diagram with all the clubs}
-
 \colorbox{color2}{\bf Performance indicators:}
 \begin{compactitem}
+\item number of Logipedia workshops organized
 \item growth of the club of academic users
 \item number of papers in computer science, mathematics, and other sciences
-using formal proofs in their quest for rigor
+  using formal proofs in their quest for rigor
 \end{compactitem}
 \\
 &
@@ -764,6 +762,12 @@ A data management plan will be provided for making these data findable,
 accessible, interoperable and reusable (FAIR), and Logipedia will participate
 to the Open Research Data Pilot H2020 project.
 \\
+&
+\colorbox{color2}{\bf Performance indicators:}
+\begin{compactitem}
+\item number of proofs added in Logipedia
+\end{compactitem}
+\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 {\bf Socio-economic impact}
@@ -840,6 +844,14 @@ format, they can be rechecked and reused as long as they are available,
 thus improving result verification and reproducibility in mathematical
 sciences.
 \\
+&
+\colorbox{color2}{\bf Performance indicators:}
+\begin{compactitem}
+\item number of scientific publications with links to Logipedia
+\item number of members of the publishers club
+\item number of publication platforms providing links to Logipedia
+\end{compactitem}
+\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 {\bf Providing data to machine learning algorithms}
@@ -858,6 +870,13 @@ By gathering proofs coming from many different proof systems, in a
 unique format, Logipedia will be an important source of training data for
 machine learning algorithms, and more generally for
 statistical analysis of the properties of mathematical developments.
+\\
+&
+\colorbox{color2}{\bf Performance indicators:}
+\begin{compactitem}
+\item number of proofs added in Logipedia
+\item number of machine learning works using Logipedia as a data set
+\end{compactitem}
 \\
 \hline
 \end{longtable}
