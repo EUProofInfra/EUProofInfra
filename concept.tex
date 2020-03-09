@@ -126,23 +126,45 @@ The systems we consider fall into three broad classes: the systems
 based on dependent type theory, those based on simple type
 theory, and those based on set theory and predicate logic.
 
-\paragraph*{Systems based on dependent type theory (Agda, Coq, and Matita).}
+\medskip
+\noindent
+{\bf Systems based on dependent type theory (Agda, Coq, and Matita)}
+\medskip
 
-Coq is an interactive theorem prover developed at Inria since 1984.
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{https://coq.inria.fr/}{Coq} is an interactive theorem prover developed at Inria since 1984.
 It is based on the Calculus of Constructions and was used to formally
 verify the correctness of both industrially relevant software such as
 the CompCert C compiler and complex mathematical proofs such as those
 of the Four Color theorem and the Feit-Thompson theorem. In 2013, Coq
 received the ACM System Award.
+ \end{minipage}
+&\begin{minipage}{3cm}
+  \logo[20mm]{Coq}
+\end{minipage}
+\end{tabular}
 
-Matita is an interactive theorem prover developed at the University of
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{http://matita.cs.unibo.it/}{Matita} is an interactive theorem prover developed at the University of
 Bologna and used for teaching logic courses and to verify software and
 mathematical proofs, with special attention to predicative
 foundations. The first generation of the system (up to version 0.5.9)
 was born as a by-product of the MoWGLI FET-Open Project, it was
 compatible with the logic of Coq and it could re-use its libraries. It
 was an important test-bench for the integration of Mathematical
-Knowledge Management techniques with Interactive Theorem Proving,
+Knowledge Management techniques
+\end{minipage}
+&\begin{minipage}{3cm}
+  \logo{Matita}
+\end{minipage}
+\end{tabular}
+
+\noindent
+with Interactive Theorem Proving,
 featuring for example a library of theorems distributed over multiple
 servers, innovative indexing and search techniques and automatic
 translation of proofs between declarative and procedural styles. The
@@ -155,7 +177,10 @@ complexity-preserving and cost-model-inducing compiler from C to
 MCS-51 machine code, developed in the FET project CerCo (Certified
 Complexity).
 
-Agda is a dependently typed programming language and interactive proof
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{https://wiki.portal.chalmers.se/agda/pmwiki.php}{Agda} is a dependently typed programming language and interactive proof
 assistant developed at Chalmers University of Technology as well as
 other places in Europe. The theory of Agda is similar to Coq and
 Matita, but it is more focused on direct
@@ -167,26 +192,58 @@ first-class universe polymorphism, and definitional proof
 irrelevance. In addition, Agda provides an experimental option for
 extending the language with user-defined computation rules, which are very
 similar to the computation rules provided by Dedukti.
+ \end{minipage}
+&\begin{minipage}{3cm}
+  \logo{Agda}
+\end{minipage}
+\end{tabular}
 
-\paragraph*{Systems based on simple type theory (HOL4, HOL Light, and Isabelle/HOL).}
+\medskip
+\noindent
+{\bf Systems based on simple type theory (HOL4, HOL Light, and Isabelle/HOL)}
+\medskip
 
-HOL4 is home to a few medium to large scale specifications and
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{https://hol-theorem-prover.org/}{HOL4} is home to a few medium to large scale specifications and
 associated proof developments that have value outside of HOL4. These
 specifications include the formal semantics of the CakeML language
 (and its certified compiler) and an extensive specification of the ARM
 instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
+\end{minipage}
+&\begin{minipage}{3cm}
+  \logo{HOL4}
+\end{minipage}
+\end{tabular}
 
-HOL Light is an implementation of Simple Type Theory.
+\noindent
+\href{https://www.cl.cam.ac.uk/~jrh13/hol-light/}{HOL Light} is an implementation of Simple Type Theory.
+\vspace{3mm}
 
-Isabelle/HOL is an implementation of Simple Type Theory in the
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{http://isabelle.in.tum.de/}{Isabelle/HOL} is an implementation of Simple Type Theory in the
 Isabelle logical framework \cite{paulson700}. It sits in
 between type-theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
+\end{minipage}
+&\begin{minipage}{3cm}
+  \logo{Isabelle}
+\end{minipage}
+\end{tabular}
 
-\paragraph*{Systems based on set theory and predicate logic (Atelier B,  Rodin).}
+\vspace{5mm}
+\noindent
+{\bf Systems based on set theory and predicate logic (Atelier B, Rodin)}
+\medskip
 
-Atelier B and Rodin are platforms to develop models written using the
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\href{https://www.atelierb.eu/}{Atelier B} and \href{http://www.event-b.org/}{Rodin} are platforms to develop models written using the
 B method, a version of set theory expressed in predicate logic.  A
 model in these systems expresses a state machine constrained by
 invariant properties. Verification of the correctness of the model
@@ -198,6 +255,12 @@ development process for both versions of the B method is based on
 formal proofs: proof obligations are automatically generated and must
 be proven by automatic or interactive provers. This can include
 external solvers such as SMT solvers.
+\end{minipage}
+&\begin{minipage}{3cm}
+   \logo{AtelierB}\\[8mm]
+   \logo[20mm]{Rodin}
+\end{minipage}
+\end{tabular}
 
 \bigskip
 
@@ -776,7 +839,7 @@ Flyspeck and CakeML.  Other very interesting libraries such as
 MathComp, Coq's revised Analysis library, CompCert, seL4, and selected
 Mizar and PVS libraries are left for future work.\\
 
-\hspace{-1cm}
+\hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
 \paragraph*{Isabelle's Archive of Formal Proofs.}
@@ -791,7 +854,7 @@ document the library further beyond what is provided by the authors of
 each article and by the hierarchical dependencies among the articles.
  \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{isabelle_afp}
+  \logo{AFP}
 \end{minipage}
 \end{tabular}
 
@@ -866,7 +929,7 @@ dynamical systems with stochastic components, from physics to financial markets.
 \end{compactitem}
 
 \bigskip
-\hspace{-1cm}
+\hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
 \paragraph*{The GeoCoq library.}
@@ -882,7 +945,7 @@ geometry, thus establishing the connection between these two
 approaches in the opposite direction.
 \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{geocoq}\\
+  \logo{GeoCoq}\\
   (GeoCoq logo)
 \end{minipage}
 \end{tabular}
@@ -984,7 +1047,7 @@ analysis library, the import of the whole HOL Light library, and the
 import of the Flyspeck in Dedukti.
 
 \bigskip
-\hspace{-1cm}
+\hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{13cm}
 \paragraph*{The CakeML compiler library.}
@@ -1426,6 +1489,10 @@ necessary for exporting or importing full libraries. Nevertheless, the
 work carried out here is a necessary stepping stone and enabler for
 making Logipedia a universally accepted encyclopedia of formal proofs.
 
+\bigskip
+\hspace{-9mm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
 \paragraph*{Mizar.}
 Mizar\footnote{\url{http://mizar.org}}~\cite{banczerek:mizar} is one of the
 earliest proof assistants. It was initially created as a typesetting system for
@@ -1435,6 +1502,11 @@ where basic elements are represented as nouns, whereas their properties and
 operations can be represented using adjectives, predicates, and functors, as
 well as a hierarchy of soft types. Proofs are expressed in a declarative way
 based on natural deduction.
+\end{minipage}
+&\begin{minipage}{3cm}
+  \vspace{-6cm}\logo{Mizar}
+\end{minipage}
+\end{tabular}
 
 The Mizar community maintains a centralized database, the Mizar Mathematical
 Library. Based on the axioms of Tarski-Grothendieck set theory, it provides a
@@ -1461,7 +1533,7 @@ system to make this implicit knowledge explicit and allow Mizar proofs
 to be checked by Dedukti.
 
 \bigskip
-\hspace{-1cm}
+\hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
 \paragraph*{\tlaplus.}
@@ -1610,7 +1682,7 @@ proofs using Dedukti. This would be very valuable in the context of certified
 developments.
 
 \bigskip
-\hspace{-1cm}
+\hspace{-9mm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
 \paragraph*{K Prover.}
@@ -1629,7 +1701,7 @@ language-independent proof system can then be used to derive both the
 operational behavior and formal properties of a program.
  \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{k}
+  \logo{K}
 \end{minipage}
 \end{tabular}
 
