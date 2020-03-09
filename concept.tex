@@ -75,7 +75,7 @@ and 3 computation rules.
 {\bf \Large Church's type theory expressed in Dedukti}
 \end{center}
 
-$\begin{array}{rcl}
+$$\begin{array}{rcl}
 type&:&Type\\
 \eta&:&type \rightarrow Type\\
 o&:&type\\
@@ -89,7 +89,7 @@ o&:&type\\
 (\varepsilon~(\Rightarrow~x~y)) &\longrightarrow& (\varepsilon~x) \rightarrow (\
 \varepsilon~y)\\
 (\varepsilon~(\forall~x~y)) &\longrightarrow& \Pi z:(\eta~x)~(\varepsilon~(y~z))
-\end{array}$
+\end{array}$$
 \end{shaded}
 
 So the theories implemented in various systems can all be expressed in
@@ -1459,7 +1459,11 @@ definitions in a uniform way and to instrument the
 system to make this implicit knowledge explicit and allow Mizar proofs
 to be checked by Dedukti.
 
-\paragraph*{TLA$^+$.}
+\bigskip
+\hspace{-1cm}
+\begin{tabular}{ll}
+\begin{minipage}{14cm}
+\paragraph*{\tlaplus.}
 \tlaplus~\cite{lamport:specifying} is a specification language based
 on Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a
 dialect of linear-time temporal logic. It is intended for the precise
@@ -1471,6 +1475,11 @@ analyzing and verifying \tlaplus specifications are the model checker
 TLC~\cite{yu:model-checking} and
 TLAPS\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
 the \tlaplus Proof System~\cite{cousineau:tla-proofs}.
+\end{minipage}
+&\begin{minipage}{3cm}
+  \vspace{-6cm}\logo{TLA}
+\end{minipage}
+\end{tabular}
 
 \tlaplus proofs are written in a declarative, hierarchical style based on
 natural deduction that allows the user to break down the proof of high-level
