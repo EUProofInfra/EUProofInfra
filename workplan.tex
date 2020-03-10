@@ -162,7 +162,7 @@ vrule/.style={very thick,red},
 \gantttitlelist{1,...,\numexpr\pdataref@aux{prop}{gen}{months}/12\relax}{12}
 \\
 \gantttitle{\makebox[0pt][r]{\textbf{\textit{Month\ }}}}{0}
-\gantttitlelist{1,...,\pdataref@aux{prop}{gen}{months}}{1}
+\gantttitlelist[title label node/.append style={font=\scriptsize}]{1,...,\pdataref@aux{prop}{gen}{months}}{1}
 \edef\@wps{\pdataref@aux{all}{wp}{ids}}
 \@for\@wp:=\@wps\do{
 \\\\
