@@ -71,26 +71,28 @@ and 3 computation rules.
 
 \definecolor{shadecolor}{named}{color1}
 \begin{shaded}
-\vspace{-0.5cm}
-\begin{center}
-{\bf \Large Church's type theory expressed in Dedukti}
-\end{center}
-
-$$\begin{array}{rcl}
-type&:&Type\\
-\eta&:&type \rightarrow Type\\
-o&:&type\\
-\mbox{\it nat}&:&type\\
-\mbox{\it arrow}&:&type \rightarrow type \rightarrow type\\
-\varepsilon&:&(\eta~o) \rightarrow Type\\
-\Rightarrow&:&(\eta~o) \rightarrow (\eta~o) \rightarrow (\eta~o)\\
-\forall&:&\Pi a:type~(((\eta~a) \rightarrow (\eta~o)) \rightarrow (\eta~o))\\
-\\
-(\eta~(\mbox{\it arrow}~x~y)) &\longrightarrow& (\eta~x) \rightarrow (\eta~y)\\
-(\varepsilon~(\Rightarrow~x~y)) &\longrightarrow& (\varepsilon~x) \rightarrow (\
-\varepsilon~y)\\
-(\varepsilon~(\forall~x~y)) &\longrightarrow& \Pi z:(\eta~x)~(\varepsilon~(y~z))
-\end{array}$$
+  \vspace{-0.5cm}
+  \begin{center}
+    {\bf\Large Church's type theory expressed in Dedukti}\\[3mm]
+    $\begin{array}{cc}
+      \begin{array}{rcl}
+        type&:&Type\\
+        \eta&:&type \rightarrow Type\\
+        o&:&type\\
+        \mbox{\it nat}&:&type\\
+        \mbox{\it arrow}&:&type \rightarrow type \rightarrow type\\
+        \varepsilon&:&(\eta~o) \rightarrow Type\\
+        \Rightarrow&:&(\eta~o) \rightarrow (\eta~o) \rightarrow (\eta~o)\\
+        \forall&:&\Pi a:type~(((\eta~a) \rightarrow (\eta~o)) \rightarrow (\eta~o))\\
+      \end{array}
+      &\begin{array}{rcl}
+         (\eta~(\mbox{\it arrow}~x~y)) &\longrightarrow& (\eta~x) \rightarrow (\eta~y)\\
+         (\varepsilon~(\Rightarrow~x~y)) &\longrightarrow& (\varepsilon~x) \rightarrow (\varepsilon~y)\\
+         (\varepsilon~(\forall~x~y)) &\longrightarrow& \Pi z:(\eta~x)~(\varepsilon~(y~z))
+       \end{array}\\
+    \end{array}$
+  \end{center}
+  \vspace{-5mm}
 \end{shaded}
 
 So the theories implemented in various systems can all be expressed in
@@ -131,6 +133,7 @@ theory, and those based on set theory and predicate logic.
 \noindent
 {\bf Systems based on dependent type theory (Agda, Coq, and Matita)}
 
+\bigskip
 \hspace{-0.9cm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
@@ -142,7 +145,7 @@ of the Four Color theorem and the Feit-Thompson theorem. In 2013, Coq
 received the ACM System Award.
  \end{minipage}
 &\begin{minipage}{3cm}
-  \logo[20mm]{Coq}
+   \vspace{-5mm}\logo[16mm]{Coq}
 \end{minipage}
 \end{tabular}
 
@@ -157,15 +160,15 @@ mathematical proofs, with special attention to predicative
 foundations. The first generation of the system (up to version 0.5.9)
 was born as a by-product of the MoWGLI FET-Open Project, it was
 compatible with the logic of Coq and it could re-use its libraries. It
-was an important test-bench for the integration of Mathematical
-Knowledge Management techniques
+was an important
 \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{Matita}
+  \logo[20mm]{Matita}
 \end{minipage}
 \end{tabular}
 
 \noindent
+test-bench for the integration of Mathematical Knowledge Management techniques
 with Interactive Theorem Proving,
 featuring for example a library of theorems distributed over multiple
 servers, innovative indexing and search techniques and automatic
@@ -188,6 +191,13 @@ Complexity).
 assistant developed at Chalmers University of Technology as well as
 other places in Europe. The theory of Agda is similar to Coq and
 Matita, but it is more focused on direct
+ \end{minipage}
+&\begin{minipage}{3cm}
+  \logo{Agda}
+\end{minipage}
+\end{tabular}
+
+\noindent
 manipulation of proof terms (in contrast to using a tactic language to
 generate proof terms). To support the construction of proof terms,
 Agda provides powerful features such as dependent pattern and
@@ -196,11 +206,6 @@ first-class universe polymorphism, and definitional proof
 irrelevance. In addition, Agda provides an experimental option for
 extending the language with user-defined computation rules, which are very
 similar to the computation rules provided by Dedukti.
- \end{minipage}
-&\begin{minipage}{3cm}
-  \logo{Agda}
-\end{minipage}
-\end{tabular}
 
 \bigskip
 
@@ -220,26 +225,23 @@ instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
 \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{HOL4}
+  \logo[20mm]{HOL4}
 \end{minipage}
 \end{tabular}
-
-\noindent
-\href{https://www.cl.cam.ac.uk/~jrh13/hol-light/}{HOL Light} is an implementation of Simple Type Theory.
-\vspace{3mm}
-
-\href{http://isabelle.in.tum.de/}{Isabelle/HOL} is an implementation of Simple Type Theory in the
-Isabelle logical framework \cite{paulson700}. 
 
 \hspace{-0.9cm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
-It sits in
+\href{https://www.cl.cam.ac.uk/~jrh13/hol-light/}{HOL Light} is an implementation of Simple Type Theory.
+
+\noindent
+\href{http://isabelle.in.tum.de/}{Isabelle/HOL} is an implementation
+of Simple Type Theory in the Isabelle logical framework. It sits in
 between type-theory proof systems (like Coq or Agda) and classic
 LCF-style systems (like HOL Light or HOL4).
 \end{minipage}
 &\begin{minipage}{3cm}
-  \logo{Isabelle}
+  \logo[25mm]{Isabelle}
 \end{minipage}
 \end{tabular}
 
@@ -265,8 +267,9 @@ be proven by automatic or interactive provers. This can include
 external solvers such as SMT solvers.
 \end{minipage}
 &\begin{minipage}{3cm}
+   \centering
    \logo{AtelierB}\\[8mm]
-   \logo[20mm]{Rodin}
+   \logo[16mm]{Rodin}
 \end{minipage}
 \end{tabular}
 
