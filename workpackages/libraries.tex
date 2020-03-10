@@ -114,7 +114,22 @@ functions; stochastic differential equations.
   StrRM=18,
   wphases=1-18]
 %
-The GeoCoq library consists of more than 100.000 lines of definitions and proofs. It is mostly based on synthetic approaches, where the axiom system is based on some geometric objects and axioms about them, but, following Descartes and Tarski, the analytic approach can be derived, where a field F is assumed (usually R) and the space is defined as $F^n$. Moreover, it contains a model of Tarski's axioms, based on the analytic approach, thus establishing the connection between these two approaches in the opposite direction. The main axiom system in this library is the one of Tarski, but Hilbert's axiom system and a version of Euclid's axioms sufficient to prove the propositions in Book 1 of Euclid's Elements are also defined. In the library, the focus is not only on axiom systems but also on axioms themselves. Eleven continuity axioms are available and are hierarchically organised. Finally, it contains a new refinement of Pejas’ classification of parallel postulates together with proofs of the classification of 34 versions of the parallel postulate.
+The GeoCoq library consists of more than 100.000 lines of definitions
+and proofs. It is mostly based on synthetic approaches, where the
+axiom system is based on some geometric objects and axioms about them,
+but, following Descartes and Tarski, the analytic approach can be
+derived, where a field F is assumed (usually R) and the space is
+defined as $F^n$. Moreover, it contains a model of Tarski's axioms,
+based on the analytic approach, thus establishing the connection
+between these two approaches in the opposite direction. The main axiom
+system in this library is the one of Tarski, but Hilbert's axiom
+system and a version of Euclid's axioms, that are sufficient to prove the
+propositions in Book 1 of Euclid's Elements, are also defined. In the
+library, the focus is not only on axiom systems but also on axioms
+themselves. Eleven continuity axioms are available and are
+hierarchically organised. Finally, it contains a new refinement of
+Pejas’ classification of parallel postulates together with proofs of
+the classification of 34 versions of the parallel postulate.
 
 One of the remaining obstacles is the frequent use of computational steps in Coq proofs. The issue is that proofs containing "proof by reflection" reach a level of complexity that makes verification by Dedukti impractical. An approach is to isolate these proofs by reflection so that they are not perceived as simple conversion steps in the type theory proofs, but marked as proofs to be treated by an automatic tool. Another challenge is that CoqInE, a tool developed to translate Coq proofs into Dedukti type-checkable terms, produces terms in a expressing of the Calculus of Inductive Constructions in Dedukti. Currently, it is not possible to export these Dedukti terms to other proof assistant. However, another tool, Universo, has been developed and paves the way for the export of these terms.
 \end{task}
