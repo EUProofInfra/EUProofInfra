@@ -162,11 +162,11 @@ vrule/.style={very thick,red},
 \gantttitlelist{1,...,\numexpr\pdataref@aux{prop}{gen}{months}/12\relax}{12}
 \\
 \gantttitle{\makebox[0pt][r]{\textbf{\textit{Month\ }}}}{0}
-\gantttitlelist{1,...,\pdataref@aux{prop}{gen}{months}}{1}
+\gantttitlelist[title label node/.append style={font=\scriptsize}]{1,...,\pdataref@aux{prop}{gen}{months}}{1}
 \edef\@wps{\pdataref@aux{all}{wp}{ids}}
 \@for\@wp:=\@wps\do{
 \\\\
-\ganttgroup{\pdataRef{wp}{\@wp}{label}}{1}{48}
+\ganttgroup{\pdataRef{wp}{\@wp}{label}}{\pdataref@num{wp}{\@wp}{start}}{\pdataref@num{wp}{\@wp}{end}}
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
 \@for\@deliv:=\@delivs\do{
 \ganttmilestone[inline]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
