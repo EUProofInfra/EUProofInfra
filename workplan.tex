@@ -123,6 +123,15 @@ different systems.  It therefore has a larger number of partners.
 The gantt chart is in Figure~\ref{gantt}.
 
 \makeatletter
+\newcounter{month}
+%\def\offset@reset{\setcounter{month}{0}\@whilenum\value{month}<\numexpr\pdataref@aux{prop}{gen}{months}+1\do{\expandafter\edef\csname offset\the\value{month}\endcsname{2}\stepcounter{month}}}
+%\def\offset@incr#1{\expandafter\edef\csname offset#1\endcsname{\the\numexpr\csname offset#1\endcsname+10}}
+%\def\offset@get#1{\csname offset#1\endcsname pt}
+\setcounter{month}{0}\@whilenum\value{month}<\numexpr\pdataref@aux{prop}{gen}{months}+1\do{\expandafter\newlength\csname offset\the\value{month}\endcsname\stepcounter{month}}
+\def\offset@reset{\setcounter{month}{0}\@whilenum\value{month}<\numexpr\pdataref@aux{prop}{gen}{months}+1\do{\expandafter\setlength\csname offset\the\value{month}\endcsname{.5pt}\stepcounter{month}}}
+\def\offset@incr#1{\expandafter\addtolength\csname offset#1\endcsname{.6\baselineskip}}
+\def\offset@get#1{\expandafter\the\csname offset#1\endcsname}
+
 \begin{figure}
 \begin{ganttchart}
 [
@@ -149,10 +158,13 @@ milestone right shift=.5,
 milestone top shift=0,
 milestone height=1,
 milestone/.append style={fill=yellow},
-milestone inline label node/.append style={anchor=north,below=2pt,font=\footnotesize},
+milestone inline label node/.append style={font=\scriptsize},
 vrule/.style={very thick,red},
 ]
 {1}{\pdataref@aux{prop}{gen}{months}}
+\pgfdeclarelayer{delivs}
+\pgfdeclarelayer{miles}
+\pgfsetlayers{background,miles,main,delivs}
 \gantttitle{\makebox[0pt][r]{\textbf{\textit{Year\ }}}}{0}
 \gantttitlelist{1,...,\numexpr\pdataref@aux{prop}{gen}{months}/12\relax}{12}
 \\
@@ -162,10 +174,18 @@ vrule/.style={very thick,red},
 \@for\@wp:=\@wps\do{
 \\\\
 \ganttgroup{\pdataRef{wp}{\@wp}{label}}{\pdataref@num{wp}{\@wp}{start}}{\pdataref@num{wp}{\@wp}{end}}
+\begin{pgfonlayer}{delivs}
+\offset@reset
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
 \@for\@deliv:=\@delivs\do{
-\ganttmilestone[inline]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+\ifodd\pdataref@num{deliv}{\@deliv}{due}
+\ganttmilestone[inline,milestone inline label node/.append style={anchor=south}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+\else
+\ganttmilestone[inline,milestone inline label node/.append style={below=\offset@get{\pdataref@num{deliv}{\@deliv}{due}}}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+\offset@incr{\pdataref@num{deliv}{\@deliv}{due}}
+\fi
 }
+\end{pgfonlayer}
 \\
 \edef\@tasks{\pdataref@aux{\@wp}{task}{ids}}
 \@for\@task:=\@tasks\do{
@@ -177,10 +197,14 @@ vrule/.style={very thick,red},
 }
 }
 }
+\begin{pgfonlayer}{miles}
+\offset@reset
 \edef\@miles{\pdataref@aux{all}{mile}{ids}}
 \@for\@mile:=\@miles\do{
-\ganttvrule{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
+\ganttvrule[vrule label node/.append style={below=\offset@get{\pdataref@num{mile}{\@mile}{month}}}]{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
+\offset@incr{\pdataref@num{mile}{\@mile}{month}}
 }
+\end{pgfonlayer}
 \end{ganttchart}
 \caption{Gantt chart}
 \label{gantt}
