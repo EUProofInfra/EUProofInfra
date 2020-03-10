@@ -166,7 +166,7 @@ vrule/.style={very thick,red},
 \edef\@wps{\pdataref@aux{all}{wp}{ids}}
 \@for\@wp:=\@wps\do{
 \\\\
-\ganttgroup{\pdataRef{wp}{\@wp}{label}}{1}{48}
+\ganttgroup{\pdataRef{wp}{\@wp}{label}}{\pdataref@num{wp}{\@wp}{start}}{\pdataref@num{wp}{\@wp}{end}}
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
 \@for\@deliv:=\@delivs\do{
 \ganttmilestone[inline]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
