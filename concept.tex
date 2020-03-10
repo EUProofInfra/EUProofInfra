@@ -844,15 +844,13 @@ following criteria:
 
 As a result we selected the following libraries: the Archive of Formal
 Proofs, Isabelle's revised Analysis and Probability library, GeoCoq,
-Flyspeck and CakeML.  Other very interesting libraries such as
+Flyspeck and CakeML. Other interesting libraries such as
 MathComp, Coq's revised Analysis library, CompCert, seL4, and selected
-Mizar and PVS libraries are left for future work.\\
+Mizar and PVS libraries are left for future work.
 
-\paragraph*{Isabelle's Archive of Formal Proofs.}
-Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
-growing user-contributed online library for Isabelle. 
-
-\smallskip
+\paragraph*{Isabelle's Archive of Formal Proofs}
+(\href{{https://www.isa-afp.org}}{AFP}) is a
+growing user-contributed online library for Isabelle.
 
 \hspace{-0.9cm}
 \begin{tabular}{ll}
@@ -881,7 +879,7 @@ The Archive of formal proofs is continuously growing at a high rate and thus
 represents a moving target.
 
 \paragraph*{The Isabelle Analysis \& Probability Theory Library.}
-The Isabelle Analysis \& Probability Theory Library consists of more
+consists of more
 than 200.000 lines of definitions and proofs, corresponding to almost
 4000 printed pages. It covers topology, homology, multivariate,
 functional and complex analysis, measure and probability theory, and a
@@ -1027,13 +1025,13 @@ the proofs by reflection.
 
 \paragraph*{The Flyspeck library.}
 
-The Flyspeck library
+The \href{https://github.com/flyspeck/flyspeck}{Flyspeck} library
 is the result of the Flyspeck
 project, a formal proof of the Kepler conjecture. The statement and
 proof is based on an original proof of Thomas Hales
 \cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15}, and is
 formalized and proved largely in HOL
-Light\footnote{\url{https://github.com/flyspeck/flyspeck}}. HOL Light
+Light. HOL Light
 has a large and rich analysis and geometry library, with some results
 not formalized in any other system. This motivates the project of
 importing the HOL Light library and the Flyspeck project into
@@ -1100,15 +1098,13 @@ prover~\cite{KaliszykK13}.
 %be shared. As a benchmark of the viability of this approach we plan to
 %export CakeML via Isabelle to Dedukti.
 
-\subsubsection*{Challenges}
-
+\paragraph*{Challenges.}
 The two key challenges are scalability (pushing the technology to cope
 with the size of proofs) and accessibility (presenting the library in
 an accessible manner to end-users). This will be a stress test for the
 infrastructure.
 
-\subsubsection*{Contributions}
-
+\paragraph*{Contributions.}
 The aforementioned libraries will populate Logipedia with mature,
 application-level mathematical theories. That is, proofs about
 important areas of mathematics (e.g. analysis and algebra) and
@@ -1139,7 +1135,7 @@ we must also provide an ergonomic web interface, a package
 distribution system, a search engine, a structure of encyclopedia
 that relies upon an enrichment of the data with metadata.
 
-\subsubsection*{Sharing a common platform}
+\paragraph*{Sharing a common platform.}
 
 The libraries of proofs described in previous sections can be quite
 large: several gigabytes for millions of mathematical objects
@@ -1191,7 +1187,8 @@ Flyspeck & & 14,185 & 34 & $\times 67$\\\hline
 \end{tabular}
 \end{center}
 
-\subsubsection*{Continuous integration and deployment}
+\paragraph*{Continuous integration and deployment.}
+
 Modifying the Logipedia platform in order to add new features or
 implement new formal proofs will be a collaborative work. To ensure
 the reliability of the platform and, in the meantime, to be able to
@@ -1232,8 +1229,8 @@ will always be the same, regardless of who made the modification
 of the source code. It also ensures that tests are executed and passed
 to keep a good quality level and a high availability of the platform.
 
-\subsubsection*{Online access of findable, accessible, interoperable, and
-reusable formal proofs}
+\paragraph*{Online access of findable, accessible, interoperable, and
+reusable formal proofs.}
 
 The vast majority of formal proofs developed in the world are publicly
 available, released under some free license, and accessible on the
@@ -1250,7 +1247,7 @@ making them interoperable being at the heart of the Logipedia project.
 On the other hand, for security reasons, the access to the computation
 power of the platform has to be allowed to pre-identified persons only.
 
-\subsubsection*{Search tools}
+\paragraph*{Search tools.}
 
 Again, to make the encyclopedia usable, it is necessary to add search
 functionalities to efficiently find specific theorems and proofs of
@@ -1318,10 +1315,10 @@ somewhat complex hierarchical patterns within mathematical statements.
   adapted to the case of a library of mathematical results and proofs
   in a diversity of languages and formalisms.}
 
-\subsubsection*{Access on everyone's computer}
+\paragraph*{Access on everyone's computer.}
 
-In order to allow researchers, students and engineers to study and
-reuse the proofs available in Logipedia in their own work environment
+To allow researchers, students and engineers to study and
+reuse the proofs of Logipedia in their own work environment
 and tools, it is important to provide an application enabling anyone
 to download and install Logipedia proofs on one's own computer, and to
 translate those Dedukti proofs to the proof format (Coq, Isabelle/HOL,
@@ -1332,7 +1329,7 @@ dependencies between mathematical objects. Hence, when the user will
 request a given proof, the tool will automatically download and
 install all the definitions and proofs it relies on as well.
 
-\subsubsection*{Interface for teaching}
+\paragraph*{Interface for teaching.}
 
 The existing user interfaces for proving theorems in the classroom can be sorted roughly in two categories: 
 the systems built by the community of educators and the systems built by specialist of interactive theorem proving.
@@ -1548,9 +1545,7 @@ definitions in a uniform way and to instrument the
 system to make this implicit knowledge explicit and allow Mizar proofs
 to be checked by Dedukti.
 
-
-\paragraph*{\tlaplus.}
-\tlaplus~\cite{lamport:specifying} 
+\paragraph*{\tlaplus}\cite{lamport:specifying} 
 is a specification language based
 on Zermelo-Fraenkel set theory and the Temporal Logic of Actions, a
 dialect of linear-time temporal logic. 
