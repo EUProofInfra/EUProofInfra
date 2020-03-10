@@ -47,34 +47,35 @@ study particles.  Some twenty major proof systems exist in the world
 (Figure \ref{systems}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\s{ $\star$}
 \begin{figure}[ht]
-\definecolor{shadecolor}{named}{color1}
-\begin{shaded}
-\begin{center}
-    {\bf \Large Major proof systems}\\[3mm]
-
-\begin{tabular}{l@{\hspace{3cm}}l}
-Abella                & Acl2\\
-\underline{Agda}      & \underline{HOL Light}\\
-\underline{Atelier B} & IMPS\\
-\underline{Coq}       & Lean\\
-\underline{FoCaliZe}  & \underline{LFSC}\\
-\underline{HOL4}      & Nuprl\\
-\underline{Isabelle}  & \underline{PVS}\\
-\underline{KProver}  & \underline{TSTP}\\
-\underline{Matita}\\
-\underline{Minlog}\\
-\underline{Mizar}\\
-ProB\\
-\underline{ProvenTools}\\
-\underline{Rodin}\\
-\underline{\tlaplus}\\
-\underline{Why3}\\
-\end{tabular}
-\end{center}
-\vspace{-5mm}\caption{The European ones are in the first column.
-  Those addressed in the project are underlined.\label{systems}}
-\end{shaded}
+  \definecolor{shadecolor}{named}{color1}
+  \begin{shaded}
+    \begin{center}
+      {\bf \Large Major proof systems}\\[3mm]
+      \begin{tabular}{|c|c|}\hline
+       {\bf In Europe} & {\bf Outside Europe}\\\hline
+        \begin{minipage}{10cm}
+          \begin{tabular}{cccc}
+            Abella & Agda\s & Atelier B\s & Coq\\
+            FoCaliZe\s & HOL4\s & Isabelle\s & KProver\s\\
+            Matita\s & Minlog\s & Mizar\s & ProB\\
+            ProvenTools\s & Rodin\s & \tlaplus\s & Why3\s\\
+          \end{tabular}
+        \end{minipage}
+        &\begin{minipage}{4cm}
+           \begin{tabular}{cc}
+             Acl2 & HOL Light\s\\
+             IMPS & Lean\\
+             LFSC\s & NuPRL\\
+             PVS\s & TSTP\s
+           \end{tabular}
+         \end{minipage}\\\hline
+      \end{tabular}
+    \end{center}
+    \vspace{-5mm}
+    \caption{Those addressed in the project are marked with $\star$.\label{systems}}
+  \end{shaded}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
