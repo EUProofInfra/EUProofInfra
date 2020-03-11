@@ -10,8 +10,8 @@
   \begin{compactenum}[(a)]
   \item Define and build the Logipedia hardware and software
     infrastructure in which the proofs developed in
-    \WPref{instrumentation}, \WPref{libraries}, \WPref{theories} and
-    \WPref{atpetc} will be integrated.
+    \WPref{instrumentation}, \WPref{atpetc}, \WPref{libraries} and
+    \WPref{theories} will be integrated.
   \item Give access to the Logipedia infrastructure to everyone
     (researchers, engineers, teachers, publishers) by providing a
     publicly accessible web site for displaying the proofs added in
@@ -215,7 +215,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=web,
       title=Giving access to the infrastructure on the world-wide web,
-      lead=Inr,InrRM=18,wphases=7-24]   
+      lead=Inr,InrRM=12,wphases=7-24]   
     In this task, the implementation of the architecture defined in
     \taskref{access}{archi} will be done using agile methodology in
     order to get frequent feedback from end users and adjust the
@@ -260,7 +260,7 @@
     proofs as well as their dependencies in order to ease the
     integration of proofs from Logipedia in their own developments.
 
-    Opam \cite{OPAM} is an open-source source-based package manager,
+    \href{https://opam.ocaml.org/}{Opam} is an open-source source-based package manager,
     which has been successfully used by the OCaml community since
     2012, where it manages 2585 versioned packages for a total of
     13196 combinations of package and version, guaranteeing its
@@ -306,13 +306,18 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=dedukti,
       title=Development of Dedukti checking and translation tools,
-      lead=Inr,InrRM=24,wphases=13-36]
-    We will consolidate the source code of Dedukti, the tool that allows
-    to check the correctness of proofs added in Logipedia, so as to
-    handle the proofs generated in \WPref{instrumentation} and the
-    large libraries considered in \WPref{libraries}. We will also
-    extend it so as to handle the new theories that will be developed
-    in \WPref{theories}.
+      lead=Inr,InrRM=18,wphases=13-36] We will consolidate the source
+    code of Dedukti, the tool that allows to check the correctness of
+    proofs added in Logipedia, so as to handle the proofs generated in
+    \WPref{instrumentation}, \WPref{atpetc} and \WPref{libraries}. We
+    will also extend it so as to handle the new theories that will be
+    developed in \WPref{theories}.
+
+    We will also consolidate and integrate the existing tools devoted
+    to the translation of proofs in Dedukti from one theory to another
+    one in coordination with \WPref{alignment}, as well as the tools
+    for generating proofs in target systems from Dedukti proofs.
+    
     All this work will be done using continuous integration and
     deployment tools.
   \end{task}
@@ -338,21 +343,12 @@
   \begin{wpdeliv}[due=24,miles=platform,id=web,dissem=PU,nature=DEC,lead=Inr]{Logipedia website}
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=24,id=web,dissem=PU,nature=OTHER,lead=Inr]{Release of a new improved version of Dedukti and its associated translation tools}
+  \begin{wpdeliv}[due=24,id=web,dissem=PU,nature=OTHER,lead=Inr]{Release of an improved version of Dedukti and its associated translation tools}
   \end{wpdeliv}
 
   % ocamlpro
   
-  \begin{wpdeliv}[due=18,id=opamtool,dissem=PU,nature=OTHER,lead=Oca]{Tool to translate the Logipedia database format into an Opam repository}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=19,id=opamrepo,dissem=PU,nature=OTHER,lead=Oca]{Opam repository populated with the generated proof packages}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=20,miles=opam,id=opamconfig,dissem=PU,nature=OTHER,lead=Oca]{Opam configuration to use (only or also) for Logipedia}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=21,id=opaminstall,dissem=PU,nature=OTHER,lead=Oca]{Deployment of the Opam repository}
+  \begin{wpdeliv}[due=18,miles=platform, id=opam,dissem=PU,nature=OTHER,lead=Oca]{Opam repository for Logipedia}
   \end{wpdeliv}
 
   % pierre senellart
