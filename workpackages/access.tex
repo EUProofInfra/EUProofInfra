@@ -1,7 +1,7 @@
 \begin{workpackage}[id=access,type=RTD,wphases=1-48,
   short=Access,% for Figure 5
   title={Access},
-  lead=Irt,IrtRM=23,OcaRM=6,EduRM=12,InrRM=18]
+  lead=Inr,InrRM=23,OcaRM=6,EduRM=12,InrRM=18]
   % + 5K mission for Strub
   % + 15K machines
 
@@ -30,7 +30,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=archi,
       title=Defining the functional and software architecture,
-      lead=Irt,IrtRM=3,wphases=2-5]
+      lead=Inr,InrRM=3,wphases=2-5]
     The logipedia platform will reuse efforts done on an existing
     application. However, with an ambition to be a reference platform
     accessible on internet, it is necessary to meet several
@@ -72,7 +72,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=infra,
       title=Defining the hardware architecture for the infrastructure,
-      lead=Irt,IrtRM=1,wphases=6-7]
+      lead=Inr,InrRM=1,wphases=6-7]
     Based on the work done in \taskref{access}{archi}, we will
     size the needed hardware architecture to fit the objectives of the
     project. The goal is to define a scalable infrastructure in order
@@ -105,7 +105,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=web,
       title=Giving access to the infrastructure on the world-wide web,
-      lead=Irt,IrtRM=18,,wphases=8-27]
+      lead=Inr,InrRM=18,,wphases=8-27]
     In this task, the implementation of the architecture defined in
     task~\taskref{access}{archi} and task~\taskref{access}{infra} will
     be done. The development will be done using agile methodology in
@@ -139,7 +139,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=transfer,
       title=Transfer for the sustainability of the system,
-      lead=Irt,IrtRM=1,wphases=28-29]
+      lead=Inr,InrRM=1,wphases=28-29]
     Once the platform will be up and running, and available to all
     users, it will be necessary to share the ownership with other
     maintainers. To this purpose, we will produce the documentation
@@ -252,23 +252,23 @@
 
   % systemx
   
-  \begin{wpdeliv}[due=5,id=archi-spec,dissem=PU,nature=R,lead=Irt]{Software and functional architecture}
+  \begin{wpdeliv}[due=5,id=archi-spec,dissem=PU,nature=R,lead=Inr]{Software and functional architecture}
     Specification document describing the target functional and software architecture
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=7,id=infra-spec,dissem=PU,nature=R,lead=Irt]{Hardware architecture}
+  \begin{wpdeliv}[due=7,id=infra-spec,dissem=PU,nature=R,lead=Inr]{Hardware architecture}
     Specification document describing the target hardware architecture for the infrastructure
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=14,miles=platform,id=website1,dissem=PU,nature=DEM,lead=Irt]{Logipedia website}
+  \begin{wpdeliv}[due=14,miles=platform,id=website1,dissem=PU,nature=DEM,lead=Inr]{Logipedia website}
     Prototype version of the Logipedia platform
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=27,id=website2,dissem=PU,nature=OTHER,lead=Irt]{Logipedia website}
+  \begin{wpdeliv}[due=27,id=website2,dissem=PU,nature=OTHER,lead=Inr]{Logipedia website}
     The final Logipedia platform
   \end{wpdeliv}
 
-  \begin{wpdeliv}[due=29,id=transfer-doc,dissem=PU,nature=R,lead=Irt]{Transfer documentation}
+  \begin{wpdeliv}[due=29,id=transfer-doc,dissem=PU,nature=R,lead=Inr]{Transfer documentation}
     Documentation for the exploitation of the Logipedia platform
   \end{wpdeliv}
 
