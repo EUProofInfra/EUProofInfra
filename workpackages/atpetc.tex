@@ -2,15 +2,15 @@
   short={Automatic theorem provers},% for Figure 5.
   title={Automatic theorem provers},
   lead=Sac,
-  LieRM=48,
+  LieRM=54,%6 in kind
   InnRM=6,
   BelRM=12,
-  SacRM=9,%9
-  ImtRM=9,%9
+  SacRM=9,%9 in kind
+  ImtRM=9,%9 in kind
   OcaRM=14,
   CeaRM=18,
 %  CleRM=24,
-  StuRM=0]
+  StuRM=2]% 2 in kind
 
 % \ednote{MK: interested parties (add their sites and RM here): Guillaume Burel, Raphaël Cauderlier, David Deharbe, Pascal Fontaine, Emilio J. Gallego Arias, Olivier Hermant, Cezary Kaliszyk, Chantal Keller, Filip Marić, Stephan Merz, Dale Miller, Julien Narboux, Martin Suda, Josef Urban}
 
@@ -85,10 +85,11 @@ code will validate this infrastructure.
   \begin{task}[id=instrumenting,
       title=Instrumenting ATPs to produce traces,
       lead=Lie,
-      LieRM=28,
+      LieRM=31,
       ImtRM=1,
       OcaRM=12,
       BelRM=6,
+      StuRM=1,
       wphases=1-48!1.0
     ]
   % WP Leader supervision: Pascal
@@ -146,9 +147,10 @@ code will validate this infrastructure.
   \begin{task}[id=tracetodedukti,
       title=Translate ATP traces into Dedukti,
       lead=Imt,
-      LieRM=12,
+      LieRM=14,
       ImtRM=8,
       SacRM=2,
+      StuRM=1,
       wphases=7-48!.5
     ]
   % Pascal Fontaine
@@ -277,11 +279,10 @@ code will validate this infrastructure.
   
 \end{task}
 
-
   \begin{task}[id=deduktitoatp,
       title=Translate Dedukti statements into ATPs inputs,
       lead=Oca,
-      LieRM=8,
+      LieRM=9,
       SacRM=3,
       BelRM=3,
       OcaRM=2,
