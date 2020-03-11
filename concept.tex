@@ -20,6 +20,10 @@ axiom was used in which proof, restoring the universality of the truth
 of judgements of the form ``the proposition $B$ is true under the
 axioms $A_1, ..., A_n$''.
 
+\begin{center}
+\includegraphics[width=7cm]{img/Illustration4.jpg}
+\end{center}
+
 Predicate logic is not a theory {\em per se}, but a framework in
 which one can express theories, as sets of axioms: a ``logical
 framework''. As we shall see, expressing the various theories
@@ -30,11 +34,11 @@ proof can be expressed, and in which systems it can be used.
 
 In 1928, predicate logic was a huge success, since three important
 theories used at that time (geometry, arithmetic, and set theory)
-could be expressed in it. But it also has limitations, which explains
-that another of the major theories used at that time (Russell's type
-theory, from {\em The Principia Mathematica}) has not been expressed
-in it. Since then, several other theories, such as Church's Simple Type
-Theory \cite{Church40}, Martin-L\"of's Type Theory
+could be expressed in it. But it also has limitations, which is the
+reason that another of the major theories used at that time (Russell's
+type theory, from {\em The Principia Mathematica}) has not been
+expressed in it. Since then, several other theories, such as Church's
+Simple Type Theory \cite{Church40}, Martin-L\"of's Type Theory
 \cite{Martin-Lof84}, and the Calculus of Constructions
 \cite{CoquandHuet88}, have also been defined as autonomous theories,
 and not in predicate logic.
@@ -47,11 +51,12 @@ However, a different line of research has attempted to understand the
 limitations of predicate logic and to propose more powerful logical
 frameworks.  The most prominent limitations of predicate logic are the
 lack of function symbols binding variables, the lack of a syntax for
-proof terms, the lack of a notion of computation, the lack of a notion
-of proof reduction for axiomatic theories, and the impossibility to
-express constructive proofs. These limitations have led to the
-development of other logical frameworks such as $\lambda$-Prolog
-\cite{MillerNadathur12}, Isabelle \cite{Paulson90},
+proof-terms (that is a syntax for proofs that goes beyond a mere
+derivtion tree), the lack of a notion of computation, the lack of a
+notion of proof reduction for axiomatic theories, and the
+impossibility to express constructive proofs. These limitations have
+led to the development of other logical frameworks such as
+$\lambda$-Prolog \cite{MillerNadathur12}, Isabelle \cite{Paulson90},
 the $\lambda \Pi$-calculus (also called the ``Edinburgh logical
 framework'') \cite{HarperHonsellPlotkin91}, Deduction Modulo Theory
 \cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
@@ -437,8 +442,7 @@ where the users build formal proofs with the help of the
 machine. Automatic theorem provers are another class of systems, where
 the machine builds proofs without any human intervention.
 These systems are called automatic theorem provers, SAT solvers, SMT
-solvers, etc.
-The proofs
+solvers, etc.\ The proofs
 built by these systems are often expressed in simpler theories than
 those developed using interactive proof systems, but they are not of a different
 nature.  They cover various domains and various kinds of applications,
@@ -1643,7 +1647,7 @@ realizes the statement, viewed as a specification.
 Real numbers are best represented as streams of (signed) digits, and handling
 such infinite objects requires co-induction, which gives rise to co-recursion in
 the extracted terms. Minlog accommodates co-recursion via partial functionals in
-the Scott-Ershow model $\mathcal{C}$ and restricts variables to extensional
+the Scott-Ershov model $\mathcal{C}$ and restricts variables to extensional
 objects of type level at most $1$, where extensionality and totality coincide.
 
 Besides extracting programs from proofs in constructive analysis, other notable
@@ -1702,18 +1706,19 @@ developments.
 
 \paragraph*{K Prover.}
 
-\href{https://github.com/kframework/k}{K Prover} is an
-implementation of Matching Logic~\cite{rosu:matching}, designed as a
-unifying foundational logic for specifying and verifying programming
-languages. 
+\href{https://github.com/kframework/k}{K Prover} is an implementation
+of Matching Logic~\cite{rosu:matching}, designed as a unifying
+foundational logic for specifying and verifying programming languages,
+extending predicate modal logic by features such as many-sorted
+universes and least fixpoints.
 
 \smallskip
 \hspace{-0.9cm}
 \begin{tabular}{ll}
 \begin{minipage}{14cm}
 \hspace{0.4cm}
-Extending first-order modal logic by features such as
-many-sorted universes and least fixpoints.  Matching Logic designates
+
+Matching Logic designates
 a family of logics that underlie a framework for describing and
 reasoning about both static structures and dynamic features by means
 of patterns and pattern matching. A language definition in Matching
@@ -1867,9 +1872,8 @@ informal mathematical concept''. For example, although real numbers
 can be defined by Cauchy sequences, Dedekind cuts, and also stream
 representations using co-recursion, all such different formalizations
 introduce essentially the same mathematical concept. More precisely,
-following the work of \site{Fau} and \site{Inn}
-\cite{GKKMR:alignments:17} and the alignment-based mediator developed
-by \site{Fau} in the {\em OpenDreamKit} project \cite{DBLP:conf/mkm/DehayeIKKLMPRTW16}, we
+following previous work\cite{GKKMR:alignments:17,
+DBLP:conf/mkm/DehayeIKKLMPRTW16}, we
 consider an alignment to be a pair of:
 \begin{compactitem}
   \item two identifiers $c,c'$ (usually from two different libraries
@@ -1916,7 +1920,7 @@ concepts.
 
 \paragraph*{Logical foundations.}
 Just like Euclidean and non-Euclidean geometries are not completely
-independent theories but differ just from a few axioms, the various
+independent theories but differ by just a few axioms, the various
 type theories or set theories implemented in the proof systems have
 some axioms in common.  We want to divide these theories in clusters,
 according to their key parameters, and then to build a web of
@@ -2004,7 +2008,7 @@ inferring new alignments, based on the alignment of the primitive
 concepts and on a set of rules that will describe further
 derivations. In order to enable flexible alignments, we are prepared
 to allow not only exact matches, but also matches with respect to a
-given similarity measure, as in \cite{GAUTHIER201989}.
+similarity measure, as in \cite{GAUTHIER201989}.
 
 An alternative method for discovering ontologies of alignments is to
 use unsupervised learning methods to find alignments between proof
