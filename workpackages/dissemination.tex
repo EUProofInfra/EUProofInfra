@@ -1,7 +1,7 @@
 \begin{workpackage}[id=dissemination,type=MGT,wphases=1-48,
   short={Dissemination},
   title={Dissemination, communication and exploitation},
-  lead=Lie,LieRM=2,InrRM=6,BirRM=4,CleRM=2,ImtRM=2,StrRM=2,ZibRM=14,EduRM=12]
+  lead=Lie,LieRM=1,InrRM=6,BirRM=4,CleRM=2,ImtRM=2,StrRM=2,ZibRM=14,EduRM=12]
 
   \begin{wpobjectives}
     Scientific research and education at all levels are concerned with
@@ -43,28 +43,14 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=com,
       title=Communication,
-      lead=Inr,InrRM=12,wphases=1-48!.25]
+      lead=Inr,InrRM=6,wphases=1-48!.25]
 
-    {\color{red} be more specific and precise}
-
-    {\color{red} do not use ``We will support'' say you are goind to do it}
-
-    This task comprises all forms of direct dissemination and public
-    communication activities such as press releases, creation of the
-    project website including visitor analysis and monitoring
-    tools, scientific and technical publications, outreach activities
-    (seminars, keynote talks, media interviews, press releases),
-    promotion through social media (e.g.  Twitter, Facebook,
-    LinkedIn), creation of advertisement
-
-{\color{red} do not use the word advertisement}
-
-    materials such as flyers,
-    posters, and electronic feeds as well as their distribution. We
-    will use standard community building technology such as mailing
-    lists, Wikis and Forums, to ensure dissemination and engagement of
-    the community to support this. We will also generate press
-    releases at appropriate moments.
+    This task comprises all forms of communication activities such as
+    creation of the project website including visitor analysis and
+    monitoring tools, outreach activities, creation of flyers,
+    posters, etc.  A dedicated and experienced communication officer
+    from the Inria Saclay communication team coordinates all these
+    activities together with the work package leaders.
   \end{task}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,19 +69,22 @@
 %     We will organize schools targeted to the different Logipedia users:
     \begin{compactitem}
     \item Master and PhD students.
-      We will support the planning and running of schools
-      on various computer proof assistants.
-      We are also planning to run a school dedicated to the topic of Logipedia, on the translation of proofs between different systems.
+      We will organize two summer schools on Logipedia
+      and on the translation of proofs across systems.
 %       training on formal proofs, proof
 %       translation, and automated theorem proving.
       Both activities form an
       opportunity to improve the gender balance in our community by
       attracting female students.
     \item Engineers.
-      Develop training and support offers for employees. Develop pedagogic innovations in the delivery of training, in support of companies.
+      We will develop training for employees.
+      We will develop pedagogic innovations in the delivery of training,
+      in support of companies.
     \item Teachers.
-      We will set up a forum for exchange of tipps and tricks for the use of computer proof assistants and formal proofs in teaching such classes.
-      Particular emphasis will be on the sharing of teaching materials, which we will encourage to make available under free licenses.
+      We will set up a forum for exchange of tipps and tricks for the use
+      of computer proof assistants and formal proofs in teaching such classes.
+      Particular emphasis will be on the sharing of teaching materials, which
+      we will encourage to make available under free licenses.
     \end{compactitem}
 
 %     \textbf{Deliverables:}
@@ -127,8 +116,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=industrial-club,
     title=Expanding the use of Logipedia in the industry,
-    lead=Inr,InrRM=2,wphases=1-48!.05]
-
+    lead=Cle,CleRM=2,wphases=1-48!.05]
     The use of formal proof systems by companies is still limited, in particular by SMEs/SMIs. The club will be an opportunity to:
     \begin{compactitem}
     \item Develop and organize a club of industrial users of Logipedia.
@@ -259,6 +247,14 @@ and understand their potential use of Logipedia.
     \end{compactitem}
   \end{task}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{task}[id=dissem,
+      title=Dissemination,
+      lead=Lie,LieRM=12,wphases=1-48]
+    
+    {\color{red} to do by Pascal Fontaine}
+  \end{task}
+
 \end{tasklist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,7 +267,7 @@ and understand their potential use of Logipedia.
 
   % deliverables for T1 communication (com Inria Saclay)
 
-  \begin{wpdeliv}[due=1,id=website-setting,dissem=PU,nature=DEC,lead=Inr]{Setting up project website}
+  \begin{wpdeliv}[due=3,id=website-setting,dissem=PU,nature=DEC,lead=Inr]{Setting up project website}
   \end{wpdeliv}
 
   \begin{wpdeliv}[due=12,id=website-enriched,dissem=PU,nature=DEC,lead=Inr]{Enrich project website}
@@ -279,50 +275,32 @@ and understand their potential use of Logipedia.
 
   % deliverables for T2 training (Benedikt Ahrens, Birmingham, with the help of IRT SystemX for training targeting engineers)
 
-  \begin{wpdeliv}[due=24,id=training-report1,dissem=PU,nature=R,lead=Bir]{Midway report on training}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=training-report2,dissem=PU,nature=R,lead=Bir]{Final report on training}
+  \begin{wpdeliv}[due=36,id=training-report2,dissem=PU,nature=R,lead=Bir]{Report on training}
   \end{wpdeliv}
 
   % deliverables for T3 researchers club (Benedikt Ahrens, Birmingham)
 
-  \begin{wpdeliv}[due=24,id=researchers-club-report1,dissem=PU,nature=R,lead=Bir]{Midway report on researchers club}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=researchers-club-report2,dissem=PU,nature=R,lead=Bir]{Final report on researchers club}
+  \begin{wpdeliv}[due=36,id=researchers-club-report2,dissem=PU,nature=R,lead=Bir]{Report on the club of academic users}
   \end{wpdeliv}
 
   % deliverables for T4 industrial club (IRT System X)
 
-  \begin{wpdeliv}[due=24,id=industrial-club-report1,dissem=PU,nature=R,lead=Inr]{Midway report on industrial club}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=industrial-club-report2,dissem=PU,nature=R,lead=Inr]{Final report on industrial club}
+  \begin{wpdeliv}[due=36,id=industrial-club-report2,dissem=PU,nature=R,lead=Inr]{Report on the club of industrial users}
   \end{wpdeliv}
 
   % deliverables for T5 certification authorities (Catherine Dubois, IMT)
 
-  \begin{wpdeliv}[due=24,id=certifiers-club-report1,dissem=PU,nature=R,lead=Imt]{Midway report on certification bodies}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=certifiers-club-report2,dissem=PU,nature=R,lead=Imt]{Final report on certification bodies}
+  \begin{wpdeliv}[due=36,id=certifiers-club-report1,dissem=PU,nature=R,lead=Imt]{Report on the use of Logipedia by certification bodies}
   \end{wpdeliv}
 
   % deliverables for T6 teachers club (Julien Narboux, Unistra)
 
-  \begin{wpdeliv}[due=24,id=teachers-club-report1,dissem=PU,nature=R,lead=Str]{Midway report of the teachers club}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=teachers-club-report2,dissem=PU,nature=R,lead=Str]{Final report of the teachers club}
+  \begin{wpdeliv}[due=36,id=teachers-club-report1,dissem=PU,nature=R,lead=Str]{Report on the club of users in education}
   \end{wpdeliv}
 
   % deliverables for T7 publishers club (Wolfgang Dalitz, ZIB)
 
-  \begin{wpdeliv}[due=24,id=publishers-club-report1,dissem=PU,nature=R,lead=Zib]{Midway report on publishers club}
-  \end{wpdeliv}
-
-  \begin{wpdeliv}[due=48,id=publishers-club-report2,dissem=PU,nature=R,lead=Zib]{Final report on the publishers club}
+  \begin{wpdeliv}[due=36,id=publishers-club-report1,dissem=PU,nature=R,lead=Zib]{Report on the club of users in publishing}
   \end{wpdeliv}
 
   % deliverables for T8 linking scientific publications to Logipedia (Wolfgang Dalitz, ZIB)
