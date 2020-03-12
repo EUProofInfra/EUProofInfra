@@ -2,8 +2,8 @@
 % Variants with different class options are 
 % - submit.tex (no draft stuff, no ednotes, no revision information)
 % - public.tex (like submit.tex, but no financials either) 
-\providecommand{\classoptions}{,notecites} % to be overwritten in variants
-\documentclass[12pt,noworkareas,deliverables,report\classoptions]{euproposal}
+\providecommand{\classoptions}{} % to be overwritten in variants
+\documentclass[12pt,noworkareas,deliverables,report,notecites,submit\classoptions]{euproposal}
 \extrafloats{1000}
 
 \usepackage{nimbusserif}
@@ -87,7 +87,7 @@
   months=48,
   compactht]
 
-  \pagestyle{empty}
+  \thispagestyle{empty}
   \newcommand\ap{{\color{SpringGreen3}$\bullet$}}% academic partner
   \newcommand\ip{{\color{OrangeRed1}$\star$}}% industrial partner
 
@@ -211,6 +211,10 @@
   \vfil\null\newpage
   \tableofcontents
 
+{\color{red} too many logos, pictures...}
+
+{\color{red} read the call again}
+  
 \input{excellence}
 \newpage
 \input{impact}
