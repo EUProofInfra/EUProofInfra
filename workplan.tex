@@ -276,8 +276,8 @@ vrule/.style={very thick,red},
 \offset@reset{0pt}
 \edef\@miles{\pdataref@aux{all}{mile}{ids}}
 \@for\@mile:=\@miles\do{
-\ganttvrule[vrule label node/.append style={below=\offset@get{\pdataref@num{mile}{\@mile}{month}}}]{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
-\offset@incr{\pdataref@num{mile}{\@mile}{month}}{\baselineskip}
+\ganttvrule[vrule label node/.append style={font=\scriptsize,below=\offset@get{\pdataref@num{mile}{\@mile}{month}}}]{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
+\offset@incr{\pdataref@num{mile}{\@mile}{month}}{.6\baselineskip}
 }
 \edef\@meetings{1,16,32,48}
 \@for\@meeting:=\@meetings\do{
