@@ -281,11 +281,15 @@ vrule/.style={very thick,red},
 }
 \edef\@meetings{1,16,32,48}
 \@for\@meeting:=\@meetings\do{
-\ganttvrule[vrule/.append style={orange}]{}{\@meeting}
+\ganttvrule[vrule/.append style={blue}]{}{\@meeting}
 }
 \end{pgfonlayer}
 \end{ganttchart}\\
-\hspace*{200pt}\textcolor{orange}{\vrule width 1pt} general meeting
+\textcolor{blue}{general meetings
+\hspace*{4pt}{\vrule width 1pt}
+\hspace*{117pt}{\vrule width 1pt}
+\hspace*{121pt}{\vrule width 1pt}
+\hspace*{127pt}{\vrule width 1pt}}
 \makeatother
 
 \subsection*{Relation between the components}
