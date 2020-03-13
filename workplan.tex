@@ -257,7 +257,7 @@ vrule/.style={very thick,red},
 \edef\@wphases{\pdataref@safe{task}{\@task}{wphases}}
 \@for\@wphase:=\@wphases\do{
 \decode@wphase\@wphase
-\ganttbar{\pdataRef{task}{\@task}{label}~: \pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
+\ganttbar{\pdataRef{task}{\@task}{label}: \pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
 \begin{pgfonlayer}{delivs}
 \offset@reset{.5pt}
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
@@ -281,10 +281,11 @@ vrule/.style={very thick,red},
 }
 \edef\@meetings{1,16,32,48}
 \@for\@meeting:=\@meetings\do{
-\ganttvrule[vrule/.append style={orange}]{general meeting}{\@meeting}
+\ganttvrule[vrule/.append style={orange}]{}{\@meeting}
 }
 \end{pgfonlayer}
-\end{ganttchart}
+\end{ganttchart}\\
+\hspace*{200pt}\textcolor{orange}{\vrule width 1pt} general meeting
 \makeatother
 
 \subsection*{Relation between the components}
