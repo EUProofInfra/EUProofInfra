@@ -1,9 +1,7 @@
 \begin{workpackage}[id=access,type=RTD,wphases=1-48,
   short=Access,% for Figure 5
   title={Access},
-  lead=Inr,InrRM=48,OcaRM=6,EduRM=12]
-  % + 5K mission for Strub
-  % + 15K machines
+  lead=Inr,InrRM=54,OcaRM=6]
 
 \begin{wpobjectives}
   \begin{compactitem}
@@ -25,144 +23,10 @@
 
 \begin{tasklist}
 
-  \newcommand\hide[1]{}
-  \hide{
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=archi,
-      title=Defining the functional and software architecture,
-      shorttitle=Soft. arch.,
-      lead=Inr,InrRM=3,wphases=2-5]
-    The logipedia platform will reuse efforts done on an existing
-    application. However, with an ambition to be a reference platform
-    accessible on internet, it is necessary to meet several
-    requirements for such an application, especially scalability,
-    availability and sustainability.
-
-    To achieve this goal, we will specify the architecture of the system.
-    This will be done by:
-    \begin{compactitem}
-    \item Collecting and formalizing users needs
-    \item Defining the proof submission process
-    \item Defining the reuse strategy in term of software components
-    \item Defining the global software architecture
-    \item Defining how proof files for the different proof systems
-      will be organized and stored in logipedia database, based on
-      structure defined in \taskref{structuring}{strlibstructure}.
-    \end{compactitem}
-
-    Several features will be specified in this task:
-    \begin{compactitem}
-    \item World-wide access through a user-friendly, ergonomic web
-      browsing interface
-    \item Download proof files from the web interface
-    \item Interface with proof systems through the repository developed
-      in \taskref{access}{opam}
-    \item Interface with the search tools using inputs from WP7 and
-      \taskref{access}{search}.
-    \item Capability to integrate with publication systems (e.g. HAL,
-      Arxiv) through permanent links
-    \item Capability to easily integrate with third-party applications
-      like Wikipedia or search engines
-    \end{compactitem}
-
-    Finally, we will define the tooling architecture necessary for
-    continuous integration and continuous deployment (CI/CD) of
-    Logipedia and new validated proof files in the database.
-  \end{task}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=infra,
-      title=Defining the hardware architecture for the infrastructure,
-      shorttitle=HW arch.,
-      lead=Inr,InrRM=1,wphases=6-7]
-    Based on the work done in \taskref{access}{archi}, we will
-    size the needed hardware architecture to fit the objectives of the
-    project. The goal is to define a scalable infrastructure in order
-    to be able to manage an increasing traffic on the website to
-    several thousands downloads a day from all over the world.
-
-    Security of the database is also very important. It must be
-    possible to recover the data in a few minutes at any time to
-    ensure every user will be able to continue working. Defining the
-    redundancy of the infrastructure as well as the backup strategy is
-    key to guarantee the security and high availability of the
-    platform.
-
-    Finally, the hosting strategy will be decided taking into account
-    costs, efficiency and sustainability.  The platform can be hosted:
-    \begin{compactitem}
-    \item on premise on some server at Inria with redundancy in München,
-    \item on public cloud services like OVH.com, Scaleway or Amazon
-      Web Services,
-    \item on a private cloud, which is a compromise between both
-      previous options.
-    \end{compactitem}
-    % to be moved in section 3.3
-    %SystemX operates its own private cloud based on open-source tools
-    %(multiple hardware servers running OpenStack and Kubernetes) and
-    %will bring its expertise, knowledge and skills to define the best
-    %hosting strategy.
-  \end{task}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=web,
-      title=Giving access to the infrastructure on the world-wide web,
-      shorttitle=Web access,
-      lead=Inr,InrRM=18,,wphases=8-27]
-    In this task, the implementation of the architecture defined in
-    \taskref{access}{archi} and \taskref{access}{infra} will
-    be done. The development will be done using agile methodology in
-    order to get frequent feedback from end users and adjust the
-    implementation to fit the needs.
-
-    We will setup the hardware infrastructure and develop the web
-    interface to access the platform, navigate into the available
-    proofs and download them.  We will then deploy the software on the
-    hardware infrastructure.
-
-    % to be moved to section 3.3
-    %SystemX will bring
-    %its expertise on deploying a software factory and using it in
-    %internal projects.  SystemX's software factory is based on
-    %open-source components widely used such as gitlab or jenkins.
-    All this work will be done using CI/CD tooling for:
-    \begin{compactitem}
-    \item automatic building/deployment of the Logipedia application
-      on the hardware infrastructure,
-    \item automatic integration of new validated proof files in the
-      logipedia database.
-    \end{compactitem}
-
-    Finally, we will perform unitary tests and integration tests,
-    especially with components developed in other tasks: Opam
-    repository from \taskref{access}{opam} and search tools from
-    \taskref{access}{search}.
-  \end{task}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{task}[id=transfer,
-      title=Transfer for the sustainability of the system,
-      shorttitle=Transfer,
-      lead=Inr,InrRM=1,wphases=28-29]
-    Once the platform will be up and running, and available to all
-    users, it will be necessary to share the ownership with other
-    maintainers. To this purpose, we will produce the documentation
-    necessary to operate the system and organize technical transfer
-    sessions in order to allow administrators to guarantee the
-    sustainability of Logipedia.
-
-    It includes administration, upgrade and backup procedures.
-
-    Although these sessions are necessary for the launch, all the
-    documentation will be accessible publicly on a website in order
-    for anyone to become maintainer.
-  \end{task}
-  }
-
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=archi,
       title=Setting up the hardware and software architecture,
-      shorttitle=Arch.,
+      shorttitle=Archi.,
       lead=Inr,InrRM=6,wphases=1-6]
     The logipedia platform will reuse efforts done on an existing
     proof-of-concept application. However, with an ambition to be a
@@ -207,11 +71,11 @@
     the security and high availability of the platform.
 
     The hosting strategy will be decided taking into account costs,
-    efficiency and sustainability. The platform can be hosted:
+    efficiency and sustainability. The platform can be hosted on:
     \begin{compactitem}
-    \item on premise on some servers at Inria with redundancy at other
+    \item some servers at Inria with redundancy at other
       sites like München,
-    \item on public cloud services like OVH.com, Scaleway or Amazon
+    \item public cloud services like OVH.com, Scaleway or Amazon
       Web Services.
     \end{compactitem}
   \end{task}
@@ -220,7 +84,7 @@
   \begin{task}[id=web,
       title=Giving access to the infrastructure on the world-wide web,
       shorttitle=Web,
-      lead=Inr,InrRM=12,wphases=7-24]   
+      lead=Inr,InrRM=12,wphases=7-18]
     In this task, the implementation of the architecture defined in
     \taskref{access}{archi} will be done using agile methodology in
     order to get frequent feedback from end users and adjust the
@@ -253,7 +117,7 @@
   \begin{task}[id=opam,
       title=Giving access to the infrastructure in proof systems,
       shorttitle=Syst.,
-      lead=Oca,OcaRM=6,wphases=15-24]
+      lead=Oca,OcaRM=6,wphases=13-18]
     %Users need to have an easy access to the proofs in logipedia, to
     %integrate/use them in their ongoing work; this access should be
     %guaranteed universal, without lock-in, web standards-compliant,
@@ -290,7 +154,7 @@
   \begin{task}[id=search,
       title=Providing search tools,
       shorttitle=Search,
-      lead=Inr,InrRM=18,wphases=15-33]
+      lead=Inr,InrRM=18,wphases=19-36]
     We will provide users with search tools enabling them to perform
     queries on Logipedia in order to find specific theorems or proofs.
     First, users will be able to search libraries theorems by their
@@ -312,9 +176,9 @@
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{task}[id=dedukti,
-      title=Development of Dedukti checking and translation tools,
+      title=Development and maintenance of Dedukti tools,
       shorttitle=Dev.,
-      lead=Inr,InrRM=18,wphases=13-36] We will consolidate the source
+      lead=Inr,InrRM=18,wphases=19-36] We will consolidate the source
     code of Dedukti, the tool that allows to check the correctness of
     proofs added in Logipedia, so as to handle the proofs generated in
     \WPref{instrumentation}, \WPref{atpetc} and \WPref{libraries}. We
@@ -342,23 +206,19 @@
 
     % inria
   
-  \begin{wpdeliv}[due=6,id=archi,dissem=PU,nature=DEM,lead=Inr,task=infra]{Specification document describing the target hardware and software architecture}\end{wpdeliv}
+  \begin{wpdeliv}[due=6,id=archi,dissem=PU,nature=OTHER,lead=Inr,task=archi]{Platform architecture}\end{wpdeliv}
 
-  \begin{wpdeliv}[due=12,id=platform,dissem=PU,nature=DEC,lead=Inr,task=infra]{Setting up the Logipedia platform}\end{wpdeliv}
+  \begin{wpdeliv}[due=18,id=web,dissem=PU,nature=DEC,lead=Inr,task=web]{Web interface}\end{wpdeliv}
 
-  \begin{wpdeliv}[due=24,miles=platform,id=web,dissem=PU,nature=DEC,lead=Inr,task=web]{Logipedia website}\end{wpdeliv}
-
-  \begin{wpdeliv}[due=24,id=dedukti,dissem=PU,nature=OTHER,lead=Inr,task=dedukti]{Release of an improved version of Dedukti and its associated translation tools}\end{wpdeliv}
+  \begin{wpdeliv}[due=24,id=dedukti,dissem=PU,nature=OTHER,lead=Inr,task=dedukti]{Improved version of Dedukti and its associated translation tools}\end{wpdeliv}
 
   % ocamlprogg
   
-  \begin{wpdeliv}[due=18,miles=opam, id=opam,dissem=PU,nature=OTHER,lead=Oca,task=opam]{Opam repository for Logipedia}\end{wpdeliv}
+  \begin{wpdeliv}[due=18,id=opam,dissem=PU,nature=OTHER,lead=Oca,task=opam,miles=opam]{Opam repository for Logipedia}\end{wpdeliv}
 
   % pierre senellart
   
-  \begin{wpdeliv}[due=17,id=search1,dissem=PU,nature=DEM,lead=Inr,task=search]{Prototype version of the search tools with basic functionalities}\end{wpdeliv}
-
-  \begin{wpdeliv}[due=30,id=search2,dissem=PU,nature=OTHER,lead=Inr,task=search]{Final version of the search tools with all functionalities}\end{wpdeliv}
+  \begin{wpdeliv}[due=36,id=search,dissem=PU,nature=OTHER,lead=Inr,task=search]{Search tool for Logipedia}\end{wpdeliv}
     
 \end{wpdelivs}
 
