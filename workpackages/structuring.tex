@@ -31,8 +31,13 @@ Thirdly, Tasks~\localtaskref{strontorepml} fills the ontology with data from bot
 This work package will be jointly led by Burkhart Wolff at \site{Sac} and Florian Rabe at \site{Fau}.
 (Where a single leader is needed for formal purposes, the latter site will be the primary leader.)
 Burkhart Wolff implemented a document ontology framework in Isabelle and developed several applications
-in the field of formal software engineering \cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019}.
-Florian Rabe has extensive experience in designing and implementing knowledge representation languages \cite{RK:mmt:10,rabe:recon:17} as well as in exporting theorem prover libraries \cite{KR:oafexp:20,CKMRSW:ulo:19}.
+in the field of formal software engineering.
+% there should be no references here, move them to chapter 1
+%\cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019}
+Florian Rabe has extensive experience in designing and implementing knowledge representation languages
+%\cite{RK:mmt:10,rabe:recon:17}
+as well as in exporting theorem prover libraries.
+%\cite{KR:oafexp:20,CKMRSW:ulo:19}
 \end{wpdescription}
 
 \begin{tasklist}
@@ -89,7 +94,8 @@ and domain-specific ontologies.
   \WPref{libraries} with structural and ontological data that conforms to the language features introduced in Tasks~\localtaskref{strlibstructure} and \localtaskref{strdofimpl}.
 It will also build on the ontological export of ULO data developed for Isabelle and Coq.
 
-The task leader will collaborate with M. Wenzel for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq, with whom long-standing collaborations on these library exports exist \cite{MRS:coq:19,CKMRSW:ulo:19,KRW:isabelle:19}.
+The task leader will collaborate with M. Wenzel for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq, with whom long-standing collaborations on these library exports exist.
+%\cite{MRS:coq:19,CKMRSW:ulo:19,KRW:isabelle:19}
 Wenzel's involvement will take the form of a sub-contract of \site{Fau} at 20,000 EUR (corresponding to roughly 4 person-months), an arrangement that has already been used twice in other projects.
 The resources for this subcontract are declared in Section~\ref{sec:subcontracting-costs} and are not included in the person-months listed here.
 \end{task}
@@ -117,15 +123,11 @@ The resources for this subcontract are declared in Section~\ref{sec:subcontracti
 
 
 \begin{wpdelivs}
-  \begin{wpdeliv}[due=18,id=deliv-str-framework,dissem=PU,nature=R,lead=Sac,task=strlibstructure]
-  	{Language with primitives for representing metadata and theories}
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=36,id=deliv-str-ontology,dissem=PU,nature=R,lead=Sac,task=strdofimpl]
-  	{Framework for metadata annotations}
-  \end{wpdeliv}
-  \begin{wpdeliv}[due=48,id=deliv-str-libraries,dissem=PU,nature=R,lead=Fau,task=strontorepml]
-  	{Representation of major libraries of formal proofs}
-  \end{wpdeliv}
+  \begin{wpdeliv}[due=18,id=deliv-str-framework,dissem=PU,nature=R,lead=Sac,task=strlibstructure]{Language with primitives for representing metadata and theories}\end{wpdeliv}
+
+  \begin{wpdeliv}[due=36,id=deliv-str-ontology,dissem=PU,nature=R,lead=Sac,task=strdofimpl]{Framework for metadata annotations}\end{wpdeliv}
+  
+  \begin{wpdeliv}[due=48,id=deliv-str-libraries,dissem=PU,nature=R,lead=Fau,task=strontorepml]{Representation of major libraries of proofs}\end{wpdeliv}
 \end{wpdelivs}
 
 
