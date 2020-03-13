@@ -1,5 +1,5 @@
 \begin{workpackage}[id=atpetc,type=RTD,wphases=1-48,
-  short={Automatic theorem provers},% for Figure 5.
+  short={Automatic theorem provers},
   title={Automatic theorem provers},
   lead=Sac,
   LieRM=54,%6 in kind
@@ -29,7 +29,6 @@
   The final objective is to develop the infrastructure to safely use automation
   all along the way.
 \end{wpobjectives}
-
 
 \begin{wpdescription}
 
@@ -80,7 +79,6 @@ obligation. A large-scale application about the semi-automatic verification of C
 code will validate this infrastructure.
 \end{wpdescription}
 
-
 \begin{tasklist}
   \begin{task}[id=instrumenting,
       title=Instrumenting ATPs to produce traces,
@@ -106,7 +104,7 @@ code will validate this infrastructure.
   % Albin Coquereau (OCamlPro)
   % Sylvain Conchon (OCamlPro)
   % François Bobot (Why3)
-
+%
     Automated theorem provers should produce detailed proof traces, with
     sufficient information to be understood in the Logipedia context.  We will
     consider here the theorem prover for predicate logic E, the SMT solvers
@@ -167,7 +165,7 @@ code will validate this infrastructure.
   % Albin Coquereau (OCamlPro)
   % Sylvain Conchon (OCamlPro)
     % François Bobot (Why3)
-
+%
     This task focuses on the design and implementation of the tool Ekstrakto
     to translate into Dedukti the proof traces from the automatic theorem
     provers from task~\taskref{atpetc}{instrumenting}.  This task depends on
@@ -297,7 +295,7 @@ code will validate this infrastructure.
     % Pascal Fontaine (SMT-LIB)
     % Josef Urban + Martin Suda (TPTP)
     % François Bobot (Why3)
-
+%
     To be fully integrated into Logipedia, automatic tools need to understand
     Dedukti statements.  This task is about creating the software infrastructure
     to translate Logipedia statements into the standardized input format for
@@ -363,7 +361,7 @@ code will validate this infrastructure.
       wphases=1-48!.5
     ]
     %  Task leader: Cezary Kaliszyk
-
+%
     Internal automatic strategies will be defined for Dedukti, based on
     automatic theorem proving and machine learning. In combination with
     external ATPs through the results of
@@ -394,7 +392,7 @@ code will validate this infrastructure.
     wphases=13-48!.5
     ]
 %  Task leader: François Bobot (Contact: Chantal Keller)
-
+%
     The infrastructure developed in the above tasks will used in the verification {\em a
       posteriori} of the Frama-C-WP tool for formal verification of C
     code and its back-end Why3. In this platform, the correctness of C
@@ -527,7 +525,7 @@ code will validate this infrastructure.
   \end{wpdeliv}
 
   \begin{wpdeliv}[due=48,id=Trace2Dedukti2,dissem=PU,nature=OTHER,lead=Imt,task=tracetodedukti]
-    {Translator for most traces to Dedukti}
+    {Translate most traces to Dedukti}
   \end{wpdeliv}
 
   \begin{wpdeliv}[due=48,id=Dedukti2ATP2,dissem=PU,nature=OTHER,lead=Sac,task=deduktitoatp]
@@ -536,7 +534,7 @@ code will validate this infrastructure.
   \end{wpdeliv}
 
   \begin{wpdeliv}[due=48,id=ReadinessReport,dissem=PU,nature=R,lead=Inn,task=readiness]
-    {Report on the Proof Automation for Logipedia}
+    {Report on Proof Automation in Logipedia}
   \end{wpdeliv}
 
   \begin{wpdeliv}[due=48,id=Why3,dissem=PU,nature=DEM,lead=Cea,task=cooperation]
