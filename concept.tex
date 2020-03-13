@@ -21,7 +21,7 @@ of judgements of the form ``the proposition $B$ is true under the
 axioms $A_1, ..., A_n$''.
 
 \begin{center}
-\includegraphics[width=7cm]{img/Illustration4.jpg}
+\includegraphics[width=7cm]{img/Illustration4-reduced.jpg}
 \end{center}
 
 Predicate logic is not a theory {\em per se}, but a framework in
@@ -63,10 +63,10 @@ framework'') \cite{HarperHonsellPlotkin91}, Deduction Modulo Theory
 \cite{Berardi88,Terlouw89}, and ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
 
-All these logical frameworks have been unified in the $\lambda
+{\bf All these logical frameworks have been unified in the $\lambda
 \Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
 the system Dedukti \cite{Assaf16} on which Logipedia is
-based. Geometry, arithmetic and set theory, but also Russell's type
+based.} Geometry, arithmetic and set theory, but also Russell's type
 theory, Church's type theory, Martin-L\"of's type theory, and the
 Calculus of constructions can be expressed in this framework.
 
@@ -130,7 +130,7 @@ Dedukti, and make these proofs available in Logipedia so they can be
 exported to other systems. This step is called the
 ``instrumentation'' of system $X$.
 
-The systems we consider fall into three broad classes: the systems
+We consider three broad classes of proof systems: those
 based on dependent type theory, those based on simple type
 theory, and those based on set theory and predicate logic.
 
@@ -224,7 +224,8 @@ similar to the computation rules provided by Dedukti.
 \begin{minipage}{14cm}
 \href{https://hol-theorem-prover.org/}{HOL4} is home to a few medium to large scale specifications and
 associated proof developments that have value outside of HOL4. These
-specifications include the formal semantics of the CakeML language
+specifications include the formal semantics of the CakeML
+language
 (and its certified compiler) and an extensive specification of the ARM
 instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
@@ -334,8 +335,8 @@ will investigate what minimal changes need to be made to Dedukti
 itself in order to overcome these limitations.
 
 \item{\bf Reconstructing transient proof components.}
-In all proof systems, there is some information that is created during
-the process of checking a proof that is not stored in the final proof
+In all proof systems, part of the information created during
+the proof checking process is not stored in the final proof
 term. In systems such as Coq, Agda, and Matita, this concerns for
 example the types of each subexpression. In other systems such as
 HOL4, Isabelle, and Atelier B, even more information about the proof
@@ -355,19 +356,18 @@ external provers such as Isabelle or Atelier B. In order to handle
 these cases, we will instrument these external
 provers so they can produce the missing parts of the proof terms.
 
-\item{\bf Producing more compact proofs.}
-When translating a proof from some external system to Dedukti, we want
-to produce proof terms that are as small as possible, so it is easy to
-store them, recheck them, or export them to a different
-system. However, there are at least two reasons why proof terms might
-become large. First, a typical proof in an external system may be large
-(because big parts of it are constructed automatically). Second,
-translating a proof to Dedukti may increase the size of the proof, for
-example by normalizing it or by adding type annotations.  This means
-translating the proofs can take a long time, and doing anything
-with the translated proof will be difficult. This also has an obvious
-impact on the exporting of large libraries to Dedukti, discussed
-below.
+\item{\bf Producing more compact proofs.}  When translating a proof
+  from some external system to Dedukti, we want to produce proof terms
+  that are as small as possible, so it is easy to store them, recheck
+  them, or export them to a different system. However, there are at
+  least two reasons why proof terms might become large. First, a
+  typical proof in an external system may be large (because big parts
+  of it are constructed automatically). Second, translating a proof to
+  Dedukti may increase the size of the proof, for example by
+  normalizing it or by adding type annotations.  The translation of
+  the proofs can take a long time, the obtained proof may be difficult
+  to use. This also has an obvious impact on the exporting of large
+  libraries to Dedukti, discussed below.
 
 To reduce the size of proof terms produced by the translation to
 Dedukti, we plan to investigate how to avoid unnecessary
@@ -377,9 +377,8 @@ they can be inferred from the rest of the proof.
 \end{enumerate}
 
 For each of the systems considered in this project, we can identify
-some preliminary work, of varying maturity, on translating proofs to
-Dedukti.  We plan to build upon the previous work done for the
-following systems:
+some preliminary work.  We plan to build upon the previous work done
+for the following systems:
 
 \begin{compactitem}
 \item The standard and arithmetic libraries of Matita have been the
@@ -493,8 +492,8 @@ proof traces~\cite{DBLP:conf/sat/WetzlerHH14} and most SAT solvers are actually 
 produce proof traces in that format.  So, considering SAT solvers, the
 current status already meets the needs of Logipedia on this aspect.
 
-Considering other automated reasoners however, it is necessary to
-significantly improve the picture.  Some SMT (Satisifiability Modulo
+However instrumenting other automated reasoners is more challenging.
+Some SMT (Satisifiability Modulo
 Theories) solvers can produce some kind of proof trace, but the format
 is specific to the solver, and the proofs are sometimes difficult to
 replay due to their (lack of) granularity.  Most mainstream theorem provers for
@@ -853,6 +852,7 @@ MathComp, Coq's revised Analysis library, CompCert, seL4, and selected
 Mizar and PVS libraries are left for future work.
 
 \paragraph*{Isabelle's Archive of Formal Proofs}
+\cite{isabelle-afp}
 (\href{{https://www.isa-afp.org}}{AFP}) is a
 growing user-contributed online library for Isabelle.
 
@@ -1063,14 +1063,17 @@ translation from HOL Light to Dedukti, the import of the multivariate
 analysis library, the import of the whole HOL Light library, and the
 import of the Flyspeck in Dedukti.
 
+\paragraph*{The CakeML compiler library.}
+The CakeML compiler library
+\cite{KumarMNO14} consists of the CakeML programming language
+definition, its compiler, and the correctness proofs about the
+compiler.
+
 \bigskip
 \hspace{-0.9cm}
 \begin{tabular}{ll}
 \begin{minipage}{13cm}
-\paragraph*{The CakeML compiler library.}
-The CakeML compiler library consists of the CakeML programming language
-definition, its compiler, and the correctness proofs about the
-compiler. This is a cutting edge compiler library and one of only two
+This is a cutting edge compiler library and one of only two
 verified compilers for real languages, the other being CompCert. Its
 export to Dedukti is one of the key exploitable results of this project.
 % Because of the size and importance of this library,
@@ -1136,7 +1139,8 @@ itself and its accessibility.
 To make such an infrastructure
 usable, besides trans-national and virtual access,
 we must also provide an ergonomic web interface, a package
-distribution system, a search engine, a structure of encyclopedia
+distribution system, a search engine for mathematical formulas, a
+structure of encyclopedia
 that relies upon an enrichment of the data with metadata.
 
 \paragraph*{Sharing a common platform.}
@@ -1265,7 +1269,7 @@ standard \emph{information retrieval} techniques
 \cite{DBLP:books/daglib/0021593}, which routinely scale to several
 orders of magnitude higher when indexing huge corpora, such as the
 World Wide Web.
-Elasticsearch\footnote{\url{https://www.elastic.co/fr/elasticsearch}}
+\href{https://www.elastic.co/fr/elasticsearch}{Elasticsearch}
 is an example of a highly customizable and scalable search engine for
 large document collections. But these techniques and tools are adapted
 to the case of (semi-structured) natural language documents by full
@@ -1278,8 +1282,8 @@ The case of semantic annotations is relatively easy to solve. SPARQL
 query language for (RDF) semantic annotations expressing complex semantic
 queries, for which numerous
 query engines exist; popular (and open-source) ones include
-Apache Jena\footnote{\url{https://jena.apache.org/}} and
-Virtuoso\footnote{\url{http://vos.openlinksw.com/owiki/wiki/VOS}}. These
+\href{https://jena.apache.org/}{Apache Jena} and
+\href{http://vos.openlinksw.com/owiki/wiki/VOS}{Virtuoso}. These
 systems also support efficient indexing and querying of textual content
 \cite{DBLP:conf/esws/MinackSN09}, which allows queries combining textual
 search and semantic annotations.
@@ -1440,17 +1444,26 @@ These will complement the existing language features in such a way
 that encodings in Dedukti can choose flexibly when and how source
 level features are preserved.  We thus will annotate the kernel level
 representations with source level representations.  We will develop a
-semantic web-style ontological representations of the libraries.
-These encodings heavily abstract from the content of the libraries and
-are not meant to capture either its syntax or its semantics, but they
+semantic web-style ontological representations of the libraries, 
+in particular an ontological definition language to \emph{define}
+meta-data in the style of Isabelle/DOF
+\cite {brucker_achim_d_2019_3370483,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019}
+that has specific features to annotate, track, and 
+validateformal and semi-formal information.
+
+This information heavily abstracts from the content of the libraries and
+is not meant to capture neither its syntax nor its semantics, but they
 are tremendously useful for shallow interoperability such as
 dependency management, navigation, and searching and querying.  For
 example, searching for a particular theorem based on some information
 where it might be used can be enough to find it.  We will develop a
 reference ontology for formal libraries and extend our encodings to
-make use of it.
+make use of it. Moreover, we will develop \emph{domain-specific} ontologies
+allowing, for examples, engineers to search for mathematical theorems
+relevant to a particular engineering discipline
+(cf. \cite{brucker.ea:ontologies-certification:2019}).
 
-This method works particularly well in connection with the concept alignments
+Annotation with meta-data is particularly relevant in connection with the concept alignments
 described below. Because, in its simplest form, alignment is just a
 binary relation between identifiers in different libraries that mean
 the same thing, it can be integrated with this ontology directly.  It
@@ -1574,7 +1587,7 @@ companies working on distributed and cloud
 systems\cite{newcombe:amazon-cacm}. The two main software tools for
 analyzing and verifying \tlaplus specifications are the model checker
 TLC~\cite{yu:model-checking} and
-TLAPS\footnote{\url{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}},
+\href{https://tla.msr-inria.inria.fr/tlaps/content/Home.html}{TLAPS},
 the \tlaplus Proof System~\cite{cousineau:tla-proofs}.
 
 \tlaplus proofs are written in a declarative, hierarchical style based on
@@ -1603,8 +1616,7 @@ verification of this system should guarantee that the process executed by the
 particular MED-ELs user, is never out of sync, meaning, it does not contain
 inconsistencies in data presented and generated by the user.
 
-\paragraph*{PVS.}
-PVS\footnote{\url{https://pvs.csl.sri.com}}~\cite{owre:pvs} is a specification
+\paragraph*{\href{{https://pvs.csl.sri.com}}{PVS}}\cite{owre:pvs} is a specification
 system and proof assistant that is based on Simple Type Theory with a rich type
 system including predicate sub-typing. This feature is used extensively in PVS,
 for example for defining a hierarchy of numerical types. Predicate sub-typing
@@ -1618,8 +1630,7 @@ PVS has been used in numerous academic and industrial projects for
 verifying hardware systems, fault-tolerant algorithms or dynamically
 linked Java programs, among others. It is particularly known for its
 applications to avionics systems and airborne conflict detection and
-avoidance systems, e.g.\ \cite{munoz:unmanned}, by Rockwell Collins,
-NASA, and the National Institute of Aerospace.
+avoidance systems \cite{munoz:unmanned}.
 
 Our objective in this project is the translation of a substantial part
 of the PVS Prelude (the standard library of PVS) into Logipedia. A
@@ -1631,10 +1642,8 @@ a way that identifies superficially different proofs of the
 inhabitedness of sub-types, and to instrument PVS in
 order to generate proof traces that can be checked by Dedukti.
 
-\paragraph*{Minlog.}
-The
-Minlog\footnote{\url{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}}
-system is based on the Curry-Howard correspondence between constructive proofs
+\paragraph*{\href{http://www.mathematik.uni-muenchen.de/~logik/minlog/index.php}{Minlog}}
+is based on the Curry-Howard correspondence between constructive proofs
 in natural deduction and terms in typed $\lambda$-calculus. It supports
 extracting programs from constructive proofs, and has also been extended for extracting
 programs from proofs in classical logic. Minlog supports function definitions by

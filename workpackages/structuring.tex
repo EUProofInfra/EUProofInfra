@@ -2,8 +2,7 @@
   short={Structure of the encyclopedia},% for Figure 5.
   title={Structure of the encyclopedia},
   lead=FAU,
-  wphases=1-48,
-  SacRM=41,
+  SacRM=40,
   FauRM=20,
   BolRM=4
 %  TouRM=12,
@@ -32,12 +31,17 @@ Thirdly, Tasks~\localtaskref{strontorepml} fills the ontology with data from bot
 This work package will be jointly led by Burkhart Wolff at \site{Sac} and Florian Rabe at \site{Fau}.
 (Where a single leader is needed for formal purposes, the latter site will be the primary leader.)
 Burkhart Wolff implemented a document ontology framework in Isabelle and developed several applications
-in the field of formal software engineering \cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019}.
-Florian Rabe has extensive experience in designing and implementing knowledge representation languages \cite{RK:mmt:10,rabe:recon:17} as well as in exporting theorem prover libraries \cite{KR:oafexp:20,CKMRSW:ulo:19}.
+in the field of formal software engineering.
+% there should be no references here, move them to chapter 1
+%\cite{brucker.ea:ontologies-certification:2019,brucker.ea:isabelle-ontologies:2018,brucker.ea:ontologies-certification:2019}
+Florian Rabe has extensive experience in designing and implementing knowledge representation languages
+%\cite{RK:mmt:10,rabe:recon:17}
+as well as in exporting theorem prover libraries.
+%\cite{KR:oafexp:20,CKMRSW:ulo:19}
 \end{wpdescription}
 
 \begin{tasklist}
-\begin{task}[id=strlibstructure,title=Library Structure,lead=Fau,FauRM=8, SacRM=6, wphases=1-28!.5]
+\begin{task}[id=strlibstructure,title=Library Structure,shorttitle=Struct.,lead=Fau,FauRM=8, SacRM=6, wphases=1-28!.5]
 This task extends the Dedukti language with primitives for representing library, document, informal annotations, and theory structure.
 This includes in particular the definition of unique identifiers for all declarations, which is critical for alignments.
 %We extend the Dedukti language with features for high-level representations.
@@ -54,7 +58,7 @@ This includes in particular the definition of unique identifiers for all declara
 %Then we leverage this design in several applications including automated prover interaction and a Logipedia-wide search service.
 \end{task} 
 
-\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,lead=Sac,SacRM=24,wphases=1-24!1.0]
+\begin{task}[id=strdofimpl,title=Ontological Framework for Meta-Data,shorttitle=F/W,lead=Sac,SacRM=24,wphases=1-24!1.0]
 This tasks extends the Dedukti language with a framework for meta-data annotations.
 This will cover all levels of the structure introduced in \localtaskref{strlibstructure} as well as the 
 level of subexpressions of Dedukti expressions. It will also provide a mechanism to validate meta-data
@@ -62,7 +66,7 @@ according to assertions.
 \end{task} 
 
 % suggested for removal in budget arbitration meeting; now mentioned in task on reference ontology
-%\begin{task}[id=strdomonto,title= Domain Ontologies for Formal Methods in SE,lead=Tou,TouRM=12, SacRM=0]
+%\begin{task}[id=strdomonto,title= Domain Ontologies for Formal Methods in SE,shorttitle= Domain Ontologies for Formal Methods in SE,lead=Tou,TouRM=12, SacRM=0]
 %Y. Aitameur at \site{Tou}
 %\begin{compactitem}
 %\item domain ontologies as descriptive models for engineering domains 
@@ -73,38 +77,41 @@ according to assertions.
 %\end{compactitem}
 %\end{task} 
 
-\begin{task}[id=strrefonto,title=Reference Ontology,lead=Sac,FauRM=6,SacRM=6,wphases=12-36!.5]
+\begin{task}[id=strrefonto,title=Reference Ontology,shorttitle=Ref. Ont.,lead=Sac,FauRM=6,SacRM=6,wphases=12-36!.5]
 This tasks compiles, integrates, and curates the various ontologies used for describing libraries in the project.
 These come from several sources:
 \begin{compactitem}
  \item The ontology induced by the structuring features built in task \localtaskref{strlibstructure}.
  \item The ontologies built by users using the ontology framework built in task \localtaskref{strrefonto}.
- \item Manually written ontologies or imports of existing ontologies for knowledge formalized in prover libraries, such as the Upper Library Ontology \cite{CKMRSW:ulo:19} and domain-specific ontologies.
+ \item Manually written ontologies or imports of existing ontologies for knowledge formalized in prover libraries, such as the Upper Library Ontology
+and domain-specific ontologies.
  The latter may include for example the ontologies for engineering and their relation to descriptive models and certification standards that are planned to be developed by \site{Tou}.
 \end{compactitem}
 \end{task}
 
-\begin{task}[id=strontorepml,title=Ontological Representation of Formal Libraries,lead=Fau,FauRM=6,BolRM=4,SacRM=5,wphases=12-48!.5]
-This task extends the exports from Isabelle and Coq developed in \WPref{libraries} with structural and ontological data that conforms to the language features introduced in Tasks~\localtaskref{strlibstructure} and \localtaskref{strdofimpl}.
-It will also build on the ontological export of ULO data developed for Isabelle and Coq in \cite{CKMRSW:ulo:19}.
+\begin{task}[id=strontorepml,title=Ontological Representation of Formal Libraries,shorttitle=Ont. Repr.,lead=Fau,FauRM=6,BolRM=4,SacRM=5,wphases=12-48!.5]
+  This task extends the exports from Isabelle and Coq developed in
+  \WPref{libraries} with structural and ontological data that conforms to the language features introduced in Tasks~\localtaskref{strlibstructure} and \localtaskref{strdofimpl}.
+It will also build on the ontological export of ULO data developed for Isabelle and Coq.
 
-The task leader will collaborate with M. Wenzel for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq, with whom long-standing collaborations on these library exports exist \cite{MRS:coq:19,CKMRSW:ulo:19,KRW:isabelle:19}.
+The task leader will collaborate with M. Wenzel for Isabelle and C. Sacerdoti Coen at \site{Bol} for Coq, with whom long-standing collaborations on these library exports exist.
+%\cite{MRS:coq:19,CKMRSW:ulo:19,KRW:isabelle:19}
 Wenzel's involvement will take the form of a sub-contract of \site{Fau} at 20,000 EUR (corresponding to roughly 4 person-months), an arrangement that has already been used twice in other projects.
 The resources for this subcontract are declared in Section~\ref{sec:subcontracting-costs} and are not included in the person-months listed here.
 \end{task}
 
 % Moved to WP9
-%\begin{task}[id=strontosearch,title=Ontological Search,lead=Fau,FauRM=12,SacRM=6]
+%\begin{task}[id=strontosearch,title=Ontological Search,shorttitle=Ont. Search,lead=Fau,FauRM=12,SacRM=6]
 %Search based on ontological data (RDF triples) using systems like SPARQL
 %\ednote{possible participation of S. Dumbrava; is there a site for this?}
 %\end{task} 
 
-%\begin{task}[id=strformsearch,title=Formula-based Search,lead=Fau,BolRM=4,FauRM=12]
+%\begin{task}[id=strformsearch,title=Formula-based Search,shorttitle=Form. Search,lead=Fau,BolRM=4,FauRM=12]
 %Search based on formula structure using systems like MathWebSearch
 %\end{task} 
 
 % suggested for removal in budget arbitration meeting
-%\begin{task}[id=strtext,title=Ontological Representation of Natural Language Articles,lead=Inr,FauRM=6,InrRM=14]
+%\begin{task}[id=strtext,title=Ontological Representation of Natural Language Articles,shorttitle=Articles,lead=Inr,FauRM=6,InrRM=14]
 %    % task leader: Pierre Senellart, Inria
 %This task extracts ontological information from natural language research articles and link them with the formal representations in Isabelle and Coq.
 %P. Senellart at \site{Inr} and M. Kohlhase at \site{Fau} will work on the automatic extraction and annotation of natural-language theorem statements and proofs from published articles, as well as building libraries of such theorems and proofs.

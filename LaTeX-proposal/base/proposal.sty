@@ -328,6 +328,7 @@
 \define@key{task}{wphases}{\def\task@wphases{#1}\@dmp{wphases=#1}}
 \define@key{task}{requires}{\@requires\task@id{#1}\@dmp{req=#1}}
 \define@key{task}{title}{\def\task@title{#1}}
+\define@key{task}{shorttitle}{\def\task@shorttitle{#1}}
 \define@key{task}{lead}{\def\task@lead{#1}}
 \define@key{task}{partners}{\def\task@partners{#1}}
 \define@key{task}{PM}{\def\task@PM{#1}}
@@ -336,7 +337,7 @@
 \def\@@status@canceled{canceled}
 \newif\if@taskshowwps\@taskshowwpsfalse
 \def\task@set#1{\edef\task@id{task\thetask@all}
-\def\task@wphases{0-0}\def\task@partners{}\def\task@lead{}\def\task@PM{}\def\task@title{}
+\def\task@wphases{0-0}\def\task@partners{}\def\task@lead{}\def\task@PM{}\def\task@title{}\def\task@shorttitle{}
 \setkeys{task}{#1}}
 \def\task@post@title@space{\;}
 \newcounter{alltasks}
@@ -397,6 +398,7 @@
 \def\@task#1{\stepcounter{task@all}\stepcounter{task@wp}%
 \task@set{#1}%
 \pdata@def{task}{\taskin\task@id\wp@id}{title}{\task@title}
+\pdata@def{task}{\taskin\task@id\wp@id}{shorttitle}{\task@shorttitle}
 \pdata@def{task}{\taskin\task@id\wp@id}{lead}{\task@lead}
 \pdata@def{task}{\taskin\task@id\wp@id}{partners}{\task@partners}
 \pdata@def{task}{\taskin\task@id\wp@id}{PM}{\task@PM}
@@ -414,7 +416,6 @@
 \newcommand\workphase[1]{\PackageError{proposal}
   {The \protect\workphase macro is deprecated,\MessageBreak
     use the attributes wphase on the workpackage environment instead!}}
-\newcommand\delivin[2]{#2@#1}
 \newcommand\taskin[2]{#2@#1}
 \newcommand\taskref[2]{\pdataRef{task}{#1@#2}{label}}
 \newcommand\taskreflong[2]{\pdataRef{task}{#2}{label}}
@@ -454,6 +455,7 @@
 \define@key{deliv}{issue}{\def\deliv@issue{#1}}
 \define@key{deliv}{status}{\def\deliv@status{#1}}
 \define@key{deliv}{blog}{\def\deliv@blog{#1}}
+\define@key{deliv}{task}{\def\deliv@task{#1}}
 \newcounter{deliverable}
 \newcommand{\wpg@deliv}[3]{% keys, title, type
 \stepcounter{deliverable}
@@ -482,6 +484,7 @@
 \@ifundefined{deliv@issue}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{issue}{\deliv@issue}}
 \@ifundefined{deliv@status}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{status}{\deliv@status}}
 \@ifundefined{deliv@blog}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{blog}{\deliv@blog}}
+\@ifundefined{deliv@task}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{task}{\deliv@task}}
 \ifx\deliv@status\@@status@canceled\else
 \@ifundefined{deliv@due}{}{%
 \@for\@I:=\deliv@due\do{\protected@write\wpg@delivs{}{\string\deliverable%
@@ -515,11 +518,11 @@
    \else\expandafter\xdef\csname\@I delivs\endcsname%if not add it
    {\csname\@I delivs\endcsname\d@sep\wpg@id @\deliv@id}\fi}}%
 }% end gray color
-\update@delivs{\delivin\deliv@id\wp@id}
+\update@delivs{\taskin\deliv@id\wp@id}
 }
 \newenvironment{wadeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wa}\else\deliv@error\fi}{}
 \newenvironment{wpdeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wp}\else\deliv@error\fi}{}
-\newcommand\milestone@label[1]{\textbf{M{#1}}}
+\newcommand\milestone@label[1]{\textbf{Ms{#1}}}
 \newcommand\mileref[1]{\pdataRef{mile}{#1}{label}}
 \newcommand\miletref[1]{\mileref{#1}: \pdataRefFB{mile}{#1}{short}{title}}
 \newcounter{milestone}
