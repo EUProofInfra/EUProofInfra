@@ -224,7 +224,8 @@ similar to the computation rules provided by Dedukti.
 \begin{minipage}{14cm}
 \href{https://hol-theorem-prover.org/}{HOL4} is home to a few medium to large scale specifications and
 associated proof developments that have value outside of HOL4. These
-specifications include the formal semantics of the CakeML language
+specifications include the formal semantics of the CakeML
+language
 (and its certified compiler) and an extensive specification of the ARM
 instruction set architecture (ISA) as formalised by Anthony Fox at the
 University of Cambridge.
@@ -853,6 +854,7 @@ MathComp, Coq's revised Analysis library, CompCert, seL4, and selected
 Mizar and PVS libraries are left for future work.
 
 \paragraph*{Isabelle's Archive of Formal Proofs}
+\cite{isabelle-afp}
 (\href{{https://www.isa-afp.org}}{AFP}) is a
 growing user-contributed online library for Isabelle.
 
@@ -1063,14 +1065,17 @@ translation from HOL Light to Dedukti, the import of the multivariate
 analysis library, the import of the whole HOL Light library, and the
 import of the Flyspeck in Dedukti.
 
+\paragraph*{The CakeML compiler library.}
+The CakeML compiler library
+\cite{KumarMNO14} consists of the CakeML programming language
+definition, its compiler, and the correctness proofs about the
+compiler.
+
 \bigskip
 \hspace{-0.9cm}
 \begin{tabular}{ll}
 \begin{minipage}{13cm}
-\paragraph*{The CakeML compiler library.}
-The CakeML compiler library consists of the CakeML programming language
-definition, its compiler, and the correctness proofs about the
-compiler. This is a cutting edge compiler library and one of only two
+This is a cutting edge compiler library and one of only two
 verified compilers for real languages, the other being CompCert. Its
 export to Dedukti is one of the key exploitable results of this project.
 % Because of the size and importance of this library,
