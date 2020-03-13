@@ -19,11 +19,11 @@
   theorem provers to populate, help, and benefit from Logipedia. The
   focus is networking and research.
   \begin{compactitem}
-  \item Automatic theorem provers will be instrumented in a two-step
+  \item Automatic provers will be instrumented in a two-step
     process to produce Dedukti statements.
   \item Dedukti statements will be made understandable and usable by
     automatic theorem provers.
-  \item Automatic theorem provers will increase Logipedia readiness by
+  \item Automatic provers will increase Logipedia readiness by
     automatically filling gaps in proofs.
   \end{compactitem}
   The final objective is to develop the infrastructure to safely use automation
@@ -168,8 +168,8 @@ code will validate this infrastructure.
 %
     This task focuses on the design and implementation of the tool Ekstrakto
     to translate into Dedukti the proof traces from the automatic theorem
-    provers from task~\taskref{atpetc}{instrumenting}.  This task depends on
-    task~\taskref{atpetc}{instrumenting}, but can be partly executed in
+    provers from \taskref{atpetc}{instrumenting}.  This task depends on
+    \taskref{atpetc}{instrumenting}, but can be partly executed in
     parallel.
 
 %% \begin{compactitem}
@@ -399,7 +399,7 @@ code will validate this infrastructure.
     programs relies on the automatic generation of proof obligations
     from annotated programs, and their automatic proofs using a
     combinations of ATPs and user-defined rewrite rules. In this task:
-    \begin{itemize}
+    \begin{compactitem}
     \item the generation of proof obligations and the rewrite engine
       will be instrumented to produce Dedukti proofs, relying on (parts
       of) Ekstrakto;
@@ -407,8 +407,8 @@ code will validate this infrastructure.
       tasks~\taskref{atpetc}{instrumenting} and
       \taskref{atpetc}{tracetodedukti};
     \item users will have access to the Logipedia library following
-      task~\taskref{atpetc}{deduktitoatp}.
-    \end{itemize}
+      \taskref{atpetc}{deduktitoatp}.
+    \end{compactitem}
     In the end, Dedukti proofs will be assembled together in a coherent whole.
     This task serves as an end-to-end demonstration of the usefulness of the
     infrastructure.
