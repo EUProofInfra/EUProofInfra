@@ -44,6 +44,7 @@
 \RequirePackage{pdata}
 \definecolor{darkblue}{rgb}{0,0,.7}
 \ifsubmit\def\prop@link@color{darkblue}\else\def\prop@link@color{blue}\fi
+\RequirePackage{titletoc}
 \RequirePackage[bookmarks=true,linkcolor=\prop@link@color,
  citecolor=\prop@link@color,urlcolor=\prop@link@color,colorlinks=true,
  breaklinks=true, bookmarksopen=true]{hyperref}
@@ -75,7 +76,7 @@
 \ifx\prop@gen@acronym\@empty\else\quad \prop@gen@acronym\fi\quad --\quad Part B}
 \fancyfoot[R]{\thepage}
 \else
-\fancyhead[LE,RO]{\prop@of@pages\thepage{\pdataref@num{prop}{page}{last}}}
+\fancyhead[LE,RO]{\prop@of@pages\thepage\pages}
 \fi
 \pagestyle{fancyplain}
 \newmdenv[settings=\large]{emphbox}
@@ -114,10 +115,23 @@
 \@ifundefined{prop@gen@sites}{}{\@for\@I:=\prop@gen@sites\do{\stepcounter{@sites}}
 \pdata@def{all}{site}{ids}{\prop@gen@sites}%
 \pdata@def{all}{site}{count}{\the@site}}
+\gdef\pages{\pdataref@num{prop}{page}{last123}}
+\startcontents[123]
 \begin{prop@proposal}}
 {\end{prop@proposal}
-\pdata@def{prop}{page}{last}{\thepage}\ofpagefalse%
-\pdata@close}
+\stopcontents[45]
+\expandafter\pdata@def{prop}{page}{last45}{\thepage}
+\pdata@close
+\clearpage
+}
+\newcommand\proposalmiddle{
+\stopcontents[123]
+\expandafter\pdata@def{prop}{page}{last123}{\thepage}
+\newpage
+\gdef\pages{\pdataref@num{prop}{page}{last45}}
+\setcounter{page}{1}
+\startcontents[45]
+}
 \newcommand\site[1]{\hyperlink{site@#1@target}{\textbf{\wa@ref3{institution}{#1}{acronym}}}}
 \newcommand\sitename[1]{\hyperlink{site@#1@target}{\textbf{\wa@ref3{institution}{#1}{name}}}}
 \newcommand\objective@label[1]{O#1}
