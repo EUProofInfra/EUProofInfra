@@ -204,7 +204,7 @@ hgrid=true,
 title height=1,
 y unit title=\baselineskip,
 y unit chart=.6\baselineskip,
-x unit=10pt,
+x unit=8pt,
 group peaks width=0,
 group peaks height=0,
 group left shift=0,
@@ -230,7 +230,7 @@ vrule/.style={very thick,red},
 \pgfdeclarelayer{miles}
 \pgfsetlayers{background,main,miles,delivs}
 \gantttitle{\makebox[0pt][r]{\textbf{\textit{Month\ }}}}{0}
-\gantttitlelist[title label node/.append style={font=\scriptsize}]{1,...,\pdataref@aux{prop}{gen}{months}}{1}
+\gantttitlelist[title label node/.append style={font=\tiny}]{1,...,\pdataref@aux{prop}{gen}{months}}{1}
 \edef\@wps{\pdataref@aux{all}{wp}{ids}}
 \@for\@wp:=\@wps\do{
 \\\\
@@ -257,7 +257,7 @@ vrule/.style={very thick,red},
 \edef\@wphases{\pdataref@safe{task}{\@task}{wphases}}
 \@for\@wphase:=\@wphases\do{
 \decode@wphase\@wphase
-\ganttbar{\pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
+\ganttbar{\pdataRef{task}{\@task}{label}~: \pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
 \begin{pgfonlayer}{delivs}
 \offset@reset{.5pt}
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
