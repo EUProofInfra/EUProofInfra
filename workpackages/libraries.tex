@@ -61,7 +61,7 @@ PVS have reached LIL 2).
   TumRM=3,
   wphases=13-18]
 %\ednote{Wenzel}
-Isabelle's Archive of Formal Proofs (AFP) \cite{isabelle-afp} is a
+  Isabelle's Archive of Formal Proofs (AFP) is a
 growing user-contributed online library for Isabelle. In Feb-2020, the
 AFP consisted of more than 500 entries (articles of formalized
 mathematics) by 340 authors, and required approx.\ 60h CPU time for
@@ -146,20 +146,17 @@ multivariate analysis library
 which spans the fields of metric spaces, topology, homology, linear algebra,
 convexity, real and complex analysis and transcendentals, derivatives, and
 integration. The {Flyspeck} project gives a formal proof of the {Kepler}
-conjecture, based on an original proof of Thomas {Hales}
-\cite{DBLP:journals/corr/HalesABDHHKMMNNNOPRSTTTUVZ15}, and formalized
+conjecture, based on an original proof of Thomas {Hales}, and formalized
 largely in {HOL Light} \url{https://github.com/flyspeck/flyspeck}.
 Some of these results are not formalized in any other system, motivating the
 project of importing the {HOL Light} library and {Flyspeck} project in the
 {Dedukti} system, in view of its integration into {Logipedia}.
 
-\textbf{Challenges:}
-Proofs coming from the HOL systems, including {HOL Light}, are known to be very
-large, adding to the issue of the scalability of exporting software for large
-libraries \cite{DBLP:conf/tphol/Wong95,DBLP:conf/cade/ObuaS06,
-DBLP:conf/itp/KellerW10,DBLP:conf/cade/Kumar13}. Scalable export techniques
-{HOL Light} proofs have been investigated \cite{KaliszykK13} and can provide a
-solid base to this project.
+\textbf{Challenges:} Proofs coming from the HOL systems, including
+       {HOL Light}, are known to be very large, adding to the issue of
+       the scalability of exporting software for large
+       libraries. Scalable export techniques HOL Light proofs have
+       been investigated and can provide a solid base to this project.
 
 The main milestones of this task are the further automation of the export from
 {HOL Light} to {Dedukti}, the export of the multivariate analysis library, of
@@ -174,7 +171,8 @@ the whole {HOL Light} library, and of the {Flyspeck} to {Dedukti}.
   wphases=12-23]
 %
 The CakeML
-compiler \cite{KumarMNO14} (verified with the HOL4 prover) is one of only two verified compilers for real
+compiler 
+(verified with the HOL4 prover) is one of only two verified compilers for real
 languages, the other being CompCert. Its export to Dedukti is one of
 the KERs of this project.
 % Because of the size and importance of this
@@ -187,7 +185,7 @@ to Dedukti does not scale to something as sizeable as the CakeML
 compiler proof. This part of this task will rework the route via
 OpenTheory to scale better, possibly taking inspiration from an
 OpenTheory-like approach that scaled well for the HOL light
-prover~\cite{KaliszykK13}.
+prover.
 
 %The second approach establishes a connection from HOL4 via Isabelle to
 %Dedukti. The basis is a promising new approach of virtualizing HOL4
