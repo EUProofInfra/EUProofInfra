@@ -188,12 +188,6 @@ different systems.  It therefore has a larger number of partners.
 
 \input{deliverables}
 
-\subsection*{Relation between the components}
-
-\includegraphics[width=\textwidth]{img/PERT}
-
-{\color{red} Add a few sentences to explain}
-
 \subsection*{Timing of the different work packages and their components}
 
 \makeatletter
@@ -278,6 +272,19 @@ vrule/.style={very thick,red},
 \end{pgfonlayer}
 \end{ganttchart}
 \makeatother
+
+\subsection*{Relation between the components}
+
+Two work packages are critical for the success of the project, the
+work package 4, that aims at building the software infrastructure of
+Logipedia and the work package 1 that aims at populating it with proofs.
+All the other work packages depend of these two.
+
+Finally all the workpackages contribute to just one goal: interoperability,
+sustainability, and cross-verification of formal proofs.
+
+\includegraphics[width=\textwidth]{img/PERT}
+
 
 %%% Local Variables:
 %%%   mode: latex
