@@ -63,10 +63,10 @@ framework'') \cite{HarperHonsellPlotkin91}, Deduction Modulo Theory
 \cite{Berardi88,Terlouw89}, and ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
 
-All these logical frameworks have been unified in the $\lambda
+{\bf All these logical frameworks have been unified in the $\lambda
 \Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
 the system Dedukti \cite{Assaf16} on which Logipedia is
-based. Geometry, arithmetic and set theory, but also Russell's type
+based.} Geometry, arithmetic and set theory, but also Russell's type
 theory, Church's type theory, Martin-L\"of's type theory, and the
 Calculus of constructions can be expressed in this framework.
 
@@ -130,7 +130,7 @@ Dedukti, and make these proofs available in Logipedia so they can be
 exported to other systems. This step is called the
 ``instrumentation'' of system $X$.
 
-The systems we consider fall into three broad classes: the systems
+We consider three broad classes of proof systems: those
 based on dependent type theory, those based on simple type
 theory, and those based on set theory and predicate logic.
 
@@ -335,8 +335,8 @@ will investigate what minimal changes need to be made to Dedukti
 itself in order to overcome these limitations.
 
 \item{\bf Reconstructing transient proof components.}
-In all proof systems, there is some information that is created during
-the process of checking a proof that is not stored in the final proof
+In all proof systems, part of the information created during
+the proof checking process is not stored in the final proof
 term. In systems such as Coq, Agda, and Matita, this concerns for
 example the types of each subexpression. In other systems such as
 HOL4, Isabelle, and Atelier B, even more information about the proof
@@ -356,19 +356,18 @@ external provers such as Isabelle or Atelier B. In order to handle
 these cases, we will instrument these external
 provers so they can produce the missing parts of the proof terms.
 
-\item{\bf Producing more compact proofs.}
-When translating a proof from some external system to Dedukti, we want
-to produce proof terms that are as small as possible, so it is easy to
-store them, recheck them, or export them to a different
-system. However, there are at least two reasons why proof terms might
-become large. First, a typical proof in an external system may be large
-(because big parts of it are constructed automatically). Second,
-translating a proof to Dedukti may increase the size of the proof, for
-example by normalizing it or by adding type annotations.  This means
-translating the proofs can take a long time, and doing anything
-with the translated proof will be difficult. This also has an obvious
-impact on the exporting of large libraries to Dedukti, discussed
-below.
+\item{\bf Producing more compact proofs.}  When translating a proof
+  from some external system to Dedukti, we want to produce proof terms
+  that are as small as possible, so it is easy to store them, recheck
+  them, or export them to a different system. However, there are at
+  least two reasons why proof terms might become large. First, a
+  typical proof in an external system may be large (because big parts
+  of it are constructed automatically). Second, translating a proof to
+  Dedukti may increase the size of the proof, for example by
+  normalizing it or by adding type annotations.  The translation of
+  the proofs can take a long time, the obtained proof may be difficult
+  to use. This also has an obvious impact on the exporting of large
+  libraries to Dedukti, discussed below.
 
 To reduce the size of proof terms produced by the translation to
 Dedukti, we plan to investigate how to avoid unnecessary
@@ -378,9 +377,8 @@ they can be inferred from the rest of the proof.
 \end{enumerate}
 
 For each of the systems considered in this project, we can identify
-some preliminary work, of varying maturity, on translating proofs to
-Dedukti.  We plan to build upon the previous work done for the
-following systems:
+some preliminary work.  We plan to build upon the previous work done
+for the following systems:
 
 \begin{compactitem}
 \item The standard and arithmetic libraries of Matita have been the
@@ -494,8 +492,8 @@ proof traces~\cite{DBLP:conf/sat/WetzlerHH14} and most SAT solvers are actually 
 produce proof traces in that format.  So, considering SAT solvers, the
 current status already meets the needs of Logipedia on this aspect.
 
-Considering other automated reasoners however, it is necessary to
-significantly improve the picture.  Some SMT (Satisifiability Modulo
+However instrumenting other automated reasoners is more challenging.
+Some SMT (Satisifiability Modulo
 Theories) solvers can produce some kind of proof trace, but the format
 is specific to the solver, and the proofs are sometimes difficult to
 replay due to their (lack of) granularity.  Most mainstream theorem provers for
@@ -1141,7 +1139,8 @@ itself and its accessibility.
 To make such an infrastructure
 usable, besides trans-national and virtual access,
 we must also provide an ergonomic web interface, a package
-distribution system, a search engine, a structure of encyclopedia
+distribution system, a search engine for mathematical formulas, a
+structure of encyclopedia
 that relies upon an enrichment of the data with metadata.
 
 \paragraph*{Sharing a common platform.}
