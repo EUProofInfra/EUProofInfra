@@ -22,8 +22,9 @@ When defining our objectives, we need indicators to measure our
 performance.  We can use the notion of a ``Technical readiness level''
 (TRL) to assess the status of some of our objectives.  But, to measure
 the level of integration in Logipedia of an existing proof system and
-of its associated proof libraries, we need to introduce another
-metric: the {\em Logipedia Integration Level} (LIL).
+of its associated proof libraries, we had to introduce another
+metric, that has been discussed with all the members of the consortium:
+the {\em Logipedia Integration Level} (LIL).
 
 \begin{figure}[ht]
 \definecolor{shadecolor}{named}{color1}
@@ -73,15 +74,20 @@ Isabelle/HOL, K Prover, Matita, Minlog, Mizar, ProvenTools, PVS,
 Rodin, and \tlaplus, as well as three formats used in automatic
 theorem proving: TSTP, LFSC, and Why3. 
 
-These systems can be roughly divided into three groups.  For those
+The above systems can be roughly divided into three groups.
+\begin{itemize}
+\item For those
 that currently have an integration level LIL 1 or higher (Matita, HOL
 Light, FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, Rodin, and HOL4)
 we have preliminary results, and we plan to bring them to a high level
-of integration.  For those that have a current integration level of 0
+of integration.
+\item For those that have a current integration level of 0
 (Mizar, \tlaplus, PVS, Minlog, ProvenTools, and K Prover) we are only
 starting out and our goals within this project are generally less
-ambitious. Finally, TSTP, LFSC, and Why3 are formats that permit
+ambitious.
+\item Finally, TSTP, LFSC, and Why3 are formats that permit
 to exchange information with Automatic Theorem Provers (ATP).
+\end{itemize}
 
 These three groups of systems correspond to different
 objectives, but all three are key to the project. The first ones will
@@ -92,7 +98,7 @@ frontier of Logipedia beyond proofs produced by humans.
 Very large proofs, requiring large libraries of auxiliary results,
 have been developed in some proof systems. These large libraries
 constitute an ambitious benchmark for the methods developed, and they
-contribute to populating Logipedia with a large number of elements.
+contribute to populate Logipedia with a large number of elements.
 We decided to focus, in this project, mostly on five libraries: the
 Isabelle Archive of Formal Proofs (AFP), the Isabelle probability and
 analysis library, the Coq geometry library, the Flyspeck library, and
@@ -112,8 +118,8 @@ and virtual. But beyond these two objectives of a trans-national and
 virtual access, an important effort will be made to make this
 encyclopedia accessible to a large community of specialists and
 non-specialists: researchers, engineers, teachers, students, etc.
-This requires us to develop an ergonomic web interface,
-a package distribution system, and a search engine.
+This requires us to develop an ergonomic web interface, a package
+distribution system, and a search engine for mathematical formulas.
 
 To make this infrastructure accessible, we also need to structure its
 content into libraries, books, chapters, etc., reaping the benefit of
@@ -138,7 +144,7 @@ one of our joint research objectives. We also add here Homotopy type
 theory that is a theory, but not yet a system.
 
 \hspace{0.4cm}
-Finally, to be able to export formal proofs to systems different from
+Finally, to export formal proofs to systems different from
 that in which they have been developed, we need to analyze which axioms
 they use and, when it is possible, transform them so that they do not
 use such an axiom anymore.  
@@ -156,8 +162,8 @@ mathematical objects and structures that must be aligned: structural
 results proved for one definition of real numbers, for instance, will
 be transported to any isomorphic structure, regardless of the way it
 has been defined. This is a final objective of this project.  Its
-performance indicator is the number of proofs we are able to bring
-from level LIL 4 to level LIL 5.
+performance indicator is the number of proofs brought from level
+LIL 4 to level LIL 5.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{longtable}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.32\textwidth}|}
 \hline
@@ -302,7 +308,7 @@ different from those in which they have been developed.
 
 The seven objectives give a first idea of the shape of the project.
 
-They all contribute to building a new formal proof community, focused
+They all contribute to build a new formal proof community, focused
 on the values of knowledge sharing, safety, security, privacy, open
 access, and education.
 
