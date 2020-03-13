@@ -260,7 +260,7 @@ vrule/.style={very thick,red},
 \edef\@wphases{\pdataref@safe{task}{\@task}{wphases}}
 \@for\@wphase:=\@wphases\do{
 \decode@wphase\@wphase
-\ganttbar{\pdataRef{task}{\@task}{label}}{\wphase@start}{\wphase@end}
+\ganttbar{\pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
 }
 }
 }
