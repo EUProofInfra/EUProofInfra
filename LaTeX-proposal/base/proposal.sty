@@ -416,7 +416,6 @@
 \newcommand\workphase[1]{\PackageError{proposal}
   {The \protect\workphase macro is deprecated,\MessageBreak
     use the attributes wphase on the workpackage environment instead!}}
-\newcommand\delivin[2]{#2@#1}
 \newcommand\taskin[2]{#2@#1}
 \newcommand\taskref[2]{\pdataRef{task}{#1@#2}{label}}
 \newcommand\taskreflong[2]{\pdataRef{task}{#2}{label}}
@@ -456,6 +455,7 @@
 \define@key{deliv}{issue}{\def\deliv@issue{#1}}
 \define@key{deliv}{status}{\def\deliv@status{#1}}
 \define@key{deliv}{blog}{\def\deliv@blog{#1}}
+\define@key{deliv}{task}{\def\deliv@task{#1}}
 \newcounter{deliverable}
 \newcommand{\wpg@deliv}[3]{% keys, title, type
 \stepcounter{deliverable}
@@ -484,6 +484,7 @@
 \@ifundefined{deliv@issue}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{issue}{\deliv@issue}}
 \@ifundefined{deliv@status}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{status}{\deliv@status}}
 \@ifundefined{deliv@blog}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{blog}{\deliv@blog}}
+\@ifundefined{deliv@task}{}{\pdata@def{deliv}{\taskin\deliv@id\wpg@id}{task}{\deliv@task}}
 \ifx\deliv@status\@@status@canceled\else
 \@ifundefined{deliv@due}{}{%
 \@for\@I:=\deliv@due\do{\protected@write\wpg@delivs{}{\string\deliverable%
@@ -517,7 +518,7 @@
    \else\expandafter\xdef\csname\@I delivs\endcsname%if not add it
    {\csname\@I delivs\endcsname\d@sep\wpg@id @\deliv@id}\fi}}%
 }% end gray color
-\update@delivs{\delivin\deliv@id\wp@id}
+\update@delivs{\taskin\deliv@id\wp@id}
 }
 \newenvironment{wadeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wa}\else\deliv@error\fi}{}
 \newenvironment{wpdeliv}[2][]{\ifdelivs\wpg@deliv{#1}{#2}{wp}\else\deliv@error\fi}{}

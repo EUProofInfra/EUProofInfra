@@ -239,11 +239,14 @@ vrule/.style={very thick,red},
 \offset@reset{.5pt}
 \edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
 \@for\@deliv:=\@delivs\do{
+\edef\@deliv@task{\pdataref@safe{deliv}{\@deliv}{task}}
+\ifx\@deliv@task\empty
 \ifodd\pdataref@num{deliv}{\@deliv}{due}
 \ganttmilestone[inline,milestone inline label node/.append style={above right=0pt and -15pt}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
 \else
 \ganttmilestone[inline,milestone inline label node/.append style={below right=\offset@get{\pdataref@num{deliv}{\@deliv}{due}} and -15pt}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
 \offset@incr{\pdataref@num{deliv}{\@deliv}{due}}{.6\baselineskip}
+\fi
 \fi
 }
 \end{pgfonlayer}
@@ -255,6 +258,21 @@ vrule/.style={very thick,red},
 \@for\@wphase:=\@wphases\do{
 \decode@wphase\@wphase
 \ganttbar{\pdataRef{task}{\@task}{shorttitle}}{\wphase@start}{\wphase@end}
+\begin{pgfonlayer}{delivs}
+\offset@reset{.5pt}
+\edef\@delivs{\pdataref@aux{\@wp}{delivs}{ids}}
+\@for\@deliv:=\@delivs\do{
+\edef\@deliv@task{\@wp @\pdataref@safe{deliv}{\@deliv}{task}}
+\ifx\@deliv@task\@task
+\ifodd\pdataref@num{deliv}{\@deliv}{due}
+\ganttmilestone[inline,milestone inline label node/.append style={above right=0pt and -15pt}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+\else
+\ganttmilestone[inline,milestone inline label node/.append style={below right=\offset@get{\pdataref@num{deliv}{\@deliv}{due}} and -15pt}]{\pdataRef{deliv}{\@deliv}{label}}{\pdataref@num{deliv}{\@deliv}{due}}
+\offset@incr{\pdataref@num{deliv}{\@deliv}{due}}{.6\baselineskip}
+\fi
+\fi
+}
+\end{pgfonlayer}
 }
 }
 }
@@ -283,7 +301,7 @@ All the other work packages depend of these two.
 Finally all the workpackages contribute to just one goal: interoperability,
 sustainability, and cross-verification of formal proofs.
 
-\includegraphics[width=\textwidth]{img/PERT}
+\includegraphics[width=\textwidth]{img/PERT-reduced}
 
 
 %%% Local Variables:
