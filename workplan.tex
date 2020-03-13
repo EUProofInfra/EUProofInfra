@@ -271,6 +271,10 @@ vrule/.style={very thick,red},
 \ganttvrule[vrule label node/.append style={below=\offset@get{\pdataref@num{mile}{\@mile}{month}}}]{\pdataRef{mile}{\@mile}{label}}{\pdataref@num{mile}{\@mile}{month}}
 \offset@incr{\pdataref@num{mile}{\@mile}{month}}{\baselineskip}
 }
+\edef\@meetings{1,16,32,48}
+\@for\@meeting:=\@meetings\do{
+\ganttvrule[vrule/.append style={orange}]{general meeting}{\@meeting}
+}
 \end{pgfonlayer}
 \end{ganttchart}
 \makeatother
