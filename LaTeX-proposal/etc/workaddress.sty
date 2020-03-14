@@ -27,7 +27,7 @@
 \addmetakey*{wa@person}{privfax}
 \addmetakey*{wa@person}{worktelfax}
 \addmetakey*{wa@person}{privtelfax}
-\def\wa@def#1#2#3#4{\expandafter\gdef\csname wa@#1@#2@#3\endcsname{#4}}
+\def\wa@def#1#2#3#4{\expandafter\xdef\csname wa@#1@#2@#3\endcsname{#4}}
 \def\wa@ref@test#1#2#3{%
   \@ifundefined{wa@#1@#2@#3}{%
     \PackageError{workaddress}{reference to undefined #3 of #1 #2}%
@@ -103,11 +103,12 @@
 \let\wa@institutions=\relax
 \newcommand\WAinstitution[2][]{%
   \metasetkeys{wa@institution}{#1}%
+  \def\wa@institution@name{#2}%
   \ifx\wa@institution@id\@empty%
     \@latex@warning{key 'id' undefined in WAinstitution}%
   \else%
     \wa@def{institution}\wa@institution@id{id}{\wa@institution@id}% redundant, but useful for checking
-    \wa@def{institution}\wa@institution@id{name}{#2}
+    \expandafter\let\csname wa@institution@\wa@institution@id @name\endcsname\wa@institution@name
     \wa@def{institution}\wa@institution@id{shortname}{\wa@institution@shortname}
     \wa@def{institution}\wa@institution@id{acronym}{\wa@institution@acronym}
     \wa@def{institution}\wa@institution@id{url}{\wa@institution@url}
