@@ -112,10 +112,16 @@
 \renewcommand\wpheadertable{%
 \wp@sites@efforts@lines%
 \setcounter{@sitespo}{\thewp@sites@num}\addtocounter{@sitespo}{1}%
+\edef\wp@activity{\pdataref{wp}\wp@id{activity}}%
 \par\noindent\begin{tabular}{|l|*{\thewp@sites@num}{c|}c|}\hline%
+\rowcolor{color3}%
 \multicolumn{\the@sitespo}{|l|}{\textbf{\wp@mk@title{\wp@num}: }%
-\pdataref{wp}\wp@id{title}}
-&\begin{tabular}[t]{@{}c@{}}\textbf{Start: }\pdataref{wp}\wp@id{start}\\\textbf{End: }\pdataref{wp}\wp@id{end}\end{tabular}\\\hline%
+\pdataref{wp}\wp@id{title}%
+\ifnum\pdfstrcmp{\wp@activity}{na}=0\ (Networking activity)%
+\else\ifnum\pdfstrcmp{\wp@activity}{tna}=0\ (Trans-national and virtual access)%
+\else\ifnum\pdfstrcmp{\wp@activity}{jra}=0\ (Joint research activity)\fi\fi\fi}%
+&\textbf{Months: }\pdataref{wp}\wp@id{start} - \pdataref{wp}\wp@id{end}\\%
+\hline%
 \wp@sites@line\\\hline%
 \wp@efforts@line\\\hline%
 \end{tabular}\smallskip\par\noindent\ignorespaces}

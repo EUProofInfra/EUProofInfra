@@ -47,7 +47,7 @@
 \RequirePackage{titletoc}
 \RequirePackage[bookmarks=true,linkcolor=\prop@link@color,
  citecolor=\prop@link@color,urlcolor=\prop@link@color,colorlinks=true,
- breaklinks=true, bookmarksopen=true]{hyperref}
+ breaklinks=true, bookmarksopen=true, hypertexnames=false]{hyperref}
 \ifsubmit
 \RequirePackage[hide,marginnote]{ed}
 \if@svninfo\RequirePackage[final,today]{svninfo}\fi
@@ -164,6 +164,7 @@
 \define@key{workpackage}{type}{\def\wp@type{#1}\pdata@def{wp}\wp@id{type}{#1}}
 \define@key{workpackage}{status}{\def\wp@status{#1}\pdata@def{wp}\wp@id{status}{#1}}
 \define@key{workpackage}{wphases}{\def\wp@wphases{#1}\pdata@def{wp}\wp@id{wphases}{#1}}
+\define@key{workpackage}{activity}{\def\wp@activity{#1}\pdata@def{wp}\wp@id{activity}{#1}}
 \define@key{workpackage}{swsites}[true]{\def\wp@swsites{#1}}
 \newcommand\wp@mk@title[1]{Work Package {#1}}
 \newcommand\wp@label[1]{WP{#1}}
