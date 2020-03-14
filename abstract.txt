@@ -1,0 +1,34 @@
+Because a bug can cause people to die and enterprises to go bankrupt,
+formal methods, and in particular formal proofs, are crucial for the
+European economy, and for the development of a safe, secure, and
+ethical information society, in the European Union.  It is also
+essential to strengthen the citizens' confidence in science and
+technology. Mastering the technology of formal proofs and its
+evolution is therefore vital for Europe, if we want to remain
+competitive in this domain.
+
+Formal proofs are developed using research infrastructures called
+"proof systems" that enable us to build and study formal proofs, just
+like particle accelerators allow us to build and study particles. But
+the development of formal methods, in research, industry, and
+education, is slowed down by the lack of integration of these
+infrastructures, that hinders interoperability, sustainability, and
+cross-verification of formal proofs.  After three decades dedicated to
+the development of these systems, the logical next step is their
+integration. To achieve this goal, we aim at building an open, on line
+encyclopedia of formal proofs called Logipedia.
+
+The time is indeed ripe to enhance the European strategy and co-build
+such a research infrastructure across Europe: after three decades of
+research, we now have empirical evidence that most of the formal
+proofs developed in one of these systems can also be developed in
+another. We understand the relationship between the theories
+implemented in these systems much better. We also have logical
+frameworks to express the theories implemented in these systems and
+algorithms to translate proofs from one theory to another.
+
+Such a project requires to gather a large community, hence our
+consortium of twenty-eight partners,from eleven European countries,
+where most European centers of excellence in formal proofs are
+represented.
+
