@@ -114,7 +114,7 @@
 \setcounter{@sitespo}{\thewp@sites@num}\addtocounter{@sitespo}{1}%
 \par\noindent\begin{tabular}{|l|*{\thewp@sites@num}{c|}c|}\hline%
 \multicolumn{\the@sitespo}{|l|}{\textbf{\wp@mk@title{\wp@num}: }%
-\pdata@target{wp}{\wp@id}{\pdataref{wp}\wp@id{title}}}
+\pdataref{wp}\wp@id{title}}
 &\begin{tabular}[t]{@{}c@{}}\textbf{Start: }\pdataref{wp}\wp@id{start}\\\textbf{End: }\pdataref{wp}\wp@id{end}\end{tabular}\\\hline%
 \wp@sites@line\\\hline%
 \wp@efforts@line\\\hline%
