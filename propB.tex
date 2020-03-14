@@ -38,7 +38,7 @@
 \renewcommand\chaptername{Section}
 
 \begin{document}
-{\color{red} version du 13 mars à 12:23}% modified by Frédéric only
+{\color{red} version du 13 mars à 20:02}% modified by Frédéric only
 
 \begin{proposal}[%
   coordinator=GiDo,
@@ -180,7 +180,9 @@
 
   \newpage
 
-  \tableofcontents
+  \vfil\null\newpage
+  \chapter*{Contents}
+  \printcontents[123]{}{0}{}
 
   \newpage
 
@@ -189,8 +191,20 @@
 \input{impact}
 \newpage
 \input{implementation}
-\newpage
-\renewcommand\addcontentsline[3]{}
+
+\proposalmiddle
+
+  \thispagestyle{empty}
+  \begin{center}
+    {\Large\bf Integrating and opening research infrastructures\\of European interest}\\[10mm]
+
+    {\LARGE H2020-INFRAIA-2018-2020}\\[10mm]
+
+    \fbox{\LARGE\bf Logipedia}\\[10mm]
+
+    Coordinator: Gilles Dowek (gilles.dowek@inria.fr)\\[10mm]
+  \end{center}
+\printcontents[45]{}{0}{}
 \input{members}
 \newpage
 \input{issues}
