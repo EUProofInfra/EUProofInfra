@@ -33,28 +33,30 @@ the {\em Logipedia Integration Level} (LIL).
 {\bf \Large The Logipedia Integration Levels (LIL)\label{lil}}
 \end{center}
 
-\begin{longtable}{|p{0.1\textwidth}|p{0.85\textwidth}|}
+\begin{longtable}{|c|p{0.9\textwidth}|}
 \hline
-{\bf LIL 0:} & No effort of integration has been made yet.\\
+{\bf LIL} & {\bf Description}\\
 \hline
-{\bf LIL 1:} & The theory implemented in the system has been defined in
+{\bf 0} & No effort of integration has been made yet.\\
+\hline
+{\bf 1} & The theory implemented in the system has been defined in
 the logical framework Dedukti.\\
 \hline
-{\bf LIL 2:} & The system has been instrumented so that examples of proofs
+{\bf 2} & The system has been instrumented so that examples of proofs
 can be exported and checked in Dedukti.\\
 \hline
-{\bf LIL 3:} & 25\% of the library of the system has been
+{\bf 3} & 25\% of the library of the system has been
 exported and checked in Dedukti.\\
 \hline
-{\bf LIL 4:} & 25\% of the library of the system has
+{\bf 4} & 25\% of the library of the system has
 been made available in Logipedia.\\
 \hline
-{\bf LIL 5:} & A tool has been built to analyze the Dedukti proofs
+{\bf 5} & A tool has been built to analyze the Dedukti proofs
 translated from the system, detect those that can be expressed in a theory
 weaker than that of the system, and translate those proofs into a
 weaker theory.\\
 \hline
-{\bf LIL 6:} & All proofs of the system have been exported, translated,
+{\bf 6} & All proofs of the system have been exported, translated,
 and made available in Logipedia.\\
 \hline
 \end{longtable}
@@ -75,7 +77,7 @@ Rodin, and \tlaplus, as well as three formats used in automatic
 theorem proving: TSTP, LFSC, and Why3. 
 
 The above systems can be roughly divided into three groups.
-\begin{itemize}
+\begin{compactitem}
 \item For those
 that currently have an integration level LIL 1 or higher (Matita, HOL
 Light, FoCaLize, Coq, Isabelle/HOL, Agda, Atelier B, Rodin, and HOL4)
@@ -87,7 +89,7 @@ starting out and our goals within this project are generally less
 ambitious.
 \item Finally, TSTP, LFSC, and Why3 are formats that permit
 to exchange information with Automatic Theorem Provers (ATP).
-\end{itemize}
+\end{compactitem}
 
 These three groups of systems correspond to different
 objectives, but all three are key to the project. The first ones will
@@ -164,6 +166,8 @@ be transported to any isomorphic structure, regardless of the way it
 has been defined. This is a final objective of this project.  Its
 performance indicator is the number of proofs brought from level
 LIL 4 to level LIL 5.
+
+\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{longtable}{|p{0.2\textwidth}|p{0.4\textwidth}|p{0.32\textwidth}|}
 \hline
@@ -261,7 +265,7 @@ academic and industrial environment.
 &
 Structure the content of Logipedia into libraries, books, chapters,
 etc., reaping the benefit of the structure (modules, qualified names,
-etc.) of some of the libraries we start with, and enrich the data
+etc.) of some of the libraries, and enrich the data
 with meta-data.
 &
 TRL 4, as our target is beyond a proof of concept validated in an 
