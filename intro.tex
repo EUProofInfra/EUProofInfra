@@ -29,12 +29,18 @@ Evaluation Assurance Levels (EAL) of the Common Criteria (CC) security
 evaluation international standard, in effect since 1999, certification
 processes require proofs, and not only testing.
 
-Making formal methods more accessible to industry, via
-better theories, better tools and better-training of workers, can
-bring a significant competitive advantage to Europe.  Hence it is
-crucial for Europe to master this technology and its evolution.
+% TODO: Should we give specific examples here already?
+Several companies in our consortium from sectors such as
+transportation, health case, and energy have expressed interest in
+using formal methods or scaling up their existing use of them. These
+companies are at the forefront of the adaptation of formal methods in
+the industry, and if they are successful many others will likely
+follow. By making formal methods more accessible to these companies
+and all other interested partners, via better theories, better tools
+and better-training of workers, we hope bring a significant
+competitive advantage to European companies and Europe as a while.
 
-Proofs have also always been the basis of mathematics, and hence of
+Aside from their use in software verification, proofs have also always been the basis of mathematics, and hence of
 many mathematised sciences. In this area, the use of formal proofs has made significant progress,
 as witnessed by the formalisation of the Feit-Thompson theorem \cite{Gonthier13}. 
 This is important since the correctness of proofs is sometimes  hard to establish,
@@ -94,45 +100,60 @@ has been proved correct in Coq.  Some projects, such as the proof of
 Hales' theorem, have been started in different systems and required
 significant integration efforts for obtaining the overall result.
 
-Thus, the development of formal methods is slowed down by the lack of
-integration of these research infrastructures.  Because of this lack
-of integration, each small community is centered around one theory and
-one system. Each library is specific to one proof system, or often
-even to a specific version of this system. In general, a library
-developed in one system cannot be used in another, and when the system
-is no longer maintained, the library may disappear.  Thus,
+Because of the focus on this large variety of proof systems, the field
+is fragmented into a number of small communities, each of which is
+centered around one theory and one proof system. This proposal brings
+together partners from a large number of these different communities
+for the first time, and brings them together in a new community
+centered around the development of a shared infrastructure for formal
+proofs. In fact, the initial interest for this proposal was so big
+that the number of participants had to be limited.  This clearly
+demonstrates the potential for this new community to grow further
+during and after the course of this project.
+
+The fragmented nature of the current proof systems is a major
+bottleneck for the adaptation of formal systems by the
+industry. Several of the companies in our consortium have expressed
+interest in the use of formal methods, but are faced with the
+difficult task of choosing a proof system to work with. In general, a
+library developed in one system cannot be used in another, so a wrong
+choice may lead to a critical library being unavailable in that
+system. This forces the company to either develop the library
+themselves or switch to a different proof system.  Thus,
 interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
 proof decades after it has been developed), and cross-verification
-(the possibility to verify a proof in a system different from the ones in
-which it has been constructed resulting in a higher assurance of its
-correctness) are restricted.
+(the possibility to verify a proof in a system different from the ones
+in which it has been constructed resulting in a higher assurance of
+its correctness) are restricted.
 
-The fragmentation of these infrastructures hinders productivity
-because foundational work (for instance, developing a calculus library
-with theorems about the sinus and cosinus functions, derivatives,
-etc.) has to be repeated instead of being reused.  It also limits the
+The fragmentation of these infrastructures also limits the
 dissemination of formal proofs in non-specialist communities. For
 instance, teaching formal proving to undergraduate students in a logic
 course is difficult, as it requires the choice of a specific language,
 a specific theory, and a specific system that restrict the scope of the
 course, instead of giving students the tools that are useful
-everywhere. The same is true for the use of formal proofs in industry
-or by working mathematicians.
+everywhere. 
 
-On philosophical grounds, while we had in the past an (informal) proof
-of Pythagoras' theorem or Fermat's little theorem, the same proof now
-has different formalizations in PVS, Isabelle/HOL, Coq, etc.  Thus,
-the universality of logical truth itself has been threatened. 
-As we shall
-see, it is not the first time in history that this universality of
-logical truth is jeopardized: it already has been, for instance, in
-the 19$^{\mbox{\footnotesize th}}$ century, with the non-Euclidean
-geometries. This crisis of the non-Euclidean geometries has been
-solved at the beginning of the 20$^{\mbox{\footnotesize th}}$ with the
-invention of a logical framework: predicate logic
-\cite{HilbertAckermann}, in which the various geometries could be
-defined.
+An important goal of this project is thus to provide free and virtual
+access to these critical libraries from all proof systems,
+which will greatly increase the adoption of formal verification in
+both industry and education.
+
+% Jesper: I don't think this paragraph adds much to the main story here.
+%On philosophical grounds, while we had in the past an (informal) proof
+%of Pythagoras' theorem or Fermat's little theorem, the same proof now
+%has different formalizations in PVS, Isabelle/HOL, Coq, etc.  Thus,
+%the universality of logical truth itself has been threatened. 
+%As we shall
+%see, it is not the first time in history that this universality of
+%logical truth is jeopardized: it already has been, for instance, in
+%the 19$^{\mbox{\footnotesize th}}$ century, with the non-Euclidean
+%geometries. This crisis of the non-Euclidean geometries has been
+%solved at the beginning of the 20$^{\mbox{\footnotesize th}}$ with the
+%invention of a logical framework: predicate logic
+%\cite{HilbertAckermann}, in which the various geometries could be
+%defined.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
@@ -161,37 +182,62 @@ formal proof technology.
 \end{minipage}
 &
 \begin{minipage}{9.85cm}
-\hspace{0.4cm} Each proof system comes with its own libraries, and
-these libraries are also part of research infrastructures. To address
-the challenge of improving cooperation between these proof systems, we
-will integrate these libraries in an online encyclopedia of formal
-proofs. Each proof in this encyclopedia will have versions in each
-theory where it can be expressed, so that it can be used in as many
-systems as possible.  
 
-\hspace{0.4cm} As each proof system implements a different theory,
-Logipedia will contain proofs expressed in different theories.  Such a
-theory-independent infrastructure is possible, because the
-theories implemented in these different proof systems can be expressed
-in a common logical framework: the $\lambda \Pi$-calculus modulo
-theory, implemented in the system
-\href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
-  lingua franca} that permits this theory-independent encyclopedia to
-exist.
+To bring together the fragmented field of formal methods and to
+provide everyone -- no matter what proof system they use -- with free
+and open access to libraries of formal proofs, we propose to develop
+an encyclopedia that will eventually contain all formal proofs in
+existence.
+
+\begin{center} \textbf{This encyclopedia will be called Logipedia.} \end{center}
+
+Building such an encyclopedia will allow interoperability,
+sustainability, and cross-verification of all formal proofs in the
+encyclopedia.
+  
 \end{minipage}
 \\
 \end{tabular}
 
 \medskip
 
-{\bf Building such an encyclopedia will thus allow interoperability,
-  sustainability, and cross-verification of all formal proofs in the
-  encyclopedia.}
+%\hspace{0.4cm} Each proof system comes with its own libraries, and
+%these libraries are also part of research infrastructures. To address
+%the challenge of improving cooperation between these proof systems, we
+%will integrate these libraries in an online encyclopedia of formal
+%proofs. Each proof in this encyclopedia will have versions in each
+%theory where it can be expressed, so that it can be used in as many
+%systems as possible.  
 
-This encyclopedia will be called Logipedia.
+%\hspace{0.4cm} As each proof system implements a different theory,
+%Logipedia will contain proofs expressed in different theories.  Such a
+%theory-independent infrastructure is possible, because the
+%theories implemented in these different proof systems can be expressed
+%in a common logical framework: the $\lambda \Pi$-calculus modulo
+%theory, implemented in the system
+%\href{https://deducteam.github.io/}{Dedukti}. Dedukti is thus the {\em
+%  lingua franca} that permits this theory-independent encyclopedia to
+%exist.
+
 
 Logipedia is thus a research infrastructure that integrates proof
 systems, through the sharing of data (formal proofs).
+
+\begin{itemize}
+\item Logipedia will bring together the communities centered around
+  different proof systems, providing new opportunities for networking
+  between these previously separate communities.
+
+\item Logipedia will provide a vast library of proofs developed in
+  different proof systems and make them available to the public,
+  greatly increasing the trans-national and virtual access to these
+  valuable resources.
+
+\item Logipedia will allow researchers from different areas to share
+  and discuss their work in a common language, opening up new avenues
+  for joint research activities.
+\end{itemize}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
