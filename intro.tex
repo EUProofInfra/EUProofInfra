@@ -1,33 +1,34 @@
 \thispagestyle{empty}
 
 
-Our societies depend more and more on digital infrastructures.  This
-dependency is made extremely visible in times of a crisis, when
-teleworking, telemedecine, distance learning, etc. are at the center
-of their resilience.  In such situations, as well as in more common
-ones, the safety of software is the basis of the reliability of these
-infrastructure and the solidity of our societies: a single bug can
-cause people to die and enterprises to go bankrupt.
+Digital infrastructures are the backbone of our societies, as we can
+observe in times of a crisis, when teleworking, telemedecine, distance
+learning, etc. are at the center of their resilience.  In such
+situations, as well as in more common ones, the solidity of our
+societies depends on the reliability of these infrastructure: a single
+bug can cause people to die and enterprises to go bankrupt.
 
 If testing software makes it possible to reveal the the presence of
 bugs, only formal verification can guarantee their absence.  Thus, the
 trust in critical systems relies on formal verification, in particular
 formal proofs, that guarantee the safety of people using
 transportation systems (autonomous cars, subways, trains, planes,
-etc.), health systems (robotic surgery, ear implants, etc.), energy
-provided by nuclear plants, financial applications, e-governance, etc.
+etc.), health systems (robotic surgery, ear implants, telemedecine,
+etc.), energy provided by nuclear plants, financial applications,
+e-governance, etc.
 
-This crucial role of formal proof is highlighted by several successes,
-like the correctness proofs of the automatic Paris metro line 14
-\cite{Behm98,Lecomte17}, the detect-and-avoid system for unmanned
-aircraft system developed by NASA \cite{Munoz16}, the operating system
-seL4 \cite{Klein09}, or the C compiler CompCert \cite{Leroy06}.  It
-has been empirically observed that operating systems and compilers
-often have bugs, but proved systems and compilers, such as seL4 or
-CompCert, have none, or much fewer.  This is why, at the highest
-Evaluation Assurance Levels (EAL) of the Common Criteria (CC) security
-evaluation international standard, in effect since 1999, certification
-processes require proofs, and not only testing.
+This crucial role of computerised formal proof is highlighted by
+several successes, like the correctness proofs of the automatic Paris
+metro line 14 \cite{Behm98,Lecomte17}, the detect-and-avoid system for
+unmanned aircraft system developed by NASA \cite{Munoz16}, the
+operating system seL4 \cite{Klein09}, or the C compiler CompCert
+\cite{Leroy06}.  It has been empirically observed that operating
+systems and compilers often have bugs, but proved systems and
+compilers, such as seL4 or CompCert, have none, or much fewer.  This
+is why, at the highest Evaluation Assurance Levels (EAL) of the Common
+Criteria (CC) security evaluation international standard, in effect
+since 1999, certification processes require proofs, and not only
+testing.
 
 % TODO: Should we give specific examples here already?
 Several companies in our consortium from sectors such as
@@ -38,20 +39,28 @@ the industry, and if they are successful many others will likely
 follow. By making formal methods more accessible to these companies
 and all other interested partners, via better theories, better tools
 and better-training of workers, we hope bring a significant
-competitive advantage to European companies and Europe as a while.
+competitive advantage to European companies and Europe as a whole.
 
-Aside from their use in software verification, proofs have also always been the basis of mathematics, and hence of
-many mathematised sciences. In this area, the use of formal proofs has made significant progress,
-as witnessed by the formalisation of the Feit-Thompson theorem \cite{Gonthier13}. 
-This is important since the correctness of proofs is sometimes  hard to establish,
-because of their length and complexity, as in the case of Hales' theorem (Kepler's conjecture), which has now been formally verified \cite{Hales17} ({cf.}~also the recent controversy on the $abc$ conjecture). 
-Thus, formal proofs have a wide range of applications, from safety and security of software to mathematics.
+Aside from their use in software verification, proofs have also always
+been the basis of mathematics, and hence of many mathematised
+sciences. In this area, the use of computerised formal proofs has made
+significant progress, as witnessed by the formalisation of the
+Feit-Thompson theorem \cite{Gonthier13}.  Such a used of formal proofs
+in mathematics and in sciences is important, as the correctness of a
+pencil and paper proof is often the object of a controversy as shown
+by the case of Hales' theorem (Kepler's conjecture) which is too long
+and too complex to be verified without a computer (and which has now
+been formally verified \cite{Hales17}) or with the more recent
+controversy on the $abc$ conjecture {\color{red} reference}. Thus,
+formal proofs have a wide range of applications, from safety and
+security of software to mathematics.
 
 Formal proofs are developed using research infrastructures called
-``proof systems''.  These proof systems allow computer scientists,
-mathematicians, engineers, and logicians to build and study formal
-proofs, just like particle accelerators allow physicists to build and
-study particles. Figure \ref{systems} lists the most prominent proof systems today.
+``proof systems''.  These proof systems are pieces of software that
+allow computer scientists, mathematicians, engineers, and logicians to
+build and study formal proofs, just like particle accelerators allow
+physicists to build and study particles. Figure \ref{systems} lists
+the most prominent proof systems today.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\s{ $\star$}
@@ -64,7 +73,7 @@ study particles. Figure \ref{systems} lists the most prominent proof systems tod
        {\bf In Europe} & {\bf Outside Europe}\\\hline
         \begin{minipage}{10cm}
           \begin{tabular}{cccc}
-            Abella & Agda\s & Atelier B\s & Coq\\
+            Abella & Agda\s & Atelier B\s & Coq\s\\
             FoCaliZe\s & HOL4\s & Isabelle\s & KProver\s\\
             Matita\s & Minlog\s & Mizar\s & ProB\\
             ProvenTools\s & Rodin\s & \tlaplus\s & Why3\s\\
@@ -93,7 +102,7 @@ slowed down by the large number of proof systems (and sometimes the
 large number of versions, over time, of one single system) and the
 lack of a common theory used by these systems.  For instance, the
 Paris metro line 14 has been proved correct in Atelier B, while the
-Nasa detect-and-avoid system for unmanned aircraft system has been
+NASA detect-and-avoid system for unmanned aircraft system has been
 proved correct in PVS, the seL4 operating system has been proved
 correct in Isabelle/HOL\cite{paulson700}, and the compiler CompCert
 has been proved correct in Coq.  Some projects, such as the proof of
