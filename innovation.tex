@@ -35,7 +35,7 @@ providing a common proof database, general interest proofs can be
 stored and maintained in the infrastructure, allowing industrial users
 to focus their resources for their specific needs only.
 
-Finally, Logipedia will increaase the trust in formal proofs. For
+Finally, Logipedia will increase the trust in formal proofs. For
 example, in a certification context, the use of a particular tool for
 the verification of the candidate system must be approved. If the
 certification body is not familiar with the tool, producing a
@@ -54,16 +54,133 @@ finally, it will encourage the development of new tools, as potential
 users will not have to trust these tools directly, but only the proofs
 that they provide, which can be checked easily.
 
-\subsubsection*{Logipedia will foster the innovation potential of the 
-  industrial partners of the project} 
+Each industrial partner in the project of course has their own agenda.
+
 
 \begin{longtable}{|p{0.10\textwidth}|p{0.85\textwidth}|}
 \hline
+{\bf CEA}
+&
+{\color{red} TO DO}
+\\
+\hline
+{\bf Clearsy}
+&
+In B software development, each
+industrial user enriches Atelier B's provers with lemmas which must be
+qualified by tools or proof-reading.  It is often the case that lemmas
+are qualified multiple times, even within the same company.  Clearsy
+has been involved for years in projects to allow the integration into
+AtelierB of proof tools developed by other industrial or academic teams
+(Bware, LCHIP, DISCONT) using modern proof techniques.  Eventually,
+industrial integration raises issues related to the qualification of
+the tools in relation to industrial safety standards (Common Critera,
+DO-178, 50129, etc).
+\\
+
+&
+\hspace{0.4cm}
+Logipedia is a unique opportunity for CLEARSY to consolidate relationships with leading European actors in the research field for machine-based
+theorem proving. The tools used by CLEARSY and its client companies, namely Atelier B and its provers, will benefit directly from the base of lemmas
+that will be developed and maintained by Logipedia.
+\\
+
+&
+\hspace{0.4cm}
+For example, a typical railway application requires that tens of thousands of proofs are performed. The rate of automation being typically around 80 \%,
+this leaves hundreds if not thousands of proofs that have to be conducted with a highly specialized human interaction. Such interactions sometimes require
+more than one thousand manual steps and the creation of lemmas that have to be later verified by a third-party expert.
+Logipedia, by enabling both the application of new proof tools in this context, would both increase the ratio of automatic proof and facilitate the verification
+of manually introduced lemmas. Industrial development based on the B method should improve significantly by both cost reduction
+and increased reliability.
+\\
+
+& The following challenges met by CLEARSY are
+directly addressed in Logipedia:\\
+
+& $\blacktriangleright$ leverage advances in proof techniques
+developed in other communities due to the disparity of expressiveness
+in different languages,\\
+
+& $\blacktriangleright$ Certifying the results of the tools used for
+proof (including CLEARSY's own tools),\\
+
+
+&
+$\blacktriangleright$
+  Integration of new technologies in an industrial context demanding qualification with respect to safety standards.
+\\
+
+\hline
+
+{\bf Edukera}&
+
+\hspace{0.4cm} Over the years Edukera has experienced an increasing
+need for formal methods in education. This is due to the emergence of
+new industrial activities (cryptocurrency and the verification of
+smart contracts, software dependant autonomous vehicles, \ldots). This
+is why Edukera considers the existence of a solid open-source
+education-dedicated interface for formal proofs, to be critical to the
+upcoming industrial ecosystem.\\
+
+&Edukera has developed an online educational application
+to teach mathematics which relies on the use of the formal proof
+assistant Coq. However, several issues in the design of the current
+Edukera application prevent a larger user base and need to be solved:
+developers in formal methods need to create their own theories and
+teachers must be able to develop their exercises; plus the core
+Edukera solution should be open-sourced for anyone to use, fix and
+improve when necessary.  \\
+
+&
+\hspace{0.4cm} The use of Logipedia as the mathematical foundation of
+the Edukera application can solve these critical issues: indeed
+Logipedia federates a large scientific community around a unique
+language, and a large developer community around a unique open-source
+mathematical framework, which is beyond the financial means and
+traction of the Edukera company on its own.  \\
+
+&
+\hspace{0.4cm} Students may already access the Edukera application and
+exercises. Hence the existence of an open-source version of the
+Edukera application will not affect the business model which is based
+on the billing of class administration features (activity reports,
+homework schedule, connection to the LMS, \ldots).  \\
+
+\hline
+
+{\bf Med-El}
+&
+Given strict and specific quality requirements in the healthcare
+domain, medical software needs already a different approach to testing
+and much stricter verification of requirements than a traditional
+software. Healthcare software should provide for reliable data
+exchange, save patients and professionals time and effort on routine
+procedures, show the stable performance, and securely deal with the
+sensitive data. Therefore, such a software should be validated from
+the perspectives of interoperability, usability, performance, and
+compliance with requirements, risk factors as well as industry
+regulations.\\
+
+&
+\hspace{0.4cm}
+MED-EL considers that a traditional software testing
+might be still enhanced with methods assuring that under every
+condition medical software provides desired results. Hence by adding
+formal verification to medical software testing toolkit we could
+considerably increase probability of delivering new functionalities
+without unexpected behaviors.\\
+&
+\hspace{0.4cm}
+Such development of formal proofs must be facilitated in the 
+medical software industry by being able to reuse formal proofs developed
+for other purposes.\\
+
+\hline
+
 {\bf OCamlpro} &
 
-OCamlpro is a research and development company invested in formal
-methods, among other things, through its active developpement of the
-Alt-Ergo automatic theorem prover. Logipedia will foster the innovation
+Logipedia will foster the innovation
 potential of OCamlpro in two directions.\\
 
 &
@@ -86,144 +203,11 @@ the capacity of opam to be language-agnostic and help disseminate knowledge.
 \\
 
 \hline
-{\bf Clearsy} &
+{\bf Prove \& Run} & {\color{red} TO DO}\\
 
-CLEARSY was founded on January 1st, 2001 by a group of engineers that
-had industrialized the formal modeling tool referred to as Atelier B,
-used in the rail transport industry to create safety software. CLEARSY
-was created on the basis of two principal objectives:
-to develop formal methods and formal tools and 
-to develop software and systems that justify the use of formal methods.
-CLEARSY is therefore a user of formal methods and a supplier of
-formal methods tools in the industrial world.\\
-
-&
-\hspace{0.4cm}
-By its activity and its essence CLEARSY has been involved since its
-inception in various research projects in order to improve formal
-methods in the capacity to deal with concrete industrial problems.\\
-
-&
-\hspace{0.4cm}
-For industrial use, for example in B software development, each
-industrial user enriches Atelier B's provers with lemmas which must be
-qualified by tools or proof-reading.  It is often the case that lemmas
-are qualified multiple times, even within the same company.  Clearsy
-has been involved for years in projects to allow the integration into
-AtelierB of proof tools developed by other industrial or academic
-(Bware, LCHIP, DISCONT) using modern proof techniques.  Eventually,
-industrial integration raises issues related to the qualification of
-the tools in relation to industrial safety standards (Common Critera,
-DO-178, 50129, etc).  The following challenges met by CLEARSY are
-directly addressed in Logipedia:\\
-
-& $\blacktriangleright$ leverage advances in proof techniques
-developed in other communities due to the disparity of expressiveness
-in different languages,\\
-
-& $\blacktriangleright$ Certifying the results of the tools used for
-proof (including CLEARSY's own tools),\\
-
-
-&
-$\blacktriangleright$
-  Integration of new technologies in an industrial context demanding qualification with respect to safety standards.
-\\
-
-&
-\hspace{0.4cm}
-Logipedia is a unique opportunity for CLEARSY to consolidate relationships with leading European actors in the research field for machine-based
-theorem proving. The tools used by CLEARSY and its client companies, namely Atelier B and its provers, will benefit directly from the base of lemmas
-that will be developed and maintained by Logipedia.\\
-
-&
-\hspace{0.4cm}
-For example, a typical railway application requires that tens of thousands of proofs are performed. The rate of automation being typically around 80 \%,
-this leaves hundreds if not thousands of proofs that have to be conducted with a highly specialized human interaction. Such interactions sometimes require
-more than one thousand manual steps and the creation of lemmas that have to be later verified by a third-party expert.
-Logipedia, by enabling both the application of new proof tools in this context, would both increase the ratio of automatic proof and facilitate the verification
-of manually introduced lemmas. Industrial development based on the B method should improve significantly by both cost reduction
-and increased reliability.
-\\
-
+    
 \hline
 
-
-{\bf Med-El}
-&
-
-Given strict and specific quality requirements in the healthcare
-domain, medical software needs already a different approach to testing
-and much stricter verification of requirements than a traditional
-software. Healthcare software should provide for reliable data
-exchange, save patients and professionals time and effort on routine
-procedures, show the stable performance, and securely deal with the
-sensitive data. Therefore, such a software should be validated from
-the perspectives of interoperability, usability, performance, and
-compliance with requirements, risk factors as well as industry
-regulations.\\
-
-&
-\hspace{0.4cm}
-MED-EL considers that a traditional software testing
-might be still enhanced with methods assuring that under every
-condition medical software provides desired results. Hence by adding
-formal verification to medical software testing toolkit we could
-considerably increase probability of delivering new functionalities
-without unexpected behaviors.\\
-
-\hline
-
-{\bf Edukera}& Edukera has developed an online educational application
-to teach mathematics which relies on the use of the formal proof
-assistant Coq.\\
-
-&
-\hspace{0.4cm} One of the key features is the ergonomic design of the
-numerical mathematical paper which allows students to build the proof
-with point and click interactions. This numerical paper has been
-developed and improved over several years of experiment with students'
-and teachers' feedback. So much so that the Edukera application is
-currently the most advanced user interface to do mathematical proofs
-in education.  \\
-
-&
-\hspace{0.4cm} Since its commercial launch in 2016, the Edukera
-application has been successfully used in many universities by 8,000
-students to solve 250,000 exercises.  \\
-
-&
-\hspace{0.4cm} Over the years Edukera has experienced an increasing
-need for formal methods in education. This is due to the emergence of
-new industrial activities (cryptocurrency and the verification of
-smart contracts, software dependant autonomous vehicles, \ldots). This
-is why Edukera considers the existence of a solid open-source
-education-dedicated interface for formal proofs, to be critical to the
-upcoming industrial ecosystem.\\
-
-&
-\hspace{0.4cm} However, several issues in the design of the current
-Edukera application prevent a larger user base and need to be solved:
-developers in formal methods need to create their own theories and
-teachers must be able to develop their exercises; plus the core
-Edukera solution should be open-sourced for anyone to use, fix and
-improve when necessary.  \\
-
-&
-\hspace{0.4cm} The use of Logipedia as the mathematical foundation of
-the Edukera application can solve these critical issues: indeed
-Logipedia federates a large scientific community around a unique
-language, and a large developer community around a unique open-source
-mathematical framework, which is beyond the financial means and
-traction of the Edukera company on its own.  \\
-
-&
-\hspace{0.4cm} Students may already access the Edukera application and
-exercises. Hence the existence of an open-source version of the
-Edukera application will not affect the business model which is based
-on the billing of class administration features (activity reports,
-homework schedule, connection to the LMS, \ldots).  \\
-\hline
 {\bf Runtime Verification} &
 
 Runtime Verification is a research and development start-up advocating for the industrial
@@ -267,25 +251,31 @@ infrastructure to explore and check the proofs.
 \hline
 \end{longtable}
 
-Many enterprises, in the club of industrial users,
+The members of the club of industrial users also focus on
+various aspect of Logipedia. Many of the, including 
 {\bf Alstom}, {\bf Mitsubishi Electric}, {\bf
-  Nomadic Labs}, {\bf IBM Research}.  {\bf Origin Labs}, {\bf RATP},
+  Nomadic Labs}, {\bf IBM Research},  {\bf Origin Labs}, {\bf RATP},
 etc.  insist on the importance of mutualizing formal proofs and
-reusing existing ones. 
-Reusing formal proofs will reduce
+reusing existing ones: reusing formal proofs will reduce
 the development time and thus allows to tackle larger
 problems. Moreover, as each proof assistant requires its own
 expertise, the ability to reuse proofs coming from any system in the
-proof assistant of our choice is therefore a great benefit.  Some
-others, in particular {\bf Systerel}, insist on the importance of
-incrasing the trust in formal developments, in particular by allowing
+proof assistant of our choice is therefore a great benefit.
+
+Some
+others, for instance {\bf Systerel}, are more interested in 
+increasing the trust in formal developments, in particular by allowing
 an external verification of the automated theorem provers and SMT
-solvers.  Some others, such as {\bf Trusted Labs} and {\bf Onera},
-insist on the transformation of the certification process.  {\bf Arm}
-insists on the importance of having system independent specifications
-of pieces of software and hardware.  {\bf Facebook Artificial
-  Intelligence Reseach} insists on the importance of having large
-databases of proofs to train machine learnin algorithms.  {\bf
+solvers.
+
+Some others, for instance {\bf Trusted Labs} and {\bf Onera} insist
+on the transformation of the certification process.
+
+{\bf Arm} insists
+on the importance of having system independent specifications of
+pieces of software and hardware,   {\bf Facebook Artificial
+  Intelligence Reseach} on the importance of having large
+databases of proofs to train machine learnin algorithms, and  {\bf
   Siemens} on the fact that Logipedia is also a communication tool to
 to remain up to date with the latest developments.
 
@@ -581,6 +571,7 @@ security certification scheme definition. Trusted Labs is also an
 accredited ITSEF lab in France, and conducts Common Criteria
 evaluations.
 
+
 Since more than 15 years, Trusted Labs acquired a great experience in
 formal methods and support customers to get high level certifications
 for their products. They also conduct or support industrials on
@@ -592,3 +583,11 @@ devices. Hence, Trusted Labs is very interested to be part of the
 Logipedia industrial users club, and bring its contribution on formal
 proofs.
 }
+
+
+%%% Local Variables:
+%%%   mode: latex
+%%%   mode: flyspell
+%%%   ispell-local-dictionary: "english"
+%%% End:
+
