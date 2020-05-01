@@ -3,32 +3,31 @@
 
 Digital infrastructures are the backbone of our societies, as we can
 observe in times of a crisis: teleworking, telemedecine, distance
-learning, etc. are the basis of our resilience.
-In such situations, as well as in more common ones, the solidity of
-our societies depends on the reliability of these infrastructure: a
-single bug can cause people to die and enterprises to go bankrupt.
-
-If testing software makes it possible to reveal the the presence of
-bugs, only formal verification can guarantee their absence.  Thus, the
-trust in critical systems relies on formal verification, in particular
-computerised formal proofs, that guarantee the safety of people using
-transportation systems (autonomous cars, subways, trains, planes,
+learning, etc. are the basis of our resilience.  In such situations,
+as well as in more common ones, the solidity of our societies depends
+on the reliability of these infrastructures: think of critical systems
+like transportation systems (autonomous cars, subways, trains, planes,
 etc.), health systems (robotic surgery, ear implants, telemedecine,
 etc.), energy provided by nuclear plants, financial applications,
-e-governance, etc.
+e-governance, etc. In these systems, a single bug can cause people to
+die and enterprises to go bankrupt.
 
-This crucial role of computerised formal proof is highlighted by
+If testing software makes it possible to reveal the the presence of
+bugs, only formal verification can guarantee their absence. Thus, the
+trust in critical systems relies on formal verification, in particular
+computerised formal proofs, that guarantee the safety of people using
+them. This crucial role of computerised formal proof is highlighted by
 several successes, like the correctness proofs of the automatic Paris
 metro line 14 \cite{Behm98,Lecomte17}, the detect-and-avoid system for
 unmanned aircraft system developed by NASA \cite{Munoz16}, the
-operating system seL4 \cite{Klein09}, or the C compiler CompCert
+operating system seL4 \cite{Klein09}, and the C compiler CompCert
 \cite{Leroy06}.  It has been empirically observed that operating
 systems and compilers often have bugs, but proved systems and
 compilers, such as seL4 or CompCert, have none, or much fewer.  This
 is why, at the highest Evaluation Assurance Levels (EAL) of the Common
 Criteria (CC) security evaluation international standard, in effect
-since 1999, certification processes require proofs, and not only
-testing.
+since 1999, certification processes require not only testing, but also
+proofs.
 
 % TODO: Should we give specific examples here already?
 Several companies in our consortium from sectors such as
@@ -36,15 +35,15 @@ transportation, health case, and energy have expressed interest in
 using formal methods or scaling up their existing use of them. These
 companies are at the forefront of the adaptation of formal methods in
 the industry, and if they are successful many others will likely
-follow. By making formal methods more accessible to these companies
+follow. Making formal methods more accessible to these companies
 and all other interested partners, via better theories, better tools
-and better-training of workers, we hope bring a significant
+and better-training of workers, would bring a significant
 competitive advantage to European companies and Europe as a whole.
 
 Aside from their use in software verification, proofs have also always
 been the basis of mathematics, and hence of many mathematised
 sciences. In this area, the use of computerised formal proofs has made
-significant progress, as witnessed by the formalisation of the
+significant progress, as witnessed for example by the formalisation of the
 Feit-Thompson theorem \cite{Gonthier13}.  Such a use of formal proofs
 in mathematics and in sciences is important, as the correctness of a
 pencil and paper proof is often the object of a controversy, as shown
@@ -55,12 +54,14 @@ controversy on the $abc$ conjecture \cite{Castelvecchi}. Thus, formal
 proofs have a wide range of applications, from safety and security of
 software to mathematics.
 
-Formal proofs are developed using research infrastructures called
+Whether they are used for software verification or mathematics, formal
+proofs are developed using research infrastructures called
 ``proof systems''.  These proof systems are pieces of software that
 allow computer scientists, mathematicians, engineers, and logicians to
 build and study formal proofs, just like particle accelerators allow
 physicists to build and study particles. Figure \ref{systems} lists
-the most prominent proof systems today.
+the most prominent proof systems that are used today, both those
+developed in Europe and those from outside.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\s{ $\star$}
@@ -90,7 +91,9 @@ the most prominent proof systems today.
       \end{tabular}
     \end{center}
     \vspace{-5mm}
-    \caption{Those addressed in the project are marked with $\star$.\label{systems}}
+    \caption{Most of today's proof systems are developed at different
+      places in Europe. Those addressed in the project are marked with
+      a $\star$.\label{systems}}
   \end{shaded}
 \end{figure}
 
@@ -116,9 +119,10 @@ together partners from a large number of these different communities
 for the first time, and brings them together in a new community
 centered around the development of a shared infrastructure for formal
 proofs. In fact, the initial interest for this proposal was so big
-that the number of participants had to be limited.  This clearly
-demonstrates the potential for this new community to grow further
-during and after the course of this project.
+that the number of participants had to be limited. Figure
+\ref{systems} marks all the proof systems represented in the project
+with a \s. This clearly demonstrates the potential for this new
+community to grow further during and after the course of this project.
 
 The fragmented nature of the current proof systems is a major
 bottleneck for the adaptation of formal systems by the
@@ -127,7 +131,7 @@ interest in the use of formal methods, but are faced with the
 difficult task of choosing a proof system to work with. In general, a
 library developed in one system cannot be used in another, so a wrong
 choice may lead to a critical library being unavailable in that
-system. This forces the company to either develop the library
+system. This forces the company to either implement the library again
 themselves or switch to a different proof system.  Thus,
 interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
