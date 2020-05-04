@@ -73,14 +73,15 @@ the system Dedukti \cite{Assaf16} on which Logipedia is
 based.} Geometry, arithmetic and set theory, but also Russell's type
 theory, Church's type theory, Martin-L\"of's type theory, and the
 Calculus of constructions can be expressed in this framework.
+%
+For instance, Church's type theory can be expressed in Dedukti with
+with 11 ``axioms'': 8 declarations and 3 computation rules, as given
+in Figure~\ref{church-type-theory}.
 
-For instance, Church's type
-theory can be expressed in Dedukti, with 11 ``axioms'': 8 declarations
-and 3 computation rules.
-
+\begin{figure}
 \definecolor{shadecolor}{named}{color1}
 \begin{shaded}
-  \vspace{-0.5cm}
+  %\vspace{-0.5cm}
   \begin{center}
     {\bf\Large Church's type theory expressed in Dedukti}\\[3mm]
     $\begin{array}{cc}
@@ -101,8 +102,12 @@ and 3 computation rules.
        \end{array}\\
     \end{array}$
   \end{center}
-  \vspace{-5mm}
+  %\vspace{-5mm}
 \end{shaded}
+\caption{Church's type theory can be expressed in Dedukti, with 11
+  ``axioms'': 8 declarations and 3 computation
+  rules. \label{church-type-theory}}
+\end{figure}
 
 So the theories implemented in various systems can all be expressed in
 Dedukti and the proofs developed in these systems can be translated to
@@ -141,8 +146,8 @@ theory, and those based on set theory and predicate logic.
 \medskip
 \noindent
 {\bf Systems based on dependent type theory (Agda, Coq, and Matita)}
+\medskip
 
-\bigskip
 \hspace{-0.9cm}
 \begin{tabular}{lr}
 \begin{minipage}{14cm}
@@ -216,8 +221,6 @@ irrelevance. In addition, Agda provides an experimental option for
 extending the language with user-defined computation rules, which are very
 similar to the computation rules provided by Dedukti.
 
-\bigskip
-
 \medskip
 \noindent
 {\bf Systems based on simple type theory (HOL4, HOL Light, and Isabelle/HOL)}
@@ -257,8 +260,7 @@ LCF-style systems (like HOL Light or HOL4).
 \end{minipage}
 \end{tabular}
 
-\vspace{5mm}
-\pagebreak
+\medskip
 \noindent
 {\bf Systems based on set theory and predicate logic (Atelier B, Rodin)}
 \medskip
