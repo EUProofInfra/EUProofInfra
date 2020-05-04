@@ -1380,37 +1380,29 @@ automatic theorem prover above a pseudo natural language input: SAD
 
 Current formal proof systems require to learn a specific formal
 language and a command-line interface to compile and execute the
-language. This level of technicity is not compliant with mass adoption
+language. This level of technicality is not compliant with mass adoption
 by teachers and students outside computer science. For educational
 purposes, it is therefore mandatory to develop an intuitive and
 easy-to-handle user-interface for the logipedia formal proof
 system. This interface, based on a ``What You See Is What You Get''
-design, should provide two main features:
+design, should provide three main features:
 \begin{compactitem}
-\item the structured display of the proof in a high (latex-like) quality,
-\item the possibility to build the proof with simple point-and-click
-  interactions.
+\item Proofs must be displayed in a structured and readable way. In
+  particular, mathematical symbols must be drawn with high-quality
+  typography equivalent to current standards (Latex, Mathjax, ...)
+\item It must be possible to build proofs with simple point-and-click
+  interactions. These interactions include applying theorems (or
+  axioms or lemmas) to statements and rewriting rules to a selected
+  element of a statement; this is done in deductive or abductive mode
+  (resp. forward or backward).
+\item The interface should provide several types of presentations of
+  the structure of a formal proof: deductive, a stack of scopes
+  (assumptions and a statement to be justified), sequent tree style,
+  and so on. The digital nature of formal proofs enables the
+  interactive exploration of a proof to understand its structure:
+  eagle-eye view, folding/unfolding of scopes, highlighting the use of
+  variables (on hover), showing/hiding context, and so on.
 \end{compactitem}
-
-The structure of a formal proof is an acyclic oriented graph.
-The interface should provide several types of presentations of the graph:
-deductive, a stack of scopes (assumptions and a statement to be justified),
-sequent tree style, and so on.
-
-The digital nature of formal proofs enables features providing a specific
-view
-to understand its structure: eagle-eye view, folding/unfolding of
-scopes, highlighting the use of variables (on hover), showing/hiding
-context, and so on.
-
-Mathematical symbols must be drawn with high-quality typography equivalent
-to current standards (Latex, Mathjax, ...)
-
-Interactions are the point-and-click commands to develop the structure
-of the proof. They consist in applying theorems (or axioms or lemmas)
-to statements and rewriting rules to a selected element of a
-statement; this is done in deductive or abductive mode (resp. forward
-or backward).
 
 One of the difficulties is to provide a way for the students to discover
 and integrate hundreds of lemmas and rewriting rules necessary to solve
@@ -1419,7 +1411,7 @@ training exercises, plus an adapted ergonomic design of the application menus.
 In this regard, one should be able to search for theorems and rewriting rules.
 
 The research of proof must be automated at some point in order to ease and
-speed up the process and to comply with the level of required detail in education.
+speed up the process and to comply with the level of detail required in education.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cmsection{Source Level Structure and Metadata}
