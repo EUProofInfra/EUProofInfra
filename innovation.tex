@@ -61,7 +61,49 @@ Each industrial partner in the project of course has their own agenda.
 \hline
 {\bf CEA}
 &
-{\color{red} TO DO}
+CEA develops Frama-C since 2005, which is used for analysis and
+verification of safety critical applications, which ranges from airplanes
+to nuclear plants or railway systems. In these domains, the confidence
+into the proofs produced by the analysis tools is an important concern.
+\\
+
+&
+\hspace{0.4cm}
+For deductive verification of C code, Frama-C relies on
+a complex proof architecture that first simplifies the properties to prove,
+and then transmit them to the Why3 tool, which will itself perform other
+simplifications before transmitting them to different SMT solvers. All
+these steps, while bringing the benefit to get the best of each tool, comes
+with a risk of error during simplifications, or inconsistency when passing
+from a tool to another, thus questioning the confidence one can have into
+the obtained proof.
+\\
+
+&
+\hspace{0.4cm}
+Furthermore, it is common that lemmas developed for a particular use
+cases are useful in many other use cases. Logipedia is thus an opportunity
+to create a common database of lemmas that could be reused by the different
+users of Frama-C.
+\\
+
+&
+\hspace{0.4cm}
+Logipedia will foster the innovation potential of CEA on three aspects:
+\\
+
+& $\blacktriangleright$ Frama-C will be able to gather the proof
+traces produced by the tools it relies on, and the traces produced by
+its own simplification process. Thus enabling the possibility to check
+the complete traces, increasing the confidence into the verification.\\
+& $\blacktriangleright$ The availability of these traces will also
+benefit to the validation process of the Frama-C tool itself, using
+Dedukti as a cross validator of the tests results.\\
+& $\blacktriangleright$ Sharing of lemmas through Logipedia will
+benefit to the users of both Frama-C and other tools, avoiding to
+develop proofs for already known results, thus making their proof
+process more efficient.
+
 \\
 \hline
 {\bf Clearsy}
