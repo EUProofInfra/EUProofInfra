@@ -37,12 +37,10 @@ All: $(TBIB.pdf) $(TSIMP.pdf)
 submit:
 	$(MAKE) -$(MAKEFLAGS) -w PROPOSAL=submit.tex
 
-SPLIT.at = $(shell cat SPLIT.at)
-SPLIT = $$(($(SPLIT.at) + 1))
-SSPLIT = $$(($(SPLIT.at) + 2))
 split: submit
-	qpdf --pages submit.pdf 1-$(SPLIT) -- submit.pdf submit-123.pdf
-	qpdf --pages submit.pdf $(SSPLIT)-z -- submit.pdf submit-45.pdf
+	qpdf --pages submit.pdf 1-99 -- submit.pdf submit123.pdf
+	qpdf --pages submit.pdf 99-z -- submit.pdf submit45.pdf
+	pdfunite submit45.pdf ~/src/team/projects/e-infra/letter-*.pdf submit45+letters.pdf
 
 public:  $(SRC)
 	$(MAKE) -$(MAKEFLAGS) -w PROPOSAL=public.tex all
