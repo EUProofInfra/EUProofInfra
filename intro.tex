@@ -12,7 +12,7 @@ etc.), energy provided by nuclear plants, financial applications,
 e-governance, etc. In these systems, a single bug can cause people to
 die and enterprises to go bankrupt.
 
-If testing software makes it possible to reveal the the presence of
+If testing software makes it possible to reveal the presence of
 bugs, only formal verification can guarantee their absence. Thus, the
 trust in critical systems relies on formal verification, in particular
 computerised formal proofs, that guarantee the safety of people using
@@ -114,15 +114,17 @@ significant integration efforts for obtaining the overall result.
 
 Because of the focus on this large variety of proof systems, the field
 is fragmented into a number of small communities, each of which is
-centered around one theory and one proof system. This proposal brings
+centred around one theory and one proof system. This proposal brings
 together partners from a large number of these different communities
-for the first time, and brings them together in a new community
-centered around the development of a shared infrastructure for formal
-proofs. In fact, the initial interest for this proposal was so big
-that the number of participants had to be limited. Figure
+for the first time, and unite them in a new community
+centred around the development of a shared infrastructure for formal
+proofs.  In fact, the enthusiasm for this proposal was so large that the number
+of formal participants had to be limited; partners that could not
+formally be part of the proposal joined the various clubs that we
+describe later.  Figure
 \ref{systems} marks all the proof systems represented in the project
 with a \s. This clearly demonstrates the potential for this new
-community to grow further during and after the course of this project.
+community to further expand during and after the course of this project.
 
 The fragmented nature of the current proof systems is a major
 bottleneck for the adaptation of formal systems by the
@@ -136,9 +138,8 @@ themselves or switch to a different proof system.  Thus,
 interoperability (the possibility for one user to use a proof
 developed in another system), sustainability (the possibility to use a
 proof decades after it has been developed), and cross-verification
-(the possibility to verify a proof in a system different from the ones
-in which it has been constructed resulting in a higher assurance of
-its correctness) are restricted.
+(the possibility, for higher assurance of its correctness, to verify a
+proof in a system different from the one in which it has been constructed) are restricted.
 
 The fragmentation of these infrastructures also limits the
 dissemination of formal proofs in non-specialist communities. For
@@ -178,7 +179,7 @@ reduce development time, enable cross-verification, and make formal
 proofs accessible to a much larger community.  
 
 After three decades
-dedicated to the development of these systems, allowing such a
+dedicated to the development of these systems, enabling
 cooperation between systems is the next step in the development of the
 formal proof technology.
 
@@ -237,7 +238,7 @@ Logipedia is thus a research infrastructure that integrates proof
 systems, through the sharing of data (formal proofs).
 
 \begin{itemize}
-\item Logipedia will bring together the communities centered around
+\item Logipedia will bring together the communities centred around
   different proof systems, providing new opportunities for networking
   between these previously separate communities.
 
@@ -334,7 +335,7 @@ has. If it is a one she loses two euros, if she has at least two.
 When the game ends, the player wins the money she got, except if she
 has zero, in which case she loses one million euros.
 
-This game can be modeled by the following programme:
+This game can be modelled by the following programme:
 \begin{center}
 \begin{minipage}{10cm}
 \begin{verbatim}
@@ -344,12 +345,10 @@ while stay:
     roll = random.randint(1,6)
     if roll == 6:
         stay = False
-    else:
-        if roll >= 2:
-            n = n + 2 * n
-        else:
-            if (n >= 2):
-                n = n - 2
+    elif roll >= 2:
+        n = n + 2 * n
+    elif (n >= 2):
+        n = n - 2
 print(n)
 \end{verbatim}
 \end{minipage}
