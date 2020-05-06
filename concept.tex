@@ -56,7 +56,7 @@ limitations of predicate logic and to propose more powerful logical
 frameworks.  The most prominent limitations of predicate logic are the
 lack of function symbols binding variables, the lack of a syntax for
 proof-terms (that is a syntax for proofs that goes beyond a mere
-derivtion tree), the lack of a notion of computation, the lack of a
+derivation tree), the lack of a notion of computation, the lack of a
 notion of proof reduction for axiomatic theories, and the
 impossibility to express constructive proofs. These limitations have
 led to the development of other logical frameworks such as
@@ -64,13 +64,15 @@ $\lambda$-Prolog \cite{MillerNadathur12}, Isabelle \cite{Paulson90},
 the $\lambda \Pi$-calculus (also called the ``Edinburgh logical
 framework'') \cite{HarperHonsellPlotkin91}, Deduction Modulo Theory
 \cite{DowekHardinKirchner03, DowekWerner03}, Pure Type Systems
-\cite{Berardi88,Terlouw89}, and ecumenical logics
+\cite{Berardi88,Terlouw89}, and Ecumenical logics
 \cite{Prawitz15,Dowek15,PereiraRodriguez17}.
 
 {\bf All these logical frameworks have been unified in the $\lambda
 \Pi$-calculus modulo theory \cite{CousineauDowek07}, implemented in
 the system Dedukti \cite{Assaf16} on which Logipedia is
-based.} Geometry, arithmetic and set theory, but also Russell's type
+based.}
+
+Geometry, arithmetic and set theory, but also Russell's type
 theory, Church's type theory, Martin-L\"of's type theory, and the
 Calculus of constructions can be expressed in this framework.
 %
@@ -303,7 +305,7 @@ practice. For example:
   Dedukti, but this expression must be carefully chosen so that the
   proof checker does not go into an infinite loop.
 
-\item A few of the systems rely on AC rewriting (i.e.~rewriting modulo
+\item A few of the systems rely on AC rewriting (that is, rewriting modulo
   associativity and commutativity of certain operations), for example
   to express universe polymorphism in dependent type theories. While
   Dedukti has support for AC rewriting, the current implementation is
@@ -407,7 +409,7 @@ for the following systems:
   OpenTheory proofs into Dedukti.
 
 \item In the context of the BWare project, an expression of the set
-  theory of the B method has been provided as a theory modulo, i.e.\ 
+  theory of the B method has been provided as a theory modulo, that is
   computation rules rather than a set of axioms. This expression is used
   by the automatic prover Zenon modulo which features a back-end to
   Dedukti. Thus, as a first step towards the instrumentation of Atelier B,
@@ -432,7 +434,7 @@ solvers, etc.\ The proofs
 built by these systems are often expressed in simpler theories than
 those developed using interactive proof systems, but they are not of a different
 nature.  They cover various domains and various kinds of applications,
-\emph{e.g.}\ combinatorial
+for example combinatorial
 mathematics~\cite{DBLP:journals/ai/KonevL15,DBLP:conf/sat/HeuleKM16},
 where they are expected to solve one large propositional problem, or
 verification of
@@ -539,8 +541,8 @@ which reconstruct proofs from traces produced by automated theorem
 provers.
 
 This scheme has already been prototyped in a tool called
-Ekstrakto. Ekstrakto takes a TSTP file, as can be produced by
-\emph{e.g.}\ the E prover for first-order logic, and it uses Zenon Modulo and
+Ekstrakto. Ekstrakto takes a TSTP file, as can be produced by,
+for example, the E prover for first-order logic, and it uses Zenon Modulo and
 ArchSAT to prove the sub-problems. Ekstrakto was designed to be
 agnostic with respect to the prover producing the trace; in particular
 it does not depend on the specific set of inference rules of the
@@ -581,7 +583,7 @@ particular, the following issues will be addressed in the project:
 
 \item Dedukti-producing provers used by Ekstrakto, namely Zenon Modulo
   and ArchSAT, are meant for pure predicate logic. However, it will be necessary  to deal with proof traces that use some specialized theory,
-  \emph{e.g.}\ arithmetic or bit-vectors, as could be output by SMT
+  for example arithmetic or bit-vectors, as could be output by SMT
   solvers. Although such theories could be presented as a set of
   axioms in predicate logic, it is almost certain that neither Zenon
   Modulo nor ArchSAT could be able to find non-trivial proofs using
@@ -634,7 +636,7 @@ aspect. These ``small'' encodings will offer the possibility to be
 activated independently, depending on the origin of the statement. In
 addition, they have the other advantages of being modular, easily
 extensible, and more reliable: each encoding is simple, and may output
-proofs, \emph{e.g.}\ using Ekstrakto. They will be performed modulo the
+proofs, for example using Ekstrakto. They will be performed modulo the
 concept alignment.
 
 It is common in the automatic theorem proving community to evaluate
@@ -772,7 +774,7 @@ automated theorem provers developed in the other parts.
 
   The aforementioned automation will be crucial to enable full proof
 verification. Considering systems one at a time, a number of proof
-exports are not complete, i.e.\ the actual systems do not provide
+exports are not complete, that is the actual systems do not provide
 all the proof step details, and internal automation for Logipedia would be
 necessary. More demandingly, automation will be used to fill the gaps
 between systems. In particular, concept alignments need to be established
@@ -784,7 +786,7 @@ As it has been the case for interactive theorem provers, automation
 will also provide support for Logipedia developers and users. During
 the project, many Dedukti developments shall be performed, in
 particular to define theories in Dedukti. In the longer term, Dedukti
-will also be used, \emph{e.g.}\ for new proof transformations or to
+will also be used, for example for new proof transformations or to
 align distant concepts, which will be affordable with automation.
 \end{enumerate}
 
@@ -868,7 +870,7 @@ with prohibitive resource requirements will be omitted.
 The Archive of formal proofs is continuously growing at a high rate and thus
 represents a moving target.
 
-\paragraph*{The Isabelle Analysis \& Probability Theory Library.}
+\paragraph*{The Isabelle Analysis \& Probability Theory Library}
 consists of more
 than 200.000 lines of definitions and proofs, corresponding to almost
 4000 printed pages. It covers topology, homology, multivariate,
@@ -1100,8 +1102,8 @@ infrastructure.
 \paragraph*{Contributions.}
 The aforementioned libraries will populate Logipedia with mature,
 application-level mathematical theories. That is, proofs about
-important areas of mathematics (\emph{e.g.}\ analysis and algebra) and
-computer science (\emph{e.g.}\ compilers) that support applications in
+important areas of mathematics (for example, analysis and algebra) and
+computer science (for example, compilers) that support applications in
 engineering as well as security and in particular in interdisciplinary
 areas such as cyber-physical systems and autonomous vehicles.
 
@@ -1188,7 +1190,7 @@ implement new formal proofs will be a collaborative work. To ensure
 the reliability of the platform and, in the meantime, to be able to
 efficiently and frequently update it on the production infrastructure,
 it is necessary to rely on best software development practices.  We
-will use continuous integration and continuous deployment (CI/CD)
+will use a continuous integration and continuous deployment
 pipeline to manage the development process.
 
 The pipeline is composed of several open source tools orchestrated
@@ -1196,19 +1198,27 @@ to automatically deliver new versions of the Logipedia platform.
 
 \begin{compactitem}
 \item
-A Version Control System (VCS) stores and manages the source code and
+A Version Control System stores and manages the source code and
 allows its modification securely and with traceability. Git is the leader
-open source VCS tool and will be used for Logipedia source code. Git implements
+open source
+A Version Control System 
+tool and will be used for Logipedia source code. Git implements
 a distributed version control system that applies perfectly to the context of
-a European collaborative project. For Logipedia, the VCS will handle the
+a European collaborative project. For Logipedia, the Version Control System  will handle the
 source code of the Logipedia web site itself as well as the formal proof libraries.
 \item
-A CI/CD platform is used to automate the integration of modifications
-as soon as a new version is pushed to the VCS. The automatic integration
+A
+continuous integration and continuous deployment
+platform is used to automate the integration of modifications
+as soon as a new version is pushed to the Version Control System . The automatic integration
 consists in building the new application, executing tests to ensure
 the quality is maintained, and producing packages of the application.
-Jenkins is a widely used CI/CD tool and will be used for Logipedia.
-Once packages are built, the CI/CD platform can trigger the automatic
+Jenkins is a widely used
+continuous integration and continuous deployment
+tool and will be used for Logipedia.
+Once packages are built, the
+continuous integration and continuous deployment
+platform can trigger the automatic
 deployment of the new version on the target infrastructure.
 This step is called continuous delivery.
 \end{compactitem}
@@ -1440,13 +1450,13 @@ reference ontology for formal libraries and extend our encodings to
 make use of it. Moreover, we will develop \emph{domain-specific} ontologies
 allowing, for examples, engineers to search for mathematical theorems
 relevant to a particular engineering discipline
-(cf. \cite{brucker.ea:ontologies-certification:2019}).
+\cite{brucker.ea:ontologies-certification:2019}.
 
 Annotation with meta-data is particularly relevant in connection with the concept alignments
 described below. Because, in its simplest form, alignment is just a
 binary relation between identifiers in different libraries that mean
 the same thing, it can be integrated with this ontology directly.  It
-then enables queries that span multiple libraries, \emph{e.g.}\ to find all
+then enables queries that span multiple libraries, for example to find all
 theorems about a certain concept that have been in some provers but not
 others.
 
@@ -1534,7 +1544,7 @@ the semantics of a proof step corresponds to the notion of
 check different aspects of the correctness of Mizar articles in a
 compiler-like manner, from purely syntactic concerns all the way to
 logical completeness and consistency. Mizar has not been designed to
-produce proof objects, and much background knowledge (\emph{e.g.}\ stemming
+produce proof objects, and much background knowledge (for example, stemming
 from soft types) is used implicitly. The main challenges of encoding
 Mizar in Dedukti will be to represent the different forms of Mizar
 definitions in a uniform way and to instrument the
@@ -1595,8 +1605,9 @@ verification of this system should guarantee that the process executed by the
 particular MED-ELs user, is never out of sync, meaning, it does not contain
 inconsistencies in data presented and generated by the user.
 
-\paragraph*{\href{{https://pvs.csl.sri.com}}{PVS}}\cite{owre:pvs} is a specification
-system and proof assistant that is based on Simple Type Theory with a rich type
+\paragraph*{\href{{https://pvs.csl.sri.com}}{PVS}}\cite{owre:pvs} is a
+specification system and proof assistant that is based on Simple Type
+Theory, extended with a rich type
 
 \smallskip
 \hspace{-0.9cm}
@@ -1655,13 +1666,14 @@ combinatory logic, embedding classical logic in minimal implicational logic, and
 the extraction of the DPLL algorithm underlying propositional satisfiability
 solving from its proof.
 
-In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL $3$.
-This is facilitated by the fact that the foundations of Minlog and Dedukti are
-rather close (both have proof terms and deduction modulo); the main challenges
-are support for co-induction and co-recursion. We plan to support program
-extraction to Dedukti through realizability, and also aim to be able to
-import a subset of Dedukti proofs into Minlog in order to benefit from the
-libraries available in Logipedia.
+In this project, we aim to lift Minlog from LIL $0$ to (at least) LIL
+$3$.  This is facilitated by the fact that the foundations of Minlog
+and Dedukti are rather close (both have proof terms and Deduction
+modulo theory); the main challenges are support for co-induction and
+co-recursion. We plan to support program extraction to Dedukti through
+realizability, and also aim to be able to import a subset of Dedukti
+proofs into Minlog in order to benefit from the libraries available in
+Logipedia.
 
 \paragraph*{ProvenTools.}
 ProvenTools is an interactive environment, developed at Prove \& Run,
@@ -1682,7 +1694,7 @@ that the extraction is safe and correct.
 ProvenTools has been used to design, develop, and formally verify
 ProvenCore~\cite{lescuyer:provencore}, a general-purpose micro-kernel that has
 been certified at the highest Common Criteria level (EAL7). The proofs represent
-about 400kloc of Smart, covering all process management including page
+about 400.000 lines of code of Smart, covering all process management including page
 tables, shared memory, process creation, code loading, etc. ProvenTools has also
 been used to develop user-side applications, in particular in the case of filter
 applications~\cite{bolignano:security}. The proofs ensure that the data
@@ -1766,11 +1778,11 @@ be discriminated---unlike set theory where accidental identifications can arise
 depending on how structures are represented.
 
 In its simplest form, HoTT is an extension of Martin-L\"of type theory by the
-univalence axiom. More modern forms include Cubical Type Theory (CubTT,
-\cite{cohen:cubical}) that is both constructive (i.e., proving the existence of
+univalence axiom. More modern forms include Cubical Type Theory (CubTT
+\cite{cohen:cubical}) that is both constructive (that is, proving the existence of
 an object provides an algorithm for effectively computing the object) and where
 univalence is a theorem. All type-theoretic proof systems have very small steps
-that are omitted in proofs (\emph{e.g.}\ trivial equalities such as $1+1=2$). In the
+that are omitted in proofs (for example, trivial equalities such as $1+1=2$). In the
 context of HoTT, these are called coherence conditions. Two-level type theory
 (2LTT~\cite{annenkov:two-level}) was introduced as a stepping stone where the
 small proof steps are made explicit, and we will start by expressing 2LTT in
@@ -1845,13 +1857,13 @@ important that these different logical foundations can be related to
 each other in ways that ensure their interoperability. However, using
 a common logical foundations is just a starting step. Even when one
 has successfully related these different logical foundations, one must
-also align the many different mathematical concepts (\emph{e.g.}\ sets,
+also align the many different mathematical concepts (for example, sets,
 numbers, functions) and theorems that are in the libraries produced by
 the various proof assistants. The goal of proof engineering is to
 achive a successful interoperability of both proof assistants and
 formalized mathematical libraries. This starts with identifying the
 correspondences between the concepts underpinning these
-formalizations, i.e., their alignment. Even when the various proof
+formalizations, that is their alignment. Even when the various proof
 assistants are all exporting their proofs in Dedukti, the proper
 alignment of the theories underpinning those systems is an essential
 task: for example, simply combining all the different theories without
@@ -1935,7 +1947,7 @@ theory and reverse mathematics. We will articulate our work according
 to the following key parameters for distinguishing between theories:
 classical vs. constructive logic, predicative vs. impredicative
 definitions, treatments of equality, and presence and absence of
-certain additional axioms, \emph{e.g.}\ the axiom of choice.
+certain additional axioms, for example the axiom of choice.
 
 One of the major goals will be the formulation and representation in
 Dedukti of a core logical system that is both common to all logical
@@ -2050,7 +2062,7 @@ equivalent.
 For example, some definitions are only special cases of others,
 some definitions are valid in any dimension and some
 are valid only in some specific dimension, and some definitions differ
-only in the treatment of certain corner cases (\emph{e.g.}\ Hilbert's axioms of
+only in the treatment of certain corner cases (for example, Hilbert's axioms of
 geometry use the strict betweenness while Tarski's axioms use the
 non-strict betweenness relation).  Although alignments of such
 definitions are also needed, they are very hard to detect and use. An

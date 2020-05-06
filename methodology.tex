@@ -1,8 +1,8 @@
-Developing a new research infrastructure that integrates existing
-ones through data exchange requires a wide range of activities,
-described in the work-plan. These different activities will require
-different methodologies: developing new pieces of software,
-modifying existing ones, experimenting, proving theorems, etc.
+Developing a new research infrastructure that integrates existing ones
+through data exchange requires a wide range of activities, described
+in the work-plan. These different activities will require different
+methodologies: developing new pieces of software, modifying existing
+ones, proving theorems, experimenting, etc.
 
 We review here the different methodologies used in the project, again 
 objective by objective.
@@ -10,7 +10,7 @@ objective by objective.
 \cmsection{Integration}
 
 To integrate existing proof systems into Logipedia, we need to
-\emph{instrument} these systems to export their proofs to
+instrument these systems to export their proofs to
 Dedukti. The methodology required to achieve this goal varies a lot
 with respect to the proof system considered. With respect to the
 intergration methodology, we distinguish three broad categories of
@@ -20,7 +20,7 @@ systems:
 \item
 Some existing proof systems, the ``Automath-like systems'', such as Coq, Agda, and
 Matita, already have a notion of proof-term, that is an explicit
-representation of proofs.  In theory it is sufficient to translate
+representation of proofs.  In theory, it is sufficient to translate
 these terms into the language of Dedukti.  As discussed in the Section
 \ref{concept}, in practice, this may require to reconstruct transient
 proof components, or to modify the term language of the instrumented
@@ -38,7 +38,8 @@ OpenTheory. So, we can reap the benefit of these developments and just
 translate the OpenTheory proofs to Dedukti.
 
 \item A third category of proof systems require a different and more
-  complex methodology. For these systems, such as PVS or Mizar, all we
+  complex methodology. For these systems, such as PVS or Mizar, all
+  that we
   can extract is a proof-trace, that is a sequence of propositions,
   such that the transition from one to the next is ``easy''.
   To fill the gaps between the propositions of the proof-trace,
@@ -59,8 +60,8 @@ developed systems that are constantly evolving, even if the theory
 they implement evolves at a slower pace. In order to avoid having
 translations that always work for an obsolete version, we need to
 include these translators to Dedukti to the code of the systems
-themselves, so that the translations are maintained at the same pace
-as the proof system itself. This is our plan to migrate the
+themselves, so that the translations are maintained together with
+the proof system itself. This is our plan to migrate the
 translations from Matita, Coq, and HOL Light to the systems
 themselves, and all the other translations, as soon as they reach the
 relevant maturity.
@@ -68,7 +69,7 @@ relevant maturity.
 \cmsection{Automatic theorem provers}
 
 Instrumenting automatic theorem provers, SAT/SMT, predicate solvers,
-\dots
+etc.
 raises different methodological questions, as these systems
 must be very efficient to be useful. This yields two new issues.
 
@@ -147,7 +148,7 @@ raises different methodological questions. Here the technology of web
 services, distribution package, ergonomic user interfaces, search
 engines is mature and we need to rely on this existing technology.
 
-Yet this raises two methodological issues. The first one is that some of
+Yet this raises two methodological issues. The first is that some of
 these technologies must be adapted for the case of proofs. This is,
 for instance, the case of the search engines technology, as plain text
 search is not adapted to formal proofs. First because logical formulas
@@ -174,7 +175,7 @@ ontologies---and we need to understand how it can be adapted to formal
 proofs.
 
 Again, this technology is mastered by other people who are not
-researchers and engineers on formal proofs. Fortunately we have
+researchers and engineers on formal proofs. Fortunately, we have
 succeeded to have in the consortium researchers who will bring their
 expertise on this topic.
 
