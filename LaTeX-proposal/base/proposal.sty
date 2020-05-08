@@ -568,7 +568,7 @@
 \end{@milestones}\fi}
 \newenvironment{@milestones}{\begin{enumerate}}{\end{enumerate}}
 \newcommand{\deliverable}[9]{\pdataRef{deliv}{#4}{label}&#7&#8&#9&#6&#5&#2\\\hline}%sortkey,due,label,id,title,type,level,lead
-\newenvironment{deliverables}[1]{\ifdelivs\begin{longtable}{|l|p{#1}|l|l|l|l|l|}\hline%
+\newenvironment{deliverables}[1]{\ifdelivs\begin{longtable*}{|l|p{#1}|l|l|l|l|l|}\hline%
 \#&\textbf{\delivs@legend@name}&%
 \textbf{\delivs@legend@wp}&%
 \textbf{\delivs@legend@lead}&%
@@ -577,7 +577,7 @@
 \textbf{\delivs@legend@due}\\\hline\hline%
 \endhead%
 \else\deliv@error\fi}
-{\ifdelivs\end{longtable}\fi}
+{\ifdelivs\end{longtable*}\fi}
 \newcommand\delivs@legend@name{Deliverable name}
 \newcommand\delivs@legend@wp{WP}
 \newcommand\delivs@legend@nature{Type}
