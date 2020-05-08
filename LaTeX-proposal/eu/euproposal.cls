@@ -21,8 +21,8 @@
 \RequirePackage{eupdata}
 \RequirePackage{datetime}
 \RequirePackage{chngcntr}
-%\counterwithin{figure}{subsection}
-%\counterwithin{table}{subsection}
+\counterwithout{figure}{subsection}
+\counterwithout{table}{subsection}
 \setcounter{secnumdepth}{4}
 \ifpartB
 \def\thepart{\Alph{part}}
