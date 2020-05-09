@@ -23,7 +23,7 @@ links with non-European scientists.
 \end{center}
 
 When defining our objectives, we need indicators to measure our
-performance.  We can use the notion of a ``Technical readiness level''
+performance.  We can use the notion of a ``Technology readiness level''
 (TRL) to assess the status of some of our objectives.  But, to measure
 the level of integration in Logipedia of an existing proof system and
 of its associated proof libraries, we had to introduce another
@@ -44,7 +44,7 @@ the {\em Logipedia Integration Level} (LIL).
 {\bf 0} & No effort of integration has been made yet.\\
 \hline
 {\bf 1} & The theory implemented in the system has been defined in
-the logical framework Dedukti.\\
+the logical framework Dedukti, the core language of Logipedia.\\
 \hline
 {\bf 2} & The system has been instrumented so that examples of proofs
 can be exported and checked in Dedukti.\\
@@ -103,12 +103,13 @@ frontier of Logipedia beyond proofs produced by humans.
 Very large proofs, requiring large libraries of auxiliary results,
 have been developed in some proof systems. These large libraries
 constitute an ambitious benchmark for the methods developed, and they
-contribute to populate Logipedia with a large number of elements.
-We decided to focus on five libraries: the
-Isabelle Archive of Formal Proofs (AFP), the Isabelle probability and
-analysis library, the Coq geometry library, the Flyspeck library, and
-the CakeML library. The targeted integration level for all these
-libraries is LIL 4. Other important libraries are left for the future.
+contribute to populate Logipedia with a large number of elements.  We
+decided to focus on five libraries, chosen for their relevance,
+coverage, and maturity: the Isabelle Archive of Formal Proofs (AFP),
+the Isabelle probability and analysis library, the Coq geometry
+library, the Flyspeck library, and the CakeML library. The targeted
+integration level for all these libraries is LIL 4. Other important
+libraries are left for the future.
 
 The integration of systems of the first group, the integration of
 automated theorem proving systems, and the integration of these large
@@ -120,7 +121,7 @@ If we now turn to the access to these formal proofs, our objective is
 to develop an infrastructure that makes them freely accessible through
 a web browser. So, by construction, the access will be trans-national
 and virtual. But beyond these two objectives of a trans-national and
-virtual access, an important effort will be made to make this
+virtual access, most of the effort will be made to make this
 encyclopedia accessible to a large community of specialists and
 non-specialists: researchers, engineers, teachers, students, etc.
 This requires us to develop an ergonomic web interface, a package
@@ -164,7 +165,7 @@ In addition, each system has its own definitions of various
 mathematical objects and structures that must be aligned: structural
 results proved for one definition of real numbers, for instance, will
 be transported to any isomorphic structure, regardless of the way it
-has been defined. This is a final objective of this project.  Its
+has been defined. This is another objective of this project.  Its
 performance indicator is the number of proofs brought from level
 LIL 4 to level LIL 5.
 
