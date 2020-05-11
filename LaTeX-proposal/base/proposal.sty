@@ -330,7 +330,7 @@
 \pdata@def{all}{deliverables}{count}{\thedeliverable}
 \pdata@def{all}{milestones}{count}{\themilestone}
 \fi
-\ifdelivs\immediate\closeout\wpg@delivs\fi}
+\ifdelivs\closeout\wpg@delivs\fi}
 \newenvironment{tasklist}
 {\smallskip\begin{compactenum}}{\end{compactenum}\smallskip}
 \newcommand\task@@label[1]{\textbf{T#1}}
@@ -589,7 +589,7 @@
 \begin{deliverables}{#1}%
 \IfFileExists{\jobname.deliverables}%
 {\input{\jobname.deliverables}}%
-{\IfFileExists{\jobname.delivs}{\input{\jobname.delivs}}{}}
+{}
 \end{deliverables}}
 \definecolorset{gray/rgb/hsb/cmyk}{}{}%
 {leadgray,.90/.90,.90,.90/0,0,.90/0,0,0,.10;%
