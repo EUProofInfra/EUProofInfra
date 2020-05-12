@@ -13,7 +13,7 @@ To integrate existing proof systems into Logipedia, we need to
 instrument these systems to export their proofs to
 Dedukti. The methodology required to achieve this goal varies a lot
 with respect to the proof system considered. With respect to the
-intergration methodology, we distinguish three broad categories of
+integration methodology, we distinguish three broad categories of
 systems:
 
 \begin{compactitem}
@@ -45,7 +45,7 @@ translate the OpenTheory proofs to Dedukti.
   To fill the gaps between the propositions of the proof-trace,
   we thus need to use an external automated theorem prover. In
   addition, we need to instrument this automated theorem prover
-  itself, so that we can build a complete proof proof from the trace.
+  itself, so that we can build a complete proof from the trace.
 \end{compactitem}
 
 In all these cases, we need to take also into account that these proof
@@ -73,17 +73,17 @@ etc.
 raises different methodological questions, as these systems
 must be very efficient to be useful. This yields two new issues.
 
-First, these systems include many optimizations that make their code
+First, these systems include many optimisations that make their code
 very complex and hence difficult to instrument. Then, instrumentation
-often slows down the instrumented system a little bit and if this is
+often slows down the instrumented system slightly and if this is
 acceptable for interactive proof systems---the user being anyway
 slower than the software---this is often not acceptable for automated
 theorem provers.
-So, these systems must be instrumented in a minimal way, so that they
+So, these systems must be instrumented in a minimal way, so that their
 execution is not impacted by the instrumentation.  Most of the
 time, we can just extract a proof trace, as in the third case above,
 and fill the gaps in these proofs using another, less powerful but better
-instrumented automated theorem prover, to fill the gaps.
+instrumented automated theorem prover.
 
 Some automated theorem provers already output proof traces, meaning
 that we can see them as black-boxes and concentrate on the translation
@@ -116,11 +116,11 @@ as well as to select potential proof term components.
 \cmsection{Large libraries}
 
 Translating a large library from a given system to Dedukti is almost
-an experimental sciences: in principle, if we can translate a small
+an experimental science: in principle, if we can translate a small
 library, we can translate a large one. In practice, things are more
 complicated.  Hence, the first thing we need to do is to experiment
 with the theories and the translations we do have. Most likely, some
-efficiency issues will manifest and we will have to understand where
+efficiency issues will manifest, and we will have to understand where
 these efficiency issues come from:
 
 \begin{compactitem}
@@ -167,7 +167,7 @@ who will bring this expertise.
 \cmsection{Structuring the encyclopedia}
 
 Structuring the encyclopedia raises the same methodological issues
-as developing the infrastucture to make the proofs accessible.
+as developing the infrastructure to make the proofs accessible.
 
 The technology of ontologies, for instance, is mature. But is has been
 developed in different contexts---for instance for medical
@@ -204,7 +204,7 @@ we understand that a minor modification of Dedukti would help. There
 is here a subtle balance to find between modifying Dedukti each time
 we want to express a new feature in it, and having a rigid Dedukti
 that would never evolve. As any logical framework, Dedukti should
-remain simple enough and neutral with respect the the various theories
+remain simple enough and neutral with respect the various theories
 it permits to express, but also flexible enough so that it evolves
 according to the needs of its users.
 
@@ -234,7 +234,7 @@ Another methodological innovation we propose is that of small scale
 concept alignment. For instance, a small step concept alignment might
 be to identify that an algebraic structure, called $N$ in one theory,
 and another, called $nat$ in a different theory, refer to the same
-object, which means that these stuctures are isomorphic. Before
+object, which means that these structures are isomorphic. Before
 proving this isomorphism, either by hand or automatically, we need to
 discover such potential isomorphisms. For this task, heuristics and
 machine learning seem to be the right methods. So this work on
@@ -253,5 +253,5 @@ is why the four club of users are a key element to our methodology.
 %%% Local Variables:
 %%%   mode: latex
 %%%   mode: flyspell
-%%%   ispell-local-dictionary: "english"
+%%%   ispell-local-dictionary: "british"
 %%% End:
