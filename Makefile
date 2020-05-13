@@ -40,7 +40,7 @@ submit:
 split: submit
 	qpdf --pages submit.pdf 1-100 -- submit.pdf submit123.pdf
 	qpdf --pages submit.pdf 101-z -- submit.pdf submit45.pdf
-	pdfunite submit45.pdf ../deducteam/projects/e-infra/letter-*.pdf submit45+letters.pdf
+	pdfunite submit45.pdf ~/src/team/projects/e-infra/letter-*.pdf submit45-with-letters.pdf
 
 public:  $(SRC)
 	$(MAKE) -$(MAKEFLAGS) -w PROPOSAL=public.tex all
